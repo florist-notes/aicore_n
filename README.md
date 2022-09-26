@@ -1,1 +1,1 @@
-# repo1
+# sk_k AI respurce guide
