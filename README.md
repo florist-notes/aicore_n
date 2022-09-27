@@ -1,1 +1,1 @@
-# sk_k AI respurce guide
+# sk_k AI resource guide
