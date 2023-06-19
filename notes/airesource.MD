@@ -1,0 +1,1 @@
+# AI Resource Guide : by @[florist_notes](http://floristnotes.wiki/)
