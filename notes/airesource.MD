@@ -58,9 +58,18 @@ YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai
 <th>
   <p>
   
-  Deepming : [Alphafold](https://www.youtube.com/watch?v=G5P8eu6gUSo), [Alphacode](https://www.deepmind.com/blog/competitive-programming-with-alphacode), [Gopher](https://youtu.be/aPiHhJjN3hI), [GPT-3](https://www.technologyreview.com/2020/07/20/1005454/openai-machine-learning-language-generator-gpt-3-nlp/), [animation with dl](https://youtu.be/4lQkQSmA8nA), [real time render](https://www.youtube.com/watch?v=QqHchIFPE7g&feature=youtu.be), [game physics](https://youtu.be/atcKO15YVD8), [virtual characters](https://youtu.be/kie4wjB1MCw), [physics based animation](https://youtu.be/8oIQy6fxfCA), Deepfakes : [Everybody Dance Now](https://youtu.be/PCBTZh41Ris), [re-write videos by editing text](https://youtu.be/2xWnOL5bts8), [clone voice in 5 sec](https://youtu.be/0sR1rU3gLzQ), [Seeing cell divisions like never before](https://youtu.be/RxHTaTmPlwQ), [Detecting Signs of Disease from External Images of the Eye](https://ai.googleblog.com/2022/03/detecting-signs-of-disease-from.html), [Training Real-World Self-Driving Cars with Video Games](https://www.synopsys.com/designware-ip/technical-bulletin/training-self-driving-cars-video-games-2019q3.html), [AR Presentations](https://youtu.be/wVtOuvFlczg), [MIT slime robot](https://youtu.be/VmV3m0QqNOY), Google's AI [see through dark](https://youtu.be/7iy0WJwNmv4), [Next level video editing](https://youtu.be/MCq0x01Jmi0), [AI in chemical engineering](https://youtu.be/UgusRy8Oz3c), [flying through Giga Berlin](https://youtu.be/7-4yOx1CnXE).
+  Deepmind : [Alphafold](https://www.youtube.com/watch?v=G5P8eu6gUSo), [Alphacode](https://www.deepmind.com/blog/competitive-programming-with-alphacode), [Gopher](https://youtu.be/aPiHhJjN3hI), [GPT-3](https://www.technologyreview.com/2020/07/20/1005454/openai-machine-learning-language-generator-gpt-3-nlp/), [animation with dl](https://youtu.be/4lQkQSmA8nA), [real time render](https://www.youtube.com/watch?v=QqHchIFPE7g&feature=youtu.be), [game physics](https://youtu.be/atcKO15YVD8), [virtual characters](https://youtu.be/kie4wjB1MCw), [physics based animation](https://youtu.be/8oIQy6fxfCA), Deepfakes : [Everybody Dance Now](https://youtu.be/PCBTZh41Ris), [re-write videos by editing text](https://youtu.be/2xWnOL5bts8), [clone voice in 5 sec](https://youtu.be/0sR1rU3gLzQ), [Seeing cell divisions like never before](https://youtu.be/RxHTaTmPlwQ), [Detecting Signs of Disease from External Images of the Eye](https://ai.googleblog.com/2022/03/detecting-signs-of-disease-from.html), [Training Real-World Self-Driving Cars with Video Games](https://www.synopsys.com/designware-ip/technical-bulletin/training-self-driving-cars-video-games-2019q3.html), [AR Presentations](https://youtu.be/wVtOuvFlczg), [MIT slime robot](https://youtu.be/VmV3m0QqNOY), Google's AI [see through dark](https://youtu.be/7iy0WJwNmv4), [Next level video editing](https://youtu.be/MCq0x01Jmi0), [AI in chemical engineering](https://youtu.be/UgusRy8Oz3c), [flying through Giga Berlin](https://youtu.be/7-4yOx1CnXE).
   </p>
 </th>
+
+<th>
+  <p>
+
+  [Ameca facial motion capture](https://youtu.be/3OHILYjsW7c), [Ameca conversation using GPT 3 - Will robots take over the world?](https://youtu.be/EWACmFLvpHE), [Boston Dynamics](https://youtu.be/fn3KWM1kuAw), [Robo Threads](https://youtu.be/INSyV4dgqu8), [Festo Bionic Robots](https://youtu.be/_qRGIRvr06w).
+  </p>
+</th>
+
+
 </tr>
 
 </table>
