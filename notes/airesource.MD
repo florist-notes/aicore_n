@@ -567,3 +567,67 @@ platform.
 Hackathons: [hackTUM](https://hack.tum.de/), [hackZurich](https://hackzurich.com/), [NASA Space app
 challenge](https://www.spaceappschallenge.org/), [pytorch
 summer hack](https://pytorchmpk.devpost.com/), [esa socis](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/SOCIS_The_ESA_Summer_of_Code_in_Space) etc.
+
+
+# AI Summer Schools & Training: 
+
+Summer Schools are focused
+training camps for different [AI methods](https://paperswithcode.com/methods) and this [list](https://github.com/sshkhr/awesome-mlss)
+has very popular and good AI summer schools. Some
+additional summer schools (mostly European):
++ [MIT IDSS](https://www.mygreatlearning.com/mit-idss-data-science-machine-learning-program)
++ [LogML : London Geometry and ML](https://www.logml.ai/)
++ [Nordic Probabilistic AI school](https://probabilistic.ai/)
++ [Summer schools in Europe](https://www.summerschoolsineurope.eu/search/discipline;ArtInt)
++ [IDESSAI 2022 - SECOND JOINT SUMMER SCHOOL
+OF INRIA AND DFKI](https://www.dfki.de/en/web/news/idessai-2022-zweite-gemeinsame-summer-school-von-inria-und-dfki)
++ [The European AI Summit 2022](https://www.eventbrite.ie/e/the-european-ai-summit-2022-tickets-303391370757)
+
+
+additionally, [Google events](https://developers.google.com/events), [IEEE](https://cis.ieee.org/activities/professional-development/summer-schools) & [ACM Summer
+Schools](https://europe.acm.org/2022-hpc-summer-school), AI Residency programs: [this list](https://github.com/dangkhoasdc/awesome-ai-residency) + [Microsoft](https://www.microsoft.com/en-us/research/academic-program/microsoft-ai-residency-program/),
+[Meta AI](https://ai.facebook.com/join-us/residency-program/), [Nvidia](https://www.nvidia.com/en-us/research/ai-research-residency/), [Apple](https://machinelearning.apple.com/updates/aiml-residency-program-application), [OpenAI](https://openai.com/blog/openai-residency/) etc
+
+
+AI Training: Several premier professional AI training
+programs and certifications:
++ Stanford SCPD Graduate [AI Certificate](https://online.stanford.edu/programs/artificial-intelligence-graduate-program), [Robotics and
+Autonomous Systems certificate](https://online.stanford.edu/programs/robotics-and-autonomous-systems-graduate-program).
++ [MIT Professional Certificate Program](https://professional.mit.edu/programs/certificate-programs/professional-certificate-program-machine-learning-artificial) in Machine Learning & Artificial Intelligence; [Designing and
+building AI products and services](https://mit-xpro-online-education.emeritus.org/designing-building-ai-products-services).
++ [Udacity](https://www.udacity.com/) Nanodegree:
+> [School of Autonomous Systems](https://www.udacity.com/school-of-autonomous-systems)
+> [School of Artificial Intelligence](https://www.udacity.com/school-of-ai)
++ Harvard Extension School : data science [graduate
+certificate](https://extension.harvard.edu/academics/programs/data-science-graduate-certificate/#admissions-requirements).
++ [NVIDIA training institute](https://www.nvidia.com/en-us/training/) : Some example courses are
+- [Building Real-Time Video AI Applications](https://courses.nvidia.com/courses/course-v1:DLI+S-IV-01+V1/), [Building
+Video AI Applications at the Edge on Jetson Nano](https://courses.nvidia.com/courses/course-v1:DLI+S-IV-02+V2/) etc
++ AI resources from Google : Google Cloud ML & AI
+Engineer [path](https://cloud.google.com/training/machinelearning-ai), [Grow with Google](https://grow.google/intl/en_pk/guide-ai-machine-learning/), [Google AI
+Experiments](https://experiments.withgoogle.com/collection/ai), Google [AI Education](https://ai.google/education/), Google [Quantum AI](https://quantumai.google/), Google [Developer Experts](https://developers.google.com/community/experts) : AI
++ TensorFlow Learn ML [resources](https://www.tensorflow.org/resources/learn-ml) & TensorFlow [courses](https://www.deeplearning.ai/courses/).
++ Deepmind Learning [resources](https://www.deepmind.com/learning-resources).
++ [Using Python for Research](https://www.edx.org/course/using-python-for-research) (beginner).
+
+
+There exists very good AI blogs such as: [AppliedAI: AI
+in mobility](https://www.appliedai.de/hub/artificial-intelligence-in-mobility) (***), Google [AI blogs](https://ai.googleblog.com/), [machinelearning
+mastery](https://machinelearningmastery.com/blog/), [c-olah blog](http://colah.github.io/), [BAIR](https://bair.berkeley.edu/blog/?_ga=2.208942610.1255165193.1662135343-1476343548.1662135343), [MIT Technology Review](https://www.technologyreview.com/?_ga=2.218676121.1255165193.1662135343-1476343548.1662135343),
+Guardian's [AI section](https://www.theguardian.com/technology/artificialintelligenceai). Here is an updated list of all [AI
+seminars](https://aihub.org/resources/) and this [medium article](https://medium.com/machine-learning-in-practice/my-curated-list-of-ai-and-machine-learning-resources-from-around-the-web-9a97823b8524) summarizes many
+resources. Also some important youtube AI channels
+with good content - [StatQuest](https://www.youtube.com/c/joshstarmer/videos), [Yannic Kilcher](https://www.youtube.com/c/YannicKilcher/videos), [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai/videos), [3blue1brown](https://www.youtube.com/c/3blue1brown), [stanfordonline](https://www.youtube.com/user/stanfordonline/videos), [sentdex](https://www.youtube.com/c/sentdex)
+etc.
+
+
+Professional Certifications:
++ [EITCA - AI](https://eitca.org/eitca-ai-artificial-intelligence-academy/) : European Artificial Intelligence
+Certificate (***)
++ [Google Cloud Professional ML Engineer](https://cloud.google.com/certification/machine-learning-engineer)
++ [Microsoft Azure AI Engineer Associate](https://docs.microsoft.com/en-us/certifications/azure-ai-engineer/)
++ [tensorflow developer certificate](https://www.tensorflow.org/certificate)
+
+
+AI Product Manager: [AI Product manager
+specialization](https://www.coursera.org/specializations/ai-product-management-duke), [AI product manager nanodegree](https://www.udacity.com/course/ai-product-manager-nanodegree--nd088).
