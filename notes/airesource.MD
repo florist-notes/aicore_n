@@ -650,41 +650,29 @@ Many premier AI research labs provide courses via
 > Europe : [ETH-Z](https://ethz.ch/en/news-and-events/artificial-intelligence.html), [inria](https://www.inria.fr/en), [IDSIA](https://www.idsia.ch/), Norwegian AI research
 consortium ([NORA](https://www.nora.ai/nora-eu/)), [Google AI Zurich](https://research.google/locations/zurich/), [Apple AI Zurich](https://www.apple.com/careers/chde/teams/machine-learning-and-ai.html),
 [ETH-Z AI](https://ai.ethz.ch/), [ETH-Z Robotic System Lab](https://rsl.ethz.ch/), ETH-Z [drone projects](https://asl.ethz.ch/research/flying-robots.html).
-> NaverLabs Europe, Vision4AI.eu, ellis.eu (European
-Laboratory for Learning and Intelligent Systems),
-Institute of ethical AI and ML, Alan Turing Institute,
-sustainable-ai.eu, HPE HPC/AI EMEA RESEARCH LAB
-(ERL), EUROPEAN AI LANDSCAPE, Zurich NLP
-group, IDIAP.
+> {NaverLabs Europe](https://europe.naverlabs.com/), [Vision4AI.eu](https://www.vision4ai.eu/community/), [ellis.eu](https://ellis.eu/) (European Laboratory for Learning and Intelligent Systems), [Institute of ethical AI and ML](https://ethical.institute/), [Alan Turing Institute](https://www.turing.ac.uk/),
+[sustainable-ai.eu](https://sustainable-ai.eu/), HPE HPC/AI EMEA RESEARCH LAB ([ERL](https://www.hpe.com/emea_europe/en/compute/hpc/emea-research-lab.html)), [EUROPEAN AI LANDSCAPE](https://ec.europa.eu/jrc/communities/sites/jrccties/files/reportontheeuropeanailandscapeworkshop.pdf), Zurich [NLP
+group](https://zurich-nlp.ch/), [IDIAP](https://www.idiap.ch/en/scientific-research/researchgroups).
 > CLAIRE AI Network : All the best EU AI research labs
-are listed here in this document! (***)
-> ALL EU AI startups: check this! it lists all AI startups
+are listed [here](https://claire-ai.org/research-network/) in this document! (***)
+> [ALL EU AI startups](https://www.ai-startups-europe.eu/): check this! it lists all AI startups
 in EU solving problems from different industries. We
 can also check AI use cases in different industries via
-AMAI AI experts.
+[AMAI AI experts](https://www.am.ai/en/applications?size=n_21_n).
 
 
 AI Research Labs & Groups in Germany:
 
-There are several KI research labs in Germany:
-> German Research Center for Artificial Intelligence (
+> [German Research Center for Artificial Intelligence](https://www.dfki.de/web) (
 Deutsches Forschungszentrum für Künstliche
-Intelligenz ) : DFKI is the federal government body for
-KI : This DFKI - Robotics Innovation Center is nearby
+Intelligenz ) : [DFKI](https://en.wikipedia.org/wiki/German_Research_Centre_for_Artificial_Intelligence) is the federal government body for
+KI : This DFKI - [Robotics Innovation Center](https://www.dfki.de/en/web/research/research-departments/robotics-innovation-center) is nearby
 in Bremen.
-x Several other important AI centres : TÜBINGEN AI
-CENTER , KI-Berlin, KI.NRW, appliedAI.de, Network of
-Critical Overview
-information about AI
-landscape in Europe >
-Germany > Hamburg
-from academia to
-government
-institutions.
-National Centres of Excellence for AI Research
-This is such a beautiful document to understand ai
-research in germany. check this document!!
-also cyber-valley : is Europe's largest research
+x Several other important AI centres : [TÜBINGEN AI
+CENTER](https://tuebingen.ai/) , [KI-Berlin](https://ki-berlin.de/en/), [KI.NRW](https://www.ki.nrw/en/), [appliedAI.de](https://www.appliedai.de/), [Network of National Centres of Excellence for AI Research](https://mcml.ai/news/flyer_1.pdf).
+This is such a beautiful [document](https://www.dfg.de/download/pdf/dfg_im_profil/internationales/forschungsmarketing/plakat_rig_artificial_intelligence.pdf) to understand ai
+research in germany.
+also [cyber-valley](https://cyber-valley.de/en) : is Europe's largest research
 consortium in the field of artificial intelligence The
 state of Baden-Württemberg, the Max Planck Society
 with the Max Planck Institute for Intelligent Systems,
@@ -698,15 +686,13 @@ supported by the Christian Bürkert Foundation, the
 Gips-Schüle Foundation, the Vector Foundation and
 the Carl Zeiss Foundation.
 
-> TUM Vision groups, AI4EO (Artificial Intelligence for
-Earth Observation), Bosch AI, IBM research,
-Uni-Freiburg, LeibnizAI Lab, DLR Institute for Robotics
-and Mechatronics, TUD AIML group. Saarbrücken and
+> TUM [Vision groups](https://cvai.in.tum.de/), AI4EO (Artificial Intelligence for
+Earth Observation), [Bosch AI](https://www.bosch-ai.com/), [IBM research](https://research.ibm.com/), [Uni-Freiburg](https://ml.informatik.uni-freiburg.de/), [LeibnizAI Lab](https://leibniz-ai-lab.de/), [DLR Institute for Robotics
+and Mechatronics](https://www.dlr.de/rm/en/desktopdefault.aspx/tabid-3755/17612_read-77766/), TUD [AIML group](https://ml-research.github.io/). Saarbrücken and
 Tübingen seems to have lot of AI institutes.
 
 AI Research Labs & Groups in Hamburg:
-> ARtificial Intelligence Center Hamburg (ARIC),
-AI.hamburg, TUHH AI research publications,
-Universität Hamburg AI & Robotics group.
+> ARtificial Intelligence Center Hamburg ([ARIC](https://aric-hamburg.de/)),
+[AI.hamburg](https://ai.hamburg/de/about/), TUHH AI [research publications](https://deepai.org/organization/university-of-hamburg), Universität Hamburg [AI & Robotics group](https://www.inf.uni-hamburg.de/en/inst/ab/wtm/research.html).
 
 
