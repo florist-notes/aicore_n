@@ -438,3 +438,132 @@ Good AI courses:
 
 </table>
 
+
+## Premier AI conferences:
++ [CVPR](https://cvpr2022.thecvf.com/) : IEEE / CVF Computer Vision and Pattern
+Recognition Conference (CVPR)
++ [ICML](https://icml.cc/) : International Conference on Machine
+Learning (ICML)
++ [NeurIPS](https://nips.cc/) : Neural Information Processing Systems
+(abbreviated as NeurIPS)
++ [ECCV](https://eccv2022.ecva.net/) : European Conference on Computer Vision
+(ECCV)
++ [ICLR](https://iclr.cc/) : The International Conference on Learning
+Representations (ICLR)
++ [IROS](https://iros2022.org/) : IEEE/RSJ International Conference on
+Intelligent Robots and Systems (IROS)
++ [RSS](https://roboticsconference.org/) : Robotics: Science and Systems (RSS)
++ [NVIDIA GTC](https://www.nvidia.com/gtc/) : (GPU Technology Conference) is a
+global AI conference.
++ [Google Cloud Applied ML Summit](https://cloudonair.withgoogle.com/events/summit-applied-ml-2022) : Google Cloud AI
+technologies
++ [AAMAS](https://aamas2022-conference.auckland.ac.nz/) : ACM AAMAS (International Conference on
+Autonomous Agents and Multiagent Systems) is the
+largest and most influential conference in the area of
+agents and multiagent systems.
+
+There are also good platforms to find research
+publications : [arXiv](https://arxiv.org/), google scholar : [robotics](https://scholar.google.de/citations?view_op=top_venues&hl=en&vq=eng_robotics), [artificial intelligence](https://scholar.google.de/citations?view_op=top_venues&hl=en&vq=eng_artificialintelligence), [computer vision and pattern recognition](https://scholar.google.de/citations?view_op=top_venues&hl=en&vq=eng_computervisionpatternrecognition), [Google Quantum AI summer symposium](https://quantumai.google/research/conferences) etc.
+
+
+### Premier AI challenges and competitions:
++ [mlcontests](https://mlcontests.com/) : ml challenges and competitions list
++ [kaggle competitions](https://www.kaggle.com/competitions) : mainly supervised ML/data
+science competitions, but also feature simulation
+competitions which can be good problems for RL. e.g -
+[Jane Street Market Prediction — $100,000](https://www.kaggle.com/c/jane-street-market-prediction) etc.
++ [AICrowd](https://www.aicrowd.com/) : runs a combination of supervised ML
+competitions as well as RL competitions.
++ [AWS deepracer](https://aws.amazon.com/deepracer/) : AWS DeepRacer is a
+beginner-friendly 3D racing simulator aimed at helping
+developers get started with RL.
++ [SC2 AI Arena](https://aiarena.net/) : Starcraft II AI arena for RL algorithms
++ [Gocoder.one](https://www.gocoder.one/) : Coder One is an AI competition based
+on the classic console game, bomberman.
++ [flatland](https://www.aicrowd.com/challenges/flatland-3) : Flatland is an annual competition featured
+as part of NeurIPS 2020. It is designed to tackle the
+problem of efficiently managing dense traffic on
+complex railway networks. The goal is to construct the
+best schedule that minimizes the delay in the
+requested arrival time of all trains.
++ [MineRL](https://minerl.io/) : MineRL is concerned with the development
+of sample-efficient deep RL algorithms which can
+solve hierarchical, sparse reward environments using
+human demonstrations in Minecraft.
++ [nethack](https://nethackchallenge.com/) : NetHack is another annual competition at
+NeurIPS 2021 held on AICrowd. Teams compete to
+build the best agents to play NetHack, an
+ASCII-rendered single-player dungeon crawl game.
+NetHack features procedurally-generated levels, with
+hundreds of complex scenarios, making it an
+extremely challenging environment for current
+state-of-the-art RL.
++ [CompilerGym](https://github.com/facebookresearch/CompilerGym) : CompilerGym is actually a toolkit for
+applying reinforcement learning to compiler
+optimizations, rather than a competition.
++ [ods.ai](https://ods.ai/competitions) : ml competition platform
++ [bitGrid](https://bitgrit.net/competition/) : Bitgrit is a data science competition
+platform. Bitgrit has hosted several AI competitions
+including one to predict foreign exchange rates and
+another to optimize the algorithm for a
+profile-matching mobile app.
++ [numer.ai](https://numer.ai/) : Numer ai is, according to their website,
+“The hardest data science tournament on the planet”,
+it’s backed by Union Square Ventures, the co-founder
+We can observe AI
+competitions and
+different problem
+statements / challenges
+faced by different
+industries including
+construction and
+mobility to understand
+solution approaches
+across the globe.
+of Renaissance, and the co-founder of Coinbase. The
+main idea of the tournament is to build the world’s
+open hedge fund by modeling the stock market.
++ [drivendata](https://www.drivendata.org/) : DrivenData brings cutting-edge practices
+in data science and crowd-sourcing to some of the
+world’s biggest social challenges and the
+organizations taking them on. e.g : [MagNet: Model the
+Geomagnetic Field](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/).
++ [battlecode](https://battlecode.org/) : The MIT 6.147 (formerly 6.370)
+Battlecode programming competition is a unique
+challenge that combines battle strategy, software
+engineering, and artificial intelligence.
+There are also lot of [conference competitions](https://github.com/skrish13/ml-contests-conf)
+happening every year.
++ [xeek.ai](https://xeek.ai/challenges) : Xeek.ai challenges, unite the Data and
+Geoscience communities which include leading data
+scientists, developers, geoscientists, and machine
+learning specialists — around the shared goal of
+crowdsourcing innovative solutions that solve energy’s
+largest challenges.
++ [dPhi](https://dphi.tech/challenges/#active) : DPhi is a community with a vision to build data
+culture and democratize Data Science learning.
++ [dataCrunch](https://www.crunchdao.com/) : DataCrunch a team of 42-Paris students
+and a former finance teacher from ESSEC Paris which
+aims to disrupt the Hedge Fund industry by building
+the first hedge fund run and owned by a community of
+data scientists!
++ [challenge data](https://challengedata.ens.fr/challenges/year/2021) : Challenge Data website of ENS
+(École Normale Supérieure) of Paris and Collège de
+France, organizes challenges of data sciences from
+data provided by public services, companies, and
+laboratories. It is supported by the CFM chair and the
+PRAIRIE Institute.
++ [signate.jp](https://signate.jp/competitions) : SIGNATE is the only platform in Japan
+that empowers the AI/Data Analytics talents through
+Data Science competitions to solve business problems
+faced by businesses and governments.
++ [grand-challenge](https://grand-challenge.org/challenges/) : Grand Challenge is a platform for
+the end-to-end development of Machine Learning
+solutions in Bio-Medical Imaging. Most Advanced
+Research Challenges are posted on this amazing
+platform.
+
+
+Hackathons: [hackTUM](https://hack.tum.de/), [hackZurich](https://hackzurich.com/), [NASA Space app
+challenge](https://www.spaceappschallenge.org/), [pytorch
+summer hack](https://pytorchmpk.devpost.com/), [esa socis](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/SOCIS_The_ESA_Summer_of_Code_in_Space) etc.
