@@ -65,7 +65,7 @@ YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai
 <th>
   <p>
 
-  [Ameca facial motion capture](https://youtu.be/3OHILYjsW7c), [Ameca conversation using GPT 3 - Will robots take over the world?](https://youtu.be/EWACmFLvpHE), [Boston Dynamics](https://youtu.be/fn3KWM1kuAw), [Robo Threads](https://youtu.be/INSyV4dgqu8), [Festo Bionic Robots](https://youtu.be/_qRGIRvr06w).
+  [Ameca facial motion capture](https://youtu.be/3OHILYjsW7c), [Ameca conversation using GPT 3 - Will robots take over the world?](https://youtu.be/EWACmFLvpHE), [Boston Dynamics](https://youtu.be/fn3KWM1kuAw), [Robo Threads](https://youtu.be/INSyV4dgqu8), [Festo Bionic Robots](https://youtu.be/_qRGIRvr06w),  Swarm drones : [1](https://youtu.be/P9ZbipO8vxM), [2](https://youtu.be/zq1ud7CBOaU), [3](https://youtu.be/DK6IGG5zRU8), [4](https://youtu.be/L0fJ0EHHfOA), [deep sea soft robotics](https://youtu.be/shr6sJy_29E), [OceanOneK](https://youtu.be/h2CLLBUpPZg), [snake robots](https://youtu.be/FWr-MvOOOYU), [cyborg insects](https://youtu.be/awG09liCMD4), [insect robot](https://youtu.be/loHzoeFP9Io), [soft robotics clothing](https://youtu.be/OoXCO8NB9B8), [soft robotic fish](https://youtu.be/JPabeUxSfAw), [sensitive skin for robotics](https://youtu.be/M-Y2HW6JcGI), [nanobots](https://youtu.be/2TjdGuBK9mI), [bionic arms](https://youtu.be/F_brnKz_2tI), [Xenobot 2.0](https://youtu.be/JPFRUZGqUFA), [stretch self heal electronics](https://youtu.be/mWKb_CMmwXw), [ultrasonic sticker](https://youtu.be/Kn2J8W4csNc), [stretchy color shifting material](https://youtu.be/3-BH7164GaM).
   </p>
 </th>
 
@@ -73,3 +73,5 @@ YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai
 </tr>
 
 </table>
+
+resources : [basic nn](https://youtu.be/bfmFfD2RIcg), [neural networks - 3b1b](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi), [how are memories stored in neural network?](https://youtu.be/piF6D6CQxUw), [loss function](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/), [LF 2](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/), [Optimizers](https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6) / adaptive learning rate ([Gradient Descent](https://youtu.be/sDv4f4s2SB8),  Adam, adagrad, adadelta, RMSProp etc), [Activation Function](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6), ML interview ques: [article 1](https://www.simplilearn.com/tutorials/machine-learning-tutorial/machine-learning-interview-questions), [article 2](https://www.mygreatlearning.com/blog/machine-learning-interview-questions/), [article 3](https://www.interviewbit.com/machine-learning-interview-questions/), [ML design interview](https://github.com/khangich/machine-learning-interview), [article 5](https://www.interviewbit.com/machine-learning-interview-questions/).
