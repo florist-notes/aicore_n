@@ -75,3 +75,9 @@ YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai
 </table>
 
 resources : [basic nn](https://youtu.be/bfmFfD2RIcg), [neural networks - 3b1b](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi), [how are memories stored in neural network?](https://youtu.be/piF6D6CQxUw), [loss function](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/), [LF 2](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/), [Optimizers](https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6) / adaptive learning rate ([Gradient Descent](https://youtu.be/sDv4f4s2SB8),  Adam, adagrad, adadelta, RMSProp etc), [Activation Function](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6), ML interview ques: [article 1](https://www.simplilearn.com/tutorials/machine-learning-tutorial/machine-learning-interview-questions), [article 2](https://www.mygreatlearning.com/blog/machine-learning-interview-questions/), [article 3](https://www.interviewbit.com/machine-learning-interview-questions/), [ML design interview](https://github.com/khangich/machine-learning-interview), [article 5](https://www.interviewbit.com/machine-learning-interview-questions/).
+
+
+#### Into AI Courses: [ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction), [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning), [Mathematics for ML](https://www.coursera.org/specializations/mathematics-machine-learning).
+
+## AI BOOKS:
+
