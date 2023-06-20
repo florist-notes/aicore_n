@@ -631,3 +631,82 @@ Certificate (***)
 
 AI Product Manager: [AI Product manager
 specialization](https://www.coursera.org/specializations/ai-product-management-duke), [AI product manager nanodegree](https://www.udacity.com/course/ai-product-manager-nanodegree--nd088).
+
+
+## AI Research Labs & Groups - International:
+
+These are premier AI research labs who give out
+cutting edge AI possibilities:
+
+> [Stanford AI](https://ai.stanford.edu/), [MIT CSAIL](https://www.csail.mit.edu/) , Berkeley AI Research ([BAIR](https://bair.berkeley.edu/)),
+[CMU AI](https://ai.cs.cmu.edu/), [CMU Robotics](https://www.ri.cmu.edu/).
+> [Laboratory for Vision and Artificial Intelligence](https://en.etsmtl.ca/unites-de-recherche/livia/accueil?lang=en-CA)
+(LIVIA), UPenn [GRASP](https://www.grasp.upenn.edu/), [EPFL](https://www.epfl.ch/schools/ic/research/artificial-intelligence-machine-learning/) - [CIS](https://www.epfl.ch/research/domains/cis/), [MLO Lab](https://www.epfl.ch/labs/mlo/), [MIT SparkLab](https://web.mit.edu/sparklab/).
+> JP Morgen [AI Research Lab](https://www.jpmorgan.com/technology/artificial-intelligence), [Elkanio Research Labs](https://www.elkanio.com/), [Tesla AI](https://www.tesla.com/AI).
+> [Microsoft AI Research](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/), Meta AI ([FAIR](https://ai.facebook.com/)), [Deepmind](https://www.deepmind.com/), [OpenAI](https://openai.com/)
+Many premier AI research labs provide courses via
+[coursera](https://www.coursera.org/courses?query=artificial%20intelligence), [edX](https://www.edx.org/), [udemy](https://www.udemy.com/) etc. 
+
+> Europe : [ETH-Z](https://ethz.ch/en/news-and-events/artificial-intelligence.html), [inria](https://www.inria.fr/en), [IDSIA](https://www.idsia.ch/), Norwegian AI research
+consortium ([NORA](https://www.nora.ai/nora-eu/)), [Google AI Zurich](https://research.google/locations/zurich/), [Apple AI Zurich](https://www.apple.com/careers/chde/teams/machine-learning-and-ai.html),
+[ETH-Z AI](https://ai.ethz.ch/), [ETH-Z Robotic System Lab](https://rsl.ethz.ch/), ETH-Z [drone projects](https://asl.ethz.ch/research/flying-robots.html).
+> NaverLabs Europe, Vision4AI.eu, ellis.eu (European
+Laboratory for Learning and Intelligent Systems),
+Institute of ethical AI and ML, Alan Turing Institute,
+sustainable-ai.eu, HPE HPC/AI EMEA RESEARCH LAB
+(ERL), EUROPEAN AI LANDSCAPE, Zurich NLP
+group, IDIAP.
+> CLAIRE AI Network : All the best EU AI research labs
+are listed here in this document! (***)
+> ALL EU AI startups: check this! it lists all AI startups
+in EU solving problems from different industries. We
+can also check AI use cases in different industries via
+AMAI AI experts.
+
+
+AI Research Labs & Groups in Germany:
+
+There are several KI research labs in Germany:
+> German Research Center for Artificial Intelligence (
+Deutsches Forschungszentrum für Künstliche
+Intelligenz ) : DFKI is the federal government body for
+KI : This DFKI - Robotics Innovation Center is nearby
+in Bremen.
+x Several other important AI centres : TÜBINGEN AI
+CENTER , KI-Berlin, KI.NRW, appliedAI.de, Network of
+Critical Overview
+information about AI
+landscape in Europe >
+Germany > Hamburg
+from academia to
+government
+institutions.
+National Centres of Excellence for AI Research
+This is such a beautiful document to understand ai
+research in germany. check this document!!
+also cyber-valley : is Europe's largest research
+consortium in the field of artificial intelligence The
+state of Baden-Württemberg, the Max Planck Society
+with the Max Planck Institute for Intelligent Systems,
+the Universities of Stuttgart and Tübingen as well as
+Amazon, BMW AG, IAV GmbH, Mercedes-Benz Group
+AG, Dr. Ing. hc F. Porsche AG, Robert Bosch GmbH and
+ZF Friedrichshafen AG are the founding partners of
+this initiative. In addition, the Fraunhofer-Gesellschaft
+is a Cyber Valley partner. Cyber Valley is also
+supported by the Christian Bürkert Foundation, the
+Gips-Schüle Foundation, the Vector Foundation and
+the Carl Zeiss Foundation.
+
+> TUM Vision groups, AI4EO (Artificial Intelligence for
+Earth Observation), Bosch AI, IBM research,
+Uni-Freiburg, LeibnizAI Lab, DLR Institute for Robotics
+and Mechatronics, TUD AIML group. Saarbrücken and
+Tübingen seems to have lot of AI institutes.
+
+AI Research Labs & Groups in Hamburg:
+> ARtificial Intelligence Center Hamburg (ARIC),
+AI.hamburg, TUHH AI research publications,
+Universität Hamburg AI & Robotics group.
+
+
