@@ -695,4 +695,30 @@ AI Research Labs & Groups in Hamburg:
 > ARtificial Intelligence Center Hamburg ([ARIC](https://aric-hamburg.de/)),
 [AI.hamburg](https://ai.hamburg/de/about/), TUHH AI [research publications](https://deepai.org/organization/university-of-hamburg), Universität Hamburg [AI & Robotics group](https://www.inf.uni-hamburg.de/en/inst/ab/wtm/research.html).
 
+## Datasets : 
+
+PUBLIC datasets:
+- [google dataset search](https://datasetsearch.research.google.com/) | [kaggle dataset](https://www.kaggle.com/datasets) | [paperswithcode dataset](https://paperswithcode.com/datasets) | [openml-dataset](https://www.openml.org/search?type=data&sort=runs&status=active) | [nasa earth dataset](https://www.earthdata.nasa.gov/) (largest collection of geo-related
+datasets about the earth, climate and water bodies.) | [AWS opendata](https://registry.opendata.aws/) |  [Azure opendata](https://docs.microsoft.com/en-us/azure/open-datasets/dataset-catalog) | [data.world](https://data.world/) | [huggingface](https://huggingface.co/datasets) | [UCI ML dataset](https://archive.ics.uci.edu/ml/datasets.php) | [datahub.io](https://datahub.io/search)
+- [github/awesome-public-dataset](https://github.com/awesomedata/awesome-public-datasets) | [govdata.de](https://www.govdata.de/) | [destatis.de](https://www.destatis.de/EN/Service/OpenData/_node.html) | [data.gov](https://data.gov/) | [visualdata.io](https://visualdata.io/discovery) (Computer Vision datasets) |  [CMU library dataset](https://guides.library.cmu.edu/machine-learning/datasets) , [TUHH](https://www.fdr.uni-hamburg.de/)
+x COMPUTER VISION datasets: [xView](http://xviewdataset.org/#dataset), [ImageNet](https://image-net.org/),
+[google open images](https://ai.googleblog.com/2016/09/introducing-open-images-dataset.html), [IMDB-wiki](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) (annotated face
+images), [dog-breed dataset](http://vision.stanford.edu/aditya86/ImageNetDogs/), [TUM](https://vision.in.tum.de/data/datasets)
+- [kinetic 700-2020](https://www.deepmind.com/open-source/kinetics) (human poses from YT videos)
+- [cityscape](https://www.cityscapes-dataset.com/) (semantic segmentation)
+- [colors with RGB values](https://github.com/codebrainz/color-names/blob/master/output/colors.csv).
+x NLP datasets: [quantumstat](https://datasets.quantumstat.com/), [QA](https://hotpotqa.github.io/), [amazon reviews](https://snap.stanford.edu/data/web-Amazon.html),
+[rotten tomato reviews](https://drive.google.com/file/d/1w1TsJB-gmIkZ28d1j7sf1sqcPmHXw352/view)
+x Sentiment analysis: [IMDB reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews), [stanford sentiment](https://nlp.stanford.edu/sentiment/code.html), [twitter US airlines](https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment)
+x Self Driving car dataset: [waymo](https://waymo.com/open/), [berkeley deepdrive](https://bdd-data.berkeley.edu/),
+[WPI dataset](http://computing.wpi.edu/dataset.html) (traffic lights, pedestrian, and lane
+detection), [bosch small traffic light](https://hci.iwr.uni-heidelberg.de/content/bosch-small-traffic-lights-dataset), [comma.ai](https://archive.org/details/comma-dataset) (car’s
+speed, acceleration, steering angle, and GPS
+coordinates), [MIT driveseg](https://agelab.mit.edu/methods/mit-driveseg-dataset-for-dynamic-driving-scene-segmentation), [UCSD-LISA](http://cvrr-nas.ucsd.edu/LISA/lisa-traffic-sign-dataset.html).
+x geo & satellite datasets::
+- [URBAN DATA PLATFORM](http://www.urbandataplatform.hamburg/daten-finden/) : [MetaVER](https://metaver.de/freitextsuche?f=type:metadata;metadata:map;provider:hh), [geoportal](https://geoportal.metropolregion.hamburg.de/mrhportal/index.html),
+[transparenzportal](https://sdg-portal.de/de/tipps-praxis/praxisbeispiele/open-data-im-transparenzportal-hamburg), [dlr eoc](https://geoservice.dlr.de/web/), [GIS data](https://freegisdata.rtwilson.com/), [UCSC](https://guides.library.ucsc.edu/opensourcegis), [geodaten](https://www.hamburg.de/bsw/geodaten/)
+- satellite data: [Copernicus](https://scihub.copernicus.eu/), [DLR](https://www.dlr.de/eoc/en/desktopdefault.aspx/tabid-8799/)
+PRIVATE datasets |  [planet](https://www.planet.com/), [arcGIS](https://www.esri.com/en-us/arcgis/products/imagery-remote-sensing/capabilities/analysis) etc
+
 
