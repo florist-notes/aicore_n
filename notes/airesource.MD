@@ -109,7 +109,7 @@ Neural Network Learning: Theoretical Foundations ([book](https://www.amazon.de/-
   <img src="./img/prob.jpg" width=60%>
   <br />
   
-Probabilistic Graphical Models: Principles and Techniques([book](https://www.amazon.de/-/en/Daphne-Koller/dp/0262013193))<br />
+Probabilistic Graphical Models: Principles and Techniques([book](https://www.amazon.de/dp/0387848576/))<br />
   
   </p>
 </th>
@@ -122,7 +122,74 @@ Deep Learning (Adaptive Computation and Machine Learning series([book](https://w
   
   </p>
 </th>
+<th>
+  <p>
+  <img src="./img/pp.jpg" width=70%>
+  <br />
+  
+Pattern Recognition and Machine Learning (Information Science and Statistics)([book](https://www.amazon.de/-/en/Christopher-M-Bishop/dp/0387310738))<br />
+  
+  </p>
+</th>
+</tr>
+
+
+
+
+<tr>
+<th>
+  <p>
+  <img src="./img/el.jpg" width=60%>
+  <br />
+
+ The Elements of Statistical Learning: Data Mining, Inference, and Prediction ([book](https://www.amazon.de/-/en/Martin-Anthony/dp/052157353X))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <img src="./img/ai.jpg" width=70%>
+  <br />
+  
+Artificial Intelligence: A Modern Approach ([book](https://www.amazon.de/-/en/Stuart-J-Russell/dp/1292153962/))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <img src="./img/ml.jpg" width=60%>
+  <br />
+  
+Machine Learning: A Probabilistic Perspective([book](https://www.amazon.de/-/en/Marc-Peter-Deisenroth/dp/110845514X))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <img src="./img/math.jpg" width=70%>
+  <br />
+  
+Mathematics for Machine Learning ([book](https://www.amazon.de/-/en/Ian-Goodfellow/dp/0262035618/))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <img src="./img/rl.jpg" width=70%>
+  <br />
+  
+Reinforcement Learning: An Introduction (Adaptive Computation and Machine Learning series)([book](https://www.amazon.de/-/en/Richard-S-Sutton/dp/0262039249/))<br />
+  
+  </p>
+</th>
 </tr>
 </table>
+
+Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learning Mastery](https://machinelearningmastery.com/products/), [Statista In-depth AI 2021](https://de.statista.com/statistik/studie/id/50489/dokument/in-depth-report-artificial-intelligence/).
+
+## STANFORD AI COURSES:
+
+
 
 
