@@ -191,5 +191,250 @@ Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learnin
 ## STANFORD AI COURSES:
 
 
+<table style="width:100%" >
+<tr>
+<th>
+  <p>
+  <br />
 
+  CS221 : Artificial Intelligence: Principle & Techniques ([CLASS](https://bulletin.stanford.edu/courses/1057301))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  EE 364A : Convex Optimization I ([CLASS](https://bulletin.stanford.edu/courses/2066521))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+  EE 364B :Convex Optimization II ([CLASS](https://bulletin.stanford.edu/courses/2066541))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 149 : Parallel Computing ([CLASS](https://bulletin.stanford.edu/courses/1056791))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 229 : Machine Learning ([CLASS](https://bulletin.stanford.edu/courses/1057501))<br />
+  
+  </p>
+</th>
+</tr>
+
+
+
+<tr>
+<th>
+  <p>
+  <br />
+
+  CS 224N : Natural Language Processing with Deep Learning ([CLASS](https://bulletin.stanford.edu/courses/1209041))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 224W : Machine Learning with Graphs ([CLASS](https://bulletin.stanford.edu/courses/1058241))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 228 : Probabilistic Graphical Models: Principles and Techniques([CLASS](https://bulletin.stanford.edu/courses/1057481))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 234 : Reinforcement Learning ([CLASS](https://bulletin.stanford.edu/courses/2190451))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 231N : Convolutional Neural Networks for Visual Recognition([CLASS](https://bulletin.stanford.edu/courses/2164531))<br />
+  
+  </p>
+</th>
+</tr>
+
+
+
+<tr>
+<th>
+  <p>
+  <br />
+
+  CS 330 Deep Multi-task and Meta Learning ([CLASS](https://bulletin.stanford.edu/courses/2215371))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 237A : Principles of Robot Autonomy I ([CLASS](https://bulletin.stanford.edu/courses/2185453))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+ CS 237B : Principles of Robot Autonomy II ([CLASS](https://bulletin.stanford.edu/courses/2215361))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 238 : Decision Making under Uncertainty ([CLASS](https://bulletin.stanford.edu/courses/2158402))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 233 : Geometric and Topological Data Analysis([CLASS](https://bulletin.stanford.edu/courses/2170091))<br />
+  
+  </p>
+</th>
+</tr>
+
+
+</table>
+
+Notes: [shervine](https://stanford.edu/~shervine/teaching/cs-221/).
+
+Good AI courses:
+
+
+
+<table style="width:100%" >
+<tr>
+<th>
+  <p>
+  <br />
+
+  CMU : Multimodal ML ([class](https://www.youtube.com/watch?v=VIq5r7mCAyw&list=PLTLz0-WCKX616TjsrgPr2wFzKF54y-ZKc))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  CMU : Neural Nets for NLP ([class](https://youtu.be/vnx6M7N-ggs))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  CS 233 : Geometric & Topological Data Analysis ([class](http://graphics.stanford.edu/courses/cs233-21-spring/))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  MIT 18.065 : Matrix Methods in Data Analysis, Signal Processing, and Machine Learning ([class](https://www.youtube.com/watch?v=Cx5Z-OslNWE&list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  MIT : Deep Learning for Life Sciences ([class](https://www.youtube.com/watch?v=0jWOZoTsYzI&list=PLypiXJdtIca5sxV7aE3-PS9fYX3vUdIOX))<br />
+  
+  </p>
+
+</th>
+</tr>
+
+
+
+<tr>
+<th>
+  <p>
+  <br />
+
+  MIT : Machine Vision ([class](https://www.youtube.com/watch?v=tY2gczObpfU&list=PLUl4u3cNGP63pfpS1gV5P9tDxxL_e4W8O))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  MIT : ML for Genomics ([class](https://www.youtube.com/watch?v=dPlcQnWtjeo&list=PLypiXJdtIca6U5uQOCHjP9Op3gpa177fK))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  MIT : Underactuated Robotics ([class](https://www.youtube.com/watch?v=3g-w88nNW6E&list=PLkx8KyIQkMfXyKku6DstXjD9xU93ptDyc))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  UC Berkeley 287 : Advanced Robotics ([class](https://www.youtube.com/watch?v=xWPViQ6LI-Q&list=PLwRJQ4m4UJjNBPJdt8WamRAt4XKc639wF))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <br />
+
+  MIT : Deep Learning ([class](https://www.youtube.com/watch?v=7sB052Pz0sQ&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI))<br />
+  
+  </p>
+
+</th>
+</tr>
+
+</table>
 
