@@ -81,3 +81,48 @@ resources : [basic nn](https://youtu.be/bfmFfD2RIcg), [neural networks - 3b1b](h
 
 ## AI BOOKS:
 
+
+
+<table style="width:100%" >
+<tr>
+<th>
+  <p>
+  <img src="./img/n.jpg" width=60%>
+  <br />
+
+  100 page Machine Learning book ([book](https://www.amazon.de/-/en/Martin-Anthony/dp/052157353X))<br />
+  
+  </p>
+
+</th>
+<th>
+  <p>
+  <img src="./img/nn.jpg" width=60%>
+  <br />
+  
+Neural Network Learning: Theoretical Foundations ([book](https://www.amazon.de/-/en/Andriy-Burkov/dp/199957950X))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <img src="./img/prob.jpg" width=60%>
+  <br />
+  
+Probabilistic Graphical Models: Principles and Techniques([book](https://www.amazon.de/-/en/Daphne-Koller/dp/0262013193))<br />
+  
+  </p>
+</th>
+<th>
+  <p>
+  <img src="./img/dd.jpg" width=70%>
+  <br />
+  
+Deep Learning (Adaptive Computation and Machine Learning series([book](https://www.amazon.de/-/en/Ian-Goodfellow/dp/0262035618/))<br />
+  
+  </p>
+</th>
+</tr>
+</table>
+
+
