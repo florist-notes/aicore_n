@@ -345,3 +345,152 @@ Extra
 </tr>
 
 </table>
+
+Natural Language Processing (NLP) libraries:
+
+<table>
+<tr>
+
+<th>Heading</th>
+<th>Libraries</th>
+
+</tr>
+<tr>
+
+<td>NLP toolkit</td>
+<td>
+
++ [funNLP](https://github.com/fighting41love/funNLP), [NLP Progress](https://github.com/sebastianruder/NLP-progress), [flair](https://github.com/flairNLP/flair), [pytext](https://github.com/facebookresearch/pytext), [allenNLP](https://github.com/allenai/allennlp), [nltk](https://github.com/nltk/nltk), [haystack](https://github.com/deepset-ai/haystack), [ParlAI](https://github.com/facebookresearch/ParlAI), [fairseq](https://github.com/facebookresearch/fairseq), [ERNIE](https://github.com/PaddlePaddle/ERNIE), [stanza](https://github.com/stanfordnlp/stanza), [speech brain](https://github.com/speechbrain/speechbrain), [OpenNRE](https://github.com/thunlp/OpenNRE).
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+audio analysis
+</td>
+<td>
+
++ [PyAudioAnalysis](https://github.com/tyiannak/pyAudioAnalysis), [espnet](https://github.com/espnet/espnet) (end2endspeech processing), [librosa](https://github.com/librosa/librosa)
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+chatbot
+</td>
+<td>
+
++ [errbot](https://github.com/errbotio/errbot), [wav2lip](https://github.com/Rudrabha/Wav2Lip) (speech2lip)
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>text2speech</td>
+<td>
+
++ [TTS](https://github.com/coqui-ai/TTS)
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>time series </td>
+<td>
+
++ [darts](https://github.com/unit8co/darts), [kats](https://github.com/facebookresearch/Kats), [prophet](https://facebook.github.io/prophet/), [Anomaly Transformer](https://github.com/thuml/Anomaly-Transformer)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>conversational AI  </td>
+<td>
+
++ [NeMO](https://github.com/NVIDIA/NeMo), [SpeechRecognition](https://github.com/Uberi/speech_recognition)
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>neural machine translation
+ </td>
+<td>
+
++ [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py)
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>voice assistance</td>
+<td>
+
++ [sepia](https://sepia-framework.github.io/), [deepvoiceconversation](https://github.com/andabi/deep-voice-conversion) (voice style transfer)
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>annotation</td>
+<td>
+
++ [doccano](https://github.com/doccano/doccano)
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>CTR</td>
+<td>
+
++ [deepCTR](https://github.com/shenweichen/DeepCTR)
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>extra</td>
+<td>
+
++ [vaderSentiment](https://github.com/cjhutto/vaderSentiment) (sentiment analysis), [gensim](https://github.com/RaRe-Technologies/gensim), [pydub](https://github.com/jiaaro/pydub), [big list of naughty strings](https://github.com/minimaxir/big-list-of-naughty-strings), [snips-nlu](https://github.com/snipsco/snips-nlu), [english words](https://github.com/dwyl/english-words), [vocal-remover](https://github.com/Anjok07/ultimatevocalremovergui).
+
+</td>
+
+</tr>
+</table>
+
