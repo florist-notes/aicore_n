@@ -494,3 +494,89 @@ chatbot
 </tr>
 </table>
 
+
+# ✤ data visualization:
+
+This [list1](https://github.com/javierluraschi/awesome-dataviz), [list2](https://github.com/topics/data-visualization) has most of the data viz
+libraries but i'll list a few which will be relevant for our use cases.
+
+✤ data visualization:
++ [deck.gl](https://github.com/visgl/deck.gl) : [deck.gl](http://deck.gl/) is designed to simplify
+high-performance, WebGL-based visualization of large
+data sets. Check out these [use cases](https://deck.gl/showcase).
++ [streetscape.gl](https://streetscape.gl/) : [streetscape.gl](http://streetscape.gl/) is a toolkit for
+visualizing autonomous and robotics data in the XVIZ
+protocol. It is built on top of React and Uber’s
+WebGL-powered visualization frameworks. Check this
+[demo](https://avs.auto/demo/).
++ [kepler.gl](https://kepler.gl/demo/sfcontour) : github/[Kepler.gl](https://github.com/keplergl/kepler.gl) is a powerful web-based
+geospatial data analysis tool. Built on a high
+performance rendering engine and designed for
+large-scale data sets. [kepler.gl](http://kepler.gl/) is made from [deck.gl](http://deck.gl/).
++ [sanddance](https://microsoft.github.io/SandDance/app/) : github/[SandDance](https://github.com/Microsoft/SandDance) helps you find
+insights about your data with unit visualizations and
+smooth animated transitions. It uses [deck.gl](http://deck.gl/) to render
+chart layouts described with Vega.
++ [flowmapblue](https://github.com/FlowmapBlue/FlowmapBlue) : FlowmapBlue is a free tool for
+representing aggregated numbers of movements
+between geographic locations as flow maps. It is used
+to visualize urban mobility, commuting behavior, bus,
+subway and air travels, bicycle sharing, human and
+bird migration, refugee flows, freight transportation,
+trade, supply chains, scientific collaboration,
+epidemiological and historical data and many other
+topics.
++ [cartodb](https://github.com/CartoDB/cartodb) : With CARTO, you can upload your
+geospatial data (Shapefiles, GeoJSON, etc) using a
+web form and then make it public or private. After it is
+uploaded, you can visualize it in a dataset or on a map,
+search it using SQL, and apply map styles using
+CartoCSS.
++ [cesiumJS](https://github.com/CesiumGS/cesium): An open-source JavaScript library for
+world-class 3D globes and maps.
++ [Alibaba L7](https://github.com/antvis/L7) & [L7plot](https://github.com/antvis/L7Plot) : Large-scale WebGL-powered
+Geospatial Data Visualization analysis engine. L7plot
+is a large-scale geospatial visualization chart library.
++ [datamaps](https://github.com/markmarkoh/datamaps): Customizable SVG map visualizations for
+the web in a single Javascript file using D3.js
+
+✤ GIS python libraries:
++ [geopandas](https://github.com/geopandas/geopandas) : python tools for geographic data
++ [RSGISlib](https://github.com/remotesensinginfo/rsgislib) : The Remote Sensing and GIS software
+library (RSGISLib) is a collection of tools for
+processing remote sensing and GIS datasets.
++ [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet) : If you want to create interactive maps,
+ipyleaflet is a fusion of Jupyter notebook and Leaflet.
+You can control an assortment of customizations like
+loading basemaps, geojson, and widgets.
++ [geemap](https://github.com/giswqs/geemap) : A Python package for interactive mapping
+with Google Earth Engine, ipyleaflet, and ipywidgets.
++ [lidar](https://github.com/giswqs/lidar) : lidar is a Python package for delineating the
+nested hierarchy of surface depressions in digital
+elevation models (DEMs). It is particularly useful for
+analyzing high-resolution topographic data, such as
+DEMs derived from Light Detection and Ranging
+(LiDAR) data.
++ [FOLIUM](https://github.com/python-visualization/folium) : Folium builds on the data wrangling
+strengths of the Python ecosystem and the mapping
+strengths of the Leaflet.js library. Manipulate your data
+in Python, then visualize it in a Leaflet map via folium
++ [geoplot](https://residentmario.github.io/geoplot/index.html) : geoplot is a high-level Python geospatial
+plotting library. It’s an extension to cartopy and
+matplotlib which makes mapping easy: like seaborn
+for geospatial.
+
+✤ ml model visualization:
++ [NETRON](https://github.com/lutzroeder/netron) : Netron is a viewer for neural network,
+deep learning and machine learning models.
++ cnn model structure summary with this [code](https://www.kaggle.com/getting-started/195413).
+Tools to Design or Visualize Architecture of Neural
+Network : [repo](https://github.com/ashishpatel26/Tools-to-Design-or-Visualize-Architecture-of-Neural-Network) is a good list but i'll list down the few
+essentials.
++ [Tensorboard](https://www.tensorflow.org/tensorboard) : TensorFlow visualization toolkit.
++ [PyTorchViz](https://github.com/szagoruyko/pytorchviz) : PyTorch visualization kit.
++ [visualkeras](https://github.com/paulgavrikov/visualkeras) : Visualkeras is a Python package to help
+visualize Keras (either standalone or included in
+TensorFlow) neural network architectures. The
+[keras.utils.vis_utils](https://keras.io/api/utils/model_plotting_utils/) provides utility functions to plot a
+Keras model using Graphviz
