@@ -591,19 +591,36 @@ Keras model using Graphviz
 </tr>
 <tr>
 <td>toolbox</td>
-<td>y</td>
+<td>
+
++ [adversarial robustness toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox),
+[dramatiq](https://github.com/Bogdanp/dramatiq) (py background process),
+[amundsen](https://github.com/amundsen-io/amundsen).</td>
 </tr>
 
 
 <tr>
 <td>web crawling / parse</td>
-<td>y</td>
+<td>
+
++ [scrapy](https://github.com/scrapy/scrapy), [you-get](https://github.com/soimort/you-get) (media dwnldr), [sherlock](https://github.com/sherlock-project/sherlock) (social media), [wttr.in](https://github.com/chubin/wttr.in) (weather),
+[newspaper](https://github.com/codelucas/newspaper), [GHunt](https://github.com/mxrch/GHunt) (investigate google accounts), [hitomi](https://github.com/KurtBestor/Hitomi-Downloader) (media dwnldr), [trape](https://github.com/jofpin/trape),
+[instagram-scraper](https://github.com/arc298/instagram-scraper), [youtube-dl](https://github.com/ytdl-org/youtube-dl), [pytube](https://github.com/pytube/pytube), [pywhat](https://github.com/bee-san/pyWhat), [gallery-dl](https://github.com/mikf/gallery-dl), [kaggle-api](https://github.com/Kaggle/kaggle-api), [instaloader](https://github.com/instaloader/instaloader),
+[autoscraper](https://github.com/alirezamika/autoscraper), [serenata-de-amor](https://github.com/okfn-brasil/serenata-de-amor) (social public administration), [yt-spammer-purge](https://github.com/ThioJoe/YT-Spammer-Purge) (scan
+& delete scam comments), [gerapy](https://github.com/Gerapy/Gerapy), [mps youtube](https://github.com/mps-youtube/mps-youtube), [dirsearch](https://github.com/maurosoria/dirsearch) (web servers), [rebound](https://github.com/shobrook/rebound),
+[lark](https://github.com/lark-parser/lark), [rainbowstream](https://github.com/orakaro/rainbowstream) (twitter client).
+
+</td>
 </tr>
 
 
 <tr>
 <td>data</td>
-<td>y</td>
+<td>
+
++ [snorkel](https://github.com/snorkel-team/snorkel), [imbalanced-learn](https://github.com/scikit-learn-contrib/imbalanced-learn), [datasette](https://github.com/simonw/datasette), [dagster](https://github.com/dagster-io/dagster), [data shader](https://github.com/holoviz/datashader), [ffhq-dataset](https://github.com/NVlabs/ffhq-dataset), [cleanlab](https://github.com/cleanlab/cleanlab).
+
+</td>
 </tr>
 
 
