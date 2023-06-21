@@ -1,6 +1,6 @@
-# Artificial intelligence : s-AI-kia
+# Artificial Intelligence (AI) : 
 
-here is my mini resource guide on AI > ML > DL:
+✿ here is my mini resource guide on AI > ML > DL:
 
 <center><img src="./img/st.png" width=100%></center>
 
@@ -9,11 +9,11 @@ here is my mini resource guide on AI > ML > DL:
 ## Artificial Intelligence [[RESOURCES](./notes/airesource.MD)]
 
 ```latex
-    AI ~ θ|1
+    AI ~ θ|1 💮
 
 ```
 
-## AI tools and Open Source libraries [[list](notes/aitools.MD)]
+###  + AI tools and libraries [[list](notes/aitools.MD)]
 
 ## Deep Learning [[theory](./notes/dltheory.MD)] 
 

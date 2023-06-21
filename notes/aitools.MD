@@ -46,7 +46,7 @@ pylibs
 
 <td>
 
-+ [python-fire](https://github.com/google/python-fire), faker & mimesis, sh, marshmallow, boltons,
++ [python-fire](https://github.com/google/python-fire), [faker](https://github.com/joke2k/faker) & mimesis, sh, marshmallow, boltons,
 py-github, py-dotenv, jedi, jedi-vim, setup.py, trio, pycodestyle,
 pyinstrument, pathplanning, pidcat, augly (data aug), pipreqs ( or pip
 freeze > req.txt), apscheduler & huey (task schedule), attrs, bandit,
