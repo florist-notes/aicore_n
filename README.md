@@ -13,6 +13,8 @@ here is my mini resource guide on AI > ML > DL:
 
 ```
 
+## AI tools and Open Source libraries [[list](notes/aitools.MD)]
+
 ## Deep Learning [[theory](./notes/dltheory.MD)] 
 
 
