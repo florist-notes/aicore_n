@@ -626,97 +626,149 @@ Keras model using Graphviz
 
 <tr>
 <td>data pipeline / data science</td>
-<td>y</td>
+<td>
+
++ [kafka-py](https://github.com/dpkp/kafka-python), [prefect 2.0](https://github.com/PrefectHQ/prefect), [luigi](https://github.com/spotify/luigi), [dvc](https://github.com/iterative/dvc), [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science), [metaflow](https://github.com/Netflix/metaflow), [pipelines](https://github.com/kubeflow/pipelines), [ploomber](https://github.com/ploomber/ploomber), [orchest](https://github.com/orchest/orchest), [streamlit](https://github.com/streamlit/streamlit) (ml data app)
+</td>
 </tr>
 
 
 <tr>
 <td>databases</td>
-<td>y</td>
+<td>
+
++ [redis-py](https://github.com/redis/redis-py), [edgedb](https://github.com/edgedb/edgedb), [stellar](https://github.com/fastmonkeys/stellar) (fast db snap), [ckan](https://github.com/ckan/ckan).
+
+</td>
 </tr>
 
 
 <tr>
 <td>Streaming & stream processing</td>
-<td>y</td>
+<td>
+
++ [faust](https://github.com/robinhood/faust), [deep lake](https://github.com/activeloopai/deeplake), [stream alert](https://github.com/airbnb/streamalert), [smart_open](https://github.com/RaRe-Technologies/smart_open) (stream_large files), [streamlink](https://github.com/streamlink/streamlink) (video)
+
+</td>
 </tr>
 
 <tr>
 <td>API</td>
-<td>y</td>
+<td>
+
++ [hug](https://github.com/hugapi/hug), [public apis](https://github.com/public-apis/public-apis), [eve](https://github.com/pyeve/eve), [connexion](https://github.com/spec-first/connexion), [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate), [gspread](https://github.com/burnash/gspread) (google sheet py API), [django-tastypie](https://github.com/django-tastypie/django-tastypie), [toapi](https://github.com/gaojiuli/toapi), [koalas](https://github.com/databricks/koalas) (pandas API on spark), [google map api](https://github.com/googlemaps/google-maps-services-python).
+</td>
 </tr>
 
 
 <tr>
 <td>notification</td>
-<td>y</td>
+<td>
+
++ [apprise](https://github.com/caronc/apprise), [stream-framework](https://github.com/tschellenbach/Stream-Framework).
+
+</td>
 </tr>
 
 
 <tr>
 <td>csv - excel - json</td>
-<td>y</td>
+<td>
+
++ [csvkit](https://github.com/wireservice/csvkit), [xmltodict](https://github.com/martinblech/xmltodict), [xlsx writer](https://github.com/jmcnamara/XlsxWriter), [json-schema](https://github.com/python-jsonschema/jsonschema), [orjson](https://github.com/ijl/orjson).
+</td>
 </tr>
 
 
 <tr>
 <td>recommenders</td>
-<td>y</td>
+<td>
+
++ [recommenders](https://github.com/microsoft/recommenders), [surprise](https://github.com/NicolasHug/Surprise), [lightfm](https://github.com/lyst/lightfm).
+</td>
 </tr>
 
 
 <tr>
 <td>Documentation/ present
 </td>
-<td>y</td>
+<td>
+
++ [readthedocs](https://github.com/readthedocs/readthedocs.org), [gitpitch](https://github.com/gitpitch/gitpitch), [sphinx](https://github.com/sphinx-doc/sphinx), [present](https://github.com/vinayak-mehta/present), [jrnl](https://github.com/jrnl-org/jrnl), [substack](https://substack.com/), [doitlive](https://github.com/sloria/doitlive).
+</td>
 </tr>
 
 
 <tr>
 <td>home automation & IOT / terminal</td>
-<td>y</td>
+<td>
+
++ [awesome-iot](https://github.com/phodal/awesome-iot), [core](https://github.com/home-assistant/core), [kitty](https://github.com/kovidgoyal/kitty), [autojump](https://github.com/wting/autojump), [schedule](https://github.com/dbader/schedule), [arrow](https://github.com/arrow-py/arrow) ; [activitywatch](https://github.com/ActivityWatch/activitywatch)(time), [prompt bup](https://github.com/prompt-toolkit/python-prompt-toolkit) (backup), [microk8s](https://github.com/canonical/microk8s), [xonsh](https://github.com/xonsh/xonsh), [homelab](https://github.com/khuedoan/homelab), [mycroft](https://github.com/MycroftAI/mycroft-core), [dumb-init](https://github.com/Yelp/dumb-init), [googler](https://github.com/jarun/googler), [buku](https://github.com/jarun/buku), [pendulum](https://github.com/sdispater/pendulum) (py-date-time), [pathpicker](https://github.com/facebook/PathPicker), [gcalcli](https://github.com/insanum/gcalcli), [GAM](https://github.com/GAM-team/GAM) (cli for google workspace), [led-strip](https://github.com/scottlawsonbc/audio-reactive-led-strip), [xxh](https://github.com/xxh/xxh), [keyboard](https://github.com/boppreh/keyboard), [webssh](https://github.com/huashengdun/webssh), [alive-progress](https://github.com/rsalmei/alive-progress), [rich](https://github.com/Textualize/rich), [cheat.sh](http://cheat.sh/), [click](https://github.com/pallets/click), [speedtest-cli](https://github.com/sivel/speedtest-cli), [icdiff](https://github.com/jeffkaufman/icdiff), [storm](https://github.com/emre/storm), [invoke](https://github.com/pyinvoke/invoke), [instantbox](https://github.com/instantbox/instantbox) (get clean linux).
+
+</td>
 </tr>
 
 
 <tr>
 <td>Tracking & monitoring</td>
-<td>y</td>
+<td>
+
++ [wandb](https://github.com/wandb/wandb), [sentry](https://github.com/getsentry/sentry), [watchdog](https://github.com/gorakhargosh/watchdog), [healthchecks](https://github.com/healthchecks/healthchecks), [flower](https://github.com/mher/flower), [changedetection.io](https://github.com/dgtlmoon/changedetection.io), [bpytop](https://github.com/aristocratos/bpytop), [psutil](https://github.com/giampaolo/psutil).
+</td>
 </tr>
 
 
 <tr>
 <td>networking</td>
-<td>y</td>
+<td>
+
++ [tornado](https://github.com/tornadoweb/tornado), [magic wormhole](https://github.com/kivy/kivy), [fabric](https://github.com/fabric/fabric), [requests-html](https://github.com/psf/requests-html), [twisted](https://github.com/twisted/twisted), [mininet](https://github.com/mininet/mininet), [kombu](https://github.com/celery/kombu) (messaging library).</td>
 </tr>
 
 
 <tr>
 <td>automation</td>
-<td>y</td>
+<td>
+
++ [playwright](https://github.com/microsoft/playwright-python), [ansible](https://github.com/ansible/ansible), [mechanical soup](https://github.com/MechanicalSoup/MechanicalSoup), [flyte](https://github.com/flyteorg/flyte), [molecule](https://github.com/ansible-community/molecule).
+</td>
 </tr>
 
 
 <tr>
 <td>testing</td>
-<td>y</td>
+<td>
+
++ [locust](https://github.com/locustio/locust) (user-load test), [hypothesis](https://github.com/HypothesisWorks/hypothesis), [buildbot](https://github.com/buildbot/buildbot), [clusterfuzz](https://github.com/google/clusterfuzz), [pytest](https://github.com/pytest-dev/pytest), [freezegun](https://github.com/spulec/freezegun).
+</td>
 </tr>
 
 
 <tr>
 <td>GUI</td>
-<td>y</td>
+<td>
+
++ [gooey](https://github.com/chriskiehl/Gooey), [kivy](https://github.com/kivy/kivy), [textUI](https://github.com/Textualize/textual), [pyautogui](https://github.com/asweigart/pyautogui), [tkinter-designer](https://github.com/ParthJadhav/Tkinter-Designer), [Cura](https://github.com/Ultimaker/Cura) (3d printer), [Opyrator](https://github.com/ml-tooling/opyrator) (ML to
+GUI), [pywinauto](https://github.com/pywinauto/pywinauto).
+</td>
 </tr>
 
 
 <tr>
 <td>search</td>
-<td>y</td>
+<td>
+
++ [searx](https://github.com/searx/searx), [whoogle search](https://github.com/benbusby/whoogle-search), [ddgo](https://github.com/jarun/ddgr), [searx-ng](https://github.com/searxng/searxng).
+</td>
 </tr>
 
 
 <tr>
 <td>pdf</td>
-<td>y</td>
+<td>
+
++ [pdfminer](https://github.com/pdfminer/pdfminer.six), [borb](https://github.com/jorisschellekens/borb), [pyPDF2](https://github.com/py-pdf/PyPDF2), [paperless-ng](https://github.com/jonaswinkler/paperless-ng), [pdfminer.six](https://github.com/pdfminer/pdfminer.six).
+</td>
 </tr>
 
 
