@@ -106,6 +106,11 @@ ML framework:
 
 </table>
 
+Reinforcement Learning libraries:
+
++ [baselines](https://github.com/openai/baselines), [gym](https://github.com/openai/gym), [mujoco](https://github.com/deepmind/mujoco), [tianshou](https://github.com/thu-ml/tianshou), [DRL-PyTorch](https://github.com/p-christ/Deep-Reinforcement-Learning-Algorithms-with-PyTorch), [dm_control](https://github.com/deepmind/dm_control), [PARL](https://github.com/PaddlePaddle/PARL), [ReAgent tensorforce](https://github.com/facebookresearch/ReAgent).
+
+
 Computer Vision / Visualization Libraries:
 
 <table>
@@ -121,4 +126,219 @@ CV Toolbox
  
 </td>
 </tr>
+
+
+<tr>
+
+<td>
+Object Detection
+</td>
+
+<td>
+
++ [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [detr](https://github.com/facebookresearch/detr), [ImageAI](https://github.com/OlafenwaMoses/ImageAI#customprediction), [EfficientNet](https://github.com/lukemelas/EfficientNet-PyTorch), [CenterNet](https://github.com/xingyizhou/CenterNet), [frigate](https://github.com/blakeblackshear/frigate), [nanodet](https://github.com/RangiLyu/nanodet) (lightwight), [obj-detect-metric](https://github.com/rafaelpadilla/review_object_detection_metrics), [ConvNeXt](https://github.com/facebookresearch/ConvNeXt), [YoloV7](https://github.com/jinfagang/yolov7_d2), [ByteTrack](https://github.com/ifzhang/ByteTrack), [mmtracking](https://github.com/open-mmlab/mmtracking).
+ 
+</td>
+</tr>
+
+
+
+<tr>
+
+<td>
+Text-to-Image 
+</td>
+
+<td>
+
++ [PyTorch] [DALL-E](https://github.com/lucidrains/DALLE-pytorch), [DALLE2](https://github.com/lucidrains/DALLE2-pytorch), [dalle-mini](https://github.com/borisdayma/dalle-mini), [stable diffusion](https://github.com/CompVis/stable-diffusion) ([lexica.art](https://lexica.art/)), [Imagen](https://github.com/lucidrains/imagen-pytorch), [stable diffusion_webui](https://github.com/sd-webui/stable-diffusion-webui).
+ 
+</td>
+</tr>
+
+
+
+<tr>
+
+<td>
+Multilingual OCR &QR
+</td>
+
+<td>
+
++ [Paddle Paddle](https://github.com/PaddlePaddle/PaddleOCR), [EasyOCR](https://github.com/JaidedAI/EasyOCR), [amazing-qr](https://github.com/x-hw/amazing-qr), [OCR PDF](https://github.com/ocrmypdf/OCRmyPDF).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Image Augmentation
+</td>
+
+<td>
+
++  [imgaug](https://github.com/aleju/imgaug), [albumentations](https://github.com/albumentations-team/albumentations).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Upscale 
+</td>
+
+<td>
+
++ [video2x](https://github.com/k4yt3x/video2x).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Pose Detection
+</td>
+
+<td>
+
++ [alphapose](https://github.com/MVIG-SJTU/AlphaPose), [mmskeleton](https://github.com/open-mmlab/mmskeleton), [videopose3D](https://github.com/facebookresearch/VideoPose3D), [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Annotation tool 
+</td>
+
+<td>
+
++ [labelme](https://github.com/wkentaro/labelme), [labelmg](https://github.com/heartexlabs/labelImg), [label-studio](https://github.com/heartexlabs/label-studio).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Deep Fakes 
+</td>
+
+<td>
+
++ [DeepFaceLive](https://github.com/iperov/DeepFaceLive), [PaddleGAN](https://github.com/PaddlePaddle/PaddleGAN), [dot](https://github.com/sensity-ai/dot) ( deepfakes offensive toolkit).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Segmentation / Inpainting / Matting
+</td>
+
+<td>
+
++ [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg), [3D photo inpainting, video matting](https://github.com/vt-vl-lab/3d-photo-inpainting), [bg-matting-v2](https://github.com/PeterL1n/BackgroundMattingV2), [yolact](https://github.com/dbolya/yolact), [semantic seg](https://github.com/CSAILVision/semantic-segmentation-pytorch), [Super SloMo](https://github.com/avinashpaliwal/Super-SloMo).
+
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Face Detection
+</td>
+
+<td>
+
++ [face.evoLVe](https://github.com/ZhaoJ9014/face.evoLVe), [InsightFace](https://github.com/deepinsight/insightface), [face-alignment](https://github.com/1adrianb/face-alignment), [PRNET](https://github.com/YadiraF/PRNet), [fawkes](https://github.com/Shawn-Shan/fawkes) (privacy preserving), [deepface](https://github.com/serengil/deepface), [howdy](https://github.com/boltgolt/howdy).
+
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+WebML
+</td>
+
+<td>
+
++ [gradio](https://github.com/gradio-app/gradio) (UI for ML model).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+3D data processing & reconstruction
+</td>
+
+<td>
+
++ [Open3D](https://github.com/isl-org/Open3D), [meshroom](https://github.com/alicevision/meshroom), [PyTorch3D](https://github.com/facebookresearch/pytorch3d), [mmlab3d](https://github.com/open-mmlab/mmdetection3d), [OpenPCDet](https://github.com/open-mmlab/OpenPCDet), [OpenSfm](https://github.com/mapillary/OpenSfM), [kaolin](https://github.com/NVIDIAGameWorks/kaolin), [ODM](https://github.com/OpenDroneMap/ODM), [PointNet](https://github.com/charlesq34/pointnet), [3D-Resnets](https://github.com/kenshohara/3D-ResNets-PyTorch).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+fun plugins
+</td>
+
+<td>
+
++ [avatarify-python](https://github.com/alievk/avatarify-python), [word cloud](https://github.com/amueller/word_cloud), [pywal](https://github.com/dylanaraps/pywal), [tiler](https://github.com/nuno-faria/tiler), [learning to see in dark](https://github.com/cchen156/Learning-to-See-in-the-Dark), [rembg](https://github.com/danielgatis/rembg), [imagededup](https://github.com/idealo/imagededup) (find duplicate images), [imutils](https://github.com/PyImageSearch/imutils) (image operations), [videogrep](https://github.com/antiboredom/videogrep), [NeRF](https://github.com/yenchenlin/nerf-pytorch), [LEGOFY](https://github.com/JuanPotato/Legofy), [discoart](https://github.com/jina-ai/discoart), [image/analogies](https://github.com/awentzonline/image-analogies).
+ 
+</td>
+</tr>
+
+<tr>
+
+<td>
+Big Data visualization
+</td>
+
+<td>
+
++ [visdom](https://github.com/fossasia/visdom) (LIVE experiments), [redash](https://github.com/getredash/redash) (from Datalake), [great_expectations](https://github.com/great-expectations/great_expectations), [folium](https://github.com/python-visualization/folium), [visidata](https://github.com/saulpw/visidata), [lux](https://github.com/lux-org/lux) (pandas dataframe).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Extra
+</td>
+
+<td>
+
++ [diagrams](https://github.com/mingrammer/diagrams) (vis cloud architecture),  [openpilot](https://github.com/commaai/openpilot), [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), [pifuhd](https://github.com/facebookresearch/pifuhd), [pix2pixhd](https://github.com/NVIDIA/pix2pixHD), [Neural-style](https://github.com/anishathalye/neural-style), [tensorflow-GAN](https://github.com/hwalsuklee/tensorflow-generative-model-collections),  [eht-imaging](https://github.com/NVIDIA/pix2pixHD), [efficient-ai-backbone](https://github.com/huawei-noah/Efficient-AI-Backbones), [bandai-namco motion dataset](https://github.com/BandaiNamcoResearchInc/Bandai-Namco-Research-Motiondataset), [MONAI](https://github.com/Project-MONAI/MONAI).
+
+ 
+</td>
+</tr>
+
 </table>
