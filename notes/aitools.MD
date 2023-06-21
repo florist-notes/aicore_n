@@ -110,6 +110,9 @@ Reinforcement Learning libraries:
 
 + [baselines](https://github.com/openai/baselines), [gym](https://github.com/openai/gym), [mujoco](https://github.com/deepmind/mujoco), [tianshou](https://github.com/thu-ml/tianshou), [DRL-PyTorch](https://github.com/p-christ/Deep-Reinforcement-Learning-Algorithms-with-PyTorch), [dm_control](https://github.com/deepmind/dm_control), [PARL](https://github.com/PaddlePaddle/PARL), [ReAgent tensorforce](https://github.com/facebookresearch/ReAgent).
 
+MLOPs / Distributed ML libraries:
+
++ [horovod](https://github.com/horovod/horovod), [Deep Speed](https://github.com/microsoft/DeepSpeed), [modin](https://github.com/modin-project/modin), [bentoml](https://github.com/bentoml/BentoML), [apex](https://github.com/NVIDIA/apex), [dask](https://github.com/dask/dask), [colossal-AI](https://github.com/hpcaitech/ColossalAI), [composer](https://github.com/mosaicml/composer), [mlflow](https://github.com/mlflow/mlflow), [lightning](https://github.com/Lightning-AI/lightning), [airflow](https://github.com/apache/airflow), [deap](https://github.com/DEAP/deap) (distributed evolutionary algorithms), [ray](https://github.com/ray-project/ray), [mars](https://github.com/mars-project/mars), [tensorflowonspark](https://github.com/yahoo/TensorFlowOnSpark), [sonnet](https://github.com/deepmind/sonnet), [celery](https://github.com/celery/celery), [pandarallel](https://github.com/nalepae/pandarallel), [polyaxon](https://github.com/polyaxon/polyaxon), [hummingbird](https://github.com/microsoft/hummingbird), [nni](https://github.com/microsoft/nni) , [byteps](https://github.com/bytedance/byteps), [vaex](https://github.com/vaexio/vaex), [clearml](https://github.com/allegroai/clearml), [tvm](https://github.com/apache/tvm), [st2](https://github.com/StackStorm/st2), [jina](https://github.com/jina-ai/jina) , [accelerate](https://github.com/huggingface/accelerate).
 
 Computer Vision / Visualization Libraries:
 
