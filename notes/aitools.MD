@@ -580,3 +580,318 @@ visualize Keras (either standalone or included in
 TensorFlow) neural network architectures. The
 [keras.utils.vis_utils](https://keras.io/api/utils/model_plotting_utils/) provides utility functions to plot a
 Keras model using Graphviz
+
+
+##  Essential libraries:
+
+<table>
+<tr>
+<th>Heading</th>
+<th>Libraries</th>
+</tr>
+<tr>
+<td>toolbox</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>web crawling / parse</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>data</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>data pipeline / data science</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>databases</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>Streaming & stream processing</td>
+<td>y</td>
+</tr>
+
+<tr>
+<td>API</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>notification</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>csv - excel - json</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>recommenders</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>Documentation/ present
+</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>home automation & IOT / terminal</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>Tracking & monitoring</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>networking</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>automation</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>testing</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>GUI</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>search</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>pdf</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>debug</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>robotics</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>video conf</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>security</td>
+<td>y</td>
+</tr>
+
+
+<tr>
+<td>extra</td>
+<td>y</td>
+</tr>
+</table>
+
+Extra libraries: 
+
+{
+
+[manim](https://github.com/3b1b/manim), [3b1b videos](https://github.com/3b1b/videos), [scientific visualization book](https://github.com/rougier/scientific-visualization-book), [bottles](https://github.com/bottlesdevs/Bottles),
+[dash](https://github.com/plotly/dash), [ggpy](https://github.com/yhat/ggpy), [Lenia](https://github.com/Chakazul/Lenia),
+[cartography](https://github.com/lyft/cartography), [Pywonderland](https://github.com/neozhaoliang/pywonderland),
+[altair](https://github.com/altair-viz/altair), [yellowbrick](https://github.com/DistrictDataLabs/yellowbrick),
+[shapely](https://github.com/shapely/shapely), [orange3](https://github.com/biolab/orange3),
+[science plots](https://github.com/garrettj403/SciencePlots), [flask_jsondash](https://github.com/christabor/flask_jsondash), [BLOOM](https://bigscience.huggingface.co/blog/bloom), [whisper](https://openai.com/blog/whisper/)
+
+
+}
+
+> [caliban](https://github.com/google/caliban) : Google Caliban is a tool that helps
+researchers launch and track their numerical
+experiments in an isolated, reproducible computing
+environment.
+
+> [kornia](https://github.com/kornia/kornia) : Kornia is a differentiable computer vision
+library for PyTorch. It consists of a set of routines and differentiable modules to solve generic computer
+vision problems.
+
+> [intel analytics-zoo](https://github.com/intel-analytics/analytics-zoo) : Analytics Zoo is an open source
+Big Data AI platform, and includes the following
+features for scaling end-to-end AI to distributed Big
+Data:
+
+> [mljar-supervised](https://github.com/mljar/mljar-supervised) : The mljar-supervised is an
+Automated Machine Learning Python package that
+works with tabular data. It abstracts the common way
+to preprocess the data, construct the machine learning
+models, and perform hyper-parameters tuning to find
+the best model. Automatic Exploratory Data Analysis.
+
+> [deepdetect](https://github.com/jolibrain/deepdetect#main-features) : open source ai platform written in c++
+with readily available API, algorithms, models etc.
+supports state of the art algorithms - clustering with
+[t-SNE](https://github.com/DmitryUlyanov/Multicore-TSNE), similarity search with [annoy](https://github.com/spotify/annoy/), [FAISS](https://github.com/facebookresearch/faiss). . templates
+for the most useful neural architectures (e.g.
+Googlenet, Alexnet, ResNet, convnet, character-based
+convnet, mlp, logistic regression, SSD, DeepLab,
+PSPNet, U-Net, CRNN, ShuffleNet, SqueezeNet,
+MobileNet, RefineDet, VOVNet, ...)
+
+> RL FRAMEWORKS:
++ [dopamine](https://github.com/google/dopamine) : Deep Reinforcement Learning
+Framework
++ [deepmind lab](https://github.com/deepmind/lab) : 3d env for DRL
+  
+> [predictionio](https://github.com/apache/predictionio): Apache predictionio supports event
+collection, deployment of algorithms, evaluation,
+querying predictive results via REST APIs. It is based
+on scalable open source services like Hadoop, HBase
+(and other DBs), Elasticsearch, Spark and implements
+what is called a Lambda Architecture.
+
+> [detectron2](https://github.com/facebookresearch/detectron2): facebook's state of the art vision
+algorithm platform.
+
+> [tflearn](https://github.com/tflearn/tflearn) : high level API over tensorflow
+
+> [faceswap](https://github.com/deepfakes/faceswap#deepfakesfaceswap) : open source deep fake library & also
+image manipulation libraries - [pix2style2pix](https://github.com/eladrich/pixel2style2pixel), [avatarify](https://github.com/alievk/avatarify-python), [neural photo editor](https://github.com/ajbrock/Neural-Photo-Editor), [GANimation](https://github.com/albertpumarola/GANimation).
+
+> [waveglow](https://github.com/NVIDIA/waveglow): NVIDIA waveglow for audio & speech
+synthesis
+
+> [neural-enhance](https://github.com/alexjc/neural-enhance): neural enhance is super resolution
+for frames
+
+> [real-time voice cloning](https://github.com/CorentinJ/Real-Time-Voice-Cloning): audio deep fakes, also
+[mockingbird](https://github.com/babysor/MockingBird).
+
+> [fasttext](https://github.com/facebookresearch/fastText): facebook fasttext allows users to efficiently learn word representation and text classification.
+
+> [deOldify](https://github.com/jantic/DeOldify): colorize, restore, and give new life to old
+images and film footage also [microsoft's repo](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life).
+
+> [NeuralTalk2](https://github.com/karpathy/neuraltalk2) : is used to describe images and videos
+with sentences using Multimodal Recurrent Neural
+Network built on Python+numpy.
+
+> [face-recognition](https://github.com/ageitgey/face_recognition): real time face recognition. also [yolo-v5](https://github.com/ultralytics/yolov5).
+
+> [U GATIT](https://github.com/taki0112/UGATIT): image to anime.
+
+> [srez](https://github.com/david-gpu/srez) : Image super-resolution using deep learning
+can upscale a 16x16 input image by a 4X factor,
+resulting in a 64x64 image.
+
+> [TecoGAN](https://github.com/thunil/TecoGAN): video super resolution.
+
+> [CMU open-pose](https://github.com/CMU-Perceptual-Computing-Lab/openpose): first real-time multi-person system
+to jointly detect human body, hand, facial, and foot
+keypoints (in total 135 keypoints) on single images,
+also [pose-animator](https://github.com/yemount/pose-animator/).
+
+> [spaCy](https://github.com/explosion/spaCy) : industrial grade NLP in python.
+
+> [server](https://github.com/triton-inference-server/server): optimized cloud and edge inferencing
+solutions.
+
+> [back ground matting v2](https://github.com/PeterL1n/BackgroundMattingV2): real time background
+change
+
+> [skyAR](https://github.com/jiupinjia/SkyAR): sky replacement with [cycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
+
+> [txtai](https://github.com/neuml/txtai): AI powered semantic search applications.
+
+> [Open Neural Network Exchange](https://github.com/onnx/onnx) (ONNX) : is an open
+ecosystem that empowers AI developers to choose
+the right tools as their project evolves. They have a lot of [models](https://github.com/onnx/models) as well. also [onnxruntime](https://github.com/microsoft/onnxruntime).
+
+> [open-cog](https://github.com/opencog/opencog) : works towards AGI and integrates AI
+algorithms and systems into humanoid robotic
+systems. Most of the activity within this particular
+repo has focused on integrating natural language chat,
+common-sense reasoning, assorted learning
+algorithms, and motor control of humanoid robots.
+
+> [prophet](https://github.com/facebook/prophet): facebook's prophet is a tool for producing
+high quality forecasts for time series data that has
+multiple seasonality with linear or non-linear growth.
+
+> [Apache SystemDS](https://github.com/apache/systemds): SystemDS is an open source ML
+system for the end-to-end data science lifecycle from
+data integration, cleaning, and feature engineering,
+over efficient, local and distributed ML model training, to deployment and serving.
+
+> [AIF360](https://github.com/Trusted-AI/AIF360) : A comprehensive set of fairness metrics for
+datasets and machine learning models, explanations
+for these metrics, and algorithms to mitigate bias in
+datasets and models.
+
+> [tpot](https://github.com/EpistasisLab/tpot) : A Python Automated Machine Learning tool
+that optimizes machine learning pipelines using
+genetic programming or a data science assistant for
+pipeline generation.
+
+> [feature-tool](https://github.com/alteryx/featuretools) : Feature tools automatically create
+features from temporal and relational datasets.
+
+> [auto-sklearn](https://github.com/automl/auto-sklearn) : is an automated machine learning
+toolkit and a drop-in replacement for a scikit-learn
+estimator.
+
+> [skorch](https://github.com/skorch-dev/skorch) : A scikit-learn compatible neural network
+library that wraps PyTorch.
+
+> [streamlit](https://github.com/streamlit/streamlit) : The fastest way to build data apps in
+Python also this repo [awesome-ml](https://github.com/josephmisiti/awesome-machine-learning) covers a wide range of
+topics.
+
+> [optuna](https://github.com/optuna/optuna) : Optuna is an automatic hyperparameter
+optimization software framework, particularly
+designed for machine learning.
+
+> [shap](https://github.com/slundberg/shap) : A game theoretic approach to explain the
+output of any machine learning model.
+
+> [pandas-profiling](https://github.com/ydataai/pandas-profiling) : Create HTML profiling reports from pandas DataFrame objects.
