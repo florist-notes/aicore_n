@@ -704,8 +704,7 @@ datasets about the earth, climate and water bodies.) | [AWS opendata](https://re
 x COMPUTER VISION datasets: [xView](http://xviewdataset.org/#dataset), [ImageNet](https://image-net.org/),
 [google open images](https://ai.googleblog.com/2016/09/introducing-open-images-dataset.html), [IMDB-wiki](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) (annotated face
 images), [dog-breed dataset](http://vision.stanford.edu/aditya86/ImageNetDogs/), [TUM](https://vision.in.tum.de/data/datasets)
-- [kinetic 700-2020](https://www.deepmind.com/open-source/kinetics) (human poses from YT videos)
-- [cityscape](https://www.cityscapes-dataset.com/) (semantic segmentation)
+- [kinetic 700-2020](https://www.deepmind.com/open-source/kinetics) (human poses from YT videos), [cityscape](https://www.cityscapes-dataset.com/) (semantic segmentation)
 - [colors with RGB values](https://github.com/codebrainz/color-names/blob/master/output/colors.csv).
 x NLP datasets: [quantumstat](https://datasets.quantumstat.com/), [QA](https://hotpotqa.github.io/), [amazon reviews](https://snap.stanford.edu/data/web-Amazon.html),
 [rotten tomato reviews](https://drive.google.com/file/d/1w1TsJB-gmIkZ28d1j7sf1sqcPmHXw352/view)
