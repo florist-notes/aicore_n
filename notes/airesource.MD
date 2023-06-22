@@ -32,14 +32,14 @@ Mathematics: Linear Algebra | Tool: [Python](https://www.python.org/) + [PyTorch
 
 ## AI & Robotics News:
 
-YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai/videos), [StatQuest](https://www.youtube.com/c/joshstarmer/videos), [3blue1brown](https://www.youtube.com/c/3blue1brown/videos) #some2, [sentdex](https://www.youtube.com/user/sentdex), [Yannic Kilcher](https://www.youtube.com/c/YannicKilcher), [Lex Fridman](https://www.youtube.com/c/lexfridman), [stanfordonline](https://www.youtube.com/user/stanfordonline).
+YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai/videos), [StatQuest](https://www.youtube.com/c/joshstarmer/videos), [3blue1brown](https://www.youtube.com/c/3blue1brown/videos) #some2, [sentdex](https://www.youtube.com/user/sentdex), [Yannic Kilcher](https://www.youtube.com/c/YannicKilcher), [Lex Fridman](https://www.youtube.com/c/lexfridman), [stanfordonline](https://www.youtube.com/user/stanfordonline), [AI Explained](https://www.youtube.com/@ai-explained-/videos), [Ai Grid](https://www.youtube.com/@TheAiGrid), [OpenAI](https://www.youtube.com/@OpenAI/videos), [Google Deepmind](https://www.youtube.com/@Google_DeepMind/videos), [freeCodeCamp](https://www.youtube.com/@freecodecamp).
 
 <table style="width:100%" >
 <tr>
 <th>
   <p>
 
-  [DeepMind’s New AI Finally Enters The Real World!](https://youtu.be/zxyZSxnTrZs), [DeepMind AI Reduces Google Data Centre Cooling Bill by 40%](https://www.deepmind.com/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40), [Stable Diffusion : Art with AI](https://www.behance.net/gallery/150137177/Art-with-AI), [Art with AI 2](https://www.behance.net/gallery/152560407/Art-with-AI-2-Midjourney), [AI music vid](https://youtu.be/0fDJXmqdN-A), [AI music vid 2](https://youtu.be/qXghXywioeM), [Voyage through time](https://youtu.be/Bo3VZCjDhGI), [Dream Textures](https://youtu.be/5WboPlU9c6I), Ai generated paintings : [1](https://youtu.be/AB48K0VDlRA), [2](https://youtu.be/85l961MmY8Y), [3](https://youtu.be/d8jFMKNy9EI), [2D to 3D](https://twitter.com/JunGao33210520/status/1573310606320484352?t=3WR3mJWR-0S20HxTuLuAoA&s=19), Music by AI : [1](https://youtu.be/Emidxpkyk6o), [2](https://youtu.be/qf6eOSJgN0Y), A different logistics system : [Olivio](https://www.youtube.com/c/OlivioSarikas), [3d printed house](https://youtu.be/qWBA-6NgIJg), [3D printed rockets](https://youtu.be/kz165f1g8-E), Boston Dynamics : [Atlas](https://youtu.be/tF4DML7FIWk), [Search for Life](https://youtu.be/qTW-dbZr4U8), [Spot](https://youtu.be/XnZH4izf_rI), [Spot's on it!](https://youtu.be/7atZfX85nd4), [Warp drive](https://youtu.be/jhvW9CLhReM), [future concepts](https://youtu.be/AIrH01N9AsE), [Artificial General Intelligence](https://www.youtube.com/results?search_query=agi+artificial+general+intelligence).
+  [DeepMind’s New AI Finally Enters The Real World!](https://youtu.be/zxyZSxnTrZs), [DeepMind AI Reduces Google Data Centre Cooling Bill by 40%](https://www.deepmind.com/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40), [Stable Diffusion : Art with AI](https://www.behance.net/gallery/150137177/Art-with-AI), [Art with AI 2](https://www.behance.net/gallery/152560407/Art-with-AI-2-Midjourney), [AI music vid](https://youtu.be/0fDJXmqdN-A), [AI music vid 2](https://youtu.be/qXghXywioeM), [Voyage through time](https://youtu.be/Bo3VZCjDhGI), [Dream Textures](https://youtu.be/5WboPlU9c6I), Ai generated paintings : [1](https://youtu.be/AB48K0VDlRA), [2](https://youtu.be/85l961MmY8Y), [3](https://youtu.be/d8jFMKNy9EI), [2D to 3D](https://twitter.com/JunGao33210520/status/1573310606320484352?t=3WR3mJWR-0S20HxTuLuAoA&s=19), Music by AI : [1](https://youtu.be/Emidxpkyk6o), [2](https://youtu.be/qf6eOSJgN0Y), A different logistics system : [Olivio](https://www.youtube.com/c/OlivioSarikas), [3d printed house](https://youtu.be/qWBA-6NgIJg), [3D printed rockets](https://youtu.be/kz165f1g8-E), Boston Dynamics : [Atlas](https://youtu.be/tF4DML7FIWk), [Search for Life](https://youtu.be/qTW-dbZr4U8), [Spot](https://youtu.be/XnZH4izf_rI), [Spot's on it!](https://youtu.be/7atZfX85nd4), [Warp drive](https://youtu.be/jhvW9CLhReM), [future concepts](https://youtu.be/AIrH01N9AsE), [Artificial General Intelligence](https://www.youtube.com/results?search_query=agi+artificial+general+intelligence), [Stable Diffusion Got Supercharged - For Free!](https://youtu.be/1RvZWHtFXuY), [OpenAI GPT-4 Function Calling: Unlimited Potential](https://youtu.be/0lOSvOoF2to), [GPT-4 solves MIT Exam with 100% ACCURACY | OpenLLaMA 13B released](https://youtu.be/Tkijsu129M0).
   </p>
 
 </th>
@@ -326,6 +326,8 @@ Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learnin
   
   </p>
 </th>
+
+
 </tr>
 
 
@@ -384,6 +386,15 @@ Good AI courses:
   </p>
 
 </th>
+<th>
+  <p>
+  <br />
+
+  MIT 6.S192: Deep Learning for Art, Aesthetics, and Creativity ([class](https://www.youtube.com/watch?v=MABLFo7IV3I&list=PLCpMvp7ftsnIbNwRnQJbDNRqO6qiN3EyH))<br />
+  
+  </p>
+
+</th>
 </tr>
 
 
@@ -434,9 +445,21 @@ Good AI courses:
   </p>
 
 </th>
+
+<th>
+  <p>
+  <br />
+
+  TinyML and Efficient Deep Learning Computing | MIT 6.S965 Fall 2022 ([class](https://www.youtube.com/watch?v=5HpLyZd1h0Q&list=PL80kAHvQbh-ocildRaxjjBy6MR1ZsNCU7))<br />
+  
+  </p>
+
+</th>
 </tr>
 
 </table>
+
+More : [Quantum Machine Learning MOOC - Quantum ML](https://www.youtube.com/watch?v=QtWCmO_KIlg&list=PLmRxgFnCIhaMgvot-Xuym_hn69lmzIokg), [Parallel Computing and Scientific Machine Learning](https://www.youtube.com/watch?v=3IoqyXmAAkU&list=PLCAl7tjCwWyGjdzOOnlbGnVNZk0kB8VSa), [Optimization](https://www.youtube.com/watch?v=9hToSoZXM9s&list=PL7y-1rk2cCsDOv91McLOnV4kExFfTB7dU), [18.409 Algorithmic Aspects of Machine Learning Spring 2015 MIT ](https://www.youtube.com/watch?v=nsHbkVMaUGk&list=PLB3sDpSRdrOvI1hYXNsa6Lety7K8FhPpx), [Advanced NLP - CMU](https://www.youtube.com/watch?v=rVht4eK3EZw&list=PL8PYTP1V4I8D0UkqW2fEhgLrnlDW9QK7z), [Convex Optimization : CMU](https://www.youtube.com/watch?v=Di9f47LAzHQ&list=PLRPU00LaonXQ27RBcq6jFJnyIbGw5azOI), [MIT Generative AI Summit](https://www.youtube.com/watch?v=i3O1S6VcwCw&list=PLtBk2p55R5TsQuxhjoAaStAir-0N0nCVG).
 
 
 ## Premier AI conferences:
