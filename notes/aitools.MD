@@ -1,6 +1,10 @@
-## AI tools and Open Source Libraries
+# AI tools and Open Source libraries:
 
-Open Source Python Libraries
+LLM : [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT).
+
+<center><img src="./img/alp.png" width=40%><a> </a><img src="./img/ll.png" width=20%></center>
+
+[Generative AI Service](https://github.com/steven2358/awesome-generative-ai) and Open Source Python Libraries
 Github [repo search readme](https://docs.github.com/en/enterprise-server@3.4/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax) ---> [Github](https://github.com/search?l=Python&q=stars%3A%3E1000&type=Repositories).
 
 Here is a list of all python libraries beyond 2k stars, updated in 25/09/2022
@@ -139,7 +143,7 @@ Object Detection
 
 <td>
 
-+ [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [detr](https://github.com/facebookresearch/detr), [ImageAI](https://github.com/OlafenwaMoses/ImageAI#customprediction), [EfficientNet](https://github.com/lukemelas/EfficientNet-PyTorch), [CenterNet](https://github.com/xingyizhou/CenterNet), [frigate](https://github.com/blakeblackshear/frigate), [nanodet](https://github.com/RangiLyu/nanodet) (lightwight), [obj-detect-metric](https://github.com/rafaelpadilla/review_object_detection_metrics), [ConvNeXt](https://github.com/facebookresearch/ConvNeXt), [YoloV7](https://github.com/jinfagang/yolov7_d2), [ByteTrack](https://github.com/ifzhang/ByteTrack), [mmtracking](https://github.com/open-mmlab/mmtracking).
++ [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [detr](https://github.com/facebookresearch/detr), [ImageAI](https://github.com/OlafenwaMoses/ImageAI#customprediction), [EfficientNet](https://github.com/lukemelas/EfficientNet-PyTorch), [CenterNet](https://github.com/xingyizhou/CenterNet), [frigate](https://github.com/blakeblackshear/frigate), [nanodet](https://github.com/RangiLyu/nanodet) (lightwight), [obj-detect-metric](https://github.com/rafaelpadilla/review_object_detection_metrics), [ConvNeXt](https://github.com/facebookresearch/ConvNeXt), [YoloV7](https://github.com/jinfagang/yolov7_d2), [ByteTrack](https://github.com/ifzhang/ByteTrack), [mmtracking](https://github.com/open-mmlab/mmtracking), [Yolo-v8](https://github.com/ultralytics/ultralytics).
  
 </td>
 </tr>
@@ -324,7 +328,7 @@ Big Data visualization
 
 <td>
 
-+ [visdom](https://github.com/fossasia/visdom) (LIVE experiments), [redash](https://github.com/getredash/redash) (from Datalake), [great_expectations](https://github.com/great-expectations/great_expectations), [folium](https://github.com/python-visualization/folium), [visidata](https://github.com/saulpw/visidata), [lux](https://github.com/lux-org/lux) (pandas dataframe).
++ [visdom](https://github.com/fossasia/visdom) (LIVE experiments), [redash](https://github.com/getredash/redash) (from Datalake), [great_expectations](https://github.com/great-expectations/great_expectations), [folium](https://github.com/python-visualization/folium), [visidata](https://github.com/saulpw/visidata), [lux](https://github.com/lux-org/lux) (pandas dataframe), [kangas](https://github.com/comet-ml/kangas), [phoenix](https://github.com/Arize-ai/phoenix).
  
 </td>
 </tr>
@@ -618,7 +622,7 @@ Keras model using Graphviz
 <td>data</td>
 <td>
 
-+ [snorkel](https://github.com/snorkel-team/snorkel), [imbalanced-learn](https://github.com/scikit-learn-contrib/imbalanced-learn), [datasette](https://github.com/simonw/datasette), [dagster](https://github.com/dagster-io/dagster), [data shader](https://github.com/holoviz/datashader), [ffhq-dataset](https://github.com/NVlabs/ffhq-dataset), [cleanlab](https://github.com/cleanlab/cleanlab).
++ [ydata-profiling](https://github.com/ydataai/ydata-profiling), [snorkel](https://github.com/snorkel-team/snorkel), [imbalanced-learn](https://github.com/scikit-learn-contrib/imbalanced-learn), [datasette](https://github.com/simonw/datasette), [dagster](https://github.com/dagster-io/dagster), [data shader](https://github.com/holoviz/datashader), [ffhq-dataset](https://github.com/NVlabs/ffhq-dataset), [cleanlab](https://github.com/cleanlab/cleanlab), [kangas](https://github.com/comet-ml/kangas), [phoenix](https://github.com/Arize-ai/phoenix).
 
 </td>
 </tr>
@@ -637,7 +641,7 @@ Keras model using Graphviz
 <td>databases</td>
 <td>
 
-+ [redis-py](https://github.com/redis/redis-py), [edgedb](https://github.com/edgedb/edgedb), [stellar](https://github.com/fastmonkeys/stellar) (fast db snap), [ckan](https://github.com/ckan/ckan).
++ [milvus](https://github.com/milvus-io/milvus), [redis-py](https://github.com/redis/redis-py), [edgedb](https://github.com/edgedb/edgedb), [stellar](https://github.com/fastmonkeys/stellar) (fast db snap), [ckan](https://github.com/ckan/ckan).
 
 </td>
 </tr>
@@ -835,7 +839,7 @@ Extra libraries:
 [cartography](https://github.com/lyft/cartography), [Pywonderland](https://github.com/neozhaoliang/pywonderland),
 [altair](https://github.com/altair-viz/altair), [yellowbrick](https://github.com/DistrictDataLabs/yellowbrick),
 [shapely](https://github.com/shapely/shapely), [orange3](https://github.com/biolab/orange3),
-[science plots](https://github.com/garrettj403/SciencePlots), [flask_jsondash](https://github.com/christabor/flask_jsondash), [BLOOM](https://bigscience.huggingface.co/blog/bloom), [whisper](https://openai.com/blog/whisper/)
+[science plots](https://github.com/garrettj403/SciencePlots), [flask_jsondash](https://github.com/christabor/flask_jsondash), [BLOOM](https://bigscience.huggingface.co/blog/bloom), [whisper](https://openai.com/blog/whisper/) [github/whisper](https://github.com/openai/whisper), [ray](https://github.com/ray-project/ray)
 
 
 }
