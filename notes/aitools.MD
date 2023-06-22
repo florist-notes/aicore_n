@@ -1,15 +1,15 @@
 # AI tools and Open Source libraries:
 
+### Here is a custom list of python libraries for Machine Learning ( (AI) ) :
+
 LLM : [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT).
 
-<center><img src="./img/alp.png" width=40%><a> </a><img src="./img/ll.png" width=20%></center>
+<img src="./img/alp.png" width=40%><a> </a><img src="./img/ll.png" width=20%><a> </a><img src="./img/ff.png" width=30%>
 
 [Generative AI Service](https://github.com/steven2358/awesome-generative-ai) and Open Source Python Libraries
 Github [repo search readme](https://docs.github.com/en/enterprise-server@3.4/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax) ---> [Github](https://github.com/search?l=Python&q=stars%3A%3E1000&type=Repositories).
 
 Here is a list of all python libraries beyond 2k stars, updated in 25/09/2022
-
-
 
 
 PYTHON LIBRARIES:
