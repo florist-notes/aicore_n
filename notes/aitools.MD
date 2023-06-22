@@ -774,31 +774,64 @@ GUI), [pywinauto](https://github.com/pywinauto/pywinauto).
 
 <tr>
 <td>debug</td>
-<td>y</td>
+<td>
+
++ [icecream](https://github.com/gruns/icecream), [gef](https://github.com/hugsy/gef), [PuDB](https://github.com/inducer/pudb)
+</td>
 </tr>
 
 
 <tr>
 <td>robotics</td>
-<td>y</td>
+<td>
+
++ [robotframework](https://github.com/robotframework/robotframework), [RPA python](https://github.com/tebelorg/RPA-Python)
+</td>
 </tr>
 
 
 <tr>
 <td>video conf</td>
-<td>y</td>
+<td>
+
++ [zulip](https://github.com/zulip/zulip)
+</td>
 </tr>
 
 
 <tr>
 <td>security</td>
-<td>y</td>
+<td>
+
++ [bunkerweb](https://github.com/bunkerity/bunkerweb) (security for web apps), [itsdangerous](https://github.com/pallets/itsdangerous) (safely pass data from env2env), [sshuttle](https://github.com/sshuttle/sshuttle) (poor man’s vpn), [dispatch](https://github.com/Netflix/dispatch), [IMSI-catcher](https://github.com/Oros42/IMSI-catcher), [tinycheck](https://github.com/KasperskyLab/TinyCheck), [fsociety](https://github.com/Manisso/fsociety), [harvester](https://github.com/laramies/theHarvester), [howmparound](https://github.com/schollz/howmanypeoplearearound), [ipwndfu](https://github.com/axi0mX/ipwndfu), [MHdDoS](https://github.com/MatrixTM/MHDDoS), [CrackMapExec](https://github.com/Porchetta-Industries/CrackMapExec), [awesome-honeypots](https://github.com/paralax/awesome-honeypots),
+[beeswithmachineguns](https://github.com/newsapps/beeswithmachineguns), [ctf-wiki](https://github.com/ctf-wiki/ctf-wiki), [monkey](https://github.com/guardicore/monkey), [onionshare](https://github.com/onionshare/onionshare), [objection](https://github.com/sensepost/objection), [dshell](https://github.com/USArmyResearchLab/Dshell), [hacktricks](https://github.com/carlospolop/hacktricks), [disable-win-tracking](https://github.com/10se1ucgo/DisableWinTracking), [cryptography](https://github.com/pyca/cryptography), [whereami](https://github.com/kootenpv/whereami), [maltrail](https://github.com/stamparm/maltrail), [ptf](https://github.com/trustedsec/ptf), [grr](https://github.com/google/grr), [CTFd](https://github.com/CTFd/CTFd), [androguard](https://github.com/androguard/androguard), [usbkill](https://github.com/hephaest0s/usbkill), [voltron](https://github.com/snare/voltron), [volatility](https://github.com/volatilityfoundation/volatility), [knock](https://github.com/guelfoweb/knock), [miasm](https://github.com/cea-sec/miasm), [h8mail](https://github.com/khast3x/h8mail), [TBomb](https://github.com/TheSpeedX/TBomb), [pydictor](https://github.com/LandGrey/pydictor), [capa](https://github.com/mandiant/capa), [LaZagne](https://github.com/AlessandroZ/LaZagne),
+[theZoo](https://github.com/ytisf/theZoo), [spiderfoot](https://github.com/smicallef/spiderfoot), [patator](https://github.com/lanjelot/patator), [rsactftool](https://github.com/RsaCtfTool/RsaCtfTool), [haxor news](https://github.com/donnemartin/haxor-news), [securedrop](https://github.com/freedomofpress/securedrop), [apkleaks](https://github.com/dwisiswant0/apkleaks), [PRET](https://github.com/RUB-NDS/PRET) (printer exploit), [caldera](https://github.com/mitre/caldera), [katoolin](https://github.com/LionSec/katoolin), [routersploit](https://github.com/threat9/routersploit), [frida](https://github.com/frida/frida), [kube-hunter](https://github.com/aquasecurity/kube-hunter), [wafw00f](https://github.com/EnableSecurity/wafw00f), [skyla](https://github.com/imWildCat/scylla), [pritunl](https://github.com/pritunl/pritunl), [flan](https://github.com/cloudflare/flan), [autorecon](https://github.com/Tib3rius/AutoRecon), [bettercap](https://github.com/bettercap/bettercap), [dnstwist](https://github.com/elceef/dnstwist), [commix](https://github.com/commixproject/commix), [wifijammer](https://github.com/DanMcInerney/wifijammer), [whitelist](https://github.com/anudeepND/whitelist), [faraday](https://github.com/infobyte/faraday).
+</td>
 </tr>
 
 
 <tr>
 <td>extra</td>
-<td>y</td>
+<td>
+
++ fauxpilot, dgl, moviepy, thumbor, alphafold, mvt, graphene, spaceship generator,
+ffmpeg, pymc, octoprint, awesome-math, nupic, hydra, pyod (outlier detection), angr,
+devicon, dowhy, OnlineJudge, papermill (jupyter nb), arxiv-sanity-preserve, brython,
+umap (dimensionality reduction), autosploit, librephotos, transitions, FATE (federated
+learning), fuckIt.py, leetcode, nameko, waydroid, voila (jupyter – to – webapp),
+p-e-hacking, DrQA, pylint, cookie-cutter-flask, paperless-ngx, cowrie, openreplay,
+ulauncher, ffsubsync (sync subs with video), blenderGIS, pyJWT, tribler (torrent), hatch
+(python project management), spack & pdm (package manager), gluonts, eemaps,
+light-show, yagmail, donkeycar, mopidy (music server), fail2ban (ban daemon that
+causes multiple auth error), opendrop (like airdrop), GraphEmbedding, pyodide,
+dupeguru (find duplicate files), curio (systems), deepchem (deep learning for
+chemistry), osmnx (py for street network), mongoengine, geopandas, font-tools,
+crunch (png optimization), markovify, azure-cli, biopython, eyewitness, pyGTA5,
+archinstall, mailu, games, Flask App Builder, statuspage, pyboy, pymongo, qiling
+(binary hardware emulation), river (online ml), lektor, PyWebIO, py-slack-sdk,
+discordbot, touch gestures, qtile, cirq (quantum), fairMOT (AI fairness), dedupe,
+sync-engine, arjun.
+</td>
 </tr>
 </table>
 
