@@ -342,7 +342,7 @@ Extra
 
 <td>
 
-+ [diagrams](https://github.com/mingrammer/diagrams) (vis cloud architecture),  [openpilot](https://github.com/commaai/openpilot), [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), [pifuhd](https://github.com/facebookresearch/pifuhd), [pix2pixhd](https://github.com/NVIDIA/pix2pixHD), [Neural-style](https://github.com/anishathalye/neural-style), [tensorflow-GAN](https://github.com/hwalsuklee/tensorflow-generative-model-collections),  [eht-imaging](https://github.com/NVIDIA/pix2pixHD), [efficient-ai-backbone](https://github.com/huawei-noah/Efficient-AI-Backbones), [bandai-namco motion dataset](https://github.com/BandaiNamcoResearchInc/Bandai-Namco-Research-Motiondataset), [MONAI](https://github.com/Project-MONAI/MONAI).
++ [diagrams](https://github.com/mingrammer/diagrams) (vis cloud architecture),  [openpilot](https://github.com/commaai/openpilot), [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), [pifuhd](https://github.com/facebookresearch/pifuhd), [pix2pixhd](https://github.com/NVIDIA/pix2pixHD), [Neural-style](https://github.com/anishathalye/neural-style), [tensorflow-GAN](https://github.com/hwalsuklee/tensorflow-generative-model-collections),  [eht-imaging](https://github.com/NVIDIA/pix2pixHD), [efficient-ai-backbone](https://github.com/huawei-noah/Efficient-AI-Backbones), [bandai-namco motion dataset](https://github.com/BandaiNamcoResearchInc/Bandai-Namco-Research-Motiondataset), [MONAI](https://github.com/Project-MONAI/MONAI), [DragGAN](https://vcai.mpi-inf.mpg.de/projects/DragGAN/).
 
  
 </td>

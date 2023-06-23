@@ -24,3 +24,5 @@
 </tr>
 </table>
 
+notes on tools: [[TensorFlow](./tf.MD)] , [[PyTorch](./pyt.MD)]
+
