@@ -4,6 +4,8 @@
 
 <img src="./img/pyt.png" width=30%><a> </a><img src="./img/pytorch-ecosystem.png" width=60%>
 
+[torchvision](https://github.com/pytorch/vision), [pytorch-geometric](https://github.com/pyg-team/pytorch_geometric), [ignite](https://github.com/pytorch/ignite), [torch-rl](https://github.com/pytorch/rl), [libMTL](https://github.com/median-research-group/LibMTL), [botorch](https://github.com/pytorch/botorch), [torchdyn](https://github.com/DiffEqML/torchdyn), [OpenMined](https://github.com/OpenMined), [skorch](https://github.com/skorch-dev/skorch), [advertorch](https://github.com/BorealisAI/advertorch).
+
 tensors:
 
 ```python
@@ -63,6 +65,21 @@ numpy to torch tensor and vice versa:
     e = np.ones(5, requires_grad=True) 
 ```
 
+autograd (calculating gradients):
+
+```python
+    import torch
+    x = torch.rand(3, requires_grad=True) #False by default
+
+    y = x + 2
+    z = y*y*2
+    z = z.mean()
+
+    z.backward() #calculates dz/dx
+    print(x.grad) #stores tensor gradients 
+    
+```
+
 `requires_grad=True` tells pytorch that we will have to calculate gradient of tensor in later optimization steps.
 
 
@@ -71,4 +88,4 @@ numpy to torch tensor and vice versa:
 
 
 
-resources :  [Implementing ConvNext in PyTorch](https://towardsdatascience.com/implementing-convnext-in-pytorch-7e37a67abba6), [transformers tutorial](https://github.com/NielsRogge/Transformers-Tutorials), [python-docathon](https://pytorch.org/blog/announcing-docathon/), [pytorch-youtube](https://www.youtube.com/@PyTorch/videos)
+resources :  [Implementing ConvNext in PyTorch](https://towardsdatascience.com/implementing-convnext-in-pytorch-7e37a67abba6), [transformers tutorial](https://github.com/NielsRogge/Transformers-Tutorials), [python-docathon](https://pytorch.org/blog/announcing-docathon/), [pytorch-youtube](https://www.youtube.com/@PyTorch/videos), [incredible pytorch](https://github.com/ritchieng/the-incredible-pytorch), [awesome pytorch list](https://github.com/bharathgs/Awesome-pytorch-list).
