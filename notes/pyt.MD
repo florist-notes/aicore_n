@@ -69,7 +69,7 @@ autograd (calculating gradients):
 
 ```python
     import torch
-    x = torch.rand(3, requires_grad=True) #False by default
+    x = torch.rand(3, requires_grad=True) #False by default and creates a computational graph when True
 
     y = x + 2
     z = y*y*2
@@ -77,11 +77,46 @@ autograd (calculating gradients):
 
     z.backward() #calculates dz/dx
     print(x.grad) #stores tensor gradients 
+
+
+    v = torch.tensor([0.1, 1.0, 0.001], dtype=torch.float32)
+    z.backward(v) #neds arguments in case of vector tensor
+
+    x.requires_grad_(False) #stop pytorh tracking history
+    x.detach() #creates new tensor that sheds the gradients
+    with torch.no_grad(): #wrapping around will not track history
+
+
+    import torch
+    weights = torch.ones(4, requires_grad=True)
+
+    for epoch in range(3):
+        model_output = (weights*3).sum()
+        model_output.backward()
+        print(weights.grad)
+        weights.grad.zero_()
     
 ```
 
+optimizers in torch:
+
+```python
+    optimizer = torch.optim.SGD(weights, lr=0.01)
+    optimizer.step()
+    optimizer.zero_grad()
+```
+
+
 `requires_grad=True` tells pytorch that we will have to calculate gradient of tensor in later optimization steps.
 
+STEPS:
+
+PREDICTION: PyTorch Model > Gradients Computation : Autograd > Loss Computation : PyTorch Loss, Parameter Updates : PyTorch Optimizer
+
+```python
+    import numpy as np
+
+```
 
 
 
