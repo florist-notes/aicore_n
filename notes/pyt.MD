@@ -80,7 +80,7 @@ autograd (calculating gradients):
 
 
     v = torch.tensor([0.1, 1.0, 0.001], dtype=torch.float32)
-    z.backward(v) #neds arguments in case of vector tensor
+    z.backward(v) #needs arguments in case of vector tensor
 
     x.requires_grad_(False) #stop pytorh tracking history
     x.detach() #creates new tensor that sheds the gradients
