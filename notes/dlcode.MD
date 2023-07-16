@@ -5,4 +5,5 @@
 
 ```
 
-+  gradient descent optimization with numpy | ([[grad.py](code/grad.py))
++  Gradient Descent Optimization with numpy | ([[grad.py](code/grad.py))
++  Support Vector Machines (SVM) with numpy | ([[svm.py](code/svm.py))
