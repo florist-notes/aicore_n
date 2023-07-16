@@ -1,5 +1,11 @@
 # PyTorch
 
+PyTorch is a powerful, yet easy-to-use deep learning library for Python, mainly used for applications such as computer vision and natural language processing.
+
+While TensorFlow was developed by Google, PyTorch was developed by Facebook's AI Research Group, which has recently shifted management of the framework to the newly created PyTorch Foundation, which is under the supervision of the Linux Foundation.
+
+The flexibility of PyTorch allows easy integration of new data types and algorithms, and the framework is also efficient and scalable, since it was designed to minimize the number of computations required and to be compatible with a variety of hardware architectures.
+
 [[web](https://pytorch.org/)], [[documentation](https://pytorch.org/docs/stable/index.html)], [[github](https://github.com/pytorch/pytorch)], [[tutorial](https://pytorch.org/tutorials/)], [[machinelearningmastery.](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/)], [[hub.docker](https://hub.docker.com/r/pytorch/pytorch/tags)], [[learnpytorch.io](https://www.learnpytorch.io/01_pytorch_workflow/)], [[paper](https://arxiv.org/abs/1912.01703)], [[pytorch-2.0](https://pytorch.org/get-started/pytorch-2.0/)]
 
 <img src="./img/pyt.png" width=30%><a> </a><img src="./img/pytorch-ecosystem.png" width=60%>
@@ -63,6 +69,14 @@ numpy to torch tensor and vice versa:
     a.add_(1) #'b' gets updated as well as they both point to the same memory location
 
     e = np.ones(5, requires_grad=True) 
+    print(d.shape)
+    print(d.dtype)
+    print(d.device)
+
+    new_t = torch.rand_like(d, dtype=torch.float)
+
+    my_shape = (3, 3)
+    rand_t = torch.rand(my_shape) #create tensor from shape
 ```
 
 autograd (calculating gradients):
@@ -143,17 +157,51 @@ Parameter Updates : (PyTorch Optimizer).
     learning_rate = 0.01
     n_iters = 10
 
-    for epoch in range(n_iters):
-        # prediction = forward pass
-        y_pred = forward(X)
-        l = loss(Y. y_pred)
-        dw = gradient(X,Y,y_pred)
-        w -= learning_rate * dw
+    for epoch in range(n_iters): # prediction
+        y_pred = forward(X) #forward pass
+        l = loss(Y. y_pred) #loss
+        dw = gradient(X,Y,y_pred) #gradients
+        w -= learning_rate * dw #update weights
         if epoch % 1 == 0:
             print(f'epoch {epoch*1}: w = {w:.3f}, loss = {l:.8f}')
 
 
     print(f'Prediction after training: f(5) = {forward(5):,3f}')
+```
+
+If done with PyTorch:
+
+```python
+    import torch
+    X = torch.tensor([1,2,3,4], dtype=torch.float32)
+    Y = torch.tensor([2,4,6,8], dtype=torch.float32)
+
+    w = torch.tensor(0.0, dtype=torch.float32, requires_grad=True)
+
+
+
+    for epoch in range(n_iters): # prediction
+        y_pred = forward(X) #forward pass
+        l = loss(Y. y_pred) #loss
+        l.backward()
+        with torch.no_grad():
+            w -= leaning_rate * w.grad
+        w.grad.zero_()
+    
+```
+### PyTorch Tensor Operations:
+
+```python
+
+    zeros_tensor = torch.zeros((2, 3))
+    transposed = zeros_tensor.T
+
+#loading dataset
+
+    from torchvision import datasets
+    from torchvision.transforms import ToTensor
+    import matplotlib.pyplot as plt
+
 ```
 
 
