@@ -31,7 +31,7 @@ Transformers (py/PyTorch)
 </tr>
 <tr>
 <th>
-SLAM (c++)
+Visual SLAM (c++)
 
 <img src="img/slam.gif" width=100%> 
 
