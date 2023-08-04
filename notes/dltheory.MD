@@ -15,12 +15,17 @@
 [Deep Reinforcement Learning](#)
 
 </th>
+<th>
+
+[Graph Neural Networks](./gnn.MD)
+
+</th>
 </tr>
 
 <tr>
 <td>
 
-[Generative AI](#)
+[SLAM](#)
 </td>
 <td>
 
