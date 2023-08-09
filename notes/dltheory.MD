@@ -8,11 +8,11 @@
 
 
 
-[Computer Vision](#)
+[Computer Vision](./cv.MD)
 </th>
 <th>
 
-[Deep Reinforcement Learning](#)
+[Deep Reinforcement Learning](./drl.MD)
 
 </th>
 <th>

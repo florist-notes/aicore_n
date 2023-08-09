@@ -1,0 +1,18 @@
+# Deep Reinforcement Learning
+
+
+
+
+<img src="./img/rl2.png" width=48%> <img src="./img/drl.png" width=48%>
+
++ [Evolving Reinforcement Learning Algorithms](https://ai.googleblog.com/2021/04/evolving-reinforcement-learning.html)
++ [Human-level control through deep reinforcement learning](https://www.nature.com/articles/nature14236)
++ [Model-Based Reinforcement Learning: Theory and Practice](https://bair.berkeley.edu/blog/2019/12/12/mbpo/)
++ [An Introduction to Deep Reinforcement Learning](https://arxiv.org/pdf/1811.12560.pdf)
++ Class : [Stanford CS234: Reinforcement Learning | Winter 2019](https://www.youtube.com/playlist?list=PLoROMvodv4rOSOPzutgyCTapiGlY2Nd8u), [MIT 6.S191: Reinforcement Learning](https://youtu.be/AhyznRSDjw8)
++ freeCodeCamp : [Deep Reinforcement Learning in Python Tutorial - A Course on How to Implement Deep Learning Papers](https://youtu.be/GJJc1t0rtSU), [Reinforcement Learning Course](https://youtu.be/ELE2_Mftqoc)
++ [Deep Reinforcement Learning: CS 285 Fall 2021 (UC Berkeley)](https://www.youtube.com/playlist?list=PL_iWQOsE6TfXxKgI1GgyV1B_Xa0DxE5eH)
++ [DeepMind x UCL | Deep Learning Lecture Series 2021](https://www.youtube.com/playlist?list=PLqYmG7hTraZDVH599EItlEWsUOsJbAodm)
++ Key Papers in Deep RL : [Openai blog](https://spinningup.openai.com/en/latest/spinningup/keypapers.html)
+
+resources : [rl blog 101](https://www.javatpoint.com/reinforcement-learning), [Reinforcement Learning algorithms — an intuitive overview](https://smartlabai.medium.com/reinforcement-learning-algorithms-an-intuitive-overview-904e2dff5bbc), [ScienceDirect - Reinforcement Learning](https://www.sciencedirect.com/topics/computer-science/reinforcement-learning), [github/reinforcement-learning](https://github.com/dennybritz/reinforcement-learning), [Reinforcement Learning, Second Edition An Introduction By Richard S. Sutton and Andrew G. Barto](https://mitpress.mit.edu/9780262039246/reinforcement-learning/), [Deepmind : Reinforcement Learning Lecture Series 2021](https://www.deepmind.com/learning-resources/reinforcement-learning-lecture-series-2021), @github/[awesome-rl](https://github.com/aikorea/awesome-rl), @github/[stable-baselines-3](https://github.com/DLR-RM/stable-baselines3), [A (Long) Peek into Reinforcement Learning](https://lilianweng.github.io/posts/2018-02-19-rl-overview/), [An Introduction to Deep Reinforcement Learning](https://huggingface.co/blog/deep-rl-intro), Stanford AI Lab [blog](https://ai.stanford.edu/blog/rl/), [lilianweng.github.io/](https://lilianweng.github.io/), [Deepmind blog](https://www.deepmind.com/blog).
