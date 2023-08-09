@@ -2,13 +2,13 @@
 
 <img src="./img/obj.gif" width=46%> <img src="./img/seg.gif" width=52%>
 
-I wrote articles on CNN architectures - [GoogLeNet](https://github.com/florist-notes/CNN-GoogLeNet), [ResNet](https://github.com/florist-notes/CNN-ResNet) few year back while researching about them.
+I wrote articles on CNN architectures - [GoogLeNet](https://github.com/florist-notes/CNN-GoogLeNet), [ResNet](https://github.com/florist-notes/CNN-ResNet) few year back while researching about them and published this paper : [doi.org/10.1016/j.tice.2019.02.001](https://www.sciencedirect.com/science/article/abs/pii/S0040816618304397) in Computer Vision.
 
 + [Computer Vision — Andreas Geiger](https://www.youtube.com/playlist?list=PL05umP7R6ij35L2MHGzis8AEHz7mg381_),  [First Principles of Computer Vision](https://www.youtube.com/@firstprinciplesofcomputerv3258/playlists)
-+ [CS231n: Deep Learning for Computer Vision](https://www.youtube.com/playlist?list=PLf7L7Kg8_FNxHATtLwDceyh72QQL9pvpQ) : [web](http://cs231n.stanford.edu/).
++ [CS231n: Deep Learning for Computer Vision](https://www.youtube.com/playlist?list=PLf7L7Kg8_FNxHATtLwDceyh72QQL9pvpQ) : ([web](http://cs231n.stanford.edu/)).
 + [Michigan Online : Deep Learning for Computer Vision](https://www.youtube.com/playlist?list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r)
 + [CS 198-126: Modern Computer Vision Fall 2022 (UC Berkeley)](https://www.youtube.com/playlist?list=PLzWRmD0Vi2KVsrCqA4VnztE4t71KnTnP5)
 + [MIT 6.801 Machine Vision, Fall 2020](https://www.youtube.com/playlist?list=PLUl4u3cNGP63pfpS1gV5P9tDxxL_e4W8O)
 
 
-resources: [OpenCV](https://opencv.org/), [intro-blog](https://towardsdatascience.com/everything-you-ever-wanted-to-know-about-computer-vision-heres-a-look-why-it-s-so-awesome-e8a58dfb641e), [Deep Learning for Computer Vision with Python and TensorFlow](https://www.youtube.com/watch?v=IA3WxTTPXqQ&t=82234s), [CV3DST : Dynamic Vision and Learning Group](https://www.youtube.com/@dynamicvisionandlearninggr1022/playlists), [@CyrillStachniss](https://www.youtube.com/@CyrillStachniss/playlists), @github/[cmu-openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), @github/[google-mediapipe](https://github.com/google/mediapipe)
+resources: [OpenCV](https://opencv.org/), [intro-blog](https://towardsdatascience.com/everything-you-ever-wanted-to-know-about-computer-vision-heres-a-look-why-it-s-so-awesome-e8a58dfb641e), [Deep Learning for Computer Vision with Python and TensorFlow](https://www.youtube.com/watch?v=IA3WxTTPXqQ&t=82234s), [CV3DST : Dynamic Vision and Learning Group](https://www.youtube.com/@dynamicvisionandlearninggr1022/playlists), [@CyrillStachniss](https://www.youtube.com/@CyrillStachniss/playlists), @github/[cmu-openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), @github/[google-mediapipe](https://github.com/google/mediapipe).
