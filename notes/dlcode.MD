@@ -35,6 +35,8 @@ Visual SLAM (c++)
 
 <img src="img/slam.gif" width=100%> 
 
+[ [code](./code/slam/README.MD) ]
+
 </th>
 <th>
 Unscented Kalman Filter (UKF) (c++)
