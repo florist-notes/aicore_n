@@ -2,7 +2,7 @@
 
 Ok, let's code a visual SLAM from scratch in c++. I am learning from my notes @github/[autonomy_perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD),  @github/[robotics-slam](https://github.com/florist-notes/aicore_s/blob/main/notes/robotics_ee_hardware/roboticsmech.MD) and companion guide '[Introduction to Visual SLAM](https://link.springer.com/book/10.1007/978-981-16-4939-4)' : [ [code](https://github.com/gaoxiang12/slambook2/tree/master) : [booken](https://github.com/gaoxiang12/slambook-en) ]. Example: [ORB SLAM 3](https://github.com/UZ-SLAMLab/ORB_SLAM3), [FastSLAM](https://link.springer.com/book/10.1007/978-3-540-46402-0).
 
-### Introduction to SLAM :
+## Introduction to SLAM 
 ### 3D Rigid Body Motion :
 
 Overview of a SLAM system. It describes each module of a
