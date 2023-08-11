@@ -2,7 +2,7 @@
 
 ### Here is a custom list of python libraries for Machine Learning ( (AI) ) :
 
-LLM : [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ]
+LLM : [Llama 2](https://ai.meta.com/llama/), [PaLM 2 (Bison-001)](https://blog.google/technology/ai/google-palm-2-ai-large-language-model/), [Falcon LLM](https://falconllm.tii.ae/), [GPT-4](https://openai.com/research/gpt-4), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [Claude](https://www.anthropic.com/index/introducing-claude), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ]
 
 <img src="./img/alp.png" width=40%><a> </a><img src="./img/ll.png" width=20%><a> </a><img src="./img/ff.png" width=30%>
 
@@ -118,7 +118,7 @@ MLOPs / Distributed ML libraries:
 
 + [horovod](https://github.com/horovod/horovod), [Deep Speed](https://github.com/microsoft/DeepSpeed), [modin](https://github.com/modin-project/modin), [bentoml](https://github.com/bentoml/BentoML), [apex](https://github.com/NVIDIA/apex), [dask](https://github.com/dask/dask), [colossal-AI](https://github.com/hpcaitech/ColossalAI), [composer](https://github.com/mosaicml/composer), [mlflow](https://github.com/mlflow/mlflow), [lightning](https://github.com/Lightning-AI/lightning), [airflow](https://github.com/apache/airflow), [deap](https://github.com/DEAP/deap) (distributed evolutionary algorithms), [ray](https://github.com/ray-project/ray), [mars](https://github.com/mars-project/mars), [tensorflowonspark](https://github.com/yahoo/TensorFlowOnSpark), [sonnet](https://github.com/deepmind/sonnet), [celery](https://github.com/celery/celery), [pandarallel](https://github.com/nalepae/pandarallel), [polyaxon](https://github.com/polyaxon/polyaxon), [hummingbird](https://github.com/microsoft/hummingbird), [nni](https://github.com/microsoft/nni) , [byteps](https://github.com/bytedance/byteps), [vaex](https://github.com/vaexio/vaex), [clearml](https://github.com/allegroai/clearml), [tvm](https://github.com/apache/tvm), [st2](https://github.com/StackStorm/st2), [jina](https://github.com/jina-ai/jina) , [accelerate](https://github.com/huggingface/accelerate).
 
-Computer Vision / Visualization Libraries:
+Computer Vision / Visualization Libraries: @github/[awesome-computer-vision](https://github.com/jbhuang0604/awesome-computer-vision), @github/[awesome-deep-vision](https://github.com/kjw0612/awesome-deep-vision)
 
 <table>
 <tr>
@@ -350,7 +350,7 @@ Extra
 
 </table>
 
-Natural Language Processing (NLP) libraries:
+Natural Language Processing (NLP) libraries: @github/[awesome-nlp](https://github.com/keon/awesome-nlp)
 
 <table>
 <tr>
@@ -499,7 +499,9 @@ chatbot
 </table>
 
 
-# ✤ data visualization:
+# ✤ data visualization: 
+
+@github/[awesome-dataviz](https://github.com/javierluraschi/awesome-dataviz)
 
 This [list1](https://github.com/javierluraschi/awesome-dataviz), [list2](https://github.com/topics/data-visualization) has most of the data viz
 libraries but i'll list a few which will be relevant for our use cases.
