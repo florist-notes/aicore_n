@@ -75,7 +75,11 @@ $$    u_k = [ \Delta x_1, \Delta x_2, \Delta θ ]^T_k $$
 so the motion equation can be parameterized as:
 
 
-$$   \begin{bmatrix} x_1 \\[0.3em] x_2 \\[0.3em] θ \\[0.3em] \end{bmatrix}_k =  \begin{bmatrix} x_1 \\[0.3em] x_2 \\[0.3em] θ \\[0.3em] \end{bmatrix}_{k-1} + \begin{bmatrix} \Delta x_1 \\[0.3em] \Delta x_2 \\[0.3em] \Delta θ \\[0.3em] \end{bmatrix}_k + W_k $$
+$$  \begin{bmatrix} x_1 \\[0.3em] x_2 \\[0.3em] θ \\[0.3em] \end{bmatrix}_k  $$ 
+
+equals  
+
+$$  \begin{bmatrix} x_1 \\[0.3em] x_2 \\[0.3em] θ \\[0.3em] \end{bmatrix}_{k-1} + \begin{bmatrix} \Delta x_1 \\[0.3em] \Delta x_2 \\[0.3em] \Delta θ \\[0.3em] \end{bmatrix}_k + W_k  $$
 
 where w_k is noise.
 
