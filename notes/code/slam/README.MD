@@ -115,19 +115,20 @@ observed. These two equations together describe a basic SLAM problem: how to sol
 
 The solution to the state estimation problem is related to the two equations’ specific form and the noise probability distribution. Whether the motion and observation equations are linear and whether the noise is assumed to be Gaussian, it is divided into linear/nonlinear and Gaussian/non-Gaussian systems. The Linear Gaussian (LG system) is the simplest, and its unbiased optimal estimation can be given by the Kalman Filter (KF). In the complex nonlinear non-Gaussian (NLNG system), we basically rely on two methods: Extended Kalman Filter (EKF) and nonlinear optimization. Today, the mainstream of visual SLAM uses state-of-the-art optimization techniques represented by graph optimization [[Visual SLAM: Why Filter?](https://www.doc.ic.ac.uk/~ajd/Publications/strasdat_etal_ivc2012.pdf)]. [Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age](https://arxiv.org/pdf/1606.05830.pdf).
 
-### 3D Rigid Body Motion :
+### 3D Rigid Body Motion : ([NOTES](./3drigid.MD))
 
 Overview of a SLAM system. It describes each module of a
 typical SLAM system and explains what to do and how to do it. 
-### Lie Group and Lie Algebra :
+### Lie Group and Lie Algebra : ([NOTES](./lieg.MD))
+
 
 Lie group and Lie algebra. Lie group manipulation with [Sophus](https://github.com/strasdat/Sophus).
 
-### Cameras and Images :
+### Cameras and Images : ([NOTES](./cami.MD))
 
 Pinhole camera model and image expression in computer. OpenCV to retrieve the camera’s intrinsic and extrinsic parameters and
 generate a point cloud using the depth information through Point Cloud Library (PCL) .
-### Nonlinear Optimization : 
+### Nonlinear Optimization :  ([NOTES](./nonlinop.MD))
 
  Nonlinear optimization, including state estimation, least squares, and gradient descent methods, e.g., Gauss-Newton and Levenburg-Marquardt method. Curve-fitting problem using the Ceres and g2o library.
 
