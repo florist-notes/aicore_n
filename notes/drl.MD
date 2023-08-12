@@ -6,7 +6,7 @@
 <img src="./img/rl2.png" width=48%> <img src="./img/drl.png" width=48%>
 
 I made a video on Reinforcement Learning  - "A.I. learns to play Mario " [ [video](https://youtu.be/0EGWbqH3Li0) ] few years back and my bachelor thesis was : "Actor-Critic and Q-value reinforcement learning with GANs for autonomous driving" where I compared performance of
-DRL algorithms - DQN, A2C, A3C, DDPG and PPO in [CARLA](https://carla.org/). I also completed Udacity's Deep Reinforcement Learning Nanodegree [[certificate](https://graduation.udacity.com/confirm/W4DQ2JCV)].
+DRL algorithms - DQN, A2C, A3C, DDPG and PPO in [CARLA](https://carla.org/). I also [graduated](https://graduation.udacity.com/confirm/W4DQ2JCV) from Udacity's Deep Reinforcement Learning Nanodegree.
 
 + [Evolving Reinforcement Learning Algorithms](https://ai.googleblog.com/2021/04/evolving-reinforcement-learning.html)
 + [Human-level control through deep reinforcement learning](https://www.nature.com/articles/nature14236)
