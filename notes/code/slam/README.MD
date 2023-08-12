@@ -97,11 +97,11 @@ $$ z_{k,j} = [r_{k,j}, φ_{k,j}]^T $$
 
 , then the observation equation is written as:
 
-$$ \begin{bmatrix} r_{k,j} \\[0.3em] φ_{k,j} \end{bmatrix}  $$ 
+$$ \begin{bmatrix} r_{k,j} \\[0.3em]  φ_{k,j} \end{bmatrix}  $$ 
 
 equals
 
-$$ \begin{bmatrix} \sqrt{(y_{1,j}-x_{1,k})^2 - (y_{2,j}-x_{2,k})^2} \\[0.3em] arctan ( \frac{(y_{2,j}-x_{2,k})}{(y_{1,j}-x_{1,k})} )  \end{bmatrix}  $$
+$$ \begin{bmatrix} \sqrt{(y_{1,j}-x_{1,k})^2 - (y_{2,j}-x_{2,k})^2} \\[0.3em]  arctan ( \frac{(y_{2,j}-x_{2,k})}{(y_{1,j}-x_{1,k})} )  \end{bmatrix}  $$
 
 SLAM process can be summarized into two basic equations: 
 
