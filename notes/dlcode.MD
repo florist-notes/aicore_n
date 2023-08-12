@@ -38,16 +38,15 @@ Visual SLAM (c++)
 [ [code](./code/slam/README.MD) ]
 
 </th>
-<th>
-Unscented Kalman Filter (UKF) (c++)
+<th>Multi Agent System : Crazyfly 2.1 (c++)
 
-<img src="img/kf.gif" width=100%> 
+<img src="img/swarm.webp" width=100%> 
 
 </th>
 <th>
 Neural Structure-from-Motion (c++)
 
-<img src="img/sfm.webp" width=100%> 
+<img src="img/sfm.png" width=100%> 
 
 </th>
 </tr>
