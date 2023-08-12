@@ -50,6 +50,70 @@ get globally consistent trajectories and maps.
   
 + Topological Maps: A topological map is a graph composed of nodes and edges, only considering the connectivity between nodes. For instance, we only care about that point A and point B are connected, regardless of how we could travel from point A to point B. 
 
+
+#### Mathematical Formulation of SLAM Problems:
+
+motion equation :  x is position, u is the input, w is noise.
+
+$$    x_k = f( x_k-_1, u_k, w_k ) $$
+
+The presence of noise turns this model into a stochastic model. 
+
+observation equation :  landmark point y at x and generates an observation data z. v is the noise.
+
+$$    z_k,_j = h( y_j, x_k, v_k,_j ) $$
+
+
+Suppose our robot moves in a plane, then its pose is described by two x − y coordinates and an angle. i.e, :
+
+$$    x_k = [ x_1, x_2, θ ]^T_k $$
+
+At the same time, the input command is the position and angle change between the time interval: 
+
+$$    u_k = [ \Delta x_1, \Delta x_2, \Delta θ ]^T_k $$
+
+so the motion equation can be parameterized as:
+
+
+$$
+\begin{bmatrix}
+x_1 \\[0.3em]
+
+x_2 \\[0.3em]
+
+θ \\[0.3em]
+\end{bmatrix}_k
+
+= 
+
+\begin{bmatrix}
+x_1 \\[0.3em]
+
+x_2 \\[0.3em]
+
+θ \\[0.3em]
+\end{bmatrix}_{k-1}
+
++
+
+\begin{bmatrix}
+\Delta x_1 \\[0.3em]
+
+\Delta x_2 \\[0.3em]
+
+\Delta θ \\[0.3em]
+\end{bmatrix}_k
+
++
+W_k
+
+$$
+
+where w_k is noise.
+
+
+
+
 ### 3D Rigid Body Motion :
 
 Overview of a SLAM system. It describes each module of a
