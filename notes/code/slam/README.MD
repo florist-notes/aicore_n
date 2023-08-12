@@ -111,7 +111,7 @@ $$  \begin{cases} x_k = f (x_{k−1}, u_k , w_k ), k = 1,..., K ; z_{k,j} = h(y_
 where O is a set that contains the information at which pose the landmark was
 observed. These two equations together describe a basic SLAM problem: how to solve the estimate x (localization) and y (mapping) problem with the noisy control input u and the sensor reading z data?  we have modeled the SLAM problem as a state estimation problem. How to estimate the internal, hidden state variables through the noisy measurement data?
 
-The solution to the state estimation problem is related to the two equations’ specific form and the noise probability distribution. Whether the motion and observation equations are linear and whether the noise is assumed to be Gaussian, it is divided into linear/nonlinear and Gaussian/non-Gaussian systems. The Linear Gaussian (LG system) is the simplest, and its unbiased optimal estimation can be given by the Kalman Filter (KF). In the complex nonlinear non-Gaussian (NLNG system), we basically rely on two methods: Extended Kalman Filter (EKF) and nonlinear optimization. Today, the mainstream of visual SLAM uses state-of-the-art optimization techniques represented by graph optimization.
+The solution to the state estimation problem is related to the two equations’ specific form and the noise probability distribution. Whether the motion and observation equations are linear and whether the noise is assumed to be Gaussian, it is divided into linear/nonlinear and Gaussian/non-Gaussian systems. The Linear Gaussian (LG system) is the simplest, and its unbiased optimal estimation can be given by the Kalman Filter (KF). In the complex nonlinear non-Gaussian (NLNG system), we basically rely on two methods: Extended Kalman Filter (EKF) and nonlinear optimization. Today, the mainstream of visual SLAM uses state-of-the-art optimization techniques represented by graph optimization [[Visual SLAM: Why Filter?](https://www.doc.ic.ac.uk/~ajd/Publications/strasdat_etal_ivc2012.pdf)]. [Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age](https://arxiv.org/pdf/1606.05830.pdf).
 
 ### 3D Rigid Body Motion :
 
@@ -119,7 +119,7 @@ Overview of a SLAM system. It describes each module of a
 typical SLAM system and explains what to do and how to do it. 
 ### Lie Group and Lie Algebra :
 
-Lie group and Lie algebra. Lie group manipulation with Sophus.
+Lie group and Lie algebra. Lie group manipulation with [Sophus](https://github.com/strasdat/Sophus).
 
 ### Cameras and Images :
 
