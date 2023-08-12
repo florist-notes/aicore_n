@@ -76,6 +76,7 @@ so the motion equation can be parameterized as:
 
 
 $$
+
 \begin{bmatrix}
 x_1 \\[0.3em]
 
