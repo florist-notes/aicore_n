@@ -33,7 +33,7 @@ Transformers (py/PyTorch)
 <th>
 Visual SLAM (c++)
 
-<img src="img/slam.gif" width=100%> 
+<img src="img/vslam2.png" width=100%> 
 
 [ [code](./code/slam/README.MD) ]
 
