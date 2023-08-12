@@ -15,17 +15,23 @@ Computer Vision (py/PyTorch)
 
 <img src="img/cv.png" width=100%> 
 
+[ [code](./cnn_py.MD) ]
+
 </th>
 <th>
 Deep Reinforcement Learning (py/PyTorch)
 
 <img src="img/rl.png" width=100%> 
 
+[ [code](./deeprl.MD) ]
+
 </th>
 <th>
 Transformers (py/PyTorch)
 
 <img src="img/transformer.png" width=100%> 
+
+[ [code](./transformers.MD) ]
 
 </th>
 </tr>
