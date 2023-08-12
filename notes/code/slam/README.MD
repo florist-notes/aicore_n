@@ -83,8 +83,33 @@ $$ \begin{bmatrix} x_1  x_2  θ  \end{bmatrix}_{k-1} + \begin{bmatrix} \Delta x_
 
 where w_k is noise.
 
+We know that a laser observes a 2D landmark by measuring two quantities: the distance r between the landmark point and the robot, and the angle φ.   Let’s say the landmark is at
+
+$$ y_j = [y_1, y_2]^T_j $$
+
+ the pose is 
+
+$$ x_k = [x_1, x_2]^T_k $$
+
+, and the observed data is 
+
+$$ z_{k,j} = [r_{k,j}, φ_{k,j}]^T $$
+
+, then the observation equation is written as:
+
+$$ \begin{bmatrix} r_{k,j} \\[0.3em] φ_{k,j} \end{bmatrix}  $$ 
+
+equals
+
+$$ \begin{bmatrix} \sqrt{(y_{1,j}-x_{1,k})^2 - (y_{2,j}-x_{2,k})^2} \\[0.3em] arctan ( \frac{(y_{2,j}-x_{2,k})}{(y_{1,j}-x_{1,k})} )  \end{bmatrix}  $$
+
+SLAM process can be summarized into two basic equations: 
 
 
+$$  \begin{cases} x_k = f (x_{k−1}, u_k , w_k ), k = 1,..., K \\ z_{k,j} = h(y_j, x_k , v_{k,j}), (k, j) ∈ O \end{cases} $$
+
+where O is a set that contains the information at which pose the landmark was
+observed. These two equations together describe a basic SLAM problem: how to solve the estimate x (localization) and y (mapping) problem with the noisy control input u and the sensor reading z data?  we have modeled the SLAM problem as a state estimation problem. How to estimate the internal, hidden state variables through the noisy measurement data?
 
 ### 3D Rigid Body Motion :
 
