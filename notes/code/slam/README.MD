@@ -97,19 +97,21 @@ $$ z_{k,j} = [r_{k,j}, φ_{k,j}]^T $$
 
 , then the observation equation is written as:
 
-$$ \begin{bmatrix} r_{k,j} \\[0.3em]  φ_{k,j} \end{bmatrix}  $$ 
+$$ \begin{bmatrix} r_{k,j}   φ_{k,j} \end{bmatrix}  $$ 
 
 equals
 
-$$ \begin{bmatrix} \sqrt{(y_{1,j}-x_{1,k})^2 - (y_{2,j}-x_{2,k})^2} \\[0.3em]  arctan ( \frac{(y_{2,j}-x_{2,k})}{(y_{1,j}-x_{1,k})} )  \end{bmatrix}  $$
+$$ \begin{bmatrix} \sqrt{(y_{1,j}-x_{1,k})^2 - (y_{2,j}-x_{2,k})^2} ;  arctan ( \frac{(y_{2,j}-x_{2,k})}{(y_{1,j}-x_{1,k})} )  \end{bmatrix}  $$
 
 SLAM process can be summarized into two basic equations: 
 
 
-$$  \begin{cases} x_k = f (x_{k−1}, u_k , w_k ), k = 1,..., K \\ z_{k,j} = h(y_j, x_k , v_{k,j}), (k, j) ∈ O \end{cases} $$
+$$  \begin{cases} x_k = f (x_{k−1}, u_k , w_k ), k = 1,..., K ; z_{k,j} = h(y_j, x_k , v_{k,j}), (k, j) ∈ O \end{cases} $$
 
 where O is a set that contains the information at which pose the landmark was
 observed. These two equations together describe a basic SLAM problem: how to solve the estimate x (localization) and y (mapping) problem with the noisy control input u and the sensor reading z data?  we have modeled the SLAM problem as a state estimation problem. How to estimate the internal, hidden state variables through the noisy measurement data?
+
+The solution to the state estimation problem is related to the two equations’ specific form and the noise probability distribution. Whether the motion and observation equations are linear and whether the noise is assumed to be Gaussian, it is divided into linear/nonlinear and Gaussian/non-Gaussian systems. The Linear Gaussian (LG system) is the simplest, and its unbiased optimal estimation can be given by the Kalman Filter (KF). In the complex nonlinear non-Gaussian (NLNG system), we basically rely on two methods: Extended Kalman Filter (EKF) and nonlinear optimization. Today, the mainstream of visual SLAM uses state-of-the-art optimization techniques represented by graph optimization.
 
 ### 3D Rigid Body Motion :
 
