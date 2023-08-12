@@ -136,3 +136,132 @@ int main(int argc, char **argv) {
 This example demonstrates the basic operations and operations of the Eigen
 matrix. To compile it, we need to specify the header file directory of Eigen in
 the CMakeLists.txt:  `include_directories( "/usr/include/eigen3" )`. Because the Eigen library only has header files, we don’t need to link the program to the library with the `target_link_libraries` statement.
+
+Rotation Vectors, Euler Angles and Quaternions :
+[Quaternions and 3d rotation, explained interactively](https://youtu.be/zjMuIxRvygQ), [Visualizing quaternions (4d numbers) with stereographic projection](https://youtu.be/d4EgbgTm0Bg)
+
+Affine and Projective Transformation : [What are affine transformations?](https://youtu.be/E3Phj6J287o)
+
+Data Structure of the Eigen Geometry Module:
+
+
+```cpp
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+#include <Eigen/Core>
+#include <Eigen/Geometry>
+
+using namespace Eigen;
+
+// This program demonstrates the use of the Eigen geometry module
+
+int main(int argc, char **argv) {
+
+   // The Eigen/Geometry module provides various representations of rotation and translation
+   // 3D rotation matrix directly use Matrix3d or Matrix3f
+   Matrix3d rotation_matrix = Matrix3d::Identity();
+   // The rotation vector uses AngleAxis, its bottom layer is not directly a Matrix, but the operation can be used as a matrix (because the operator is overloaded)
+   AngleAxisd rotation_vector(M_PI / 4, Vector3d(0, 0, 1)); //rotate 45 degrees along the Z axis
+   cout. precision(3);
+   cout << "rotation matrix =\n" << rotation_vector.matrix() << endl; //Convert to matrix with matrix()
+   // can also be assigned directly
+   rotation_matrix = rotation_vector.toRotationMatrix();
+   // Use AngleAxis to perform coordinate transformation
+   Vector3d v(1, 0, 0);
+   Vector3d v_rotated = rotation_vector * v;
+   cout << "(1,0,0) after rotation (by angle axis) = " << v_rotated.transpose() << endl;
+   // or use a rotation matrix
+   v_rotated = rotation_matrix * v;
+   cout << "(1,0,0) after rotation (by matrix) = " << v_rotated.transpose() << endl;
+
+   // Euler angle: the rotation matrix can be directly converted into Euler angle
+   Vector3d euler_angles = rotation_matrix.eulerAngles(2, 1, 0); // ZYX order, ie roll pitch yaw order
+   cout << "yaw pitch roll = " << euler_angles.transpose() << endl;
+
+   // Euclidean transformation matrix using Eigen::Isometry
+   Isometry3d T = Isometry3d::Identity(); // Although it is called 3d, it is actually a 4*4 matrix
+   T.rotate(rotation_vector); // Rotate according to rotation_vector
+   T.pretranslate(Vector3d(1, 3, 4)); // Set the translation vector to (1,3,4)
+   cout << "Transform matrix = \n" << T.matrix() << endl;
+
+   // use transformation matrix for coordinate transformation
+   Vector3d v_transformed = T * v; // equivalent to R*v+t
+   cout << "v transformed = " << v_transformed.transpose() << endl;
+
+   // For affine and projective transformations, use Eigen::Affine3d and Eigen::Projective3d, slightly
+
+   // Quaternion
+   // You can directly assign AngleAxis to a quaternion, and vice versa
+   Quaterniond q = Quaterniond(rotation_vector);
+   cout << "quaternion from rotation vector = " << q.coeffs().transpose()
+        << endl; // Please note that the order of coeffs is (x, y, z, w), w is the real part, and the first three are the imaginary part
+   // You can also assign the rotation matrix to it
+   q = Quaterniond(rotation_matrix);
+   cout << "quaternion from rotation matrix = " << q. coeffs(). transpose() << endl;
+   // Use quaternion to rotate a vector, just use overloaded multiplication
+   v_rotated = q * v; // Note that it is qvq^{-1} in mathematics
+   cout << "(1,0,0) after rotation = " << v_rotated.transpose() << endl;
+   // Expressed by conventional vector multiplication, it should be calculated as follows
+   cout << "should be equal to " << (q * Quaterniond(0, 1, 0, 0) * q. inverse()). coeffs(). transpose() << endl;
+
+   return 0;
+}
+
+```
+
+• Rotation matrix ( 3 × 3 ): `Eigen::Matrix3d`.
+• Rotation vector ( 3 × 1 ): `Eigen::AngleAxisd`.
+• Euler angle ( 3 × 1 ): `Eigen::Vector3d`.
+• Quaternion ( 4 × 1 ): `Eigen::Quaterniond`.
+• Euclidean transformation matrix ( 4 × 4 ): `Eigen::Isometry3d`.
+• Affine transform ( 4 × 4 ): `Eigen::Affine3d`.
+• Perspective transformation ( 4 × 4 ): `Eigen::Projective3d`
+
+ This program demonstrates how to use the rotation matrix, rotation
+vectors (AngleAxis), Euler angles, and quaternions in Eigen. 
+
+Coordinate Transformation Example:
+
+The pose of the robot 1 is 
+
+$$ q_1 = [0.35, 0.2, 0.3, 0.1]^T ,t_1 = [0.3, 0.1, 0.1]^T . $$
+
+The pose of the robot 2 is 
+
+$$ q_2 = [−0.5, 0.4, −0.1, 0.2]^T ,t_2 = [−0.1, 0.5, 0.3]^T $$
+
+Here q and t express T_{R_k} ,W , k = 1, 2, which is the world to the robot transform matrix.
+
+```cpp
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <Eigen/Core>
+#include <Eigen/Geometry>
+
+using namespace std;
+using namespace Eigen;
+
+int main(int argc, char** argv) {
+  Quaterniond q1(0.35, 0.2, 0.3, 0.1), q2(-0.5, 0.4, -0.1, 0.2);
+  q1.normalize();
+  q2.normalize();
+  Vector3d t1(0.3, 0.1, 0.1), t2(-0.1, 0.5, 0.3);
+  Vector3d p1(0.5, 0, 0.2);
+
+  Isometry3d T1w(q1), T2w(q2);
+  T1w.pretranslate(t1);
+  T2w.pretranslate(t2);
+
+  Vector3d p2 = T2w * T1w.inverse() * p1;
+  cout << endl << p2.transpose() << endl;
+  return 0;
+}
+
+```
+
