@@ -137,7 +137,7 @@ This example demonstrates the basic operations and operations of the Eigen
 matrix. To compile it, we need to specify the header file directory of Eigen in
 the CMakeLists.txt:  `include_directories( "/usr/include/eigen3" )`. Because the Eigen library only has header files, we don’t need to link the program to the library with the `target_link_libraries` statement.
 
-Rotation Vectors, Euler Angles and Quaternions :
+## Rotation Vectors, Euler Angles and Quaternions :
 [Quaternions and 3d rotation, explained interactively](https://youtu.be/zjMuIxRvygQ), [Visualizing quaternions (4d numbers) with stereographic projection](https://youtu.be/d4EgbgTm0Bg)
 
 Affine and Projective Transformation : [What are affine transformations?](https://youtu.be/E3Phj6J287o)
