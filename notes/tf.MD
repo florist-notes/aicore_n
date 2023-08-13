@@ -4,15 +4,32 @@
 
 <img src="./img/tf.png" width=100%>
 
+```python
+
+    $ pip install tensorflow
+
+```
+
 TensorFlow was first made public in 2015, while the first stable version appeared on February 11, 2017. It is created and maintained by Google. Ever since then, it has become one of the most popular frameworks for deep learning and machine learning projects. It has a vast library for large-scale machine learning and numerical computation. Here are some more milestones of TensorFlow:
 
-In December 2017, Kubeflow is released for the operation and deployment of TensorFlow on Kubernetes.
-In March 2018, TensorFlow 1.0 was released for machine learning in JavaScript.
-In Jan 2019, TensorFlow 2.0 is released which adds a number of components to TensorFlow.
-In May 2019, TensorFlow Graphic was released for deep learning in computer graphics.
++ In December 2017, Kubeflow is released for the operation and deployment of TensorFlow on Kubernetes.
++ In March 2018, TensorFlow 1.0 was released for machine learning in JavaScript.
++ In Jan 2019, TensorFlow 2.0 is released which adds a number of components to TensorFlow.
++ In May 2019, TensorFlow Graphic was released for deep learning in computer graphics.
 
 
 TensorFlow allows you to create dataflow graphs that describe how data moves through a graph. The graph consists of nodes that represent a mathematical operation. A connection or edge between nodes is a multidimensional data array. It takes inputs as a multi-dimensional array where you can construct a flowchart of operations that can be performed on these inputs.
+
+```python
+
+>>> import tensorflow as tf
+>>> tf.add(1, 2).numpy()
+3
+>>> hello = tf.constant('Hello, TensorFlow! 🌸')
+>>> hello.numpy()
+b'Hello, TensorFlow! 🌸'
+
+```
 
 <b>Tensor :</b> Tensor forms the core framework of TensorFlow. All the computations in TensorFlow involve tensors. It is a matrix of n-dimensions that represents multiple types of data. A tensor can be the result of a computation or it can originate from the input data.
 
@@ -59,6 +76,4 @@ TensorFlow allows you to create dataflow graphs that describe how data moves thr
 
 ```
 
-Finally : `probability_model(x_test[:5])`
-
-resources: [udemy-tensorflow-developer-certificate](https://www.udemy.com/course/tensorflow-developer-certificate-machine-learning-zero-to-mastery/), [tf2-machine-learning-mastery](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/), [tf-quick-start-guide](https://www.tensorflow.org/tutorials/quickstart/beginner), [tf-models](https://github.com/tensorflow/models), [computer vision with tf2](https://youtu.be/IA3WxTTPXqQ)
+resources: [udemy-tensorflow-developer-certificate](https://www.udemy.com/course/tensorflow-developer-certificate-machine-learning-zero-to-mastery/), [tf2-machine-learning-mastery](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/), [tf-quick-start-guide](https://www.tensorflow.org/tutorials/quickstart/beginner), [tf-models](https://github.com/tensorflow/models), [computer vision with tf2](https://youtu.be/IA3WxTTPXqQ), [tensorflow-c++/API](https://www.tensorflow.org/api_docs/cc)
