@@ -126,11 +126,11 @@ Lie group and Lie algebra. Lie group manipulation with [Sophus](https://github.c
 
 ### Cameras and Images : ([NOTES](./cami.MD))
 
-Pinhole camera model and image expression in computer. OpenCV to retrieve the camera’s intrinsic and extrinsic parameters and
-generate a point cloud using the depth information through Point Cloud Library (PCL) .
+Pinhole camera model and image expression in computer. [OpenCV](https://opencv.org/) to retrieve the camera’s intrinsic and extrinsic parameters and
+generate a point cloud using the depth information through [Point Cloud Library](https://pointclouds.org/) (PCL) .
 ### Nonlinear Optimization :  ([NOTES](./nonlinop.MD))
 
- Nonlinear optimization, including state estimation, least squares, and gradient descent methods, e.g., Gauss-Newton and Levenburg-Marquardt method. Curve-fitting problem using the Ceres and g2o library.
+ Nonlinear optimization, including state estimation, least squares, and gradient descent methods, e.g., Gauss-Newton and Levenburg-Marquardt method. Curve-fitting problem using the [Ceres](http://ceres-solver.org/) and [g2o](https://github.com/RainerKuemmerle/g2o) library.
 
 
 ## SLAM Technologies 
