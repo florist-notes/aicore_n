@@ -97,15 +97,15 @@ int main( int argc, char** argv )
 
 In CMAkeLists.txt we add : `find_package( Sophus REQUIRED )`, `include_directories( ${Sophus_INCLUDE_DIRS} )` and `add_executable( useSophus useSophus.cpp )`.
 
-Evaluating the Trajectory :  Difference between the estimated trajectory of an algorithm and the real trajectory to evaluate the algorithm’s accuracy. Calculate the absolute trajectory error and display it in a 3D window. There are many kinds of error indicators. The common used one is absolute
+Evaluating the Trajectory :  Difference between the estimated trajectory of an algorithm and the real trajectory to evaluate the algorithm’s accuracy. Calculate the Absolute Trajectory Error (ATE) and display it in a 3D window. There are many kinds of error indicators. The common used one is absolute
 trajectory error, which is like:
 
-$$ ATE_{all} =  \sqrt{ \dfrac{1}{N} \sum_{i=1}^{N} || log(T^{-1}_{realtraj,i} T_{estimat,i})^v ||  \dfrac{2}{2}, } $$
 
-This is actually the root-mean-squared error (RMSE) for each pose in Lie algebra.
-This error can describe both the rotation and translation errors
+$$ ATE_{all} =  \sqrt{ \dfrac{1}{N} \sum_{i=1}^{N} || log( T^{-1}_{realtraj,i} T_{estimat,i} )^v ||  \dfrac{2}{2} } $$
 
-$$ ATE_{trans} =  \sqrt{ \dfrac{1}{N} \sum_{i=1}^{N} || trans(T^{-1}_{realtraj,i} T_{estimat,i}) ||  \dfrac{2}{2}, } $$
+This is actually the root-mean-squared error (RMSE) for each pose in Lie algebra. This error can describe both the rotation and translation errors:
+
+$$ ATE_{trans} =  \sqrt{ \dfrac{1}{N} \sum_{i=1}^{N} || trans(T^{-1}_{realtraj,i} T_{estimat,i}) ||  \dfrac{2}{2} } $$
 
 
 ```cpp
