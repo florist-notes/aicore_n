@@ -1,5 +1,7 @@
 # Deep Reinforcement Learning
 
+My notes on Deep Reinforcement Learning are @/[deeprl_theory](./drl.MD) and here I roughly go over a typical DRL NN architecture:
+
 
 <img src="img/dd.png" width=100%> 
 

@@ -1,8 +1,10 @@
 # CNN in PyTorch
 
+I have my Computer Vision notes @/[cv_theory](./cv.MD) and here I roughly go over a typical CNN architecture:
+
 Convolutional Neural Network (CNN) is the extended version of artificial neural networks (ANN) which is predominantly used to extract the feature from the grid-like matrix dataset. For example visual datasets like images or videos where data patterns play an extensive role. Convolutional Neural Network consists of multiple layers like the input layer, Convolutional layer, Pooling layer, and fully connected layers. 
 
-<img src="img/cnn.png" width=100%> 
+<img src="img/cnn2.png" width=100%> 
 
 + Input Layers: It’s the layer in which we give input to our model. In CNN, Generally, the input will be an image or a sequence of images. This layer holds the raw input of the image.
 + Convolutional Layers: This is the layer, which is used to extract the feature from the input dataset. It applies a set of learnable filters known as the kernels to the input images. The filters/kernels are smaller matrices usually 2×2, 3×3, or 5×5 shape. it slides over the input image data and computes the dot product between kernel weight and the corresponding input image patch. The output of this layer is referred ad feature maps.
@@ -12,10 +14,9 @@ Convolutional Neural Network (CNN) is the extended version of artificial neural 
 + Fully Connected Layers: It takes the input from the previous layer and computes the final classification or regression task.
 
 
-<img src="img/seg.png" width=100%> 
+<img src="img/unet.webp" width=100%> 
 
 Segmentation with PyTorch:
-
 
 ```python
 
