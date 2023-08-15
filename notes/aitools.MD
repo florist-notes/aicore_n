@@ -2,7 +2,9 @@
 
 ### Here is a custom list of python libraries for Machine Learning ( (AI) ) :
 
-LLM : [Llama 2](https://ai.meta.com/llama/), [PaLM 2 (Bison-001)](https://blog.google/technology/ai/google-palm-2-ai-large-language-model/), [Falcon LLM](https://falconllm.tii.ae/), [GPT-4](https://openai.com/research/gpt-4), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [Claude](https://www.anthropic.com/index/introducing-claude), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ]
+LLM : [Llama 2](https://ai.meta.com/llama/), [PaLM 2 (Bison-001)](https://blog.google/technology/ai/google-palm-2-ai-large-language-model/), [Falcon LLM](https://falconllm.tii.ae/), [GPT-4](https://openai.com/research/gpt-4), [Beluga 2](https://stability.ai/blog/stable-beluga-large-instruction-fine-tuned-models), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [Claude](https://www.anthropic.com/index/introducing-claude), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ]
+
+Here's HuggingFace's LLM benchmark [leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard).
 
 <img src="./img/alp.png" width=40%><a> </a><img src="./img/ll.png" width=20%><a> </a><img src="./img/ff.png" width=30%>
 
@@ -174,6 +176,19 @@ Multilingual OCR &QR
 <td>
 
 + [Paddle Paddle](https://github.com/PaddlePaddle/PaddleOCR), [EasyOCR](https://github.com/JaidedAI/EasyOCR), [amazing-qr](https://github.com/x-hw/amazing-qr), [OCR PDF](https://github.com/ocrmypdf/OCRmyPDF).
+ 
+</td>
+</tr>
+
+<tr>
+
+<td>
+Vision Transformers
+</td>
+
+<td>
+
++  [RT-2](https://www.deepmind.com/blog/rt-2-new-model-translates-vision-and-language-into-action), @google/[vision-transformers](https://github.com/google-research/vision_transformer), [ViT pytorch](https://github.com/lucidrains/vit-pytorch)
  
 </td>
 </tr>
@@ -841,7 +856,7 @@ Extra libraries:
 [cartography](https://github.com/lyft/cartography), [Pywonderland](https://github.com/neozhaoliang/pywonderland),
 [altair](https://github.com/altair-viz/altair), [yellowbrick](https://github.com/DistrictDataLabs/yellowbrick),
 [shapely](https://github.com/shapely/shapely), [orange3](https://github.com/biolab/orange3),
-[science plots](https://github.com/garrettj403/SciencePlots), [flask_jsondash](https://github.com/christabor/flask_jsondash), [BLOOM](https://bigscience.huggingface.co/blog/bloom), [whisper](https://openai.com/blog/whisper/) [github/whisper](https://github.com/openai/whisper), [ray](https://github.com/ray-project/ray)
+[science plots](https://github.com/garrettj403/SciencePlots), [flask_jsondash](https://github.com/christabor/flask_jsondash), [BLOOM](https://bigscience.huggingface.co/blog/bloom), [whisper](https://openai.com/blog/whisper/) [github/whisper](https://github.com/openai/whisper), [ray](https://github.com/ray-project/ray), [elevenlabs](https://elevenlabs.io/speech-synthesis), [runwayml](https://runwayml.com/)
 
 
 }
