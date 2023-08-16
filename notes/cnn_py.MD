@@ -1,8 +1,6 @@
 # Computer Vision with OpenCV 
 
-The goal of computer vision is to compute geometric and semantic properties of the three-dimensional world from digital images.
-
-[opencv 4 map](https://docs.opencv.org/4.x/d9/df8/tutorial_root.html)
+The goal of computer vision is to compute geometric and semantic properties of the three-dimensional world from digital images. [[opencv 4 map](https://docs.opencv.org/4.x/d9/df8/tutorial_root.html)]
 
 
 Some important and popular computer vision tasks:
