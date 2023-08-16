@@ -1,4 +1,74 @@
-# CNN in PyTorch
+# Computer Vision with OpenCV 
+
+The goal of computer vision is to compute geometric and semantic properties of the three-dimensional world from digital images.
+
+[opencv 4 map](https://docs.opencv.org/4.x/d9/df8/tutorial_root.html)
+
+
+Some important and popular computer vision tasks:
+<table width=100%>
+<tr>
+<th>
+
+Calibrating a Camera : [calibrate.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/calibrate.cpp), [CameraCalibrator.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/CameraCalibrator.cpp)
+
+Recovering camera pose: [cameraPose.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/cameraPose.cpp)
+
+Reconstructing a 3D scene from calibrated cameras : [estimateE.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/estimateE.cpp), [triangulate.h](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/triangulate.h), [triangulate.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/triangulate.cpp)
+
+Computing depth from stereo : [stereoMatcher.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/stereoMatcher.cpp)
+
+</th>
+<th>
+
+Extracting the Foreground Objects in Video : [BGFGSegmentor.h](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter12/BGFGSegmentor.h), [foreground.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter12/foreground.cpp)
+
+Tracing feature points in a video : [featuretracker.h](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/featuretracker.h), [traker.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/tracker.cpp)
+
+Estimating the optical flow : [flow.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/flow.cpp)
+
+Tracking an object in a video : [visualtracker.h](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/visualTracker.h), [oTracker.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/oTracker.cpp)
+
+</th>
+
+<th>
+
+Recognizing faces using nearest neighbors of local binary patterns : [recognizeFace.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter14/recognizeFace.cpp)
+
+Finding objects and faces with a cascade of Haar features : [detectObjects.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter14/detectObjects.cpp)
+
+Detecting objects and peoples with Support Vector Machines and histograms of oriented gradients  : [trainSVM.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter14/trainSVM.cpp)
+
+</th>
+</tr>
+<tr>
+<th>
+
+Face Recognition using Eigenfaces or Fisherfaces ([code](https://github.com/PacktPublishing/Mastering-OpenCV-4-Third-Edition/tree/master/Chapter_05))
+
+</th>
+<td>
+
+<b>
+
+Android Camera Calibration and AR using the ARUco ([code](https://github.com/PacktPublishing/Mastering-OpenCV-4-Third-Edition/tree/master/Chapter_07)) </b>
+
+
+I have Android app development experience @github/[applied-cs](https://github.com/florist-notes/AppliedCSAndroid)
+</td>
+
+<th>
+
+Web Computer Vision with OpenCV.js ([code](https://docs.opencv.org/3.4/d5/d10/tutorial_js_root.html))</th>
+</tr>
+</table>
+
+
+
+
+
+
+### CNN in PyTorch
 
 I have my Computer Vision notes @/[cv_theory](./cv.MD) and here I roughly go over a typical CNN architecture:
 
