@@ -140,7 +140,8 @@ int main(int argc, char **argv) {
    ceres::Problem problem;
    for (int i = 0; i < N; i++) {
      problem.AddResidualBlock( // add error term to the problem
-       // Use automatic derivation, template parameters: error type, output dimension, input dimension, dimension must be consistent with the previous struct
+       // Use automatic derivation, template parameters: error type, output dimension, 
+       // input dimension, dimension must be consistent with the previous struct
        new ceres::AutoDiffCostFunction<CURVE_FITTING_COST, 1, 3>(
          new CURVE_FITTING_COST(x_data[i], y_data[i])
        ),
@@ -266,7 +267,8 @@ int main(int argc, char **argv) {
    }
 
    // Build graph optimization, first set g2o
-   typedef g2o::BlockSolver<g2o::BlockSolverTraits<3, 1>> BlockSolverType; // The optimization variable dimension of each error term is 3, and the error value dimension is 1
+   typedef g2o::BlockSolver<g2o::BlockSolverTraits<3, 1>> BlockSolverType; 
+   // The optimization variable dimension of each error term is 3, and the error value dimension is 1
    typedef g2o::LinearSolverDense<BlockSolverType::PoseMatrixType> LinearSolverType; // linear solver type
 
    // Gradient descent method, you can choose from GN, LM, DogLeg
@@ -288,7 +290,8 @@ int main(int argc, char **argv) {
      edge->setId(i);
      edge->setVertex(0, v); // set the connected vertices
      edge->setMeasurement(y_data[i]); // observation value
-     edge->setInformation(Eigen::Matrix<double, 1, 1>::Identity() * 1 / (w_sigma * w_sigma)); // information matrix: inverse of covariance matrix
+     edge->setInformation(Eigen::Matrix<double, 1, 1>::Identity() * 1 / (w_sigma * w_sigma)); 
+     // information matrix: inverse of covariance matrix
      optimizer. addEdge(edge);
    }
 

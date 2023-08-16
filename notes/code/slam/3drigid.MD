@@ -31,7 +31,8 @@ using namespace Eigen;
 *****************************/
 
 int main(int argc, char **argv) {
-   // All vectors and matrices in Eigen are Eigen::Matrix, which is a template class. Its first three parameters are: data type, row, column
+   // All vectors and matrices in Eigen are Eigen::Matrix, which is a template class.
+   // Its first three parameters are: data type, row, column
    // Declare a 2*3 float matrix
    Matrix<float, 2, 3> matrix_23;
 
@@ -164,7 +165,8 @@ int main(int argc, char **argv) {
    // The Eigen/Geometry module provides various representations of rotation and translation
    // 3D rotation matrix directly use Matrix3d or Matrix3f
    Matrix3d rotation_matrix = Matrix3d::Identity();
-   // The rotation vector uses AngleAxis, its bottom layer is not directly a Matrix, but the operation can be used as a matrix (because the operator is overloaded)
+   // The rotation vector uses AngleAxis, its bottom layer is not directly a Matrix,
+   //  but the operation can be used as a matrix (because the operator is overloaded)
    AngleAxisd rotation_vector(M_PI / 4, Vector3d(0, 0, 1)); //rotate 45 degrees along the Z axis
    cout. precision(3);
    cout << "rotation matrix =\n" << rotation_vector.matrix() << endl; //Convert to matrix with matrix()
@@ -198,7 +200,8 @@ int main(int argc, char **argv) {
    // You can directly assign AngleAxis to a quaternion, and vice versa
    Quaterniond q = Quaterniond(rotation_vector);
    cout << "quaternion from rotation vector = " << q.coeffs().transpose()
-        << endl; // Please note that the order of coeffs is (x, y, z, w), w is the real part, and the first three are the imaginary part
+        << endl; // Please note that the order of coeffs is (x, y, z, w), w is the real part,
+        //  and the first three are the imaginary part
    // You can also assign the rotation matrix to it
    q = Quaterniond(rotation_matrix);
    cout << "quaternion from rotation matrix = " << q. coeffs(). transpose() << endl;

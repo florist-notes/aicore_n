@@ -59,7 +59,8 @@ int main( int argc, char** argv )
      // hat is vector to anti-symmetric matrix
      cout<<"so3 hat=\n"<<Sophus::SO3::hat(so3)<<endl;
      // Relatively, vee is antisymmetric to vector
-     cout<<"so3 hat vee= "<<Sophus::SO3::vee( Sophus::SO3::hat(so3) ).transpose()<<endl; // transpose is purely for beautiful output
+     cout<<"so3 hat vee= "<<Sophus::SO3::vee( Sophus::SO3::hat(so3) ).transpose()<<endl;
+      // transpose is purely for beautiful output
     
      // update of the incremental perturbation model
      Eigen::Vector3d update_so3(1e-4, 0, 0); //Assume that the update amount is so much
@@ -78,7 +79,8 @@ int main( int argc, char** argv )
      typedef Eigen::Matrix<double,6,1> Vector6d;
      Vector6d se3 = SE3_Rt. log();
      cout<<"se3 = "<<se3.transpose()<<endl;
-     // Observe the output, you will find that in Sophus, the translation of se(3) is in front, and the rotation is in the back.
+     // Observe the output, you will find that in Sophus, the translation of se(3) 
+     // is in front, and the rotation is in the back.
      // Similarly, there are two operators hat and vee
      cout<<"se3 hat = "<<endl<<Sophus::SE3::hat(se3)<<endl;
      cout<<"se3 hat vee = "<<Sophus::SE3::vee( Sophus::SE3::hat(se3) ).transpose()<<endl;

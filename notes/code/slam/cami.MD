@@ -69,7 +69,8 @@ int main(int argc, char **argv) {
          for (int u = 0; u < left.cols; u++) {
              if (disparity.at<float>(v, u) <= 0.0 || disparity.at<float>(v, u) >= 96.0) continue;
 
-             Vector4d point(0, 0, 0, left.at<uchar>(v, u) / 255.0); // The first three dimensions are xyz, and the fourth dimension is color
+             Vector4d point(0, 0, 0, left.at<uchar>(v, u) / 255.0); 
+             // The first three dimensions are xyz, and the fourth dimension is color
 
              // Calculate the position of the point according to the binocular model
              double x = (u - cx) / fx;
@@ -165,7 +166,8 @@ int main( int argc, char** argv )
      {
          boost::format fmt( "./%s/%d.%s" ); //image file format
          colorImgs.push_back( cv::imread( (fmt%"color"%(i+1)%"png").str() ));
-         depthImgs.push_back( cv::imread( (fmt%"depth"%(i+1)%"pgm").str(), -1 )); // use -1 to read the original image
+         depthImgs.push_back( cv::imread( (fmt%"depth"%(i+1)%"pgm").str(), -1 )); 
+         // use -1 to read the original image
         
          double data[7] = {0};
          for ( auto& d:data )
