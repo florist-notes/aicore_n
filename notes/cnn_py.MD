@@ -3,7 +3,7 @@
 The goal of computer vision is to compute geometric and semantic properties of the three-dimensional world from digital images. 
 
 
-Some important and popular computer vision tasks:
+My OpenCV C++ notes are @github/[cpp-opencv](https://github.com/florist-notes/alg0rith.math/blob/main/competitive_prog/opencv.MD). Some important and popular computer vision tasks are:
 <table width=100%>
 <tr>
 <th>
