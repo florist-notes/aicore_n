@@ -56,7 +56,7 @@ using namespace Sophus;
 using namespace Eigen;
 using namespace std;
 
-/// 姿态和内参的结构
+/// Structure of posture and internal parameters
 struct PoseAndIntrinsics {
     PoseAndIntrinsics() {}
 
@@ -69,7 +69,7 @@ struct PoseAndIntrinsics {
         k2 = data_addr[8];
     }
 
-    /// 将估计值放入内存
+    /// Put estimated value into memory
     void set_to(double *data_addr) {
         auto r = rotation.log();
         for (int i = 0; i < 3; ++i) data_addr[i] = r[i];
@@ -85,7 +85,8 @@ struct PoseAndIntrinsics {
     double k1 = 0, k2 = 0;
 };
 
-/// 位姿加相机内参的顶点，9维，前三维为so3，接下去为t, f, k1, k2
+/// The vertex of the pose plus camera internal parameters, 9 dimensions, the first three dimensions are 
+/// so3, and the next are t, f, k1, k2
 class VertexPoseAndIntrinsics : public g2o::BaseVertex<9, PoseAndIntrinsics> {
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
@@ -104,7 +105,7 @@ public:
         _estimate.k2 += update[8];
     }
 
-    /// 根据估计值投影一个点
+/// Project a point based on the estimated value
     Vector2d project(const Vector3d &point) {
         Vector3d pc = _estimate.rotation * point + _estimate.translation;
         pc = -pc / pc[2];
@@ -211,7 +212,7 @@ void SolveBA(BALProblem &bal_problem) {
         double *point = points + point_block_size * i;
         v->setId(i + bal_problem.num_cameras());
         v->setEstimate(Vector3d(point[0], point[1], point[2]));
-        // g2o在BA中需要手动设置待Marg的顶点
+// g2o needs to manually set the vertex to be Marg in BA
         v->setMarginalized(true);
         optimizer.addVertex(v);
         vertex_points.push_back(v);
