@@ -10,7 +10,7 @@ State Estimation from Probabilistic Perspective
 
 ### Linear Systems and the Kalman Filter
 
-Nonlinear Systems and the EKF
+### Nonlinear Systems and the EKF
 
 Bundle Adjustment and Graph Optimization : 
 
