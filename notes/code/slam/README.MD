@@ -137,7 +137,7 @@ generate a point cloud using the depth information through [Point Cloud Library]
 
 ## SLAM Technologies 
 
-### Visual Odometry : ([NOTES](./vo.MD))
+### Visual Odometry : ([NOTES](./vo.MD)) ([NOTES II](./vo2.MD))
 
 Feature-based visual odometry, which is currently the mainstream
 in VO. Feature extraction and matching, epipolar geometry calculation, Perspective-n-Point (PnP) algorithm, Iterative Closest Point (ICP) algorithm, and Bundle Adjustment (BA), etc. OpenCV functions or constructing our own optimization problem in Ceres and g2o.
