@@ -170,6 +170,7 @@ videos.
   <tr>
   <th>Name (Sensors∗)</th>
   <th>Name (Sensors∗)</th>
+  <th>Name (Sensors∗)</th>
   </tr>
   <tr>
   <td>
@@ -179,6 +180,10 @@ videos.
   <td>
 
   [PTAM](http://www.robots.ox.ac.uk/~gk/PTAM/) (M)
+  </td>
+  <td>
+
+  [DTAM](https://github.com/anuranbaka/OpenDTAM) (R)
   </td>
   </tr>
  
@@ -193,15 +198,24 @@ videos.
 
   [LSD-SLAM](http://vision.in.tum.de/research/vslam/lsdslam) (M)
   </td>
+  <td>
+
+  [RTAB-MAP](https://github.com/introlab/rtabmap) (S/R)
+  </td>
   </tr>
   <tr>
   <td>
 
   [SVO](https://github.com/uzh-rpg/rpg_svo) (M)
   </td>
+  
   <td>
 
-  [DTAM](https://github.com/anuranbaka/OpenDTAM) (R)
+  [RGBD-SLAM-V2](https://github.com/felixendres/rgbdslam_v2) (R)
+  </td>
+  <td>
+
+  [ROVIO](https://github.com/ethz-asl/rovio) (M+IMU)
   </td>
   </tr>
 
@@ -216,6 +230,10 @@ videos.
 
   [DSO](https://github.com/JakobEngel/dso) (M)
   </td>
+  <td>
+
+  [OKVIS](https://github.com/ethz-asl/okvis) (M/S+IMU)
+  </td>
   </tr>
   <tr>
   <td>
@@ -224,44 +242,22 @@ videos.
   </td>
   <td>
 
-  [RTAB-MAP](https://github.com/introlab/rtabmap) (S/R)
-  </td>
-  </tr>
-
-  
-  <tr>
-  <td>
-
-  [RGBD-SLAM-V2](https://github.com/felixendres/rgbdslam_v2) (R)
+  [GMapping](http://wiki.ros.org/gmapping) (L)
   </td>
   <td>
 
   [Elastic fusion](https://github.com/mp3guy/ElasticFusion) (R)
   </td>
   </tr>
+
   <tr>
   <td>
 
   [Hector SLAM](http://wiki.ros.org/hector_slam) (L)
   </td>
-  <td>
-
-  [GMapping](http://wiki.ros.org/gmapping) (L)
-  </td>
   </tr>
 
-  
-  
-  <tr>
-  <td>
 
-  [OKVIS](https://github.com/ethz-asl/okvis) (M/S+IMU)
-  </td>
-  <td>
-
-  [ROVIO](https://github.com/ethz-asl/rovio) (M+IMU)
-  </td>
-  </tr>
 
  </table>
 
@@ -277,3 +273,8 @@ invalid, which is not possible with pure visual SLAM. In summary, we see that IM
 If we put object labels on all the pictures during the movement, we can get a labeled
 map. Also, object information can bring more conditions for loop detection and
 BA optimization.
+
+Lectures: [Multiple View Geometry](https://www.youtube.com/playlist?list=PLTBdjV_4f-EJn6udZ34tht9EVIW7lbeo4), [Cyrill Stachniss - SLAM](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_), [NTNU - Simultaneous Localization and Mapping (SLAM) for Robotics](https://www.youtube.com/playlist?list=PLZ_sI4f41TGtsqgT6cMLCUCYOT7mCjBMM), [Perception in Robotics](https://www.youtube.com/playlist?list=PLRXYrdEUvBoBCjYdmuDqohvSTJIPPrBUT), [Visual SLAM: Dissecting LDSO](https://www.youtube.com/playlist?list=PLj0MGqAFBYgxYiZJezHSP7XiTwLiXgo9R)
+
+
+Some good documents and books I found on SLAM: [Simultaneous Localization and Mapping for Mobile Robots](../../doc/IGI_SLAM_book_appendices.pdf), [Simultaneous Localization and Mapping (SLAM) in Mobile Robots](../../doc/chatterjee2013.pdf) , [FastSLAM A Scalable Method for the Simultaneous Localization and Mapping Problem in Robotics](../../doc/fs.pdf), [An Invitation to 3-D Vision](../../doc/ma2004.pdf), [Numerical Optimization](../../doc/numo.pdf), [Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age](../../doc/1606.05830.pdf).
