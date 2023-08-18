@@ -37,7 +37,7 @@ Optical flow is a method of describing pixels’ movement between images:
 
 <img src="opticalflow.png" width=100%> 
 
-### Lucas-Kanade Optical Flow : [Optical Flow | Structure from Motion | Object Tracking](https://www.youtube.com/playlist?list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV), [Lucas-Kanade Method | Optical Flow](https://www.youtube.com/watch?v=6wMoHgpVUn8)
+### Lucas-Kanade Optical Flow : [Optical Flow | Structure from Motion | Object Tracking](https://www.youtube.com/playlist?list=PL2zRqk16wsdoYzrWStffqBAoUY8XdvatV), [Lucas-Kanade Method](https://www.youtube.com/watch?v=6wMoHgpVUn8)
 ### Optical Flow with Gauss-Newton Method : Single and Multi-layer Optical Flow ( [optical_flow.cpp](./optical_flow.cpp) )
 
 ## Direct Method:
