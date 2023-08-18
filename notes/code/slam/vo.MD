@@ -330,7 +330,7 @@ Point2f pixel2cam(const Point2d &p, const Mat &K) {
 
 [ Direct Linear Transformation, P3P ]
 
-Solve PnP by Minimizing the Reprojection Error : Use OpenCV EPnP to Solve the Pose:
+Solve PnP by Minimizing the Reprojection Error : Use OpenCV EPnP to Solve the Pose :
 
 ```cpp
 
