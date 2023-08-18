@@ -151,17 +151,17 @@ Bundle Adjustment in detail and show the relationship between its sparse structu
 Pose graph in the backend optimization. Pose graph is a more
 compact representation for BA, which converts all map points into constraints between keyframes. g2o to optimize a pose graph.
 
-### Loop Closure :
+### Loop Closure : ([NOTES](./loopclosure.MD)) 
 
 Loop closure detection, mainly Bag-of-Word (BoW) based method.
 Use DBoW3 to train a dictionary from images and detect loops in
 videos.
 
-### Dense Reconstruction :
+### Dense Reconstruction : ([NOTES](./denserec.MD))
 
  Estimate the depth of pixels in monocular SLAM (and show why they are unreliable). Compared with monocular depth estimation, building a dense map with RGB-D cameras is much easier. Write programs for epipolar line search and patch matching to estimate depth from monocular images and then build a point cloud map and octagonal treemap from RGB-D data.
 
-### SLAM Discussion:
+### SLAM Discussion: ([NOTES](./slamdis.MD))
 
 
  Open source SLAM systems : MonoSLAM, PTAM, ORB-SLAM Series, LSD-SLAM, SVO, RTAB-MAP ; IMU-Integrated VSLAM, Semantic SLAM.
