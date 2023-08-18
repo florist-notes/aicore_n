@@ -216,3 +216,5 @@ void DrawTrajectory(const TrajectoryType &gt, const TrajectoryType &esti) {
 }
 
 ```
+
+resources : [Lie theory for the Roboticist](https://youtu.be/QR1p0Rabuww?si=IEn1OZPe2MD7LTsD), [What is Lie theory? Here is the big picture.](https://youtu.be/ZRca3Ggpy_g?si=KP4Zh_94L0oxQwnd)
