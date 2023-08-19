@@ -46,8 +46,7 @@ using namespace cv;
 
 /************************************************
 * This program demonstrates the dense depth estimation of a monocular camera under a known trajectory
-* Using epipolar search + NCC matching, corresponding to Section 12.2 of the book
-* Please note that this program is not perfect, you can definitely improve it - I'm actually exposing some problems on purpose (this is an excuse).
+* Using epipolar search + NCC matching, corresponding
 ***************************************************/
 
 // ------------------------------------------------ ------------------
