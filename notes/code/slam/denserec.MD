@@ -819,7 +819,6 @@ int main(int argc, char **argv) {
 }
 
 ```
-
 ## Real-time 3D reconstruction:
 
 ###  *TSDF and RGB-D Fusion Series
