@@ -282,7 +282,8 @@ bool update(const Mat &ref, const Mat &curr, const SE3d &T_C_R, Mat &depth, Mat 
      for (int x = boarder; x < width - boarder; x++)
          for (int y = boarder; y < height - boarder; y++) {
              // loop through each pixel
-             if (depth_cov2.ptr<double>(y)[x] < min_cov || depth_cov2.ptr<double>(y)[x] > max_cov) // depth has converged or diverged
+             if (depth_cov2.ptr<double>(y)[x] < min_cov || depth_cov2.ptr<double>(y)[x] > max_cov)
+              // depth has converged or diverged
                  continue;
              // search for a match of (x,y) on the epipolar line
              Vector2d pt_curr;
