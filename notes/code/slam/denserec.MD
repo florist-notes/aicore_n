@@ -335,7 +335,8 @@ bool epipolarSearch(
      // Uncomment this sentence to display epipolar lines (line segments)
      // showEpipolarLine( ref, curr, pt_ref, px_min_curr, px_max_curr );
 
-     // Search on the epipolar line, take the depth mean point as the center, and take half lengths on the left and right sides
+     // Search on the epipolar line, take the depth mean point as the center, and 
+     // take half lengths on the left and right sides
      double best_ncc = -1.0;
      Vector2d best_px_curr;
      for (double l = -half_length; l <= half_length; l += 0.7) { // l+=sqrt(2)
