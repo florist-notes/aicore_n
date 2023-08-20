@@ -8,34 +8,34 @@ My OpenCV C++ notes are @github/[cpp-opencv](https://github.com/florist-notes/al
 <tr>
 <th>
 
-Calibrating a Camera : [calibrate.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/calibrate.cpp), [CameraCalibrator.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/CameraCalibrator.cpp)
+Calibrating a Camera : [calibrate.cpp](./code/cv/calibrate.cpp), [CameraCalibrator.cpp](./code/cv/CameraCalibrator.cpp)
 
-Recovering camera pose: [cameraPose.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/cameraPose.cpp)
+Recovering camera pose: [cameraPose.cpp](./code/cv/cameraPose.cpp)
 
-Reconstructing a 3D scene from calibrated cameras : [estimateE.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/estimateE.cpp), [triangulate.h](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/triangulate.h), [triangulate.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/triangulate.cpp)
+Reconstructing a 3D scene from calibrated cameras : [estimateE.cpp](./code/cv/estimateE.cpp), [triangulate.h](./code/cv/triangulate.h), [triangulate.cpp](./code/cv/triangulate.cpp)
 
-Computing depth from stereo : [stereoMatcher.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter11/stereoMatcher.cpp)
+Computing depth from stereo : [stereoMatcher.cpp](./code/cv/stereoMatcher.cpp)
 
 </th>
 <th>
 
-Extracting the Foreground Objects in Video : [BGFGSegmentor.h](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter12/BGFGSegmentor.h), [foreground.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter12/foreground.cpp)
+Extracting the Foreground Objects in Video : [BGFGSegmentor.h](./code/cv/BGFGSegmentor.h), [foreground.cpp](./code/cv/foreground.cpp)
 
-Tracing feature points in a video : [featuretracker.h](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/featuretracker.h), [traker.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/tracker.cpp)
+Tracing feature points in a video : [featuretracker.h](./code/cv/featuretracker.h), [traker.cpp](./code/cv/tracker.cpp)
 
-Estimating the optical flow : [flow.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/flow.cpp)
+Estimating the optical flow : [flow.cpp](./code/cv/flow.cpp)
 
-Tracking an object in a video : [visualtracker.h](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/visualTracker.h), [oTracker.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter13/oTracker.cpp)
+Tracking an object in a video : [visualtracker.h](./code/cv/visualTracker.h), [oTracker.cpp](./code/cv/oTracker.cpp)
 
 </th>
 
 <th>
 
-Recognizing faces using nearest neighbors of local binary patterns : [recognizeFace.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter14/recognizeFace.cpp)
+Recognizing faces using nearest neighbors of local binary patterns : [recognizeFace.cpp](./code/cv/recognizeFace.cpp)
 
-Finding objects and faces with a cascade of Haar features : [detectObjects.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter14/detectObjects.cpp)
+Finding objects and faces with a cascade of Haar features : [detectObjects.cpp](./code/cv/detectObjects.cpp)
 
-Detecting objects and peoples with Support Vector Machines and histograms of oriented gradients  : [trainSVM.cpp](https://github.com/PacktPublishing/OpenCV-4-Computer-Vision-Application-Programming-Cookbook-Fourth-Edition/blob/master/Chapter14/trainSVM.cpp)
+Detecting objects and peoples with Support Vector Machines and histograms of oriented gradients  : [trainSVM.cpp](./code/cv/trainSVM.cpp)
 
 </th>
 </tr>
@@ -66,7 +66,7 @@ Web Computer Vision with OpenCV.js ([code](https://docs.opencv.org/3.4/d5/d10/tu
 
 
 
-### CNN in PyTorch
+### Convolutional Neural Network (CNN) in PyTorch
 
 I have my Computer Vision notes @/[cv_theory](./cv.MD) and here I roughly go over a typical CNN architecture:
 

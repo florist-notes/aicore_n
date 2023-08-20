@@ -44,7 +44,7 @@ Visual SLAM (c++)
 [ [code](./code/slam/README.MD) ]
 
 </th>
-<th>Multi Agent System : Crazyfly 2.1 (c++)
+<th>Multi Agent System : Crazyflie 2.1 (c++)
 
 <img src="img/swarm.webp" width=100%> 
 
