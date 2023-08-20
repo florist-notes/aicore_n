@@ -7,6 +7,7 @@ planning at the Robotics Laboratory, School of Computing, University of Leeds. I
 
 I also [developed](https://twitter.com/florist_notes/status/1640584066608123905) a control station for drone autonomy in lab and presented my hand gesture recognition work to Senator, Dr. Anjes Tjarks ( Beh ̈orde f ̈ur Verkehr und Mobilit ̈atswende ), Hamburg and LSBG CEO, Dr Clotz at DigiLab, LSBG [[post](https://twitter.com/florist_notes/status/1633093993146753027)].
 
+Some good Computer Vision classes:
 + [Computer Vision — Andreas Geiger](https://www.youtube.com/playlist?list=PL05umP7R6ij35L2MHGzis8AEHz7mg381_),  [First Principles of Computer Vision](https://www.youtube.com/@firstprinciplesofcomputerv3258/playlists)
 + [CS231n: Deep Learning for Computer Vision](https://www.youtube.com/playlist?list=PLf7L7Kg8_FNxHATtLwDceyh72QQL9pvpQ) : ([web](http://cs231n.stanford.edu/)).
 + [Michigan Online : Deep Learning for Computer Vision](https://www.youtube.com/playlist?list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r)
