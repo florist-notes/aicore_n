@@ -48,7 +48,7 @@ YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai
 <th>
   <p>
   
-  Lenia : [Lenia - Mathematical Life Forms](https://youtu.be/iE46jKYcI4Y), [Neat AI does Lenia - Conway's game of life arrives in the 21st century](https://youtu.be/7-97RhAZhXI), [Artificial Life uses Machine Learning to learn how to survive](https://youtu.be/mSy4z8nDLno), [Learning Sensorimotor Agency in Cellular Automata](https://developmentalsystems.org/sensorimotor-lenia/), [Stanford Seminar - Lenia: Biology of Artificial Life, Bert Wang-Chak Chan](https://www.youtube.com/watch?v=G5P8eu6gUSo).
+  Lenia : [Lenia - Mathematical Life Forms](https://youtu.be/iE46jKYcI4Y), [Neat AI does Lenia - Conway's game of life arrives in the 21st century](https://youtu.be/7-97RhAZhXI), [Artificial Life uses Machine Learning to learn how to survive](https://youtu.be/mSy4z8nDLno), [Learning Sensorimotor Agency in Cellular Automata](https://developmentalsystems.org/sensorimotor-lenia/), [Stanford Seminar - Lenia: Biology of Artificial Life, Bert Wang-Chak Chan](https://www.youtube.com/watch?v=G5P8eu6gUSo), [LLaMA2 Released | LLMs for Robots | Multimodality on the Rise](https://youtu.be/xs-0cp1hSnY?si=xMaLrpEWqKGcOOS-), [Yannic Kilcher - Papers Explained!](https://www.youtube.com/watch?v=fvctpYph8Pc&list=PL1v8zpldgH3pR7LPuidEZK68kS6AaU1y7).
   </p>
 
 </th>

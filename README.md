@@ -6,14 +6,17 @@
 
 
 
-## Artificial Intelligence [[RESOURCES](./notes/airesource.MD)]
+## Artificial Intelligence 🌸
 
 ```latex
     AI ~ θ|1 💮
 
 ```
 
-###  + AI tools and libraries [[list](notes/aitools.MD)]
+
+###  + AI resources [[list](./notes/airesource.MD)] 🎃
+###  + AI tools and libraries [[list](notes/aitools.MD)] 🎃
+
 
 ## Deep Learning [[theory](./notes/dltheory.MD)] 
 
