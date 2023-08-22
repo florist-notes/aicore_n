@@ -2,7 +2,7 @@
 
  Visual Simultaneous Localization and Mapping (VSLAM) methods refer to the SLAM approaches that employ cameras for pose estimation and map reconstruction and are preferred over Light Detection And Ranging (LiDAR)-based methods due to their lighter weight, lower acquisition costs, and richer environment representation.
 
-Let's code a visual SLAM systems from scratch in c++. I am learning from my notes @github/[autonomy_perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD),  @github/[robotics-slam](https://github.com/florist-notes/aicore_s/blob/main/notes/robotics_ee_hardware/roboticsmech.MD) and companion guide '[Introduction to Visual SLAM](https://link.springer.com/book/10.1007/978-981-16-4939-4)' : [ [code](https://github.com/gaoxiang12/slambook2/tree/master) & [booken](https://github.com/gaoxiang12/slambook-en) ]. Example: [ORB SLAM 3](https://github.com/UZ-SLAMLab/ORB_SLAM3).
+Let's code a visual SLAM systems from scratch in c++. I am learning from my notes @github/[autonomy_perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD),  @github/[robotics-slam](https://github.com/florist-notes/aicore_s/blob/main/notes/robotics_ee_hardware/roboticsmech.MD) and companion guide '[Introduction to Visual SLAM](https://link.springer.com/book/10.1007/978-981-16-4939-4)' : [@github/[booken](https://github.com/gaoxiang12/slambook-en) ]. 
 
 <img src="slam.png" width=100%> 
 
@@ -274,7 +274,7 @@ If we put object labels on all the pictures during the movement, we can get a la
 map. Also, object information can bring more conditions for loop detection and
 BA optimization.
 
-Lectures: [Multiple View Geometry](https://www.youtube.com/playlist?list=PLTBdjV_4f-EJn6udZ34tht9EVIW7lbeo4), [Cyrill Stachniss - SLAM](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_), [NTNU - Simultaneous Localization and Mapping (SLAM) for Robotics](https://www.youtube.com/playlist?list=PLZ_sI4f41TGtsqgT6cMLCUCYOT7mCjBMM), [Perception in Robotics](https://www.youtube.com/playlist?list=PLRXYrdEUvBoBCjYdmuDqohvSTJIPPrBUT), [Visual SLAM: Dissecting LDSO](https://www.youtube.com/playlist?list=PLj0MGqAFBYgxYiZJezHSP7XiTwLiXgo9R)
+Lectures: [Multiple View Geometry](https://www.youtube.com/playlist?list=PLTBdjV_4f-EJn6udZ34tht9EVIW7lbeo4), [Cyrill Stachniss - SLAM](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_), [NTNU - Simultaneous Localization and Mapping (SLAM) for Robotics](https://www.youtube.com/playlist?list=PLZ_sI4f41TGtsqgT6cMLCUCYOT7mCjBMM), [Perception in Robotics](https://www.youtube.com/playlist?list=PLRXYrdEUvBoBCjYdmuDqohvSTJIPPrBUT), [Visual SLAM: Dissecting LDSO](https://www.youtube.com/playlist?list=PLj0MGqAFBYgxYiZJezHSP7XiTwLiXgo9R). Example: [ORB SLAM 3](https://github.com/UZ-SLAMLab/ORB_SLAM3).
 
 
 Some good documents and books I found on SLAM: [Simultaneous Localization and Mapping for Mobile Robots](../../doc/IGI_SLAM_book_appendices.pdf), [Simultaneous Localization and Mapping (SLAM) in Mobile Robots](../../doc/chatterjee2013.pdf) , [FastSLAM A Scalable Method for the Simultaneous Localization and Mapping Problem in Robotics](https://link.springer.com/book/10.1007/978-3-540-46402-0), [An Invitation to 3-D Vision](../../doc/old_mkss.pdf), [Numerical Optimization](../../doc/numo.pdf), [Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age](../../doc/1606.05830.pdf). [ [SLAM challenge](https://hilti-challenge.com/) ]

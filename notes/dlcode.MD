@@ -50,7 +50,7 @@ Visual SLAM (c++)
 
 </th>
 <th>
-Neural Structure-from-Motion (c++)
+Optical Flow : Neural Structure-from-Motion (c++)
 
 <img src="img/sfm.png" width=100%> 
 
