@@ -274,6 +274,8 @@ If we put object labels on all the pictures during the movement, we can get a la
 map. Also, object information can bring more conditions for loop detection and
 BA optimization.
 
+## End-to-End SLAM system [ [ CODE + NOTES ](./e2eSLAM.MD) ]
+
 Lectures: [Multiple View Geometry](https://www.youtube.com/playlist?list=PLTBdjV_4f-EJn6udZ34tht9EVIW7lbeo4), [Cyrill Stachniss - SLAM](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_), [NTNU - Simultaneous Localization and Mapping (SLAM) for Robotics](https://www.youtube.com/playlist?list=PLZ_sI4f41TGtsqgT6cMLCUCYOT7mCjBMM), [Perception in Robotics](https://www.youtube.com/playlist?list=PLRXYrdEUvBoBCjYdmuDqohvSTJIPPrBUT), [Visual SLAM: Dissecting LDSO](https://www.youtube.com/playlist?list=PLj0MGqAFBYgxYiZJezHSP7XiTwLiXgo9R). Example: [ORB SLAM 3](https://github.com/UZ-SLAMLab/ORB_SLAM3).
 
 
