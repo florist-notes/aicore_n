@@ -276,14 +276,14 @@ BA optimization.
 
 ## End-to-End SLAM system [ [ CODE + NOTES ](./e2eSLAM.MD) ]
 
-Commonly used datasets for VSLAM applications. GT in the table refers to the availability of ground-truth values and S refers to sensor.
+Commonly used datasets for VSLAM applications. S in the table refers to sensor and E referes to environment.
 
 <table width=100%>
 <tr>
 <th>Dataset Name</th>
 <th>Year</th>
-<th>Environment : Indoor</th>
-<th>Environment : Outdoor</th>
+<th>Indoor (E)</th>
+<th>Outdoor (E)</th>
 <th>GPS (S)</th>
 <th>LiDAR (S)</th>
 <th>IMU (S)</th>
@@ -293,7 +293,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <th>Event (S)</th>
 <th>Omni (S)</th>
 <th>UWB (S)</th>
-<th>GT (S)</th>
 </tr>
 <tr>
 <td>RAWSEEDS
@@ -312,7 +311,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td>✓</td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -333,7 +331,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td></td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -355,7 +352,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td></td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -376,7 +372,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td></td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -398,7 +393,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td></td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -419,7 +413,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td>✓</td>
 <td></td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -440,7 +433,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td></td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -461,7 +453,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td></td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -482,7 +473,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td></td>
 <td></td>
-<td>✓</td>
 </tr>
 
 
@@ -502,7 +492,6 @@ Commonly used datasets for VSLAM applications. GT in the table refers to the ava
 <td></td>
 <td></td>
 <td></td>
-<td>✓</td>
 <td>✓</td>
 </tr>
 
