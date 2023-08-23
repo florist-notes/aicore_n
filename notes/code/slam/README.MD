@@ -276,6 +276,238 @@ BA optimization.
 
 ## End-to-End SLAM system [ [ CODE + NOTES ](./e2eSLAM.MD) ]
 
+Commonly used datasets for VSLAM applications. GT in the table refers to the availability of ground-truth values and S refers to sensor.
+
+<table width=100%>
+<tr>
+<th>Dataset Name</th>
+<th>Year</th>
+<th>Environment : Indoor</th>
+<th>Environment : Outdoor</th>
+<th>GPS (S)</th>
+<th>LiDAR (S)</th>
+<th>IMU (S)</th>
+<th>Mono (S)</th>
+<th>Stereo (S)</th>
+<th>RGB-D (S)</th>
+<th>Event (S)</th>
+<th>Omni (S)</th>
+<th>UWB (S)</th>
+<th>GT (S)</th>
+</tr>
+<tr>
+<td>RAWSEEDS
+
+[[ref](http://chrome.ws.dei.polimi.it/images/e/ea/Bonarini_2006_IROS.pdf)]
+</td>
+<td>2006</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+<tr>
+<td>KITTI
+
+[[ref](https://ieeexplore.ieee.org/abstract/document/6248074)]
+</td>
+<td>2012</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+
+<tr>
+<td>ICL-NUIM
+
+[[ref](https://ieeexplore.ieee.org/abstract/document/6907054)]
+</td>
+<td>2014</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+<tr>
+<td>TUM RGB-D
+
+[[ref](https://ieeexplore.ieee.org/abstract/document/6385773)]
+</td>
+<td>2016</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+
+<tr>
+<td>EuRoC MAV
+
+[[ref](https://journals.sagepub.com/doi/abs/10.1177/0278364915620033)]
+</td>
+<td>2016</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+<tr>
+<td>Event Camera
+
+[[ref](https://journals.sagepub.com/doi/full/10.1177/0278364917691115)]
+</td>
+<td>2017</td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+<tr>
+<td>SceneNet RGB-D
+
+[[ref](https://openaccess.thecvf.com/content_ICCV_2017/papers/McCormac_SceneNet_RGB-D_Can_ICCV_2017_paper.pdf)]
+</td>
+<td>2017</td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+<tr>
+<td>OpenLORIS
+
+[[ref](https://ieeexplore.ieee.org/abstract/document/9196638)]
+</td>
+<td>2020</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+<tr>
+<td>TartanAir
+
+[[ref](https://ieeexplore.ieee.org/abstract/document/9341801)]
+</td>
+<td>2020</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+
+
+<tr>
+<td>NTU VIRAL
+
+[[ref](https://journals.sagepub.com/doi/abs/10.1177/02783649211052312)]
+</td>
+<td>2021</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+
+</table>
+
 Lectures: [Multiple View Geometry](https://www.youtube.com/playlist?list=PLTBdjV_4f-EJn6udZ34tht9EVIW7lbeo4), [Cyrill Stachniss - SLAM](https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_), [NTNU - Simultaneous Localization and Mapping (SLAM) for Robotics](https://www.youtube.com/playlist?list=PLZ_sI4f41TGtsqgT6cMLCUCYOT7mCjBMM), [Perception in Robotics](https://www.youtube.com/playlist?list=PLRXYrdEUvBoBCjYdmuDqohvSTJIPPrBUT), [Visual SLAM: Dissecting LDSO](https://www.youtube.com/playlist?list=PLj0MGqAFBYgxYiZJezHSP7XiTwLiXgo9R). Example: [ORB SLAM 3](https://github.com/UZ-SLAMLab/ORB_SLAM3).
 
 
