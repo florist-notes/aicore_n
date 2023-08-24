@@ -531,7 +531,7 @@ PL-SVO [[paper](https://ieeexplore.ieee.org/abstract/document/7759620)]
 
 
 <tr>
-<td></td>
+<td>Visual</td>
 <td>
 
 PL-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/7989522)]
