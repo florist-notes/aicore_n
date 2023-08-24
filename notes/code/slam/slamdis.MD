@@ -311,6 +311,124 @@ DSO can calculate accurate camera attitude in poor feature point detector perfor
 
 #### RGB-D SLAM
 
+An RGB-D camera can simultaneously collect environmental color images and depth images, and directly gain depth maps mainly by actively emitting infrared structured light or calculating time-of-flight (TOF). 
+
+Some SLAM algorithms for sensors with an RGB-D camera :
+
+<table width=100%>
+<tr>
+<th>Method</th>
+<th>Year</th>
+<th>Camera Tracking</th>
+<th>Loop Closure</th>
+<th>Code Resource</th>
+</tr>
+
+<tr>
+<td>
+
+KinectFusion [[paper](https://ieeexplore.ieee.org/abstract/document/6162880)]
+</td>
+<td>2011</td>
+<td>Diret</td>
+<td>No</td>
+<td>
+
+[[code](https://github.com/ParikaGoel/KinectFusion)]
+</td>
+</tr>
+
+<tr>
+<td>
+
+Kinitinuous [[paper](https://scholar.google.com/scholar_lookup?title=Kintinuous:+Spatially+extended+kinectfusion&conference=Proceedings+of+the+RSS+Workshop+on+RGB-D:+Advanced+Reasoning+with+Depth+Cameras&author=Kaess,+M.&author=Fallon,+M.&author=Johannsson,+H.&author=Leonard,+J.&publication_year=2012&pages=9)]</td>
+<td>2012</td>
+<td>Direct</td>
+<td>Yes</td>
+<td>
+
+[[code](https://github.com/mp3guy/Kintinuous)]
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+RGB-D SLAMv2 [[paper](https://ieeexplore.ieee.org/abstract/document/6594910)]</td>
+<td>2013</td>
+<td>Indirect</td>
+<td>Yes</td>
+<td>
+
+[[code](https://github.com/felixendres/rgbdslam_v2)]
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+ElasticFusion [[paper](https://journals.sagepub.com/doi/abs/10.1177/0278364916669237)]</td>
+<td>2016</td>
+<td>Direct</td>
+<td>Yes</td>
+<td>
+
+[[code](https://github.com/mp3guy/ElasticFusion)]
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+DVO-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/8007295)]</td>
+<td>2017</td>
+<td>Direct</td>
+<td>Yes</td>
+<td>
+
+[[code](https://github.com/tum-vision/dvo_slam)]
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+BundleFusion [[paper](https://dl.acm.org/doi/abs/10.1145/3072959.3054739)]</td>
+<td>2017</td>
+<td>Hybrid</td>
+<td>Yes</td>
+<td>
+
+[[code](https://github.com/niessner/BundleFusion)]
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+RGBDTAM [[paper](https://ieeexplore.ieee.org/abstract/document/8206593)]</td>
+<td>2017</td>
+<td>Direct</td>
+<td>Yes</td>
+<td>
+
+[[code](https://github.com/alejocb/rgbdtam)]
+</td>
+</tr>
+</table>
+
+
+`KinectFusion` is the first real-time 3D reconstruction system based on an RGB-D camera. It uses a point cloud created by the depth to estimate the camera pose through ICP (Iterative Closest Point). Then splices multi-frame point cloud collection based on the camera pose, and expresses reconstruction result by the TSDF (Truncated signed distance Function) model. The 3D model can be constructed in real-time with GPU acceleration. However, the system has not been optimized by loop closure. Furthermore, there will be obvious errors in long-term operation, and the RGB information of the RGB-D camera has not been fully utilized. In contrast, `ElasticFusion` makes full use of the color and depth information of the RGB-D camera. It estimates the camera pose by the color consistency of RGB and estimates the camera pose by ICP. Then improves the estimation accuracy of the camera pose by constantly optimizing and reconstructing the map. Finally, the surfel model was used for map representation, but it could only be reconstructed in a small indoor scene. `Kinitinuous` adds loop closure based on KinectFusion and makes non-rigid body transformation for 3d rigid body reconstruction by using a deformation graph for the first time. So it makes the results of two-loop closure reconstruction overlap, achieving good results in an indoor environment.
+
+
+
+Although the RGB-D camera is more convenient to use, the RGB-D camera is extremely sensitive to light. Furthermore, there are many problems with narrow, noisy, and small horizons, so most of the situation is only used in the room. 
+
 #### Visual-Inertial SLAM
 
 ##### Loosely Coupled Visual-Inertial
