@@ -1,5 +1,8 @@
 # SLAM Algorithms:
 
+Visual SLAM (VSLAM) has been developing rapidly due to its advantages of low-cost sensors, the easy fusion of other sensors, and richer environmental information. Traditional visionbased SLAM research has made many achievements, but it may fail to achieve wished results in challenging environments. Deep learning has promoted the development of computer vision, and the combination of deep learning and SLAM has attracted more and more attention. Semantic information, as high-level environmental information, can enable robots to better understand the surrounding environment.
+
+
 <table width=100%>
 <tr>
 <th> MonoSLAM </th>
@@ -159,5 +162,13 @@ we can obtain the binary program directly from ROS
 </table>
 
 <img src="slamh.png" width=100%> 
+
+VSLAM has the advantage of richer environmental information and is considered to be able to give mobile robots stronger perceptual ability and be applied in some specific scenarios.
+
+ In Section 1, this note introduces the characteristics of traditional VSLAM in detail, including the direct method and the indirect method based on the front-end vision odometer, and makes a comparison between the depth camera-based VSLAM and the classical VSLAM integrated with IMU. In Section 2, this note is divided into two parts. We firstly go through the combination of deep learning and VSLAM from two neural networks, CNN and RNN. So this note summarizes the development direction of semantic VSLAM from three aspects of localization, mapping, and elimination of dynamic objects. 
+
+ VSLAM can be divided into Traditional VSLAM ( Monocular / Stero vSLAM, RGB-D vSLAM { vSLAM based on feature based method and vSLAM based on direct method } , Visual Inertial SLAM { Loosely Coupled Visual Inertial and Tightly Coupled Visual Inertial } ) and Semantic VSLAM.
+
+
 
 There are several new SLAM methods like - HKU-MaRS-HBA, Pharos SLAm and few of them can be found at [Hilti SLAM Challenge leaderboard](https://hilti-challenge.com/).

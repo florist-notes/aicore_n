@@ -274,6 +274,7 @@ If we put object labels on all the pictures during the movement, we can get a la
 map. Also, object information can bring more conditions for loop detection and
 BA optimization.
 
+
 ## End-to-End SLAM system [ [ CODE + NOTES ](./e2eSLAM.MD) ]
 
 Commonly used datasets for VSLAM applications. S in the table refers to sensor and E referes to environment.
