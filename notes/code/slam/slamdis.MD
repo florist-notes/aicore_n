@@ -444,7 +444,260 @@ The core of the tightly coupled is to combine the states of the vision sensor an
 
 Then perform state estimation to obtain the pose information. Tightly coupled needs full use of visual and inertial measurement information, which is complicated in method implementation but can achieve higher pose estimation accuracy. Therefore, it is also the mainstream method, and many breakthroughs have been made in this area.
 
+This table holds information on best visual-based SLAM algorithms:
 
+<table width=100%>
+<tr>
+<th></th>
+<th>Method</th>
+<th>Sensor</th>
+<th>Frontend</th>
+<th>Backend</th>
+<th>Loop Closure</th>
+<th>Mapping</th>
+<th>Code Resources</th>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+MonoSLAM [[paper](https://ieeexplore.ieee.org/abstract/document/4160954)]
+</td>
+<td>M</td>
+<td>P</td>
+<td>F</td>
+<td>No</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/rrg-polito/mono-slam)]</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td>
+
+PTAM [[paper](https://ieeexplore.ieee.org/abstract/document/4538852)]
+</td>
+<td>M</td>
+<td>P</td>
+<td>O</td>
+<td>No</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/Oxford-PTAM/PTAM-GPL)]</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td>
+
+ORB-SLAM2 [[paper](https://ieeexplore.ieee.org/abstract/document/7946260)]
+</td>
+<td>M/S/R</td>
+<td>P</td>
+<td>O</td>
+<td>Yes</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/raulmur/ORB_SLAM2)]</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td>
+
+PL-SVO [[paper](https://ieeexplore.ieee.org/abstract/document/7759620)]
+</td>
+<td>M</td>
+<td>PL</td>
+<td>O</td>
+<td>No</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/rubengooj/pl-svo)]</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td>
+
+PL-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/7989522)]
+</td>
+<td>M/S</td>
+<td>PL</td>
+<td>O</td>
+<td>Yes</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/rubengooj/pl-slam)]</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td>
+
+DTAM [[paper](https://ieeexplore.ieee.org/abstract/document/6126513)]
+</td>
+<td>M</td>
+<td>D</td>
+<td>O</td>
+<td>No</td>
+<td>Dense</td>
+<td>
+
+[[code](https://github.com/anuranbaka/OpenDTAM)]</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td>
+
+SVO [[paper](https://ieeexplore.ieee.org/abstract/document/6906584)]
+</td>
+<td>M</td>
+<td>H</td>
+<td>O</td>
+<td>No</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/uzh-rpg/rpg_svo)]</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td>
+
+LSD-SLAM [[paper](https://link.springer.com/chapter/10.1007/978-3-319-10605-2_54)]
+</td>
+<td>M/S</td>
+<td>D</td>
+<td>O</td>
+<td>Yes</td>
+<td>Semi Dense</td>
+<td>
+
+[[code](https://github.com/tum-vision/lsds_lam)]</td>
+</tr>
+
+
+
+<tr>
+<td></td>
+<td>
+
+DSO [[paper](https://ieeexplore.ieee.org/abstract/document/7898369)]
+</td>
+<td>M</td>
+<td>D</td>
+<td>O</td>
+<td>No</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/JakobEngel/dso)]</td>
+</tr>
+
+
+
+<tr>
+<th></th>
+<th>Method</th>
+<th>Sensor</th>
+<th>Frontend</th>
+<th>Backend</th>
+<th>Loop Closure</th>
+<th>Mapping</th>
+<th>Code Resources</th>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+MSCKF [[paper](https://ieeexplore.ieee.org/abstract/document/4209642)]
+</td>
+<td>M + I</td>
+<td>T</td>
+<td>F</td>
+<td>No</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/daniilidis-group/msckf_mono)]</td>
+</tr>
+
+
+<tr>
+<td>Visual-inertial</td>
+<td>
+
+OKVIS [[paper](https://journals.sagepub.com/doi/abs/10.1177/0278364914554813)]</td>
+<td>S + I</td>
+<td>T</td>
+<td>O</td>
+<td>No</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/ethz-asl/okvis)]</td>
+
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+ROVIO [[paper](https://ieeexplore.ieee.org/abstract/document/7353389)] </td>
+<td>M + I</td>
+<td>T</td>
+<td>F</td>
+<td>No</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/ethz-asl/rovio)]</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+VINS-Mono [[paper](https://ieeexplore.ieee.org/abstract/document/8421746)]</td>
+<td>M + I</td>
+<td>T</td>
+<td>O</td>
+<td>Yes</td>
+<td>Sparse</td>
+<td>
+
+[[code](https://github.com/HKUST-Aerial-Robotics/VINS-Mono)]</td>
+</tr>
+</table>
+
+Sensor: <b>M</b> represents Monocular camera; <b>S</b> represents Stereo camera; <b>R</b> represents RGB-D camera and <b>I</b> represents IMU. Front-end: <b>P</b> represents Point; <b>PL</b> represents Point-line; <b>D</b> represents Direct; <b>H</b> represents Hybrid. Back-end: <b>F</b> represents Filtering; <b>O</b> represents Optimization. Coupling: <b>T</b> represents Tightly.
 
 
 As a supplement to cameras, inertial sensors can effectively solve the problem that a single camera cannot cope with. Visual inertial fusion is bound to become a long-term hot direction of SLAM research.
