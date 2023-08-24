@@ -301,6 +301,13 @@ SLAM Algorithms : MonoSLAM [[paper](https://ieeexplore.ieee.org/abstract/documen
 
 ##### VSLAM Based on Direct Method : 
 
+Different from feature-based methods, the direct method operates directly on pixel intensity and can retain all information about the image. Furthermore, the direct method cancels the process of feature extraction and matching, so the computational efficiency is better than the indirect method. Furthermore, it has good adaptability to the environment with complex textures.
+
+SLAM Algorithms : DTAM [[paper](https://ieeexplore.ieee.org/abstract/document/6126513)] in 2011, SVO [[paper](https://ieeexplore.ieee.org/abstract/document/6906584)] in 2014 (semi-direct), DSO [[paper](https://ieeexplore.ieee.org/abstract/document/7898369)] in 2018, 
+
+SVO combines the advantages of the feature point method and direct method. The algorithm is divided into two main threads: motion estimation and mapping. Motion estimation is carried out by feature point matching, but mapping is carried out by the direct method.
+
+DSO can calculate accurate camera attitude in poor feature point detector performance, improving the robustness of low-texture areas or blurred images. In addition, the DSO uses both geometric and photometric camera calibration results for high accuracy estimation. However, DSO only considers local geometric consistency, so it inevitably produces cumulative errors. Furthermore, it is not a complete SLAM because it does not include loop closure, map reuse, etc.
 
 #### RGB-D SLAM
 
