@@ -1,5 +1,6 @@
 # Visual Odometry (Frontend)
 
+Visual Odometry (VO) / Egomotion is the process of estimating the pose and motion of the camera from an image sequence, and is fundamental capability required for computer vision and autonomous navigation robots. In the field of computer vision, egomotion refers to estimating a camera's motion relative to a rigid scene.
 
 Goal of Study
 + Study how to extract feature points from images and match feature points in
@@ -15,11 +16,9 @@ image through triangulation.
 
 ## Feature Method :
 
-  ORB Feature : [  The FAST Key Point, BRIEF Descriptor ] ; Feature Matching
+ORB Feature : [  The FAST Key Point, BRIEF Descriptor ] ; Feature Matching . ORB is basically a fusion of FAST keypoint detector and BRIEF descriptor with many modifications to enhance the performance. First it use FAST to find keypoints, then apply Harris corner measure to find top N points among them. It also use pyramid to produce multiscale-features.
 
-ORB is basically a fusion of FAST keypoint detector and BRIEF descriptor with many modifications to enhance the performance. First it use FAST to find keypoints, then apply Harris corner measure to find top N points among them. It also use pyramid to produce multiscale-features.
-
-article : [introduction to orb](https://medium.com/data-breach/introduction-to-orb-oriented-fast-and-rotated-brief-4220e8ec40cf), ORB Features from Scratch ([example.cpp](./orb_self_en.cpp)).
+Article : [introduction to orb](https://medium.com/data-breach/introduction-to-orb-oriented-fast-and-rotated-brief-4220e8ec40cf), ORB Features from Scratch ([example.cpp](./orb_self_en.cpp)).
 
 
 Feature Extraction and Matching (how to use ORB) :
@@ -113,7 +112,17 @@ int main(int argc, char **argv) {
 Calculate the Camera Motion : [ 2D–2D: Epipolar Geometry,  Solving Camera Motion with Epipolar
 Constraints ]
 
+Epipolar geometry is the geometry of stereo vision. When two cameras view a 3D scene from two distinct positions, there are a number of geometric relations between the 3D points and their projections onto the 2D images that lead to constraints between the image points.
+
 ## Triangulation
+
+Computer vision, as a multidisciplinary field, plays a pivotal role in numerous domains such as robotics, augmented reality, and autonomous navigation. One fundamental problem within computer vision is the reconstruction of three-dimensional (3D) scenes from two-dimensional (2D) images, a process often referred to as "triangulation." This abstract highlights the advancements and applications of triangulation techniques in computer vision.
+
+Triangulation involves the estimation of 3D points in space by analyzing the relative positions of corresponding points in multiple 2D images. Over the years, significant progress has been made in this field, driven by advancements in camera technology, computational power, and algorithm development. This abstract delves into three key aspects of triangulation in computer vision:
+
++ Mathematical Foundations: Triangulation relies on principles of geometry, optics, and linear algebra. Traditional methods like the Direct Linear Transform (DLT) have been refined, and novel algorithms based on robust statistical estimation, such as RANSAC, have emerged to handle noisy data and outliers effectively.
+
++ Stereo Vision: Stereo vision, a popular application of triangulation, involves using a pair of calibrated cameras to reconstruct 3D scenes. Modern approaches integrate machine learning techniques, like deep neural networks, to enhance feature matching and disparity estimation, thus improving the accuracy and speed of triangulation.
 
 ```cpp
 
@@ -326,7 +335,7 @@ Point2f pixel2cam(const Point2d &p, const Mat &K) {
 
 ```
 
-## 3D–2D PnP
+## 3D–2D PnP : Perspective-n-Point
 
 [ Direct Linear Transformation, P3P ]
 
@@ -1017,3 +1026,5 @@ void bundleAdjustment(
 
 
 ```
+
+resources : [Review of visual odometry: types, approaches, challenges, and applications](https://springerplus.springeropen.com/articles/10.1186/s40064-016-3573-7), @ScienceDirect/[visual-odometry](https://www.sciencedirect.com/topics/computer-science/visual-odometry), [Visual Odometry with Monocular Camera For Beginners: A Project in OpenCV](https://youtu.be/N451VeA8XRA?si=Xl-s8w9Vn9QfFcSi), [Point Cloud Processing with Open3D](https://www.youtube.com/watch?v=zF3MreN1w6c&list=PLkmvobsnE0GEZugH1Di2Cr_f32qYkv7aN), [YOLO Object Detection](https://www.youtube.com/watch?v=UYLp0-iOvFc&list=PLkmvobsnE0GEfcliu9SXhtAQyyIiw9Kl0), [UZH : Visual Odometry and SLAM](https://www.youtube.com/watch?v=_yuZmzJoWUc&list=PLxXaypZSkh7K32tkvMIpFeG0MX53fNhq6), [Evolution of Visual Odometry Techniques](https://arxiv.org/ftp/arxiv/papers/1804/1804.11142.pdf), [A Review of Visual Odometry Methods and Its Applications for Autonomous Driving](https://arxiv.org/abs/2009.09193), [Visual Odometry on the Mars Exploration Rovers](https://www-robotics.jpl.nasa.gov/media/documents/vo_ras.pdf), [A Practical Survey on Visual Odometry for Autonomous Driving in Challenging Scenarios and Conditions](https://ieeexplore.ieee.org/document/9817108), [RPG - Visual and Inertial Odometry and SLAM](https://rpg.ifi.uzh.ch/research_vo.html).

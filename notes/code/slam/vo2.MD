@@ -1,5 +1,7 @@
 # Visual Odometry (Frontend) II : Direct method
 
+Optical flow, a fundamental concept in computer vision, involves the analysis of the apparent motion of objects in a sequence of images. By calculating the displacement of these pixels, optical flow enables the tracking and understanding of object movements, making it an indispensable tool in computer vision.
+
 Goal :
 
     + Study the principle of optical flow.

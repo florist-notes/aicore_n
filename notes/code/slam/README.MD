@@ -139,8 +139,7 @@ generate a point cloud using the depth information through [Point Cloud Library]
 
 ### Visual Odometry : ([NOTES](./vo.MD)) ([NOTES II](./vo2.MD))
 
-Feature-based visual odometry, which is currently the mainstream
-in VO. Feature extraction and matching, epipolar geometry calculation, Perspective-n-Point (PnP) algorithm, Iterative Closest Point (ICP) algorithm, and Bundle Adjustment (BA), etc. OpenCV functions or constructing our own optimization problem in Ceres and g2o.
+Feature-based visual odometry (VO), Feature extraction and matching, epipolar geometry calculation, Perspective-n-Point (PnP) algorithm, Iterative Closest Point (ICP) algorithm, and Bundle Adjustment (BA), etc. OpenCV functions or constructing our own optimization problem in Ceres and g2o.
 
  Direct (or intensity-based) method for VO ; Optical flow principle and the direct method. Writing single layer and multi-layer optical flow and direct method to implement a two-view VO.
 
@@ -148,8 +147,7 @@ in VO. Feature extraction and matching, epipolar geometry calculation, Perspecti
 
 Bundle Adjustment in detail and show the relationship between its sparse structure and the corresponding graph model. Ceres and g2o separately to solve the same BA problem.
 
-Pose graph in the backend optimization. Pose graph is a more
-compact representation for BA, which converts all map points into constraints between keyframes. g2o to optimize a pose graph.
+Pose graph in the backend optimization. Pose graph is a more compact representation for BA, which converts all map points into constraints between keyframes. g2o to optimize a pose graph.
 
 ### Loop Closure : ([NOTES](./loopclosure.MD)) 
 

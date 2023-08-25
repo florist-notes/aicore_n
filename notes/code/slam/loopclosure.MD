@@ -111,5 +111,6 @@ int main(int argc, char **argv) {
 Important resources:
 
 + [LCDNet: Deep Loop Closure Detection and Point Cloud Registration for LiDAR SLAM](https://arxiv.org/abs/2103.05056)
++ [Role of Deep Learning in Loop Closure Detection for Visual and Lidar SLAM: A Survey](https://www.mdpi.com/1424-8220/21/4/1243)
 + [The Revisiting Problem in Simultaneous Localization and Mapping: A Surveyon Visual Loop Closure Detection](https://arxiv.org/ftp/arxiv/papers/2204/2204.12831.pdf)
 
