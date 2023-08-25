@@ -1,4 +1,16 @@
-# Dense Reconstruction
+# Dense 3D Reconstruction
+
+Dense 3D reconstruction, a fundamental task in computer vision and computer graphics, has witnessed remarkable progress in recent years. This abstract provides an overview of the key techniques and applications in the field of dense 3D reconstruction.
+
+The process of dense 3D reconstruction involves the generation of detailed three-dimensional models of objects, scenes, or environments from two-dimensional image data. This process has evolved from traditional structure-from-motion (SfM) and stereo matching methods to more advanced techniques, such as multi-view stereo (MVS), depth sensing, and deep learning-based approaches.
+
+Several critical aspects of dense 3D reconstruction are discussed in this abstract:
+
++ <b>Techniques</b>: The abstract reviews various techniques employed in dense 3D reconstruction, including traditional approaches like SfM and stereo matching, which rely on geometric principles to estimate depth. Additionally, it covers recent advancements in MVS, which exploit multiple views to create high-fidelity 3D models. Deep learning-based methods, such as convolutional neural networks (CNNs) and generative adversarial networks (GANs), have also made significant contributions, enabling accurate reconstructions even in challenging scenarios.
+
++ <b>Applications</b>: Dense 3D reconstruction finds applications in a wide range of fields. This abstract highlights its significance in computer vision for object recognition, tracking, and scene understanding. It also discusses its role in robotics, where accurate 3D models aid in navigation and manipulation tasks. Furthermore, dense 3D reconstruction is pivotal in cultural heritage preservation, virtual reality, and augmented reality, enhancing immersive experiences and historical documentation.
+
++ <b>Challenges and Future Directions</b>: While substantial progress has been made, dense 3D reconstruction continues to face challenges, such as scalability, robustness to varying lighting conditions, and real-time performance. The abstract explores potential future directions, including the integration of 3D reconstruction with semantic understanding, improved fusion of sensor data, and the development of lightweight algorithms for mobile and edge devices.
 
 Goal :
 
@@ -732,7 +744,9 @@ int main(int argc, char **argv) {
 
 ##  Octo-Mapping:
 
-<img src="./octo.png" width=100%>
+OctoMapping is a probabilistic framework that combines occupancy grids with octrees, providing a dynamic and memory-efficient approach for representing and updating 3D maps of complex environments. The technique leverages sensor data, such as lidar or depth cameras, to construct high-resolution 3D maps while estimating the likelihood of occupancy at each voxel. This probabilistic approach enables reliable obstacle detection, mapping, and path planning for autonomous robots and vehicles.
+
+<img src="./octo2.png" width=100%>
 
 ```cpp
 
@@ -822,4 +836,10 @@ int main(int argc, char **argv) {
 ```
 ## Real-time 3D reconstruction:
 
-###  *TSDF and RGB-D Fusion Series
++ [NeuralRecon: Real-Time Coherent 3D Reconstruction from Monocular Video](https://arxiv.org/abs/2104.00681)
++ [ReFusion: 3D Reconstruction in Dynamic Environments for RGB-D Cameras Exploiting Residuals](https://www.ipb.uni-bonn.de/pdfs/palazzolo2019iros.pdf)
++ [DFusion: Denoised TSDF Fusion of Multiple Depth Maps with Sensor Pose Noises](https://www.mdpi.com/1424-8220/22/4/1631)
++ [3 Dimensional Dense Reconstruction: A Review of Algorithms and Dataset](https://arxiv.org/ftp/arxiv/papers/2304/2304.09371.pdf)
++ [State of the Art in Dense Monocular Non-Rigid 3D Reconstruction](https://arxiv.org/pdf/2210.15664.pdf)
+
+*TSDF and RGB-D Fusion Series | [Real-time on-device 3D reconstruction](https://youtu.be/PxjjYCxGUR8?si=Py0fyShqpUMV7Tpl) | [dense_3d_reconstruction.pdf](./lecture_10.pdf)
