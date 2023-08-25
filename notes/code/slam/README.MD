@@ -161,7 +161,7 @@ videos.
 
  Estimate the depth of pixels in monocular SLAM (and show why they are unreliable). Compared with monocular depth estimation, building a dense map with RGB-D cameras is much easier. Write programs for epipolar line search and patch matching to estimate depth from monocular images and then build a point cloud map and octagonal treemap from RGB-D data.
 
-### SLAM Discussion: ([NOTES](./slamdis.MD))
+### SLAM Discussion: ([NOTES](./slamdis.MD)) ([NOTES II](./slamdis2.MD))
 
 
  When the movement is too fast, the rolling shutter camera will have a motion
