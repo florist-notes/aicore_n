@@ -508,3 +508,159 @@ Gurturk et al. [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0
 </tr>
 
 </table>
+
+### Modern Semantic VSLAM:
+
+<table width=100%>
+<tr>
+<th>Field</th>
+<th>Model</th>
+<th>Year</th>
+<th>Contribution</th>
+</tr>
+
+<tr>
+<td>Object detection</td>
+<td>
+
+R-CNN [[paper](https://openaccess.thecvf.com/content_cvpr_2014/html/Girshick_Rich_Feature_Hierarchies_2014_CVPR_paper.html)]</td>
+<td>2014</td>
+<td>The first algorithm that successfully applied deep learning to target detection.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+Fast R-CNN [[paper](https://arxiv.org/abs/1504.08083)]</td>
+<td>2015</td>
+<td>Image feature extraction is performed only once.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+Faster R-CNN [[paper](https://arxiv.org/abs/1506.01497)]</td>
+<td>2017</td>
+<td>Integrated into a network, the comprehensive performance has been greatly improved.</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+SSD [[paper](https://link.springer.com/chapter/10.1007/978-3-319-46448-0_2)]</td>
+<td>2016</td>
+<td>SSD was an early incarnation of the single-phase model.</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+YOLO [[paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/html/Redmon_You_Only_Look_CVPR_2016_paper.html)]</td>
+<td>2016</td>
+<td>Think of detection as a regression problem, using a network to output positions and categories.</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+YOLOv5 [[paper](https://github.com/ultralytics/yolov5)]</td>
+<td>2020</td>
+<td>The environment is easy to configure and model training is very fast.</td>
+</tr>
+
+
+<tr>
+<td>Semantic segmentation</td>
+<td>
+
+FCN [[paper](https://openaccess.thecvf.com/content_cvpr_2015/html/Long_Fully_Convolutional_Networks_2015_CVPR_paper.html)]</td>
+<td>2015</td>
+<td>It opens the first application of a convolutional neural network in semantic segmentation.</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+SegNet [[paper](https://ieeexplore.ieee.org/abstract/document/7803544)]</td>
+<td>2017</td>
+<td>A completely symmetrical structure is adopted.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+DeepLabv1 [[paper](https://arxiv.org/abs/1412.7062)]</td>
+<td>2014</td>
+<td>Atrous convolution.
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+DeepLabv3+ [[paper](https://github.com/Tramac/awesome-semantic-segmentation-pytorch)]</td>
+<td>2018</td>
+<td>Greatly reduce the number of parameters.</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+PSPnet [[paper](https://openaccess.thecvf.com/content_cvpr_2017/html/Zhao_Pyramid_Scene_Parsing_CVPR_2017_paper.html)]</td>
+<td>2017</td>
+<td>A Pyramid Pooling Module can aggregate contextual information from different regions.</td>
+</tr>
+
+<tr>
+<td>Instance segmentation</td>
+<td>
+
+Mask R-CNN [[paper](https://openaccess.thecvf.com/content_iccv_2017/html/He_Mask_R-CNN_ICCV_2017_paper.html)]</td>
+<td>2017</td>
+<td>It can not only detect the target in the image but also give a high-quality segmentation result for each target.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+YOLACT [[paper](https://arxiv.org/abs/1904.02689)]</td>
+<td>2019</td>
+<td>Based on the one-stage target detection algorithm, the overall architecture design is very lightweight and achieves good results in speed and effect.
+</td>
+</tr>
+
+</table>
+
+Please check my notes on perception for more information on image detection algorithms. @github/[autonomy-perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD).
+
+#### Semantic with Location :
+
+Location accuracy is one of the most basic assessment standards in the SLAM system and is a precondition for mobile robots to perform many tasks. Introducing environmental semantic information can effectively improve the scale uncertainty and cumulative drift in visual SLAM localization, thus improving the localization accuracy to varying degrees.
+
+Bowman et al. [[paper](https://ieeexplore.ieee.org/abstract/document/7989203)] proposed a sensor state estimation and semantic landmark location optimization problem, which integrates metric information, semantic information, and data association. After obtaining semantic information from target detection, they introduced the Expectation-Maximization (EM) and calculated the probability of data association according to the result of semantic classification. They successfully converted semantic SLAM into a probability problem and improved the localization accuracy of the SLAM system.
+
+#### Semantic with Mapping :
+
+Another key juncture of VSLAM and deep learning is the semantic map construction of SLAM, and most semantic VSLAM systems are based on this idea [[paper](https://ieeexplore.ieee.org/abstract/document/9145704)] .
+
+#### Elimination of Dynamic Objects :
+
+Traditional VSLAM algorithms assume that objects in the environment are static or low-motion, which affects the applicability of the VSLAM system in actual scenes. When dynamic objects exist in the environment (such as people, vehicles and pets), they will bring wrong observation data to the system and reduce the accuracy and robustness of the system. Traditional methods solve the influence of some outliers on the system through the RANSAC algorithm. However, if dynamic objects occupy most of the image area or moving objects are fast, reliable observation data still cannot be obtained.
+
+Now, the solutions to the problem of disturbance brought by dynamic objects to the SLAM system are consistent. That is, before the visual odometer, using target detection and image segmentation algorithm to filter out the dynamic areas in the image. Then use static environment points to calculate the nearby positions of the camera and construct a map containing semantic information. Figure 24 shows a typical structure. Although the influence of dynamic objects cannot be completely solved, the robustness of the system is greatly improved.
+
