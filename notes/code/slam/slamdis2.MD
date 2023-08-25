@@ -177,3 +177,94 @@ CNN has achieved good results in replacing some modules of the traditional VSLAM
 
 
 #### +  RNN with VSLAM:
+
+
+
+<table width=100%>
+<tr>
+<th>Part</th>
+<th>Method</th>
+<th>Contribution</th>
+</tr>
+
+<tr>
+<td>VO</td>
+<td>
+
+Xue et al. [[paper](https://link.springer.com/chapter/10.1007/978-3-030-20876-9_19)]
+</td>
+<td>Proposing a dual-branch recurrent network to learn the rotation and translation separately by leveraging current CNN for feature representation and RNN for image sequence reasoning.</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+Teed et al. [[paper](https://proceedings.neurips.cc/paper/2021/hash/89fcd07f20b6785b92134bd6c1d0fa42-Abstract.html)]
+</td>
+<td>It consists of recurrent iterative updates of camera pose and pixel-wise depth through a Dense Bundle Adjustment layer.</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+DA-RNN [[paper](https://arxiv.org/abs/1703.03098)]
+ </td>
+<td>A novel framework for joint 3D scene mapping and semantic labeling.</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+DeepSeqSLAM [[paper](https://arxiv.org/abs/2011.08518)]</td>
+<td>A trainable CNN+RNN architecture for jointly learning visual and positional representations from a single monocular image sequence of a route.</td>
+</tr>
+
+<hr>
+
+
+<tr>
+<td>VIO</td>
+<td>
+
+Clark et al.  [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/11215)]</td>
+<td>It is the first end-to-end trainable method for visual-inertial odometry which performs a fusion of the data at an intermediate feature-representation level.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+DeepVIO [[paper](https://ieeexplore.ieee.org/abstract/document/8968467)]</td>
+<td>It reduces the impacts of inaccurate Camera-IMU calibrations and unsynchronized and missing data.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+Chen et al. [[paper](https://openaccess.thecvf.com/content_CVPR_2019/html/Chen_Selective_Sensor_Fusion_for_Neural_Visual-Inertial_Odometry_CVPR_2019_paper.html)]</td>
+<td>It proposes a novel end-to-end selective sensor fusion framework for monocular VIO.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+Yasin et al. [[paper](https://www.sciencedirect.com/science/article/pii/S0893608022000752)]</td>
+<td>Using adversarial training and self-adaptive visual-inertial sensor fusion.</td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+Wong et al. [[paper](https://ieeexplore.ieee.org/abstract/document/8972600)]</td>
+<td>The fusion method of visual inertia + depth data set is proposed for the first time to further enhance the complementary advantages of visual and inertial sensors.</td>
+</tr>
+</table>
