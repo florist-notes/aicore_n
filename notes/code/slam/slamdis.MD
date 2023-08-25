@@ -3,6 +3,94 @@
 Visual SLAM (VSLAM) has been developing rapidly due to its advantages of low-cost sensors, the easy fusion of other sensors, and richer environmental information. Traditional visionbased SLAM research has made many achievements, but it may fail to achieve wished results in challenging environments. Deep learning has promoted the development of computer vision, and the combination of deep learning and SLAM has attracted more and more attention. Semantic information, as high-level environmental information, can enable robots to better understand the surrounding environment.
 
 
+ Open source SLAM systems : MonoSLAM, PTAM, ORB-SLAM Series, LSD-SLAM, SVO, RTAB-MAP ; IMU-Integrated VSLAM, Semantic SLAM.
+
+ <table width=100%>
+  <tr>
+  <th>SLAM algorithm name (Sensors∗) :</th>
+  </tr>
+  <tr>
+  <td>
+
+  [MonoSLAM](https://github.com/hanmekim/SceneLib2) (M)
+  </td>
+  <td>
+
+  [PTAM](http://www.robots.ox.ac.uk/~gk/PTAM/) (M)
+  </td>
+  <td>
+
+  [DTAM](https://github.com/anuranbaka/OpenDTAM) (R)
+  </td>
+  <td>
+
+  [ORB-SLAM](http://webdiis.unizar.es/~raulmur/orbslam/) (M/S/R)
+  </td>
+  <td>
+
+  [LSD-SLAM](http://vision.in.tum.de/research/vslam/lsdslam) (M)
+  </td>
+  <td>
+
+  [RTAB-MAP](https://github.com/introlab/rtabmap) (S/R)
+  </td>
+  <td>
+
+  [SVO](https://github.com/uzh-rpg/rpg_svo) (M)
+  </td>
+  </tr>
+ 
+  <tr>
+  
+  <td>
+
+  [RGBD-SLAM-V2](https://github.com/felixendres/rgbdslam_v2) (R)
+  </td>
+  <td>
+
+  [ROVIO](https://github.com/ethz-asl/rovio) (M+IMU)
+  </td>
+  <td>
+
+  [DVO](https://github.com/tum-vision/dvo_slam) (R)
+  </td>
+  <td>
+
+  [DSO](https://github.com/JakobEngel/dso) (M)
+  </td>
+  <td>
+
+  [OKVIS](https://github.com/ethz-asl/okvis) (M/S+IMU)
+  </td>
+  <td>
+
+  [VINS](https://github.com/HKUST-Aerial-Robotics/VINS-Mono) (M+IMU)
+  </td>
+  <td>
+
+  [GMapping](http://wiki.ros.org/gmapping) (L)
+  </td>
+  </tr>
+
+
+  <tr>
+  <td>
+
+  [Elastic fusion](https://github.com/mp3guy/ElasticFusion) (R)
+  </td>
+  <td>
+
+  [Hector SLAM](http://wiki.ros.org/hector_slam) (L)
+  </td>
+  </tr>
+
+
+
+ </table>
+
+ ∗M=Monocular, S=Stereo, R=RGB-D, L=Lidar
+
+
 <table width=100%>
 <tr>
 <th> MonoSLAM </th>
@@ -703,4 +791,4 @@ Sensor: <b>M</b> represents Monocular camera; <b>S</b> represents Stereo camera;
 As a supplement to cameras, inertial sensors can effectively solve the problem that a single camera cannot cope with. Visual inertial fusion is bound to become a long-term hot direction of SLAM research.
 
 
-There are several new SLAM methods like - HKU-MaRS-HBA, Pharos SLAm and few of them can be found at [Hilti SLAM Challenge leaderboard](https://hilti-challenge.com/).
+There are several new SLAM methods like - HKU-MaRS-HBA, Pharos SLAM and few of them can be found at [Hilti SLAM Challenge leaderboard](https://hilti-challenge.com/).
