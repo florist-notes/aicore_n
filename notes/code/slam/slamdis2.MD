@@ -285,7 +285,7 @@ An excellent algorithm combining neural networks with VSLAM :
 <td>VO</td>
 <td>
 
-CNN-SLAM [[paper]()] </td>
+CNN-SLAM [[paper](https://arxiv.org/abs/1704.03489)] </td>
 <td>2017</td>
 <td>Monocular</td>
 <td>CNN</td>
@@ -297,7 +297,7 @@ CNN-SLAM [[paper]()] </td>
 <td></td>
 <td>
 
-DeepVo [[paper]()] </td>
+DeepVo [[paper](https://ieeexplore.ieee.org/abstract/document/7989236)] </td>
 <td>2017</td>
 <td>Monocular</td>
 <td>R-CNN</td>
@@ -309,7 +309,7 @@ DeepVo [[paper]()] </td>
 <td></td>
 <td>
 
-Code-SLAM [[paper]()] </td>
+Code-SLAM [[paper](https://openaccess.thecvf.com/content_cvpr_2018/html/Bloesch_CodeSLAM_--_Learning_CVPR_2018_paper.html)] </td>
 <td>2018</td>
 <td>Monocular</td>
 <td>U-Net</td>
@@ -321,7 +321,7 @@ Code-SLAM [[paper]()] </td>
 <td></td>
 <td>
 
-DVSO [[paper]()] </td>
+DVSO [[paper](https://openaccess.thecvf.com/content_ECCV_2018/html/Nan_Yang_Deep_Virtual_Stereo_ECCV_2018_paper.html)] </td>
 <td>2018</td>
 <td>Stereo</td>
 <td>DispNet</td>
@@ -333,7 +333,7 @@ DVSO [[paper]()] </td>
 <td></td>
 <td>
 
-UnDeepVo [[paper]()] </td>
+UnDeepVo [[paper](https://ieeexplore.ieee.org/abstract/document/8461251)] </td>
 <td>2018</td>
 <td>Monocular</td>
 <td>VGG encoder-decoder	</td>
@@ -345,7 +345,7 @@ UnDeepVo [[paper]()] </td>
 <td></td>
 <td>
 
-CNN-SVO [[paper]()] </td>
+CNN-SVO [[paper](https://ieeexplore.ieee.org/abstract/document/8794425)] </td>
 <td>2019</td>
 <td>Monocular</td>
 <td>CNN</td>
@@ -357,7 +357,7 @@ CNN-SVO [[paper]()] </td>
 <td></td>
 <td>
 
-GANVO [[paper]()] </td>
+GANVO [[paper](https://ieeexplore.ieee.org/abstract/document/8793512)] </td>
 <td>2019</td>
 <td>Monocular</td>
 <td>GAN</td>
@@ -369,7 +369,7 @@ GANVO [[paper]()] </td>
 <td></td>
 <td>
 
-Li et al. [[paper]()] </td>
+Li et al. [[paper](https://ieeexplore.ieee.org/abstract/document/8793706)] </td>
 <td>2019</td>
 <td>Monocular</td>
 <td>CNN</td>
@@ -381,7 +381,7 @@ Li et al. [[paper]()] </td>
 <td></td>
 <td>
 
-D3VO [[paper]()] </td>
+D3VO [[paper](https://openaccess.thecvf.com/content_CVPR_2020/html/Yang_D3VO_Deep_Depth_Deep_Pose_and_Deep_Uncertainty_for_Monocular_CVPR_2020_paper.html)] </td>
 <td>2020</td>
 <td>Monocular</td>
 <td>CNN</td>
@@ -393,7 +393,7 @@ D3VO [[paper]()] </td>
 <td></td>
 <td>
 
-DeepSeqSLAM [[paper]()] </td>
+DeepSeqSLAM [[paper](https://arxiv.org/abs/2011.08518)] </td>
 <td>2020</td>
 <td>Monocular</td>
 <td>CNN+RNN</td>
@@ -405,7 +405,7 @@ DeepSeqSLAM [[paper]()] </td>
 <td></td>
 <td>
 
-DeepSLAM [[paper]()] </td>
+DeepSLAM [[paper](https://ieeexplore.ieee.org/abstract/document/9047170)] </td>
 <td>2021</td>
 <td>Monocular</td>
 <td>R-CNN</td>
@@ -417,7 +417,7 @@ DeepSLAM [[paper]()] </td>
 <td></td>
 <td>
 
-LIFT-SLAM [[paper]()] </td>
+LIFT-SLAM [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0925231221007803)] </td>
 <td>2021</td>
 <td>Monocular</td>
 <td>DNN</td>
@@ -429,7 +429,7 @@ LIFT-SLAM [[paper]()] </td>
 <td></td>
 <td>
 
-Zhang et al. [[paper]()] </td>
+Zhang et al. [[paper](https://www.mdpi.com/1424-8220/21/14/4735)] </td>
 <td>2021</td>
 <td>Stereo</td>
 <td>U-Net encoder-decoder</td>
@@ -440,7 +440,7 @@ Zhang et al. [[paper]()] </td>
 <td>VIO</td>
 <td>
 
-VINet [[paper]()] </td>
+VINet [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/11215)] </td>
 <td>2017</td>
 <td>Monocular + IMU	</td>
 <td>CNN + LSTM</td>
@@ -452,7 +452,7 @@ VINet [[paper]()] </td>
 <td></td>
 <td>
 
-VIOLearner [[paper]()] </td>
+VIOLearner [[paper](https://ieeexplore.ieee.org/abstract/document/8691513)] </td>
 <td>2020</td>
 <td>Monocular + IMU	</td>
 <td>CNN</td>
@@ -464,7 +464,7 @@ VIOLearner [[paper]()] </td>
 <td></td>
 <td>
 
-DeepVIO [[paper]()] </td>
+DeepVIO [[paper](https://ieeexplore.ieee.org/abstract/document/8968467)] </td>
 <td>2019</td>
 <td>Stereo + IMU</td>
 <td>CNN + LSTM</td>
@@ -476,7 +476,7 @@ DeepVIO [[paper]()] </td>
 <td></td>
 <td>
 
-Chen et al [[paper]()] </td>
+Chen et al [[paper](https://openaccess.thecvf.com/content_CVPR_2019/html/Chen_Selective_Sensor_Fusion_for_Neural_Visual-Inertial_Odometry_CVPR_2019_paper.html)] </td>
 <td>2019</td>
 <td>Monocular + IMU	</td>
 <td>FlowNet + LSTM</td>
@@ -488,7 +488,7 @@ Chen et al [[paper]()] </td>
 <td></td>
 <td>
 
-Kim et al. [[paper]()] </td>
+Kim et al. [[paper](https://ieeexplore.ieee.org/abstract/document/9324985)] </td>
 <td>2021</td>
 <td>Monocular + IMU	</td>
 <td>CNN + LSTM</td>
@@ -500,7 +500,7 @@ Kim et al. [[paper]()] </td>
 <td></td>
 <td>
 
-Gurturk et al. [[paper]()] </td>
+Gurturk et al. [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0263224121008198)] </td>
 <td>2021</td>
 <td>Monocular + IMU	</td>
 <td>CNN + LSTM</td>
