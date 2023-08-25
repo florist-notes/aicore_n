@@ -658,9 +658,354 @@ Bowman et al. [[paper](https://ieeexplore.ieee.org/abstract/document/7989203)] p
 
 Another key juncture of VSLAM and deep learning is the semantic map construction of SLAM, and most semantic VSLAM systems are based on this idea [[paper](https://ieeexplore.ieee.org/abstract/document/9145704)] .
 
+<table width=100%>
+<tr>
+<th>Reference</th>
+<th>Year</th>
+<th>Sensor</th>
+<th>Semantic Labelling</th>
+<th>Map</th>
+<th>Contribution</th>
+</tr>
+
+<tr>
+<td>
+
+Vineet et al.  [[paper](https://ieeexplore.ieee.org/abstract/document/7138983)]
+</td>
+<td>2015</td>
+<td>S</td>
+<td>Random Forest</td>
+<td>Voxel</td>
+<td>The first system can perform dense, large-scale, outdoor semantic reconstruction of a scene in real-time.</td>
+</tr>
+
+<tr>
+<td>
+
+Zhao et al.  [[paper](https://link.springer.com/article/10.1007/s11370-016-0201-x)]
+</td>
+<td>2016</td>
+<td>D</td>
+<td>SVM</td>
+<td>Voxel</td>
+<td>Use temporal information and higher-order cliques to enforce the labeling consistency for each image labeling result.</td>
+</tr>
+
+
+<tr>
+<td>
+
+Li et al.  [[paper](https://arxiv.org/abs/1611.04144)]
+</td>
+<td>2016</td>
+<td>D</td>
+<td>Deeplabv2</td>
+<td>Voxel</td>
+<td>There is no need to obtain a semantic segmentation for each frame in a sequence.</td>
+</tr>
+
+<tr>
+<td>
+
+SemanticFusion  [[paper](https://ieeexplore.ieee.org/abstract/document/7989538)]
+</td>
+<td>2016</td>
+<td>D</td>
+<td>CNN with CRF</td>
+<td>Surfel</td>
+<td>Allows the CNN’s semantic predictions from multiple viewpoints to be probabilistically fused into a dense semantically annotated map.</td>
+</tr>
+
+<tr>
+<td>
+
+Yang et al.  [[paper](https://ieeexplore.ieee.org/abstract/document/8202212)]
+</td>
+<td>2017</td>
+<td>S</td>
+<td>CNN with CRF</td>
+<td>Grid</td>
+<td>Further, optimize 3D grid labels through a novel CRF model.</td>
+</tr>
+
+<tr>
+<td>
+
+Panopticfusion  [[paper](https://ieeexplore.ieee.org/abstract/document/8967890)]
+</td>
+<td>2020</td>
+<td>D</td>
+<td>PSPNET with CRF Mask R-CNN with CRF</td>
+<td>Voxel</td>
+<td>A novel online volumetric semantic mapping system at the level of stuff and things.</td>
+</tr>
+
+<tr>
+<td>
+
+Kimera [[paper](https://ieeexplore.ieee.org/abstract/document/9196885)]
+</td>
+<td>2020</td>
+<td>S + I</td>
+<td>Pixel-wise</td>
+<td>Mesh</td>
+<td>It is modular and allows replacing each module or executing them in isolation.</td>
+</tr>
+
+<tr>
+<td>
+
+AVP-SLAM  [[paper](https://ieeexplore.ieee.org/abstract/document/9340939)]
+</td>
+<td>2020</td>
+<td>M + I + E</td>
+<td>U-Net</td>
+<td>Voxel</td>
+<td>Autonomous parking.</td>
+</tr>
+
+<tr>
+<td>
+
+RoadMap  [[paper](https://ieeexplore.ieee.org/abstract/document/9561663)]
+</td>
+<td>2021</td>
+<td>R + M + I + E	</td>
+<td>CNN</td>
+<td>Voxel</td>
+<td>A framework of on-vehicle mapping, on-cloud maintenance, and user-end localization.</td>
+</tr>
+</table>
+
+Sensor: <b>S</b> represents Stereo camera; <b>M</b> represents Monocular camera; <b>I</b> represents IMU; <b>E</b> represents encoder; <b>R</b> represents RTK-GPS and <b>D</b> represents RGB-D camera.
+
 #### Elimination of Dynamic Objects :
 
 Traditional VSLAM algorithms assume that objects in the environment are static or low-motion, which affects the applicability of the VSLAM system in actual scenes. When dynamic objects exist in the environment (such as people, vehicles and pets), they will bring wrong observation data to the system and reduce the accuracy and robustness of the system. Traditional methods solve the influence of some outliers on the system through the RANSAC algorithm. However, if dynamic objects occupy most of the image area or moving objects are fast, reliable observation data still cannot be obtained.
 
 Now, the solutions to the problem of disturbance brought by dynamic objects to the SLAM system are consistent. That is, before the visual odometer, using target detection and image segmentation algorithm to filter out the dynamic areas in the image. Then use static environment points to calculate the nearby positions of the camera and construct a map containing semantic information. Figure 24 shows a typical structure. Although the influence of dynamic objects cannot be completely solved, the robustness of the system is greatly improved.
+
+
+
+<table width=100%>
+<tr>
+<th>Model</th>
+<th>Year</th>
+<th>Sensor</th>
+<th>Scene</th>
+<th>Dynamic Detection</th>
+<th>Dataset</th>
+<th>Code Resource</th>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>
+
+  [[paper]()]
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
 
