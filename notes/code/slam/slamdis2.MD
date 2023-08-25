@@ -268,3 +268,243 @@ Wong et al. [[paper](https://ieeexplore.ieee.org/abstract/document/8972600)]</td
 <td>The fusion method of visual inertia + depth data set is proposed for the first time to further enhance the complementary advantages of visual and inertial sensors.</td>
 </tr>
 </table>
+
+An excellent algorithm combining neural networks with VSLAM :
+
+<table width=100%>
+<tr>
+<th></th>
+<th>Method</th>
+<th>Year</th>
+<th>Sensor</th>
+<th>Neural Network</th>
+<th>Supervision</th>
+</tr>
+
+<tr>
+<td>VO</td>
+<td>
+
+CNN-SLAM [[paper]()] </td>
+<td>2017</td>
+<td>Monocular</td>
+<td>CNN</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+DeepVo [[paper]()] </td>
+<td>2017</td>
+<td>Monocular</td>
+<td>R-CNN</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+Code-SLAM [[paper]()] </td>
+<td>2018</td>
+<td>Monocular</td>
+<td>U-Net</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+DVSO [[paper]()] </td>
+<td>2018</td>
+<td>Stereo</td>
+<td>DispNet</td>
+<td>Semi - Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+UnDeepVo [[paper]()] </td>
+<td>2018</td>
+<td>Monocular</td>
+<td>VGG encoder-decoder	</td>
+<td>Unsupervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+CNN-SVO [[paper]()] </td>
+<td>2019</td>
+<td>Monocular</td>
+<td>CNN</td>
+<td>Hybrid</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+GANVO [[paper]()] </td>
+<td>2019</td>
+<td>Monocular</td>
+<td>GAN</td>
+<td>Unsupervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+Li et al. [[paper]()] </td>
+<td>2019</td>
+<td>Monocular</td>
+<td>CNN</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+D3VO [[paper]()] </td>
+<td>2020</td>
+<td>Monocular</td>
+<td>CNN</td>
+<td>Hybrid</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+DeepSeqSLAM [[paper]()] </td>
+<td>2020</td>
+<td>Monocular</td>
+<td>CNN+RNN</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+DeepSLAM [[paper]()] </td>
+<td>2021</td>
+<td>Monocular</td>
+<td>R-CNN</td>
+<td>Unsupervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+LIFT-SLAM [[paper]()] </td>
+<td>2021</td>
+<td>Monocular</td>
+<td>DNN</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+Zhang et al. [[paper]()] </td>
+<td>2021</td>
+<td>Stereo</td>
+<td>U-Net encoder-decoder</td>
+<td>Unsupervised</td>
+</tr>
+
+<tr>
+<td>VIO</td>
+<td>
+
+VINet [[paper]()] </td>
+<td>2017</td>
+<td>Monocular + IMU	</td>
+<td>CNN + LSTM</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+VIOLearner [[paper]()] </td>
+<td>2020</td>
+<td>Monocular + IMU	</td>
+<td>CNN</td>
+<td>Unsupervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+DeepVIO [[paper]()] </td>
+<td>2019</td>
+<td>Stereo + IMU</td>
+<td>CNN + LSTM</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+Chen et al [[paper]()] </td>
+<td>2019</td>
+<td>Monocular + IMU	</td>
+<td>FlowNet + LSTM</td>
+<td>Supervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+Kim et al. [[paper]()] </td>
+<td>2021</td>
+<td>Monocular + IMU	</td>
+<td>CNN + LSTM</td>
+<td>Unsupervised</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>
+
+Gurturk et al. [[paper]()] </td>
+<td>2021</td>
+<td>Monocular + IMU	</td>
+<td>CNN + LSTM</td>
+<td>Supervised</td>
+</tr>
+
+</table>
