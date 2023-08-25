@@ -806,209 +806,241 @@ Now, the solutions to the problem of disturbance brought by dynamic objects to t
 <tr>
 <td>
 
-  [[paper]()]
+Reddy et al.  [[paper](https://ieeexplore.ieee.org/abstract/document/7759663)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2016</td>
+<td>Stereo</td>
+<td>Outdoor</td>
+<td>
+
+[model](https://ieeexplore.ieee.org/abstract/document/5940558) </td>
+<td>KITTI</td>
+<td>0</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+DynaSLAM [[paper](https://ieeexplore.ieee.org/abstract/document/8421015)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2018</td>
+<td>Monocular/Stereo/ RGB-D</td>
+<td>Outdoor/Indoor</td>
+<td>Mask R-CNN</td>
+<td>KITTI/TUM RGB-D</td>
+<td>
+
+[[code](https://github.com/BertaBescos/DynaSLAM)]
+</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+DS-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/8593691)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2018</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>SegNet</td>
+<td>TUM RGB-D</td>
+<td>
+
+[[code](https://github.com/ivipsourcecode/DS-SLAM)]
+</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+Detect-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/8354219)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2018</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>SSD</td>
+<td>TUM RGB-D</td>
+<td>
+
+[[code](https://github.com/liadbiz/detect-slam)]
+</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+Wang et al. [[paper](https://www.mdpi.com/2072-4292/11/11/1363)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2019</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>YOLOv3</td>
+<td>NYU Depth Dataset V2</td>
+<td>0</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+SLAMANTIC [[paper](https://openaccess.thecvf.com/content_ICCVW_2019/html/DL4VSLAM/Schorghuber_SLAMANTIC_-_Leveraging_Semantics_to_Improve_VSLAM_in_Dynamic_Environments_ICCVW_2019_paper.html)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2019</td>
+<td>Monocular/Stereo</td>
+<td>Outdoor</td>
+<td>Mask R-CNN</td>
+<td>TUM RGB-D/ VKITTI</td>
+<td>
+
+[[code](https://github.com/mthz/slamantic)]
+</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+DynSLAM [[paper](https://ieeexplore.ieee.org/abstract/document/8462974)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2018</td>
+<td>Stereo</td>
+<td>Outdoor</td>
+<td>Cascades 
+
+[[ref](https://openaccess.thecvf.com/content_cvpr_2016/html/Dai_Instance-Aware_Semantic_Segmentation_CVPR_2016_paper.html)]
+</td>
+<td>KITTI</td>
+<td>
+
+[[code](https://github.com/AndreiBarsan/DynSLAM)]
+</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+STDyn-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/9706470)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2022</td>
+<td>Stereo</td>
+<td>Outdoor</td>
+<td>SegNet</td>
+<td>KITTI</td>
+<td>
+
+[[code](https://github.com/DanielaEsparza/STDyn-SLAM)]
+</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+PoseFusion [[paper](https://link.springer.com/chapter/10.1007/978-3-030-33950-0_66)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2018</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>OpenPose</td>
+<td>Freiburg RGB-D SLAM</td>
+<td>
+
+[[code](https://github.com/conix-center/posefusion)]
+</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+RDS-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/9318990)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2021</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>SegNet/Mask R-CNN</td>
+<td>TUM RGB-D</td>
+<td>
+
+[[code](https://github.com/yubaoliu/RDS-SLAM)]
+</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+YO-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/9445920)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2021</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>Yolact</td>
+<td>TUM RGB-D</td>
+<td>0</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+Zhang et al. [[paper](https://www.mdpi.com/1424-8220/21/17/5889)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2021</td>
+<td>Panoramic</td>
+<td>Data</td>
+<td>Yolact</td>
+<td>
+
+[[ref](https://ieeexplore.ieee.org/abstract/document/6942637)]
+</td>
+<td>0</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+DOE-SLAM [[paper](https://www.mdpi.com/1424-8220/21/9/3091)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2021</td>
+<td>Monocular</td>
+<td>Indoor</td>
+<td>self-initiated *</td>
+<td>TUM RGB-D</td>
+<td>0</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+DRSO-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/9602705)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2021</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>Mask R-CNN</td>
+<td>TUM RGB-D</td>
+<td>0</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+DDL-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/9082634)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2020</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>DUNet</td>
+<td>TUM RGB-D</td>
+<td>0</td>
 </tr>
 
 <tr>
 <td>
 
-  [[paper]()]
+RDMO-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/9497091)]
 </td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>2021</td>
+<td>RGB-D</td>
+<td>Indoor</td>
+<td>Mask R-CNN</td>
+<td>TUM RGB-D</td>
+<td>0</td>
 </tr>
 
 </table>
