@@ -2,13 +2,17 @@
 
  Visual Simultaneous Localization and Mapping (VSLAM) methods refer to the SLAM approaches that employ cameras for pose estimation and map reconstruction and are preferred over Light Detection And Ranging (LiDAR)-based methods due to their lighter weight, lower acquisition costs, and richer environment representation.
 
+ Visual Simultaneous Localization and Mapping (SLAM) is a cutting-edge technology that addresses the critical challenge of enabling autonomous systems, such as robots and drones, to navigate and understand their environments without external positioning information. This project provides an overview of Visual SLAM, its key components, methods, and its transformative impact on robotics, augmented reality, and other domains.
+
+Visual SLAM combines the capabilities of real-time perception and mapping. It involves the simultaneous processes of tracking the device's location (localization) and constructing a map of its surroundings (mapping) solely using visual sensor data. This paradigm shift has opened up new possibilities for autonomous navigation in unstructured and dynamic environments.
+
 Let's code a visual SLAM systems from scratch in c++. I am learning from my notes @github/[autonomy_perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD),  @github/[robotics-slam](https://github.com/florist-notes/aicore_s/blob/main/notes/robotics_ee_hardware/roboticsmech.MD) and companion guide '[Introduction to Visual SLAM](https://link.springer.com/book/10.1007/978-981-16-4939-4)' : [@github/[booken](https://github.com/gaoxiang12/slambook-en) ]. 
 
 <img src="slam.png" width=100%> 
 
 ## Introduction to SLAM 
 
-Monocular vs Stereo : The trajectory and map obtained from monocular SLAM estimation will differ from the actual rajectory and map with an unknown factor, which is called the scale. Since monocular SLAM can not determine this real scale purely based on images, this is also called the scale ambiguity. In monocular SLAM, depth can only be calculated with translational movement, and the real scale cannot be determined. These two things could cause significant trouble when applying monocular SLAM into real-world applications. The fundamental cause is that depth can not be determined from a single image. So, in order to obtain real-scaled depth, we start to use stereo and RGB-D cameras. A stereo camera consists of two synchronized monocular cameras, displaced with a known distance, namely the baseline. Because the physical distance of the baseline is
+Mono (1 camera) and Stereo (zwei). Monocular vs Stereo : The trajectory and map obtained from monocular SLAM estimation will differ from the actual rajectory and map with an unknown factor, which is called the scale. Since monocular SLAM can not determine this real scale purely based on images, this is also called the scale ambiguity. In monocular SLAM, depth can only be calculated with translational movement, and the real scale cannot be determined. These two things could cause significant trouble when applying monocular SLAM into real-world applications. The fundamental cause is that depth can not be determined from a single image. So, in order to obtain real-scaled depth, we start to use stereo and RGB-D cameras. A stereo camera consists of two synchronized monocular cameras, displaced with a known distance, namely the baseline. Because the physical distance of the baseline is
 known, we can calculate each pixel’s 3D position in a very similar way to our human eyes.
 
 The disadvantage of stereo cameras or multi-camera systems is that the configuration and calibration process is complicated. Their depth range and accuracy are limited by baseline length and camera resolution. Moreover, stereo matching and disparity
@@ -19,7 +23,7 @@ Depth camera (also known as RGB-D camera), similar to laser scanners, RGB-D came
 receive the returned light. Most of the RGB-D cameras still suffer from issues including narrow measurement range, noisy data, small field of view, susceptibility to sunlight interference, and unable to measure transparent material. For SLAM purposes, RGB-D cameras are mainly used in indoor environments and are not suitable
 for outdoor applications.
 
-#### Classical Visual SLAM Framework:
+#### Classical Visual SLAM Framework:  🌸
 
 A typical visual SLAM workflow includes the following steps:
 
@@ -34,9 +38,9 @@ A typical visual SLAM workflow includes the following steps:
 5. Reconstruction. It constructs a task-specific map based on the estimated camera trajectory. 
 
 
-<b> Visual Odometry :</b> In order to quantify a camera’s movement, we must first understand the geometric relationship between a camera and the spatial points. VO can estimate camera motions from images of adjacent frames and restore the 3D structures of the scene. Now, assuming that we have the visual odometry, we are able to estimate camera movements between every two successive frames. If we connect the adjacent movements, this naturally constitutes the robot trajectory movement and addresses the localization problem.
+<b> 🌸 Visual Odometry :</b> In order to quantify a camera’s movement, we must first understand the geometric relationship between a camera and the spatial points. VO can estimate camera motions from images of adjacent frames and restore the 3D structures of the scene. Now, assuming that we have the visual odometry, we are able to estimate camera movements between every two successive frames. If we connect the adjacent movements, this naturally constitutes the robot trajectory movement and addresses the localization problem.
 
-<b>Backend Optimization :</b> Generally speaking, backend optimization mainly refers to the process of dealing with the noise in SLAM systems.  The backend optimization solves
+<b>🌸 Backend Optimization :</b> Generally speaking, backend optimization mainly refers to the process of dealing with the noise in SLAM systems.  The backend optimization solves
 the problem of estimating the state of the entire system from noisy input data and calculate their uncertainty. The state here includes both the robot’s own trajectory and the environment map.
 
 
@@ -45,10 +49,10 @@ SLAM problem: the estimation of the uncertainty of the self-movement and the sur
  In order to solve the SLAM problem, we need state estimation theory to express the uncertainty of localization and map construction and then use filters or nonlinear optimization to estimate the mean and uncertainty (covariance) of the states.
 
 
-<b>Loop Closing :</b> Loop Closing, also known as loop closure detection, mainly addresses the drifting problem of position estimation in SLAM. In this way, if we have sufficient and reliable loop detection, we can eliminate cumulative errors and
+<b>🌸 Loop Closing :</b> Loop Closing, also known as loop closure detection, mainly addresses the drifting problem of position estimation in SLAM. In this way, if we have sufficient and reliable loop detection, we can eliminate cumulative errors and
 get globally consistent trajectories and maps.
 
-<b>Mapping :</b> Mapping means the process of building a map, whatever kind it is. A collection of spatial points can be called a map.  The form of the map depends on the application of SLAM. In general, they can be divided into to categories: metrical maps and topological maps.
+<b>🌸 Mapping :</b> Mapping means the process of building a map, whatever kind it is. A collection of spatial points can be called a map.  The form of the map depends on the application of SLAM. In general, they can be divided into to categories: metrical maps and topological maps.
 
  + Metric Maps: Metrical maps emphasize the exact metrical locations of the objects in maps. They are usually classified as either sparse or dense. Sparse metric maps store the scene into a compact form and do not express all the objects. For example, we can construct a sparse map by selecting representative landmarks such as the lanes and traffic signs and ignore other parts. In contrast, dense metrical maps focus on modeling all the things that are seen. A sparse map would be enough for localization, while for navigation, a dense map is usually needed (otherwise, we may hit a wall between two landmarks). 
   
