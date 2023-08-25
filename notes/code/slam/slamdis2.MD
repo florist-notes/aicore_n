@@ -654,6 +654,10 @@ Location accuracy is one of the most basic assessment standards in the SLAM syst
 
 Bowman et al. [[paper](https://ieeexplore.ieee.org/abstract/document/7989203)] proposed a sensor state estimation and semantic landmark location optimization problem, which integrates metric information, semantic information, and data association. After obtaining semantic information from target detection, they introduced the Expectation-Maximization (EM) and calculated the probability of data association according to the result of semantic classification. They successfully converted semantic SLAM into a probability problem and improved the localization accuracy of the SLAM system.
 
+In 2018, ETH Zurich proposed VSO [[paper](https://openaccess.thecvf.com/content_ECCV_2018/html/Konstantinos-Nektarios_Lianos_VSO_Visual_Semantic_ECCV_2018_paper.html)] based on semantic information for autonomous driving scenarios. This scheme solves the problem of visual SLAM localization in the environment of outdoor lighting changes. It establishes constraints between semantic information with images and takes advantage of the advantage that semantic information is not affected by Angle of view, scale, and illumination.
+
+In 2020, Zhao et al. [[paper](https://ieeexplore.ieee.org/abstract/document/8901910)] of Xi ’an Jiaotong University proposed a landmark visual semantic SLAM system for a large-scale outdoor environment. Its core is to combine a 3D point cloud in ORB-SLAM with semantic segmentation information in the convolutional neural network model PSPNET-101. It can build a 3D semantic map of a large-scale environment. They proposed a method to associate real landmarks with a point cloud map. It associates architectural landmarks with the semantic point cloud and associates landmarks obtained from Google Maps with a semantic 3D map for urban area navigation.
+
 #### Semantic with Mapping :
 
 Another key juncture of VSLAM and deep learning is the semantic map construction of SLAM, and most semantic VSLAM systems are based on this idea [[paper](https://ieeexplore.ieee.org/abstract/document/9145704)] .
