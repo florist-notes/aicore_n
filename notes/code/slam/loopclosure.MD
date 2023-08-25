@@ -1,5 +1,7 @@
 # Loop Closure
 
+Loop closure is the process of identifying and correcting accumulated pose estimation errors when a robot revisits a previously visited location. It involves recognizing that the current sensor measurements align with a previously recorded portion of the map, thus closing a loop in the trajectory. Loop closure detection is indispensable for long-term and large-scale SLAM operations, as it helps mitigate drift and ensures a globally consistent map.
+
 Goal :
 
     + Understand why loop closure is needed in SLAM.
@@ -10,9 +12,9 @@ We know that the primary purpose of SLAM (frontend, backend) is to estimate came
 
 ### Loop Closure and Detection :
 
-*roblem Statement: The frontend provides short-time trajectory/landmarks estimation and the map’s initial value. The backend is responsible for optimizing all these data. However, if we only consider the adjacent keyframes like VO, then the errors will inevitably accumulate with time so that the entire SLAM will suffer from the accumulative error. The result of long-term estimation will not be reliable. In other words, we cannot construct globally consistent trajectories and maps.
+Problem Statement: The frontend provides short-time trajectory/landmarks estimation and the map’s initial value. The backend is responsible for optimizing all these data. However, if we only consider the adjacent keyframes like VO, then the errors will inevitably accumulate with time so that the entire SLAM will suffer from the accumulative error. The result of long-term estimation will not be reliable. In other words, we cannot construct globally consistent trajectories and maps.
 
-##  Bag of Words :
+##  Bag of Words (BoW) :
 
 The purpose of Bag-of-Words (BoW) is to describe an image in terms of “what
 kinds of features are there on the image.” For example, we say a person and a car in
@@ -104,4 +106,10 @@ int main(int argc, char **argv) {
 
 ```
 
-[  Increasing the Dictionary Scale, Similarity Score Processing, Processing the Keyframes, Validation of the Detected Loops, ML in Loop Closing]
+[ Increasing the Dictionary Scale, Similarity Score Processing, Processing the Keyframes, Validation of the Detected Loops, ML in Loop Closing ]
+
+Important resources:
+
++ [LCDNet: Deep Loop Closure Detection and Point Cloud Registration for LiDAR SLAM](https://arxiv.org/abs/2103.05056)
++ [The Revisiting Problem in Simultaneous Localization and Mapping: A Surveyon Visual Loop Closure Detection](https://arxiv.org/ftp/arxiv/papers/2204/2204.12831.pdf)
+
