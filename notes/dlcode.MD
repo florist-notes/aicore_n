@@ -39,20 +39,20 @@ Transformers (py/PyTorch)
 <th>
 Visual SLAM (c++)
 
-<img src="img/vslam2.png" width=100%> 
+<img src="img/vslam3.png" width=100%> 
 
 [ [code](./code/slam/README.MD) ]
 
 </th>
 <th>Multi Agent System : Crazyflie 2.1 (c++)
 
-<img src="img/swarm.webp" width=100%> 
+<img src="img/swarm2.png" width=100%> 
 
 </th>
 <th>
 Optical Flow : Neural Structure-from-Motion (c++)
 
-<img src="img/sfm.png" width=100%> 
+<img src="img/sfm2.png" width=100%> 
 
 </th>
 </tr>
