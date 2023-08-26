@@ -1,22 +1,60 @@
 # Filters and Optimizations (Backend)
 
+Backend optimization in Simultaneous Localization and Mapping (SLAM) is a critical aspect of improving the performance and accuracy of SLAM systems. SLAM is a fundamental technology used in robotics and autonomous systems to map an unknown environment while simultaneously estimating the robot's pose within that environment. The backend optimization phase plays a crucial role in refining the map and pose estimates based on the collected sensor data. Here are some key points to consider regarding backend optimization in SLAM:
+
++ <b>Data Fusion:</b> Backend optimization involves fusing data from various sensors, such as LIDAR, cameras, IMUs (Inertial Measurement Units), and odometry, to create a consistent and accurate map of the environment. This fusion process helps reduce sensor noise and corrects for discrepancies in sensor readings.
+
++ <b>Graph Optimization:</b> SLAM is often formulated as a graph optimization problem. A graph is constructed, where nodes represent robot poses at different time steps, and edges represent measurements or constraints between these poses. Backend optimization techniques optimize this graph to find the most likely trajectory and map that explains the sensor data.
+
++ <b>Bundle Adjustment:</b> Bundle adjustment is a common technique used in backend optimization. It iteratively refines the robot's trajectory and the map to minimize the error between predicted and observed sensor measurements. This process enhances the accuracy of the map and the robot's pose estimate.
+
++ <b>Loop Closure Detection:</b> Backend optimization also includes the detection of loop closures, which are points in the robot's trajectory where it revisits a previously visited location. Detecting and correcting for loop closures is essential for preventing drift in the map and pose estimates.
+
++ <b>Global Consistency:</b> Backend optimization aims to ensure global consistency in the map and pose estimates. This means that the entire map should be consistent, and the robot's estimated trajectory should align with the observed data across the entire mission.
+
++ <b>Sparse vs. Dense Approaches:</b> Depending on the complexity of the SLAM problem and available computational resources, backend optimization can be implemented using sparse or dense techniques. Sparse methods focus on optimizing key poses and landmarks, while dense methods optimize a more detailed representation of the map.
+
++ <b>Computational Efficiency:</b> Achieving real-time performance is often a challenge in SLAM systems. Backend optimization algorithms need to be computationally efficient to process large volumes of sensor data in real-time.
+
 Goal :
 + Learn how to formulate the backend problem into a filter or least-square
 optimization problem.
 + Learn how to use the sparse structure in the bundle adjustment problem.
 + Solve a BA problem with g2o and Ceres.
 
-State Estimation from Probabilistic Perspective
+State Estimation from Probabilistic Perspective: I have state estimation notes at @github/[state-estimate](https://github.com/florist-notes/aicore_s/blob/main/notes/navself.MD).
 
 ### Linear Systems and the Kalman Filter
 
+I have brief notes on linear systems and the Kalman Filter family at @github/[lin-kf](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD). 
+
 ### Nonlinear Systems and the EKF
 
-Bundle Adjustment and Graph Optimization : 
+I have good notes on optimization at @github/[optimize](https://github.com/florist-notes/alg0rith.math/blob/main/mathematics/op.MD) and nonlinear optimization at @github/[nonlin-opt](./nonlinop.MD).
+
+## Bundle Adjustment and Graph Optimization : 
 
 Bundle Adjustment refers to optimizing both camera parameters (intrinsic and extrinsic) and 3D landmarks with images. Consider the bundles of light rays emitted from 3D points. They are projected into the image planes of several cameras and then detected as feature points. The purpose of optimization can be explained as to adjust the camera poses and the 3D points, to ensure the projected 2D features (bundles) match the detected results.
 
-[ The Projection Model and Cost Function, Sparsity, Schur Trick, Robust Kernels ]
+Bundle Adjustment (BA) is a fundamental technique in the field of computer vision and 3D reconstruction, essential for refining the accuracy of camera pose estimates and 3D point cloud reconstructions in the presence of noisy or inaccurate data. It plays a pivotal role in applications such as Structure from Motion (SfM), Simultaneous Localization and Mapping (SLAM), and photogrammetry, where 3D scenes are reconstructed from a collection of 2D images or video frames.
+
+Here are the key aspects of Bundle Adjustment:
+
++ <b>Global Optimization:</b> Bundle Adjustment is a global optimization technique. It aims to simultaneously refine the camera poses (positions and orientations) and the 3D coordinates of scene points to minimize the reprojection error, which is the discrepancy between the observed image points and their corresponding projections from the estimated 3D points.
+
++ <b>Nonlinear Optimization:</b> BA employs nonlinear optimization algorithms, often Levenberg-Marquardt or Gauss-Newton methods. These iterative techniques adjust the camera parameters and 3D point coordinates incrementally to reduce the error.
+
++ <b>Batch and Incremental Modes:</b> Bundle Adjustment can be performed in batch mode, where all the data (images and corresponding 2D-3D correspondences) are processed at once, or in incremental mode, which updates the estimates as new data becomes available. Batch BA tends to produce more accurate results but can be computationally intensive, while incremental BA is useful for real-time applications like SLAM.
+
++ <b>Sparsity Exploitation:</b> To manage the computational complexity, BA algorithms take advantage of the sparsity of the Jacobian matrices involved. This is particularly important when dealing with a large number of cameras and 3D points.
+
++ <b>Loop Closure and Global Consistency:</b> In SLAM and large-scale reconstruction scenarios, loop closures (when the camera revisits a previously observed area) can introduce inconsistencies. BA helps correct these inconsistencies, ensuring global consistency in the reconstructed scene.
+
++ <b>Noise Handling:</b> BA is capable of handling various sources of noise, such as camera calibration errors, image feature detection errors, and inaccuracies in camera poses. It iteratively refines the parameters to mitigate the effects of noise and uncertainty in the input data.
+
++ <b>Applications:</b> Bundle Adjustment is widely used in computer vision for applications like 3D modeling, autonomous navigation, augmented reality, and cultural heritage preservation, among others. It is instrumental in creating highly accurate 3D reconstructions from images and videos.
+
+[ The Projection Model and Cost Function, Sparsity, Schur Trick, Robust Kernels, [The Basics about Bundle Adjustment](https://youtu.be/sobyKHwgB0Y?si=NixfXMeDrlXPWL1B), [Structure-from-Motion: Bundle Adjustment](https://youtu.be/MyrVDUnaqUs?si=bdePwLjf1gdBR-Mh), [The Numerics of Bundle Adjustment](https://youtu.be/LKDLcKrWOIU?si=5vhsCxIdjAmg_VWB) ]
 
 ### Solve the BA problem : [Bundle Adjustment in the Large (BAL) dataset](https://grail.cs.washington.edu/projects/bal/)
 
@@ -385,3 +423,5 @@ void SolveBA(BALProblem &bal_problem) {
 }
 
 ```
+
+resources: [Simultaneous Localization and Mapping: Through the Lens of Nonlinear Optimization](https://arxiv.org/pdf/2112.05921.pdf), [A Comparison of Particle Filter and Graph-based Optimization for Localization with Landmarks in Automated Vehicles ](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/wilbers2019irc-cpfg.pdf), [A comparison of different approaches to solve the SLAM problem on a Formula Student Driverless race car](https://www.mrt.kit.edu/z/publ/download/LeLarge_Thesis_SLAM_FormulaStudent.pdf), [SLAM Back-End Optimization Algorithm Based on Vision Fusion IPS](https://www.mdpi.com/1424-8220/22/23/9362), [A Review of Visual-Inertial Simultaneous Localization and Mapping from Filtering-Based and Optimization-Based Perspectives](https://www.mdpi.com/2218-6581/7/3/45), [A Hybrid Visual-Based SLAM Architecture: Local Filter-Based SLAM with KeyFrame-Based Global Mapping](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8749760/), [A Review of Optimisation Strategies used in Simultaneous Localisation and Mapping](https://opus.lib.uts.edu.au/bitstream/10453/130036/1/JCD_v2.pdf), [Robust, Visual-Inertial State Estimation: from Frame-based to Event-based Cameras](https://youtu.be/5-fqEGgt-b8?si=TQT8yXr1LAoGloaP).
