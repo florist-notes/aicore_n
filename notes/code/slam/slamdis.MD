@@ -249,7 +249,7 @@ we can obtain the binary program directly from ROS
 
 </table>
 
-<img src="slamh.png" width=100%> 
+<img src="slamh2.png" width=100%> 
 
 VSLAM has the advantage of richer environmental information and is considered to be able to give mobile robots stronger perceptual ability and be applied in some specific scenarios.
 
