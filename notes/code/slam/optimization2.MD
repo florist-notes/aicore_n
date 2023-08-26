@@ -1,5 +1,16 @@
 # Filters and Optimizations (Backend) II
 
+Sliding Window Optimization is a key technique used in Visual Simultaneous Localization and Mapping (SLAM), an essential technology in robotics and computer vision. It plays a critical role in improving the efficiency and accuracy of SLAM systems. Here's an overview of sliding window optimization in the context of SLAM:
+
+
++ <b>SLAM Overview:</b> Visual SLAM is the process of a robot or a camera simultaneously estimating its own motion (localization) and creating a map of its environment (mapping) using visual sensor data, typically from cameras. This is vital for tasks like autonomous navigation and 3D reconstruction.
+
++ <b>Temporal Window:</b> In SLAM, the system typically maintains a temporal window of recent sensor measurements and estimated poses. This window contains a limited number of keyframes, which are the most important frames for mapping and localization. This window helps strike a balance between computational efficiency and maintaining enough historical data for optimization.
+
++ <b>Optimization Objective:</b> Sliding Window Optimization involves optimizing the poses of the keyframes and the map points (3D landmarks) within the temporal window. The objective is to minimize the error between predicted and observed feature points in the images. This is usually formulated as a nonlinear least squares problem.
+
++ <b>Sliding Window Approach:</b> Instead of optimizing over the entire history of poses and map points, which can be computationally expensive, sliding window optimization restricts optimization to the most recent keyframes and associated map points within the temporal window. This sliding window is updated as new frames are processed, effectively shifting it through time.
+
 Goal :
 + Learn the principles of sliding window optimization;
 + Learn the basic knowledge about pose graph optimization.
@@ -28,10 +39,28 @@ the landmarks.
 
 ## Pose Graph Optimization
 
-We can construct a graph optimization with only pose variables. The edge between the pose vertices can be set with measurement by the ego-motion estimation obtained from feature matching. The difference is that once the initial estimation is completed, we no longer optimize the positions of those landmark points but only care about the connections between all camera poses. In this way, we save a lot of calculations for landmarks optimization and only keep the keyframe’s
-trajectory, thus constructing the so-called pose graph (Pose Graph).
+We can construct a graph optimization with only pose variables. The edge between the pose vertices can be set with measurement by the ego-motion estimation obtained from feature matching. The difference is that once the initial estimation is completed, we no longer optimize the positions of those landmark points but only care about the connections between all camera poses. In this way, we save a lot of calculations for landmarks optimization and only keep the keyframe’s trajectory, thus constructing the so-called pose graph (Pose Graph).
 
 [ [Graph-based SLAM using Pose Graphs (Cyrill Stachniss)](https://youtu.be/uHbRKvD8TWg?si=tiK6PrmoBrPapraD) , [Graph-based SLAM in 20 Minutes](https://youtu.be/Alu59K8zvYs?si=GTd_CEeswBr2Ll6K)]
+
+Pose Graph Optimization is a fundamental technique in robotics and autonomous systems, particularly in the field of Simultaneous Localization and Mapping (SLAM). It plays a pivotal role in improving the accuracy and consistency of robot pose estimation and map building. Here's an overview of Pose Graph Optimization:
+
++ SLAM and Robotics Context: In robotics, especially in scenarios involving autonomous navigation, a robot needs to estimate its own position and orientation (pose) within an environment and simultaneously build a map of that environment. This is the core problem addressed by SLAM.
+
++ Pose Graph Representation: Pose Graph Optimization deals with the representation of the robot's trajectory and the observed features (landmarks) in the form of a graph. In this graph:
+
+        Nodes represent robot poses at different points in time.
+        Edges represent constraints between these poses, which encode the relative motion information derived from sensors such as odometry, GPS, or IMUs.
+        Landmarks, if present, are additional nodes that represent observed features in the environment.
++ Optimization Objective: The primary objective of Pose Graph Optimization is to refine the estimated poses (position and orientation) and the landmarks to minimize the error in the graph. This error is typically measured as the discrepancy between predicted and observed measurements, which could be derived from various sensors, such as cameras, LIDAR, or range finders.
+
++ Global Consistency: Pose Graph Optimization helps maintain global consistency in the map and pose estimates. It ensures that the entire trajectory of the robot is considered when making adjustments, preventing drift and inconsistencies that can occur when only local information is used.
+
++ Nonlinear Optimization: Solving the Pose Graph Optimization problem is a nontrivial task, often tackled with nonlinear optimization techniques such as Gauss-Newton or Levenberg-Marquardt. These iterative algorithms iteratively update the poses and landmarks to minimize the error in the graph.
+
++ Data Association: Accurate data association, linking observed features to landmarks and robot poses, is crucial for the success of Pose Graph Optimization. This is often done using sensor measurements and sensor fusion techniques.
+
++ Loop Closure Detection: Handling loop closures, instances where the robot revisits a previously explored area, is a critical aspect of Pose Graph Optimization. Detecting loop closures and accurately incorporating them into the optimization process helps correct accumulated errors.
 
 ### Residuals and Jacobians
 
