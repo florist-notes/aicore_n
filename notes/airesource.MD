@@ -746,11 +746,11 @@ PRIVATE datasets |  [planet](https://www.planet.com/), [arcGIS](https://www.esri
 
 # ML Services:
 
-## [allthingsai](https://allthingsai.com/):
+### [allthingsai](https://allthingsai.com/):
 
 A curated directory of the latest AI tools & services. Discover the best tools, services and resources at the forefront of AI.
 
-## [paperswithcode](https://paperswithcode.com/):
+### [paperswithcode](https://paperswithcode.com/):
 
 This is a very amazing platform
 where you get access to categorized state of the art
@@ -764,31 +764,31 @@ source code for applied ml.
     + paperswithcode/[vision](https://paperswithcode.com/area/computer-vision)
     + paperswithcode/[nlp](https://paperswithcode.com/area/natural-language-processing)
 
- ## [weights and biases](https://wandb.ai/site):
+ ### [weights and biases](https://wandb.ai/site):
 
  The developer-first MLOps
 platform Build better models faster with experiment
 tracking, dataset versioning, and model management
  
- ## [AWS Sagemaker](https://aws.amazon.com/sagemaker/)
+ ### [AWS Sagemaker](https://aws.amazon.com/sagemaker/)
 
  Build, train, and deploy machine
 learning (ML) models for any use case with fully
 managed infrastructure, tools, and workflows.
  
- ## [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio)
+ ### [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio)
 
 Build and scale trusted AI on
 any cloud. Automate the AI lifecycle for ModelOps.
 
- ## [neptune.ai](https://neptune.ai/home)
+ ### [neptune.ai](https://neptune.ai/home)
 
  Log, organize, compare, register, and
 share all your ML model metadata in a single place.
 Automate and standardize as your modeling team
 grows
 
- ## [Google Vertex AI](https://cloud.google.com/vertex-ai)
+ ### [Google Vertex AI](https://cloud.google.com/vertex-ai)
 
  Build, deploy, and scale ML
 models faster, with pre-trained and custom tooling
@@ -797,7 +797,7 @@ provides a lot of ML services like AutoML, diagflow,
 deep learning containers etc, [here](https://cloud.google.com/products/ai) is the list.
 
 
- ## [HuggingFace](https://huggingface.co/)
+ ### [HuggingFace](https://huggingface.co/)
 
  Build, train and deploy state of the art
 models powered by the reference open source in
