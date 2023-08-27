@@ -2,14 +2,14 @@
 
 ### Here is a custom list of python libraries for Machine Learning ( (AI) ) :
 
-LLM : [Llama 2](https://ai.meta.com/llama/), [PaLM 2 (Bison-001)](https://blog.google/technology/ai/google-palm-2-ai-large-language-model/), [Falcon LLM](https://falconllm.tii.ae/), [GPT-4](https://openai.com/research/gpt-4), [Beluga 2](https://stability.ai/blog/stable-beluga-large-instruction-fine-tuned-models), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [Claude](https://www.anthropic.com/index/introducing-claude), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ]
+LLM : [Llama 2](https://ai.meta.com/llama/), [PaLM 2 (Bison-001)](https://blog.google/technology/ai/google-palm-2-ai-large-language-model/), [Falcon LLM](https://falconllm.tii.ae/), [GPT-4](https://openai.com/research/gpt-4), [Beluga 2](https://stability.ai/blog/stable-beluga-large-instruction-fine-tuned-models), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [Claude](https://www.anthropic.com/index/introducing-claude), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), [StarCoder](https://huggingface.co/blog/starcoder), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ], [ToolLLM](https://arxiv.org/abs/2307.16789), [MetaGPT](https://github.com/geekan/MetaGPT)
 
 Here's HuggingFace's LLM benchmark [leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard).
 
 <img src="./img/alp.png" width=40%><a> </a><img src="./img/ll.png" width=20%><a> </a><img src="./img/ff.png" width=30%>
 
 [Generative AI Service](https://github.com/steven2358/awesome-generative-ai) and Open Source Python Libraries
-Github [repo search readme](https://docs.github.com/en/enterprise-server@3.4/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax) ---> [Github](https://github.com/search?l=Python&q=stars%3A%3E1000&type=Repositories).
+Github [repo search readme](https://docs.github.com/en/enterprise-server@3.4/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax) → [Github](https://github.com/search?l=Python&q=stars%3A%3E1000&type=Repositories). [ [paperswithcode](https://paperswithcode.com/sota) ]
 
 Here is a list of all python libraries beyond 2k stars, updated in 25/09/2022
 
@@ -176,6 +176,20 @@ Multilingual OCR &QR
 <td>
 
 + [Paddle Paddle](https://github.com/PaddlePaddle/PaddleOCR), [EasyOCR](https://github.com/JaidedAI/EasyOCR), [amazing-qr](https://github.com/x-hw/amazing-qr), [OCR PDF](https://github.com/ocrmypdf/OCRmyPDF).
+ 
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+Diffusion Models
+</td>
+
+<td>
+
++ [mmagic](https://github.com/open-mmlab/mmagic), [awesome-diffusion-models](https://github.com/diff-usion/Awesome-Diffusion-Models).
  
 </td>
 </tr>
@@ -357,7 +371,7 @@ Extra
 
 <td>
 
-+ [diagrams](https://github.com/mingrammer/diagrams) (vis cloud architecture),  [openpilot](https://github.com/commaai/openpilot), [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), [pifuhd](https://github.com/facebookresearch/pifuhd), [pix2pixhd](https://github.com/NVIDIA/pix2pixHD), [Neural-style](https://github.com/anishathalye/neural-style), [tensorflow-GAN](https://github.com/hwalsuklee/tensorflow-generative-model-collections),  [eht-imaging](https://github.com/NVIDIA/pix2pixHD), [efficient-ai-backbone](https://github.com/huawei-noah/Efficient-AI-Backbones), [bandai-namco motion dataset](https://github.com/BandaiNamcoResearchInc/Bandai-Namco-Research-Motiondataset), [MONAI](https://github.com/Project-MONAI/MONAI), [DragGAN](https://vcai.mpi-inf.mpg.de/projects/DragGAN/).
++ [diagrams](https://github.com/mingrammer/diagrams) (vis cloud architecture),  [openpilot](https://github.com/commaai/openpilot), [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN), [pifuhd](https://github.com/facebookresearch/pifuhd), [pix2pixhd](https://github.com/NVIDIA/pix2pixHD), [Neural-style](https://github.com/anishathalye/neural-style), [tensorflow-GAN](https://github.com/hwalsuklee/tensorflow-generative-model-collections),  [eht-imaging](https://github.com/NVIDIA/pix2pixHD), [efficient-ai-backbone](https://github.com/huawei-noah/Efficient-AI-Backbones), [bandai-namco motion dataset](https://github.com/BandaiNamcoResearchInc/Bandai-Namco-Research-Motiondataset), [MONAI](https://github.com/Project-MONAI/MONAI), [DragGAN](https://vcai.mpi-inf.mpg.de/projects/DragGAN/), [What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/).
 
  
 </td>
