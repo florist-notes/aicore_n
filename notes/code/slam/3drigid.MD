@@ -167,9 +167,10 @@ In the field of computer graphics, computer vision, robotics, and many other dis
       | R21 R22 R23 |
       | R31 R32 R33 |
 ```
-       Advantages: Rotation matrices are intuitive and straightforward to work with. They are commonly used in computer graphics and computer vision.
 
-       Limitations: They can suffer from numerical instability, especially near singularities, and they are less memory-efficient than quaternions.
+      Advantages: Rotation matrices are intuitive and straightforward to work with. They are commonly used in computer graphics and computer vision.
+
+      Limitations: They can suffer from numerical instability, especially near singularities, and they are less memory-efficient than quaternions.
 
 + Transformation Matrix: A transformation matrix combines a rotation matrix and a translation vector to represent both a rotation and translation in 3D space. It is a 4x4 matrix.
 
@@ -181,6 +182,7 @@ In the field of computer graphics, computer vision, robotics, and many other dis
     | R31 R32 R33 Tz |
     | 0   0   0   1  |
 ```
+
     Advantages: Transformation matrices can represent both rotation and translation in a single matrix, which is useful in computer graphics and robotics.
 
     Limitations: They can be computationally expensive to work with, especially when dealing with large datasets.
