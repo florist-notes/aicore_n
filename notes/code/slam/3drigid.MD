@@ -6,9 +6,9 @@ In Simultaneous Localization and Mapping (SLAM), understanding and modeling 3D r
 
 3D rigid body motion refers to the transformation of an object in three-dimensional space without any deformation. It is characterized by translation and rotation. In the context of SLAM:
 
-    Translation: This represents the linear movement of the robot or sensor system from one point to another in space. It includes changes in position along the X, Y, and Z axes.
+  - Translation: This represents the linear movement of the robot or sensor system from one point to another in space. It includes changes in position along the X, Y, and Z axes.
 
-    Rotation: This signifies the angular change in orientation of the robot or sensor system about its center. It includes roll, pitch, and yaw rotations.
+  - Rotation: This signifies the angular change in orientation of the robot or sensor system about its center. It includes roll, pitch, and yaw rotations.
 
 #### Localization and Mapping:
 
@@ -158,7 +158,7 @@ the CMakeLists.txt:  `include_directories( "/usr/include/eigen3" )`. Because the
 
 In the field of computer graphics, computer vision, robotics, and many other disciplines, understanding and representing spatial rotations are essential. Four common mathematical representations for representing rotations are rotation matrices, transformation matrices, quaternions, and Euler angles. Here's a brief overview of each:
 
-+ Rotation Matrix: A rotation matrix is a 3x3 matrix that describes a rotation in three-dimensional space. It is orthogonal, meaning its columns (or rows) are orthogonal unit vectors.
+### Rotation Matrix: A rotation matrix is a 3x3 matrix that describes a rotation in three-dimensional space. It is orthogonal, meaning its columns (or rows) are orthogonal unit vectors.
 
     Representation: A typical 3x3 rotation matrix looks like this:
 
@@ -168,11 +168,11 @@ In the field of computer graphics, computer vision, robotics, and many other dis
       | R31 R32 R33 |
 ```
 
-      Advantages: Rotation matrices are intuitive and straightforward to work with. They are commonly used in computer graphics and computer vision.
+  Advantages: Rotation matrices are intuitive and straightforward to work with. They are commonly used in computer graphics and computer vision.
 
-      Limitations: They can suffer from numerical instability, especially near singularities, and they are less memory-efficient than quaternions.
+  Limitations: They can suffer from numerical instability, especially near singularities, and they are less memory-efficient than quaternions.
 
-+ Transformation Matrix: A transformation matrix combines a rotation matrix and a translation vector to represent both a rotation and translation in 3D space. It is a 4x4 matrix.
+### Transformation Matrix: A transformation matrix combines a rotation matrix and a translation vector to represent both a rotation and translation in 3D space. It is a 4x4 matrix.
 
     Representation: A typical 4x4 transformation matrix looks like this:
 
@@ -183,29 +183,27 @@ In the field of computer graphics, computer vision, robotics, and many other dis
     | 0   0   0   1  |
 ```
 
-    Advantages: Transformation matrices can represent both rotation and translation in a single matrix, which is useful in computer graphics and robotics.
+  Advantages: Transformation matrices can represent both rotation and translation in a single matrix, which is useful in computer graphics and robotics.
 
-    Limitations: They can be computationally expensive to work with, especially when dealing with large datasets.
+  Limitations: They can be computationally expensive to work with, especially when dealing with large datasets.
 
- + Quaternion: A quaternion is a four-element mathematical structure that represents rotations in 3D space. Quaternions are compact and can efficiently represent rotations without singularities.
+### Quaternion: A quaternion is a four-element mathematical structure that represents rotations in 3D space. Quaternions are compact and can efficiently represent rotations without singularities.
 
-    Representation: A quaternion is typically written as `q = (w, x, y, z)`.
+  Representation: A quaternion is typically written as `q = (w, x, y, z)`.
 
-    Advantages: Quaternions are numerically stable, efficient for interpolation, and widely used in robotics, game development, and orientation sensor fusion.
+  Advantages: Quaternions are numerically stable, efficient for interpolation, and widely used in robotics, game development, and orientation sensor fusion.
 
-    Limitations: They are less intuitive to understand geometrically than rotation matrices or Euler angles.
+  Limitations: They are less intuitive to understand geometrically than rotation matrices or Euler angles.
 
-  + Euler Angle: Euler angles represent rotations as a combination of three separate angles, typically represented as roll, pitch, and yaw.
+### Euler Angle: Euler angles represent rotations as a combination of three separate angles, typically represented as roll, pitch, and yaw.
 
-    Representation: Euler angles are usually represented as (ϕ, θ, ψ), where ϕ represents rotation about the X-axis (roll), θ about the Y-axis (pitch), and ψ about the Z-axis (yaw).
+  Representation: Euler angles are usually represented as (ϕ, θ, ψ), where ϕ represents rotation about the X-axis (roll), θ about the Y-axis (pitch), and ψ about the Z-axis (yaw).
 
-    Advantages: Euler angles are intuitive for certain applications and easy for humans to visualize.
+  Advantages: Euler angles are intuitive for certain applications and easy for humans to visualize.
 
-    Limitations: They suffer from the problem of gimbal lock, where certain combinations of rotations can lead to a loss of one degree of freedom, making them less suitable for some applications.
+  Limitations: They suffer from the problem of gimbal lock, where certain combinations of rotations can lead to a loss of one degree of freedom, making them less suitable for some applications.
 
-[Quaternions and 3d rotation, explained interactively](https://youtu.be/zjMuIxRvygQ), [Visualizing quaternions (4d numbers) with stereographic projection](https://youtu.be/d4EgbgTm0Bg)
-
-Affine and Projective Transformation : [What are affine transformations?](https://youtu.be/E3Phj6J287o)
+[ [Quaternions and 3d rotation, explained interactively](https://youtu.be/zjMuIxRvygQ), [Visualizing quaternions (4d numbers) with stereographic projection](https://youtu.be/d4EgbgTm0Bg), Affine and Projective Transformation : [What are affine transformations?](https://youtu.be/E3Phj6J287o) ]
 
 Data Structure of the Eigen Geometry Module:
 
