@@ -1,6 +1,12 @@
 # Cameras and Images :
 
-Goal: Learn the models of the pinhole camera, intrinsics, extrinsics, and distortion.  Learn how to project a spatial point into image planes and  basic image process in OpenCV.
+Working Principle: The pinhole camera principle is based on the concept of perspective projection. It models the way light rays pass through a small aperture (pinhole) and project onto an image plane.
+
+SLAM Use: Pinhole cameras, often found in monocular cameras, are widely used in SLAM. Monocular SLAM estimates the camera's pose and builds a 3D map of the environment using a single camera.
+
+Goal: 
++ Learn the models of the pinhole camera, intrinsics, extrinsics, and distortion.  
++ Learn how to project a spatial point into image planes and  basic image process in OpenCV.
 
 
 Pinhole Camera Geometry:
@@ -230,4 +236,4 @@ int main( int argc, char** argv )
 
 ```
 
-We can see the point cloud in Pangolin after building it.
+We can see the point cloud in @github/[Pangolin](https://github.com/stevenlovegrove/Pangolin) after building it.
