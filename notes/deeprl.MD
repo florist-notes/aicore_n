@@ -5,6 +5,72 @@ My notes on Deep Reinforcement Learning are @/[deeprl_theory](./drl.MD) and here
 
 <img src="img/dd.png" width=100%> 
 
+Deep Reinforcement Learning (DRL) is a subfield of artificial intelligence that focuses on training agents to make sequential decisions in complex environments using deep neural networks. DRL algorithms can be categorized into various types and classes based on their underlying principles and methodologies. Here are detailed notes on these types and classes:
+
+### +  Value-Based Methods:
+
++ Q-Learning: Q-learning is one of the earliest reinforcement learning algorithms. In Deep Q-Learning (DQN), deep neural networks are used to approximate the Q-values of state-action pairs. It involves an experience replay buffer to stabilize learning and target networks to improve convergence.
+
++ Double Deep Q-Networks (DDQN): DDQN improves upon DQN by mitigating overestimation bias in Q-values, enhancing stability and learning.
+
++ Prioritized Experience Replay: This technique assigns different priorities to experiences in the replay buffer, allowing the agent to focus on learning from more informative experiences.
+
+
+
+### +  Policy-Based Methods:
+
++ <b>Policy Gradients:</b> Policy gradient methods directly optimize the policy function by maximizing expected cumulative rewards. Algorithms like REINFORCE and Trust Region Policy Optimization (TRPO) fall under this category.
+
++ <b>Proximal Policy Optimization (PPO):</b> PPO is a popular policy gradient algorithm that addresses some of the limitations of TRPO. It uses a clipped surrogate objective to ensure stable updates.
+
+
+
+### +  Actor-Critic Methods:
+
++  <b>Advantage Actor-Critic (A2C):</b> A2C combines the benefits of both policy gradients and value-based methods by using an actor (policy) network and a critic (value) network. It reduces variance compared to vanilla policy gradients.
+
++  <b>A3C (Asynchronous Advantage Actor-Critic):</b> A3C employs parallelism to speed up training. Multiple agents explore different trajectories simultaneously, improving sample efficiency.
+
++ <b>DDPG (Deep Deterministic Policy Gradient):</b> DDPG extends actor-critic methods to continuous action spaces. It uses a deterministic policy and a Q-network to estimate action values.
+
+
+
+### +  Model-Based Methods:
+
++ <b>Monte Carlo Tree Search (MCTS):</b> MCTS is a model-based algorithm used for decision-making in games and planning. It builds a search tree by simulating possible actions and outcomes.
+
++ <b>Model-Predictive Control (MPC):</b> MPC uses a learned model of the environment to optimize a sequence of actions. It is commonly used in robotics and control tasks.
+
+
+
+### +  Exploration Strategies:
+
++ <b>Epsilon-Greedy:</b> In epsilon-greedy strategies, the agent selects the best-known action with probability (1 - ε) and explores randomly with probability ε.
+
++ <b>Softmax Exploration:</b> Softmax exploration assigns probabilities to each action based on their estimated values, allowing for a more controlled form of exploration.
+
+
+
+### +  Deep Reinforcement Learning for Continuous Control:
++ <b>Deep Deterministic Policy Gradient (DDPG):</b> DDPG is a popular algorithm for continuous action spaces, combining Q-learning and policy gradients.
+
++ <b>Trust Region Policy Optimization (TRPO):</b> TRPO is a policy optimization method that ensures stable updates by limiting policy changes based on a trust region constraint.
+
++ <b>SAC (Soft Actor-Critic):</b> SAC is an off-policy algorithm designed for stochastic policies. It incorporates entropy regularization to encourage exploration.
+
+
+
+### +  Multi-Agent Reinforcement Learning:
+
+ + <b>MARL (Multi-Agent Reinforcement Learning):</b> MARL deals with scenarios where multiple agents interact in a shared environment. Algorithms like MADDPG and multi-agent PPO are used for such tasks.
+
+
+### +  Deep Reinforcement Learning for Robotics:
+
++ <b>Robotic Control:</b> DRL has found applications in robotic control, including tasks like robotic manipulation, locomotion, and navigation.
+
++ <b>Sim2Real Transfer:</b> Research focuses on transferring DRL policies trained in simulation to real-world robotic platforms.
+
 ## Model-based algorithms: 
 
 Model-based algorithm use the transition and reward function to estimate the optimal policy. 
@@ -25,11 +91,11 @@ Markov Decision Process (MDP) : [Markov Decision Processes](https://youtu.be/2iF
 
 ### Bellman Equations : 
 
-➔ State is a numerical representation of what an agent observes at a particular point in an environment.
++ State is a numerical representation of what an agent observes at a particular point in an environment.
 
-➔ Action is the input the agent is giving to the environment based on a policy.
++ Action is the input the agent is giving to the environment based on a policy.
 
-➔ Reward is a feedback signal from the environment to the reinforcement learning agent reflecting how the agent has performed in achieving the goal.
++ Reward is a feedback signal from the environment to the reinforcement learning agent reflecting how the agent has performed in achieving the goal.
 
 Bellman Equations aim to answer these questions: 
 The agent is currently in a given state ‘s’. Assuming that we take best possible actions in all subsequent timestamps,what long-term reward the agent can expect?
