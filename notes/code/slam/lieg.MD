@@ -1,7 +1,60 @@
 # Lie Group and Lie Algebra :
 
+Lie Group: A Lie group is a mathematical concept that combines the properties of a group and a smooth manifold. In simpler terms, it's a group of transformations that can be smoothly parameterized. In robotics, computer vision, and various fields of physics and engineering, Lie groups play a pivotal role in modeling and understanding the symmetries and transformations that occur in real-world systems.
+
+Lie Algebra: A Lie algebra is a vector space equipped with a binary operation called the Lie bracket, which takes two elements of the vector space and produces another element. Lie algebras are often used to study the local behavior of Lie groups near the identity element. In the context of Lie groups, Lie algebras provide a way to linearize the group's operations, making them amenable to mathematical analysis and computations.
+
+### Applications of SO(3) and SE(3):
+
+#### SO(3) - Special Orthogonal Group in 3D: 🌸
+
+<b>Rotation Representations:</b> SO(3) represents the group of three-dimensional rotations. It's widely used in computer graphics, computer vision, robotics, and aerospace engineering for representing and manipulating 3D rotations.
+
+<b>Attitude Estimation:</b> In robotics and aerospace, SO(3) is used for estimating the orientation or attitude of a rigid body, such as an aircraft or a spacecraft. Algorithms like the Extended Kalman Filter (EKF) or the Unscented Kalman Filter (UKF) often operate in SO(3) to estimate orientation from sensor measurements like gyroscopes or magnetometers.
+
+<b>Camera Pose Estimation:</b> In computer vision, SO(3) is essential for estimating the 3D pose of cameras. This is crucial for applications like 3D reconstruction, visual odometry, and SLAM, where accurate knowledge of camera orientation is vital.
+
+#### SE(3) - Special Euclidean Group in 3D: 🌸
+
+<b>Robot Kinematics:</b> SE(3) is used to model the configuration space of robotic systems, which includes both translations (3D positions) and rotations (3D orientations). This is vital for robot kinematics, control, and motion planning.
+
+<b>SLAM (Simultaneous Localization and Mapping):</b> SE(3) is at the core of SLAM algorithms, which aim to simultaneously estimate a robot's position (translation) and orientation (rotation) while constructing a map of its environment. SE(3) is used to represent robot poses and landmark positions.
+
+<b>3D Computer Vision:</b> In 3D computer vision applications like object tracking and augmented reality, SE(3) is used to model camera poses, which are necessary for accurately aligning virtual objects with the real world.
+
+<b>Mechanical Systems:</b> In engineering fields such as robotics, SE(3) is used to describe the configuration space of mechanical systems with both translational and rotational degrees of freedom.
+
 Goal : Learn the concept of Lie group, Lie algebra, and their applications of
 SO(3), SE(3) and the corresponding Lie algebras. Learn the meaning and usage of the BCH (Baker-Campbell-Hausdorff) formula. Learn the perturbation model on Lie algebra. Use Sophus to perform operations on Lie algebras.
+
+In Lie theory, particularly in the context of Lie groups and Lie algebras, the BCH formula addresses the following problem: Given two elements A and B from a Lie algebra, what is the Lie algebra element corresponding to the group operation of exponentiating A and B?
+
+Mathematically, the BCH formula is expressed as:
+
+
+    exp(A) * exp(B) = exp(C)
+
+    Here:
+
+    exp(A) and exp(B) are exponentials of elements A and B in the Lie algebra.
+    exp(C) represents the exponential of another Lie algebra element C.
+    The BCH formula provides a way to calculate C given A and B.
+
+The `perturbation model` on Lie algebras involves studying how small changes or perturbations to an element of a Lie algebra affect the corresponding element in the associated Lie group. It is often used to analyze how a Lie group representation changes when its Lie algebra element is perturbed.
+
+Mathematically, suppose we have an element X in a Lie algebra, and we want to understand how it perturbs the corresponding group element when subjected to a small perturbation εX, where ε is a small parameter. We can express this perturbation as:
+
+
+    exp(εX) = exp(X + εX') ≈ exp(X) * exp(εX')
+
+    Here:
+
+    exp(εX) represents the perturbed group element.
+    exp(X) is the original group element corresponding to the unperturbed Lie algebra element X.
+    X' represents the infinitesimal perturbation in the Lie algebra.
+
+
+The perturbation model involves finding the expression for X' and understanding how it affects the group element. This can be done through various techniques, including Taylor series expansions, Baker-Campbell-Hausdorff (BCH) formula, and differential equations.
 
 Thee rotation matrix (we have to estimate and optimize them in addition to the representation) itself is a constrained (orthogonal, and
 the determinant is 1) matrix. When used as optimization variables, it introduces additional constraints on matrices that make optimization difficult. Through the transformation relationship between Lie group and Lie algebra, we can turn the pose
