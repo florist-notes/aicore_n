@@ -9,9 +9,9 @@ Deep Reinforcement Learning (DRL) is a subfield of artificial intelligence that 
 
 ### +  Value-Based Methods:
 
-+ Q-Learning: Q-learning is one of the earliest reinforcement learning algorithms. In Deep Q-Learning (DQN), deep neural networks are used to approximate the Q-values of state-action pairs. It involves an experience replay buffer to stabilize learning and target networks to improve convergence.
++ Q-Learning: Q-learning is one of the earliest reinforcement learning algorithms. In Deep Q-Learning (DQN), deep neural networks are used to approximate the Q-values of state-action pairs. It involves an experience replay buffer to stabilize learning and target networks to improve convergence.  ([qlearning.py](./code/qlearning.py))
 
-+ Double Deep Q-Networks (DDQN): DDQN improves upon DQN by mitigating overestimation bias in Q-values, enhancing stability and learning.
++ Double Deep Q-Networks (DDQN): DDQN improves upon DQN by mitigating overestimation bias in Q-values, enhancing stability and learning.  ([ddqn.py](./code/ddqn.py))
 
 + Prioritized Experience Replay: This technique assigns different priorities to experiences in the replay buffer, allowing the agent to focus on learning from more informative experiences.
 
