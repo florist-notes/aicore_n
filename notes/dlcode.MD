@@ -5,8 +5,9 @@
 
 ```
 
-+  Gradient Descent Optimization with numpy | ([[grad.py](code/grad.py))
-+  Support Vector Machines (SVM) with numpy | ([[svm.py](code/svm.py))
++  Gradient Descent Optimization with numpy | ([grad.py](code/grad.py))
++  Support Vector Machines (SVM) with numpy | ([svm.py](code/svm.py))
++  Convolutional Neural Network (CNN) in c++ with TF | ([cnn.cpp]())
 
 <table width=100%>
 <tr>
