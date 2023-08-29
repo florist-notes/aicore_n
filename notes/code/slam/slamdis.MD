@@ -791,4 +791,231 @@ Sensor: <b>M</b> represents Monocular camera; <b>S</b> represents Stereo camera;
 As a supplement to cameras, inertial sensors can effectively solve the problem that a single camera cannot cope with. Visual inertial fusion is bound to become a long-term hot direction of SLAM research.
 
 
+<table width=100%>
+<tr>
+<th>Name</th>
+<th>Year</th>
+<th>Visual odometry</th>
+<th>Feature method</th>
+<th>Optimization</th>
+<th>Loop closure detection</th>
+<th>Real-time efficiency</th>
+<th>Robustness</th>
+<th>References</th>
+<th>Characteristic</th>
+</tr>
+
+<tr>
+<td>Mono-SLAM</td>
+<td>2007</td>
+<td>Feature method</td>
+<td>Shi-Tomasi</td>
+<td>EKF</td>
+<td>—</td>
+<td>✩✩</td>
+<td>✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/4160954)]</td>
+<td>The Mono-SLAM is the first real-time monocular V-SLAM system.</td>
+</tr>
+
+<tr>
+<td>PTAM</td>
+<td>2007</td>
+<td>Feature method</td>
+<td>Shi-Tomasi</td>
+<td>BA</td>
+<td>—</td>
+<td>✩✩✩</td>
+<td>✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/4538852)]</td>
+<td>The PTAM is the first monocular V-SLAM system based on nonlinear optimization of key frames and proposes the concept of front end and back end.</td>
+</tr>
+
+<tr>
+<td>LSD-SLAM</td>
+<td>2014</td>
+<td>Direct method</td>
+<td>—</td>
+<td>Depth filter</td>
+<td>√</td>
+<td>✩✩✩</td>
+<td>✩✩✩</td>
+<td>
+
+[[paper](https://link.springer.com/chapter/10.1007/978-3-319-10605-2_54)]</td>
+<td>The LSD-SLAM applies the direct method to semidense monocular V-SLAM</td>
+</tr>
+
+<tr>
+<td>SVO</td>
+<td>2014</td>
+<td>Semidirect method</td>
+<td>FAST + LKe</td>
+<td>Depth filter	</td>
+<td>—</td>
+<td>✩✩✩✩✩✩</td>
+<td>✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/6906584)]</td>
+<td>The SVO is a visual odometer based on the sparse direct method. The biggest advantage of SVO over other schemes is its speed.</td>
+</tr>
+
+<tr>
+<td>SPTAM</td>
+<td>2017</td>
+<td>Feature method</td>
+<td>Shi-Tomasi</td>
+<td>BA</td>
+<td>√</td>
+<td>✩✩✩✩</td>
+<td>✩✩✩✩</td>
+<td>
+
+[[paper](https://www.sciencedirect.com/science/article/abs/pii/S0921889015302955)]</td>
+<td>Binocular V-SLAM system based on PTAM</td>
+</tr>
+
+<tr>
+<td>LDSO</td>
+<td>2018</td>
+<td>Direct method</td>
+<td>Frames</td>
+<td>BA</td>
+<td>√</td>
+<td>✩✩✩✩</td>
+<td>✩✩✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/8593376)]</td>
+<td>The LDSO expands on DSO into a monocular V-SLAM system with loop detection and pose optimization.</td>
+</tr>
+
+<tr>
+<td>LCSD-SLAM</td>
+<td>2018</td>
+<td>Semidirect method</td>
+<td>Descriptor</td>
+<td>BA</td>
+<td>√</td>
+<td>✩✩✩✩</td>
+<td>✩✩✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/8584894)]</td>
+<td>The LCSD-SLAM is a loosely coupled semidirect monocular V-SLAM.</td>
+</tr>
+
+<tr>
+<td>Maplab</td>
+<td>2018</td>
+<td>Semidirect method</td>
+<td>Descriptor</td>
+<td>—</td>
+<td>√</td>
+<td>✩✩✩✩</td>
+<td>✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/8276568)]</td>
+<td>The maplab is a flexible and versatile multi-robot and multimode V-SLAM framework.</td>
+</tr>
+
+<tr>
+<td>RE-SLAM</td>
+<td>2019</td>
+<td>Semidirect method</td>
+<td>Edges</td>
+<td>BA</td>
+<td>√</td>
+<td>✩✩✩</td>
+<td>✩✩✩✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/8794462)]</td>
+<td>The RE-SLAM is a real-time robust edge-based V-SLAM system</td>
+</tr>
+
+<tr>
+<td>CCM-SLAM</td>
+<td>2019</td>
+<td>Feature method</td>
+<td>ORB</td>
+<td>BA</td>
+<td>√</td>
+<td>✩✩✩</td>
+<td>✩✩✩✩✩</td>
+<td>
+
+[[paper](https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.21854)]</td>
+<td>The CCM-SLAM is a kind of multi-robot cooperative V-SLAM, which can be used for cooperative mapping in unknown environment.</td>
+</tr>
+
+<tr>
+<td>ORB-SLAM3</td>
+<td>2020</td>
+<td>Feature method</td>
+<td>ORB</td>
+<td>BA</td>
+<td>√</td>
+<td>✩✩✩✩✩</td>
+<td>✩✩✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/9440682)]</td>
+<td>The ORB-SLAM3 is the first feature-based tightly coupled VIO system that relies only on maximum a posteriori estimation.</td>
+</tr>
+
+<tr>
+<td>VINS-fusion</td>
+<td>2021</td>
+<td>Semidirect method</td>
+<td>Shi-Tomasi + LK</td>
+<td>BA</td>
+<td>√</td>
+<td>✩✩✩✩✩</td>
+<td>✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/9562103)]</td>
+<td>The Vins-fusion is a multi-sensor state estimator based on optimization, which can achieve accurate self-localization for autonomous applications.</td>
+</tr>
+
+<tr>
+<td>VOLDOR-SLAM</td>
+<td>2021</td>
+<td>Dense-indirect method</td>
+<td>Optical flow</td>
+<td>BA</td>
+<td>√</td>
+<td>✩✩✩✩</td>
+<td>✩✩✩✩</td>
+<td>
+
+[[paper](https://arxiv.org/abs/2104.06800)]</td>
+<td>The VOLDOR is an intensive indirect visual ranging method that takes an externally estimated optical flow field as input</td>
+</tr>
+
+<tr>
+<td>ESVO</td>
+<td>2021</td>
+<td>Semidirect method</td>
+<td>Events</td>
+<td>Depth filter</td>
+<td>—</td>
+<td>✩✩✩✩✩✩</td>
+<td>✩✩✩✩</td>
+<td>
+
+[[paper](https://ieeexplore.ieee.org/abstract/document/9386209)]</td>
+<td>The ESVO is a novel pipeline for real-time visual odometry using a stereo event-based camera.</td>
+</tr>
+
+
+</table>
+
 There are several new SLAM methods like - HKU-MaRS-HBA, Pharos SLAM and few of them can be found at [Hilti SLAM Challenge leaderboard](https://hilti-challenge.com/).

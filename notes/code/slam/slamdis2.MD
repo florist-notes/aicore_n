@@ -1045,5 +1045,5 @@ RDMO-SLAM [[paper](https://ieeexplore.ieee.org/abstract/document/9497091)]
 
 </table>
 
-This visual slam roadmap is amazing and stands out. @github/[[visual-slam-roadmap](https://github.com/changh95/visual-slam-roadmap)]
+This visual slam roadmap is amazing and stands out. @github/[[visual-slam-roadmap](https://github.com/changh95/visual-slam-roadmap)] | [DQV-SLAM (Dual Quaternion Visual SLAM)](https://ieeexplore.ieee.org/abstract/document/9011391), [edgeSLAM](https://ieeexplore.ieee.org/abstract/document/9155438), [VPS-SLAM](https://ieeexplore.ieee.org/abstract/document/9045978), [OpenVSLAM](https://dl.acm.org/doi/abs/10.1145/3343031.3350539), [OV2SLAM](https://ieeexplore.ieee.org/abstract/document/9351614), [RPG](https://rpg.ifi.uzh.ch/publications.html).
 
