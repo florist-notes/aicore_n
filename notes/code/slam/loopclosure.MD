@@ -108,6 +108,287 @@ int main(int argc, char **argv) {
 
 [ Increasing the Dictionary Scale, Similarity Score Processing, Processing the Keyframes, Validation of the Detected Loops, ML in Loop Closing ]
 
+## Role of Deep Learning in Loop Closure Detection for Visual and Lidar SLAM:
+
+Loop closure detection is of vital importance in the process of simultaneous localization and mapping (SLAM), as it helps to reduce the cumulative error of the robot’s estimated pose and generate a consistent global map.
+
+ Summary of the benefits and limitations of camera and Lidar-based loop closure detection methods:
+
+ <table width=100%>
+ <tr>
+ <th></th>
+ <th>Method</th>
+ <th></th>
+ <th>Benefits</th>
+ <th>Limitations</th>
+ </tr>
+ <tr>
+ <td></td>
+ <td>Image-to-Image</td>
+ <td>Offline
+Vocabulary</td>
+ <td>
+
++ Does not require the metric information of the features
++ Dependent on the appearance features and their existence in dictionary
++ Good for loop detection with planar camera motion
+ </td>
+ <td>
+ 
++ Not suitable for dynamic robot environment
++ Memory consumption is proportional to vocabulary size
++ Performance reduces if tested on different dataset.
+ </td>
+ </tr>
+ 
+
+ 
+ <tr>
+ <td>Vision-based</td>
+ <td>Image-to-Image</td>
+ <td>Online Vocabulary	
+</td>
+ <td>
+
++ Allows to learn features in real time
+ </td>
+ <td>
+ 
++ Memory consumption is proportional to vocabulary size
++ Does not use geometric information
+ </td>
+ </tr>
+
+
+  <tr>
+ <td></td>
+ <td>Map-to-Map</td>
+ <td></td>
+ <td>
+
++ Detects true loops when common features exist in two submaps
+ </td>
+ <td>
+ 
++ Not suitable for sparse maps.
++ Cannot achieve high performance for complex dense maps.
+ </td>
+ </tr>
+
+
+   <tr>
+ <td></td>
+ <td>Image-to-Map</td>
+ <td></td>
+ <td>
+
++ DHigh performance when tuned for 100% precision
++ Allows online map feature training for real environment
+ </td>
+ <td>
+ 
++ Memory inefficient
+ </td>
+ </tr>
+ </table>
+
+ State-of-the-art deep learning-based loop closure detection methods for visual and Lidar SLAM:
+
+ <table width = 100%>
+ <tr>
+ <th>Paper</th>
+ <th>Year</th>
+ <th>Sensor</th>
+ <th>Components</th>
+ <th>Deep Learning Algorithm</th>
+ </tr>
+
+ 
+ <tr>
+ <td>
+
+ Loop Closure Detection Based on Multi-Scale Deep Feature Fusion [[paper](https://www.mdpi.com/2076-3417/9/6/1120)]
+ </td>
+ <td>2019</td>
+ <td>C</td>
+ <td>CNN feature</td>
+ <td>AlexNet</td>
+ </tr>
+
+
+  <tr>
+ <td>
+
+Loop Closure Detection for Visual SLAM Fusing Semantic Information [[paper](https://ieeexplore.ieee.org/abstract/document/8866283)]
+ </td>
+ <td>2019</td>
+ <td>C</td>
+ <td>SIFT, SURF, ORB</td>
+ <td>Faster R-CNN</td>
+ </tr>
+
+  <tr>
+ <td>
+
+Improving Feature-based Visual SLAM by Semantics [[paper](https://ieeexplore.ieee.org/abstract/document/8708875)]
+ </td>
+ <td>2018</td>
+ <td>C</td>
+ <td>ORB</td>
+ <td>Yolo</td>
+ </tr>
+
+  <tr>
+ <td>
+
+Lightweight Unsupervised Deep Loop Closure [[paper](https://arxiv.org/abs/1805.07703)]
+ </td>
+ <td>2018</td>
+ <td>C</td>
+ <td>HoG</td>
+ <td>Autoencoder</td>
+ </tr>
+
+  <tr>
+ <td>
+
+Semantically Assisted Loop Closure in SLAM Using NDT Histograms [[paper](https://ieeexplore.ieee.org/abstract/document/8968140)]
+ </td>
+ <td>2019</td>
+ <td>L</td>
+ <td>Semantic-NDT</td>
+ <td>PointNet++
+ 
+ [[ref](https://proceedings.neurips.cc/paper_files/paper/2017/hash/d8bf84be3800d12f74d8b05e9b89836f-Abstract.html)]</td>
+ </tr>
+
+  <tr>
+ <td>
+
+LocNet: Global Localization in 3D Point Clouds for Mobile Vehicles [[paper](https://ieeexplore.ieee.org/abstract/document/8500682)]
+ </td>
+ <td>2018</td>
+ <td>L</td>
+ <td>Semi-handcrafted</td>
+ <td>Siamese</td>
+ </tr>
+
+  <tr>
+ <td>
+
+SegMap: 3D Segment Mapping using Data-Driven Descriptors [[paper](https://arxiv.org/abs/1804.09557)]
+ </td>
+ <td>2018</td>
+ <td>L</td>
+ <td>SegMap</td>
+ <td>CNN</td>
+ </tr>
+
+  <tr>
+ <td>
+
+SegMap: Segment-based mapping and localization using data-driven descriptors [[paper](https://journals.sagepub.com/doi/abs/10.1177/0278364919863090)]
+ </td>
+ <td>2018</td>
+ <td>L</td>
+ <td>SegMap</td>
+ <td>CNN</td>
+ </tr>
+
+  <tr>
+ <td>
+
+Loop closure detection for visual SLAM using PCANet features [[paper](https://ieeexplore.ieee.org/abstract/document/7727481)]
+ </td>
+ <td>2016</td>
+ <td>C</td>
+ <td>SIFT, SURF, ORB</td>
+ <td>PCANet
+ 
+ [[ref](https://ieeexplore.ieee.org/abstract/document/7234886)]</td>
+ </tr>
+
+  <tr>
+ <td>
+
+OverlapNet: Loop Closing for LiDAR-based SLAM [[paper](https://arxiv.org/abs/2105.11344)]
+ </td>
+ <td>2020</td>
+ <td>L</td>
+ <td>Semantic class</td>
+ <td>RangeNet++
+ 
+ [[ref](https://ieeexplore.ieee.org/abstract/document/8967762)]</td>
+ </tr>
+
+  <tr>
+ <td>
+
+Compressed Holistic ConvNet Representations for Detecting Loop Closures in Dynamic Environments [[paper](https://ieeexplore.ieee.org/abstract/document/9043481)]
+ </td>
+ <td>2020</td>
+ <td>C</td>
+ <td>CNN feature</td>
+ <td>ResNet18
+ 
+ [[ref](https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html)]</td>
+ </tr>
+
+  <tr>
+ <td>
+
+Comparison of camera-based and 3D LiDAR-based place recognition across weather conditions [[paper](https://ieeexplore.ieee.org/abstract/document/9305429)]
+ </td>
+ <td>2020</td>
+ <td>C/L</td>
+ <td>CNN feature</td>
+ <td>VGG16
+ 
+ [[ref](https://arxiv.org/abs/1409.1556)] </td>
+ </tr>
+
+  <tr>
+ <td>
+
+Single-View Place Recognition under Seasonal Changes [[paper](https://arxiv.org/abs/1808.06516)]
+ </td>
+ <td>2018</td>
+ <td>C</td>
+ <td>CNN feature</td>
+ <td>VGG16
+ 
+ [[ref](https://arxiv.org/abs/1409.1556)]</td>
+ </tr>
+
+  <tr>
+ <td>
+
+Condition-Invariant Multi-View Place Recognition [[paper](https://arxiv.org/abs/1902.09516)]
+ </td>
+ <td>2019</td>
+ <td>C</td>
+ <td>CNN Multiview descriptor</td>
+ <td>ResNet-50
+ 
+ [[ref](https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html)]</td>
+ </tr>
+
+  <tr>
+ <td>
+
+Loop Closure Detection Based on Improved Hybrid Deep Learning Architecture [[paper](https://ieeexplore.ieee.org/abstract/document/8982643)]
+ </td>
+ <td>2019</td>
+ <td>C</td>
+ <td>Semantic feature</td>
+ <td>Hybrid
+ 
+ [[ref](https://arxiv.org/abs/1501.04158)]
+ </td>
+ </tr>
+
+ </table>
+
 Important resources:
 
 + [LCDNet: Deep Loop Closure Detection and Point Cloud Registration for LiDAR SLAM](https://arxiv.org/abs/2103.05056)
