@@ -156,11 +156,11 @@ Evaluating the Trajectory :  Difference between the estimated trajectory of an a
 trajectory error, which is like:
 
 
-$$ ATE_{all} =  \sqrt{ \dfrac{1}{N} \sum_{i=1}^{N} || log( T^{-1}_{realtraj,i} T_{estimat,i} )^v ||  \dfrac{2}{2} } $$
+$$ ATE_{all} =  \sqrt{ \dfrac{1}{N} \sum_{i=1}^{N} || log( T^{-1} _{realtraj,i} T _{estimate,i} )^v ||  \dfrac{2}{2} } $$
 
 This is actually the root-mean-squared error (RMSE) for each pose in Lie algebra. This error can describe both the rotation and translation errors:
 
-$$ ATE_{trans} =  \sqrt{ \dfrac{1}{N} \sum_{i=1}^{N} || trans(T^{-1}_{realtraj,i} T_{estimat,i}) ||  \dfrac{2}{2} } $$
+$$ ATE_{trans} =  \sqrt{ \dfrac{1}{N} \sum_{i=1}^{N} || trans(T^{-1}_{realtraj,i} T_{estimate,i}) ||  \dfrac{2}{2} } $$
 
 
 ```cpp
