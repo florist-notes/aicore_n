@@ -230,7 +230,7 @@ Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learnin
   <p>
   <br />
 
-  CS 229 : Machine Learning ([CLASS](https://bulletin.stanford.edu/courses/1057501))<br />
+  CS 229 : Machine Learning ([CLASS](https://bulletin.stanford.edu/courses/1057501)-[cs229m(theory)](https://www.youtube.com/watch?v=I-tmjGFaaBg&list=PLoROMvodv4rP8nAmISxFINlGKSK4rbLKh))<br />
   
   </p>
 </th>
@@ -289,7 +289,7 @@ Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learnin
   <p>
   <br />
 
-  CS 330 Deep Multi-task and Meta Learning ([CLASS](https://bulletin.stanford.edu/courses/2215371))<br />
+  CS 330 Deep Multi-task and Meta Learning ([CLASS](https://bulletin.stanford.edu/courses/2215371):[vid](https://www.youtube.com/watch?v=bkVCAk9Nsss&list=PLoROMvodv4rNjRoawgt72BBNwL2V7doGI&pp=iAQB))<br />
   
   </p>
 
@@ -333,7 +333,7 @@ Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learnin
 
 </table>
 
-Notes: [shervine](https://stanford.edu/~shervine/teaching/cs-221/).
+Notes: [shervine](https://stanford.edu/~shervine/teaching/cs-221/), [cs109-probability](https://www.youtube.com/watch?v=2MuDZIAzBMY&list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg).
 
 Good AI courses:
 
@@ -802,5 +802,7 @@ deep learning containers etc, [here](https://cloud.google.com/products/ai) is th
  Build, train and deploy state of the art
 models powered by the reference open source in
 machine learning.
+
+News & Resources: [Hands-on with Gemini: Interacting with multimodal AI](https://youtu.be/UIZAiXYceBI?si=gis3wD3iTkPr6JBz), [Gemini: Excelling at competitive programming](https://youtu.be/LvGmVmHv69s?si=jC46xWYxjGIbJMwy), [Gemini: Unlocking insights in scientific literature](https://youtu.be/sPiOP_CB54A?si=1LkFYXasVES2etal), [MIT 8.962 General Relativity, Spring 2020](https://www.youtube.com/playlist?list=PLUl4u3cNGP629n_3fX7HmKKgin_rqGzbx), [MIT 18.100A Real Analysis, Fall 2020](https://www.youtube.com/playlist?list=PLUl4u3cNGP61O7HkcF7UImpM0cR_L2gSw), [MIT 6.006 Introduction to Algorithms, Spring 2020](https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY)
 
 
