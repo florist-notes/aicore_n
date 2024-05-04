@@ -112,7 +112,25 @@ $$  l(m_i | z_{1:t}, x_{1:t}) = inverse\ sensor\ model+recursive\ term + prior $
 
 or, in short,
 
-$$ l_{t,i} = inv\_ sensor\_ model(m_i+x_t+z_t) + l_{t-1,i} - l_0 $$
+$$ l_{t,i} = inv\ sensor\ model(m_i+x_t+z_t) + l_{t-1,i} - l_0 $$
 
 ## Occupancy Mapping Algorithm:
 
+```
+
+    occupany_grid_mapping({l_{t-1,i}},x_t,z_t):
+
+    for all cells m_i do:
+        if m_i in perceptual field of z_t then:
+            l_{t,i} = l_{t-1,i + inv_sensor_model(m_i, x_t, z_t)-l_0}
+        else
+            l_{t,i} = l_{t-1,i}
+        endif
+    endfor
+    return l_{t,i}
+
+```
+
+Highly, efficient as we only have to compute sums in third step. Moravec and Elfes proposed occupany grid mapping in the mid 80's. Developed for noisy sonar sensors and known as "mapping with known poses". Maximum Likelihood map is obtained by rounding the probability for each cell to 0 or 1.
+
+Which cells to update for a single laser beam ?  [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
