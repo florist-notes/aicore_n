@@ -89,3 +89,27 @@ From ratio to probability, we use odds ratio (event divided by opposite event).
 $$ Odds(x) =  \dfrac{p(x)}{1-p(x)} $$
 
 $$ p(x) =  \dfrac{1}{1+\dfrac{1}{Odds(x)}} $$
+
+#### From Ratio to Probability:
+
+Using,
+
+$$ p(x) = [1+Odds(x)^{-1}]^{-1} $$ 
+
+gives us,
+
+$$  p(m_i | z_{1:t}, x_{1:t}) = [1+\dfrac{(1 - p(m_i | z_t, x_t)) * (1-p(m_i | z_{1:t-1}, x_{1:t-1})) * p(m_i)}{p(m_i | z_t, x_t) * p(m_i | z_{1:t-1}, x_{1:t-1}) * (1-p(m_i))}]^{-1} $$
+
+For reasons of efficiency, one performs the calculations in the log odds notation.
+
+$$  l(m_i | z_{1:t}, x_{1:t}) = log(\dfrac{p(m_i | z_{1:t}, x_{1:t})}{1 - p(m_i | z_{1:t}, x_{1:t})}) $$
+
+The product turns into a sum,
+
+$$  l(m_i | z_{1:t}, x_{1:t}) = l(m_i | z_{t}, x_{t}) + l(m_i | z_{1:t-1}, x_{1:t-1}) - l(m_i)$$
+
+$$  l(m_i | z_{1:t}, x_{1:t}) = inverse\ sensor\ model+recursive\ term + prior $$
+
+or, in short,
+
+$$ l_{t,i} = inv\_sensor\_model(m_i+x_t+z_t) + l_{t-1,i} - l_0 $$
