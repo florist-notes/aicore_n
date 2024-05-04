@@ -134,3 +134,51 @@ $$ l_{t,i} = inv\ sensor\ model(m_i+x_t+z_t) + l_{t-1,i} - l_0 $$
 Highly, efficient as we only have to compute sums in third step. Moravec and Elfes proposed occupany grid mapping in the mid 80's. Developed for noisy sonar sensors and known as "mapping with known poses". Maximum Likelihood map is obtained by rounding the probability for each cell to 0 or 1.
 
 Which cells to update for a single laser beam ?  [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
+
+## ROS2 Occupancy Grid Node for Nav2:
+
+Path Planning: In Autonomy, Localization, Mapping and then Path Planning.
+
+Laser Publisher [ [laser_publisher.cpp](https://github.com/noshluk2/ros2_learners/blob/main/nodes/src/laser_publisher.cpp) ]
+
+### Creating a Package:
+
+C++:
+```bash
+
+    $ ros2 pkg create --build-type ament_cmake <package_name>
+
+```
+Python:
+```bash
+
+    $ ros2 pkg create --build-type ament_python <package_name>
+
+```
+
+### Getting Information
+
+Message:
+```bash
+
+    $ ros2 interface show <msg/msg/type>
+    $ ros2 interface show nav_msgs/msg/OccupancyGrid
+
+```
+Topic:
+```bash
+
+    $ ros2 topic info <topic name>
+
+```
+
+### Locations
+
+For generic header files:
+```bash
+
+    $ cd /opt/ros/humble/include/
+    $ cd /opt/ros/humble/include/nav_msgs/nav_msgs/msg/
+
+```
+We can use `#include "nav_msgs/nav_msgs/msg/occupancy_grid.hpp"` and more information on ros2 nav stack is [here](https://github.com/florist-notes/aicore_s/blob/main/notes/ros.MD).
