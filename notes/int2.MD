@@ -34,3 +34,58 @@ Resources: [[ VIDEO : ]] [Occupancy Grid Maps (Cyrill Stachniss)](https://youtu.
 ](https://faculty.iiit.ac.in/~mkrishna/ThrunOccGrid.pdf), [Occupancy grid mapping: An empirical evaluation](https://ieeexplore.ieee.org/document/4433772), [Occupancy grid for static environment perception in series automotive applications](https://www.sciencedirect.com/science/article/pii/S2405896319303945), [Grid Maps and Mapping With Known Poses](http://ais.informatik.uni-freiburg.de/teaching/ss16/robotics/slides/12-occupancy-mapping.pdf), [VoxFormer](https://github.com/NVlabs/VoxFormer), [ETH-Z ASL : wavemap](https://github.com/ethz-asl/wavemap), [dynamic-occupancy-grid-map](https://github.com/TheCodez/dynamic-occupancy-grid-map), [SSCBench](https://github.com/ai4ce/SSCBench), [Occ4cast](https://github.com/ai4ce/Occ4cast).
 
 <hr />
+
+## NOTES :
+
+Occupancy Grid Maps: Occupancy Grid Map → Point Cloud → Voxel Map (3D). Each cell is either occupied or a free space.
+
+Estimating a map from data: Given a sensor data z_{1:t} and the poses x_{1:t} of the sensor, estimate the map :
+
+$$ p( m | z_{1:t}, x_{1:t}) = \prod_i (m_i| | z_{1:t}, x_{1:t} ) $$
+
+Update rules to estimate the joint probability distribution:
+
+[Baye's rule / Binary Bayes filter (for a static state)]:
+
+$$ p(m_i | z_{1:t}, x_{1:t}) =  \dfrac{p(z_t | m_i, z_{1:t-1}, x_{1:t}) p(m_i | z_{1:t-1}, x_{1:t}) }{p(z_t | z_{1:t-1}, x_{1:t})}$$  
+
+[Markov's rule]:
+
+$$ p(m_i | z_{1:t}, x_{1:t}) =  \dfrac{p(z_t | m_i, x_t) p(m_i | z_{1:t-1}, x_{1:t-1}) }{p(z_t | z_{1:t-1}, x_{1:t})}$$  
+
+
+If we apply Baye's rule in,
+
+$$ p(z_t | m_i, x_t) = \dfrac{p(m_i | z_t, x_t) p(z_t, x_t) }{p(m_i, x_t)}$$
+
+Then the equation for probability of cell being occcupied becomes,
+
+$$ p(m_i | z_{1:t}, x_{1:t}) =  \dfrac{p(m_i | z_t, x_t) p(z_t, x_t) p(m_i | z_{1:t-1}, x_{1:t-1}) }{ p(m_i, x_t) p(z_t | z_{1:t-1}, x_{1:t})}$$  
+
+Do exactly the same for the opposite event:
+
+$$ p(¬m_i | z_{1:t}, x_{1:t}) =  \dfrac{p(¬m_i | z_t, x_t) p(z_t, x_t) p(¬m_i | z_{1:t-1}, x_{1:t-1}) }{ p(¬m_i, x_t) p(z_t | z_{1:t-1}, x_{1:t})}$$  
+
+By computing the ratio of both probabilities, we obtain:
+
+$$ \dfrac{p(m_i | z_{1:t}, x_{1:t})}{p(¬m_i | z_{1:t}, x_{1:t})} =  \dfrac{ \dfrac{p(m_i | z_t, x_t) p(z_t, x_t) p(m_i | z_{1:t-1}, x_{1:t-1}) }{ p(m_i, x_t) p(z_t | z_{1:t-1}, x_{1:t})} }{ \dfrac{p(¬m_i | z_t, x_t) p(z_t, x_t) p(¬m_i | z_{1:t-1}, x_{1:t-1}) }{ p(¬m_i, x_t) p(z_t | z_{1:t-1}, x_{1:t})} } $$
+
+
+$$   \dfrac{p(m_i | z_{1:t}, x_{1:t})}{p(¬m_i | z_{1:t}, x_{1:t})} =  \dfrac{ \dfrac{p(m_i | z_t, x_t) p(m_i | z_{1:t-1}, x_{1:t-1}) }{ p(m_i, x_t)} }{ \dfrac{p(¬m_i | z_t, x_t) p(¬m_i | z_{1:t-1}, x_{1:t-1}) }{ p(¬m_i, x_t) } } $$
+
+
+$$  \dfrac{p(m_i | z_{1:t}, x_{1:t})}{p(¬m_i | z_{1:t}, x_{1:t})} =  \dfrac{p(m_i | z_t, x_t) p(m_i | z_{1:t-1}, x_{1:t-1})  p(-m_i)}{p(¬m_i | z_t, x_t) p(¬m_i | z_{1:t-1}, x_{1:t-1}) p(m_i)} $$
+
+$$  \dfrac{p(m_i | z_{1:t}, x_{1:t})}{p(¬m_i | z_{1:t}, x_{1:t})} =  \dfrac{p(m_i | z_t, x_t) * p(m_i | z_{1:t-1}, x_{1:t-1}) * (1-p(m_i))}{(1 - p(m_i | z_t, x_t)) * (1-p(m_i | z_{1:t-1}, x_{1:t-1})) * p(m_i)} $$
+
+The first term,
+
+$$  \dfrac{p(m_i | z_t, x_t)}{(1 - p(m_i | z_t, x_t))} $$
+
+uses z_t, the current observation. The second term uses recursive data and third term is a prior information.
+
+From ratio to probability, we use odds ratio (event divided by opposite event).
+
+$$ Odds(x) =  \dfrac{p(x)}{1-p(x)} $$
+
+$$ p(x) =  \dfrac{1}{1+\dfrac{1}{Odds(x)}} $$
