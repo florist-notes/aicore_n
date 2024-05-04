@@ -112,4 +112,7 @@ $$  l(m_i | z_{1:t}, x_{1:t}) = inverse\ sensor\ model+recursive\ term + prior $
 
 or, in short,
 
-$$ l_{t,i} = inv\_sensor\_model(m_i+x_t+z_t) + l_{t-1,i} - l_0 $$
+$$ l_{t,i} = inv\_ sensor\_ model(m_i+x_t+z_t) + l_{t-1,i} - l_0 $$
+
+## Occupancy Mapping Algorithm:
+
