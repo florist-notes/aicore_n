@@ -2,7 +2,7 @@
 
 <img src="./img/obj.gif" width=46%> <img src="./img/seg.gif" width=52%>
 
-NOTES : [ [Optical Flow | Structure from Motion (SfM)](./opticalflow2.MD), [Computer Vision](./cvv.MD), [Machine Vision](./mv.MD) ] and some of my works in Computer Vision:
+NOTES : [ [Object Detection and Tracking](./objdetect.MD), [Image Segmentation](./imgseg.MD), [Optical Flow | Structure from Motion (SfM)](./opticalflow2.MD), [Computer Vision](./cvv.MD), [Machine Vision](./mv.MD) ] and some of my works in Computer Vision:
 
 I wrote articles on CNN architectures - [GoogLeNet](https://github.com/florist-notes/CNN-GoogLeNet), [ResNet](https://github.com/florist-notes/CNN-ResNet) few year back while researching about them and published this paper : [doi.org/10.1016/j.tice.2019.02.001](https://www.sciencedirect.com/science/article/abs/pii/S0040816618304397) in Computer Vision. I also worked on “6D pose tracking of objects in occlusion or cluttered environments” for 6 DoF robotic arm manipulation
 planning at the Robotics Laboratory, School of Computing, University of Leeds. I have implemented CV solutions in different [projects](https://twitter.com/florist_notes/status/1660011459563200520) and graduated from the following ML schools : [IEEE RAS Winter School on SLAM in Deformable Environments](https://bit.ly/3DNAsOr), [CVIT Computer Vision and Machine Learning Summer School](https://bit.ly/3oXfmGT). 

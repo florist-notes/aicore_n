@@ -6,7 +6,7 @@
 
 Visual SLAM combines the capabilities of real-time perception and mapping. It involves the simultaneous processes of tracking the device's location (localization) and constructing a map of its surroundings (mapping) solely using visual sensor data. This paradigm shift has opened up new possibilities for autonomous navigation in unstructured and dynamic environments.
 
-Let's code a visual SLAM systems from scratch in c++. I am learning from my notes @github/[autonomy_perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD),  @github/[robotics-slam](https://github.com/florist-notes/aicore_s/blob/main/notes/robotics_ee_hardware/roboticsmech.MD) and companion guide '[Introduction to Visual SLAM](https://link.springer.com/book/10.1007/978-981-16-4939-4)' : [@github/[booken](https://github.com/gaoxiang12/slambook-en) ]. 
+Let's code a visual SLAM systems from scratch in c++. I am learning from my notes @github/[autonomy_perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD),  @github/[robotics-slam](https://github.com/florist-notes/aicore_s/blob/main/notes/robotics_ee_hardware/roboticsmech.MD) and companion guide '[Introduction to Visual SLAM](https://link.springer.com/book/10.1007/978-981-16-4939-4)' : [@github/[booken](https://github.com/gaoxiang12/slambook-en) ]. More on Occupancy Grid Maps and 3D Scene Graphs are [here](https://github.com/florist-notes/aicore_n/blob/main/notes/int2.MD).
 
 <img src="slam.png" width=100%> 
 
