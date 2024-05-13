@@ -291,7 +291,7 @@ Deep Fakes
 
 <td>
 
-+ [DeepFaceLive](https://github.com/iperov/DeepFaceLive), [PaddleGAN](https://github.com/PaddlePaddle/PaddleGAN), [dot](https://github.com/sensity-ai/dot) ( deepfakes offensive toolkit).
++ [faceswap](https://github.com/deepfakes/faceswap), [DeepFaceLive](https://github.com/iperov/DeepFaceLive), [PaddleGAN](https://github.com/PaddlePaddle/PaddleGAN), [dot](https://github.com/sensity-ai/dot) ( deepfakes offensive toolkit), [DeepFaceLab](https://github.com/iperov/DeepFaceLab), [](), github/[deepfake-detection](https://github.com/topics/deepfake-detection), github/[awesome-deepfakes](https://github.com/aerophile/awesome-deepfakes), github/[deepfakes](https://github.com/topics/deepfakes).
  
 </td>
 </tr>
@@ -320,7 +320,7 @@ Face Detection
 
 <td>
 
-+ [face.evoLVe](https://github.com/ZhaoJ9014/face.evoLVe), [InsightFace](https://github.com/deepinsight/insightface), [face-alignment](https://github.com/1adrianb/face-alignment), [PRNET](https://github.com/YadiraF/PRNet), [fawkes](https://github.com/Shawn-Shan/fawkes) (privacy preserving), [deepface](https://github.com/serengil/deepface), [howdy](https://github.com/boltgolt/howdy).
++ [face.evoLVe](https://github.com/ZhaoJ9014/face.evoLVe), [InsightFace](https://github.com/deepinsight/insightface), [face-alignment](https://github.com/1adrianb/face-alignment), [PRNET](https://github.com/YadiraF/PRNet), [fawkes](https://github.com/Shawn-Shan/fawkes) (privacy preserving), [deepface](https://github.com/serengil/deepface), [howdy](https://github.com/boltgolt/howdy), github/[face-detection](https://github.com/topics/face-detection), [face_recognition](https://github.com/ageitgey/face_recognition), [libfacedetection](https://github.com/ShiqiYu/libfacedetection).
 
  
 </td>
@@ -335,7 +335,7 @@ WebML
 
 <td>
 
-+ [gradio](https://github.com/gradio-app/gradio) (UI for ML model).
++ [gradio](https://github.com/gradio-app/gradio) (UI for ML model), [web-llm](https://github.com/mlc-ai/web-llm), [transformers.js](https://github.com/xenova/transformers.js), [web-stable-diffusion](https://github.com/mlc-ai/web-stable-diffusion), [yolov7-tfjs](https://github.com/hugozanini/yolov7-tfjs), github/[webml](https://github.com/topics/webml).
  
 </td>
 </tr>
@@ -412,7 +412,7 @@ Natural Language Processing (NLP) libraries: @github/[awesome-nlp](https://githu
 <td>NLP toolkit</td>
 <td>
 
-+ [funNLP](https://github.com/fighting41love/funNLP), [NLP Progress](https://github.com/sebastianruder/NLP-progress), [flair](https://github.com/flairNLP/flair), [pytext](https://github.com/facebookresearch/pytext), [allenNLP](https://github.com/allenai/allennlp), [nltk](https://github.com/nltk/nltk), [haystack](https://github.com/deepset-ai/haystack), [ParlAI](https://github.com/facebookresearch/ParlAI), [fairseq](https://github.com/facebookresearch/fairseq), [ERNIE](https://github.com/PaddlePaddle/ERNIE), [stanza](https://github.com/stanfordnlp/stanza), [speech brain](https://github.com/speechbrain/speechbrain), [OpenNRE](https://github.com/thunlp/OpenNRE).
++ [funNLP](https://github.com/fighting41love/funNLP), [NLP Progress](https://github.com/sebastianruder/NLP-progress), [flair](https://github.com/flairNLP/flair), [pytext](https://github.com/facebookresearch/pytext), [allenNLP](https://github.com/allenai/allennlp), [nltk](https://github.com/nltk/nltk), [haystack](https://github.com/deepset-ai/haystack), [ParlAI](https://github.com/facebookresearch/ParlAI), [fairseq](https://github.com/facebookresearch/fairseq), [ERNIE](https://github.com/PaddlePaddle/ERNIE), [stanza](https://github.com/stanfordnlp/stanza), [speech brain](https://github.com/speechbrain/speechbrain), [OpenNRE](https://github.com/thunlp/OpenNRE), github/[nlp-library](https://github.com/topics/nlp-library).
 
 </td>
 
@@ -426,7 +426,7 @@ audio analysis
 </td>
 <td>
 
-+ [PyAudioAnalysis](https://github.com/tyiannak/pyAudioAnalysis), [espnet](https://github.com/espnet/espnet) (end2endspeech processing), [librosa](https://github.com/librosa/librosa)
++ [PyAudioAnalysis](https://github.com/tyiannak/pyAudioAnalysis), [espnet](https://github.com/espnet/espnet) (end2endspeech processing), [audioFlux](https://github.com/libAudioFlux/audioFlux), [librosa](https://github.com/librosa/librosa), [essentia](https://github.com/MTG/essentia), github/[audio-analysis](https://github.com/topics/audio-analysis).
 
 </td>
 
@@ -440,7 +440,7 @@ chatbot
 </td>
 <td>
 
-+ [errbot](https://github.com/errbotio/errbot), [wav2lip](https://github.com/Rudrabha/Wav2Lip) (speech2lip)
++ [errbot](https://github.com/errbotio/errbot), [wav2lip](https://github.com/Rudrabha/Wav2Lip) (speech2lip), [ChatterBot](https://github.com/gunthercox/ChatterBot), github/[chatbot](https://github.com/topics/chatbot).
 
 </td>
 
@@ -452,7 +452,7 @@ chatbot
 <td>text2speech</td>
 <td>
 
-+ [TTS](https://github.com/coqui-ai/TTS)
++ [TTS](https://github.com/coqui-ai/TTS), [MockingBird](https://github.com/babysor/MockingBird), [OpenVoice](https://github.com/myshell-ai/OpenVoice), [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), github/[text-to-speech](https://github.com/topics/text-to-speech).
 </td>
 
 </tr>
@@ -463,7 +463,7 @@ chatbot
 <td>time series </td>
 <td>
 
-+ [darts](https://github.com/unit8co/darts), [kats](https://github.com/facebookresearch/Kats), [prophet](https://facebook.github.io/prophet/), [Anomaly Transformer](https://github.com/thuml/Anomaly-Transformer)
++ [darts](https://github.com/unit8co/darts), [kats](https://github.com/facebookresearch/Kats), [prophet](https://facebook.github.io/prophet/), [Anomaly Transformer](https://github.com/thuml/Anomaly-Transformer), github/[time-series-analysis](https://github.com/topics/time-series-analysis) : [repo2](https://github.com/topics/time-series-analysis?o=desc&s=forks), github/[time-series-forecasting](https://github.com/topics/time-series-forecasting), github/[time-series-prediction](https://github.com/topics/time-series-prediction), github/[time-series-prediction](https://github.com/topics/time-series-prediction?o=desc&s=updated).   
 </td>
 
 </tr>
@@ -472,10 +472,10 @@ chatbot
 
 <tr>
 
-<td>conversational AI  </td>
+<td>Conversational AI  </td>
 <td>
 
-+ [NeMO](https://github.com/NVIDIA/NeMo), [SpeechRecognition](https://github.com/Uberi/speech_recognition)
++ [NeMO](https://github.com/NVIDIA/NeMo), [SpeechRecognition](https://github.com/Uberi/speech_recognition), [wechaty](https://github.com/wechaty/wechaty), [rasa](https://github.com/RasaHQ/rasa), [simpletransformers](https://github.com/ThilinaRajapakse/simpletransformers), github/[conversational-ai](https://github.com/topics/conversational-ai). 
 
 </td>
 
@@ -489,7 +489,7 @@ chatbot
  </td>
 <td>
 
-+ [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py)
++ [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py), [sentencepiece](https://github.com/google/sentencepiece), [pytorch-seq2seq](https://github.com/bentrevett/pytorch-seq2seq), [CTranslate2](https://github.com/OpenNMT/CTranslate2), github/[neural-machine-translation](https://github.com/topics/neural-machine-translation).
 </td>
 
 </tr>
@@ -514,7 +514,7 @@ chatbot
 <td>annotation</td>
 <td>
 
-+ [doccano](https://github.com/doccano/doccano)
++ [doccano](https://github.com/doccano/doccano), [label-studio](https://github.com/HumanSignal/label-studio), [argilla](https://github.com/argilla-io/argilla), github/[text-annotation](https://github.com/topics/text-annotation), [refinery](https://github.com/code-kern-ai/refinery).
 
 </td>
 
@@ -527,7 +527,7 @@ chatbot
 <td>CTR</td>
 <td>
 
-+ [deepCTR](https://github.com/shenweichen/DeepCTR)
++ [deepCTR](https://github.com/shenweichen/DeepCTR), [Ad-papers](https://github.com/wzhe06/Ad-papers), [RecBole](https://github.com/RUCAIBox/RecBole), [RecLearn](https://github.com/ZiyaoGeng/RecLearn), github/[ctr-prediction](https://github.com/topics/ctr-prediction).
 
 </td>
 
@@ -880,7 +880,7 @@ causes multiple auth error), [opendrop](https://github.com/seemoo-lab/opendrop) 
 </tr>
 </table>
 
-Extra libraries: 
+## Extra libraries: 🌸 
 
 {
 
