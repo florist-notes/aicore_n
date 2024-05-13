@@ -2,7 +2,7 @@
 
 ### Here is a custom list of python libraries for Machine Learning ( (AI) ) :
 
-LLM : [Gemini](https://deepmind.google/technologies/gemini/) - [vid](https://youtu.be/UIZAiXYceBI?si=RK1YhSsjS8GrlyHG), [Llama 2](https://ai.meta.com/llama/), [PaLM 2 (Bison-001)](https://blog.google/technology/ai/google-palm-2-ai-large-language-model/), [Falcon LLM](https://falconllm.tii.ae/), [GPT-4](https://openai.com/research/gpt-4), [Beluga 2](https://stability.ai/blog/stable-beluga-large-instruction-fine-tuned-models), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [Claude](https://www.anthropic.com/index/introducing-claude), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), [StarCoder](https://huggingface.co/blog/starcoder), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ], [ToolLLM](https://arxiv.org/abs/2307.16789), [MetaGPT](https://github.com/geekan/MetaGPT), [Adobe Stardust](https://labs.adobe.com/projects/stardust/), [Stable Video AI Watched 600,000,000 Videos!](https://youtu.be/XwDaQKOxgFY?si=7fX4RNmcxigDpRGc), [Stable Video Diffusion](https://stability.ai/news/stable-video-diffusion-open-ai-video-model), [[LLM Visualization](https://bbycroft.net/llm)], [visualize matrices](https://bhosmer.github.io/mm/), [shutterstock ai image generator](https://www.shutterstock.com/ai-image-generator/).
+LLM : [Cohere](https://cohere.com/), [Falcon 2](https://falconllm.tii.ae/), [Llama 3](https://llama.meta.com/), [GPT-4](https://openai.com/index/gpt-4/), [Gemini](https://deepmind.google/technologies/gemini/) - [vid](https://youtu.be/UIZAiXYceBI?si=RK1YhSsjS8GrlyHG), [Llama 2](https://ai.meta.com/llama/), [PaLM 2 (Bison-001)](https://blog.google/technology/ai/google-palm-2-ai-large-language-model/), [Falcon LLM](https://falconllm.tii.ae/), [GPT-4](https://openai.com/research/gpt-4), [Beluga 2](https://stability.ai/blog/stable-beluga-large-instruction-fine-tuned-models), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [Claude](https://www.anthropic.com/index/introducing-claude), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), [StarCoder](https://huggingface.co/blog/starcoder), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ], [ToolLLM](https://arxiv.org/abs/2307.16789), [MetaGPT](https://github.com/geekan/MetaGPT), [Adobe Stardust](https://labs.adobe.com/projects/stardust/), [Stable Video AI Watched 600,000,000 Videos!](https://youtu.be/XwDaQKOxgFY?si=7fX4RNmcxigDpRGc), [Stable Video Diffusion](https://stability.ai/news/stable-video-diffusion-open-ai-video-model), [[LLM Visualization](https://bbycroft.net/llm)], [visualize matrices](https://bhosmer.github.io/mm/), [shutterstock ai image generator](https://www.shutterstock.com/ai-image-generator/).
 
 Here's HuggingFace's LLM benchmark [leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) - [models](https://huggingface.co/models), GLUE [benchmarks](https://gluebenchmark.com/leaderboard/), Building LLM applications for production : [article](https://huyenchip.com/2023/04/11/llm-engineering.html).
 
@@ -78,7 +78,7 @@ ml extra
 
 <td>
 
-+ [transfer learning](https://github.com/jindongwang/transferlearning#7datasets-and-benchmarks-%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8E%E8%AF%84%E6%B5%8B%E7%BB%93%E6%9E%9C), [docker-stacks](https://github.com/jupyter/docker-stacks), [hyper-opt](https://github.com/hyperopt/hyperopt), [feature-tools](https://github.com/alteryx/featuretools), [einops](https://github.com/arogozhnikov/einops), [cog](https://github.com/replicate/cog), [floydhub](https://github.com/floydhub/dl-docker), [FEAST](https://github.com/feast-dev/feast), [causal-ml](https://github.com/uber/causalml), [scikit-opt](https://github.com/guofei9987/scikit-opt), [anomaly detect](https://github.com/yzhao062/anomaly-detection-resources), [Bayesian Optimization](https://github.com/fmfn/BayesianOptimization).
++ [huggingface/transformers](https://github.com/huggingface/transformers), [transfer learning](https://github.com/jindongwang/transferlearning#7datasets-and-benchmarks-%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8E%E8%AF%84%E6%B5%8B%E7%BB%93%E6%9E%9C), [docker-stacks](https://github.com/jupyter/docker-stacks), [hyper-opt](https://github.com/hyperopt/hyperopt), [feature-tools](https://github.com/alteryx/featuretools), [einops](https://github.com/arogozhnikov/einops), [cog](https://github.com/replicate/cog), [floydhub](https://github.com/floydhub/dl-docker), [FEAST](https://github.com/feast-dev/feast), [causal-ml](https://github.com/uber/causalml), [scikit-opt](https://github.com/guofei9987/scikit-opt), [anomaly detect](https://github.com/yzhao062/anomaly-detection-resources), [Bayesian Optimization](https://github.com/fmfn/BayesianOptimization).
 
 </td>
 </tr>
@@ -109,15 +109,33 @@ ML framework:
 </td>
 </tr>
 
-</table>
+<tr>
 
-Reinforcement Learning libraries:
+<td>
+Reinforcement Learning
+</td>
+
+<td>
 
 + [baselines](https://github.com/openai/baselines), [gym](https://github.com/openai/gym), [mujoco](https://github.com/deepmind/mujoco), [tianshou](https://github.com/thu-ml/tianshou), [DRL-PyTorch](https://github.com/p-christ/Deep-Reinforcement-Learning-Algorithms-with-PyTorch), [dm_control](https://github.com/deepmind/dm_control), [PARL](https://github.com/PaddlePaddle/PARL), [ReAgent tensorforce](https://github.com/facebookresearch/ReAgent).
 
-MLOPs / Distributed ML libraries:
+</td>
+</tr>
+
+<tr>
+
+<td>
+MLOPs / Distributed ML libraries
+</td>
+
+<td>
 
 + [horovod](https://github.com/horovod/horovod), [Deep Speed](https://github.com/microsoft/DeepSpeed), [modin](https://github.com/modin-project/modin), [bentoml](https://github.com/bentoml/BentoML), [apex](https://github.com/NVIDIA/apex), [dask](https://github.com/dask/dask), [colossal-AI](https://github.com/hpcaitech/ColossalAI), [composer](https://github.com/mosaicml/composer), [mlflow](https://github.com/mlflow/mlflow), [lightning](https://github.com/Lightning-AI/lightning), [airflow](https://github.com/apache/airflow), [deap](https://github.com/DEAP/deap) (distributed evolutionary algorithms), [ray](https://github.com/ray-project/ray), [mars](https://github.com/mars-project/mars), [tensorflowonspark](https://github.com/yahoo/TensorFlowOnSpark), [sonnet](https://github.com/deepmind/sonnet), [celery](https://github.com/celery/celery), [pandarallel](https://github.com/nalepae/pandarallel), [polyaxon](https://github.com/polyaxon/polyaxon), [hummingbird](https://github.com/microsoft/hummingbird), [nni](https://github.com/microsoft/nni) , [byteps](https://github.com/bytedance/byteps), [vaex](https://github.com/vaexio/vaex), [clearml](https://github.com/allegroai/clearml), [tvm](https://github.com/apache/tvm), [st2](https://github.com/StackStorm/st2), [jina](https://github.com/jina-ai/jina) , [accelerate](https://github.com/huggingface/accelerate).
+
+</td>
+</tr>
+</table>
+
 
 Best of Machine Learning with Python : [github](https://github.com/ml-tooling/best-of-ml-python?tab=readme-ov-file), Awesome Machine Learning with [github](https://github.com/josephmisiti/awesome-machine-learning),  Awesome Python Data Science : [github](https://github.com/krzjoa/awesome-python-data-science).
 
@@ -132,7 +150,7 @@ CV Toolbox
 
 <td>
 
-+ [mmlab](https://github.com/open-mmlab/mmcv), [gluon-cv](https://github.com/dmlc/gluon-cv), [slowfast](https://github.com/facebookresearch/SlowFast), [grad-cam](https://github.com/jacobgil/pytorch-grad-cam).
++ [mmlab](https://github.com/open-mmlab/mmcv), [gluon-cv](https://github.com/dmlc/gluon-cv), [slowfast](https://github.com/facebookresearch/SlowFast), [grad-cam](https://github.com/jacobgil/pytorch-grad-cam), [opencv](https://github.com/opencv/opencv), [scenic](https://github.com/google-research/scenic), [kornia](https://github.com/kornia/kornia), pytorch/[vision](https://github.com/pytorch/vision), awesome/[computer-vision](https://github.com/jbhuang0604/awesome-computer-vision).
  
 </td>
 </tr>
@@ -146,7 +164,7 @@ Object Detection
 
 <td>
 
-+ [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [detr](https://github.com/facebookresearch/detr), [ImageAI](https://github.com/OlafenwaMoses/ImageAI#customprediction), [EfficientNet](https://github.com/lukemelas/EfficientNet-PyTorch), [CenterNet](https://github.com/xingyizhou/CenterNet), [frigate](https://github.com/blakeblackshear/frigate), [nanodet](https://github.com/RangiLyu/nanodet) (lightwight), [obj-detect-metric](https://github.com/rafaelpadilla/review_object_detection_metrics), [ConvNeXt](https://github.com/facebookresearch/ConvNeXt), [YoloV7](https://github.com/jinfagang/yolov7_d2), [ByteTrack](https://github.com/ifzhang/ByteTrack), [mmtracking](https://github.com/open-mmlab/mmtracking), [Yolo-v8](https://github.com/ultralytics/ultralytics).
++ [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [detr](https://github.com/facebookresearch/detr), [ImageAI](https://github.com/OlafenwaMoses/ImageAI#customprediction), [EfficientNet](https://github.com/lukemelas/EfficientNet-PyTorch), [CenterNet](https://github.com/xingyizhou/CenterNet), [frigate](https://github.com/blakeblackshear/frigate), [nanodet](https://github.com/RangiLyu/nanodet) (lightwight), [obj-detect-metric](https://github.com/rafaelpadilla/review_object_detection_metrics), [ConvNeXt](https://github.com/facebookresearch/ConvNeXt), [YoloV7](https://github.com/jinfagang/yolov7_d2), [ByteTrack](https://github.com/ifzhang/ByteTrack), [mmtracking](https://github.com/open-mmlab/mmtracking), [Yolo-v8](https://github.com/ultralytics/ultralytics), [yolo-v5](https://github.com/ultralytics/yolov5), [mmdetection](https://github.com/open-mmlab/mmdetection), [frigate](https://github.com/blakeblackshear/frigate), [supervision](https://github.com/roboflow/supervision), github/[object-detection](https://github.com/topics/object-detection).
  
 </td>
 </tr>
@@ -161,7 +179,7 @@ Text-to-Image
 
 <td>
 
-+ [PyTorch] [DALL-E](https://github.com/lucidrains/DALLE-pytorch), [DALLE2](https://github.com/lucidrains/DALLE2-pytorch), [dalle-mini](https://github.com/borisdayma/dalle-mini), [stable diffusion](https://github.com/CompVis/stable-diffusion) ([lexica.art](https://lexica.art/)), [Imagen](https://github.com/lucidrains/imagen-pytorch), [stable diffusion_webui](https://github.com/sd-webui/stable-diffusion-webui).
++ [PyTorch] - [DALL-E 2](https://github.com/lucidrains/DALLE2-pytorch), [DALL-E](https://github.com/lucidrains/DALLE-pytorch), [DALLE2](https://github.com/lucidrains/DALLE2-pytorch), [dalle-mini](https://github.com/borisdayma/dalle-mini), [stable diffusion](https://github.com/CompVis/stable-diffusion) ([lexica.art](https://lexica.art/)), [Imagen](https://github.com/lucidrains/imagen-pytorch), [stable diffusion_webui](https://github.com/sd-webui/stable-diffusion-webui), github/[text-to-image](https://github.com/topics/text-to-image), github/[text-to-image-generation](https://github.com/topics/text-to-image-generation).
  
 </td>
 </tr>
@@ -203,7 +221,7 @@ Vision Transformers
 
 <td>
 
-+  [RT-2](https://www.deepmind.com/blog/rt-2-new-model-translates-vision-and-language-into-action), @google/[vision-transformers](https://github.com/google-research/vision_transformer), [ViT pytorch](https://github.com/lucidrains/vit-pytorch)
++  [RT-2](https://www.deepmind.com/blog/rt-2-new-model-translates-vision-and-language-into-action), @google/[vision-transformers](https://github.com/google-research/vision_transformer), [ViT pytorch](https://github.com/lucidrains/vit-pytorch), github/[vision-transformer](https://github.com/topics/vision-transformer).
  
 </td>
 </tr>
@@ -217,7 +235,7 @@ Image Augmentation
 
 <td>
 
-+  [imgaug](https://github.com/aleju/imgaug), [albumentations](https://github.com/albumentations-team/albumentations).
++  [imgaug](https://github.com/aleju/imgaug), [albumentations](https://github.com/albumentations-team/albumentations), [Augmentor](https://github.com/mdbloice/Augmentor), github/[image-augmentation](https://github.com/topics/image-augmentation).
  
 </td>
 </tr>
@@ -231,7 +249,7 @@ Upscale
 
 <td>
 
-+ [video2x](https://github.com/k4yt3x/video2x).
++ [video2x](https://github.com/k4yt3x/video2x), [upscayl](https://github.com/upscayl/upscayl), [clarity-upscaler](https://github.com/philz1337x/clarity-upscaler), [inpaint-web](https://github.com/lxfater/inpaint-web), [video2x](https://github.com/k4yt3x/video2x), [Anime4K](https://github.com/bloc97/Anime4K), github/[upscaling](https://github.com/topics/upscaling), github/[image-upscale](https://github.com/topics/image-upscaling).
  
 </td>
 </tr>
@@ -245,7 +263,7 @@ Pose Detection
 
 <td>
 
-+ [alphapose](https://github.com/MVIG-SJTU/AlphaPose), [mmskeleton](https://github.com/open-mmlab/mmskeleton), [videopose3D](https://github.com/facebookresearch/VideoPose3D), [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut).
++ [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), [alphapose](https://github.com/MVIG-SJTU/AlphaPose), [mmskeleton](https://github.com/open-mmlab/mmskeleton), [videopose3D](https://github.com/facebookresearch/VideoPose3D), [DeepLabCut](https://github.com/DeepLabCut/DeepLabCut), [mmpose](https://github.com/open-mmlab/mmpose), [gluon-cv](https://github.com/dmlc/gluon-cv), [kalido-kit](https://github.com/yeemachine/kalidokit), awesome/[action-recognition](https://github.com/jinwchoi/awesome-action-recognition), [Hierarchical-Localization](https://github.com/cvg/Hierarchical-Localization), github/[pose-estimation](https://github.com/topics/pose-estimation), github/[human-pose-estimation](https://github.com/topics/human-pose-estimation).
  
 </td>
 </tr>
@@ -287,7 +305,7 @@ Segmentation / Inpainting / Matting
 
 <td>
 
-+ [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg), [3D photo inpainting, video matting](https://github.com/vt-vl-lab/3d-photo-inpainting), [bg-matting-v2](https://github.com/PeterL1n/BackgroundMattingV2), [yolact](https://github.com/dbolya/yolact), [semantic seg](https://github.com/CSAILVision/semantic-segmentation-pytorch), [Super SloMo](https://github.com/avinashpaliwal/Super-SloMo).
++ [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg), [3D photo inpainting, video matting](https://github.com/vt-vl-lab/3d-photo-inpainting), [bg-matting-v2](https://github.com/PeterL1n/BackgroundMattingV2), [yolact](https://github.com/dbolya/yolact), [semantic seg](https://github.com/CSAILVision/semantic-segmentation-pytorch), [Super SloMo](https://github.com/avinashpaliwal/Super-SloMo), [segmentation-models](https://github.com/qubvel/segmentation_models), [image-segmentation](https://github.com/topics/image-segmentation), github/[segmentation-models](https://github.com/topics/segmentation-models), github/[segmentation](https://github.com/topics/segmentation), github/[semantic-segmentation](https://github.com/topics/semantic-segmentation).
 
  
 </td>
@@ -331,7 +349,7 @@ WebML
 
 <td>
 
-+ [Open3D](https://github.com/isl-org/Open3D), [meshroom](https://github.com/alicevision/meshroom), [PyTorch3D](https://github.com/facebookresearch/pytorch3d), [mmlab3d](https://github.com/open-mmlab/mmdetection3d), [OpenPCDet](https://github.com/open-mmlab/OpenPCDet), [OpenSfm](https://github.com/mapillary/OpenSfM), [kaolin](https://github.com/NVIDIAGameWorks/kaolin), [ODM](https://github.com/OpenDroneMap/ODM), [PointNet](https://github.com/charlesq34/pointnet), [3D-Resnets](https://github.com/kenshohara/3D-ResNets-PyTorch).
++ [rerun](https://github.com/rerun-io/rerun), [Open3D](https://github.com/isl-org/Open3D), [meshroom](https://github.com/alicevision/meshroom), [PyTorch3D](https://github.com/facebookresearch/pytorch3d), [mmlab3d](https://github.com/open-mmlab/mmdetection3d), [OpenPCDet](https://github.com/open-mmlab/OpenPCDet), [OpenSfm](https://github.com/mapillary/OpenSfM), [kaolin](https://github.com/NVIDIAGameWorks/kaolin), [ODM](https://github.com/OpenDroneMap/ODM), [PointNet](https://github.com/charlesq34/pointnet), [3D-Resnets](https://github.com/kenshohara/3D-ResNets-PyTorch), [Open3D-ML](https://github.com/isl-org/Open3D-ML).
  
 </td>
 </tr>

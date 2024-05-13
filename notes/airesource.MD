@@ -65,7 +65,7 @@ YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai
 <th>
   <p>
 
-  [Ameca facial motion capture](https://youtu.be/3OHILYjsW7c), [Ameca conversation using GPT 3 - Will robots take over the world?](https://youtu.be/EWACmFLvpHE), [Boston Dynamics](https://youtu.be/fn3KWM1kuAw), [Robo Threads](https://youtu.be/INSyV4dgqu8), [Festo Bionic Robots](https://youtu.be/_qRGIRvr06w),  Swarm drones : [1](https://youtu.be/P9ZbipO8vxM), [2](https://youtu.be/zq1ud7CBOaU), [3](https://youtu.be/DK6IGG5zRU8), [4](https://youtu.be/L0fJ0EHHfOA), [deep sea soft robotics](https://youtu.be/shr6sJy_29E), [OceanOneK](https://youtu.be/h2CLLBUpPZg), [snake robots](https://youtu.be/FWr-MvOOOYU), [cyborg insects](https://youtu.be/awG09liCMD4), [insect robot](https://youtu.be/loHzoeFP9Io), [soft robotics clothing](https://youtu.be/OoXCO8NB9B8), [soft robotic fish](https://youtu.be/JPabeUxSfAw), [sensitive skin for robotics](https://youtu.be/M-Y2HW6JcGI), [nanobots](https://youtu.be/2TjdGuBK9mI), [bionic arms](https://youtu.be/F_brnKz_2tI), [Xenobot 2.0](https://youtu.be/JPFRUZGqUFA), [stretch self heal electronics](https://youtu.be/mWKb_CMmwXw), [ultrasonic sticker](https://youtu.be/Kn2J8W4csNc), [stretchy color shifting material](https://youtu.be/3-BH7164GaM), [OpenAI Sora: A Closer Look!](https://youtu.be/8RbP4GlTM3o?si=LULVFWORb6atqkHA), [Claude 3 AI: Smarter Than OpenAI's ChatGPT?](https://youtu.be/9b7bx423SWk?si=T2jNbKnROTqBGNzs), [The First AI Software Engineer Is Here!](https://youtu.be/SdZiYRfGdKU?si=uQAvesgAEaRWB2iW).
+  [Ameca facial motion capture](https://youtu.be/3OHILYjsW7c), [Ameca conversation using GPT 3 - Will robots take over the world?](https://youtu.be/EWACmFLvpHE), [Boston Dynamics](https://youtu.be/fn3KWM1kuAw), [Robo Threads](https://youtu.be/INSyV4dgqu8), [Festo Bionic Robots](https://youtu.be/_qRGIRvr06w),  Swarm drones : [1](https://youtu.be/P9ZbipO8vxM), [2](https://youtu.be/zq1ud7CBOaU), [3](https://youtu.be/DK6IGG5zRU8), [4](https://youtu.be/L0fJ0EHHfOA), [deep sea soft robotics](https://youtu.be/shr6sJy_29E), [OceanOneK](https://youtu.be/h2CLLBUpPZg), [snake robots](https://youtu.be/FWr-MvOOOYU), [cyborg insects](https://youtu.be/awG09liCMD4), [insect robot](https://youtu.be/loHzoeFP9Io), [soft robotics clothing](https://youtu.be/OoXCO8NB9B8), [soft robotic fish](https://youtu.be/JPabeUxSfAw), [sensitive skin for robotics](https://youtu.be/M-Y2HW6JcGI), [nanobots](https://youtu.be/2TjdGuBK9mI), [bionic arms](https://youtu.be/F_brnKz_2tI), [Xenobot 2.0](https://youtu.be/JPFRUZGqUFA), [stretch self heal electronics](https://youtu.be/mWKb_CMmwXw), [ultrasonic sticker](https://youtu.be/Kn2J8W4csNc), [stretchy color shifting material](https://youtu.be/3-BH7164GaM), [OpenAI Sora: A Closer Look!](https://youtu.be/8RbP4GlTM3o?si=LULVFWORb6atqkHA), [Claude 3 AI: Smarter Than OpenAI's ChatGPT?](https://youtu.be/9b7bx423SWk?si=T2jNbKnROTqBGNzs), [The First AI Software Engineer Is Here!](https://youtu.be/SdZiYRfGdKU?si=uQAvesgAEaRWB2iW), [Unitree Introducing | Unitree G1 Humanoid Agent](https://youtu.be/GzX1qOIO1bE?si=4sgzQCyCXL6PmgMv), [Introducing Pulsar: Family of Electromagnetic Warfare Systems](https://youtu.be/tnsyM3NPy1c?si=C2PsmM24SLWIez1g).
   </p>
 </th>
 
@@ -333,7 +333,7 @@ Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learnin
 
 </table>
 
-Notes: [shervine](https://stanford.edu/~shervine/teaching/cs-221/), [cs109-probability](https://www.youtube.com/watch?v=2MuDZIAzBMY&list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg), Stanford [CS 25: Transformers United V4](https://web.stanford.edu/class/cs25/).
+Notes: [shervine](https://stanford.edu/~shervine/teaching/cs-221/), [cs109-probability](https://www.youtube.com/watch?v=2MuDZIAzBMY&list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg), Stanford [CS 25: Transformers United V4](https://web.stanford.edu/class/cs25/), Stanford [CS 109 - Introduction to Probability](https://www.youtube.com/watch?v=2MuDZIAzBMY&list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg).
 
 Good AI courses:
 
@@ -492,6 +492,7 @@ publications : [arXiv](https://arxiv.org/), google scholar : [robotics](https://
 
 
 ### Premier AI challenges and competitions:
++ [ICRA competitions](https://2024.ieee-icra.org/), [CVPR competitions](https://cvpr.thecvf.com/), [NeurIPS competitions](https://neurips.cc/), [IROS competitions](https://irmv.sjtu.edu.cn/iros2025/index.html).
 + [mlcontests](https://mlcontests.com/) : ml challenges and competitions list
 + [kaggle competitions](https://www.kaggle.com/competitions) : mainly supervised ML/data
 science competitions, but also feature simulation
@@ -600,18 +601,19 @@ Summer Schools are focused
 training camps for different [AI methods](https://paperswithcode.com/methods) and this [list](https://github.com/sshkhr/awesome-mlss)
 has very popular and good AI summer schools. Some
 additional summer schools (mostly European):
-+ [MIT IDSS](https://www.mygreatlearning.com/mit-idss-data-science-machine-learning-program)
++ [Princeton Machine Learning Theory Summer School](https://mlschool.princeton.edu/)
 + [LogML : London Geometry and ML](https://www.logml.ai/)
 + [Nordic Probabilistic AI school](https://probabilistic.ai/)
 + [Summer schools in Europe](https://www.summerschoolsineurope.eu/search/discipline;ArtInt)
 + [IDESSAI 2022 - SECOND JOINT SUMMER SCHOOL
 OF INRIA AND DFKI](https://www.dfki.de/en/web/news/idessai-2022-zweite-gemeinsame-summer-school-von-inria-und-dfki)
 + [The European AI Summit 2022](https://www.eventbrite.ie/e/the-european-ai-summit-2022-tickets-303391370757)
++ [NORA.ai Summer School](https://www.nora.ai/)
 
 
 additionally, [Google events](https://developers.google.com/events), [IEEE](https://cis.ieee.org/activities/professional-development/summer-schools) & [ACM Summer
 Schools](https://europe.acm.org/2022-hpc-summer-school), AI Residency programs: [this list](https://github.com/dangkhoasdc/awesome-ai-residency) + [Microsoft](https://www.microsoft.com/en-us/research/academic-program/microsoft-ai-residency-program/),
-[Meta AI](https://ai.facebook.com/join-us/residency-program/), [Nvidia](https://www.nvidia.com/en-us/research/ai-research-residency/), [Apple](https://machinelearning.apple.com/updates/aiml-residency-program-application), [OpenAI](https://openai.com/blog/openai-residency/) etc
+[Meta AI](https://ai.facebook.com/join-us/residency-program/), [Nvidia](https://www.nvidia.com/en-us/research/ai-research-residency/), [Apple](https://machinelearning.apple.com/updates/aiml-residency-program-application), [OpenAI](https://openai.com/blog/openai-residency/), [MIT IDSS](https://www.mygreatlearning.com/mit-idss-data-science-machine-learning-program) etc
 
 
 AI Training: Several premier professional AI training
@@ -620,9 +622,7 @@ programs and certifications:
 Autonomous Systems certificate](https://online.stanford.edu/programs/robotics-and-autonomous-systems-graduate-program).
 + [MIT Professional Certificate Program](https://professional.mit.edu/programs/certificate-programs/professional-certificate-program-machine-learning-artificial) in Machine Learning & Artificial Intelligence; [Designing and
 building AI products and services](https://mit-xpro-online-education.emeritus.org/designing-building-ai-products-services).
-+ [Udacity](https://www.udacity.com/) Nanodegree:
-> [School of Autonomous Systems](https://www.udacity.com/school-of-autonomous-systems)
-> [School of Artificial Intelligence](https://www.udacity.com/school-of-ai)
++ [Udacity](https://www.udacity.com/) Nanodegree: > [School of Autonomous Systems](https://www.udacity.com/school-of-autonomous-systems) and > [School of Artificial Intelligence](https://www.udacity.com/school-of-ai)
 + Harvard Extension School : data science [graduate
 certificate](https://extension.harvard.edu/academics/programs/data-science-graduate-certificate/#admissions-requirements).
 + [NVIDIA training institute](https://www.nvidia.com/en-us/training/) : Some example courses are
@@ -742,7 +742,7 @@ coordinates), [MIT driveseg](https://agelab.mit.edu/methods/mit-driveseg-dataset
 x geo & satellite datasets::
 - [URBAN DATA PLATFORM](http://www.urbandataplatform.hamburg/daten-finden/) : [MetaVER](https://metaver.de/freitextsuche?f=type:metadata;metadata:map;provider:hh), [geoportal](https://geoportal.metropolregion.hamburg.de/mrhportal/index.html),
 [transparenzportal](https://sdg-portal.de/de/tipps-praxis/praxisbeispiele/open-data-im-transparenzportal-hamburg), [dlr eoc](https://geoservice.dlr.de/web/), [GIS data](https://freegisdata.rtwilson.com/), [UCSC](https://guides.library.ucsc.edu/opensourcegis), [geodaten](https://www.hamburg.de/bsw/geodaten/)
-- satellite data: [Copernicus](https://scihub.copernicus.eu/), [DLR](https://www.dlr.de/eoc/en/desktopdefault.aspx/tabid-8799/)
+- Satellite data: [Copernicus](https://scihub.copernicus.eu/), [DLR](https://www.dlr.de/eoc/en/desktopdefault.aspx/tabid-8799/)
 PRIVATE datasets |  [planet](https://www.planet.com/), [arcGIS](https://www.esri.com/en-us/arcgis/products/imagery-remote-sensing/capabilities/analysis) etc.
 
 
