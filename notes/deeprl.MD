@@ -1,75 +1,111 @@
 # Deep Reinforcement Learning
 
-My notes on Deep Reinforcement Learning are @/[deeprl_theory](./drl.MD) and here I roughly go over a typical DRL NN architecture:
-
+My personal notes on Deep Reinforcement Learning are @/[deeprl_theory](./drl.MD) and here we discuss a typical DRL NN architecture:
 
 <img src="img/dd.png" width=100%> 
 
 Deep Reinforcement Learning (DRL) is a subfield of artificial intelligence that focuses on training agents to make sequential decisions in complex environments using deep neural networks. DRL algorithms can be categorized into various types and classes based on their underlying principles and methodologies. Here are detailed notes on these types and classes:
 
++ `Markov Decision Processes (MDPs)`: The mathematical framework for modeling sequential decision-making problems, comprising states, actions, transition probabilities, and rewards.
+
++ `Bellman Equation`: A fundamental equation in dynamic programming that expresses the value of a state in terms of the values of its successor states.
+
++ `Value Functions`: Value functions quantify the expected return of being in a particular state (V(s)) or taking a specific action in a state (Q(s, a)).
+
++ `Optimal Value Function`: The optimal value function represents the maximum achievable value for each state or state-action pair in an environment.
+
 ### +  Value-Based Methods:
 
-+ Q-Learning: Q-learning is one of the earliest reinforcement learning algorithms. In Deep Q-Learning (DQN), deep neural networks are used to approximate the Q-values of state-action pairs. It involves an experience replay buffer to stabilize learning and target networks to improve convergence.  ([qlearning.py](./code/qlearning.py))
+Deep Reinforcement Learning (DRL) has revolutionized the field of artificial intelligence by enabling agents to learn complex behaviors through interaction with their environment. Among the various approaches in DRL, value-based methods stand out for their ability to approximate the value of states or state-action pairs, guiding the agent towards optimal decision-making.
 
-+ Double Deep Q-Networks (DDQN): DDQN improves upon DQN by mitigating overestimation bias in Q-values, enhancing stability and learning.  ([ddqn.py](./code/ddqn.py))
++ `Q-Learning`: Q-Learning is a classic reinforcement learning algorithm that learns the optimal action-value function by iteratively updating Q-values based on the Bellman equation. In Deep Q-Learning (DQN), deep neural networks are used to approximate the Q-values of state-action pairs. It involves an experience replay buffer to stabilize learning and target networks to improve convergence.  ([qlearning.py](./code/qlearning.py))
+    - `Temporal Difference (TD) Learning`: Q-Learning employs TD learning to update Q-values by bootstrapping from successor states' estimates.
+    - `Exploration vs. Exploitation`: Balancing exploration (trying new actions) and exploitation (choosing actions based on current knowledge) is crucial for Q-Learning's convergence and effectiveness.
 
-+ Prioritized Experience Replay: This technique assigns different priorities to experiences in the replay buffer, allowing the agent to focus on learning from more informative experiences.
++ `Deep Q-Networks (DQN)`: DQN extends Q-Learning to high-dimensional state spaces using deep neural networks to approximate the Q-function.
+    - `Experience Replay`: Storing agent experiences in a replay buffer and sampling batches of experiences randomly for training improves data efficiency and stabilizes learning.
+    - `Target Networks`: Utilizing separate target networks to compute target Q-values stabilizes training by decoupling target and current network parameters.
+
+Extensions and Enhancements:  
+    + `Double Deep Q-Networks (DDQN)`: DDQN improves upon DQN by mitigating overestimation bias in Q-values, enhancing stability and learning. Mitigates overestimation bias by decoupling action selection and value estimation.  ([ddqn.py](./code/ddqn.py))
+ 
+    + `Prioritized Experience Replay`: This technique assigns different priorities to experiences in the replay buffer, allowing the agent to focus on learning from more informative experiences.
+    + `Dueling DQN`: Separates the estimation of state value and advantage value, improving learning efficiency.
+    + `Rainbow DQN`: Combines multiple DQN extensions (e.g., double Q-learning, prioritized experience replay, dueling networks) for enhanced performance.
 
 
 
 ### +  Policy-Based Methods:
+Policy-based methods represent a fundamental approach in Deep Reinforcement Learning (DRL), focusing on directly learning a policy that maps states to actions, rather than estimating value functions. A policy defines the agent's behavior by specifying the probability distribution over actions given states. The theoretical basis for policy optimization, stating that the gradient of the expected return with respect to the policy parameters can be computed analytically.
 
-+ <b>Policy Gradients:</b> Policy gradient methods directly optimize the policy function by maximizing expected cumulative rewards. Algorithms like REINFORCE and Trust Region Policy Optimization (TRPO) fall under this category.
+    x `Parametric Policies`: Policies are typically parameterized by a set of learnable parameters, often represented by neural networks.
+    x `Deterministic vs. Stochastic Policies`: Deterministic policies directly output actions, while stochastic policies output action probabilities, enabling exploration.
 
-+ <b>Proximal Policy Optimization (PPO):</b> PPO is a popular policy gradient algorithm that addresses some of the limitations of TRPO. It uses a clipped surrogate objective to ensure stable updates.
++ <b>`Policy Gradients`:</b> Policy gradient methods directly optimize the policy function by maximizing expected cumulative rewards. Algorithms like REINFORCE and Trust Region Policy Optimization (TRPO) fall under this category.
+
++ <b>`Proximal Policy Optimization (PPO)`:</b> PPO is a popular policy gradient algorithm that addresses some of the limitations of TRPO. It uses a clipped surrogate objective to ensure stable updates. PPO constrains policy updates to ensure they do not deviate too far from the previous policy, enhancing stability and sample efficiency. PPO employs a clipped surrogate objective to prevent large policy updates, mitigating the risk of policy collapse.
 
 
 
 ### +  Actor-Critic Methods:
 
-+  <b>Advantage Actor-Critic (A2C):</b> A2C combines the benefits of both policy gradients and value-based methods by using an actor (policy) network and a critic (value) network. It reduces variance compared to vanilla policy gradients.
+Actor-Critic methods represent a powerful class of algorithms in Deep Reinforcement Learning (DRL), combining the strengths of both policy-based and value-based approaches. The Actor-Critic architecture consists of two components:
 
-+  <b>A3C (Asynchronous Advantage Actor-Critic):</b> A3C employs parallelism to speed up training. Multiple agents explore different trajectories simultaneously, improving sample efficiency.
+    + `Actor`: The policy network that learns to select actions based on states.
+    + `Critic`: The value function network that evaluates the goodness of actions or state-action pairs.
+    
+    `Temporal Difference (TD) Learning`: Actor-Critic methods leverage TD learning to update both the actor (policy) and critic (value function) networks iteratively based on temporal difference errors.
 
-+ <b>DDPG (Deep Deterministic Policy Gradient):</b> DDPG extends actor-critic methods to continuous action spaces. It uses a deterministic policy and a Q-network to estimate action values.
++  <b>`Advantage Actor-Critic (A2C)`:</b> A2C combines the benefits of both policy gradients and value-based methods by using an actor (policy) network and a critic (value) network. It reduces variance compared to vanilla policy gradients. A2C uses an advantage function to estimate the advantage of taking a particular action over the average action value, guiding policy updates. A2C employs multiple parallel environments with asynchronous updates to improve sample efficiency and accelerate learning.
 
++  <b>`A3C (Asynchronous Advantage Actor-Critic)`:</b> A3C employs parallelism to speed up training. Multiple agents explore different trajectories simultaneously, improving sample efficiency. A3C employs asynchronous training across multiple threads or processes, enabling efficient exploration and utilization of computational resources. A3C scales to large-scale environments and distributed settings, making it suitable for training deep neural networks on complex tasks.
 
++ <b>`DDPG (Deep Deterministic Policy Gradient)`:</b> DDPG extends Actor-Critic methods to problems with continuous action spaces, utilizing a deterministic policy network to output continuous actions. DDPG utilizes experience replay to stabilize learning by storing and sampling experiences from a replay buffer.
+
+Distributed Actor-Critic (DAC): DAC extends A3C to distributed environments, allowing for even greater scalability and parallelization.
 
 ### +  Model-Based Methods:
 
-+ <b>Monte Carlo Tree Search (MCTS):</b> MCTS is a model-based algorithm used for decision-making in games and planning. It builds a search tree by simulating possible actions and outcomes.
+Model-based methods in Deep Reinforcement Learning (DRL) aim to learn a model of the environment dynamics, enabling agents to plan ahead and make informed decisions.
 
-+ <b>Model-Predictive Control (MPC):</b> MPC uses a learned model of the environment to optimize a sequence of actions. It is commonly used in robotics and control tasks.
++ <b>`Monte Carlo Tree Search (MCTS)`:</b> MCTS is a model-based algorithm used for decision-making in games and planning. It builds a search tree by simulating possible actions and outcomes.
+
++ <b>`Model-Predictive Control (MPC)`:</b> MPC uses a learned model of the environment to optimize a sequence of actions. It is commonly used in robotics and control tasks.
+
+Model-Based Deep Reinforcement Learning:
+
+  + `Imagination-Augmented Agents (I2A)`: I2A integrates an internal model (imagination core) with an external policy network, allowing agents to plan and reason about future trajectories.
+  + `Model-Based Value Expansion (MBVE)`: MBVE enhances value estimation by leveraging learned environment models to simulate future trajectories and estimate the value of states more accurately.
 
 
 
 ### +  Exploration Strategies:
 
-+ <b>Epsilon-Greedy:</b> In epsilon-greedy strategies, the agent selects the best-known action with probability (1 - ε) and explores randomly with probability ε.
++ <b>`Epsilon-Greedy`:</b> In epsilon-greedy strategies, the agent selects the best-known action with probability (1 - ε) and explores randomly with probability ε.
 
-+ <b>Softmax Exploration:</b> Softmax exploration assigns probabilities to each action based on their estimated values, allowing for a more controlled form of exploration.
++ <b>`Softmax Exploration`:</b> Softmax exploration assigns probabilities to each action based on their estimated values, allowing for a more controlled form of exploration.
 
 
 
 ### +  Deep Reinforcement Learning for Continuous Control:
-+ <b>Deep Deterministic Policy Gradient (DDPG):</b> DDPG is a popular algorithm for continuous action spaces, combining Q-learning and policy gradients.
++ <b>`Deep Deterministic Policy Gradient (DDPG)`:</b> DDPG is a popular algorithm for continuous action spaces, combining Q-learning and policy gradients.
 
-+ <b>Trust Region Policy Optimization (TRPO):</b> TRPO is a policy optimization method that ensures stable updates by limiting policy changes based on a trust region constraint.
++ <b>`Trust Region Policy Optimization (TRPO)`:</b> TRPO is a policy optimization method that ensures stable updates by limiting policy changes based on a trust region constraint.
 
-+ <b>SAC (Soft Actor-Critic):</b> SAC is an off-policy algorithm designed for stochastic policies. It incorporates entropy regularization to encourage exploration.
++ <b>`SAC (Soft Actor-Critic)`:</b> SAC is an off-policy algorithm designed for stochastic policies. It incorporates entropy regularization to encourage exploration.
 
 
 
 ### +  Multi-Agent Reinforcement Learning:
 
- + <b>MARL (Multi-Agent Reinforcement Learning):</b> MARL deals with scenarios where multiple agents interact in a shared environment. Algorithms like MADDPG and multi-agent PPO are used for such tasks.
+ + <b>`MARL (Multi-Agent Reinforcement Learning)`:</b> MARL deals with scenarios where multiple agents interact in a shared environment. Algorithms like MADDPG and multi-agent PPO are used for such tasks.
 
 
 ### +  Deep Reinforcement Learning for Robotics:
 
-+ <b>Robotic Control:</b> DRL has found applications in robotic control, including tasks like robotic manipulation, locomotion, and navigation.
++ <b>`Robotic Control`:</b> DRL has found applications in robotic control, including tasks like robotic manipulation, locomotion, and navigation.
 
-+ <b>Sim2Real Transfer:</b> Research focuses on transferring DRL policies trained in simulation to real-world robotic platforms.
++ <b>`Sim2Real Transfer`:</b> Research focuses on transferring DRL policies trained in simulation to real-world robotic platforms.
 
 ## Model-based algorithms: 
 
@@ -89,7 +125,7 @@ Model-free algorithms find the optimal policy with very limited knowledge of the
 
 Markov Decision Process (MDP) : [Markov Decision Processes](https://youtu.be/2iF9PRriA7w)
 
-### Bellman Equations : 
+## Bellman Equations : 
 
 + State is a numerical representation of what an agent observes at a particular point in an environment.
 
