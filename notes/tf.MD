@@ -1,47 +1,44 @@
-# TensorFlow
-
-[tensorflow.org](https://www.tensorflow.org/), [github](https://github.com/tensorflow/tensorflow), [docker](https://hub.docker.com/r/tensorflow/tensorflow/), [tensorflow-tfx](https://www.tensorflow.org/tfx), [tf-youtube](https://www.youtube.com/@TensorFlow), [tf-dev-certificate](https://www.tensorflow.org/certificate)
+# TensorFlow 🍊
+[ [tensorflow.org](https://www.tensorflow.org/), [github](https://github.com/tensorflow/tensorflow), [docker](https://hub.docker.com/r/tensorflow/tensorflow/), [tensorflow-tfx](https://www.tensorflow.org/tfx), [tf-youtube](https://www.youtube.com/@TensorFlow), [tf-dev-certificate](https://www.tensorflow.org/certificate) ]
 
 <img src="./img/tf.png" width=100%>
 
 ```python
-
     $ pip install tensorflow
-
 ```
 
 TensorFlow 2.0 represents a significant evolution of the popular open-source machine learning framework. Released in September 2019, TensorFlow 2.0 aims to simplify the development and deployment of machine learning models while providing a more intuitive and flexible user experience. Here, we delve into the key features, components, and advancements in TensorFlow 2.0:
 
 
-+ <b>Eager Execution</b> (Dynamic Computation): TensorFlow 2.0 adopts eager execution by default, allowing developers to evaluate operations immediately, much like Python, making debugging and model development more intuitive.
++ <b>`Eager Execution`</b> (Dynamic Computation): TensorFlow 2.0 adopts eager execution by default, allowing developers to evaluate operations immediately, much like Python, making debugging and model development more intuitive.
 
-+ <b>Keras Integration</b> (Keras as a High-Level API): TensorFlow 2.0 integrates Keras as its high-level API for building and training deep learning models. Keras provides an easy-to-use interface for creating neural networks.
++ <b>`Keras Integration`</b> (Keras as a High-Level API): TensorFlow 2.0 integrates Keras as its high-level API for building and training deep learning models. Keras provides an easy-to-use interface for creating neural networks.
 
-+ <b>TensorFlow Data</b> (Efficient Data Input Pipeline): TensorFlow 2.0 introduces the tf.data API, which simplifies and optimizes data input pipelines, enhancing training efficiency.
++ <b>`TensorFlow Data`</b> (Efficient Data Input Pipeline): TensorFlow 2.0 introduces the tf.data API, which simplifies and optimizes data input pipelines, enhancing training efficiency.
 
-+ <b>Model Subclassing</b> (Customizable Models): TensorFlow 2.0 enables model subclassing, allowing developers to create custom, highly flexible neural network architectures.
++ <b>`Model Subclassing`</b> (Customizable Models): TensorFlow 2.0 enables model subclassing, allowing developers to create custom, highly flexible neural network architectures.
 
-+ <b>SavedModel Format</b> (Model Serialization): TensorFlow 2.0 introduces the SavedModel format as a more efficient way to serialize and save machine learning models, facilitating model deployment and serving.
++ <b>`SavedModel Format`</b> (Model Serialization): TensorFlow 2.0 introduces the SavedModel format as a more efficient way to serialize and save machine learning models, facilitating model deployment and serving.
   
-+ <b>TensorFlow Serving</b> (Simplified Deployment): TensorFlow Serving, an official component of TensorFlow, makes it easier to deploy machine learning models in production environments.
++ <b>`TensorFlow Serving`</b> (Simplified Deployment): TensorFlow Serving, an official component of TensorFlow, makes it easier to deploy machine learning models in production environments.
 
-+ <b>GPU and TPU Acceleration</b> (Enhanced Hardware Support): TensorFlow 2.0 offers seamless GPU and TPU (Tensor Processing Unit) acceleration, enabling faster model training and inference.
++ <b>`GPU and TPU Acceleration`</b> (Enhanced Hardware Support): TensorFlow 2.0 offers seamless GPU and TPU (Tensor Processing Unit) acceleration, enabling faster model training and inference.
 
-+ <b>Distribution Strategies</b> (Distributed Training): TensorFlow 2.0 provides distribution strategies that simplify the process of training models on multiple GPUs or TPUs.
++ <b>`Distribution Strategies`</b> (Distributed Training): TensorFlow 2.0 provides distribution strategies that simplify the process of training models on multiple GPUs or TPUs.
 
-+ <b>TensorFlow Hub</b> (Model Sharing): TensorFlow Hub offers a repository for sharing pre-trained models and model components, streamlining the development process.
++ <b>`TensorFlow Hub`</b> (Model Sharing): TensorFlow Hub offers a repository for sharing pre-trained models and model components, streamlining the development process.
 
-+ <b>TensorFlow Lite</b> (Edge Devices): TensorFlow 2.0 includes TensorFlow Lite, which allows developers to deploy machine learning models on edge devices like mobile phones and IoT devices.
++ <b>`TensorFlow Lite`</b> (Edge Devices): TensorFlow 2.0 includes TensorFlow Lite, which allows developers to deploy machine learning models on edge devices like mobile phones and IoT devices.
 
-+ <b>TensorBoard</b> (Visualization Tools): TensorBoard, the visualization toolkit for TensorFlow, has been improved, making it easier to monitor and analyze training progress.
++ <b>`TensorBoard`</b> (Visualization Tools): TensorBoard, the visualization toolkit for TensorFlow, has been improved, making it easier to monitor and analyze training progress.
 
-+ <b>Community and Ecosystem</b> (Active Development): TensorFlow boasts a vibrant community and ecosystem, with an extensive collection of libraries, tools, and resources that enhance its capabilities.
++ <b>`Community and Ecosystem`</b> (Active Development): TensorFlow boasts a vibrant community and ecosystem, with an extensive collection of libraries, tools, and resources that enhance its capabilities.
 
-+ <b>TensorFlow Extended</b> (TFX- End-to-End ML Pipelines): TFX, an end-to-end machine learning platform, is integrated with TensorFlow 2.0, providing solutions for deploying machine learning pipelines at scale.
++ <b>`TensorFlow Extended`</b> (TFX- End-to-End ML Pipelines): TFX, an end-to-end machine learning platform, is integrated with TensorFlow 2.0, providing solutions for deploying machine learning pipelines at scale.
 
-+ <b>TensorFlow.js and TensorFlow Lite for Web</b> ( Web Integration): TensorFlow 2.0 supports TensorFlow.js for training and deploying models in the browser, as well as TensorFlow Lite for deploying models on mobile and embedded devices.
++ <b>`TensorFlow.js and TensorFlow Lite for Web</b> ( Web Integration)`: TensorFlow 2.0 supports TensorFlow.js for training and deploying models in the browser, as well as TensorFlow Lite for deploying models on mobile and embedded devices.
 
-+ <b>Future Directions</b> (Ongoing Advancements): TensorFlow continues to evolve, with ongoing research and development in areas such as automated machine learning (AutoML), reinforcement learning, and quantum machine learning.
++ <b>`Future Directions</b> (Ongoing Advancements)`: TensorFlow continues to evolve, with ongoing research and development in areas such as automated machine learning (AutoML), reinforcement learning, and quantum machine learning.
 
 
 ```python
@@ -113,9 +110,7 @@ The mathematical concept involves introducing gaps (dilation rate) in the convol
 Mathematically, the output of an atrous convolution with a dilation rate "d" can be represented as:
 
 ```
-
     Y[i] = ∑(k=0 to K) X[i + d * k] * W[k]
-    
 ```
 
 ### Spatial Pyramid Pooling (SPP):
@@ -123,7 +118,6 @@ SPP captures multi-scale information from different regions of the input feature
 Mathematically, it involves dividing the input feature map into grids of different sizes and pooling the information from each grid independently.
 
 ```py
-
 import tensorflow as tf
 from tensorflow.keras import layers
 
@@ -156,10 +150,7 @@ def DeepLabV3Plus(input_shape, num_classes):
 
 # Create the DeepLab model
 model = DeepLabV3Plus(input_shape=(256, 256, 3), num_classes=21)
-
-
-
 ```
 
 
-resources: [udemy-tensorflow-developer-certificate](https://www.udemy.com/course/tensorflow-developer-certificate-machine-learning-zero-to-mastery/), [tf2-machine-learning-mastery](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/), [tf-quick-start-guide](https://www.tensorflow.org/tutorials/quickstart/beginner), [tf-models](https://github.com/tensorflow/models), [computer vision with tf2](https://youtu.be/IA3WxTTPXqQ), [tensorflow-c++/API](https://www.tensorflow.org/api_docs/cc)
+resources: [udemy-tensorflow-developer-certificate](https://www.udemy.com/course/tensorflow-developer-certificate-machine-learning-zero-to-mastery/), [tf2-machine-learning-mastery](https://machinelearningmastery.com/tensorflow-tutorial-deep-learning-with-tf-keras/), [tf-quick-start-guide](https://www.tensorflow.org/tutorials/quickstart/beginner), [tf-models](https://github.com/tensorflow/models), [computer vision with tf2](https://youtu.be/IA3WxTTPXqQ), [tensorflow-c++/API](https://www.tensorflow.org/api_docs/cc), [TensorFlow 2.0 Complete Course](https://youtu.be/tPYj3fFJGjk?si=qOGMA0lRvyMpGnGF), [Deep Learning for Computer Vision with Python and TensorFlow](https://youtu.be/IA3WxTTPXqQ?si=7oi12Gb93Y6jNxF3), [TensorFlow 2.0](https://www.youtube.com/watch?v=5Ym-dOS9ssA&list=PLhhyoLH6IjfxVOdVC1P1L5z5azs0XjMsb), [Build a Deep Learning Model that can LIP READ using Python and Tensorflow](https://youtu.be/uKyojQjbx4c?si=81cAVpNyRlsEzBXF).

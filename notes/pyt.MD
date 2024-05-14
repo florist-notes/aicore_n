@@ -1,18 +1,17 @@
-# PyTorch
+# PyTorch 🔥
 
 PyTorch is a powerful, yet easy-to-use deep learning library for Python, mainly used for applications such as computer vision and natural language processing.
 
 While TensorFlow was developed by Google, PyTorch was developed by Facebook's AI Research Group, which has recently shifted management of the framework to the newly created PyTorch Foundation, which is under the supervision of the Linux Foundation.
-
 The flexibility of PyTorch allows easy integration of new data types and algorithms, and the framework is also efficient and scalable, since it was designed to minimize the number of computations required and to be compatible with a variety of hardware architectures.
 
-[[web](https://pytorch.org/)], [[documentation](https://pytorch.org/docs/stable/index.html)], [[github](https://github.com/pytorch/pytorch)], [[tutorial](https://pytorch.org/tutorials/)], [[machinelearningmastery.](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/)], [[hub.docker](https://hub.docker.com/r/pytorch/pytorch/tags)], [[learnpytorch.io](https://www.learnpytorch.io/01_pytorch_workflow/)], [[paper](https://arxiv.org/abs/1912.01703)], [[pytorch-2.0](https://pytorch.org/get-started/pytorch-2.0/)]
+[ [[web](https://pytorch.org/)], [[documentation](https://pytorch.org/docs/stable/index.html)], [[github](https://github.com/pytorch/pytorch)], [[tutorial](https://pytorch.org/tutorials/)], [[machinelearningmastery.](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/)], [[hub.docker](https://hub.docker.com/r/pytorch/pytorch/tags)], [[learnpytorch.io](https://www.learnpytorch.io/01_pytorch_workflow/)], [[paper](https://arxiv.org/abs/1912.01703)], [[pytorch-2.0](https://pytorch.org/get-started/pytorch-2.0/)] ]
 
 <img src="./img/pyt.png" width=30%><a> </a><img src="./img/pytorch-ecosystem.png" width=60%>
 
-[torchvision](https://github.com/pytorch/vision), [pytorch-geometric](https://github.com/pyg-team/pytorch_geometric), [ignite](https://github.com/pytorch/ignite), [torch-rl](https://github.com/pytorch/rl), [libMTL](https://github.com/median-research-group/LibMTL), [botorch](https://github.com/pytorch/botorch), [torchdyn](https://github.com/DiffEqML/torchdyn), [OpenMined](https://github.com/OpenMined), [skorch](https://github.com/skorch-dev/skorch), [advertorch](https://github.com/BorealisAI/advertorch).
+[ [torchvision](https://github.com/pytorch/vision), [pytorch-geometric](https://github.com/pyg-team/pytorch_geometric), [ignite](https://github.com/pytorch/ignite), [torch-rl](https://github.com/pytorch/rl), [libMTL](https://github.com/median-research-group/LibMTL), [botorch](https://github.com/pytorch/botorch), [torchdyn](https://github.com/DiffEqML/torchdyn), [OpenMined](https://github.com/OpenMined), [skorch](https://github.com/skorch-dev/skorch), [advertorch](https://github.com/BorealisAI/advertorch) ]
 
-tensors:
+PyTorch 🔥 Tensors:
 
 ```python
     import torch
@@ -44,7 +43,6 @@ tensors:
     x4 = torch.tensor(4, 4)
     x4.view(16) #view in 1d
     x4.view(-1, 8) #pytorch will determinee the right dimension with '-1'
-
 ```
 numpy to torch tensor and vice versa:
 
@@ -79,7 +77,7 @@ numpy to torch tensor and vice versa:
     rand_t = torch.rand(my_shape) #create tensor from shape
 ```
 
-autograd (calculating gradients):
+Autograd (calculating gradients):
 
 ```python
     import torch
@@ -109,7 +107,6 @@ autograd (calculating gradients):
         model_output.backward()
         print(weights.grad)
         weights.grad.zero_()
-    
 ```
 
 optimizers in torch:
@@ -120,12 +117,9 @@ optimizers in torch:
     optimizer.zero_grad()
 ```
 
-
 `requires_grad=True` tells pytorch that we will have to calculate gradient of tensor in later optimization steps.
 
-STEPS:
-
-PREDICTION: 
+### PREDICTION: 
 
 Prediction : (PyTorch Model) ;
 Gradients Computation : (Autograd) ;
@@ -237,4 +231,4 @@ def forward(self, x):
 
 
 
-resources :  [Implementing ConvNext in PyTorch](https://towardsdatascience.com/implementing-convnext-in-pytorch-7e37a67abba6), [transformers tutorial](https://github.com/NielsRogge/Transformers-Tutorials), [python-docathon](https://pytorch.org/blog/announcing-docathon/), [pytorch-youtube](https://www.youtube.com/@PyTorch/videos), [incredible pytorch](https://github.com/ritchieng/the-incredible-pytorch), [awesome pytorch list](https://github.com/bharathgs/Awesome-pytorch-list), [pytorch deep dive tutorial](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/).
+resources :  [Implementing ConvNext in PyTorch](https://towardsdatascience.com/implementing-convnext-in-pytorch-7e37a67abba6), [transformers tutorial](https://github.com/NielsRogge/Transformers-Tutorials), [python-docathon](https://pytorch.org/blog/announcing-docathon/), [pytorch-youtube](https://www.youtube.com/@PyTorch/videos), [incredible pytorch](https://github.com/ritchieng/the-incredible-pytorch), [awesome pytorch list](https://github.com/bharathgs/Awesome-pytorch-list), [pytorch deep dive tutorial](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/), [pytorch tutorials](https://pytorch.org/tutorials/), @github/[pytorch-tutorial](https://github.com/yunjey/pytorch-tutorial), [learnpytorch.io](https://www.learnpytorch.io/), [PyTorch for DL & ML](https://youtu.be/V_xro1bcAuA?si=kEmbxC1CxNsd2oqP), [The StatQuest Introduction to PyTorch](https://youtu.be/FHdlXe1bSe4?si=V_1fU23kGzMttG6P), [Learn PyTorch for deep learning in a day. Literally.](https://youtu.be/Z_ikDlimN6A?si=NAgcfskOQ0YQLheE), [Build an AI/ML Tennis Analysis system with YOLO, PyTorch, and Key Point Extraction](https://youtu.be/L23oIHZE14w?si=xXDJHrPNN1TBhz27), [Deep Learning with PyTorch](https://www.youtube.com/watch?v=kY14KfZQ1TI&list=PLCC34OHNcOtpcgR9LEYSdi9r7XIbpkpK1).
