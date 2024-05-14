@@ -1,9 +1,19 @@
 # Computer Vision with OpenCV [[opencv 4 map](https://docs.opencv.org/4.x/d9/df8/tutorial_root.html)]
 
-The goal of computer vision is to compute geometric and semantic properties of the three-dimensional world from digital images. 
+Computer Vision (CV) is a multidisciplinary field that enables computers to interpret and understand visual information from the world around them, much like human vision. It encompasses techniques and methodologies for acquiring, processing, analyzing, and interpreting images and videos. The ultimate goal of computer vision is to replicate and even enhance human visual perception capabilities using artificial intelligence and computational methods.
+
+Key components of computer vision include:
++ `Image Acquisition`: The process of capturing visual data from various sources such as cameras, sensors, or satellite imagery.
++ `Image Processing`: Techniques for manipulating and enhancing digital images to improve their quality, reduce noise, and extract useful information.
++ `Feature Extraction`: Identifying and extracting relevant features or patterns from images, such as edges, corners, textures, or shapes.
++ `Object Recognition and Detection`: Identifying and localizing objects within images or videos, often through the use of machine learning algorithms.
++ `Semantic Segmentation`: Assigning semantic labels to each pixel in an image, allowing for detailed understanding of object boundaries and spatial relationships.
++ `Scene Understanding`: Interpreting the content and context of a scene, including the relationships between objects and their interactions.
++ `Tracking and Motion Analysis`: Monitoring the movement of objects or individuals over time, often crucial for applications like surveillance or human-computer interaction.
++ `3D Reconstruction`: Inferring the three-dimensional structure of objects or scenes from multiple 2D images or depth sensors.
 
 
-My CV theory notes are at @github/[cv-theory](./cv.MD), SLAM notes are @/[visual-slam](./code/slam/README.MD) and OpenCV C++ notes are @github/[cpp-opencv](https://github.com/florist-notes/alg0rith.math/blob/main/competitive_prog/opencv.MD). Some important and popular computer vision tasks are:
+My Computer Vision theory notes are at @github/[cv-theory](./cv.MD), SLAM notes are @/[visual-slam](./code/slam/README.MD) and OpenCV C++ notes are @github/[cpp-opencv](https://github.com/florist-notes/alg0rith.math/blob/main/competitive_prog/opencv.MD). Some important and popular computer vision tasks are:
 <table width=100%>
 <tr>
 <th>
@@ -72,12 +82,12 @@ Convolutional Neural Network (CNN) is the extended version of artificial neural 
 
 <img src="img/cnn2.png" width=100%> 
 
-+ <b>Input Layers:</b> It’s the layer in which we give input to our model. In CNN, Generally, the input will be an image or a sequence of images. This layer holds the raw input of the image.
-+ <b>Convolutional Layers:</b> This is the layer, which is used to extract the feature from the input dataset. It applies a set of learnable filters known as the kernels to the input images. The filters/kernels are smaller matrices usually 2×2, 3×3, or 5×5 shape. it slides over the input image data and computes the dot product between kernel weight and the corresponding input image patch. The output of this layer is referred ad feature maps.
-+ <b>Activation Layer:</b> By adding an activation function to the output of the preceding layer, activation layers add nonlinearity to the network. it will apply an element-wise activation function to the output of the convolution layer. Some common activation functions are RELU: max(0, x),  Tanh, Leaky RELU, etc.
-+ <b>Pooling layer:</b> This layer is periodically inserted in the covnets and its main function is to reduce the size of volume which makes the computation fast reduces memory and also prevents overfitting. Two common types of pooling layers are max pooling and average pooling.
-+ <b>Flattening:</b> The resulting feature maps are flattened into a one-dimensional vector after the convolution and pooling layers so they can be passed into a completely linked layer for categorization or regression.
-+ <b>Fully Connected Layers:</b> It takes the input from the previous layer and computes the final classification or regression task.
++ <b>`Input Layers`:</b> It’s the layer in which we give input to our model. In CNN, Generally, the input will be an image or a sequence of images. This layer holds the raw input of the image.
++ <b>`Convolutional Layers`:</b> This is the layer, which is used to extract the feature from the input dataset. It applies a set of learnable filters known as the kernels to the input images. The filters/kernels are smaller matrices usually 2×2, 3×3, or 5×5 shape. it slides over the input image data and computes the dot product between kernel weight and the corresponding input image patch. The output of this layer is referred ad feature maps.
++ <b>`Activation Layer`:</b> By adding an activation function to the output of the preceding layer, activation layers add nonlinearity to the network. it will apply an element-wise activation function to the output of the convolution layer. Some common activation functions are RELU: max(0, x),  Tanh, Leaky RELU, etc.
++ <b>`Pooling layer`:</b> This layer is periodically inserted in the covnets and its main function is to reduce the size of volume which makes the computation fast reduces memory and also prevents overfitting. Two common types of pooling layers are max pooling and average pooling.
++ <b>`Flattening`:</b> The resulting feature maps are flattened into a one-dimensional vector after the convolution and pooling layers so they can be passed into a completely linked layer for categorization or regression.
++ <b>`Fully Connected Layers`:</b> It takes the input from the previous layer and computes the final classification or regression task.
 
 ## Semantic Segmentation : U-Net Architecture:
 
@@ -87,14 +97,13 @@ Convolutional Neural Network (CNN) is the extended version of artificial neural 
 
 U-Net's distinctive architecture can be summarized as follows:
 
-+ <b>Contracting Path:</b> The architecture features a contracting path that employs convolutional layers and max-pooling to progressively reduce spatial dimensions while capturing high-level features.
-+ <b>Expansive Path:</b> The expansive path uses transposed convolutions and skip connections to recover spatial information and localize features.
-+ <b>Skip Connections:</b> The innovative inclusion of skip connections enables the network to fuse high-resolution features from the contracting path with the expansive path, facilitating precise segmentation.
++ <b>`Contracting Path`:</b> The architecture features a contracting path that employs convolutional layers and max-pooling to progressively reduce spatial dimensions while capturing high-level features.
++ <b>`Expansive Path`:</b> The expansive path uses transposed convolutions and skip connections to recover spatial information and localize features.
++ <b>`Skip Connections`:</b> The innovative inclusion of skip connections enables the network to fuse high-resolution features from the contracting path with the expansive path, facilitating precise segmentation.
 
 U-Net architecture for semantic segmentation with PyTorch:
 
 ```python
-
 import torch
 import torch.nn as nn
 import torchvision.transforms.functional as TF
