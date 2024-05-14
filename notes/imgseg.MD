@@ -1,13 +1,15 @@
 # Image Segmentation
 
-[ Image Segmentation, Semantic Segmentation, Instance Segmentation, and Panoptic Segmentation ] [[self-driving car perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD)]
+Image segmentation is a critical task in computer vision that involves partitioning an image into multiple segments to simplify its representation and facilitate meaningful analysis. Unlike object detection, which identifies objects and their bounding boxes, image segmentation assigns a label to each pixel in the image, thereby providing a fine-grained understanding of its content.
+
+[ Image Segmentation, Semantic Segmentation, Instance Segmentation, and Panoptic Segmentation ] → [[self-driving car perception](https://github.com/florist-notes/aicore_s/blob/main/notes/perc.MD)]
 
 <img src="./img/seg2.png" width=100%>
 
 Image segmentation is the process of partitioning an image into multiple segments or regions to simplify its representation and facilitate analysis. Image segmentation can be broadly categorized into two types:
 
-+ Semantic Segmentation: In semantic segmentation, each pixel in the image is classified into a particular class or category. It assigns a label to each pixel, indicating the class it belongs to. For example, in a scene containing a cat, a dog, and a car, semantic segmentation would label each pixel as belonging to one of these classes.
-+ Instance Segmentation: Instance segmentation goes a step further than semantic segmentation. It not only labels each pixel with a class but also distinguishes between different instances of the same class. For example, in an image containing two cats, instance segmentation would label each cat separately.
++ `Semantic Segmentation`: In semantic segmentation, each pixel in the image is classified into a particular class or category. It assigns a label to each pixel, indicating the class it belongs to. For example, in a scene containing a cat, a dog, and a car, semantic segmentation would label each pixel as belonging to one of these classes.
++ `Instance Segmentation`: Instance segmentation goes a step further than semantic segmentation. It not only labels each pixel with a class but also distinguishes between different instances of the same class. For example, in an image containing two cats, instance segmentation would label each cat separately.
 
 Various types of models have been developed to tackle this task, each with its own architecture, advantages, and limitations. Here are some of the different types of semantic segmentation models:
 
