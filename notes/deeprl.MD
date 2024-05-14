@@ -7,11 +7,8 @@ My personal notes on Deep Reinforcement Learning are @/[deeprl_theory](./drl.MD)
 Deep Reinforcement Learning (DRL) is a subfield of artificial intelligence that focuses on training agents to make sequential decisions in complex environments using deep neural networks. DRL algorithms can be categorized into various types and classes based on their underlying principles and methodologies. Here are detailed notes on these types and classes:
 
 + `Markov Decision Processes (MDPs)`: The mathematical framework for modeling sequential decision-making problems, comprising states, actions, transition probabilities, and rewards.
-
 + `Bellman Equation`: A fundamental equation in dynamic programming that expresses the value of a state in terms of the values of its successor states.
-
 + `Value Functions`: Value functions quantify the expected return of being in a particular state (V(s)) or taking a specific action in a state (Q(s, a)).
-
 + `Optimal Value Function`: The optimal value function represents the maximum achievable value for each state or state-action pair in an environment.
 
 ### +  Value-Based Methods:
@@ -26,23 +23,21 @@ Deep Reinforcement Learning (DRL) has revolutionized the field of artificial int
     - `Experience Replay`: Storing agent experiences in a replay buffer and sampling batches of experiences randomly for training improves data efficiency and stabilizes learning.
     - `Target Networks`: Utilizing separate target networks to compute target Q-values stabilizes training by decoupling target and current network parameters.
 
-Extensions and Enhancements:  
-    + `Double Deep Q-Networks (DDQN)`: DDQN improves upon DQN by mitigating overestimation bias in Q-values, enhancing stability and learning. Mitigates overestimation bias by decoupling action selection and value estimation.  ([ddqn.py](./code/ddqn.py))
- 
-    + `Prioritized Experience Replay`: This technique assigns different priorities to experiences in the replay buffer, allowing the agent to focus on learning from more informative experiences.
-    + `Dueling DQN`: Separates the estimation of state value and advantage value, improving learning efficiency.
-    + `Rainbow DQN`: Combines multiple DQN extensions (e.g., double Q-learning, prioritized experience replay, dueling networks) for enhanced performance.
-
++ `Double Deep Q-Networks (DDQN)`: DDQN improves upon DQN by mitigating overestimation bias in Q-values, enhancing stability and learning. Mitigates overestimation bias by decoupling action selection and value estimation.  ([ddqn.py](./code/ddqn.py))
+  
+Extensions and Enhancements:
++ `Prioritized Experience Replay`: This technique assigns different priorities to experiences in the replay buffer, allowing the agent to focus on learning from more informative experiences.
++ `Dueling DQN`: Separates the estimation of state value and advantage value, improving learning efficiency.
++ `Rainbow DQN`: Combines multiple DQN extensions (e.g., double Q-learning, prioritized experience replay, dueling networks) for enhanced performance.
 
 
 ### +  Policy-Based Methods:
 Policy-based methods represent a fundamental approach in Deep Reinforcement Learning (DRL), focusing on directly learning a policy that maps states to actions, rather than estimating value functions. A policy defines the agent's behavior by specifying the probability distribution over actions given states. The theoretical basis for policy optimization, stating that the gradient of the expected return with respect to the policy parameters can be computed analytically.
 
-    x `Parametric Policies`: Policies are typically parameterized by a set of learnable parameters, often represented by neural networks.
-    x `Deterministic vs. Stochastic Policies`: Deterministic policies directly output actions, while stochastic policies output action probabilities, enabling exploration.
+- `Parametric Policies`: Policies are typically parameterized by a set of learnable parameters, often represented by neural networks.
+- `Deterministic vs. Stochastic Policies`: Deterministic policies directly output actions, while stochastic policies output action probabilities, enabling exploration.
 
 + <b>`Policy Gradients`:</b> Policy gradient methods directly optimize the policy function by maximizing expected cumulative rewards. Algorithms like REINFORCE and Trust Region Policy Optimization (TRPO) fall under this category.
-
 + <b>`Proximal Policy Optimization (PPO)`:</b> PPO is a popular policy gradient algorithm that addresses some of the limitations of TRPO. It uses a clipped surrogate objective to ensure stable updates. PPO constrains policy updates to ensure they do not deviate too far from the previous policy, enhancing stability and sample efficiency. PPO employs a clipped surrogate objective to prevent large policy updates, mitigating the risk of policy collapse.
 
 
@@ -53,8 +48,8 @@ Actor-Critic methods represent a powerful class of algorithms in Deep Reinforcem
 
     + `Actor`: The policy network that learns to select actions based on states.
     + `Critic`: The value function network that evaluates the goodness of actions or state-action pairs.
-    
-    `Temporal Difference (TD) Learning`: Actor-Critic methods leverage TD learning to update both the actor (policy) and critic (value function) networks iteratively based on temporal difference errors.
+
+`Temporal Difference (TD) Learning`: Actor-Critic methods leverage TD learning to update both the actor (policy) and critic (value function) networks iteratively based on temporal difference errors.
 
 +  <b>`Advantage Actor-Critic (A2C)`:</b> A2C combines the benefits of both policy gradients and value-based methods by using an actor (policy) network and a critic (value) network. It reduces variance compared to vanilla policy gradients. A2C uses an advantage function to estimate the advantage of taking a particular action over the average action value, guiding policy updates. A2C employs multiple parallel environments with asynchronous updates to improve sample efficiency and accelerate learning.
 
