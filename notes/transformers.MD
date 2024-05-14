@@ -1,16 +1,24 @@
-# Transformers
+# Transformers 🌸
 
-In recent years, Transformers have emerged as a groundbreaking architecture in the field of deep learning, revolutionizing natural language processing and extending their capabilities to various domains, including computer vision.
+Transformers have emerged as a groundbreaking architecture in the field of deep learning, revolutionizing natural language processing and extending their capabilities to various domains, including computer vision. Characterized by their unique attention mechanisms and parallel processing abilities, Transformer models stand as a testament to the innovative leaps in understanding and generating human language with an accuracy and efficiency previously unattainable.
+
+First appeared in 2017 in the “[Attention is all you need](https://arxiv.org/abs/1706.03762)” article by Google, the transformer architecture is at the heart of groundbreaking models like ChatGPT and other LLMs etc. The inception of Transformers initially aimed to tackle sequence transduction, encompassing tasks like neural machine translation, essentially focusing on converting input sequences to output sequences. 
+
+To put it simply:
+
+`"A transformer model is a neural network that learns the context of sequential data and generates new data out of it"`.
+
+<img src="img/trans.png" width=100%> 
 
 A Transformer model consists of several key components:
 
-   + <b>Multi-Head Self-Attention:</b> This mechanism enables the model to focus on different parts of the input sequence simultaneously, promoting better contextual understanding.
+   + <b>`Multi-Head Self-Attention`:</b> This mechanism enables the model to focus on different parts of the input sequence simultaneously, promoting better contextual understanding.
 
-   + <b>Positional Encoding:</b> Transformers lack inherent information about the order of elements in a sequence, so positional encodings are added to input embeddings to convey their positions.
+   + <b>`Positional Encoding`:</b> Transformers lack inherent information about the order of elements in a sequence, so positional encodings are added to input embeddings to convey their positions.
 
-   + <b>Feedforward Neural Networks:</b> After attention mechanisms, a feedforward neural network is applied to capture complex patterns and relationships in the data.
+   + <b>`Feedforward Neural Networks`:</b> After attention mechanisms, a feedforward neural network is applied to capture complex patterns and relationships in the data.
 
-   + <b>Layer Normalization and Residual Connections:</b> These techniques stabilize training and mitigate vanishing gradient issues.
+   + <b>`Layer Normalization and Residual Connections`:</b> These techniques stabilize training and mitigate vanishing gradient issues.
 
 The Transformer architecture follows an encoder-decoder structure but does not rely on recurrence and convolutions in order to generate an output. A transformer is a deep learning architecture that relies on the parallel multi-head attention mechanism.  
 
@@ -18,7 +26,6 @@ The Transformer architecture follows an encoder-decoder structure but does not r
 The task of the encoder, on the left half of the Transformer architecture, is to map an input sequence to a sequence of continuous representations, which is then fed into a decoder. The decoder, on the right half of the architecture, receives the output of the encoder together with the decoder output at the previous time step to generate an output sequence.
 
 ```python
-
 class Encoder(nn.Module):
     def __init__(self, vocab_size, d_model, N, heads):
         super().__init__()
@@ -48,22 +55,16 @@ class Decoder(nn.Module):
         for i in range(self.N):
             x = self.layers[i](x, e_outputs, src_mask, trg_mask)
         return self.norm(x)
-
 ```
-
-
-<img src="img/trans.png" width=100%> 
+<img src="img/transf.png" width=38%> <img src="img/transf2.png" width=60%> 
 
 ```python
-
 class MultiHeadAttention(nn.Module):
     def __init__(self, heads, d_model, dropout = 0.1):
         super().__init__()
-        
         self.d_model = d_model
         self.d_k = d_model // heads
         self.h = heads
-        
         self.q_linear = nn.Linear(d_model, d_model)
         self.v_linear = nn.Linear(d_model, d_model)
         self.k_linear = nn.Linear(d_model, d_model)
@@ -71,32 +72,26 @@ class MultiHeadAttention(nn.Module):
         self.out = nn.Linear(d_model, d_model)
     
     def forward(self, q, k, v, mask=None):
-        
         bs = q.size(0)
-        
         # perform linear operation and split into h heads
-        
         k = self.k_linear(k).view(bs, -1, self.h, self.d_k)
         q = self.q_linear(q).view(bs, -1, self.h, self.d_k)
         v = self.v_linear(v).view(bs, -1, self.h, self.d_k)
-        
         # transpose to get dimensions bs * h * sl * d_model
-       
         k = k.transpose(1,2)
         q = q.transpose(1,2)
         v = v.transpose(1,2)
         # calculate attention using function we will define next
         scores = attention(q, k, v, self.d_k, mask, self.dropout)
-        
         # concatenate heads and put through final linear layer
         concat = scores.transpose(1,2).contiguous()\
         .view(bs, -1, self.d_model)
-        
         output = self.out(concat)
-    
         return output
-
 ```
+
+Read : [A Detailed Exploration of Transformer Architecture](https://www.datacamp.com/tutorial/how-transformers-work), [Building a Transformer with PyTorch](https://www.datacamp.com/tutorial/building-a-transformer-with-py-torch) | [CS25: Transformers United V4](https://web.stanford.edu/class/cs25/)
+
 ## Vision Transformers (ViT)
 
 Vision Transformers extend the Transformer architecture to the domain of computer vision. ViTs have exhibited remarkable performance in image classification, object detection, and segmentation tasks. Their core idea is to convert 2D image data into a 1D sequence that can be processed by the Transformer architecture. 
