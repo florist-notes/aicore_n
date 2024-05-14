@@ -36,9 +36,9 @@ TensorFlow 2.0 represents a significant evolution of the popular open-source mac
 
 + <b>`TensorFlow Extended`</b> (TFX- End-to-End ML Pipelines): TFX, an end-to-end machine learning platform, is integrated with TensorFlow 2.0, providing solutions for deploying machine learning pipelines at scale.
 
-+ <b>`TensorFlow.js and TensorFlow Lite for Web</b> ( Web Integration)`: TensorFlow 2.0 supports TensorFlow.js for training and deploying models in the browser, as well as TensorFlow Lite for deploying models on mobile and embedded devices.
++ <b>`TensorFlow.js and TensorFlow Lite for Web ( Web Integration)`</b>: TensorFlow 2.0 supports TensorFlow.js for training and deploying models in the browser, as well as TensorFlow Lite for deploying models on mobile and embedded devices.
 
-+ <b>`Future Directions</b> (Ongoing Advancements)`: TensorFlow continues to evolve, with ongoing research and development in areas such as automated machine learning (AutoML), reinforcement learning, and quantum machine learning.
++ <b>`Future Directions (Ongoing Advancements)`</b> : TensorFlow continues to evolve, with ongoing research and development in areas such as automated machine learning (AutoML), reinforcement learning, and quantum machine learning.
 
 
 ```python
