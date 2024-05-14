@@ -208,7 +208,7 @@ Diffusion Models
 
 <td>
 
-+ [mmagic](https://github.com/open-mmlab/mmagic), [awesome-diffusion-models](https://github.com/diff-usion/Awesome-Diffusion-Models).
++ [mmagic](https://github.com/open-mmlab/mmagic), [awesome-diffusion-models](https://github.com/diff-usion/Awesome-Diffusion-Models), huggingface/[diffusers](https://github.com/huggingface/diffusers), [Awesome-Diffusion-Models](https://github.com/diff-usion/Awesome-Diffusion-Models), [denoising-diffusion-pytorch](https://github.com/lucidrains/denoising-diffusion-pytorch), [guided-diffusion](https://github.com/openai/guided-diffusion), [mmagic](https://github.com/open-mmlab/mmagic), github/[diffusion-models](https://github.com/topics/diffusion-models).
  
 </td>
 </tr>
@@ -277,7 +277,7 @@ Annotation tool
 
 <td>
 
-+ [labelme](https://github.com/wkentaro/labelme), [labelmg](https://github.com/heartexlabs/labelImg), [label-studio](https://github.com/heartexlabs/label-studio).
++ [labelme](https://github.com/wkentaro/labelme), [labelmg](https://github.com/heartexlabs/labelImg), [label-studio](https://github.com/heartexlabs/label-studio), [cvat](https://github.com/cvat-ai/cvat), [awesome-data-labeling](https://github.com/HumanSignal/awesome-data-labeling), github/[annotation-tool](https://github.com/topics/annotation-tool).
  
 </td>
 </tr>
