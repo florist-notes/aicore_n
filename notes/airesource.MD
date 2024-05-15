@@ -798,6 +798,8 @@ within a unified artificial intelligence platform. Google
 provides a lot of ML services like AutoML, diagflow,
 deep learning containers etc, [here](https://cloud.google.com/products/ai) is the list.
 
+### [Google Veo and Imagen 3](https://blog.google/technology/ai/google-generative-ai-veo-imagen-3/)
+
 
  ### [HuggingFace](https://huggingface.co/)
 
