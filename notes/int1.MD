@@ -51,8 +51,9 @@ Autonomous Vehicle](https://arxiv.org/abs/2306.16784) ]
 
 ## Sample Approach:
 
-* #### How to detect vehicle cut in with Deep Learning?
+* #### How to detect vehicle cut in and measure accuracy of its performance with Deep Learning?
+  [ [Predicting Cut-Ins in Traffic Using a Neural Network](./252178.pdf), [Cut-in Detection from Videos](./CSE23-143AUAPV.pdf), [Monocular Vision-based Prediction of Cut-in Maneuvers with LSTM Networks](./2203.10707v1.pdf) ]
 
-* #### How to measure accuracy of performance in detection?
+
 
 <hr />
