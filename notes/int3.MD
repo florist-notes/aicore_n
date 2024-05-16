@@ -45,4 +45,21 @@ fetch/pre-process, each operating on a different batch of data in parallel, and 
 `Default Configuration : `  The default power mode is the highest rated for all devices:
  MAXN for the AGX and Nano, and 15𝑊 for NX (modes 𝑔, 𝑀𝐴𝑋𝑁 and 15𝑊). DVFS is turned off. The fan speed is set to maximum to avoid resource throttling due to overheating. By default, we store the training data on SSD for the AGX and NX, and on SD card for the Nano. In experiments where we need the same storage media type across all three device classes, we use HDD over USB for the training data as it is present on all. 
  The prefetch factor in PyTorch DataLoader is set to its default value of 2. The number of
- worker processes in the DataLoader is set to𝑤 = 4. Number of worker processes in the DataLoader is set to𝑤 = 4. Previous works have shown that large mini-batch sizes adversely affect convergence and therefore we use a mini-batchsize of 𝑏𝑠 = 16 images when training.  The learning rate and momentum are set to 0.01 and 0.9 respectively. We use Stochastic Gradient Descent (SGD) as the optimizer, and cross-entropy as the loss function. We clear the page cache at the start of every experiment run to avoid any cross-experiment effects, but it is retained across epochs within a single training run.
+ worker processes in the DataLoader is set to𝑤 = 4. Number of worker processes in the DataLoader is set to𝑤 = 4. Previous works have shown that large mini-batch sizes adversely affect convergence and therefore we use a mini-batchsize of 𝑏𝑠 = 16 images when training.  The learning rate and momentum are set to 0.01 and 0.9 respectively. We use Stochastic Gradient Descent (SGD) as the optimizer, and cross-entropy as the loss function. We clear the page cache at the start of every experiment run to avoid any cross-experiment effects, but it is retained across epochs within a single training run.  In each experiment, we train the DNN models for 6 epochs (15h). By default, we report the results averaged over epochs 1–5 (90 min for each epoch) since epoch 0 has bootstrapping overheads.
+
+ `Performance Metrics `:
+ + CPU, GPU and RAM utilization, and average and instantaneous power are measured using the `jtop` Python module, which internally uses the `tegrastats` utility from NVIDIA, at ≈ 1 𝑠 sampling.
+ + The power measurements are from on-board sensors in the Jetsons, which capture the power load from the module but not the carrier board and peripherals. The socket load can be captured by using an external power monitor, which we use for baseload studies. The module load reported by the on-board sensors are used in our analysis, unless noted otherwise.
+ + The sampling interval deviates by up to 200 𝑚𝑠 due to delays introduced by the rest of the
+ monitoring harness:  `iostat` takes 1𝑠 when run periodically.
+ + The total energy for training in a duration 𝑇 is calculated as a sum of the instantaneous power (𝑝_{𝑡_𝑖} in watts) measured at time 𝑡_𝑖, weighted by the duration between successive samples (𝑡_𝑖 − 𝑡_{𝑖−1}), given as
+  $$ \sum _{{t_i}∈T} (𝑝_{𝑡_𝑖} (𝑡_𝑖 −𝑡_{𝑖−1})) $$
+
++  The read IOPS and bytes read per second (throughput) are measured using `iostat`.
++  The fraction of the dataset that is present in the Linux (in-memory) disk cache is measured using `vmtouch`.
++  We measure the fetch stall time and the GPU compute time for every mini-batch. Fetch stall time is the visible time taken to fetch and pre-process data, and does not overlap with the GPU compute time, i.e., max((fetch time + pre-process time − GPU compute time),0). GPU compute
+ time is the time taken by the mini-batch to execute the training on the GPU. It includes the kernel launch time, and the forward and backward passes of training. We measure these times using the `torch.cuda.event` with the `synchronize` option so that time captured is accurate.
++ We sum the fetch stall and GPU compute times over all mini-batches in an epoch to obtain
+ their average time per epoch. We also measure and report the End-to-End (E2E) time to process all
+ mini-batches of each epoch, including the fetch stall time, GPU compute time and any framework
+ overheads.
