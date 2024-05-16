@@ -95,13 +95,16 @@ Increasing the mini-batch size increases the stall time per mini-batch but reduc
 
  ### 🌸 Variability across Device Instances and Epoch :
 
- Inferencing workloads that run in milliseconds, training workloads run for minutes or hours and are likely to be less sensitive across devices.
-
- There is minimal variability in the end-to-end training time per epoch, for different epochs trained on a given device type. There is minimal variability in the end-to-end training time per epoch across devices of the same type. There is minimal variability in the energy consumed per epoch across time and across devices of the same type.
+ Inferencing workloads that run in milliseconds, training workloads run for minutes or hours and are likely to be less sensitive across devices. There is minimal variability in the end-to-end training time per epoch, for different epochs trained on a given device type. There is minimal variability in the end-to-end training time per epoch across devices of the same type. There is minimal variability in the energy consumed per epoch across time and across devices of the same type.
 
  Significant variability is observed when there is a difference in the software configurations of devices. Anecdotally, we observe that any changes to the OS kernel, PyTorch, or NVIDIA Jetpack versions lead to variability in the performance of different instances of the same device type.
 
  ### 🌸 Effect of DVFS :
+
+ Enabling Dynamic Voltage and Frequency Scaling (DVFS) allows the CPU governor to dynamically alter the CPU, GPU, and memory frequencies depending on the system load, to conserve energy. DVFS can be changed using the `jetson_clocks` utility. We disable DVFS by setting the CPU, GPU, and memory frequencies to a static value. We set this to the maximum frequency allowed for the default MAXN(𝑔) power mode and do not change it.
+
+    + Enabling DVFS has negligible effect on the end-to-end time or the energy consumed per epoch.
+    + Enabling DVFS does change the frequencies of CPU, GPU, and memory, despite not affecting the training performance.
 
  ### 🌸 Baseload and Effect of Power Modes :
 
