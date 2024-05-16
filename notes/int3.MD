@@ -108,5 +108,27 @@ Increasing the mini-batch size increases the stall time per mini-batch but reduc
 
  ### 🌸 Baseload and Effect of Power Modes :
 
+ #### + Baseload under Idle States:
+
+ + (i) A clean-start of the device with no applications running, but with the logging of performance and energy metrics turned on and DVFS turned off. This setting mimics our default
+experiment harness but without actually running any training workloads. 
+ + (ii) No applications or logging harness running, but DVFS turned off. 
+ + (iii) No applications or logging running, but DVFS turned on. 
+ + (iv) Device in Wake on LAN (WoL) state, where it can be activated by a network command but is otherwise suspended. The last is helpful when devices have to be occasionally woken up for training but can otherwise remain turned off.
+
+  WoL has the lowest power consumption of all the idle states for all devices, and is
+ substantially lower than the next lowest idle state with DVFS on.
+
+ #### + Impact of Power Modes:
+The Jetson devices come with a number of pre-defined power modes that users can choose from. Additionally, we can also configure a custom power mode by specifying the number of CPU cores enabled, and the frequencies of CPU, GPU, and RAM (External Memory Controller (EMC)). The power mode can be changed on the fly, without any system downtime. 
+
+This can help define an ideal power mode for each DNN model training, which balances the training time and the energy used by the constrained edge device, e.g., to stay within a daily energy budget or to avoid overheating of enclosures, while still minimizing the training time. The range of values for the frequencies is also wide, and choosing one power mode over another can result in an order of magnitude performance difference in time and energy.
+
+The default power mode may not be Pareto optimal. For all models, the peak power mode𝑔
+ (MAXN; ♦) with the highest core counts and frequencies has the fastest time, and is on Pareto front. The energy consumed is often dominated by the baseload rather than the incremental load due to training.
+
+ The variation in energy consumed per epoch is modest across power modes for larger DNN
+ models. The GPU compute time is inversely proportional to the GPU frequency for larger DNNs.  Increasing the CPU frequency and number of cores reduce the stall time. Increasing the CPU frequency and number of cores reduces the GPU compute time, and more so for light models. GPU compute time and stall times are affected by the memory frequency. 
+
  ### 🌸 Predicting Training Time and Energy Usage for Custom Power Modes :
 
