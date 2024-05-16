@@ -18,14 +18,14 @@
 ### Mini-batch Size and Training Setup:
 + Mini-batch size set to 16 images.
 + Learning rate: 0.01, Momentum: 0.9.
-+ Optimizer: Stochastic Gradient Descent (SGD).
-+ Loss function: Cross-entropy.
++ Optimizer: Stochastic Gradient Descent (SGD) [[GD](https://youtu.be/vMh0zPT0tLI?si=-N5ifoa8w7O4e4eQ), [SGD](https://youtu.be/vMh0zPT0tLI?si=jwl9O-9t3qGnyyJ5)].
++ Loss function: Cross-entropy [[Cross Entropy](https://youtu.be/6ArSys5qHAU?si=M9lWNnIWddw0Hm2m), [Cross Entropy Derivatives and Backpropagation](https://youtu.be/xBEh66V9gZo?si=B5EQlOdZw7dsT4I7)].
   
 ### Experimental Procedure:
 + Page cache cleared at the start of every experiment run to avoid cross-experiment effects. 
 + However, it's retained across epochs within a single training run.
-+ Each experiment trains DNN models for 6 epochs (approximately 15 hours).
-+ Results averaged over epochs 1–5 (90 minutes for each epoch) since epoch 0 incurs bootstrapping overheads.
++ Each experiment trains DNN models for 6 epochs ([Image Classification with Convolutional Neural Networks (CNNs)](https://youtu.be/HGwBXDKFk9I?si=ytQFbyxcFKXDX_5H)).
++ Results averaged over epochs 1–5 since epoch 0 incurs bootstrapping overheads.
 
 ```python
 import torch
