@@ -32,8 +32,17 @@ Performing these three stages sequentially will cause the GPU to remain idle whi
 
 <img src="./img/jetson.png" width=100%>
 
-All devices of the AGX, NX and Nano run Linux for Tegra (L4T) 𝑣32.5.1 with 𝑣4.9.201-tegra kernel. They have CUDA 𝑣10.2 with Jetpack 𝑣4.5.1. We use PyTorch 𝑣1.8 and Torchvision 𝑣0.9 as
-the DNN training framework. However, Orin requires a more recent OS and library version: CUDA
-𝑣11.2, Jetpack 𝑣5.0.1 running on L4T 𝑣34.1.1, Pytorch 𝑣1.12 and Torchvision 𝑣0.13.
+`Setup` : All devices of the AGX, NX and Nano run Linux for Tegra (L4T) 𝑣32.5.1 with 𝑣4.9.201-tegra kernel. They have CUDA 𝑣10.2 with Jetpack 𝑣4.5.1. We use PyTorch 𝑣1.8 and Torchvision 𝑣0.9 as the DNN training framework. However, Orin requires a more recent OS and library version: CUDA 𝑣11.2, Jetpack 𝑣5.0.1 running on L4T 𝑣34.1.1, Pytorch 𝑣1.12 and Torchvision 𝑣0.13.
 
+Research uses the PyTorch framework for training with the `Dataloader` to fetch and pre
+process data. We use the `num_workers` flag to vary the number of fetch and pre-process workers.
+When `num_workers=0`, a single process performs fetch, pre-process and GPU compute sequen
+tially, without pipelining. When `num_workers ≥ 1`, PyTorch spins up that many processes for
+fetch/pre-process, each operating on a different batch of data in parallel, and a separate process invokes the GPUcomputeoneachpre-processedbatchsequentially. This forms a two-stage pipeline  of fetch/pre-process followed by compute
 
+<img src="./img/dl2.png" width=100%>
+
+`Default Configuration : `  The default power mode is the highest rated for all devices:
+ MAXN for the AGX and Nano, and 15𝑊 for NX (modes 𝑔, 𝑀𝐴𝑋𝑁 and 15𝑊). DVFS is turned off. The fan speed is set to maximum to avoid resource throttling due to overheating. By default, we store the training data on SSD for the AGX and NX, and on SD card for the Nano. In experiments where we need the same storage media type across all three device classes, we use HDD over USB for the training data as it is present on all. 
+ The prefetch factor in PyTorch DataLoader is set to its default value of 2. The number of
+ worker processes in the DataLoader is set to𝑤 = 4. Number of worker processes in the DataLoader is set to𝑤 = 4. Previous works have shown that large mini-batch sizes adversely affect convergence and therefore we use a mini-batchsize of 𝑏𝑠 = 16 images when training.  The learning rate and momentum are set to 0.01 and 0.9 respectively. We use Stochastic Gradient Descent (SGD) as the optimizer, and cross-entropy as the loss function. We clear the page cache at the start of every experiment run to avoid any cross-experiment effects, but it is retained across epochs within a single training run.
