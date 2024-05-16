@@ -95,6 +95,12 @@ Increasing the mini-batch size increases the stall time per mini-batch but reduc
 
  ### 🌸 Variability across Device Instances and Epoch :
 
+ Inferencing workloads that run in milliseconds, training workloads run for minutes or hours and are likely to be less sensitive across devices.
+
+ There is minimal variability in the end-to-end training time per epoch, for different epochs trained on a given device type. There is minimal variability in the end-to-end training time per epoch across devices of the same type. There is minimal variability in the energy consumed per epoch across time and across devices of the same type.
+
+ Significant variability is observed when there is a difference in the software configurations of devices. Anecdotally, we observe that any changes to the OS kernel, PyTorch, or NVIDIA Jetpack versions lead to variability in the performance of different instances of the same device type.
+
  ### 🌸 Effect of DVFS :
 
  ### 🌸 Baseload and Effect of Power Modes :
