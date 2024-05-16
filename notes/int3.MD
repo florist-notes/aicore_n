@@ -82,7 +82,16 @@ Pipelining can reduce the energy consumption for training. Pipelining increases 
 neous power load across all models and devices, but the total energy consumed for the epoch is the same or lower. As fetch stalls reduce, the GPU and the CPU are utilized better and this increases the power load. However, this is offset by a drop in the training time for the epoch due to pipelining.
  ### 🌸 Effect of Storage Media :
 
- ### 🌸 EffectofMini-batchSize :
+Any drop in stall time due to a faster storage media depends on the I/O pressure during fetch. When the mini-batch size for a model is small, such as MNIST and CIFAR, the I/O over heads of fetch are small. Caching and pipelining can hide the stall times of a slower storage media, and a faster disk may not offer benefits. For an expected training configuration of epoch 1+ using 𝑤=4 pipelined and parallelized workers, the benefit of a faster disk is minimal.
+
+Storage media does not directly affect the energy per epoch, but the energy used changes due to the difference in training times.
+
+ ### 🌸 Effect of Mini-batchSize :
+Mini-batch size is a well-studied hyper-parameter in DNN training, and it affects the statistical efficiency and rate of convergence. Their sizes range from 1–100𝑠 of samples, though smaller sizes of 2–32 give better results. The maximum mini-batch size is limited by the GPU memory.
+
+Increasing the mini-batch size reduces the training time per epoch until the parallelism of the GPU cores saturate. As the mini-batch size increases, the data-parallelism of the GPU is better exploited as the samples in the mini-batch are independently processed on the different cores, and there are more rounds of data-parallel work per mini-batch. As a result, the compute time per mini-batch only gradually increases with larger batches until the GPU hits maximum utilization.
+
+Increasing the mini-batch size increases the stall time per mini-batch but reduces the overall stall time per epoch.
 
  ### 🌸 Variability across Device Instances and Epoch :
 
