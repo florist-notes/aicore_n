@@ -1,6 +1,6 @@
 ## Characterizing the Performance of Accelerated Jetson Edge Devices for Training Deep Learning Models
 
-[ 🌸 paper : [https://doi.org/10.1145/3570604](https://dl.acm.org/doi/10.1145/3570604) ] | DL for [autonomous vehicles](https://arxiv.org/abs/1912.10773), [smart cities](https://ieeexplore.ieee.org/document/8704334) | DNN model training on the edge - [P1](https://ieeexplore.ieee.org/document/8763885/), [P2](https://ieeexplore.ieee.org/document/8778327).
+🌸 [ paper : [https://doi.org/10.1145/3570604](https://dl.acm.org/doi/10.1145/3570604) ] | DL for [autonomous vehicles](https://arxiv.org/abs/1912.10773), [smart cities](https://ieeexplore.ieee.org/document/8704334) | DNN model training on the edge - [P1](https://ieeexplore.ieee.org/document/8763885/), [P2](https://ieeexplore.ieee.org/document/8778327).
 
 <p class="ex1" align="justify" style="padding: 5px 5px 5px 5px">
 Abstract : Deep Neural Networks (DNNs) have had a significant impact on domains like autonomous vehicles and smart cities through low-latency inferencing on edge computing devices close to the data source. However, DNNtraining on the edge is poorly explored. Techniques like federated learning and the growing capacity of GPU-accelerated edge devices like NVIDIA Jetson motivate the need for a holistic characterization of DNN training on the edge. Training DNNs is resource-intensive and can stress an edge’s GPU, CPU, memory and storage capacities. Edge devices also have different resources compared to workstations and servers, such as slower shared memory and diverse storage media. Here, we perform a principled study of DNN training on individual devices of three contemporary Jetson device types: AGX Xavier, Xavier NX and Nano for three diverse DNN model–dataset combinations. We vary device and training parameters such as I/O pipelining and parallelism, storage media, mini-batch sizes and power modes, and examine their effect on CPU and GPU utilization, fetch stalls, training time, energy usage, and variability. Our analysis exposes several resource inter-dependencies and counter-intuitive insights, while also helping quantify known wisdom. Our rigorous study can help tune the training performance on the edge, trade-off time and energy usage on constrained devices, and even select an ideal edge hardware for a DNN workload, and, in future, extend to federated learning too. As an illustration, we use these results to build a simple model to predict the training time and energy per epoch for any given DNN across different power modes, with minimal additional profiling.
@@ -48,9 +48,8 @@ fetch/pre-process, each operating on a different batch of data in parallel, and 
  worker processes in the DataLoader is set to𝑤 = 4. Number of worker processes in the DataLoader is set to𝑤 = 4. Previous works have shown that large mini-batch sizes adversely affect convergence and therefore we use a mini-batchsize of 𝑏𝑠 = 16 images when training.  The learning rate and momentum are set to 0.01 and 0.9 respectively. We use Stochastic Gradient Descent (SGD) as the optimizer, and cross-entropy as the loss function. We clear the page cache at the start of every experiment run to avoid any cross-experiment effects, but it is retained across epochs within a single training run.  In each experiment, we train the DNN models for 6 epochs (15h). By default, we report the results averaged over epochs 1–5 (90 min for each epoch) since epoch 0 has bootstrapping overheads.
 
  `Performance Metrics `:
- + CPU, GPU and RAM utilization, and average and instantaneous power are measured using the `jtop` Python module, which internally uses the `tegrastats` utility from NVIDIA, at ≈ 1 𝑠 sampling.
- + The power measurements are from on-board sensors in the Jetsons, which capture the power load from the module but not the carrier board and peripherals. The socket load can be captured by using an external power monitor, which we use for baseload studies. The module load reported by the on-board sensors are used in our analysis, unless noted otherwise.
- + The sampling interval deviates by up to 200 𝑚𝑠 due to delays introduced by the rest of the
+ + CPU, GPU and RAM utilization, and average and instantaneous power are measured using the `jtop` Python module, which internally uses the `tegrastats` utility from NVIDIA, at ≈ 1 𝑠 sampling. The power measurements are from on-board sensors in the Jetsons, which capture the power load from the module but not the carrier board and peripherals. The socket load can be captured by using an external power monitor, which we use for baseload studies. The module load reported by the on-board sensors are used in our analysis, unless noted otherwise.
+ The sampling interval deviates by up to 200 𝑚𝑠 due to delays introduced by the rest of the
  monitoring harness:  `iostat` takes 1𝑠 when run periodically.
  + The total energy for training in a duration 𝑇 is calculated as a sum of the instantaneous power (𝑝_{𝑡_𝑖} in watts) measured at time 𝑡_𝑖, weighted by the duration between successive samples (𝑡_𝑖 − 𝑡_{𝑖−1}), given as
   
@@ -66,3 +65,30 @@ $$ \sum_{t_i \in T} (p_{t_i} (t_i - t_{i-1})) $$
  their average time per epoch. We also measure and report the End-to-End (E2E) time to process all
  mini-batches of each epoch, including the fetch stall time, GPU compute time and any framework
  overheads.
+
+ ## RESULTS AND ANALYSIS:
+
+ ### 🌸 Pipelined Training and Disk Caching :
+
+`Disk Caching`: The Linux page cache uses available free memory to retain recently fetched file pages in memory. So some of the training data used in previous epoch(s) may be available in the cache for future epochs, reducing disk access.
+For epoch 0, all training data will be accessed from the disk, whereas for epochs 1+, a subset of the data may be present in and fetched from RAM, depending on the memory pressure from applications and the Least Recently Used (LRU) cache eviction policy.
+
+We get caching benefits only in a sweet spot when: (1) the training data is small enough to fully fit in the cache, i.e., within the available RAM after loading the DNN model, and yet (2) the training data also is large enough that the fetch I/O time dominates over the pre-processing time. 
+Pipelining reduces the stall time. When pipelining is enabled by increasing the workers from 𝑤 =0 to 𝑤 =1 for epochs 1+, the stall time per epoch sharply reduces.
+
+The stall time and its reduction due to pipelining are decided by the relative speeds of CPU, GPU and disk. With pipelining enabled (𝑤 = 1), a stall is avoided when the sum of the fetch time from disk (or cache) and pre-processing time on CPU is smaller than or comparable to the GPU compute time for a mini-batch.  Parallelizing the fetch and pre-process may give benefits beyond pipelining. When we increase the number of workers to𝑤 > 1, we can fetch and pre-process multiple mini-batches in parallel. This may further reduce the stall time, but is not guaranteed.
+
+Pipelining can reduce the energy consumption for training. Pipelining increases the instanta
+neous power load across all models and devices, but the total energy consumed for the epoch is the same or lower. As fetch stalls reduce, the GPU and the CPU are utilized better and this increases the power load. However, this is offset by a drop in the training time for the epoch due to pipelining.
+ ### 🌸 Effect of Storage Media :
+
+ ### 🌸 EffectofMini-batchSize :
+
+ ### 🌸 Variability across Device Instances and Epoch :
+
+ ### 🌸 Effect of DVFS :
+
+ ### 🌸 Baseload and Effect of Power Modes :
+
+ ### 🌸 Predicting Training Time and Energy Usage for Custom Power Modes :
+
