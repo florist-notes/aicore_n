@@ -53,6 +53,7 @@ fetch/pre-process, each operating on a different batch of data in parallel, and 
  + The sampling interval deviates by up to 200 𝑚𝑠 due to delays introduced by the rest of the
  monitoring harness:  `iostat` takes 1𝑠 when run periodically.
  + The total energy for training in a duration 𝑇 is calculated as a sum of the instantaneous power (𝑝_{𝑡_𝑖} in watts) measured at time 𝑡_𝑖, weighted by the duration between successive samples (𝑡_𝑖 − 𝑡_{𝑖−1}), given as
+  
   $$ \sum _{{t_i}∈T} (𝑝_{𝑡_𝑖} (𝑡_𝑖 −𝑡_{𝑖−1})) $$
 
 +  The read IOPS and bytes read per second (throughput) are measured using `iostat`.
