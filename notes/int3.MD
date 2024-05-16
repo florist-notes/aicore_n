@@ -117,7 +117,7 @@ experiment harness but without actually running any training workloads.
  + (iv) Device in Wake on LAN (WoL) state, where it can be activated by a network command but is otherwise suspended. The last is helpful when devices have to be occasionally woken up for training but can otherwise remain turned off.
 
   WoL has the lowest power consumption of all the idle states for all devices, and is
- substantially lower than the next lowest idle state with DVFS on.
+ substantially lower than the next lowest idle state with DVFS on. Wake-on-LAN can be used to reduce the energy footprint for periodic or on-demand workloads like federated learning.
 
  #### + Impact of Power Modes:
 The Jetson devices come with a number of pre-defined power modes that users can choose from. Additionally, we can also configure a custom power mode by specifying the number of CPU cores enabled, and the frequencies of CPU, GPU, and RAM (External Memory Controller (EMC)). The power mode can be changed on the fly, without any system downtime. 
@@ -131,4 +131,6 @@ The default power mode may not be Pareto optimal. For all models, the peak power
  models. The GPU compute time is inversely proportional to the GPU frequency for larger DNNs.  Increasing the CPU frequency and number of cores reduce the stall time. Increasing the CPU frequency and number of cores reduces the GPU compute time, and more so for light models. GPU compute time and stall times are affected by the memory frequency. 
 
  ### 🌸 Predicting Training Time and Energy Usage for Custom Power Modes :
+
+ Model Training to Predict E2E Time per Epoch : Linear Regression with Root Mean Square Error (RMSE).
 
