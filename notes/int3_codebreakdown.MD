@@ -207,4 +207,267 @@ This block logs swap memory statistics using the `free -mh` command and writes t
 ```
 This block writes the accumulated DataFrames to the corresponding CSV files periodically, then clears the DataFrames for the next batch of data.
 
-#### 🌸 
+### Cutout Class :
+
+The `Cutout` class implements the Cutout data augmentation technique, which involves randomly masking out square regions of an image during training.
+
+```python
+class Cutout(object):
+    def __init__(self, length):
+        self.length = length
+
+    def __call__(self, img):
+        h, w = img.size(1), img.size(2)
+        mask = np.ones((h, w), np.float32)
+        y = np.random.randint(h)
+        x = np.random.randint(w)
+
+        y1 = np.clip(y - self.length // 2, 0, h)
+        y2 = np.clip(y + self.length // 2, 0, h)
+        x1 = np.clip(x - self.length // 2, 0, w)
+        x2 = np.clip(x + self.length // 2, 0, w)
+
+        mask[y1: y2, x1: x2] = 0.
+        mask = torch.from_numpy(mask)
+        mask = mask.expand_as(img)
+        img *= mask
+        return img
+```
+
+`init`: Initializes the Cutout class with the length of the square to be cut out.
+
+`call`: When an instance of Cutout is called with an image:
+
++ Creates a mask of ones with the same height and width as the image.
++ Randomly selects a position in the image.
++ Calculates the boundaries of the square to be cut out.
++ Sets the corresponding region in the mask to zero.
++ Applies the mask to the image, effectively zeroing out the square region.
+
+### Data Transforms Function :
+The `_data_transforms_landmarks` function defines data transformations for training and validation datasets.
+
+```python
+def _data_transforms_landmarks():
+    IMAGENET_MEAN = [0.5, 0.5, 0.5]
+    IMAGENET_STD = [0.5, 0.5, 0.5]
+
+    image_size = 224
+    train_transform = transforms.Compose([
+        transforms.RandomResizedCrop(image_size),
+        transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD),
+    ])
+
+    train_transform.transforms.append(Cutout(16))
+
+    valid_transform = transforms.Compose([
+        transforms.CenterCrop(224),
+        transforms.ToTensor(),
+        transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD),
+    ])
+
+    return train_transform, valid_transform
+```
++ `train_transform`: Composes several transformations for the training dataset, including random resized cropping, horizontal flipping, tensor conversion, normalization, and Cutout.
++ `valid_transform`: Composes transformations for the validation dataset, including center cropping, tensor conversion, and normalization.
+
+### Read CSV Function :
+The `_read_csv` function reads a CSV file and returns its contents as a list of dictionaries.
+
+```python
+def _read_csv(path):
+    with open(path, 'r') as f:
+        return list(csv.DictReader(f))
+```
++ `path`: Path to the CSV file.
++ `Returns`: A list of dictionaries where each row in the CSV file is represented as a dictionary with column names as keys.
+
+### Get Mapping Per User Function
+The `get_mapping_per_user` function processes a CSV file to create mappings for user-specific data.
+```python
+def get_mapping_per_user(fn):
+    mapping_table = _read_csv(fn)
+    expected_cols = ['user_id', 'image_id', 'class']
+    if not all(col in mapping_table[0].keys() for col in expected_cols):
+        logger.error('%s has wrong format.', mapping_file)
+        raise ValueError(
+            'The mapping file must contain user_id, image_id and class columns. '
+            'The existing columns are %s' % ','.join(mapping_table[0].keys()))
+
+    data_local_num_dict = dict()
+    mapping_per_user = collections.defaultdict(list)
+    data_files = []
+    net_dataidx_map = {}
+    sum_temp = 0
+
+    for row in mapping_table:
+        user_id = row['user_id']
+        mapping_per_user[user_id].append(row)
+    for user_id, data in mapping_per_user.items():
+        num_local = len(mapping_per_user[user_id])
+        net_dataidx_map[int(user_id)] = (sum_temp, sum_temp + num_local)
+        data_local_num_dict[int(user_id)] = num_local
+        sum_temp += num_local
+        data_files += mapping_per_user[user_id]
+    assert sum_temp == len(data_files)
+
+    return data_files, data_local_num_dict, net_dataidx_map
+```
++ `mapping_table`: Reads the CSV file and stores it as a list of dictionaries.
++ `Checks for required columns`: Ensures the CSV file contains `user_id`, `image_id`, and `class` columns.
++ `Initializes dictionaries`: For storing user-specific data.
++ `Populates dictionaries`: Maps each `user_id` to its respective data entries.
++ `Returns`: A list of all data entries, a dictionary mapping user IDs to the number of local data points, and a dictionary mapping user IDs to index ranges of their data.
+
+### Get Dataloader Function :
+The `get_dataloader_Landmarks` function creates data loaders for the training and test datasets.
+```python
+def get_dataloader_Landmarks(datadir, train_files, test_files, train_bs, test_bs, dataidxs=None, num_w=0, pf=2):
+    dl_obj = Landmarks
+    transform_train, transform_test = _data_transforms_landmarks()
+
+    train_ds = dl_obj(datadir, train_files, 0, dataidxs=None, train=True, transform=transform_train, download=True)
+    test_ds = dl_obj(datadir, test_files, 1, dataidxs=None, train=False, transform=transform_test, download=True)
+
+    train_dl = DataLoader(dataset=train_ds, batch_size=train_bs, shuffle=True, drop_last=False, num_workers=num_w, prefetch_factor=pf)
+    test_dl = DataLoader(dataset=test_ds, batch_size=test_bs, shuffle=False, drop_last=False, num_workers=num_w, prefetch_factor=pf)
+
+    return train_dl, test_dl
+```
++ `datadir`: Directory containing the data.
++ `train_files`: List of training files.
++ `test_files`: List of test files.
++ `train_bs`: Batch size for training.
++ `test_bs`: Batch size for testing.
++ `Transforms`: Applies data transformations for training and testing.
++ `DataLoader`: Creates data loaders for the training and test datasets.
+
+### Load Partition Data Function :
+The `load_partition_data_landmarks` function loads and partitions data for federated learning.
+```python
+def load_partition_data_landmarks(dataset, data_dir, fed_train_map_file, fed_test_map_file, partition_method=None, partition_alpha=None, client_number=1, batch_size=16, num_w=0, pf=2):
+    train_files, data_local_num_dict, net_dataidx_map = get_mapping_per_user(fed_train_map_file)
+    test_files = _read_csv(fed_test_map_file)
+
+    class_num = len(np.unique([item['class'] for item in train_files]))
+    train_data_num = len(train_files)
+
+    train_data_global, test_data_global = get_dataloader_Landmarks(data_dir, train_files, test_files, batch_size, batch_size, None, num_w, pf)
+    test_data_num = len(test_files)
+    return train_data_global, test_data_global, class_num
+```
+
++ `Parameters`: Includes dataset, data directory, file paths, partition method, alpha, client number, batch size, number of workers, and prefetch factor.
++ `Loads Data`: Reads the federated train and test map files.
++ `Class Count`: Determines the number of unique classes.
++ `Creates Data Loaders`: For global training and testing data.
++ `Returns`: The global train and test data loaders, and the number of classes.
+
+The `get_mnist_dataset` and `get_cifar10_dataset` functions are designed to load and preprocess the MNIST and CIFAR-10 datasets, respectively. These functions create data loaders for training and testing, and normalize the data. Below is an explanation of each function:
+
+### `get_mnist_dataset Function` :
+This function sets up the MNIST dataset for training and testing.
+
+```python
+def get_mnist_dataset(data_path, bs, num_w, pf):
+    channel = 1
+    im_size = (28, 28)
+    num_classes = 10
+    mean = [0.1307]
+    std = [0.3081]
+    
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize(mean=mean, std=std)
+    ])
+    
+    dst_train = datasets.MNIST(data_path, train=True, download=True, transform=transform) # no augmentation
+    dst_test = datasets.MNIST(data_path, train=False, download=True, transform=transform)
+    
+    class_names = [str(c) for c in range(num_classes)]
+    
+    trainloader = torch.utils.data.DataLoader(
+        dst_train, batch_size=bs, shuffle=True, drop_last=False, num_workers=num_w, prefetch_factor=pf
+    )
+    
+    testloader = torch.utils.data.DataLoader(
+        dst_test, batch_size=bs, shuffle=False, drop_last=False, num_workers=num_w, prefetch_factor=pf
+    )
+    
+    return trainloader, testloader, num_classes, channel
+```
+
+#### + Parameters:
+- `data_path`: Path to store the downloaded data.
+- `bs`: Batch size for data loaders.
+- `num_w`: Number of workers for data loading.
+- `pf`: Prefetch factor for data loading.
+#### + Setup:
+- `channel`: Number of image channels (1 for grayscale).
+- `im_size`: Image size (28x28 for MNIST).
+- `num_classes`: Number of classes (10 for MNIST).
+- `mean and std`: Mean and standard deviation for normalization.
+#### + Transforms:
+- `transforms.Compose`: Converts images to tensors and normalizes them.
+#### + Datasets:
+- `dst_train`: Training dataset with transformations.
+- `dst_test`: Testing dataset with transformations.
+#### + Data Loaders:
+- `trainloader`: Data loader for the training dataset.
+- `testloader`: Data loader for the testing dataset.
+- `Returns`: Train loader, test loader, number of classes, and number of channels.
+
+### `get_cifar10_dataset` Function
+This function sets up the CIFAR-10 dataset for training and testing.
+
+```python
+def get_cifar10_dataset(data_path, bs, num_w, pf):
+    channel = 3
+    im_size = (32, 32)
+    num_classes = 10
+    
+    mean = [0.4914, 0.4822, 0.4465]
+    std = [0.2023, 0.1994, 0.2010]
+    
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize(mean=mean, std=std)
+    ])
+    
+    dst_train = datasets.CIFAR10(data_path, train=True, download=True, transform=transform) # no augmentation
+    dst_test = datasets.CIFAR10(data_path, train=False, download=True, transform=transform)
+    
+    class_names = dst_train.classes
+    
+    trainloader = torch.utils.data.DataLoader(
+        dst_train, batch_size=bs, shuffle=True, drop_last=False, num_workers=num_w, prefetch_factor=pf
+    )
+    
+    testloader = torch.utils.data.DataLoader(
+        dst_test, batch_size=bs, shuffle=False, drop_last=False, num_workers=num_w, prefetch_factor=pf
+    )
+    
+    return trainloader, testloader, num_classes, channel
+```
+
+#### + Parameters:
+- `data_path`: Path to store the downloaded data.
+- `bs`: Batch size for data loaders.
+- `num_w`: Number of workers for data loading.
+- `pf`: Prefetch factor for data loading.
+#### + Setup:
+- `channel`: Number of image channels (3 for RGB).
+- `im_size`: Image size (32x32 for CIFAR-10).
+- `num_classes`: Number of classes (10 for CIFAR-10).
+- `mean and std`: Mean and standard deviation for normalization.
+#### + Transforms:
+- `transforms.Compose`: Converts images to tensors and normalizes them.
+#### + Datasets:
+- `dst_train`: Training dataset with transformations.
+- `dst_test`: Testing dataset with transformations.
+#### + Data Loaders:
+- `trainloader`: Data loader for the training dataset.
+- `testloader`: Data loader for the testing dataset.
+- `Returns`: Train loader, test loader, number of classes, and number of channels.
