@@ -471,3 +471,148 @@ def get_cifar10_dataset(data_path, bs, num_w, pf):
 - `trainloader`: Data loader for the training dataset.
 - `testloader`: Data loader for the testing dataset.
 - `Returns`: Train loader, test loader, number of classes, and number of channels.
+
+
+### `train` Function :
+
+```python
+def train(net, trainloader,testloader, epoch_fname, fetch_fname, compute_fname, vmtouch_fname, dataset_outer_folder, reference_time, epochs):
+    print('Training')
+    """Train the network on the training set."""
+    criterion = torch.nn.CrossEntropyLoss()
+    optimizer = torch.optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
+    net.train()
+    vmtouch_dir = os.path.join(dataset_outer_folder,'cifar10_data/')
+    start1 = torch.cuda.Event(enable_timing=True)
+    end1 = torch.cuda.Event(enable_timing=True)
+    start2 = torch.cuda.Event(enable_timing=True)
+    end2 = torch.cuda.Event(enable_timing=True)
+    start3 = torch.cuda.Event(enable_timing=True)
+    end3 = torch.cuda.Event(enable_timing=True)
+    #start_time = time.time()
+    epoch_count = 0
+    """ vmtouch logging """
+    '''
+    with open(vmtouch_fname, 'a', newline='') as file: # DEPRECATED
+        vmtouch_output = os.popen(r"vmtouch -f " + vmtouch_dir + r" | sed 's/^.*://' | sed -z 's/\n/,/g' | sed 's/\s\+/,/g' | sed 's/,\{2,\}/,/g' | sed -e 's/^.\(.*\).$/\1/'")
+        vmtouch_output = vmtouch_output.read()+","+str(time.time() - reference_time)
+        writer = csv.writer(file)
+        writer.writerow(vmtouch_output.split(","))
+    '''
+    vmtouch_output = os.popen(r"vmtouch -f " + vmtouch_dir + r" | sed 's/^.*://' | sed -z 's/\n/,/g' | sed 's/\s\+/,/g' | sed 's/,\{2,\}/,/g' | sed -e 's/^.\(.*\).$/\1/'")
+    vmtouch_output = vmtouch_output.read()+","+str(time.time() - reference_time)
+    vmtouch_fname.info(vmtouch_output)
+    # with open(vmtouchlogtime_fname, 'a', newline='') as file:
+    #     writer = csv.writer(file, delimiter=' ',escapechar=' ', quoting=csv.QUOTE_NONE)
+    #     writer.writerow([str(time.time() - reference_time)])
+    os.system('sudo ./drop_caches.sh')
+    for _ in range(epochs):
+        #start1.record()
+        """ vmtouch logging """
+        '''
+        with open(vmtouch_fname, 'a', newline='') as file: # DEPRECATED
+            vmtouch_output = os.popen(r"vmtouch -f " + vmtouch_dir + r" | sed 's/^.*://' | sed -z 's/\n/,/g' | sed 's/\s\+/,/g' | sed 's/,\{2,\}/,/g' | sed -e 's/^.\(.*\).$/\1/'")
+            vmtouch_output = vmtouch_output.read()+","+str(time.time() - reference_time)
+            writer = csv.writer(file)
+            writer.writerow(vmtouch_output.split(","))
+        '''
+        vmtouch_output = os.popen(r"vmtouch -f " + vmtouch_dir + r" | sed 's/^.*://' | sed -z 's/\n/,/g' | sed 's/\s\+/,/g' | sed 's/,\{2,\}/,/g' | sed -e 's/^.\(.*\).$/\1/'")
+        vmtouch_output = vmtouch_output.read()+","+str(time.time() - reference_time)
+        vmtouch_fname.info(vmtouch_output)
+        # with open(vmtouchlogtime_fname, 'a', newline='') as file:
+        #     writer = csv.writer(file, delimiter=' ',escapechar=' ', quoting=csv.QUOTE_NONE)
+        #     writer.writerow([str(time.time() - reference_time)])
+        print('Epoch: ' + str(_) + ' Begins')
+        # start_time = time.time() # DEPRECATED
+        start1.record() # e2e epoch time starts
+        # start2_time = time.time() # DEPRECATED
+        start2.record() # fetch time per batch starts
+        for batch_idx, (images, labels) in enumerate(trainloader):
+            print('Batch index = '+ str(batch_idx))
+            images, labels = images.to(DEVICE), labels.to(DEVICE) # won't be part of fetch + preprocess
+            # end2_time = time.time() - start2_time # DEPRECATED
+            end2.record() # fetch time per batch ends
+            start3.record() # compute time per batch starts
+            # start_time1 = time.time() # DEPRECATED
+            optimizer.zero_grad()
+            loss = criterion(net(images), labels)
+            loss.backward()
+            optimizer.step()
+            # end_time1  = time.time() - start_time1 # DEPRECATED
+            end3.record() # compute time per batch ends
+            torch.cuda.synchronize()
+            '''
+            with open(fetch_fname, 'a', newline='') as file: # DEPRECATED
+                writer = csv.writer(file)
+                writer.writerow([str(_),str(batch_idx),"null",str(start2.elapsed_time(end2)),str(time.time() - reference_time)])
+            '''
+            fetch_fname.info(str(_) + "," + str(batch_idx) + "," + "null" + "," + str(start2.elapsed_time(end2)) + "," + str(time.time() - reference_time))
+            '''
+            with open(compute_fname, 'a', newline='') as file: # DEPRECATED
+                writer = csv.writer(file)
+                writer.writerow([str(_),str(batch_idx),"null",str(start3.elapsed_time(end3)),str(time.time() - reference_time)])
+            '''
+            compute_fname.info(str(_) + "," + str(batch_idx) + "," + "null" + "," + str(start3.elapsed_time(end3)) + "," + str(time.time() - reference_time))
+            # start2_time = time.time() # fetch time per batch starts
+            start2.record() # fetch time per batch starts
+        end1.record() # e2e epoch time ends
+        torch.cuda.synchronize()
+        # time_end = (time.time() - start_time) # DEPRECATED
+        # loss1, acc1 = test(net,testloader)
+        print('Epoch: ' + str(_) + ' Ends')
+        # print("Epoch: " + str(_) + ", Loss: " + str(loss) + ", Accuracy: " + str(acc1) + ", Time: " + str(time_end))
+        '''
+        with open(epoch_fname, 'a', newline='') as file: # DEPRECATED
+            writer = csv.writer(file)
+            # writer.writerow([str(_),str(time_end),str(loss),str(acc1),str(start1.elapsed_time(end1)),str(time.time() - reference_time)])
+            writer.writerow([str(_),"null",str(loss),"null",str(start1.elapsed_time(end1)),str(time.time() - reference_time)])
+        '''
+        epoch_fname.info(str(_) + "," + "null" + ","  + "\"" + str(loss)  + "\"" + "," + "null" + "," + str(start1.elapsed_time(end1)) + "," + str(time.time() - reference_time))
+        """
+        if epoch_count == 0:
+            os.system('sudo ./drop_caches.sh')
+        """
+        epoch_count +=1
+    """ vmtouch logging """
+    '''
+    with open(vmtouch_fname, 'a', newline='') as file: # DEPRECATED
+        vmtouch_output = os.popen(r"vmtouch -f " + vmtouch_dir + r" | sed 's/^.*://' | sed -z 's/\n/,/g' | sed 's/\s\+/,/g' | sed 's/,\{2,\}/,/g' | sed -e 's/^.\(.*\).$/\1/'")
+        vmtouch_output = vmtouch_output.read()+","+str(time.time() - reference_time)
+        writer = csv.writer(file)
+        writer.writerow(vmtouch_output.split(","))
+    '''
+    vmtouch_output = os.popen(r"vmtouch -f " + vmtouch_dir + r" | sed 's/^.*://' | sed -z 's/\n/,/g' | sed 's/\s\+/,/g' | sed 's/,\{2,\}/,/g' | sed -e 's/^.\(.*\).$/\1/'")
+    vmtouch_output = vmtouch_output.read()+","+str(time.time() - reference_time)
+    vmtouch_fname.info(vmtouch_output)
+    # with open(vmtouchlogtime_fname, 'a', newline='') as file:
+    #     writer = csv.writer(file, delimiter=' ',escapechar=' ', quoting=csv.QUOTE_NONE)
+    #     writer.writerow([str(time.time() - reference_time)])
+```
+
+#### + Parameters:
+ - net: The neural network model.
+ - trainloader: DataLoader for the training dataset.
+ - testloader: DataLoader for the testing dataset.
+ - epoch_fname: File handler or logger for epoch timing.
+ - fetch_fname: File handler or logger for fetch timing.
+ - compute_fname: File handler or logger for compute timing.
+ - vmtouch_fname: File handler or logger for vmtouch output.
+ - dataset_outer_folder: Directory containing the dataset.
+ - reference_time: Start time for logging.
+ - epochs: Number of epochs to train the model.
+
+#### + Training Loop:
+ - Sets up criterion (loss function) and optimizer.
+ - Logs vmtouch output to track memory page cache status.
+ - Drops caches before starting training.
+ - For each epoch:
+  
+         + Records timing using CUDA events.
+         + Logs vmtouch output.
+         + For each batch:
+            +  Measures fetch and compute times.
+            +  Performs forward and backward passes and updates weights.
+         + Logs fetch and compute times.
+         + Logs epoch time.
+ - Optionally drops caches after the first epoch.
+ - Logs final vmtouch output.
