@@ -58,3 +58,153 @@ from torchvision import datasets, transforms
 ```
 + `torchvision.datasets`: This module provides many pre-loaded datasets as well as tools for loading custom datasets.
 + `torchvision.transforms`: This is re-imported here and provides the same functionality as mentioned earlier.
+
+### Device Configuration:
+
+```python
+DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+```
+This line sets up the device to be used for PyTorch operations. If a CUDA-compatible GPU is available, it sets the device to `cuda:0` (the first GPU). Otherwise, it defaults to the CPU.
+
+### Logging Formatter Configuration:
+
+```python
+formatter = logging.Formatter('%(message)s')
+```
+This line sets up a logging formatter that will format log messages as simple messages without additional metadata (like timestamps or log levels).
+
+###  Setup Logger Function:
+
+```python
+def setup_logger(name, log_file, level=logging.INFO):
+    """To setup as many loggers as you want"""
+
+    handler = logging.FileHandler(log_file)
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+
+    return logger
+```
+This function initializes and returns a logger that writes to a specified log file.
+
+`name`: The name of the logger.
+`log_file`: The file to which logs will be written.
+`level`: The logging level (e.g., INFO, DEBUG).
+
+### Start Logging Function:
+
+```python
+def start_logging(filename, iostats_filename, memstats_filename, swapstats_filename, cpufreqstats_filename, gpufreqstats_filename, emcstats_filename, ramstats_filename, external_device, reference_time):
+    print("jtop logging started")
+```
+This function starts logging system statistics using the `jtop` library. The function parameters specify the filenames for various logs and the external device to monitor.
+
+#### 🌸 DataFrames Initialization:
+
+```python
+    output = pd.DataFrame()
+    output_cpufreqstats = pd.DataFrame()
+    output_gpufreqstats = pd.DataFrame()
+    output_emcstats = pd.DataFrame()
+    output_ramstats = pd.DataFrame()
+```
+These lines initialize empty pandas DataFrames to store the statistics.
+
+#### 🌸 Initial Logging:
+```python
+    with jtop() as jetson:
+        tegrastats_entry = jetson.stats
+        tegrastats_entry['log_time'] = str(time.time() - reference_time)
+        output = output.append(tegrastats_entry, ignore_index=True)
+        output.to_csv(filename, index=False)
+
+        cpufreqstats_entry = jetson.cpu
+        cpufreqstats_entry['log_time'] = str(time.time() - reference_time)
+        output_cpufreqstats = output_cpufreqstats.append(cpufreqstats_entry, ignore_index=True)
+        output_cpufreqstats.to_csv(cpufreqstats_filename, index=False)
+
+        gpufreqstats_entry = jetson.gpu
+        gpufreqstats_entry['log_time'] = str(time.time() - reference_time)
+        output_gpufreqstats = output_gpufreqstats.append(gpufreqstats_entry, ignore_index=True)
+        output_gpufreqstats.to_csv(gpufreqstats_filename, index=False)
+
+        emcstats_entry = jetson.emc
+        emcstats_entry['log_time'] = str(time.time() - reference_time)
+        output_emcstats = output_emcstats.append(emcstats_entry, ignore_index=True)
+        output_emcstats.to_csv(emcstats_filename, index=False)
+
+        ramstats_entry = jetson.ram
+        ramstats_entry['log_time'] = str(time.time() - reference_time)
+        output_ramstats = output_ramstats.append(ramstats_entry, ignore_index=True)
+        output_ramstats.to_csv(ramstats_filename, index=False)
+```
+This block logs initial statistics for various metrics (CPU, GPU, EMC, RAM) and writes them to the corresponding CSV files.
+#### 🌸 Continuous Logging:
+```python
+    with jtop() as jetson:
+        while jetson.ok():
+            tegrastats_entry = jetson.stats
+            tegrastats_entry['log_time'] = str(time.time() - reference_time)
+            output = output.append(tegrastats_entry, ignore_index=True)
+
+            cpufreqstats_entry = jetson.cpu
+            cpufreqstats_entry['log_time'] = str(time.time() - reference_time)
+            output_cpufreqstats = output_cpufreqstats.append(cpufreqstats_entry, ignore_index=True)
+
+            gpufreqstats_entry = jetson.gpu
+            gpufreqstats_entry['log_time'] = str(time.time() - reference_time)
+            output_gpufreqstats = output_gpufreqstats.append(gpufreqstats_entry, ignore_index=True)
+
+            emcstats_entry = jetson.emc
+            emcstats_entry['log_time'] = str(time.time() - reference_time)
+            output_emcstats = output_emcstats.append(emcstats_entry, ignore_index=True)
+
+            ramstats_entry = jetson.ram
+            ramstats_entry['log_time'] = str(time.time() - reference_time)
+            output_ramstats = output_ramstats.append(ramstats_entry, ignore_index=True)
+```
+This block continuously collects statistics in a loop until the `jetson.ok()` method returns `False`.
+#### 🌸 IO Statistics Logging:
+```python
+            io_output = os.popen("iostat -xy 1 1 -d " + external_device + " | awk 'NR>3{ for (x=2; x<=16; x++) {  printf\"%s \", $x}}' | sed 's/ /,/g'| sed 's/,*$//g'")
+            io_output = io_output.read() + "," + str(time.time() - reference_time)
+            iostats_filename.info(io_output)
+```
+This block logs I/O statistics using the iostat command and writes the output to the specified log file.
+#### 🌸 Memory Statistics Logging:
+```python
+            mem_output = os.popen("free -mh | awk 'NR==2{for (x=2;x<=7;x++){printf\"%s \", $x}}' | sed 's/ /,/g'| sed 's/,*$//g'")
+            mem_output = mem_output.read() + "," + str(time.time() - reference_time)
+            memstats_filename.info(mem_output)
+```
+This block logs memory statistics using the `free -mh` command and writes the output to the specified log file.
+#### 🌸 Swap Statistics Logging:
+```python
+            swap_output = os.popen("free -mh | awk 'NR==3{for (x=2;x<=4;x++){printf\"%s \", $x}}' | sed 's/ /,/g'| sed 's/,*$//g'")
+            swap_output = swap_output.read() + "," + str(time.time() - reference_time)
+            swapstats_filename.info(swap_output)
+```
+This block logs swap memory statistics using the `free -mh` command and writes the output to the specified log file.
+#### 🌸 Periodic CSV Writing:
+```python
+            output.to_csv(filename, index=False, mode='a', header=False)
+            output = pd.DataFrame()
+
+            output_cpufreqstats.to_csv(cpufreqstats_filename, index=False, mode='a', header=False)
+            output_cpufreqstats = pd.DataFrame()
+
+            output_gpufreqstats.to_csv(gpufreqstats_filename, index=False, mode='a', header=False)
+            output_gpufreqstats = pd.DataFrame()
+
+            output_emcstats.to_csv(emcstats_filename, index=False, mode='a', header=False)
+            output_emcstats = pd.DataFrame()
+
+            output_ramstats.to_csv(ramstats_filename, index=False, mode='a', header=False)
+            output_ramstats = pd.DataFrame()
+```
+This block writes the accumulated DataFrames to the corresponding CSV files periodically, then clears the DataFrames for the next batch of data.
+
+#### 🌸 
