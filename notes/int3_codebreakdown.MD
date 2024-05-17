@@ -616,3 +616,61 @@ def train(net, trainloader,testloader, epoch_fname, fetch_fname, compute_fname, 
          + Logs epoch time.
  - Optionally drops caches after the first epoch.
  - Logs final vmtouch output.
+
+### `test` Function :
+```python
+def test(net, testloader):
+    """Validate the network on the entire test se."""
+    criterion = torch.nn.CrossEntropyLoss()
+    correct, total, loss = 0, 0, 0.0
+    net.eval()
+    with torch.no_grad():
+        for batch_idx, (images, labels) in enumerate(testloader):
+            images, labels = images.to(DEVICE), labels.to(DEVICE)
+            outputs = net(images)
+            loss += criterion(outputs, labels).item()
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+    accuracy = correct / total
+    return loss, accuracy
+```
+
+#### Parameters:
+ - `net`: The neural network model.
+ - `testloader`: DataLoader for the testing dataset.
+#### Validation Loop:
+ - Evaluates the model on the test dataset.
+ - Computes and returns the loss and accuracy.
+
+### `load_data` Function :
+```python
+def load_data(global_dir, num_w, pf_factor):
+
+    print(global_dir)
+    """
+    Below paths need to be changed as per the requirement.
+    """
+    # fed_train_map_file = os.path.join(global_dir, 'data_dict/data_user_dict/gld23k_user_dict_train_4x.csv')
+    # fed_train_map_file = os.path.join(global_dir, 'data_dict/data_user_dict/gld23k_user_dict_train_0.25x.csv')
+    # fed_test_map_file = os.path.join(global_dir, 'data_dict/data_user_dict/gld23k_user_dict_test.csv')
+    # data_dir = os.path.join(global_dir,'landmark_dataset/images_4x/')
+    # data_dir = os.path.join(global_dir,'landmark_dataset/images_0.25x/') # change line 735 accordingly if you change this line
+    # data_dir = os.path.join(global_dir,'data/') # change line 735 accordingly if you change this line
+    data_dir = os.path.join(global_dir,'cifar10_data/') # change line 735 accordingly if you change this line
+    #train_data_num, test_data_num, train_data_global, test_data_global, \
+    #train_data_local_num_dict, train_data_local_dict, test_data_local_dict, \
+    # trainloader, testloader, class_num = load_partition_data_landmarks('Landmarks', data_dir,fed_train_map_file,fed_test_map_file,None, None,1, 16, num_w, pf_factor)
+    # trainloader, testloader, class_num, channel = get_mnist_dataset(data_dir, 16, num_w, pf_factor)
+    trainloader, testloader, class_num, channel = get_cifar10_dataset(data_dir, 16, num_w, pf_factor)
+    # return trainloader, testloader, class_num
+    return trainloader, testloader, class_num, channel
+```
+#### Parameters:
+ - `global_dir`: The base directory for the dataset.
+ - `num_w`: Number of workers for data loading.
+ - `pf_factor`: Prefetch factor for data loading.
+#### Data Loading:
+ - Sets the data directory.
+ - Loads CIFAR-10 dataset using the get_cifar10_dataset function.
+ - Returns DataLoader objects and dataset metadata.
