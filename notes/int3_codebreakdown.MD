@@ -1106,3 +1106,97 @@ This code defines a Python script with a `main` function that orchestrates vario
 #### `Flower Client`: The script includes commented-out code for integrating with Flower, a library for federated learning. It defines a custom client (`MobilenetClient`) derived from `fl.client.NumPyClient`. This client is responsible for fetching parameters, training the model, and evaluating the model's performance.
 
 #### `Starting Client`: The Flower client is started using `fl.client.start_numpy_client`.
+
+# 🌸 __name__ == "__main__" Function : 
+
+```python
+if __name__ == "__main__":
+    dataset_outer_folder=sys.argv[1]
+    num_workers=int(sys.argv[2])
+    prefetch_factor=int(sys.argv[3])
+    external_device = sys.argv[4]
+    file_prefix='mn_'+'nw'+ str(num_workers) + '_pf'+str(prefetch_factor)
+    
+    logger_fetch = setup_logger("logger_fetch", file_prefix + "_fetch.csv")
+    logger_compute = setup_logger("logger_compute", file_prefix + "_compute.csv")
+    logger_e2e = setup_logger("logger_e2e", file_prefix + "_epoch_stats.csv")
+    logger_vmtouch = setup_logger("logger_vmtouch", file_prefix+"_vmtouch_stats.csv")
+    
+    logger_iostats = setup_logger("logger_iostats", file_prefix+"_io_stats.csv")
+    logger_memstats = setup_logger("logger_memstats", file_prefix+"_mem_stats.csv")
+    logger_swapstats = setup_logger("logger_swapstats", file_prefix+"_swap_stats.csv")
+    
+    logger_fetch.info('epoch,batch_idx,fetchtime,fetchtime_ms,log_time')
+    logger_compute.info('epoch,batch_idx,computetime,computetime_ms,log_time')
+    logger_e2e.info('epoch,time,loss,accuracy,epochtime_ms,log_time')
+    logger_vmtouch.info('files,directories,resident_pages,resident_pages_size,resident_pages_%,elapsed,redundant,log_time')
+    
+    logger_iostats.info('r/s,w/s,rkB/s,wkB/s,rrqm/s,wrqm/s,%rrqm,%wrqm,r_await,w_await,aqu-sz,rareq-sz,wareq-sz,svctm,%util,log_time')
+    logger_memstats.info('total,used,free,shared,buff/cache,available,log_time')
+    logger_swapstats.info('total,used,free,log_time')
+
+    ''' # DEPRECATED
+    with open(file_prefix+'_epoch_stats.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['epoch','time','loss','accuracy','epochtime_ms','log_time'])
+    with open(file_prefix+'_fetch.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['epoch','batch_idx','fetchtime','fetchtime_ms','log_time'])
+    with open(file_prefix+'_compute.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['epoch','batch_idx','computetime','computetime_ms','log_time'])
+    '''
+    with open(file_prefix+'_io_stats.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['r/s', 'w/s', 'rkB/s','wkB/s', 'rrqm/s', 'wrqm/s', '%rrqm', '%wrqm', 'r_await', 'w_await', 'aqu-sz', 'rareq-sz', 'wareq-sz', 'svctm', '%util', 'log_time'])
+    with open(file_prefix+'_mem_stats.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['total', 'used', 'free', 'shared', 'buff/cache', 'available', 'log_time'])
+    with open(file_prefix+'_swap_stats.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['total', 'used', 'free', 'log_time'])
+    ''' # DEPRECATED
+    with open(file_prefix+'_vmtouch_stats.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['files', 'directories', 'resident_pages', 'resident_pages_size', 'resident_pages_%', 'elapsed', 'redundant', 'log_time'])
+    '''
+    # with open(file_prefix+'_log_time.csv', 'w', newline='') as file:
+    #     writer = csv.writer(file)
+    #     writer.writerow(['log_time'])
+    # with open(file_prefix+'_vmtouch_log_time.csv', 'w', newline='') as file:
+    #     writer = csv.writer(file)
+    #     writer.writerow(['log_time'])
+    # with open(file_prefix+'_tegrastats_log_time.csv', 'w', newline='') as file:
+    #     writer = csv.writer(file)
+    #     writer.writerow(['log_time'])
+    #wandb.init(project="flower_mobilenet_landmark_client",name="mobile(grpc)")
+    reference_time = time.time()
+    p2 = multiprocessing.Process(target=start_logging, args=[file_prefix+'_tegrastats.csv', logger_iostats, logger_memstats, logger_swapstats, file_prefix+'_cpufreq_stats.csv', file_prefix+'_gpufreq_stats.csv', file_prefix+'_emc_stats.csv', file_prefix+'_ram_stats.csv', external_device, reference_time])
+    p2.start()
+    try:
+        main(dataset_outer_folder, num_workers, prefetch_factor, logger_e2e, logger_fetch, logger_compute, logger_vmtouch, reference_time)
+    except():
+        print("hit an exception")
+        print(e)
+        p2.terminate()
+
+    p2.terminate()
+```
+
+#### `Command-line Arguments Parsing`: The script utilizes sys.argv to parse command-line arguments. It expects four arguments:
+
++ `dataset_outer_folder`: Path to the dataset folder.
++ `num_workers`: Number of workers for data loading.
++ `prefetch_factor`: Prefetch factor for data loading.
++ `external_device`: External device identifier.
++ `Logger Initialization`: The script initializes several logger objects using the setup_logger function. These loggers are configured to write logs to different CSV files with filenames based on the provided arguments.
+
+#### `Logger Information Writing`: Initial information headers are written to each CSV file using the writer.writerow function.
+
+#### `Multiprocessing Logging Process`: A multiprocessing process p2 is created to start logging system-related statistics using the start_logging function. This function is not defined in the provided code snippet.
+
+#### `Main Function Invocation`: The main function is called with the provided command-line arguments and logger objects.
+
+#### `Exception Handling`: The script wraps the invocation of the main function within a try-except block to catch any exceptions. If an exception occurs, it prints an error message and terminates the logging process.
+
+#### `Termination of Logging Process`: Regardless of whether an exception occurs or not, the logging process p2 is terminated after the execution of the main function.
