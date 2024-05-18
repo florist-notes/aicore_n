@@ -94,7 +94,7 @@ This function initializes and returns a logger that writes to a specified log fi
 `log_file`: The file to which logs will be written.
 `level`: The logging level (e.g., INFO, DEBUG).
 
-### Start Logging Function:
+## Start Logging Function:
 
 ```python
 def start_logging(filename, iostats_filename, memstats_filename, swapstats_filename, cpufreqstats_filename, gpufreqstats_filename, emcstats_filename, ramstats_filename, external_device, reference_time):
@@ -173,7 +173,7 @@ This block continuously collects statistics in a loop until the `jetson.ok()` me
             io_output = io_output.read() + "," + str(time.time() - reference_time)
             iostats_filename.info(io_output)
 ```
-This block logs I/O statistics using the iostat command and writes the output to the specified log file.
+This block logs I/O statistics using the `iostat` command and writes the output to the specified log file.
 #### 🌸 Memory Statistics Logging:
 ```python
             mem_output = os.popen("free -mh | awk 'NR==2{for (x=2;x<=7;x++){printf\"%s \", $x}}' | sed 's/ /,/g'| sed 's/,*$//g'")
@@ -590,16 +590,16 @@ def train(net, trainloader,testloader, epoch_fname, fetch_fname, compute_fname, 
 ```
 
 #### + Parameters:
- - net: The neural network model.
- - trainloader: DataLoader for the training dataset.
- - testloader: DataLoader for the testing dataset.
- - epoch_fname: File handler or logger for epoch timing.
- - fetch_fname: File handler or logger for fetch timing.
- - compute_fname: File handler or logger for compute timing.
- - vmtouch_fname: File handler or logger for vmtouch output.
- - dataset_outer_folder: Directory containing the dataset.
- - reference_time: Start time for logging.
- - epochs: Number of epochs to train the model.
+ - `net`: The neural network model.
+ - `trainloader`: DataLoader for the training dataset.
+ - `testloader`: DataLoader for the testing dataset.
+ - `epoch_fname`: File handler or logger for epoch timing.
+ - `fetch_fname`: File handler or logger for fetch timing.
+ - `compute_fname`: File handler or logger for compute timing.
+ - `vmtouch_fname`: File handler or logger for vmtouch output.
+ - `dataset_outer_folder`: Directory containing the dataset.
+ - `reference_time`: Start time for logging.
+ - `epochs`: Number of epochs to train the model.
 
 #### + Training Loop:
  - Sets up criterion (loss function) and optimizer.
@@ -1095,7 +1095,7 @@ This code defines a Python script with a `main` function that orchestrates vario
 + `epoch_fname`, `fetch_fname`, `compute_fname`, `vmtouch_fname`: Filenames related to training and performance metrics.
 + `reference_time`: Reference time for performance evaluation.
 
-#### Data Loading`: The script loads the dataset using the `load_data` function, which is not provided in the code snippet.
+#### `Data Loading`: The script loads the dataset using the `load_data` function, which is not provided in the code snippet.
 
 #### `Model Initialization`: Depending on the chosen model (MobileNetV3, LeNet, or ResNet18), an instance of the corresponding model is created.
 
@@ -1191,12 +1191,31 @@ if __name__ == "__main__":
 + `external_device`: External device identifier.
 + `Logger Initialization`: The script initializes several logger objects using the setup_logger function. These loggers are configured to write logs to different CSV files with filenames based on the provided arguments.
 
-#### `Logger Information Writing`: Initial information headers are written to each CSV file using the writer.writerow function.
+#### `Logger Information Writing`: Initial information headers are written to each CSV file using the `writer.writerow` function.
 
-#### `Multiprocessing Logging Process`: A multiprocessing process p2 is created to start logging system-related statistics using the start_logging function. This function is not defined in the provided code snippet.
+#### `Multiprocessing Logging Process`: A multiprocessing process p2 is created to start logging system-related statistics using the `start_logging` function. This function is not defined in the provided code snippet.
 
 #### `Main Function Invocation`: The main function is called with the provided command-line arguments and logger objects.
 
 #### `Exception Handling`: The script wraps the invocation of the main function within a try-except block to catch any exceptions. If an exception occurs, it prints an error message and terminates the logging process.
 
 #### `Termination of Logging Process`: Regardless of whether an exception occurs or not, the logging process p2 is terminated after the execution of the main function.
+
+## 🌸 Execution bash script  : 
+
+```bash
+#!/bin/bash
+
+#python3 client.py "path" nw pf dev
+#Example python3 client_mnv3_single.py "/media/dream-agx3/SSD250/rahulb" 2 2
+
+prefetch_factor=2
+no_workers=(0 1 2 4)
+external_device="nvme0n1"
+
+for no in ${no_workers[@]};
+do
+	echo "Config- num workers is " $no
+	python3 client_mnv3_gld23k.py "/media/ssd/" $no $prefetch_factor $external_device > log_file_$no
+done
+```
