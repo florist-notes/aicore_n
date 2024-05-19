@@ -38,7 +38,136 @@ using SLAM.
 
 <hr />
 
-## Sample Approach:
+# Step-by-Step Guide to Developing a 2D Occupancy Grid Map Using Overhead Cameras (Sample Approach)
+
+## Phase 1: Static Environment Mapping :
+### + `Step 1`: Setup Environment and Tools
+
++ Install ROS2 and Gazebo: ROS2 (Robot Operating System 2) is essential for simulation and robotic control, while Gazebo provides a realistic 3D simulation environment.
+
++ Setup Python Environment: Create a virtual environment and install necessary Python packages.
+```python
+python3 -m venv ros2_env
+source ros2_env/bin/activate
+pip install opencv-python numpy
+```
+### + `Step 2`: Capture and Stitch Images
+
++ Capture Images from Cameras:
+
+Write a ROS2 node to capture images from the overhead cameras.
+```python
+import rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import Image
+import cv2
+from cv_bridge import CvBridge
+
+class ImageCapture(Node):
+    def __init__(self):
+        super().__init__('image_capture')
+        self.bridge = CvBridge()
+        self.image_subs = [
+            self.create_subscription(Image, f'/camera_{i}/image_raw', self.image_callback, 10) for i in range(4)
+        ]
+        self.images = [None] * 4
+
+    def image_callback(self, msg, camera_id):
+        self.images[camera_id] = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
+
+def main(args=None):
+    rclpy.init(args=args)
+    image_capture = ImageCapture()
+    rclpy.spin(image_capture)
+    image_capture.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
++ Stitch Images Together:
+
+Use OpenCV to stitch the images.
+
+```python
+import cv2
+import numpy as np
+
+def stitch_images(images):
+    # Assuming images are ordered as [top-left, top-right, bottom-left, bottom-right]
+    top = cv2.hconcat([images[0], images[1]])
+    bottom = cv2.hconcat([images[2], images[3]])
+    stitched_image = cv2.vconcat([top, bottom])
+    return stitched_image
+
+stitched_image = stitch_images(images)
+cv2.imwrite('stitched_image.jpg', stitched_image)
+```
+
+### + `Step 3`: Generate 2D Occupancy Grid Map
+
++ Convert Image to Grayscale and Threshold:
+
+Convert the stitched image to a binary occupancy grid.
+
+```python
+gray_image = cv2.cvtColor(stitched_image, cv2.COLOR_BGR2GRAY)
+_, binary_image = cv2.threshold(gray_image, 127, 255, cv2.THRESH_BINARY)
+```
+
++ Generate Occupancy Grid:
+
+Create an occupancy grid from the binary image.
+
+```python
+occupancy_grid = np.where(binary_image == 255, 0, 1)
+```
+
+### + `Step 4`: Simulate in Gazebo and Validate
+
++ Load Occupancy Grid into ROS2:
+Use the `nav_msgs/OccupancyGrid` message to publish the map.
+
+```python
+import rclpy
+from nav_msgs.msg import OccupancyGrid
+from std_msgs.msg import Header
+
+def publish_occupancy_grid(grid):
+    pub = node.create_publisher(OccupancyGrid, 'map', 10)
+    occupancy_msg = OccupancyGrid()
+    occupancy_msg.header = Header()
+    occupancy_msg.header.stamp = node.get_clock().now().to_msg()
+    occupancy_msg.header.frame_id = 'map'
+    occupancy_msg.data = grid.flatten().tolist()
+    occupancy_msg.info.width = grid.shape[1]
+    occupancy_msg.info.height = grid.shape[0]
+    occupancy_msg.info.resolution = 0.05  # Adjust resolution as needed
+    pub.publish(occupancy_msg)
+
+rclpy.init(args=None)
+node = rclpy.create_node('occupancy_grid_publisher')
+publish_occupancy_grid(occupancy_grid)
+rclpy.spin(node)
+rclpy.shutdown()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  Stitching images from multiple cameras involves several steps such as feature detection, matching, and blending. OpenCV library provides functions to perform these tasks efficiently. Below is a Python code example to stitch images from four overhead cameras:
 
