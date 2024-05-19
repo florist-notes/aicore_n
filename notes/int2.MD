@@ -151,23 +151,85 @@ publish_occupancy_grid(occupancy_grid)
 rclpy.spin(node)
 rclpy.shutdown()
 ```
+## Phase 2: Dynamic Environment Mapping
+
+### + `Step 5`: Detect and Update Moving Objects
+
++ Implement Object Detection:
+
+Use a pre-trained model (e.g., YOLO, SSD) to detect objects and update the occupancy grid.
+
+```python
+import cv2
+import numpy as np
+
+def detect_objects(image):
+    # Use a pre-trained model to detect objects
+    net = cv2.dnn.readNet('yolov3.weights', 'yolov3.cfg')
+    layer_names = net.getLayerNames()
+    output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+    blob = cv2.dnn.blobFromImage(image, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
+    net.setInput(blob)
+    detections = net.forward(output_layers)
+    return detections
+
+detections = detect_objects(stitched_image)
+```
+
++ Update Occupancy Grid:
+
+Adjust the occupancy grid based on detected objects.
+
+```python
+def update_occupancy_grid(grid, detections):
+    for detection in detections:
+        x, y, w, h = detection
+        grid[y:y+h, x:x+w] = 1  # Mark detected object area as occupied
+    return grid
+
+updated_grid = update_occupancy_grid(occupancy_grid, detections)
+```
+
++ Publish Updated Occupancy Grid:
+
+Continuously update and publish the new occupancy grid.
+
+```python
+while True:
+    detections = detect_objects(stitched_image)
+    updated_grid = update_occupancy_grid(occupancy_grid, detections)
+    publish_occupancy_grid(updated_grid)
+```
+
+### + `Step 6`: Add Semantic Labels
+
++ Add Semantic Information:
+Label detected objects with semantic information.
+
+```python
+def add_semantic_labels(grid, detections):
+    labels = ["table", "chair", "stool", "box"]
+    for detection, label in zip(detections, labels):
+        x, y, w, h = detection
+        grid[y:y+h, x:x+w] = label  # Annotate grid with labels
+    return grid
+
+labeled_grid = add_semantic_labels(occupancy_grid, detections)
+```
+
+### + `Step 7`: Validate and Compare with AMR-generated Map
++ Simulate AMR with SLAM:
+  
+Use the ROS2 navigation stack to simulate an AMR generating its own map.
+Compare the AMR-generated map with the overhead camera map.
+
+By following these steps, we will be able to develop a 2D occupancy grid map using overhead cameras, dynamically update it with object detection, and add semantic labels for improved navigation and path-planning in a simulated environment.
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+##  Stitching images from multiple cameras :
 
  Stitching images from multiple cameras involves several steps such as feature detection, matching, and blending. OpenCV library provides functions to perform these tasks efficiently. Below is a Python code example to stitch images from four overhead cameras:
 
