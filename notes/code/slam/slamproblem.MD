@@ -51,7 +51,7 @@ Landmark predictLandmark(const Pose& currentPose, const Landmark& landmarkInMap)
 
 Factor graph optimization is used to estimate the robot's trajectory and the map by optimizing a graph of factors that represent constraints from motion and observation models. Maximum Likelihood Estimation - MLE and Maximum A Posteriori - MAP.
 
-For MLE, you can use a least-squares optimization approach:
+For MLE, we can use a least-squares optimization approach:
 
 ```cpp
 
@@ -83,7 +83,7 @@ void optimizeMLE(FactorGraph& graph, Pose& trajectory, std::vector<Landmark>& ma
 
 ```
 
-For MAP optimization, you'd typically use a probabilistic framework, such as Bayesian filtering or optimization, to estimate the trajectory and map while considering prior information and measurement uncertainties.
+For MAP optimization, we'd typically use a probabilistic framework, such as Bayesian filtering or optimization, to estimate the trajectory and map while considering prior information and measurement uncertainties.
 
 Factor graph optimization is a powerful technique used in various fields such as robotics, computer vision, and machine learning to solve estimation problems. It involves representing a complex optimization problem as a graph, where nodes represent variables and factors represent constraints between these variables.
 

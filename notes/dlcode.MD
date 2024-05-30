@@ -61,4 +61,56 @@ Optical Flow : Neural Structure-from-Motion (c++)
 </tr>
 </table>
 
+
+
+<table width=100%>
+<tr>
+<th>
+Monocular Dense Reconstruction
+
+<img src="img/mdr.png" width=100%> 
+
+[ [code](https://github.com/florist-notes/monodense) ]
+
+</th>
+<th>
+3D Dynamic Scene Graphs
+
+<img src="img/dsc.png" width=100%> 
+
+[ [code](https://github.com/florist-notes/3dscenegraphs) ]
+
+</th>
+<th>
+Characterizing Performance of Edge AI Accelerators
+
+<img src="img/self2.png" width=100%> 
+
+
+</th>
+</tr>
+<tr>
+<th>
+Geometric Deep Learning
+
+<img src="img/top.png" width=100%> 
+
+
+</th>
+<th>Vision-Based Navigation in Dynamic Environment
+
+
+<img src="img/nav2.png" width=100%> 
+
+</th>
+<th>
+3D Gaussian Splatting
+
+
+<img src="img/3dgs.png" width=100%> 
+
+</th>
+</tr>
+</table>
+
 Find state of the art deep learning model code via [paperswithcode](https://paperswithcode.com/sota), example : [semantic segmentation](https://paperswithcode.com/task/semantic-segmentation).
