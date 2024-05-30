@@ -1,8 +1,32 @@
 # Optical Flow | Structure from Motion (SfM)
 
-Optical Flow and Structure from Motion (SfM) are two essential computer vision techniques used for motion analysis and 3D reconstruction from images or video sequences.
+Optical Flow and Structure from Motion (SfM) are two essential computer vision techniques used for motion analysis and 3D reconstruction from images or video sequences. Optical Flow is the estimation of the motion of objects between consecutive frames in a video sequence. It calculates the displacement of pixels from one frame to another. The optical flow field provides information about the speed and direction of motion in an image or video.
 
-<b>Optical Flow:</b> Optical Flow is the estimation of the motion of objects between consecutive frames in a video sequence. It calculates the displacement of pixels from one frame to another. The optical flow field provides information about the speed and direction of motion in an image or video.
+### Key Assumptions :
+
+Optical flow relies on two primary assumptions:
+
++ `Brightness Constancy Assumption`: The intensity of a point in an image remains constant over time, meaning that the brightness of a pixel does not change between frames. Mathematically, if I(x,y,t) represents the intensity of a pixel at position (x,y) at time t, then: 
+
+$$ I(x,y,t)=I(x+u,y+v,t+1) $$ 
+
+where (u,v) is the displacement vector of the pixel.
+
++ `Spatial and Temporal Coherence`: Neighboring pixels have similar motion. This implies that the motion field varies smoothly across most of the image.
+
+### Mathematical Formulation :
+Using the brightness constancy assumption, we can derive the optical flow constraint equation. By taking a first-order Taylor expansion of 
+I(x+u,y+v,t+1) and assuming small displacements, we get: 
+
+$$ I(x+u,y+v,t+1)≈I(x,y,t)+ \frac{∂I}{∂x}u + \frac{∂I}{∂y}v + \frac{∂I}{∂t} $$
+
+ 
+Since  `I(x,y,t)=I(x+u,y+v,t+1)`:
+
+$$ \frac{∂I}{∂x}u + \frac{∂I}{∂y}v + \frac{∂I}{∂t} = 0 $$
+
+This equation is known as the optical flow constraint equation (OFCE).
+
 
 <b>Key Concepts:</b>
 
@@ -11,7 +35,6 @@ Optical Flow and Structure from Motion (SfM) are two essential computer vision t
 + <b>Horn-Schunck Optical Flow:</b> The Horn-Schunck method is another optical flow algorithm that computes a global flow field across the entire image. It assumes that the brightness of the image is constant over time.
 
 ```cpp
-
 #include <opencv2/opencv.hpp>
 
 int main() {
@@ -51,8 +74,6 @@ int main() {
     cv::destroyAllWindows();
     return 0;
 }
-
-
 ```
 
 ## Structure from Motion (SfM):
@@ -130,7 +151,6 @@ Tomasi-Kanade Factorization is a technique used in computer vision and structure
 In this simplified example, we'll use OpenCV to perform Tomasi-Kanade Factorization on synthetic data. In practice, real-world applications involve the use of feature points, camera calibration, and bundle adjustment for improved accuracy.
 
 ```cpp
-
 #include <opencv2/opencv.hpp>
 
 int main() {
@@ -166,8 +186,6 @@ int main() {
 
     return 0;
 }
-
-
 ```
 
 ### Change detection and object tracking:
@@ -218,8 +236,6 @@ int main() {
     cv::destroyAllWindows();
     return 0;
 }
-
-
 ```
 
 In this code:
@@ -229,3 +245,10 @@ In this code:
 + For each frame in the video, we apply background subtraction to obtain a foreground mask.
 + We threshold the foreground mask to create a binary segmentation, where + white pixels represent the detected foreground.
 Finally, we display the binary segmentation result.
+
+### Advanced Tools and Libraries :
+For more complex and robust SfM pipelines, researchers and practitioners often use specialized tools and libraries such as:
+
++ `COLMAP`: A general-purpose SfM and MVS (Multi-View Stereo) pipeline.
++ `VisualSFM`: A graphical user interface application for 3D reconstruction using SfM.
++ `OpenMVG`: An open-source library for multi-view geometry.
