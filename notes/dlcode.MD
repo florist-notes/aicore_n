@@ -59,11 +59,6 @@ Optical Flow : Neural Structure-from-Motion (c++)
 
 </th>
 </tr>
-</table>
-
-
-
-<table width=100%>
 <tr>
 <th>
 Monocular Dense Reconstruction
@@ -112,5 +107,6 @@ Geometric Deep Learning
 </th>
 </tr>
 </table>
+
 
 Find state of the art deep learning model code via [paperswithcode](https://paperswithcode.com/sota), example : [semantic segmentation](https://paperswithcode.com/task/semantic-segmentation).
