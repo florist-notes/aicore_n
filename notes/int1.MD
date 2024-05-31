@@ -28,7 +28,7 @@ Success Criteria :
    + ▪ Calculate the accuracy of performance in detection. <br/>
    + ▪ Create a 3-page report on the chosen problem, technical approach, and results. <br/>
 
-[ [official-document](./doc/Cut-in%20detection%20using%20IDD.pdf) ]
+[ [official-document](./doc/PS-8%20Vehicle%20Cut-in%20Detection.pdf) ]
 
 <img src="./img/cutin2.jpg" width=100%>
 

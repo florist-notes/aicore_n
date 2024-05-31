@@ -25,7 +25,7 @@ or LiDAR for SLAM map generation and navigation using the ROS2 navigation stack.
 comparison between the map generated from the overhead cameras and the map created by the AMR
 using SLAM.
 
-[ [official-document](./doc/Creating%202D%20Occupancy%20Grid%20Map%20using%20overhead%20infrastructure%20cameras.pdf) ]
+[ [official-document](./doc/PS-10%20Develop%20a%202D%20Occupancy%20Grid%20Map%20of%20a%20Room%20using%20Overhead%20Cameras.pdf) ]
 
 <hr />
 
