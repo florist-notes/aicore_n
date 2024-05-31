@@ -36,5 +36,5 @@ I took AEC : CS 872 ( Machine Learning ) and AEC : CS771 ( Artificial Intelligen
 
 <img src="./img/dl.png" width=100%>
 
-notes on tools: [[PyTorch](./pyt.MD)], [[TensorFlow](./tf.MD)], [[INT1](./int1.MD)], [[INT2](./int2.MD)], [[INT3](./int3.MD)].
+notes on tools: [[PyTorch](./pyt.MD)], [[TensorFlow](./tf.MD)], [[INT1](./int1.MD)], [[INT2](./int2.MD)], [[INT3](./int3.MD)], [[INT 4](./int4.MD)], [[INT 5](./int5.MD)].
 
