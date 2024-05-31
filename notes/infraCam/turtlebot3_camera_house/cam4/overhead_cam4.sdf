@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="overhead_camera4">
+    <static>true</static>
+    <link name="camera_link">
+      <pose>0 0 2 0 1.5708 0</pose> <!-- Adjust position and orientation as needed -->
+      <sensor name="camera" type="camera">
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <update_rate>30.0</update_rate>
+          <camera_name>overhead_camera4</camera_name>
+          <image_topic_name>/overhead_camera4/image_raw</image_topic_name>
+          <frame_name>camera_link</frame_name>
+          <ros>
+            <namespace>overhead_camera</namespace>
+          </ros>
+        </plugin>
+      </sensor>
+    <!-- Visual representation of the camera (cuboid) -->
+      <visual name="camera_visual1">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.2</size> <!-- Size of the cuboid -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.0 0.0 1.0 1.0</ambient> <!-- Blue color -->
+          <diffuse>0.0 0.0 1.0 1.0</diffuse>
+          <specular>0.0 0.0 0.5 1.0</specular>
+          <emissive>0.0 0.0 0.0 1.0</emissive>
+        </material>
+        <pose>0 0 -0.1 0 0 0</pose> <!-- Position relative to the camera -->
+      </visual>
+    </link>
+  </model>
+</sdf>

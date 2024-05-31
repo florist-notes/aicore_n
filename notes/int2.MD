@@ -2,7 +2,7 @@
 
 The primary objective of this project is to develop a 2D occupancy grid map of a room using overhead cameras, similar to the map created by a ROS2-based SLAM algorithm typically used by autonomous mobile robots (AMRs).
 
-<img src="./img/occg.png" width=44%> <img src="./img/dsg.png" width=52%>
+<img src="./img/cam.png" width=47%> <img src="./img/dsg.png" width=51%>
 
 Description:
 + In the initial phase, you will need to equip a room or area with four overhead RGB cameras
@@ -16,6 +16,23 @@ chairs can be moved around. The 2D occupancy grid map should be able to dynamica
 itself to reflect these changes, providing a new, accurate map for AMRs to navigate. Additionally,
 you will add semantic labels to the map (e.g., "table", "chair", "other AMR") to provide further
 context for the AMRs. This will likely require the implementation of simple object detection.
+
+Motivation:
++ Map entire environment in one shot 
++ Map moving obstacles in real-time 
++ Reduce AMR cost – don’t need expensive LiDAR or depth cams
++ Provide non line of sight to AMRs
++ Better multi-robot path planning and coordination
+
+Project Scope
++ Add the 4 RGB cameras in Gazebo simulation environment [[infraCam](./infraCam/)] in a 2x2 matrix (birds eye view) covering the environment 
+with marginal overlap of FoVs at a height of ~ 8 meters (at specified locations as on slide no.9)
++ Use 640x480 image resolution and acquire images from the simulated cameras
++ Explore techniques for multi-camera calibration to automatically calibrate and align FoVs or all overhead cameras
++ Create a composite 2D occupancy grid map with accurate physical dimensions by fusing images from 4 cameras. The map 
+should be in a form (.pgm and 512x512 pixel resolution) such that it can be used in ROS navigation stack.
++ Benchmark accuracy/error of infra-cam derived (dimensionally accurate) composite map v/s the Gazebo environment (refer 
+slides 12-14) and Measure the computing latency to run the algorithm.
 
 Outcomes:
 
