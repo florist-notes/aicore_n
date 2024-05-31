@@ -124,6 +124,35 @@ interrupt the program.
 published, listener_callback function is 
 executed.
 
+### How to evaluate the generated map?
+
+[[Evaluation_of_gen_map](./Evaluation_of_gen_map/)]
++ Run command below (replace path in 
+yaml file)
+
+```bash
+$ ros2 launch turtlebot3_navigation2 
+$ navigation2.launch.py use_sim_time:=True 
+$ map:=$HOME/map_house.yaml
+```
+
++ Rviz: a visualization tool for ROS
++ We have 8 key point to point 
+measurements as benchmarks.
++ A map generated with cartographer will 
+be provided for reference.
+
+<img src="./img/refmap.png" width=100%>
+
+#### How to evaluate the generated map?
+#### Using Rviz to find distance between key points
+
+<hr />
+
+## 🌸 extra notes :
+
+
+
 ### + `Step 2`: Capture and Stitch Images
 
 + Capture Images from Cameras:
@@ -370,29 +399,6 @@ cv2.imshow("Occupancy Grid Map", occupancy_grid_map * 255)  # Convert back to [0
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-
-### How to evaluate the generated map?
-
-[[Evaluation_of_gen_map](./Evaluation_of_gen_map/)]
-+ Run command below (replace path in 
-yaml file)
-
-```bash
-$ ros2 launch turtlebot3_navigation2 
-$ navigation2.launch.py use_sim_time:=True 
-$ map:=$HOME/map_house.yaml
-```
-
-+ Rviz: a visualization tool for ROS
-+ We have 8 key point to point 
-measurements as benchmarks.
-+ A map generated with cartographer will 
-be provided for reference.
-
-<img src="./img/refmap.png" width=100%>
-
-#### How to evaluate the generated map?
-#### Using Rviz to find distance between key points
 
 To convert the occupancy grid map into a format compatible with ROS2, we'll need to package it into a nav_msgs/OccupancyGrid message. Below is the code to achieve this:
 
