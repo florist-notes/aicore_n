@@ -38,11 +38,35 @@ Outcomes:
 
 Initially, you can model and simulate the room environment, objects, and overhead cameras in the
 Gazebo simulator. Gazebo will also support the addition of an AMR equipped with an on-board camera
-or LiDAR for SLAM map generation and navigation using the ROS2 navigation stack. This will allow for a
-comparison between the map generated from the overhead cameras and the map created by the AMR
+or LiDAR for SLAM map generation and navigation using the ROS2 navigation stack. This will allow for a comparison between the map generated from the overhead cameras and the map created by the AMR
 using SLAM.
 
-[ [official-document](./doc/PS-10%20Develop%20a%202D%20Occupancy%20Grid%20Map%20of%20a%20Room%20using%20Overhead%20Cameras.pdf) ]
+Expected deliverables :
+
++ Word document describing your solution, approach, novelty, pros/cons/limitations of your approach and comparison to 
+state-of –the-art. Detailed block diagram and writeup describing your algorithm and approach.
++ Fused map of the environment with detailed dimensions (derived via your infra-cam fusion algorithm) v/s the ground truth 
+map from Gazebo (provided)
++ Error estimates: Measure positions/distances between various key points in the composite map and identify % absolute 
+avg, min and max errors. Provide details on how the algorithm was rigorously tested and the map accuracy results.
++ Computing latency: Characterize computing latency of the algorithm on an Intel i5 (10th Gen) computer. Provide 
+measurement procedure and detailed test results.
++ Source code and algos to be shared for evaluation.
+
+Evaluation criteria :
+
++ Accuracy (absolute avg, min, max error) of generated fused map v/s distances of key￾point in simulation. The expectation is that the avg error should be < 10% (lesser the 
+better). 
+    + The algo and code will be tested on a modified map to verify accuracy of the algorithm
+
++ Computational Complexity (Computational latency in milliseconds to process each 
+set of images from camera and convert them to a composite map) as measured on 
+an Intel Core i5 (10th gen CPU, iGPU can be used). The expectation it that the overall 
+computational latency should be < 1000ms (lesser the better).
+
++ Novelty, practicality and efficiency of the solution – this is a subjective metric
+
+[ [official-document](./doc/PS-10%20Develop%20a%202D%20Occupancy%20Grid%20Map%20of%20a%20Room%20using%20Overhead%20Cameras.pdf) ] | [[turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/)], [[ros2-for-beginners](https://www.udemy.com/course/ros2-for-beginners/?couponCode=OF52424)], [[ros2-in-python](https://www.udemy.com/course/ros2-robotics-developer-course-using-ros2-in-python/?couponCode=OF52424)]
 
 <hr />
 
@@ -70,6 +94,36 @@ python3 -m venv ros2_env
 source ros2_env/bin/activate
 pip install opencv-python numpy
 ```
+### Adding Overhead Cameras :
++ Download the infraCam.zip
++ Extract the folder `“turtlebot3_camera_house”` 
+and place in the `“……/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models”` directory.
++  Replace the `waffle_pi.model` in 
+`“…../turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/turtlebot3_houses/”` with the downloaded version.
++  Change path in lines 6,11,16,21
++  Source and build the workspace
++  Run house simulation: 
+`“ros2 launch turtlebot3_gazebo 
+turtlebot3_house.launch.py”`
++  Topics related overhead camera are now 
+visible.
+
+### How to acquire data from camera : [[image_listener.py](./image_listener.py)]
+
++ ROS works as a pub-sub model 
++ The images are being streamed on the topics.
++ The images can be accessed through the 
+python script.
++ Always `“source /opt/ros/foxy/setup.bash”` 
+before running the python script.
++ 1 – Initiates the nodes (script will be given 
+unique name) and waits for user to 
+interrupt the program.
++ 2 – Creates subscription to camera topic.
++ 3 – Every time the camera image is 
+published, listener_callback function is 
+executed.
+
 ### + `Step 2`: Capture and Stitch Images
 
 + Capture Images from Cameras:
