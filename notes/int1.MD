@@ -8,8 +8,19 @@ publicly available for research, and can be used for tasks like object detection
 Download IDD Temporal from <a href="http://idd.insaan.iiit.ac.in/">idd.insaan.iiit.ac.in</a> and develop new (or better) machine learning
 models for:
 
-+ Detection of sudden cut-in of vehicles (two/three/four wheelers, pushcarts etc) into the direction of driving
++ Detection of sudden cut-in of vehicles (two/three/four wheelers, pushcarts etc) into the direction of driving.
 
+Research Focus :
+
++ Perform the below using the [IDD dataset](http://idd.insaan.iiit.ac.in/). Use any extra data from other sources to augment training ML models.
++ Detect and tag objects as soon as they appear partially or fully in front of the driver.
++ Estimate distance and TTC. Provide a warning when the TTC is below a predefined threshold.
+  + Recommended 0.5 - 0.7 secs.
+
+Success Criteria :
+
++ A working ML model for detecting cut-in
++ 99%+ true positives for cut-in detection
 
 `Outcomes`:
    + ▪ Train a new ML model for detecting cut-in. <br/>
@@ -39,7 +50,7 @@ models for:
 
 ### Detect vehicles speed from CCTV Cameras with Opencv and Deep Learning :
  
-* [Speed Detection From CCTV With OpenCV And Deep Learning](https://pysource.com/2021/10/26/speed-detection-from-cctv-with-opencv-and-deep-learning/), Perspective Distortion ; Flow Prediction : @githu/[supervision](https://github.com/roboflow/supervision) - [supervision track objects](https://supervision.roboflow.com/how_to/track_objects/), RNNs with sequence of images - [Recurrent Neural Network in Autonomous Vehicles](https://ritik12.medium.com/recurrent-neural-network-in-autonomous-vehicles-1274a8ac98d), Multi Task Attention Network (MTAN) | Multi Task Learning, Depth Estimation, [Analysis and Evaluation of Recurrent Neural Networks in Autonomous Vehicles](https://www.edgeimpulse.com/blog/content/files/smash/get/diva2:1155735/fulltext01.pdf).
+* [Speed Detection From CCTV With OpenCV And Deep Learning](https://pysource.com/2021/10/26/speed-detection-from-cctv-with-opencv-and-deep-learning/), Perspective Distortion ; Flow Prediction : @githu/[supervision](https://github.com/roboflow/supervision) - [supervision track objects](https://supervision.roboflow.com/how_to/track_objects/), RNNs with sequence of images - [Recurrent Neural Network in Autonomous Vehicles](https://ritik12.medium.com/recurrent-neural-network-in-autonomous-vehicles-1274a8ac98d), Multi Task Attention Network (MTAN) | Multi Task Learning, Depth Estimation, [Analysis and Evaluation of Recurrent Neural Networks in Autonomous Vehicles](https://www.edgeimpulse.com/blog/content/files/smash/get/diva2:1155735/fulltext01.pdf), [Vehicle Detection and Tracking From a Front-Face Camera](https://towardsdatascience.com/vehicle-detection-and-tracking-from-a-front-face-camera-a9b83c842f58), [Object Tracking](https://www.v7labs.com/blog/object-tracking-guide#deep-learning-based-approaches-to-object-tracking).
 
 
 ### Autonomous Driving Datasets :
@@ -48,6 +59,8 @@ models for:
 
 * Paper: [ [A Survey on Autonomous Driving Datasets: Statistics, Annotation Quality, and a Future Outlook](https://arxiv.org/abs/2401.01454) ] : [github](https://github.com/MingyuLiu1/autonomous_driving_datasets) ; [ [A Survey on Datasets for Decision-making of
 Autonomous Vehicle](https://arxiv.org/abs/2306.16784) ]
+
+* Models : [ [DEFT](https://github.com/MedChaabane/DEFT), [CenterTrack](https://github.com/xingyizhou/CenterTrack), [KITTI - Multi Object Tracking Accuracy (MOTA)](https://paperswithcode.com/sota/multiple-object-tracking-on-kitti-tracking?p=mots-multi-object-tracking-and-segmentation), [Monocular Quasi-Dense 3D Object Tracking](https://arxiv.org/pdf/2103.07351) ]
 
 <hr />
 
