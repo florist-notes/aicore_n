@@ -169,104 +169,157 @@ be provided for reference.
 
 ### + `Step 2`: Capture and Stitch Images
 
-+ Capture Images from Cameras:
++ Capture Images from Cameras (Image Stitching Node):
 
 Write a ROS2 node to capture images from the overhead cameras.
 ```python
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import Image
-import cv2
-from cv_bridge import CvBridge
+#!/usr/bin/env python
 
-class ImageCapture(Node):
-    def __init__(self):
-        super().__init__('image_capture')
-        self.bridge = CvBridge()
-        self.image_subs = [
-            self.create_subscription(Image, f'/camera_{i}/image_raw', self.image_callback, 10) for i in range(4)
-        ]
-        self.images = [None] * 4
-
-    def image_callback(self, msg, camera_id):
-        self.images[camera_id] = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
-
-def main(args=None):
-    rclpy.init(args=args)
-    image_capture = ImageCapture()
-    rclpy.spin(image_capture)
-    image_capture.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
-```
-+ Stitch Images Together:
-
-Use OpenCV to stitch the images.
-
-```python
+import rospy
 import cv2
 import numpy as np
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge
 
-def stitch_images(images):
-    # Assuming images are ordered as [top-left, top-right, bottom-left, bottom-right]
-    top = cv2.hconcat([images[0], images[1]])
-    bottom = cv2.hconcat([images[2], images[3]])
-    stitched_image = cv2.vconcat([top, bottom])
-    return stitched_image
+class ImageStitchingNode:
+    def __init__(self):
+        rospy.init_node('image_stitching_node', anonymous=True)
+        
+        self.bridge = CvBridge()
+        self.images = {}
+        self.subscribers = []
+        
+        camera_topics = ["/camera1/image_raw", "/camera2/image_raw", "/camera3/image_raw", "/camera4/image_raw"]
+        
+        for i, topic in enumerate(camera_topics):
+            self.subscribers.append(rospy.Subscriber(topic, Image, self.image_callback, callback_args=i))
+        
+        self.stitched_image_pub = rospy.Publisher('/stitched_image', Image, queue_size=10)
+        
+        rospy.spin()
 
-stitched_image = stitch_images(images)
-cv2.imwrite('stitched_image.jpg', stitched_image)
+    def image_callback(self, msg, camera_index):
+        try:
+            cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            self.images[camera_index] = cv_image
+            
+            if len(self.images) == 4:
+                self.stitch_images()
+        except Exception as e:
+            rospy.logerr(f"Error in image_callback: {e}")
+
+    def stitch_images(self):
+        images = [self.images[i] for i in sorted(self.images.keys())]
+        
+        stitcher = cv2.Stitcher.create()
+        (status, stitched) = stitcher.stitch(images)
+        
+        if status == cv2.Stitcher_OK:
+            stitched_msg = self.bridge.cv2_to_imgmsg(stitched, "bgr8")
+            self.stitched_image_pub.publish(stitched_msg)
+        else:
+            rospy.logerr(f"Image stitching failed with status {status}")
+
+if __name__ == '__main__':
+    try:
+        ImageStitchingNode()
+    except rospy.ROSInterruptException:
+        pass
 ```
+Make the script executable : `$ chmod +x src/image_processing/src/image_stitching.py`.
 
-### + `Step 3`: Generate 2D Occupancy Grid Map
+### + `Step 3`: Generate 2D Occupancy Grid Map (Create the Occupancy Grid Map Node)
 
 + Convert Image to Grayscale and Threshold:
 
 Convert the stitched image to a binary occupancy grid.
-
-```python
-gray_image = cv2.cvtColor(stitched_image, cv2.COLOR_BGR2GRAY)
-_, binary_image = cv2.threshold(gray_image, 127, 255, cv2.THRESH_BINARY)
-```
 
 + Generate Occupancy Grid:
 
 Create an occupancy grid from the binary image.
 
 ```python
-occupancy_grid = np.where(binary_image == 255, 0, 1)
+#!/usr/bin/env python
+
+import rospy
+import cv2
+import numpy as np
+from sensor_msgs.msg import Image
+from nav_msgs.msg import OccupancyGrid
+from cv_bridge import CvBridge
+
+class OccupancyGridMapNode:
+    def __init__(self):
+        rospy.init_node('occupancy_grid_map_node', anonymous=True)
+        
+        self.bridge = CvBridge()
+        
+        rospy.Subscriber("/stitched_image", Image, self.image_callback)
+        self.occupancy_grid_pub = rospy.Publisher('/occupancy_grid', OccupancyGrid, queue_size=10)
+        
+        rospy.spin()
+
+    def image_callback(self, msg):
+        try:
+            cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            gray_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+            _, binary_image = cv2.threshold(gray_image, 127, 255, cv2.THRESH_BINARY)
+            
+            occupancy_grid = self.create_occupancy_grid(binary_image)
+            self.occupancy_grid_pub.publish(occupancy_grid)
+        except Exception as e:
+            rospy.logerr(f"Error in image_callback: {e}")
+
+    def create_occupancy_grid(self, binary_image):
+        occupancy_grid = OccupancyGrid()
+        
+        occupancy_grid.header.stamp = rospy.Time.now()
+        occupancy_grid.header.frame_id = "map"
+        
+        occupancy_grid.info.resolution = 0.05
+        occupancy_grid.info.width = binary_image.shape[1]
+        occupancy_grid.info.height = binary_image.shape[0]
+        occupancy_grid.info.origin.position.x = 0
+        occupancy_grid.info.origin.position.y = 0
+        occupancy_grid.info.origin.position.z = 0
+        occupancy_grid.info.origin.orientation.w = 1.0
+        
+        data = []
+        for i in range(binary_image.shape[0]):
+            for j in range(binary_image.shape[1]):
+                if binary_image[i, j] == 255:
+                    data.append(0)
+                else:
+                    data.append(100)
+        
+        occupancy_grid.data = data
+        
+        return occupancy_grid
+
+if __name__ == '__main__':
+    try:
+        OccupancyGridMapNode()
+    except rospy.ROSInterruptException:
+        pass
 ```
+
+Make the script executable : `$ chmod +x src/image_processing/src/occupancy_grid_map.py`.
 
 ### + `Step 4`: Simulate in Gazebo and Validate
 
-+ Load Occupancy Grid into ROS2:
-Use the `nav_msgs/OccupancyGrid` message to publish the map.
+Create a launch file to run both nodes.
 
-```python
-import rclpy
-from nav_msgs.msg import OccupancyGrid
-from std_msgs.msg import Header
+Create a launch file image_processing.launch: 
 
-def publish_occupancy_grid(grid):
-    pub = node.create_publisher(OccupancyGrid, 'map', 10)
-    occupancy_msg = OccupancyGrid()
-    occupancy_msg.header = Header()
-    occupancy_msg.header.stamp = node.get_clock().now().to_msg()
-    occupancy_msg.header.frame_id = 'map'
-    occupancy_msg.data = grid.flatten().tolist()
-    occupancy_msg.info.width = grid.shape[1]
-    occupancy_msg.info.height = grid.shape[0]
-    occupancy_msg.info.resolution = 0.05  # Adjust resolution as needed
-    pub.publish(occupancy_msg)
-
-rclpy.init(args=None)
-node = rclpy.create_node('occupancy_grid_publisher')
-publish_occupancy_grid(occupancy_grid)
-rclpy.spin(node)
-rclpy.shutdown()
+```xml
+<launch>
+    <node name="image_stitching_node" pkg="image_processing" type="image_stitching.py" output="screen"/>
+    <node name="occupancy_grid_map_node" pkg="image_processing" type="occupancy_grid_map.py" output="screen"/>
+</launch>
 ```
+
+Run the launch file : ` $ roslaunch image_processing image_processing.launch`.
+
 ## Phase 2: Dynamic Environment Mapping
 
 ### + `Step 5`: Detect and Update Moving Objects
@@ -340,142 +393,6 @@ Use the ROS2 navigation stack to simulate an AMR generating its own map.
 Compare the AMR-generated map with the overhead camera map.
 
 By following these steps, we will be able to develop a 2D occupancy grid map using overhead cameras, dynamically update it with object detection, and add semantic labels for improved navigation and path-planning in a simulated environment.
-
-
-
-
-
-##  Stitching images from multiple cameras :
-
- Stitching images from multiple cameras involves several steps such as feature detection, matching, and blending. OpenCV library provides functions to perform these tasks efficiently. Below is a Python code example to stitch images from four overhead cameras:
-
- ```python
-import cv2
-import numpy as np
-
-def stitch_images(images, overlap=100):
-    # Determine the output dimensions
-    max_width = max(image.shape[1] for image in images)
-    max_height = max(image.shape[0] for image in images)
-    total_width = max_width * 2 - overlap
-    total_height = max_height * 2 - overlap
-
-    # Create an empty canvas
-    canvas = np.zeros((total_height, total_width, 3), dtype=np.uint8)
-
-    # Calculate offsets for each image
-    offsets = [(0, 0), (max_width - overlap, 0), (0, max_height - overlap), (max_width - overlap, max_height - overlap)]
-
-    # Paste images onto the canvas
-    for i, image in enumerate(images):
-        offset_x, offset_y = offsets[i]
-        canvas[offset_y:offset_y+image.shape[0], offset_x:offset_x+image.shape[1]] = image
-
-    return canvas
-
-# Load images from four cameras
-image1 = cv2.imread("camera1_image.jpg")
-image2 = cv2.imread("camera2_image.jpg")
-image3 = cv2.imread("camera3_image.jpg")
-image4 = cv2.imread("camera4_image.jpg")
-
-# Stitch images
-result_image = stitch_images([image1, image2, image3, image4])
-
-# Display the stitched image
-cv2.imshow("Stitched Image", result_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
- ```
-Creating a 2D occupancy grid map from the stitched image involves segmenting the image into occupied and free space regions based on certain criteria. Here's a simplified approach to accomplish this using OpenCV:
-
-```python
-import cv2
-import numpy as np
-
-def create_occupancy_grid_map(image):
-    # Convert the image to grayscale
-    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    # Threshold the grayscale image to obtain a binary image
-    _, binary_image = cv2.threshold(gray_image, 127, 255, cv2.THRESH_BINARY)
-    # Invert the binary image (occupied pixels become white)
-    binary_image = cv2.bitwise_not(binary_image)
-    # Convert the binary image to a 2D occupancy grid map
-    occupancy_grid_map = binary_image // 255  # Convert from [0, 255] to [0, 1]
-    return occupancy_grid_map
-
-# Load the stitched image
-stitched_image = cv2.imread("stitched_image.jpg")
-# Create the occupancy grid map
-occupancy_grid_map = create_occupancy_grid_map(stitched_image)
-# Display the occupancy grid map
-cv2.imshow("Occupancy Grid Map", occupancy_grid_map * 255)  # Convert back to [0, 255] for display
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-
-To convert the occupancy grid map into a format compatible with ROS2, we'll need to package it into a nav_msgs/OccupancyGrid message. Below is the code to achieve this:
-
-```python
-import cv2
-import numpy as np
-from nav_msgs.msg import OccupancyGrid
-import rclpy
-from rclpy.node import Node
-
-class OccupancyGridMapPublisher(Node):
-    def __init__(self):
-        super().__init__('occupancy_grid_map_publisher')
-        self.publisher_ = self.create_publisher(OccupancyGrid, 'occupancy_grid_map', 10)
-    def publish_occupancy_grid_map(self, occupancy_grid_map):
-        # Create an OccupancyGrid message
-        occupancy_grid_msg = OccupancyGrid()
-        occupancy_grid_msg.header.stamp = self.get_clock().now().to_msg()
-        occupancy_grid_msg.info.width = occupancy_grid_map.shape[1]
-        occupancy_grid_msg.info.height = occupancy_grid_map.shape[0]
-        occupancy_grid_msg.info.resolution = 1.0  # Assuming each pixel corresponds to 1 meter
-        occupancy_grid_msg.info.origin.position.x = 0.0
-        occupancy_grid_msg.info.origin.position.y = 0.0
-        occupancy_grid_msg.info.origin.position.z = 0.0
-        occupancy_grid_msg.info.origin.orientation.x = 0.0
-        occupancy_grid_msg.info.origin.orientation.y = 0.0
-        occupancy_grid_msg.info.origin.orientation.z = 0.0
-        occupancy_grid_msg.info.origin.orientation.w = 1.0
-        # Flatten the occupancy grid map and set the data field of the message
-        occupancy_grid_msg.data = occupancy_grid_map.flatten().tolist()
-        # Publish the message
-        self.publisher_.publish(occupancy_grid_msg)
-        self.get_logger().info('Occupancy grid map published.')
-
-def create_occupancy_grid_map(image):
-    # Convert the image to grayscale
-    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    # Threshold the grayscale image to obtain a binary image
-    _, binary_image = cv2.threshold(gray_image, 127, 255, cv2.THRESH_BINARY)
-    # Invert the binary image (occupied pixels become white)
-    binary_image = cv2.bitwise_not(binary_image)
-    # Convert the binary image to a 2D occupancy grid map
-    occupancy_grid_map = binary_image // 255  # Convert from [0, 255] to [0, 1]
-    return occupancy_grid_map
-
-def main():
-    # Initialize ROS2 node
-    rclpy.init()
-    node = OccupancyGridMapPublisher()
-    # Load the stitched image
-    stitched_image = cv2.imread("stitched_image.jpg")
-    # Create the occupancy grid map
-    occupancy_grid_map = create_occupancy_grid_map(stitched_image)
-    # Publish the occupancy grid map
-    node.publish_occupancy_grid_map(occupancy_grid_map)
-    rclpy.spin(node)
-    # Destroy the node explicitly
-    node.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
-```
 
 Creating a dynamic 3D spatial scene graph from a 2D image requires a combination of computer vision techniques and 3D rendering. Here's a simplified outline of how you could approach this:
 
