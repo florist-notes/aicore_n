@@ -26,7 +26,7 @@ Motivation:
 
 Project Scope
 + Add the 4 RGB cameras in Gazebo simulation environment [[infraCam](./infraCam/)] in a 2x2 matrix (birds eye view) covering the environment 
-with marginal overlap of FoVs at a height of ~ 8 meters (at specified locations as on slide no.9)
+with marginal overlap of FoVs at a height of ~ 8 meters.
 + Use 640x480 image resolution and acquire images from the simulated cameras
 + Explore techniques for multi-camera calibration to automatically calibrate and align FoVs or all overhead cameras
 + Create a composite 2D occupancy grid map with accurate physical dimensions by fusing images from 4 cameras. The map 
@@ -94,8 +94,22 @@ python3 -m venv ros2_env
 source ros2_env/bin/activate
 pip install opencv-python numpy
 ```
+### Setting up the ROS2 environment :
+
++ Ubuntu 20.04
++ Install ROS2 foxy, packages – [3.1.2-3.1.4](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)
++ Check `“ros2 topic list”`
++ export TURTLEBOT3_MODEL=waffle_pi
++ Steps to create ros2 workspace
+    + `“mkdir –p ~/turtlebot3_ws/src”`
+    + Install turtlebot3 packages – [6.1.1,6.1.2](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/)
+    + Run the house simulation 
++ Check `“ros2 topic list”`
++ Locations Overhead cameras
+[C1: (-5,-2,8) C2:(-5,3,8) C3:(1,-2,8) C4:(1,3,8)]
+
 ### Adding Overhead Cameras :
-+ Download the infraCam.zip
++ Download the [infraCam.zip](./infraCam/)
 + Extract the folder `“turtlebot3_camera_house”` 
 and place in the `“……/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models”` directory.
 +  Replace the `waffle_pi.model` in 
