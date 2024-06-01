@@ -115,7 +115,7 @@ and place in the `“……/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_
 +  Replace the `waffle_pi.model` in 
 `“…../turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/turtlebot3_houses/”` with the downloaded version.
 +  Change path in lines 6,11,16,21
-+  Source and build the workspace
++  Source and build the workspace - `"$ source install/setup.bash"`.
 +  Run house simulation: 
 `“ros2 launch turtlebot3_gazebo 
 turtlebot3_house.launch.py”`
