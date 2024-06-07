@@ -43,9 +43,9 @@ Previous research has recognized the conflict between time-fairness and energy-f
 
 + `Energy Optimization` : Energy efficiency in cloud and edge systems is crucial for sustainability. Techniques include algorithmic improvements and system-level configurations like dynamic voltage and frequency scaling (DVFS), which adjust CPU or GPU energy usage by varying voltage or frequency. DVFS has become commonplace, allowing for application-specific frequency settings, impacting fair-sharing. Lowering the voltage or frequency slows down the execution speed of the application, while also reducing the energy consumption. In  particular, the power dissipated by the CPU or GPU is governed by the CMOS chip presented in this well-known equation:
  
-                                             𝑃 = 𝛼𝐶𝑓.(𝑉^2) 
+$$ 𝑃 = \alpha . 𝐶.𝑓.𝑉^2 $$
 
-     where 𝛼 is a proportional constant indicating the percentage of the system that is active or switching, 𝐶 represents the system’s capacitance, 𝑓 is the frequency at which the system is switching, and 𝑉 denotes the voltage swing across 𝐶.
+where 𝛼 is a proportional constant indicating the percentage of the system that is active or switching, 𝐶 represents the system’s capacitance, 𝑓 is the frequency at which the system is switching, and 𝑉 denotes the voltage swing across 𝐶.
 
 + `Model Serving Workloads` : Our work focuses on energy-time fairness with a particular emphasis on model serving workloads, where multiple deep learning models are executed on shared resources like GPUs. This choice aligns with the increasing energy demands of AI applications and the pursuit of energy-efficient designs in edge and cloud systems. Researchers have proposed various algorithmic and post-training methods to enhance energy efficiency while sharing resources efficiently.
 
@@ -168,5 +168,18 @@ The energy consumption 𝐸_𝑖^{𝐸𝐹} of a given application 𝐴_𝑖 is 
 
 Finally, it is worth noting that the ETF model can effectively be utilized to guarantee a minimum energy share while also prioritizing the equitable distribution of time.
 
+### ETF Scheduling Algorithm:
+
+We consider the following setup for the problem: we have N active applications time-sharing a single resource (e.g., GPUs), which could consume energy at varying rates, depending on how applications utilize it during their respective usage periods. A time quantum consisting of T time units is allocated amongst them. Each application Ai is allocated a time slice denoted as Ti, such that the sum of all time slices for all applications does not exceed T. Each application then executes their applications within their allocated time slices, operating at a power level denoted as Pi. The energy consumption of each application is therefore not only a function of the time for which it runs but also the power at which it operates. ETF achieves the design objectives by incrementally allocating time slices to each application based on their respective demand, weight, and power usage. This process follows two primary steps: 1) guaranteeing minimum time fairness, and 2) prioritizing energy efficiency.
+
++ `Guaranteeing minimum time fairness`: In this step, ETF addresses the objective of limiting performance degradation by ensuring that no application receives a time slice that falls below a 𝜙-fair timeshare allocation. This minimum share is set to ensure that even in scenarios where energy efficiency is being prioritized, the performance of each application is not unduly compromised. Notably, when an application’s demand is lower than the minimum time bound, ETF would allocate only the amount equal to the application’s demand. This approach ensures that applications allocations never surpass their demands, which is a necessary condition for achieving Pareto efficiency.
+
++ `Prioritizing energy efficiency`: In the previous step, we distributed 𝜙·T time units evenly among all applications. However, such an equal distribution of time units can lead to significant disparities in energy consumption. To encourage energy awareness, applications are repatriated the amount of energy they lost in the first round by extending their time allocation. Since time slices are indivisible, we use an iterative approach to distribute the remaining time slices. First, we calculate the current energy consumption based on their power profiles and the time slices that have been allocated to them so far as described. Next, we compute the remaining time slices that still need to be allocated. Subsequently, we start allocating the remaining time slices individually to the application with the minimum current energy consumption. This process continues until the remaining time slices have been allocated or all applications' demands have been fulfilled. Similar to the previous step, we ensure that we do not allocate time slices to applications whose demands have already been met.
+
+
+<img src="./img/etf_algo.png" width=48%> <img src="./img/etf1w.png" width=48%>
+
+
+<img src="./img/etf2.png" width=100%>
 
 
