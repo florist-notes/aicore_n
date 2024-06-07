@@ -8,8 +8,43 @@ Abstract : Traditionally, multi-tenant cloud and edge platforms use fair-share s
 
 </p>
 
-`KEYWORDS` : FairShare, Energy-aware, Energy-efficiency, Scheduling, Resource Management
+### `KEYWORDS` : FairShare, Energy-aware, Energy-efficiency, Scheduling, Resource Management
 
+<p class="ex1" align="justify" style="padding: 5px 5px 5px 5px">
 Over the past decade, cloud and edge platforms have significantly reduced the cost of large-scale computing and storage, enabling a variety of applications such as web services, batch processing, machine learning, and mobile augmented reality. This cost reduction is achieved through the efficient sharing of resources among diverse users and applications, increasing utilization and efficiency. This is particularly crucial for high-cost resources like GPUs, which are in high demand due to growing AI workloads. For instance, edge platforms in small autonomous vehicles, such as delivery robots, use shared onboard systems for tasks like obstacle detection and traffic monitoring. However, resource sharing introduces challenges, requiring operators to balance resources across different applications, especially when constrained by limited computational capacity and energy.
+</p>
 
 Multi-tenant cloud and edge platforms traditionally use fair-share schedulers to allocate server resources equitably among multiple applications. These schedulers ensure each application receives a proportional share of processing time, preventing any application from monopolizing resources or being starved. Over the past three decades, numerous scheduling policies have been developed, such as [Weighted Fair Queuing](https://dl.acm.org/doi/10.1145/75247.75248), [max-min fairness](https://www.jstor.org/stable/3010473), [Start-Time Fair Queueing](https://ieeexplore.ieee.org/document/649569/), [lottery scheduling](https://www.usenix.org/legacy/publications/library/proceedings/osdi/full_papers/waldspurger.pdf), and [Dominant Resource Fairness](https://www.usenix.org/conference/nsdi11/dominant-resource-fairness-fair-allocation-multiple-resource-types). Fair-share scheduling is widely implemented in modern operating systems, hypervisors, batch schedulers, container orchestration platforms, and data-processing platforms like Linux, Xen, VSphere, Slurm, Kubernetes, Spark, and Hadoop.
+
+<p class="ex1" align="justify" style="padding: 5px 5px 5px 5px">
+Enforcing energy-fairness can reduce energy consumption and carbon footprint, while encouraging users to improve the energy efficiency of their applications, crucial in both cloud and edge environments. However, there is an inherent conflict between time-fairness and energy-fairness, making it difficult to enforce both simultaneously. For instance, systems with dynamic voltage and frequency scaling (DVFS) minimize energy usage by lowering frequency and voltage when demand is low. Modern GPUs allow each application to set custom frequency/voltage settings for its time-slice, but this can lead to fewer computations during that time, penalizing energy-efficient applications. Consequently, applications using lower frequency/voltages consume much less energy than their share of processing time, a disparity also seen in GPUs due to varying model sizes and complexities, as most GPUs time-share rather than space-share, loading and running only one model at a time.
+
+Previous research has recognized the conflict between time-fairness and energy-fairness and developed schedulers to enforce energy-fairness across multi-tenant applications. Our key insight is that an application’s time and energy allocations are fundamentally interdependent, so enforcing fairness in one will inherently lead to unfairness in the other. Given that both time-fairness and energy-fairness offer crucial benefits, cloud and edge platforms should aim to balance these two types of fairness.
+</p>
+
+ To address the problem, we define a novel notion of Energy Time Fairness (ETF), which enables a configurable tradeoff between energy and time fairness, and then design a scheduler that enforces
+ it. We show that ETF satisfies many well-accepted and desirable fairness properties, including an energy-efficiency and sharing in centive, strategy-proofness, and [pareto efficiency](https://www.usenix.org/conference/nsdi11/dominant-resource-fairness-fair-allocation-multiple-resource-types).
+
+ More generally, while previous research has demonstrated how to enforce fairness in allocating multiple independent resources like cores and memory, ETF addresses enforcing fairness for multiple dependent resources such as processing time and energy. ETF acknowledges the impossibility of simultaneously achieving both time-fairness and energy-fairness across applications. Instead, it defines a smooth and configurable tradeoff between these two competing dimensions of fairness.
+
+ Our hypothesis is that using ETF can bridge the gap between pure time and energy fairness, thereby supporting both a configurable incentive for energy-efficient operation and the execution of time/latency-sensitive applications. In evaluating this hypothesis, we make the following contributions.
+
++ `Fairness Conflict`: To motivate our work, we experimentally demonstrate the conflict between time-fairness and energy-fairness by showing that enforcing time-fairness starves some applications of energy and enforcing energy-fairness starves some applications of time. To our knowledge, this paper is the first to highlight this conflict.
+
++ `Energy-Time Fairness (ETF)`: We introduce the concept of Energy-Time Fairness (ETF), which allows for a configurable tradeoff between energy and time fairness. We demonstrate that ETF satisfies many desirable fairness properties, including Pareto efficiency and strategy-proofness, while balancing the competing dimensions of fairness for dependent resources.
+
++ `Implementation and Evaluation`: We implement ETF in a new scheduling framework called ETFS, designed for edge and cloud GPUs. Our evaluation shows that ETF improves fairness by up to 2×, incentivizes energy efficiency, and allows for a configurable tradeoff between energy-fair and time-fair scheduling for multi-tenant GPU model serving workloads.
+
+## BACKGROUND
+
++ `Cloud and Edge Multitenancy` : Focus is on typical cloud and edge platforms serving multiple customers and applications. These platforms host various applications from different customers on servers using virtual machines or containers, enhancing resource utilization and providing isolation.
+
++ `Fair-share Scheduling Overview` : Fair-share schedulers allocate resources to applications based on predefined shares or weights, ensuring proportional resource allocation. Early schemes like [Weighted Fair Queuing](https://dl.acm.org/doi/10.1145/75247.75248) and [Generalized Processor Sharing](https://ieeexplore.ieee.org/document/234856) laid the foundation, while modern variants such as [Dominant Resource Fairness](https://www.usenix.org/conference/nsdi11/dominant-resource-fairness-fair-allocation-multiple-resource-types) and [Dominant Resource Fair Queuing](https://dl.acm.org/doi/10.1145/2342356.2342358) extend this concept to multi-resource environments.
+
++ `Energy Optimization` : Energy efficiency in cloud and edge systems is crucial for sustainability. Techniques include algorithmic improvements and system-level configurations like dynamic voltage and frequency scaling (DVFS), which adjust CPU or GPU energy usage by varying voltage or frequency. DVFS has become commonplace, allowing for application-specific frequency settings, impacting fair-sharing. Lowering the voltage or frequency slows down the execution speed of the application, while also reducing the energy consumption. In  particular, the power dissipated by the CPU or GPU is governed by the CMOS chip presented in this well-known equation:
+ 
+                                             𝑃 =𝛼𝐶𝑓𝑉2 
+
+     where 𝛼 is a proportional constant indicating the percentage of the system that is active or switching, 𝐶 represents the system’s capacitance, 𝑓 is the frequency at which the system is switching, and 𝑉 denotes the voltage swing across 𝐶.
+
++ `Model Serving Workloads` : Our work focuses on energy-time fairness with a particular emphasis on model serving workloads, where multiple deep learning models are executed on shared resources like GPUs. This choice aligns with the increasing energy demands of AI applications and the pursuit of energy-efficient designs in edge and cloud systems. Researchers have proposed various algorithmic and post-training methods to enhance energy efficiency while sharing resources efficiently.
