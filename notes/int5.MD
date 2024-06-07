@@ -69,3 +69,29 @@ Classical fair-share schedulers operate under three implicit assumptions, which 
 + `Unfairness of Time-based Fair Schedulers`: Conventional time-based fair-share schedulers allocate time slices in proportion to weights. However, applications running at higher speeds consume more energy, favoring them despite receiving equal time allocations. This implicit bias toward higher-energy-consuming applications renders the allocation unfair in terms of energy.
 
 + `Unfairness of Energy-based Fair Schedulers`: Energy fair-share scheduling allocates resources based on energy consumption rather than time. While this ensures equal energy usage, it may result in unfair time allocation. Applications running at lower frequencies receive more time to equalize energy consumption, potentially starving those running at higher frequencies. Thus, unfairness persists in the time dimension despite equalizing energy usage.
+
+### Desirable Fairness Properties :
+
+Our examples illustrate the tight coupling between time, energy, and cycles, leading to unfairness in conventional fair schedulers within heterogeneous cloud and edge servers. Traditional fairness techniques struggle to maintain fairness across multiple dimensions simultaneously. To address this disparity, we propose Energy-Time Fairness (ETF), a new notion of fairness that reconciles traditional techniques' shortcomings while preserving key properties:
+
++ 1. `Pareto-efficiency`: Ensures high resource utilization by preventing applications from increasing their share without reducing others.
+
++ 2. `Strategy-proofness`: Prevents applications from benefitting by misrepresenting their resource demands.
+
++ 3. `Sharing incentives`: Encourages dynamic resource sharing over static allocations.
+
+Moreover, ETF introduces additional desirable properties:
+
++ 1. `Efficiency incentives`: Reward energy-efficient applications with more resource time.
+
++ 2. `Time guarantees`: Ensures applications receive a minimum time slice regardless of their energy efficiency.
+
++ 3. `MAX-MIN energy fairness`: Maximizes the minimum energy allocation among applications, promoting fairness.
+
+## ENERGY-TIME FAIRNESS
+
+Energy-Time Fairness (ETF) introduces a novel fairness concept aimed at addressing starvation concerns while prioritizing energy fairness in multi-tenant scenarios with applications of varying energy consumption rates.
+
+ETF ensures minimum time guarantees to prevent starvation, allocating a configurable portion of the scheduling quantum (T) in a time-fair manner. This allocation ensures that even resource-intensive applications, which might starve under pure energy fairness, receive a minimum guaranteed time slice.
+
+However, ETF's primary objective is energy fairness. It achieves this by adjusting rates for the remaining segment of the time quantum, thus balancing energy fairness while preventing starvation.
