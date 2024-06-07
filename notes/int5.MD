@@ -1,6 +1,6 @@
 # Energy Time Fairness: Balancing Fair Allocation of Energy and Time for GPU Workloads
 
-[ paper : DOI[10.1145/3583740.3628435](https://www.computer.org/csdl/proceedings-article/sec/2023/012300a053/1UlmMhdN732) ]
+🌸 [ paper : DOI[10.1145/3583740.3628435](https://www.computer.org/csdl/proceedings-article/sec/2023/012300a053/1UlmMhdN732) ]
 
 
 <p class="ex1" align="justify" style="padding: 5px 5px 5px 5px">
@@ -43,8 +43,29 @@ Previous research has recognized the conflict between time-fairness and energy-f
 
 + `Energy Optimization` : Energy efficiency in cloud and edge systems is crucial for sustainability. Techniques include algorithmic improvements and system-level configurations like dynamic voltage and frequency scaling (DVFS), which adjust CPU or GPU energy usage by varying voltage or frequency. DVFS has become commonplace, allowing for application-specific frequency settings, impacting fair-sharing. Lowering the voltage or frequency slows down the execution speed of the application, while also reducing the energy consumption. In  particular, the power dissipated by the CPU or GPU is governed by the CMOS chip presented in this well-known equation:
  
-                                             𝑃 =𝛼𝐶𝑓𝑉2 
+                                             𝑃 = 𝛼𝐶𝑓.(𝑉^2) 
 
      where 𝛼 is a proportional constant indicating the percentage of the system that is active or switching, 𝐶 represents the system’s capacitance, 𝑓 is the frequency at which the system is switching, and 𝑉 denotes the voltage swing across 𝐶.
 
 + `Model Serving Workloads` : Our work focuses on energy-time fairness with a particular emphasis on model serving workloads, where multiple deep learning models are executed on shared resources like GPUs. This choice aligns with the increasing energy demands of AI applications and the pursuit of energy-efficient designs in edge and cloud systems. Researchers have proposed various algorithmic and post-training methods to enhance energy efficiency while sharing resources efficiently.
+
+
+### MOTIVATIONFORENERGY-TIMEFAIRNESS :
+
+ This section discusses some key assumptions made by traditional fair schedulers and why the assumptions do not hold for emerging hardware, such as modern GPUs and heterogeneous processors, resulting in unfairness problems
+
+ +  `Fair-Share Scheduling Basics` :
+
+Classical fair-share schedulers operate under three implicit assumptions, which are becoming outdated with emerging CPU and GPU architectures in edge and cloud servers. Firstly, they allocate CPU or GPU resources in time slices, assuming applications are time-shared. Secondly, these schedulers presume all applications execute at the same speed across time slices, ensuring equal progress. Thirdly, they assume an application's energy usage is directly proportional to its execution time. However, with the advent of heterogeneous core processors and multi-core GPUs, these assumptions are no longer valid. DVFS technology allows applications to run at different frequencies, leading to varying cycles and power consumption. Heterogeneous multi-core processors further complicate matters, as equal time execution no longer guarantees equal energy consumption. These trends pose challenges for fair-share schedulers in edge environments.
+
++ `Unfairness in Classical Fair-share Schedulers` :
+
++  `Unfairness due to Application Heterogeneity`: Consider a scenario where two applications, each with different deep learning models, share a GPU for inference tasks, a common case in edge computing. Despite using the same GPU frequency and time slices, differences in model size and architecture lead to varying energy consumption. GPUs comprise multiple processing units, each utilized differently by diverse models, resulting in unequal energy usage, favoring smaller models and potentially starving larger ones.
+
+<img src="./img/dlmodel.png" width=100%>
+
+[  Figure: Power consumption of different ML models when run under different frequencies on an Nvidia TX2. ]
+
++ `Unfairness of Time-based Fair Schedulers`: Conventional time-based fair-share schedulers allocate time slices in proportion to weights. However, applications running at higher speeds consume more energy, favoring them despite receiving equal time allocations. This implicit bias toward higher-energy-consuming applications renders the allocation unfair in terms of energy.
+
++ `Unfairness of Energy-based Fair Schedulers`: Energy fair-share scheduling allocates resources based on energy consumption rather than time. While this ensures equal energy usage, it may result in unfair time allocation. Applications running at lower frequencies receive more time to equalize energy consumption, potentially starving those running at higher frequencies. Thus, unfairness persists in the time dimension despite equalizing energy usage.
