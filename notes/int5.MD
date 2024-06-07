@@ -95,3 +95,78 @@ Energy-Time Fairness (ETF) introduces a novel fairness concept aimed at addressi
 ETF ensures minimum time guarantees to prevent starvation, allocating a configurable portion of the scheduling quantum (T) in a time-fair manner. This allocation ensures that even resource-intensive applications, which might starve under pure energy fairness, receive a minimum guaranteed time slice.
 
 However, ETF's primary objective is energy fairness. It achieves this by adjusting rates for the remaining segment of the time quantum, thus balancing energy fairness while preventing starvation.
+
+### +  Defining Energy-Time Fairness :
+ Assume there are 𝑁 applications denoted by 𝐴 and indexed by 𝑖, where application 𝐴_𝑖 uses power 𝑃_𝑖 and has weight 𝑤_𝑖.
+
+ + `Energy Fairness (EF)` : The time allocation of the application 𝐴_𝑖
+ under a perfect EF scenario, 𝑇^{𝐸𝐹}_𝑖 duration 𝑇 is computed as,
+
+ $$ T_{i}^{EF} = (1-\frac{w_i . P_i}{\sum_{k=0}^{N}. w_k . P_k}). T. $$ 
+
+    
+The energy consumption 𝐸_𝑖^{𝐸𝐹} of a given application 𝐴_𝑖 is then computed as,
+
+ $$ 𝐸_𝑖^{𝐸𝐹} = P_i . T_{i}^{EF} $$
+
+ Finally, the energy consumption normalized by weight of all applications under EF, should be the same, as shown below.
+
+ $$ 𝐸_𝑖^{𝐸𝐹} / w_i = 𝐸_j^{𝐸𝐹} / w_j,  ∀ 𝑖, 𝑗 ∈ [[1,𝑁]]. $$
+
+  + `Time Fairness (TF)` : The energy consumption, 𝐸_𝑖, under a purely
+ time fair share (TF) scenario can be computed as,
+
+  $$ E_{i}^{TF} = (P_i . \frac{w_i}{\sum_{k=0}^{N}. w_k}). T. $$ 
+
+   The time allocation for an application under time fair share (TF)
+ scenario is,
+
+   $$ T_{i}^{TF} = (\frac{w_i}{\sum_{k=0}^{N}. w_k}). T. $$ 
+
+   The energy consumption across applications differs under TF and deviates from the perfect energy fair-share allocation. The difference between the two can be computed as,
+
+   $$  Δ 𝐸_{i}^{𝑢𝑛𝑓𝑎𝑖𝑟} = 𝐸_{i}^{𝑇𝐹} − 𝐸_{i}^{E𝐹} $$
+
+   `Energy-Time Fairness (ETF)` aims to prevent starvation of resource-hungry applications while pursuing energy fairness by maximizing the minimum energy consumption across applications. To achieve this, we introduce the notion of a time-fair factor, denoted by 𝜙, which configures the minimum time guarantees to each application as a fraction of time allocated under the Time-Fair (TF) scenario. It is computed as:
+
+   $$ min . T_{i}^{𝐸𝑇𝐹}  = \phi × 𝑇_{i}^{𝑇𝐹} $$
+
+   During this time period, the energy consumption of an application A_i is expressed as:
+
+   $$ min . E_{i}^{𝐸𝑇𝐹}  = min . 𝑇_{i}^{E𝑇𝐹} . P_i $$
+
+   The total time allocated to provide minimum time guarantees is 𝜙×𝑇. Our approach utilizes the rest of the time, (1−𝜙)×𝑇, to improve energy fairness. We target this improvement using a two-step process. First, we allocate the remainder of the time based on EF, which is computed as:
+
+   $$ \Delta^{'} . T_{i}^{𝐸𝑇𝐹}  = (1 - \phi) × 𝑇_{i}^{𝑇𝐹} $$
+
+   While this ensures that the remainder of the time slot is allocated in an energy fair share manner, it does not correct the unfairness caused while providing minimum time guarantees. The extent of energy unfairness depends on the value of 𝜙 and the power difference across applications. If an application runs under TF for 𝜙×𝑇 duration, the deviation of its energy consumption from fair energy fraction can be computed as:
+
+   $$  Δ 𝐸_{\phi, i}^{𝑢𝑛𝑓𝑎𝑖𝑟} = \phi . 𝐸_{i}^{unfair} = EEE $$
+
+   Prior work on fair allocations has explored keeping track of unfairness and allowing disadvantaged applications to catch up later. Inspired by this work, we enable applications to catch up by updating Δ' 𝑇_{i}^{𝐸𝑇𝐹} proportional to the unfairness to mitigate existing unfairness. The updated rate is computed as:
+
+
+   $$ \Delta T_{i}^{ETF} = \Delta^{'} T_{i}^{ETF} - \frac{  Δ 𝐸_{\phi, i}^{𝑢𝑛𝑓𝑎𝑖𝑟} }{ \sum_{k=0}^{N}  Δ 𝐸_{\phi, k}^{𝑢𝑛𝑓𝑎𝑖𝑟}} $$
+
+   If an application's EEE is positive, it means that the application disproportionally used more energy than EF, and its rate would further decrease, and vice versa. The total time allocated to an application is a function of 𝜙, weights, and power consumption of all the applications. It can be computed as:
+
+   $$ T_{i}^{ETF} = min . T_{i}^{ETF} + \Delta T_{i}^{ETF} $$
+
+   Similarly, the total energy consumed by the applications is expressed as:
+
+   $$ E_{i}^{ETF} =  P_i . T_{i}^{ETF} $$ 
+
+   The energy repatriated during the remainder of the catch-up period is the difference between the energy fair assignment and the new allocation. It can be computed as:
+
+   $$  Δ 𝐸_{\phi, i}^{repat} = \phi . 𝐸_{i}^{EF} - \Delta E_{i}^{ETF} $$
+
+   Achieving Energy Fairness with ETF: At the extreme values of 𝜙, ETF devolves to either energy fairness (𝜙=0) or time fairness (𝜙=1). As we increase the value of 𝜙, our approach deviates from energy fairness. If the value of 𝜙 increases beyond a certain value, the energy unfairness increases to an extent that it cannot catch up in the remainder of the time. We denote this value as 𝜙𝑓𝑎𝑖𝑟, and at this point, the energy unfairness caused during the time-fair period is equal to the energy repatriated during the catch-up period.
+
+   $$  Δ 𝐸_{\phi, i}^{unfair} = Δ 𝐸_{\phi, i}^{repat} $$
+
+   This equation can be solved to compute the value of 𝜙𝑓𝑎𝑖𝑟. For values between 0 and 𝜙𝑓𝑎𝑖𝑟, our approach is able to achieve perfect energy fairness while providing the minimum time guarantees.
+
+Finally, it is worth noting that the ETF model can effectively be utilized to guarantee a minimum energy share while also prioritizing the equitable distribution of time.
+
+
+
