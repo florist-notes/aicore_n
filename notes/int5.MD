@@ -182,4 +182,62 @@ We consider the following setup for the problem: we have N active applications t
 
 <img src="./img/etf2.png" width=100%>
 
+#### AnIllustrative Example :
 
+In this example, we have a system with a time quantum size of T = 30 serving three applications: A, B, and C. The applications have equal weights and are backlogged. Their power demands are 2, 3, and 8 watts, respectively. Let's go through the steps of ETF scheduling with 𝜙 = 0.7:
+
++ 1. ETF distributes 𝜙 · 𝑇 = 21 time units evenly among the applications. Each application receives 7 time units, resulting in energy consumptions of 14, 21, and 56 for applications A, B, and C, respectively.
+
++ 2. ETF distributes the remaining (1 − 𝜙)𝑇 = 9 time units by prioritizing applications with lower energy consumption. In the first round, ETF allocates 4 additional time units to application A, bringing its energy consumption equal to B's. After this round, the time slices and energy consumption for A, B, and C are 11, 7, and 7 and 22, 21, and 56, respectively.
+
++ 3. Now, B has the least energy consumption, so ETF allocates an additional time unit to application B in the second round. This process continues iteratively until all 30 time units are allocated after round ❺.
+
++ 4. After the final allocation, the time slices assigned to applications A, B, and C are 14, 9, and 7, while the allocated energy are 28, 27, and 56, respectively.
+
+
+### ETF Properties :
+
+In this section, we demonstrate that Energy-Time Fairness (ETF) achieves several desirable properties, including Pareto efficiency, strategy-proofness, and maximizing minimum energy consumption with minimum time bounds.
+
+### + `Theorem 1: Pareto Efficiency`
+
+`Statement`: When the workloads are backlogged, it is not possible to increase the allocation of an application without decreasing the allocation of at least one other application.
+
+`Proof`:
+ETF ensures Pareto efficiency by design through two main mechanisms:
+
++ `No Over-allocation`: ETF guarantees that no application receives more time than its demand. If an application demands less than the minimum time bound, it receives only the amount it demands, which prevents any excess allocation.
+
++ `Exhaustive Allocation`: ETF exhaustively allocates all available time units, ensuring that every unit of time is used optimally.
+
+Therefore, since ETF ensures that no application is over-allocated and that all time units are utilized, it is not possible to increase the allocation to any application without reducing the allocation of another, proving that ETF is Pareto efficient.
+
+### + `Theorem 2: Strategy-proofness`
+`Statement`: In ETF, applications cannot gain a more useful allocation by misrepresenting their energy and time demands.
+
+`Proof`:
+To show strategy-proofness, we examine two possible manipulations:
+
++ `Energy-Gluttonous Behavior`: An application could try to gain an advantage by consuming more energy than it reports. However, due to the minimum time scheduling in step 1 of ETF, every application receives a minimum time allocation regardless of energy consumption. If an application is so energy-gluttonous that it receives no additional time units in step 2, increasing its energy consumption further doesn't result in any time penalty since it already received the minimum allocation.
+
+    For example, if application C increases its power profile from 8 to 10 watts, its energy consumption increases from 56 to 70 without reducing its time allocation. However, this increase is highly contingent on the energy profiles of other applications, making it uncertain whether the potential gain would be realized.
+
++ `Energy-Efficient Behavior`: Conversely, an application might try to be overly energy-efficient to gain more time units. However, once it becomes the least energy-consuming application, additional time is allocated to match its energy consumption to the second least energy-consuming application. Therefore, this manipulation also doesn't guarantee an advantageous outcome since it depends on the unknown energy profiles of other applications.
+
+Because the outcomes of these manipulations are uncertain without precise knowledge of other applications' energy consumption, applications are effectively deterred from trying to manipulate their demands, thus enhancing the strategy-proofness of ETF.
+
+
+### + `Theorem 3: Maximizing Minimum Energy Consumption`
+`Statement`: ETF maximizes the minimum energy consumption among applications while providing the minimum time guarantee.
+
+`Proof`:
+
+ + `Lemma 3`: Let 𝑒_𝑚𝑖𝑛 denote the minimum energy consumption among all applications after iteration t of energy fair allocation. For any application i that receives a time allocation during the first t iterations, removing one unit from application i will result in the energy consumption 𝑒_𝑖 ≤ 𝑒_𝑚𝑖𝑛.
+
++ `Proof of Lemma 3`:
+We prove this by contradiction. Assume that after removing one time unit from application 𝑖, 𝑒_𝑖 > 𝑒_𝑚𝑖𝑛. This implies that when the removed time unit was allocated, application 𝑖 was not the least energy-consuming application, contradicting the principles of ETF, which prioritize least energy-consuming applications for additional time allocation.
+
+Therefore, the allocation strategy of ETF ensures that time is incrementally allocated to applications in a manner that equalizes their energy consumption, leading to the maximization of the minimum energy consumption.
+
+`Conclusion`:
+ETF achieves Pareto efficiency by ensuring no over-allocation and exhaustive use of all time units. It ensures strategy-proofness by deterring manipulative behaviors due to the inherent uncertainties and dependencies on other applications' energy profiles. Finally, ETF maximizes minimum energy consumption through its iterative allocation process that prioritizes applications with lower energy usage, ensuring fairness while providing minimum time guarantees.
