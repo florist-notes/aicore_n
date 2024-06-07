@@ -1,6 +1,6 @@
 # Energy Time Fairness: Balancing Fair Allocation of Energy and Time for GPU Workloads
 
-🌸 [ paper : DOI[10.1145/3583740.3628435](https://www.computer.org/csdl/proceedings-article/sec/2023/012300a053/1UlmMhdN732) ]
+🌸 [ paper : DOI[10.1145/3583740.3628435](https://www.computer.org/csdl/proceedings-article/sec/2023/012300a053/1UlmMhdN732) ] | [ [code](https://github.com/umassos/energy-time-fairness) ]
 
 
 <p class="ex1" align="justify" style="padding: 5px 5px 5px 5px">
@@ -170,7 +170,7 @@ Finally, it is worth noting that the ETF model can effectively be utilized to gu
 
 ### ETF Scheduling Algorithm:
 
-We consider the following setup for the problem: we have N active applications time-sharing a single resource (e.g., GPUs), which could consume energy at varying rates, depending on how applications utilize it during their respective usage periods. A time quantum consisting of T time units is allocated amongst them. Each application Ai is allocated a time slice denoted as Ti, such that the sum of all time slices for all applications does not exceed T. Each application then executes their applications within their allocated time slices, operating at a power level denoted as Pi. The energy consumption of each application is therefore not only a function of the time for which it runs but also the power at which it operates. ETF achieves the design objectives by incrementally allocating time slices to each application based on their respective demand, weight, and power usage. This process follows two primary steps: 1) guaranteeing minimum time fairness, and 2) prioritizing energy efficiency.
+We consider the following setup for the problem: we have N active applications time-sharing a single resource (e.g., GPUs), which could consume energy at varying rates, depending on how applications utilize it during their respective usage periods. A time quantum consisting of T time units is allocated amongst them. Each application A_i is allocated a time slice denoted as T_i, such that the sum of all time slices for all applications does not exceed T. Each application then executes their applications within their allocated time slices, operating at a power level denoted as P_i. The energy consumption of each application is therefore not only a function of the time for which it runs but also the power at which it operates. ETF achieves the design objectives by incrementally allocating time slices to each application based on their respective demand, weight, and power usage. This process follows two primary steps: 1) guaranteeing minimum time fairness, and 2) prioritizing energy efficiency.
 
 + `Guaranteeing minimum time fairness`: In this step, ETF addresses the objective of limiting performance degradation by ensuring that no application receives a time slice that falls below a 𝜙-fair timeshare allocation. This minimum share is set to ensure that even in scenarios where energy efficiency is being prioritized, the performance of each application is not unduly compromised. Notably, when an application’s demand is lower than the minimum time bound, ETF would allocate only the amount equal to the application’s demand. This approach ensures that applications allocations never surpass their demands, which is a necessary condition for achieving Pareto efficiency.
 
@@ -180,11 +180,9 @@ We consider the following setup for the problem: we have N active applications t
 <img src="./img/etf_algo.png" width=48%> <img src="./img/etf1w.png" width=48%>
 
 
-<img src="./img/etf2.png" width=100%>
-
 #### AnIllustrative Example :
 
-In this example, we have a system with a time quantum size of T = 30 serving three applications: A, B, and C. The applications have equal weights and are backlogged. Their power demands are 2, 3, and 8 watts, respectively. Let's go through the steps of ETF scheduling with 𝜙 = 0.7:
+We have a system with a time quantum size of T = 30 serving three applications: A, B, and C. The applications have equal weights and are backlogged. Their power demands are 2, 3, and 8 watts, respectively. Let's go through the steps of ETF scheduling with 𝜙 = 0.7:
 
 + 1. ETF distributes 𝜙 · 𝑇 = 21 time units evenly among the applications. Each application receives 7 time units, resulting in energy consumptions of 14, 21, and 56 for applications A, B, and C, respectively.
 
@@ -194,6 +192,7 @@ In this example, we have a system with a time quantum size of T = 30 serving thr
 
 + 4. After the final allocation, the time slices assigned to applications A, B, and C are 14, 9, and 7, while the allocated energy are 28, 27, and 56, respectively.
 
+<img src="./img/etf2.png" width=100%>
 
 ### ETF Properties :
 
@@ -248,11 +247,11 @@ ETF achieves Pareto efficiency by ensuring no over-allocation and exhaustive use
 The Energy-Time Fairness (ETF) concept can arbitrate any shared resource, but for this implementation, we chose to apply it as a GPU scheduler due to the critical role of GPUs in cloud and edge systems. The scheduler is implemented as a user-space scheduling library, providing application-level interfaces similar to those of GPU runtimes like CUDA. The key difference is that scheduling decisions incorporate the notion of Energy-Time Fairness rather than just time fairness.
 
 `Scheduler Structure :`
-The structure of the ETF scheduler is depicted in Figure 4. Applications submit their CUDA kernels to respective queues, analogous to submitting requests to CUDA streams. The system calculates the application's share, monitors their resource consumption, and determines the sequence of kernel execution. The scheduler then launches the next kernel to the GPU or CPU processor, which is shared among multiple applications with tasks interleaved over time. The scheduler is implemented in C++ with around 2,000 lines of code and will be open-sourced at [GitHub](https://github.com/umassos/energy-time-fairness).
+Applications submit their CUDA kernels to respective queues, analogous to submitting requests to CUDA streams. The system calculates the application's share, monitors their resource consumption, and determines the sequence of kernel execution. The scheduler then launches the next kernel to the GPU or CPU processor, which is shared among multiple applications with tasks interleaved over time. The scheduler is implemented in C++ with around 2,000 lines of code and is open-sourced at [GitHub](https://github.com/umassos/energy-time-fairness).
 
 #### `Key Objectives : `
 
-In designing the ETF scheduler, we aimed for compatibility with existing frameworks and minimal scheduling overhead.
+In designing the ETF scheduler, the authors aimed for compatibility with existing frameworks and minimal scheduling overhead.
 
 + `Compatibility`:
 
@@ -302,3 +301,74 @@ The ETF scheduler's implementation addresses the following components:
 #### Conclusion : 
 
 The ETF scheduler effectively balances time and energy fairness, ensuring that resource-hungry applications do not starve while promoting energy efficiency. By integrating closely with existing GPU runtime APIs and minimizing scheduling overhead, the ETF scheduler provides a practical solution for energy-aware resource management in multi-tenant GPU environments. The open-source nature of the implementation encourages further research and development in this critical area.
+
+## Experimental Evaluation
+
+In this section, we empirically evaluate the practical performance of the Energy-Time Fair (ETF) scheduler by applying it to popular deep neural network (DNN) model-serving workloads. Our goal is to demonstrate how the theoretical properties of ETF translate into real-world benefits.
+
+
+### + `Experimental Setup : `
+
++ `Hardware : ` 
+We conduct our experiments on the Nvidia Jetson TX2 platform unless stated otherwise. The Jetson TX2 integrates an Nvidia Pascal GPU with 256 CUDA cores, a Dual-Core Nvidia Denver2 CPU, and a Quad-core ARM Cortex A57 CPU. It has 8GB of memory with a memory bandwidth of 59.7GB/s and consumes a maximum power of 15W. The Jetson TX2 supports GPU Dynamic Voltage and Frequency Scaling (DVFS), with a GPU core frequency range from 115 MHz to 1300 MHz.
+
++ `Workloads : `
+Our experimental workloads focus primarily on the use case of DNN model serving. We utilize a diverse set of popular DNN models such as ResNet and MobileNet, each characterized by different sizes and energy profiles (as shown in Figure 1). In our evaluation, users first load their respective models onto the GPU. Subsequently, they send inference requests to the model-serving system driven by ETF. The results are transmitted back to the users after processing. We assume that workloads are backlogged and requests are always queued.
+
++ `Baselines : `
+We compare ETF with two widely used scheduling algorithms:
+
+    + `Time Fairness (TF)`: Ensures equitable process time across users.
+    + `Energy Fairness (EF)`: Similar to TF but ensures that energy consumption is shared fairly among users.
+  
++ `Metrics : `
+To quantitatively assess the fairness of allocations across applications, we use three metrics:
+
+
+  + `Time Fairness : ` 
+    $$ F T ​ = \frac{max(app’s time)}{min(app’s time)}  ​ $$
+ 
+    Measures how evenly time is distributed among users, with a maximum value of 1 indicating perfect time fairness.
+
+  + `Energy Fairness : ` 
+​    
+    $$ F E ​ = \frac{max(app’s energy)}{min(app’s energy)} ​ $$
+ 
+    Measures the evenness of energy consumption among users, with a maximum value of 1 indicating perfect energy fairness.
+
+  + `System Fairness : `
+
+    $$ F S​ = min(FT​, FE​) $$
+    Captures the system-level fairness across both time and energy. The closer the value is to 1, the fairer the allocation.
+
+Both time and energy allocations are normalized by application weights to make them comparable across users.
+
+<img src="./img/etfe1.png" width=38%> <img src="./img/etfe2.png" width=60%>
+
+### `Key takeaway` :
+
++ ETF provides minimum time guarantees that are absent under EF while achieving better energy fairness than TF. As a result, ETF can achieve up to 2× improvements in system-level fairness over pure TF or EF scheduling. This balanced approach allows for a more equitable distribution of resources, catering to both time and energy considerations.
+
++ The performance of ETF improves under adversity. The greater the disparity in power, the higher the improvement in system fairness, e.g., 2× at 1-to-7.9.
+
++ ETF exposes 𝜙 that system operators configure to  navigate the tradeoff between the energy and time allocations offered by the EF and TF, respectively. The effective range of 𝜙 depends on the power disparity across applications.
+
++ ETF provides minimum time guarantees while maximizing energy fairness when allocating resources to a dynamic set of applications in a pareto-efficient manner.  
+
++ ETF rewards energy-efficient applications with a higher throughput and a lower execution latency, while providing minimum time guarantee to the inefficient application.
+
++ ETF can handle any arbitrary set of application weights while satisfying all of its properties.
+
+### `RELATED WORK` :
+
+#### `Fair Share Scheduling` :
+Fair sharing of resources is crucial in multi-tenant deployments. Time-fair sharing ensures fairness objectives such as Pareto efficiency and strategy-proofness. However, in scenarios where applications operate at different power levels, energy unfairness arises. Traditional solutions focused on multi-resource environments and could lead to starvation in single-resource scenarios. Energy Time Fairness (ETF) reconciles time and energy fairness in a configurable system.
+
+#### `Asymmetric-resource Fairness` :
+Asymmetric resources, like big-little CPU setups, challenge traditional time fair sharing. New fairness mechanisms aim to distribute resources equally, considering differences in resource capabilities and energy efficiency. ETF highlights the limitations of these techniques when applied to a single resource.
+
+#### `Heterogeneous-resource Fairness` :
+Fairness concepts extend to multiple resources in large-scale applications. Dominant resource fairness (DRF) addresses skewed resource requirements but assumes independence among resources. Traditional fair share schedulers may fail in providing guarantees. ETF addresses these issues by implementing a hierarchical scheduler that considers the dependency between time and energy resources.
+
+### `CONCLUSION ` :
+Traditional fairness notions struggle with heterogeneous hardware and applications. Energy-Time Fairness (ETF) is introduced to promote energy efficiency while ensuring minimum time guarantees for applications. ETF satisfies established fairness principles and bridges the gap between energy and time fairness. Implemented as a user-space GPU scheduler, ETF supports time/latency-sensitive applications and incentivizes energy-efficient operation. Future work includes extending ETF to other devices like CPUs and heterogeneous processors.
