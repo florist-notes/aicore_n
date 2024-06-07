@@ -241,3 +241,64 @@ Therefore, the allocation strategy of ETF ensures that time is incrementally all
 
 `Conclusion`:
 ETF achieves Pareto efficiency by ensuring no over-allocation and exhaustive use of all time units. It ensures strategy-proofness by deterring manipulative behaviors due to the inherent uncertainties and dependencies on other applications' energy profiles. Finally, ETF maximizes minimum energy consumption through its iterative allocation process that prioritizes applications with lower energy usage, ensuring fairness while providing minimum time guarantees.
+
+## Energy-Time Fair Scheduler Implementation
+
+`Overview :`
+The Energy-Time Fairness (ETF) concept can arbitrate any shared resource, but for this implementation, we chose to apply it as a GPU scheduler due to the critical role of GPUs in cloud and edge systems. The scheduler is implemented as a user-space scheduling library, providing application-level interfaces similar to those of GPU runtimes like CUDA. The key difference is that scheduling decisions incorporate the notion of Energy-Time Fairness rather than just time fairness.
+
+`Scheduler Structure :`
+The structure of the ETF scheduler is depicted in Figure 4. Applications submit their CUDA kernels to respective queues, analogous to submitting requests to CUDA streams. The system calculates the application's share, monitors their resource consumption, and determines the sequence of kernel execution. The scheduler then launches the next kernel to the GPU or CPU processor, which is shared among multiple applications with tasks interleaved over time. The scheduler is implemented in C++ with around 2,000 lines of code and will be open-sourced at [GitHub](https://github.com/umassos/energy-time-fairness).
+
+#### `Key Objectives : `
+
+In designing the ETF scheduler, we aimed for compatibility with existing frameworks and minimal scheduling overhead.
+
++ `Compatibility`:
+
+    + The scheduler API closely mimics GPU runtimes like CUDA.
+    + When an application submits a kernel, the ETF scheduler queues the request and submits it later based on Energy-Time Fair resource allocation.
+    + The application queue applies the same first-come, first-served (FCFS) order as CUDA streams, ensuring correctness.
+    + Similar to CUDA streams, a single application can have multiple queues.
+
++ `Efficiency`:
+
+    + The overhead from the scheduler comes from application queues, resource accounting, and application ordering decisions.
+    + Application queues are implemented using doubly-linked list data structures to support efficient enqueue and dequeue operations in O(1) time.
+    + ETFS uses the virtual runtime (vruntime) technique, similar to the Completely Fair Scheduler (CFS), for time accounting. As each kernel executes, it accumulates vruntime.
+
+#### Virtual Runtime (vruntime) :
+
+The vruntime technique is used to track the amount of time each application uses the GPU. It is calculated to ensure fair distribution of GPU time while considering energy consumption. 
+
+```
+vruntime_i = vruntime_i + (runtime / weight_i)
+```
+Here, `vruntime_i` is the virtual runtime of application i, `runtime` is the actual runtime, and `weight_i` is the weight assigned to the application, which could be based on factors such as priority or historical usage patterns.
+
+When a scheduling decision occurs, the scheduler selects the application, denoted by j, with the lowest vruntime to execute next. The scheduler pops the task at the head of application j's queue and allows it to run for `timeSlice_j` time units or until the application’s queue becomes empty. The scheduler only considers applications with non-empty queues, meaning it will not assign time slices to applications with no incoming requests.
+
+To achieve efficient ordering, vruntime counting is implemented using a Red-Black Tree data structure. Applications are ordered in the tree by their vruntime, allowing for operations such as insertion and deletion to be executed in logarithmic time O(logn).
+
+#### Model-Serving Application and Profiler :
+
+In addition to the scheduler, we implemented a model-serving application to demonstrate the effectiveness of ETF scheduling in a real-world scenario.
+
++ `Model-Serving Application`: This application serves machine learning models using GPU resources. It submits various computational kernels to the GPU, which are scheduled by the ETF scheduler. To evaluate the ETF scheduler, model-serving applications were used. In model-serving systems, each request is processed by submitting a batch of kernels that execute sequentially, with the result available only when the last one finishes. Since the ETF scheduler is a user-space library requiring altered kernel submission methods, Apache TVM, an open-source machine learning compiler framework, was utilized to submit kernels to the ETF’s queues instead of directly to the GPU.
++ `Application Profiler`: To ensure efficient scheduling, we developed a profiler that monitors each application's GPU usage, power consumption, and performance metrics. The profiler feeds this data back into the scheduler to make informed decisions about resource allocation. Using the ETF approach requires detailed tracking of time and energy consumption. While it is possible to do this in a general manner, accuracy can be an issue, especially for energy usage. GPU kernels typically last for a few milliseconds or less, and built-in power monitoring may have significant propagation delay. To address this, a one-time profiling is performed each time a new model is loaded. This process gathers information about resources consumed during task execution by repeatedly executing inference requests for 5 seconds using the model, collecting data on average kernel service time and average power usage. Profiling accuracy is ensured by monitoring the variance of measurements and redoing profiling if the coefficient of variance exceeds 5%. These steps are repeated for each processing frequency and model variant to gather runtime configuration information, guiding the scheduler to accurately calculate application shares and track resource utilization.
+  
+The profiling overhead for model-serving applications is in the range of tens of seconds. For applications where profiling cannot be done with negligible overhead, power models can be leveraged to estimate energy requirements based on application architecture, updating estimates as actual power consumption is measured. Given the recent focus on energy consumption and the carbon footprint of computing, efforts on benchmarking application power consumption have increased, and profiling for most applications is expected to become more prevalent.
+
+<img src="./img/etf.png" width=100%>
+
+#### Implementation Details
+
+The ETF scheduler's implementation addresses the following components:
+
++ `Application Queues`: Implemented as doubly-linked lists for efficient O(1) enqueue and dequeue operations.
++ `Resource Accounting`: Utilizes vruntime to track GPU usage and ensure fair distribution of time based on energy consumption.
++ `Application Ordering`: Applications are ordered based on their energy consumption and time fairness requirements, ensuring that no application starves and energy-efficient applications are rewarded.
+
+#### Conclusion : 
+
+The ETF scheduler effectively balances time and energy fairness, ensuring that resource-hungry applications do not starve while promoting energy efficiency. By integrating closely with existing GPU runtime APIs and minimizing scheduling overhead, the ETF scheduler provides a practical solution for energy-aware resource management in multi-tenant GPU environments. The open-source nature of the implementation encourages further research and development in this critical area.
