@@ -47,3 +47,27 @@ We identify two key job and hardware configurations that significantly impact en
 
 Our findings indicate that the energy-optimal batch size (Batch Size Opt.) can reduce energy consumption by 3.4%–65.0% compared to the default batch size for the same target accuracy.
 
+## Impact of GPU Power Limit on Energy Efficiency
+Setting a GPU's power limit triggers dynamic voltage and frequency scaling (DVFS) to ensure that the power draw does not exceed the set limit [[paper](https://www.sciencedirect.com/science/article/pii/S2352864816300736)]. If not manually configured, the power limit defaults to the maximum setting. We conducted a sweep over various GPU power limits for the previously described setup. Our findings reveal that the optimal energy consumption (Power Limit Opt. in Figure 1) often occurs at a lower power limit than the maximum, resulting in energy savings of 3.0%–31.5%.
+
+## Joint Optimization
+Figure 1 illustrates that even greater energy savings (23.8%–74.7%) can be achieved by jointly optimizing both batch size and power limit configurations. Similar opportunities for energy reduction were observed across other GPU generations as well.
+
+### Energy-Performance Tradeoffs :
+Optimizing DNN training for energy efficiency typically comes with a tradeoff: a potential increase in training time (TTA). We characterize and explore this tradeoff between energy consumption (ETA) and TTA using DeepSpeech2 trained on the LibriSpeech dataset as an example (Figure 2). Similar results were observed for other workloads.
+
+#### + Tradeoff Between ETA and TTA :
+We define the energy consumption of DNN training until it reaches its target accuracy as the energy-to-accuracy (ETA):
+
+$$ ETA(b,p)=TTA(b,p)×AvgPower(b,p) $$
+
+where 𝑝 denotes the GPU power limit, 𝑏 the batch size, and AvgPower ( 𝑏 , 𝑝 ) the average power consumption during training with configuration (b,p). Like TTA, ETA captures the end-to-end goal of DNN training.
+
+Figure 2a shows a scatter plot of (TTA, ETA) for batch size and power limit sweep experiments. Each data point represents the (TTA, ETA) for a specific configuration. We focus on the boundary of all feasible (TTA, ETA) pairs, which are bounded by two straight lines indicating average GPU power consumption. When the GPU is under heavy load, the (TTA, ETA) data points tend towards 210W. Under lighter load, power consumption approaches 90W, close to the GPU’s idle power of 70W.
+
+Importantly, there exists a curve along which all (TTA, ETA) pairs achieve Pareto optimality, we identify a Pareto frontier along which all (TTA, ETA) pairs achieve Pareto optimality [[paper](https://link.springer.com/article/10.1007/BF01442131)]. On this curve, improving ETA without sacrificing TTA is not possible, and vice versa.
+
+Examining the Pareto frontier in Figure 2b, with configurations annotated along each data point, we highlight two key takeaways:
+
++ Baseline configurations can lead to suboptimal energy efficiency. Furthermore, blindly selecting high batch size and power limit configurations can result in suboptimal TTA.
++ There is a distinct tradeoff between ETA and TTA, with different optimal configurations for each. The configuration optimizing ETA (b=32, p=100W) differs from that optimizing TTA (b=48, p=250W).
