@@ -1,6 +1,6 @@
 # Zeus: Understanding and Optimizing GPU Energy Consumption of DNN Training
 
-[ paper : [web](https://www.usenix.org/conference/nsdi23/presentation/you), [pdf](https://www.usenix.org/system/files/nsdi23-you.pdf) ] | [ [video](https://youtu.be/aZoD-jgO3fE?si=WhcxloaeZDnFAgvo) ]
+🌸 [ paper : [web](https://www.usenix.org/conference/nsdi23/presentation/you), [pdf](https://www.usenix.org/system/files/nsdi23-you.pdf) ] | [ [video](https://youtu.be/aZoD-jgO3fE?si=WhcxloaeZDnFAgvo) ]
 
 
 <p class="ex1" align="justify" style="padding: 5px 5px 5px 5px">
@@ -14,3 +14,18 @@ Deep neural networks (DNNs) have seen widespread adoption in various data-driven
 Our research highlights that common performance optimization practices for DNN training often result in inefficient energy usage. Recent works suggest using large batch sizes to enhance training throughput [[paper](https://arxiv.org/abs/1711.00489), [paper](https://arxiv.org/abs/1706.02677)], but this can lower energy efficiency. We found that setting appropriate batch sizes and GPU power limits can reduce energy consumption by 23.8%–74.7% across different workloads.
 
 Reducing energy consumption, however, involves tradeoffs. We discovered a balance between energy use and training time for achieving target accuracy. Our analysis of the energy-time Pareto frontier reveals two key insights: first, all Pareto-optimal configurations offer varying degrees of energy savings compared to using maximum batch sizes and GPU power limits indiscriminately. Second, the reduction in energy consumption often exhibits a non-linear relationship with the increase in training time. This raises the question: how can we automatically identify and manage the tradeoff between energy consumption and training time for DNN training?
+
+In this paper, the author present Zeus, a plug-in optimization framework designed to minimize both energy consumption and training time for DNN training jobs by automatically configuring batch size and GPU power limits. Unlike recent approaches that only consider GPU-specific configurations [[paper](https://www.semanticscholar.org/paper/DUB%3A-Dynamic-Underclocking-and-Bypassing-in-NoCs-Bharadwaj-Das/96e34f96673cca9f118b0bdf5970df5202d4fe84), [paper](https://arxiv.org/pdf/1905.11012)], Zeus addresses both job- and GPU-related configurations without requiring per-job offline profiling or prediction model training [[paper](https://arxiv.org/abs/2201.01684), [paper](https://ieeexplore.ieee.org/document/9139663)]. This makes it particularly suitable for large clusters with heterogeneous hardware and time-varying workloads [[paper](https://www.usenix.org/conference/nsdi22/presentation/weng)].
+
+Zeus employs an online exploration-exploitation approach tailored to DNN training workflows, which need periodic re-training as new data arrives [[paper](https://research.facebook.com/publications/applied-machine-learning-at-facebook-a-datacenter-infrastructure-perspective/) : [pdf](https://systems.cs.columbia.edu/private-systems-class/papers/Hazelwood2018Applied.pdf)]. By automatically exploring various configurations and continuously adjusting based on measured gains or losses, Zeus efficiently navigates the configuration space.
+
+The design of Zeus overcomes two significant challenges: the stochastic nature of DNN training, where energy consumption varies even with identical configurations due to randomness in parameter initialization and data loading [[paper](https://arxiv.org/abs/1806.01427), [paper](https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/widm.1200)], and the diversity in DNN and GPU architectures, which makes offline profiling results non-transferable [[paper](https://arxiv.org/pdf/1909.06842v6)]. Given the vast configuration space, Zeus decouples batch size and power limit optimization, using a Multi-Armed Bandit (MAB) approach with Thompson Sampling policy for batch size optimization and a just-in-time (JIT) energy profiler for power limit adjustment.
+
+Implemented within the PyTorch framework, Zeus has been evaluated across various workloads, including speech recognition, image classification, NLP, and recommendation tasks. The results show that Zeus reduces energy consumption by 15.3%–75.8% and training time by 60.6% compared to using maximum batch size and GPU power limit settings. Additionally, Zeus quickly converges to the optimal configuration and adapts effectively to data drift, extending its benefits to multi-GPU settings as well.
+
+In summary, the paper's contributions are:
+
++ Characterizing the energy consumption vs. performance tradeoff for DNN training in terms of job- and GPU-specific configuration parameters.
++ Developing an online optimization framework that adapts to workload dynamics over time.
++ Implementing and evaluating Zeus, which integrates with existing DNN training workflows with minimal code changes and negligible overhead, offering significant benefits.
++ Zeus is open-source and available on GitHub.
