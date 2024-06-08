@@ -1,6 +1,6 @@
 # Zeus: Understanding and Optimizing GPU Energy Consumption of DNN Training
 
-🌸 [ paper : [web](https://www.usenix.org/conference/nsdi23/presentation/you), [pdf](https://www.usenix.org/system/files/nsdi23-you.pdf) ] | [ [video](https://youtu.be/aZoD-jgO3fE?si=WhcxloaeZDnFAgvo) ]
+🌸 [ paper : [web](https://www.usenix.org/conference/nsdi23/presentation/you), [pdf](https://www.usenix.org/system/files/nsdi23-you.pdf) ], [code](https://github.com/ml-energy/zeus) | [ [video](https://youtu.be/aZoD-jgO3fE?si=WhcxloaeZDnFAgvo) ]
 
 
 <p class="ex1" align="justify" style="padding: 5px 5px 5px 5px">
@@ -28,4 +28,22 @@ In summary, the paper's contributions are:
 + Characterizing the energy consumption vs. performance tradeoff for DNN training in terms of job- and GPU-specific configuration parameters.
 + Developing an online optimization framework that adapts to workload dynamics over time.
 + Implementing and evaluating Zeus, which integrates with existing DNN training workflows with minimal code changes and negligible overhead, offering significant benefits.
-+ Zeus is open-source and available on GitHub.
++ Zeus is open-source and available on [GitHub](https://github.com/ml-energy/zeus).
+
+### `Motivation` : 
+In this section, we provide an overview of the energy consumption characteristics of DNN training on GPUs, explore opportunities for reducing energy consumption, and characterize the tradeoff between reducing energy consumption and improving training performance.
+
+### `DNN Training` : 
+Modern DNNs are trained by iterating over a large dataset multiple times, with each complete pass called an epoch. One epoch involves thousands of gradient descent iterations over equally sized mini-batches. The batch size affects model accuracy, training throughput, and energy consumption. DNN training performance is typically measured by time-to-accuracy (TTA) for a given target accuracy, where increasing training throughput (or goodput) reduces TTA.
+
+DNNs are predominantly trained on increasingly powerful GPUs, which consume significant energy. Recent benchmarks indicate that GPUs account for approximately 70% of the total energy consumption during DNN training [[paper](https://arxiv.org/abs/2206.05229), [paper](https://ieeexplore.ieee.org/document/9005632)]. In production GPU clusters, as new data flows into the machine learning pipeline, DNNs need periodic re-training, sometimes as frequently as every hour, resulting in recurring jobs in the GPU cluster.
+
+### + Opportunities for Improving Energy Efficiency
+We identify two key job and hardware configurations that significantly impact energy efficiency in DNN training: (1) batch size and (2) GPU power limit.
+
++ `Impact of Batch Size on Energy Efficiency` : The size of each mini-batch during DNN training determines how many samples are processed in one iteration. Larger batch sizes enable faster processing of the entire dataset. However, we observe that common choices of batch size can lead to higher energy consumption for achieving the same target accuracy. We conducted a sweep over a wide range of valid batch sizes (from 8 to the maximum that fits in GPU memory) for six deep learning workloads, including computer vision (CV), natural language processing (NLP), recommendation, and speech recognition on an NVIDIA V100 GPU.
+  
+<img src="./img/a1.png" width=38%> <img src="./img/a2.png" width=57%>
+
+Our findings indicate that the energy-optimal batch size (Batch Size Opt.) can reduce energy consumption by 3.4%–65.0% compared to the default batch size for the same target accuracy.
+
