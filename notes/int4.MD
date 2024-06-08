@@ -59,7 +59,7 @@ Optimizing DNN training for energy efficiency typically comes with a tradeoff: a
 #### + Tradeoff Between ETA and TTA :
 We define the energy consumption of DNN training until it reaches its target accuracy as the energy-to-accuracy (ETA):
 
-$$ ETA(b,p)=TTA(b,p)×AvgPower(b,p) $$
+$$ ETA (b,p) = TTA (b,p) x AvgPower (b,p) $$
 
 where 𝑝 denotes the GPU power limit, 𝑏 the batch size, and AvgPower ( 𝑏 , 𝑝 ) the average power consumption during training with configuration (b,p). Like TTA, ETA captures the end-to-end goal of DNN training.
 
