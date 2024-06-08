@@ -44,7 +44,7 @@ $$ 𝑥′=𝐻𝑥 $$
 
 Where 𝐻 is a 3×3 homography matrix.
 
-### + Optical Flow Model:
+### + `Optical Flow Model`:
 
 Description: This model estimates the motion of each pixel in a sequence of images. It is highly detailed and useful for analyzing fine movements within the scene.
 Mathematical Formulation:
@@ -52,7 +52,7 @@ The optical flow constraint equation (OFCE):
 
 $$ 𝐼_𝑥 𝑢 + 𝐼_𝑦 𝑣 + 𝐼_𝑡 = 0 $$
 
-Where  I_x,  I_y, and I_t are the partial derivatives of the image intensity I with respect to x, y, and time, respectively, and (u,v) is the optical flow vector.
+Where  `I_x`,  `I_y`, and `I_t` are the partial derivatives of the image intensity I with respect to x, y, and time, respectively, and (u,v) is the optical flow vector.
 
 
 Motion libraries : github@/[motion-detection](https://github.com/topics/motion-detection), [deepgaze](https://github.com/mpatacchiola/deepgaze), [motion-capture](https://github.com/topics/motion-capture), [motion-tracking](https://github.com/topics/motion-tracking), [motion-transfer](https://github.com/topics/motion-transfer), [optical-flow](https://github.com/topics/optical-flow), [awesome-optical-flow](https://github.com/hzwer/Awesome-Optical-Flow), [mmflow](https://github.com/open-mmlab/mmflow), [crowd-flow](https://github.com/tsenst/CrowdFlow), [bflow](https://github.com/uzh-rpg/bflow).
