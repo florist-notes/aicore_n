@@ -299,3 +299,123 @@ The Observer Mode feature is particularly useful for promoting Zeus's adoption. 
 
 Overall, Zeus's implementation focuses on minimal disruption to existing workflows, robust profiling capabilities, and user-friendly features, making it a practical and powerful tool for optimizing the cost of DNN training tasks.
 
+## Evaluation
+We evaluate Zeus’s effectiveness in optimizing the energy-time tradeoff for recurrent DNN training tasks. Our key findings demonstrate significant reductions in energy consumption, quick convergence to optimal configurations, adaptability to data drift, low overhead, scalability to multi-GPU settings, and consistent savings across different GPU generations.
+
+#### Key Findings:
++ `Energy and Time Savings`:
+    + Zeus reduces energy consumption by 15.3% to 75.8%.
+    + It achieves training time reductions of up to 60.1% for non-throughput-optimal jobs.
+
++ `Convergence Speed`:
+    + Zeus quickly converges to optimal configurations, demonstrating efficiency in exploration and exploitation.
++ `Handling Data Drift`:
+    + Zeus can manage workloads with data drift effectively, maintaining performance and cost-efficiency.
++ `Low Overhead`:
+    + The implementation of Zeus incurs minimal overhead.
++ `Scalability`:
+    + Zeus scales efficiently to multi-GPU setups.
++ `Cross-Generational GPU Performance`:
+    + Zeus provides consistent savings across four generations of NVIDIA GPUs.
+
+## Experimental Setup :
+
+Testbed Setup:
+
+Evaluated on four generations of NVIDIA GPUs as detailed in Table 2.
+
+<img src="./img/table1.png" width=61%>
+<img src="./img/table2.png" width=37%>
+
++ `Workloads`:
+
+    + Table 1 summarizes the workloads used.
+    + The default batch size (b0) is sourced from the model's original publication or set to the maximum batch size achieving target accuracy.
+    + For models using the Adadelta optimizer, no initial learning rate is needed.
+    + For other optimizers, we selected batch sizes and learning rates that achieve reasonable accuracy, following guidelines from original model publications and popular DL frameworks.
+    + Batch sizes were scaled using Square Root Scaling for adaptive optimizers like Adam.
+
++ `Baselines`:
+
+    + `Default`: Uses the default batch size and maximum power limit (b = b0, p = MAXPOWER), with no exploration.
+    + `Grid Search with Pruning`: Tries one configuration of (b, p) per job recurrence, selecting the best one and pruning out batch sizes that fail to reach the target metric.
+
++ `Metrics`:
+
+    + Primary metrics are ETA (Energy to Target Accuracy) and TTA (Time to Target Accuracy), aiming to reduce both but acknowledging their tradeoff.
+
++ `Defaults`:
+
+    + Experiments are primarily conducted on NVIDIA V100 GPUs.
+    + Default balance parameter η = 0.5 to balance ETA and TTA.
+    + The early-stopping threshold β is set to 2, with sweeps from 1.5 to 5.
+
++ `Methodology`:
+
+    + Resource and environmental constraints limit the ability to train all workloads with various configurations end-to-end multiple times.
+    + We employ a trace-driven approach, collecting two types of trace data:
+        + `Training Trace`: Records the number of epochs to reach target accuracy for all model and batch size combinations, repeated with four random seeds to capture stochasticity.
+        + `Power Trace`: Uses JIT profiling to collect throughput and average power consumption for all combinations of model, batch size, and power limit.
+    + Traces are replayed to evaluate Zeus and baseline decisions, reconstructing TTA and ETA values to measure regret.
+    + This approach avoids offline profiling, ensuring Zeus learns in an online manner.
+    + For data drift evaluation (§6.4), Zeus is run end-to-end due to the complexity of constructing traces for drifting datasets.
+
+### `Detailed Evaluation : `
+The detailed evaluation section will expand on the metrics, methodology, and results to provide comprehensive insights into Zeus's performance. This includes:
+
++ `Energy and Time Reduction Analysis`: Detailed breakdown of energy and time savings across different workloads and GPU generations.
+
++ `Convergence Speed`: Analysis of how quickly Zeus converges to optimal configurations compared to baselines.
++ `Data Drift Handling`: Evaluation of Zeus's adaptability to changing data distributions.
++ `Overhead Assessment`: Measurement of the overhead introduced by Zeus's profiling and decision-making processes.
++ `Scalability`: Assessment of Zeus's performance in multi-GPU environments.
++ `Cross-Generational Performance`: Consistency of Zeus's savings across various GPU generations.
+
+These sections will include empirical data, charts, and case studies to substantiate the findings and demonstrate the robustness and efficiency of Zeus in optimizing DNN training costs.
+
+### Zeus Performance :
+This section evaluates Zeus's performance in terms of energy consumption (ETA), training time (TTA), and convergence characteristics of its Multi-Armed Bandit algorithm. Multiple recurrences of DNN training jobs are run, selecting the recurrence number as 2⋅∣B∣⋅∣P∣ to ensure Grid Search completes exploration and exploits its choices.
+
+#### Improvements in ETA :
++ `Energy Savings`: Zeus reduces energy consumption (ETA) by 15.3% to 75.8% compared to the Default baseline.
++ `Comparison with Grid Search`: Zeus's energy savings are comparable to exhaustive configuration searches and Grid Search.
++ `Figure 6a`: Demonstrates the energy consumption (ETA) of the last five recurrences of Zeus and Grid Search relative to the Default baseline.
+
+#### Tradeoff with TTA :
+
++ `Training Time Reductions`: Zeus reduces training time (TTA) by up to 60.1%, although it can increase TTA by up to 12.8% for some workloads.
++ `Performance Variability`: For workloads optimized for minimal training time (b0 tuned), there's little room for TTA improvement.
++ `Figure 6b`: Shows the TTA of the last five recurrences of Zeus and Grid Search relative to the
+Default baseline.
+
+#### Cumulative Regret :
++ `Regret Measurement`: Regret quantifies the difference between the chosen configuration and the optimal one.
++ `Figure 7`: Depicts the cumulative regret for DeepSpeech2 and ResNet-50, showing that Zeus achieves lower cumulative regret compared to Grid Search, indicating faster convergence to optimal solutions.
+
+#### Convergence to Pareto-optimal Configuration :
++ `Efficiency in Exploration`: Zeus efficiently explores the configuration space, quickly converging to optimal configurations.
++ `Figure 8`: Illustrates the search path of Zeus and Grid Search during training DeepSpeech2. Zeus converges faster and more reliably to optimal configurations, while Grid Search may not converge due to the stochastic nature of DNN training.
+
+<img src="./img/table67.png" width=43%>
+<img src="./img/table8.png" width=52%>
+
+### Trace-Driven Simulation Using the Alibaba Trace
+
+#### Evaluation Context:
+
++ `Dataset`: Alibaba GPU cluster trace, containing over 1.2 million jobs over two months.
++ `Recurrent Jobs`: Trace identifies recurring jobs and their overlap, useful for evaluating Zeus's handling of concurrent job submissions.
+
+#### Methodology:
+
++ `Clustering Jobs`: K-Means clustering on job runtimes forms six clusters, matched to six workloads.
++ `Simulation`: Scales job runtime based on the ratio of job’s original runtime to cluster's mean runtime.
+
+#### Results:
+
++ `Energy Consumption`: Figure 9a shows Zeus reduces training energy usage by 7%–52%.
++ `Training Time`: Figure 9b shows training time increases by at most 16% and decreases by up to 33%.
++ `Cumulative Regret`: Zeus has significantly lower cumulative regret compared to Grid Search.
+
+<img src="./img/fig9.png" width=36%>
+<img src="./img/fig10.png" width=62%>
