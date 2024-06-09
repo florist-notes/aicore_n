@@ -161,14 +161,51 @@ $$ EpochCost(b;\eta) = min_{p \epsilon P} \frac{\eta⋅AvgPower(b,p)+(1−\eta)�
 
 Zeus profiles the power consumption and throughput for all possible power limits during the initial iterations of the training process, enabling the selection of the optimal power limit that minimizes the cost for the given batch size.
 
+To determine the optimal power limit for a given batch size, Zeus utilizes a just-in-time (JIT) profiling method, leveraging the iterative nature of DNN training and the recurrent nature of production DNN training jobs. Here's how it works:
+
++ `Profiling Phase`:
+
+    + When a job with a specific batch size b is submitted, the JIT profiler checks if this batch size has been profiled before.
+    + For an unseen batch size, the profiler collects data on AvgPower(b,p) and Throughput(b,p) across all possible power limits p during the first epoch of the job. This is achieved by partitioning the epoch into slices at iteration boundaries and dynamically adjusting the GPU power limit for each slice.
+    + The gathered profile information is then fed back to Zeus.
+
++ `Optimization Phase`:
+
+    + Using the profile information, Zeus determines the optimal power limit for the batch size.
+    + The remaining epochs of the job are executed with this optimal power limit.
+
+This JIT profiling approach is more efficient than offline profiling, as the profiling process itself contributes to training without affecting accuracy. Section 6.5 demonstrates that JIT profiling incurs negligible overhead.
+
 ### Optimizing Batch Size
+
+Zeus determines the batch size b_t for each job recurrence t. EpochCost(b_t ;η) is a deterministic function that identifies the optimal power limit for any batch size b_t and returns the optimal cost of one epoch. Thus, Zeus needs to focus only on choosing the optimal batch size.
+
++ Challenges and Approach :
+The stochastic nature of DNN training makes it difficult to pick the optimal batch size without adequate exploration. Therefore, a good solution must:
+
+    + `Incorporate Stochasticity`: Factor in the unpredictable nature of DNN training.
+    + `Balance Exploration and Exploitation`: Smartly trade off the cost of exploring potentially better batch sizes against the benefit of exploiting known good batch sizes.
+
+Grid search is not ideal due to the high exploration cost and the inability to quickly rule out suboptimal batch sizes. Instead, Zeus formulates the problem as a Multi-Armed Bandit (MAB) with Thompson Sampling, which is well-suited for this scenario.
+
 To optimize the batch size:
 
 $$ min_{b \epsilon B^T} \sum_{t=1}^{T} Epochs(b_t)⋅EpochCost(b_t; \eta) $$
 
 Zeus utilizes a Multi-Armed Bandit (MAB) approach with Thompson Sampling to explore and exploit batch sizes, adapting to the stochastic nature of DNN training and varying workloads. The MAB framework helps balance the tradeoff between exploring new configurations and exploiting known good configurations.
 
-<img src="./img/zalgo2.png" width=54%><img src="./img/zeus_gauss.png" width=44%>
+### Multi-Armed Bandit Formulation :
+Zeus aims to explore different batch sizes and converge to the optimal one, while minimizing exploration cost. The problem is formulated as an MAB with T trials (job recurrences) and B arms (batch sizes). Each batch size is modeled as a random variable with an unknown cost distribution. The objective is to minimize the cumulative cost regret:
+
+$$ \sum_{t=1}^{T} Regret(b_t; \eta)  $$
+
+where the regret of choosing b_t is:
+
+$$ Regret(b_t; \eta) = Epochs(b_t). EpochCost(b_t; \eta) - min_{b,p} Cost(b,p; \eta) $$
+
+Minimizing cumulative cost regret aligns with the objective.
+
+<img src="./img/zalgo2.png" width=54%><img src="./img/zeus_gauss.png" width=45%>
 <img src="./img/zeus2.png" width=100%>
 
 ### Addressing Common Challenges
