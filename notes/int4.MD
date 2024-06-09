@@ -206,6 +206,21 @@ $$ Regret(b_t; \eta) = Epochs(b_t). EpochCost(b_t; \eta) - min_{b,p} Cost(b,p; \
 Minimizing cumulative cost regret aligns with the objective.
 
 <img src="./img/zalgo2.png" width=54%><img src="./img/zeus_gauss.png" width=45%>
+
+### Thompson Sampling : 
+Zeus adopts Thompson Sampling for the MAB formulation due to its practical performance and suitable modeling assumptions. Thompson Sampling refines its belief about the mean cost of each batch size based on experience. At each recurrence, it:
+
++ `Sample Selection (Algorithm 1)`: Uses the current belief to pick the batch size with the lowest estimated mean cost.
++ `Belief Update (Algorithm 2)`: Updates the belief based on the observed cost.
+
+The cost distribution for each batch size is modeled as a Gaussian distribution with an unknown mean θ_b, which is modeled with a Gaussian prior 𝜃_𝑏 ∼ 𝑁(𝜇^𝑏, 𝜎^𝑏^2). The confidence in this belief increases with more observations.
+
+Thompson Sampling balances exploration and exploitation by choosing the batch size with the smallest mean cost sample 𝜃^𝑏 ∼ 𝑁(𝜇^𝑏,𝜎^_{𝑏}^{2}). The variance 𝜎^_{𝑏}^2 decreases with more observations, allowing for exploitation of batch sizes known to be good, while still exploring potentially better ones.
+
+If no prior knowledge is available, arms are initialized with a Gaussian distribution with zero mean and infinite variance. This formulation inherently incorporates the stochastic nature of DNN training and efficiently rules out suboptimal batch sizes.
+
+In summary, Zeus's use of MAB with Thompson Sampling allows it to dynamically adapt and optimize batch size selections in a stochastic environment, efficiently balancing exploration and exploitation to minimize overall cost.
+
 <img src="./img/zeus2.png" width=100%>
 
 ### Addressing Common Challenges
