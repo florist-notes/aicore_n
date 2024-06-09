@@ -324,8 +324,7 @@ Testbed Setup:
 
 Evaluated on four generations of NVIDIA GPUs as detailed in Table 2.
 
-<img src="./img/table1.png" width=61%>
-<img src="./img/table2.png" width=37%>
+<img src="./img/table1.png" width=61%><img src="./img/table2.png" width=37%>
 
 + `Workloads`:
 
@@ -396,8 +395,7 @@ Default baseline.
 + `Efficiency in Exploration`: Zeus efficiently explores the configuration space, quickly converging to optimal configurations.
 + `Figure 8`: Illustrates the search path of Zeus and Grid Search during training DeepSpeech2. Zeus converges faster and more reliably to optimal configurations, while Grid Search may not converge due to the stochastic nature of DNN training.
 
-<img src="./img/table67.png" width=43%>
-<img src="./img/table8.png" width=52%>
+<img src="./img/table67.png" width=43%><img src="./img/table8.png" width=52%>
 
 ### Trace-Driven Simulation Using the Alibaba Trace
 
@@ -417,8 +415,7 @@ Default baseline.
 + `Training Time`: Figure 9b shows training time increases by at most 16% and decreases by up to 33%.
 + `Cumulative Regret`: Zeus has significantly lower cumulative regret compared to Grid Search.
 
-<img src="./img/fig9.png" width=36%>
-<img src="./img/fig10.png" width=62%>
+<img src="./img/fig9.png" width=36%><img src="./img/fig10.png" width=62%>
 
 #### Handling Data Drift
 
@@ -448,8 +445,7 @@ Default baseline.
 
     + `DeepSpeech2 on LibriSpeech`: On four NVIDIA A40 GPUs, Zeus consumes 12% more time but 21% less energy compared to Pollux.
 
-<img src="./img/fig12.png" width=33%>
-<img src="./img/fig1314.png" width=65%>
+<img src="./img/fig12.png" width=33%><img src="./img/fig1314.png" width=65%>
 
 #### Sensitivity Analysis and Ablation Studies
 
