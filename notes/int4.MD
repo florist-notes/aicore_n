@@ -248,11 +248,11 @@ Sometimes, an exploratory job may not reach the target metric within a reasonabl
 
 The convexity of the batch size-energy-time (BS-ETA) curve around the optimal batch size supports this approach, allowing Zeus to quickly eliminate obviously suboptimal batch sizes (either too large or too small). This reduces exploration costs significantly.
 
-#### Handling Concurrent Job Submissions :
+#### + Handling Concurrent Job Submissions :
 
 In DNN training clusters, jobs often overlap, meaning that the MAB may need to decide on a batch size for a later job before the earlier job's cost is observed. Deterministic policies can lead to redundant exploration of the same batch size consecutively, reducing exploration efficiency. However, Thompson Sampling mitigates this issue naturally because it randomly selects batch sizes based on sampled estimated mean costs. During the early stages, when the belief distributions have large variances (low confidence), different batch sizes are explored even without updated information between invocations. During the initial pruning phase, concurrent jobs run with the best-known batch size at the time, which is continually updated as more information is gathered.
 
-#### Handling Data Drift :
+#### + Handling Data Drift :
 
 Data drift, where the data on which a model is trained shifts over time, necessitates re-training. This shift means the cost distribution for each batch size is non-stationary. To handle this, Zeus implements a sliding window of the N most recent cost observations, ignoring older data. This approach, unlike exponential decay, allows direct estimation of the cost variance from recent observations. When old history entries are evicted, the new parameters of the arm can be computed efficiently due to the conjugate prior property, enabling Zeus to adapt to data drifts in an online manner effectively.
 
