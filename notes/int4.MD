@@ -31,7 +31,7 @@ In summary, the paper's contributions are:
 + Zeus is open-source and available on [GitHub](https://github.com/ml-energy/zeus).
 
 ### `Motivation` : 
-In this section, we provide an overview of the energy consumption characteristics of DNN training on GPUs, explore opportunities for reducing energy consumption, and characterize the tradeoff between reducing energy consumption and improving training performance.
+In this section, they provide an overview of the energy consumption characteristics of DNN training on GPUs, explore opportunities for reducing energy consumption, and characterize the tradeoff between reducing energy consumption and improving training performance.
 
 ### `DNN Training` : 
 Modern DNNs are trained by iterating over a large dataset multiple times, with each complete pass called an epoch. One epoch involves thousands of gradient descent iterations over equally sized mini-batches. The batch size affects model accuracy, training throughput, and energy consumption. DNN training performance is typically measured by time-to-accuracy (TTA) for a given target accuracy, where increasing training throughput (or goodput) reduces TTA.
@@ -39,13 +39,13 @@ Modern DNNs are trained by iterating over a large dataset multiple times, with e
 DNNs are predominantly trained on increasingly powerful GPUs, which consume significant energy. Recent benchmarks indicate that GPUs account for approximately 70% of the total energy consumption during DNN training [[paper](https://arxiv.org/abs/2206.05229), [paper](https://ieeexplore.ieee.org/document/9005632)]. In production GPU clusters, as new data flows into the machine learning pipeline, DNNs need periodic re-training, sometimes as frequently as every hour, resulting in recurring jobs in the GPU cluster.
 
 ### + Opportunities for Improving Energy Efficiency
-We identify two key job and hardware configurations that significantly impact energy efficiency in DNN training: (1) batch size and (2) GPU power limit.
+The authors identify two key job and hardware configurations that significantly impact energy efficiency in DNN training: (1) batch size and (2) GPU power limit.
 
 + `Impact of Batch Size on Energy Efficiency` : The size of each mini-batch during DNN training determines how many samples are processed in one iteration. Larger batch sizes enable faster processing of the entire dataset. However, we observe that common choices of batch size can lead to higher energy consumption for achieving the same target accuracy. We conducted a sweep over a wide range of valid batch sizes (from 8 to the maximum that fits in GPU memory) for six deep learning workloads, including computer vision (CV), natural language processing (NLP), recommendation, and speech recognition on an NVIDIA V100 GPU.
   
 <img src="./img/a1.png" width=38%> <img src="./img/a2.png" width=57%>
 
-Our findings indicate that the energy-optimal batch size (Batch Size Opt.) can reduce energy consumption by 3.4%–65.0% compared to the default batch size for the same target accuracy.
+Author's findings indicate that the energy-optimal batch size (Batch Size Opt.) can reduce energy consumption by 3.4%–65.0% compared to the default batch size for the same target accuracy.
 
 ## Impact of GPU Power Limit on Energy Efficiency
 Setting a GPU's power limit triggers dynamic voltage and frequency scaling (DVFS) to ensure that the power draw does not exceed the set limit [[paper](https://www.sciencedirect.com/science/article/pii/S2352864816300736)]. If not manually configured, the power limit defaults to the maximum setting. We conducted a sweep over various GPU power limits for the previously described setup. Our findings reveal that the optimal energy consumption (Power Limit Opt. in Figure 1) often occurs at a lower power limit than the maximum, resulting in energy savings of 3.0%–31.5%.
@@ -54,12 +54,12 @@ Setting a GPU's power limit triggers dynamic voltage and frequency scaling (DVFS
 Figure 1 illustrates that even greater energy savings (23.8%–74.7%) can be achieved by jointly optimizing both batch size and power limit configurations. Similar opportunities for energy reduction were observed across other GPU generations as well.
 
 ### Energy-Performance Tradeoffs :
-Optimizing DNN training for energy efficiency typically comes with a tradeoff: a potential increase in training time (TTA). We characterize and explore this tradeoff between energy consumption (ETA) and TTA using DeepSpeech2 trained on the LibriSpeech dataset as an example (Figure 2). Similar results were observed for other workloads.
+Optimizing DNN training for energy efficiency typically comes with a tradeoff: a potential increase in training time (TTA). The authors characterize and explore this tradeoff between energy consumption (ETA) and TTA using DeepSpeech2 trained on the LibriSpeech dataset as an example (Figure 2). Similar results were observed for other workloads.
 
 #### + Tradeoff Between ETA and TTA :
-We define the energy consumption of DNN training until it reaches its target accuracy as the energy-to-accuracy (ETA):
+The author defines the energy consumption of DNN training until it reaches its target accuracy as the energy-to-accuracy (ETA):
 
-$$ ETA (b,p) = TTA (b,p) x AvgPower (b,p) $$
+$$ ETA (b,p) = TTA (b,p) . AvgPower (b,p) $$
 
 where 𝑝 denotes the GPU power limit, 𝑏 the batch size, and AvgPower ( 𝑏 , 𝑝 ) the average power consumption during training with configuration (b,p). Like TTA, ETA captures the end-to-end goal of DNN training.
 
@@ -71,3 +71,50 @@ Examining the Pareto frontier in Figure 2b, with configurations annotated along 
 
 + Baseline configurations can lead to suboptimal energy efficiency. Furthermore, blindly selecting high batch size and power limit configurations can result in suboptimal TTA.
 + There is a distinct tradeoff between ETA and TTA, with different optimal configurations for each. The configuration optimizing ETA (b=32, p=100W) differs from that optimizing TTA (b=48, p=250W).
+
+<img src="./img/zeus.png" width=52%> <img src="./img/zeus_gauss.png" width=45%>
+
+## Zeus Overview
+Zeus is an optimization framework designed to navigate the tradeoff between energy-to-accuracy (ETA) and time-to-accuracy (TTA) by automatically configuring the batch size and GPU power limit for recurring DNN training jobs. It enables developers to optimize energy and/or performance metrics using a single parameter.
+
+### Optimization Metric :
+A critical aspect of designing Zeus is defining a cost metric that allows users to express their preference in the ETA-TTA tradeoff. We propose a simple cost metric:
+
+$$ C(b,p;\eta)=\eta⋅ETA(b,p)+(1−\eta)⋅MAXPOWER⋅TTA(b,p)  $$
+
+Here, η is a user-specified parameter indicating the relative importance of energy efficiency versus training performance (throughput). When η=0, the focus is solely on optimizing for time consumption, while η=1 prioritizes energy consumption. MAXPOWER is the maximum power limit supported by the GPU, introduced to unify the units of measure in the cost metric.
+
+## Challenges in Picking the Optimal Configuration
+Combining Equations 1 and 2, we have:
+
+$$ C=(\eta⋅AvgPower(b,p)+(1−\eta)⋅MAXPOWER)⋅TTA(b,p) $$
+
+Selecting the optimal configuration(s) to minimize the energy-time cost C for DNN training is challenging due to the large search space [b×p] and the difficulty in efficiently determining the values of both AvgPower(b,p) and TTA(b,p). This complexity arises from the following factors:
+
++ `Complex Power Consumption Model`: The total energy consumption of a GPU is non-linearly influenced by workload characteristics such as the number of instructions and memory accesses, as well as GPU hardware configurations including core and memory frequency and voltage [[paper](https://dl.acm.org/doi/10.1145/3387902.3392613), [paper](https://dl.acm.org/doi/fullHtml/10.1145/3466752.3480063)]. Existing efforts to estimate GPU energy consumption rely on instruction- or kernel-level information [[paper](https://faculty.cc.gatech.edu/~hyesoon/hong_isca10.pdf), [paper](https://ieeexplore.ieee.org/document/6118939)], which are specific to the architecture and workload.
+
++ `Stochastic Nature of DNN Training`: Modeling and predicting the duration required to train a specific model to target accuracy (TTA) is inherently difficult [[paper](https://www.usenix.org/conference/nsdi19/presentation/gu)]. Additionally, randomness in model initialization and data loading leads to TTA variations, even when the same job is executed on the same GPU with the same configuration—such variations can be as large as 14% [[paper](https://arxiv.org/abs/1806.01427)].
+
+Fortunately, DNN training jobs often recur in production clusters [[paper](https://ieeexplore.ieee.org/document/8327042), [paper](https://www.usenix.org/conference/nsdi22/presentation/weng)]. This recurrence provides opportunities for empirical estimation through repeated measurements across instances of the same training job.
+
+## Architectural Overview
+Zeus employs an online exploration-exploitation approach to minimize the aggregate cost of recurrent DNN training jobs. It addresses the challenges of optimizing energy and performance tradeoffs through two key components:
+
++ `Just-in-Time (JIT) Online Profiler`: This component efficiently profiles the energy characteristics of the training job in real-time.
++ `Multi-Armed Bandit (MAB) with Thompson Sampling`: This component handles the stochastic nature of deep learning training and optimizes under uncertainty, adapting to changing workloads such as data drift.
+
+The combination of the JIT profiler and MAB makes Zeus a fully online solution, allowing immediate optimization for incoming jobs.
+
+### Workflow of Zeus :
+Figure 3 provides an overview of the high-level workflow of Zeus:
+
++ `Job Submission`: In a production environment, users submit recurrent DNN training jobs to Zeus. Each job is a tuple consisting of data, model, optimizer, and the target validation metric, along with a set of feasible batch sizes B and power limits P to explore.
++ `Configuration Prediction`: Zeus predicts the optimal batch size and power limit configuration based on past execution history.
++ `Job Launch`: The training job is launched with the predicted configuration.
++ `Data Collection and Feedback`: During and after the training process, statistics about DNN training (e.g., validation metric) and GPU power consumption are collected and fed back to the Zeus optimizer. The optimizer learns from the feedback and adjusts its internal states.
+
+The training job will be terminated upon either reaching the target metric or exceeding a stopping threshold determined by Zeus. This automated feedback loop minimizes the key objective of energy-time cost.
+
+Building Zeus requires both algorithm design and systems support. The next sections describe the core optimization algorithm details and the implementation highlights of Zeus.
+
+<img src="./img/zeus2.png" width=100%>
