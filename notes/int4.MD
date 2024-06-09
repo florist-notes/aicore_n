@@ -194,6 +194,15 @@ $$ min_{b \epsilon B^T} \sum_{t=1}^{T} Epochs(b_t)⋅EpochCost(b_t; \eta) $$
 
 Zeus utilizes a Multi-Armed Bandit (MAB) approach with Thompson Sampling to explore and exploit batch sizes, adapting to the stochastic nature of DNN training and varying workloads. The MAB framework helps balance the tradeoff between exploring new configurations and exploiting known good configurations.
 
+### Addressing Common Challenges :
+Zeus addresses several common challenges in optimizing DNN training configurations:
+
++ `Handling Stochasticity`: By using Thompson Sampling in the MAB framework, Zeus adapts to the inherent randomness in DNN training, such as variations in TTA due to model initialization and data loading.
++ `Dynamic Workloads`: Zeus continuously profiles and adapts to changing workloads, such as data drift, ensuring optimal configurations over time.
++ `Scalability`: The decoupled optimization approach reduces the complexity of the search space, allowing Zeus to scale efficiently with larger clusters and more diverse hardware configurations.
+
+Through these mechanisms, Zeus effectively minimizes the energy-time cost for recurrent DNN training tasks in dynamic production environments.
+
 ### Multi-Armed Bandit Formulation :
 Zeus aims to explore different batch sizes and converge to the optimal one, while minimizing exploration cost. The problem is formulated as an MAB with T trials (job recurrences) and B arms (batch sizes). Each batch size is modeled as a random variable with an unknown cost distribution. The objective is to minimize the cumulative cost regret:
 
@@ -223,17 +232,30 @@ In summary, Zeus's use of MAB with Thompson Sampling allows it to dynamically ad
 
 <img src="./img/zeus2.png" width=100%>
 
-### Addressing Common Challenges
-Zeus addresses several common challenges in optimizing DNN training configurations:
+### Extensions for Challenging Scenarios
 
-+ `Handling Stochasticity`: By using Thompson Sampling in the MAB framework, Zeus adapts to the inherent randomness in DNN training, such as variations in TTA due to model initialization and data loading.
-+ `Dynamic Workloads`: Zeus continuously profiles and adapts to changing workloads, such as data drift, ensuring optimal configurations over time.
-+ `Scalability`: The decoupled optimization approach reduces the complexity of the search space, allowing Zeus to scale efficiently with larger clusters and more diverse hardware configurations.
+#### + Handling Unknown Cost Variance :
 
-Through these mechanisms, Zeus effectively minimizes the energy-time cost for recurrent DNN training tasks in dynamic production environments.
+In many applications of Gaussian Thompson Sampling, the variance of the cost of each arm is assumed to be known. However, in DNN training, the cost variance—how much the cost fluctuates even with the same batch size—is not known beforehand. This variance is influenced by the robustness of the DNN to randomness in parameter initialization and data loading, making it difficult to quantify initially. Therefore, Zeus learns the cost variance dynamically as it observes cost samples during the training process (refer to Line 2 in Algorithm 2).
 
+#### + Handling Stragglers During Exploration :
 
+Sometimes, an exploratory job may not reach the target metric within a reasonable cost, particularly in the early stages of exploration. To manage this, Zeus employs early stopping and pruning strategies:
 
++ `Early Stopping` : If the cost of a current job exceeds a threshold (set as 𝛽 ⋅ min_𝑡 . 𝐶_𝑡), where β is a parameter to account for the stochastic nature of DL training (default β=2), the job is stopped and another batch size is tried. This threshold helps tolerate variations in TTA between runs of the same configuration, typically less than 14%.
 
++ `Pruning` : Zeus begins with a default batch size provided by the user and tests smaller batch sizes until reaching the minimum batch size or encountering a batch size that fails to meet the target metric within the early stopping threshold. The same process is repeated for larger batch sizes. Batch sizes that meet the target metric are retained for further exploration. The default batch size is then updated to the one with the smallest observed cost, and the pruning process is repeated starting from this new default batch size.
+
+The convexity of the batch size-energy-time (BS-ETA) curve around the optimal batch size supports this approach, allowing Zeus to quickly eliminate obviously suboptimal batch sizes (either too large or too small). This reduces exploration costs significantly.
+
+#### Handling Concurrent Job Submissions :
+
+In DNN training clusters, jobs often overlap, meaning that the MAB may need to decide on a batch size for a later job before the earlier job's cost is observed. Deterministic policies can lead to redundant exploration of the same batch size consecutively, reducing exploration efficiency. However, Thompson Sampling mitigates this issue naturally because it randomly selects batch sizes based on sampled estimated mean costs. During the early stages, when the belief distributions have large variances (low confidence), different batch sizes are explored even without updated information between invocations. During the initial pruning phase, concurrent jobs run with the best-known batch size at the time, which is continually updated as more information is gathered.
+
+#### Handling Data Drift :
+
+Data drift, where the data on which a model is trained shifts over time, necessitates re-training. This shift means the cost distribution for each batch size is non-stationary. To handle this, Zeus implements a sliding window of the N most recent cost observations, ignoring older data. This approach, unlike exponential decay, allows direct estimation of the cost variance from recent observations. When old history entries are evicted, the new parameters of the arm can be computed efficiently due to the conjugate prior property, enabling Zeus to adapt to data drifts in an online manner effectively.
+
+In summary, these extensions ensure that Zeus can handle real-world complexities such as unknown cost variance, early job termination, concurrent job handling, and data drift, making it a robust solution for optimizing the energy-time cost of recurrent DNN training tasks.
 
 
