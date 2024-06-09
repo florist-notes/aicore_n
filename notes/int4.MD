@@ -72,7 +72,7 @@ Examining the Pareto frontier in Figure 2b, with configurations annotated along 
 + Baseline configurations can lead to suboptimal energy efficiency. Furthermore, blindly selecting high batch size and power limit configurations can result in suboptimal TTA.
 + There is a distinct tradeoff between ETA and TTA, with different optimal configurations for each. The configuration optimizing ETA (b=32, p=100W) differs from that optimizing TTA (b=48, p=250W).
 
-<img src="./img/zeus.png" width=52%> <img src="./img/zeus_gauss.png" width=45%>
+<img src="./img/zeus.png" width=41%> <img src="./img/zalgo1.png" width=56%>
 
 ## Zeus Overview
 Zeus is an optimization framework designed to navigate the tradeoff between energy-to-accuracy (ETA) and time-to-accuracy (TTA) by automatically configuring the batch size and GPU power limit for recurring DNN training jobs. It enables developers to optimize energy and/or performance metrics using a single parameter.
@@ -117,4 +117,71 @@ The training job will be terminated upon either reaching the target metric or ex
 
 Building Zeus requires both algorithm design and systems support. The next sections describe the core optimization algorithm details and the implementation highlights of Zeus.
 
+## Zeus Algorithm Design
+This section details how Zeus selects the optimal batch size and GPU power limit to minimize the overall cost of recurrent DNN training tasks. We start with the problem formulation and describe the decoupling of batch size and power limit optimizations. We then explain the optimization of the power limit and batch size within this decoupled framework, concluding with a discussion on addressing common challenging scenarios.
+
+#### Problem Formulation :
+Zeus aims to minimize the cost of a recurring job by exploring the feasible set of batch sizes B and power limits P. The goal is to balance the tradeoff between exploration and exploitation to find the optimal configuration without incurring excessive costs. The objective, based on the cost function from Equation 2, is to:
+
+$$ min_{b,p} \sum_{t=1}^{T} C(b_t, p_t; \eta) $$
+$$ subject to b_t \epsilon B, p_t \epsilon P, \forall t \epsilon[1,T] $$
+
+Here, b_t and p_t are the batch size and power limit chosen at the t-th recurrence of the job, and b and p are vectors of length T.
+
+The problem is complex due to the vast search space and the requirement to run DNN training to obtain each value of C(b,p;η). However, by expanding the cost function (Equation 3), we can decouple the exploration of batch size and power limit, making the problem more tractable:
+
+$$ C(b,p;\eta)=(\eta⋅AvgPower(b,p)+(1−\eta)⋅MAXPOWER)⋅TTA(b,p) $$
+$$ = Epochs(b) \frac{\eta⋅AvgPower(b,p)+(1−\eta)⋅MAXPOWER}{Throughput(b,p)} $$
+
+where Epochs(b) denotes the number of epochs needed to reach the target, and Throughput(b,p) is the number of epochs per second.
+
+Two key insights allow the decoupling of batch size b and power limit p:
+
+Profiling Efficiency: Given b, AvgPower(b,p) and Throughput(b,p) can be quickly profiled during training for all possible choices of p. This is due to the iterative nature of DNN training, yielding stable power and throughput estimations with a small number of iterations.
+
+Independence of Epochs: Epochs(b) is unaffected by the choice of p since changing the power limit does not change what is computed.
+
+Thus, the optimal power limit for any batch size can be determined independently through online profiling. Each choice of batch size is automatically paired with the optimal power limit, reducing the search space to the set of batch sizes B.
+
+Formally, the problem is decoupled into a two-level optimization problem:
+
+$$ min_{b \epsilon B^T} \sum_{t=1}^{T} Epochs(b_t)⋅EpochCost(b_t; \eta) $$
+
+where,
+
+$$ EpochCost(b_t;\eta) = min_{p_t \epsilon P} \frac{\eta⋅AvgPower(b_t,p_t)+(1−\eta)⋅MAXPOWER}{Throughput(b_t,p_t)} $$
+
+
+When a job arrives, Zeus first decides the batch size to use. Then, based on the selected batch size, Zeus determines the optimal power limit.
+
+### Optimizing Power Limit
+To optimize the power limit for a given batch size b:
+
+$$ EpochCost(b;\eta) = min_{p \epsilon P} \frac{\eta⋅AvgPower(b,p)+(1−\eta)⋅MAXPOWER}{Throughput(b,p)} $$
+
+Zeus profiles the power consumption and throughput for all possible power limits during the initial iterations of the training process, enabling the selection of the optimal power limit that minimizes the cost for the given batch size.
+
+### Optimizing Batch Size
+To optimize the batch size:
+
+$$ min_{b \epsilon B^T} \sum_{t=1}^{T} Epochs(b_t)⋅EpochCost(b_t; \eta) $$
+
+Zeus utilizes a Multi-Armed Bandit (MAB) approach with Thompson Sampling to explore and exploit batch sizes, adapting to the stochastic nature of DNN training and varying workloads. The MAB framework helps balance the tradeoff between exploring new configurations and exploiting known good configurations.
+
+<img src="./img/zalgo2.png" width=54%><img src="./img/zeus_gauss.png" width=44%>
 <img src="./img/zeus2.png" width=100%>
+
+### Addressing Common Challenges
+Zeus addresses several common challenges in optimizing DNN training configurations:
+
++ `Handling Stochasticity`: By using Thompson Sampling in the MAB framework, Zeus adapts to the inherent randomness in DNN training, such as variations in TTA due to model initialization and data loading.
++ `Dynamic Workloads`: Zeus continuously profiles and adapts to changing workloads, such as data drift, ensuring optimal configurations over time.
++ `Scalability`: The decoupled optimization approach reduces the complexity of the search space, allowing Zeus to scale efficiently with larger clusters and more diverse hardware configurations.
+
+Through these mechanisms, Zeus effectively minimizes the energy-time cost for recurrent DNN training tasks in dynamic production environments.
+
+
+
+
+
+
