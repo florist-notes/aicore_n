@@ -419,3 +419,89 @@ Default baseline.
 
 <img src="./img/fig9.png" width=36%>
 <img src="./img/fig10.png" width=62%>
+
+#### Handling Data Drift
+
++ `Dataset`:
+
+    + `Capriccio Dataset`: A new sentiment analysis dataset consisting of 1.6 million tweets over three months, suitable for evaluating DNN models.
+
++ `Evaluation`:
+
+    + `Sliding Window`: Uses a sliding window of 500,000 tweets, generating 38 slices.
+    + `Training BERT`: Zeus is configured with a window size of 10, roughly two weeks of tweets.
+    + `Results`: Spikes in ETA and TTA trigger exploration of new batch sizes, showing Zeus’s adaptability to changing data distributions (Figure 10).
+
+#### Overhead of JIT Profiling :
++ `Measurements`:
+
+    + `DeepSpeech2`: JIT profiling increases energy consumption by 0.01% and time consumption by 0.03%.
+    + `ShuffleNet-v2`: JIT profiling increases time consumption by 0.6% and reduces energy consumption by 2.8%.
+
+#### Scaling to Multi-GPU
++ `Extension`:
+
+    + `Single-node Multi-GPU`: Profiling power consumption across all GPUs.
+    + `Distributed Multi-GPU`: Potential future work.
+
++ `Comparison with Pollux`:
+
+    + `DeepSpeech2 on LibriSpeech`: On four NVIDIA A40 GPUs, Zeus consumes 12% more time but 21% less energy compared to Pollux.
+
+<img src="./img/fig12.png" width=33%>
+<img src="./img/fig1314.png" width=65%>
+
+#### Sensitivity Analysis and Ablation Studies
+
++ `Impact of η`:
+
+    + `Sweep Analysis`: η is swept from 0 to 1, with results falling close to the Pareto Front (Figure 11).
+
++ `Impact of Early-Stopping Threshold β`:
+
+    + `Sweep Analysis`: β is swept from 1.5 to 5. The default β = 2.0 achieves the lowest geometric mean of ETA across all jobs (Figure 12).
+
++ `Component Impact`:
+
+    + `Figure 13`: Shows performance degradation when disabling components like early stopping, pruning, and JIT profiling. Early stopping provides the most significant benefits.
+
++ `Impact of GPU Models`:
+
+    + `Figure 14`: Shows consistent ETA reductions across four generations of NVIDIA GPUs. Additional results in Appendix G.
+
+
+## Discussion
+
++ `Choice of Configuration Knobs` :
+    Zeus optimizes batch size and GPU power limit to balance control granularity and search space size. While finer control over individual GPU components (e.g., setting frequency and voltage) can enhance energy efficiency, it significantly expands the search space and prolongs exploration. Conversely, adjusting the GPU power limit effectively controls frequency and voltage through Dynamic Voltage and Frequency Scaling (DVFS), keeping the search space manageable.
+
+    For deep learning job configuration, batch size is chosen due to its significant impact on both training time and average power consumption. Other potential knobs, like learning rate, primarily influence training time, making batch size a more effective choice for energy consumption optimization.
+
++ `Hyperparameter Optimization` :
+    In hyperparameter optimization, multiple DL training jobs (trials) are run with different hyperparameters from a user-defined search space. Users specifying a fixed batch size for these trials can set the feasible batch size set B to include only that specific size. Zeus can then optimize energy consumption by searching for the optimal GPU power limit, even with a fixed batch size.
+
++ `Supporting Distributed Training` :
+Currently, Zeus supports single-node training but can be extended to distributed settings. In distributed training, the same power limit configuration can be applied across all GPUs of the same type to avoid stragglers. The cost definition can be extended to sum the time and energy consumption of all GPUs involved in training. This extension would allow Zeus to handle distributed training without altering its core components.
+
++ `Supporting Heterogeneous GPUs` : Zeus assumes that the same type of GPU is used across all training job recurrences. However, this may not always be feasible due to resource contention or availability. Supporting heterogeneous GPUs can be achieved by translating cost values from one GPU type to another. The energy-time cost can be expressed as the product of Epochs(b) and EpochCost(b;η). The former is independent of GPU choice, while the latter can be quickly profiled on any GPU as it consists of AvgPower(b,p) and Throughput(b,p). By profiling EpochCost(b;η) for each batch size on the new GPU and multiplying it with Epochs(b) from the previous GPU, Zeus can adapt to different GPU types. These translated cost observations can be used to learn a new Multi-Armed Bandit (MAB) model specialized for the new GPU.
+
+In summary, the choices and extensions discussed demonstrate Zeus's flexibility and potential for broad applicability in optimizing energy consumption for DNN training, even in complex and varying environments.
+
+### Related Work :
++ `DNN Training Optimization` : 
+    Recent studies in DNN training focus on creating fast kernels for tensor operations , efficient data and computation placement , and optimizing communication . These works primarily aim at reducing Training Time to Accuracy (TTA) and often overlook energy consumption. Integrating these techniques with Zeus could potentially accelerate training while improving energy efficiency.
+
+    Pollux is another recent effort aimed at reducing TTA in multi-GPU DNN training by dynamically adjusting the batch size based on the Gradient Noise Scale (GNS) . However, GNS does not theoretically capture model generalization and is only efficient with multiple GPUs. In contrast, Zeus optimizes and balances TTA and Energy to Accuracy (ETA) across job recurrences without affecting model convergence characteristics.
+
++ `Energy Measurement in Deep Learning` :
+    There has been significant research on analyzing energy consumption and the environmental impact of training large DNN models in clusters . Device-level benchmarking efforts aim to understand the energy efficiency and performance of DNN training on GPUs and other accelerators . Various Python frameworks have been developed for measuring and predicting energy consumption during DNN training. Zeus similarly uses a software-based approach, utilizing NVML for JIT profiling of DNN training jobs.
+
++ `Energy Optimization for Deep Learning` : 
+    Research on energy optimization in DNNs includes studying energy-accuracy tradeoffs in DNN inference with new neural network architectures and algorithm-hardware co-design . Training strategies such as warm-start and gradient-matching-based data subset selection have also been explored. Other studies focus on energy optimization for multi-GPU DNN training through scheduling and task mapping . Zeus complements these solutions and can be integrated into these frameworks transparently.
+
+    Several works have investigated the impact of GPU dynamic frequency and voltage scaling (DVFS) and power configurations on DNN training energy consumption and performance . These studies typically rely on offline modeling and profiling, focusing on transient metrics like system throughput and power consumption. Zeus, however, uses an online approach, focusing on the end-to-end metric of energy-to-accuracy.
+
+    BatchSizer introduces batch size as a control knob to optimize energy efficiency in DNN inference. Zeus extends this concept to DNN training, taking a holistic approach by optimizing both GPU and job configurations together.
+
+### Conclusion : 
+This work addresses the challenge of optimizing energy consumption in DNN training on GPUs. By identifying the tradeoff between energy consumption and training time, we demonstrated that common practices often result in inefficient energy usage. Zeus, an online optimization framework for recurring DNN training jobs, discovers the Pareto frontier and allows users to navigate it by automatically tuning batch size and GPU power limit. Zeus significantly reduces energy usage across diverse workloads and real cluster traces by adapting to dynamic workload changes, such as data drift. We hope Zeus inspires the community to consider energy as a first-class resource in DNN optimization.
