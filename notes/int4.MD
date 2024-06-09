@@ -258,4 +258,44 @@ Data drift, where the data on which a model is trained shifts over time, necessi
 
 In summary, these extensions ensure that Zeus can handle real-world complexities such as unknown cost variance, early job termination, concurrent job handling, and data drift, making it a robust solution for optimizing the energy-time cost of recurrent DNN training tasks.
 
+## Zeus Implementation :
+Zeus is implemented as a Python library designed to integrate seamlessly with DNN training scripts. Its primary component, the `ZeusDataLoader` class, integrates with the PyTorch framework to profile power consumption and throughput in real-time. This profiling is achieved by slicing epochs at iteration boundaries and leveraging the NVIDIA Management Library (NVML) for power limit configuration and monitoring.
+
+### Key Components and Features
+### + Power and Throughput Profiling:
+
++ The `ZeusDataLoader` class profiles the power consumption and throughput for different power limits by partitioning the epochs into slices and dynamically adjusting the GPU power limits.
++ Empirical observations indicate that five seconds of profiling per power limit are sufficient to achieve stable results. This profiling data is used to determine and apply the optimal power limit for the rest of the training process.
+### + Cost Monitoring and Early Stopping:
+
++ `ZeusDataLoader` continuously monitors the cost incurred during training and implements early stopping mechanisms to terminate jobs that exceed predefined cost thresholds, optimizing resource usage and reducing unnecessary expenditures.
+
+### + Observer Mode:
+
++ Zeus includes an Observer Mode that profiles power consumption and throughput without altering the power limit settings.
++ In this mode, the `ZeusDataLoader` reports hypothetical time and energy consumption metrics as if the optimal power limit had been applied. This feature helps users understand the potential benefits of adopting Zeus without impacting the current training process.
+
+
+
+Zeus Integration Example : 
+
+```python
+from zeus import ZeusDataLoader
+
+ train_loader = ZeusDataLoader(
+ train_set, batch_size, max_epochs, target_metric)
+ eval_loader = ZeusDataLoader(eval_set, batch_size)
+
+ for epoch in train_loader.epochs(): # may early stop
+ for batch in train_loader:
+ # Learn from batch
+ for batch in eval_loader:
+ # Evaluate on batch
+ train_loader.report_metric(validation_metric)
+```
+
+### Encouraging Adoption
+The Observer Mode feature is particularly useful for promoting Zeus's adoption. By providing users with detailed reports on potential time and energy savings without modifying the actual power consumption during profiling, users can make informed decisions about integrating Zeus into their workflows. This transparency and the potential for significant resource savings are compelling reasons for DNN practitioners to consider adopting Zeus.
+
+Overall, Zeus's implementation focuses on minimal disruption to existing workflows, robust profiling capabilities, and user-friendly features, making it a practical and powerful tool for optimizing the cost of DNN training tasks.
 
