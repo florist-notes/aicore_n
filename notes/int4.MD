@@ -300,7 +300,7 @@ The Observer Mode feature is particularly useful for promoting Zeus's adoption. 
 Overall, Zeus's implementation focuses on minimal disruption to existing workflows, robust profiling capabilities, and user-friendly features, making it a practical and powerful tool for optimizing the cost of DNN training tasks.
 
 ## Evaluation
-We evaluate Zeus’s effectiveness in optimizing the energy-time tradeoff for recurrent DNN training tasks. Our key findings demonstrate significant reductions in energy consumption, quick convergence to optimal configurations, adaptability to data drift, low overhead, scalability to multi-GPU settings, and consistent savings across different GPU generations.
+The authors evaluated Zeus’s effectiveness in optimizing the energy-time tradeoff for recurrent DNN training tasks. The paper's key findings demonstrate significant reductions in energy consumption, quick convergence to optimal configurations, adaptability to data drift, low overhead, scalability to multi-GPU settings, and consistent savings across different GPU generations.
 
 #### Key Findings:
 + `Energy and Time Savings`:
@@ -329,7 +329,7 @@ Evaluated on four generations of NVIDIA GPUs as detailed in Table 2.
 + `Workloads`:
 
     + Table 1 summarizes the workloads used.
-    + The default batch size (b0) is sourced from the model's original publication or set to the maximum batch size achieving target accuracy.
+    + The default batch size (b_0) is sourced from the model's original publication or set to the maximum batch size achieving target accuracy.
     + For models using the Adadelta optimizer, no initial learning rate is needed.
     + For other optimizers, we selected batch sizes and learning rates that achieve reasonable accuracy, following guidelines from original model publications and popular DL frameworks.
     + Batch sizes were scaled using Square Root Scaling for adaptive optimizers like Adam.
@@ -357,7 +357,7 @@ Evaluated on four generations of NVIDIA GPUs as detailed in Table 2.
         + `Power Trace`: Uses JIT profiling to collect throughput and average power consumption for all combinations of model, batch size, and power limit.
     + Traces are replayed to evaluate Zeus and baseline decisions, reconstructing TTA and ETA values to measure regret.
     + This approach avoids offline profiling, ensuring Zeus learns in an online manner.
-    + For data drift evaluation (§6.4), Zeus is run end-to-end due to the complexity of constructing traces for drifting datasets.
+    + For data drift evaluation, Zeus is run end-to-end due to the complexity of constructing traces for drifting datasets.
 
 ### `Detailed Evaluation : `
 The detailed evaluation section will expand on the metrics, methodology, and results to provide comprehensive insights into Zeus's performance. This includes:
@@ -383,7 +383,7 @@ This section evaluates Zeus's performance in terms of energy consumption (ETA), 
 #### Tradeoff with TTA :
 
 + `Training Time Reductions`: Zeus reduces training time (TTA) by up to 60.1%, although it can increase TTA by up to 12.8% for some workloads.
-+ `Performance Variability`: For workloads optimized for minimal training time (b0 tuned), there's little room for TTA improvement.
++ `Performance Variability`: For workloads optimized for minimal training time (b_0 tuned), there's little room for TTA improvement.
 + `Figure 6b`: Shows the TTA of the last five recurrences of Zeus and Grid Search relative to the
 Default baseline.
 
