@@ -118,28 +118,28 @@ The training job will be terminated upon either reaching the target metric or ex
 Building Zeus requires both algorithm design and systems support. The next sections describe the core optimization algorithm details and the implementation highlights of Zeus.
 
 ## Zeus Algorithm Design
-This section details how Zeus selects the optimal batch size and GPU power limit to minimize the overall cost of recurrent DNN training tasks. We start with the problem formulation and describe the decoupling of batch size and power limit optimizations. We then explain the optimization of the power limit and batch size within this decoupled framework, concluding with a discussion on addressing common challenging scenarios.
+This section details how Zeus selects the optimal batch size and GPU power limit to minimize the overall cost of recurrent DNN training tasks. The author starts with the problem formulation and describes the decoupling of batch size and power limit optimizations. The author then explains the optimization of the power limit and batch size within this decoupled framework, concluding with a discussion on addressing common challenging scenarios.
 
-#### Problem Formulation :
-Zeus aims to minimize the cost of a recurring job by exploring the feasible set of batch sizes B and power limits P. The goal is to balance the tradeoff between exploration and exploitation to find the optimal configuration without incurring excessive costs. The objective, based on the cost function from Equation 2, is to:
+#### + `Problem Formulation` :
+Zeus aims to minimize the cost of a recurring job by exploring the feasible set of batch sizes B and power limits P. The goal is to balance the tradeoff between exploration and exploitation to find the optimal configuration without incurring excessive costs. The objective, based on the cost function, is to:
 
 $$ min_{b,p} \sum_{t=1}^{T} C(b_t, p_t; \eta) $$
 $$ subject to b_t \epsilon B, p_t \epsilon P, \forall t \epsilon[1,T] $$
 
-Here, b_t and p_t are the batch size and power limit chosen at the t-th recurrence of the job, and b and p are vectors of length T.
+Here, `b_t` and `p_t` are the batch size and power limit chosen at the t-th recurrence of the job, and `b` and `p` are vectors of length T.
 
-The problem is complex due to the vast search space and the requirement to run DNN training to obtain each value of C(b,p;η). However, by expanding the cost function (Equation 3), we can decouple the exploration of batch size and power limit, making the problem more tractable:
+The problem is complex due to the vast search space and the requirement to run DNN training to obtain each value of C(b,p;η). However, by expanding the cost function, we can decouple the exploration of batch size and power limit, making the problem more tractable:
 
 $$ C(b,p;\eta)=(\eta⋅AvgPower(b,p)+(1−\eta)⋅MAXPOWER)⋅TTA(b,p) $$
 $$ = Epochs(b) \frac{\eta⋅AvgPower(b,p)+(1−\eta)⋅MAXPOWER}{Throughput(b,p)} $$
 
-where Epochs(b) denotes the number of epochs needed to reach the target, and Throughput(b,p) is the number of epochs per second.
+where `Epochs(b)` denotes the number of epochs needed to reach the target, and `Throughput(b,p)` is the number of epochs per second.
 
 Two key insights allow the decoupling of batch size b and power limit p:
 
-Profiling Efficiency: Given b, AvgPower(b,p) and Throughput(b,p) can be quickly profiled during training for all possible choices of p. This is due to the iterative nature of DNN training, yielding stable power and throughput estimations with a small number of iterations.
++ `Profiling Efficiency`: Given b, AvgPower(b,p) and Throughput(b,p) can be quickly profiled during training for all possible choices of p. This is due to the iterative nature of DNN training, yielding stable power and throughput estimations with a small number of iterations.
 
-Independence of Epochs: Epochs(b) is unaffected by the choice of p since changing the power limit does not change what is computed.
++ `Independence of Epochs`: Epochs(b) is unaffected by the choice of p since changing the power limit does not change what is computed.
 
 Thus, the optimal power limit for any batch size can be determined independently through online profiling. Each choice of batch size is automatically paired with the optimal power limit, reducing the search space to the set of batch sizes B.
 
@@ -174,19 +174,19 @@ To determine the optimal power limit for a given batch size, Zeus utilizes a jus
     + Using the profile information, Zeus determines the optimal power limit for the batch size.
     + The remaining epochs of the job are executed with this optimal power limit.
 
-This JIT profiling approach is more efficient than offline profiling, as the profiling process itself contributes to training without affecting accuracy. Section 6.5 demonstrates that JIT profiling incurs negligible overhead.
+This JIT profiling approach is more efficient than offline profiling, as the profiling process itself contributes to training without affecting accuracy. JIT profiling incurs negligible overhead.
 
 ### Optimizing Batch Size
 
-Zeus determines the batch size b_t for each job recurrence t. EpochCost(b_t ;η) is a deterministic function that identifies the optimal power limit for any batch size b_t and returns the optimal cost of one epoch. Thus, Zeus needs to focus only on choosing the optimal batch size.
+Zeus determines the batch size `b_t` for each job recurrence t. `EpochCost(b_t ;η)` is a deterministic function that identifies the optimal power limit for any batch size b_t and returns the optimal cost of one epoch. Thus, Zeus needs to focus only on choosing the optimal batch size.
 
-+ Challenges and Approach :
++ `Challenges and Approach` :
 The stochastic nature of DNN training makes it difficult to pick the optimal batch size without adequate exploration. Therefore, a good solution must:
 
     + `Incorporate Stochasticity`: Factor in the unpredictable nature of DNN training.
     + `Balance Exploration and Exploitation`: Smartly trade off the cost of exploring potentially better batch sizes against the benefit of exploiting known good batch sizes.
 
-Grid search is not ideal due to the high exploration cost and the inability to quickly rule out suboptimal batch sizes. Instead, Zeus formulates the problem as a Multi-Armed Bandit (MAB) with Thompson Sampling, which is well-suited for this scenario.
+`Grid search is sub-optimal` : Grid search is not ideal due to the high exploration cost and the inability to quickly rule out suboptimal batch sizes. Instead, Zeus formulates the problem as a Multi-Armed Bandit (MAB) with Thompson Sampling, which is well-suited for this scenario.
 
 To optimize the batch size:
 
