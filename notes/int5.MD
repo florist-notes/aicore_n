@@ -50,7 +50,7 @@ where 𝛼 is a proportional constant indicating the percentage of the system th
 + `Model Serving Workloads` : Our work focuses on energy-time fairness with a particular emphasis on model serving workloads, where multiple deep learning models are executed on shared resources like GPUs. This choice aligns with the increasing energy demands of AI applications and the pursuit of energy-efficient designs in edge and cloud systems. Researchers have proposed various algorithmic and post-training methods to enhance energy efficiency while sharing resources efficiently.
 
 
-### MOTIVATIONFORENERGY-TIMEFAIRNESS :
+### MOTIVATION FOR ENERGY-TIME FAIRNESS :
 
  This section discusses some key assumptions made by traditional fair schedulers and why the assumptions do not hold for emerging hardware, such as modern GPUs and heterogeneous processors, resulting in unfairness problems
 
@@ -180,7 +180,7 @@ We consider the following setup for the problem: we have N active applications t
 <img src="./img/etf_algo.png" width=48%> <img src="./img/etf1w.png" width=48%>
 
 
-#### AnIllustrative Example :
+#### An Illustrative Example :
 
 We have a system with a time quantum size of T = 30 serving three applications: A, B, and C. The applications have equal weights and are backlogged. Their power demands are 2, 3, and 8 watts, respectively. Let's go through the steps of ETF scheduling with 𝜙 = 0.7:
 
