@@ -14,3 +14,15 @@ Given the vast parameter space, selecting an optimal power mode to make such tra
 It takes 16.3 h to profile even 25% of power modes for Orin AGX for the ResNet model on ImageNet data, and this will not scale for every workload, specially if it arrives dynamically and has time constraints.
 
                   energy (mWh) = power (mW) × time (h)
+
+PowerTrain :
+
+<img src="./img/powertrain.png" width=100%> 
+
+### Proposed Approach :
+
+The authors propose two data-driven approaches to address the challenge. First, they train two Neural Network (NN) models—one for time predictions and one for power predictions—on a subset of power modes for a given DNN workload. These models make predictions for unseen power modes within the same workload.
+
+Our second approach, PowerTrain, trains NN models on a large corpus of power modes measured from a reference DNN workload. When a new DNN workload arrives, PowerTrain uses transfer learning on telemetry from profiling approximately 50 power modes to retrain the models. These updated models estimate training time and power for all possible power modes, enabling quick Pareto front analysis across time and power to meet optimization goals, such as the fastest training time within a power limit or the lowest power within a time budget.
+
+PowerTrain has lower profiling overheads than NN for new workloads and offers competitive prediction accuracy. It requires a one-time profiling overhead on the reference workload to train the initial NN models, but incremental overhead for new workloads is limited to profiling tens of power modes. PowerTrain generalizes to new DNN workloads, datasets, and even new device types, such as transitioning from Orin AGX to Xavier AGX. In contrast, NN models trained from scratch for new workloads need twice as much profiling data to achieve similar accuracy as PowerTrain.
