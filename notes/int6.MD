@@ -38,3 +38,21 @@ Having predictions for power and training time for a DNN workload for any given 
 <img src="./img/ptcmp.png" width=100%> 
 
 PT-based optimization also outperformed simpler baselines like choosing the default MAXN power mode and random profiling (RND) of 50 power modes. For optimization problems with power limits from 17W to 50W, PT had the lowest time penalty of 1% above the optimal while also having the lowest percentage (26.5%) of solutions exceeding the power limit by over 1W. This low time penalty is beneficial for long training runs over several epochs. For instance, training YOLO takes 200 epochs (~49 hours) on the Orin, and PT's 12% time benefit reduces this by 5.88 hours. Similarly, MobileNet's 148 epochs (~50 hours) see a 6.5-hour reduction when optimized using PT.
+
+#### Discussion :
+
+For instance, a one-time training workload on an edge service that runs a new and large DNN model on a vast corpus of user data may benefit from a brute force approach. Even if profiling time is costly, the perfect power mode is crucial for time-consuming tasks, which could span days. However, this is impractical for edge workloads.
+
+More common on the edge is fine-tuning a pre-trained DNN on a smaller dataset, such as model personalization on a private edge device, where training typically lasts a few hours. Here, using our NN approach with profiling over hundreds of power modes is feasible due to the longer training time.
+
+In continuous learning scenarios, where the same DNN is retrained regularly with small batches of new data to address data drift, PowerTrain is ideal due to its smaller data collection time. For edge devices in a federated learning setup or a private edge-cloud supporting multiple applications, with frequent and unknown duration DNN training workloads, PowerTrain minimizes data collection time and meets optimization criteria before workload changes.
+
+
+### Contributions :
+The authors make the following contributions:
+
++ `Neural Network (NN) Prediction Approach`: Developed an NN-based approach to estimate time and power for DNN training workloads on the Nvidia Jetson Orin AGX for any given power mode using a large profiling corpus. Extended this into PowerTrain (PT), a transfer learning-based approach that significantly reduces online profiling overheads for new DNN workloads on Orin or other Jetson devices.
+
++ `Validation Across Multiple Workloads and Devices`: Validated NN and PT for accuracy and generalizability across 7 different DNN workloads and three Jetson edge devices (Orin AGX, Xavier AGX, and Orin Nano), as well as across 3 different training minibatch sizes on 2 workloads.
+
++ `Optimization of Training Time and Power Limits`: Applied PT predictions to optimize training time and power limit trade-offs for several DNN workloads, demonstrating superior performance compared to other baselines, including NN.
