@@ -30,10 +30,11 @@ PowerTrain has lower profiling overheads than NN for new workloads and offers co
 ### Representative Results Against Baselines:
 
 <b>Predictions </b>:
-
 Nvidia offers a PowerEstimator tool (NPE) to estimate the power usage by Orin AGX for a specific power mode. We used NPE and our PowerTrain (PT) approach, with ResNet as the reference workload on Orin AGX, to predict the power usage for three DNN workloads across two diverse power modes each. We reported the Mean Average Percentage Error (MAPE %) relative to the actual observed power usage. Except for PM1 for ResNet, where PT's error (5%) was slightly higher than NPE's (4%), PT provided better predictions in all other cases while NPE consistently overestimated.
 
 <b>Optimization </b>:
 Having predictions for power and training time for a DNN workload for any given power mode helps users optimize the system to meet different goals. Nvidia recommends three default power modes: 15W, 30W, and 50W. We used the best of these three to meet the optimization goal and compared it to our PowerTrain models, which discovered a Pareto front to select a custom power mode. PowerTrain (PT) had the fewest solutions exceeding the optimal for 5 out of 6 cases (except ResNet 15W) compared to Nvidia’s suggestions (NV), while generally remaining within power limits.
+
+<img src="./img/ptcmp.png" width=100%> 
 
 PT-based optimization also outperformed simpler baselines like choosing the default MAXN power mode and random profiling (RND) of 50 power modes. For optimization problems with power limits from 17W to 50W, PT had the lowest time penalty of 1% above the optimal while also having the lowest percentage (26.5%) of solutions exceeding the power limit by over 1W. This low time penalty is beneficial for long training runs over several epochs. For instance, training YOLO takes 200 epochs (~49 hours) on the Orin, and PT's 12% time benefit reduces this by 5.88 hours. Similarly, MobileNet's 148 epochs (~50 hours) see a 6.5-hour reduction when optimized using PT.
