@@ -74,23 +74,37 @@ The authors make the following contributions:
     Selected Workloads
     We selected three popular computer vision DNN architectures and datasets that are compatible with the Orin's resources:
 
-    ResNet-18 (Image Classification):
+    + ResNet-18 (Image Classification):
 
-    Dataset: Validation subset of ImageNet (50,000 images, 6.7GB).
-    Description: A CNN featuring residual blocks and skip connections.
-    MobileNet v3 (Image Classification):
+        + Dataset: Validation subset of ImageNet (50,000 images, 6.7GB).
+        + Description: A CNN featuring residual blocks and skip connections.
+    
+    + MobileNet v3 (Image Classification):
 
-    Dataset: Google Landmarks Dataset v2 (GLD-23k), consisting of 23,080 photos categorized into 203 classes.
-    Description: A lightweight vision model optimized for smartphone applications.
-    YOLO v8n (Object Detection):
+        + Dataset: Google Landmarks Dataset v2 (GLD-23k), consisting of 23,080 photos categorized into 203 classes.
+        + Description: A lightweight vision model optimized for smartphone applications.
+    
+    + YOLO v8n (Object Detection):
 
-    Dataset: COCO minitrain subset of the MS COCO dataset (25,000 images, 3.9GB).
-    Description: The smallest model in the latest "You Only Look Once" series of real-time object detectors.
+        + Dataset: COCO minitrain subset of the MS COCO dataset (25,000 images, 3.9GB).
+        + Description: The smallest model in the latest "You Only Look Once" series of real-time object detectors.
+    
     Additionally, we explore the generalizability of our methods using:
 
-    BERT with the SQuAD dataset for query-response tasks.
-    LSTM with the Wikitext dataset for next-word prediction tasks.
+    + BERT with the SQuAD dataset for query-response tasks.
+    + LSTM with the Wikitext dataset for next-word prediction tasks.
+    
     These workloads represent typical edge and federated learning tasks and cover a wide range of DNN architectures (CNN, LSTM, Transformer), dataset sizes (17.8MB–6.7GB), and computational requirements (3.2M–110M parameters, 225M–11.5T FLOPS).
 
-    Training Setup
-    We use PyTorch for training, leveraging its Dataloader module to fetch and preprocess data samples. The smallest unit of data for training is a minibatch, ensuring efficient handling and processing.
+#### Training Setup :
+We use PyTorch for training, leveraging its Dataloader module to fetch and preprocess data samples. The smallest unit of data for training is a minibatch. The num_workers flag in the Dataloader is used to set the number of workers for fetching and preprocessing data.
+
+num_workers = 0: A single process handles all data transfer and GPU compute operations, with no pipelining.
+num_workers ≥ 1: Multiple processes (n processes) handle data fetching and preprocessing, while a separate process performs GPU computation on each preprocessed minibatch sequentially.
+By default, we use a minibatch size of 16 samples during training and set num_workers = 4. We run an iteration of the Dataloader to prefetch all data into memory before starting the workload to avoid any disk fetch overheads during data collection.
+
+
+
+
+
+
