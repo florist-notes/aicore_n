@@ -71,21 +71,23 @@ The authors make the following contributions:
 + #### Training Framework and DNN Workloads
     The Nvidia Jetson Orin runs Ubuntu 20.04 LTS with L4T kernel version 5.10.65. It is configured with Nvidia JetPack version 5.0.1, CUDA v11.4, PyTorch 1.12, and torchvision v0.13.
 
-    Selected Workloads
-    We selected three popular computer vision DNN architectures and datasets that are compatible with the Orin's resources:
+    Selected Workloads - We selected three popular computer vision DNN architectures and datasets that are compatible with the Orin's resources:
 
-    ResNet-18 (Image Classification):
+    ### ResNet-18 (Image Classification):
 
-    Dataset: Validation subset of ImageNet (50,000 images, 6.7GB).
-    Description: A CNN featuring residual blocks and skip connections.
-    MobileNet v3 (Image Classification):
+        + Dataset: Validation subset of ImageNet (50,000 images, 6.7GB).
+        + Description: A CNN featuring residual blocks and skip connections.
 
-    Dataset: Google Landmarks Dataset v2 (GLD-23k), consisting of 23,080 photos categorized into 203 classes.
-    Description: A lightweight vision model optimized for smartphone applications.
-    YOLO v8n (Object Detection):
+    ### MobileNet v3 (Image Classification):
 
-    Dataset: COCO minitrain subset of the MS COCO dataset (25,000 images, 3.9GB).
-    Description: The smallest model in the latest "You Only Look Once" series of real-time object detectors.
+        + Dataset: Google Landmarks Dataset v2 (GLD-23k), consisting of 23,080 photos categorized into 203 classes.
+        + Description: A lightweight vision model optimized for smartphone applications.
+
+    ### YOLO v8n (Object Detection):
+
+        + Dataset: COCO minitrain subset of the MS COCO dataset (25,000 images, 3.9GB).
+        + Description: The smallest model in the latest "You Only Look Once" series of real-time object detectors.
+
     Additionally, we explore the generalizability of our methods using:
 
     BERT with the SQuAD dataset for query-response tasks.
