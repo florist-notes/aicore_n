@@ -424,3 +424,52 @@ PowerTrain's prediction models facilitate efficient optimization of DNN workload
 
 
 <img src="./img/r6.png" width=100%> 
+
+### Related Work :
+
+#### Energy, Power, and Performance Modeling on Edge Devices
+Early studies have explored various aspects of energy, power, and performance modeling on edge devices:
+
++ `Roofline Modeling`: Previous works utilized roofline modeling on older Jetson TK1 and TX1 devices to understand CPU and GPU micro-benchmarks for matrix multiplication .
++ `MIRAGE`: Utilized gradient tree boosting to predict runtime and power consumption for DNN inference on a Jetson Xavier AGX .
++ `Frequency and Core Impact Studies`: Investigations on Jetson Nano have examined the impact of frequencies and cores on latency, power, and energy for inferencing .
++ `Stream Processing Workloads`: Examined frequency effects on power consumption for stream processing workloads .
++ `Layer-wise Energy Measurement`: Methods developed for fine-grained layer-wise energy measurement for inference workloads on Jetson TX1 .
+
+These studies primarily focus on inference and micro-benchmarks rather than DNN training. Our previous work offered initial insights into DNN training on Jetson AGX, NX Xavier, and Nano, proposing a simple time and energy prediction model based on linear regression, which was only evaluated on about 10 power modes and had significant errors compared to our current work .
+
+#### Energy, Power, and Performance Modeling on GPU Servers
+Studies on GPU servers have explored similar themes:
+
++ `NeuralPower`: Used polynomial regression to predict power, runtime, and energy consumption of CNNs for inference on server-grade GPUs, requiring initial profiling for new hardware .
++ `CUDA Kernels`: Linear regression models predicted GPU power consumption based on hardware performance counters, which is not applicable to DNNs due to framework optimizations like kernel fusion .
++ `Paleo`: Developed an analytical model of training time for DNNs based on computational requirements, mapping them to software, hardware, and communication strategies on server-grade GPUs .
++ `Application Kernels`: Models for power, performance, and energy of application kernels on desktop or server-grade GPUs .
++ `Distributed Setup`: Regression models predicting training speed in a distributed setup with cloud GPUs .
+  
+These works focus on server-grade hardware and do not address fine-grained power modes or frequencies, limiting their applicability to our problem. Our goal is to model and predict power and time for DNN training on Jetson devices, modulated by power modes.
+
+####  Optimization Studies on Edge and Server Devices
+Optimization studies have examined trade-offs and strategies for both edge and server devices:
+
++ `Zeus`: Explored trade-offs between training time and energy to minimize training job cost by selecting the best minibatch size and GPU power limit .
++ `Optimal GPU Frequency`: Studies have identified optimal GPU frequencies to lower power while minimizing performance impact on server-grade GPUs .
++ `D3`: Optimized runtime accuracy trade-offs for DNN inference workloads in autonomous vehicle pipelines with dynamic deadlines .
++ `ALERT`: Selected DNN and power limit to meet accuracy, latency, and energy constraints for inference tasks on laptop and desktop CPUs and GPUs .
++ `AxONN`: Distributed DNN inference workload layers between performance-efficient GPU and power-efficient DLA on Jetson Xavier AGX to minimize time and stay within an energy budget .
++ `Pareto Optimal Scheduling`: Identified Pareto optimal scheduling for multiple deep learning applications in terms of response time and energy consumption on smartphones .
++ `Mephesto`: Modeled memory contention for kernel placement on heterogeneous SoCs to achieve desired energy performance trade-offs .
++ `Oppertune`: Addressed post-deployment optimization by tuning parameters using reinforcement learning, sampling hundreds of configurations .
+
+These studies often involve extensive sampling and focus on different aspects of optimization, whereas we model training time and power for DNN workloads on edge devices and solve an optimization problem using these models, addressing a gap in the existing literature.
+
+### Discussions and Conclusion
+We designed two modeling techniques to predict training time and power for DNN training workloads on Jetson edge devices. PowerTrain uses extensive offline data collection and training on a reference DNN workload to bootstrap the prediction model for a new DNN workload with minimal profiling (around 50 power modes) and retraining. PowerTrain's predictions generalize well across various DNNs, datasets, and devices. It identifies optimal power modes to minimize training time within a power budget, confirming its robustness and superiority over simple and NN baselines.
+
+#### Future work includes:
+
++ `Online Deployment`: Collecting sampling data for ML training while the DNN workload runs productively.
++ `Reinforcement Learning`: Exploring reinforcement learning-based methods to solve this problem.
++ `Concurrent Workloads`: Time and power prediction for concurrent training and inference workloads.
++ `Power-aware Minibatch Size Optimization`: Investigating power-aware minibatch size optimization for training workloads.
++ `Extension to GPU Servers and Non-DNN Workloads`: Applying our methods to GPU servers and non-DNN workloads.
