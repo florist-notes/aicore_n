@@ -349,3 +349,78 @@ PowerTrain demonstrates strong generalizability to various DNN workloads, edge d
 
 
 <img src="./img/r4.png" width=64%><img src="./img/r5.png" width=36%> 
+
+
+## Optimizing DNN Workloads using Prediction Models :
+
+Problem Formulation
+To optimize the power mode configuration of DNN workloads, we define an optimization problem:
+
+Given a DNN workload m_tr, select a power mode pm from a set PM that minimizes training time per epoch t_tr while ensuring the power load P_tr is within a user-specified budget P_b.
+​
+ :
+min_pm ∈ PM, t_tr
+​
+ 
+subject to: 
+
+$$ P_{tr}  ≤  P_b $$
+​
+#### Workflow and Methodology :
+Using the prediction models, we solve the optimization problem following these steps:
+
++ `Training Reference Model`: Use ResNet trained on 4368 power modes.
++ `Transfer Learning`: Apply transfer learning to other target workloads using 50 random power mode samples.
++ `Scaling Predictions`: Scale time predictions from minibatch to epoch times.
++ `Observed Pareto Front`: Construct an observed Pareto front using profiling data for 4.4k power modes to minimize time and power.
++ `Predicted Pareto Front`: Use the prediction models to estimate training time and power for all possible power modes, constructing a predicted Pareto front.
++ `Optimization`: For a given power limit, use the predicted Pareto front to find the optimal power mode and report the training time.
+
+
+#### Baselines :
+To contrast against PowerTrain, we use:
+
++ MAXN: Default power mode setting on Jetson Orin AGX, offering best time performance but high power load.
++ Random Sampling Pareto (RND): Randomly profile 50 power modes and build a Pareto front.
++ NN Model: Custom trained for each DNN workload using 50 random power modes, predicting the Pareto front for optimization.
+
+
+#### Results :
+We solve the optimization problem for power limits from 17W to 50W in 1W increments, comparing the results against the optimal solution from the ground-truth Pareto. Metrics reported include:
+
++ Time Penalty %: Excess training time spent compared to the optimal power mode.
++ Normalized Area Under the Curve (AUC): Power in excess of the budget.
++ Percentage of Solutions Exceeding Power Limit (A/L).
++ Percentage of Solutions Exceeding Power Limit by >1W (A/L+1).
+
+
+#### Analysis :
++ PowerTrain vs NN: PowerTrain's observed Pareto closely follows the ground-truth Pareto, leading to better optimization results compared to NN, which is limited to a smaller region.
++ Instance Example (MobileNet at 30W):
+    + Ground-truth optimal: 186 s per epoch, 29.9W.
+    + NN prediction: 168.9 s, 29.7W (actual: 167.2 s, 33.5W).
+    + PT prediction: 179.1 s, 29.9W (actual: 183.9 s, 30.3W).
+
+#### Time Penalty Analysis :
++ Median Time Penalty:
+    + MobileNet: PT - 0.7%, NN - 5%.
+    + YOLO: PT - 0%, NN - 4%.
+    + LSTM and BERT: Similar median time penalties but tighter distribution for PT.
+    + MobileNet with ResNet data: PT has a lower median time penalty.
+    + ResNet with MobileNet data: PT does worse than NN.
+
+#### Power Budget Analysis :
++ `Normalized AUC`: PT has the lowest excess power AUC in 6 out of 7 DNN workloads.
++ `Power Budget Exceedance`:
+    + PT exceeds the budget within a 1W threshold in <20% of solutions for 6 out of 7 DNNs.
+    + For MobileNet, this is 25%.
+
+#### Baselines Comparison :
++ `MAXN`: Offers the best time but frequently exceeds power limits.
++ `Random Sampling`: Higher time penalties with no power violations, slower than optimal by 12–28%.
+
+
+PowerTrain's prediction models facilitate efficient optimization of DNN workloads, minimizing training time while adhering to power budgets. The results indicate that PowerTrain generally outperforms other approaches, including NN and simpler baselines, in terms of time penalty and power budget compliance.
+
+
+<img src="./img/r6.png" width=100%> 
