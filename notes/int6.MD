@@ -67,3 +67,30 @@ The authors make the following contributions:
 
 + #### Hardware and Settings
     We use the Nvidia Jetson Orin AGX, the latest generation of Jetson edge accelerators released in March 2023. The Orin supports several custom power modes. The Orin devkit includes INA3221 power sensors, from which we read the device's power consumption during experiments. To avoid thermal throttling, we set the fan to maximum speed and disable Dynamic Voltage and Frequency Scaling (DVFS), keeping frequencies static at our configured values. The Orin also has two special purpose accelerators, DLA and PVA, which we leave in their default states and turned off. Additionally, we use the Nvidia Jetson Xavier AGX, the predecessor of the Orin AGX, and the Jetson Orin Nano, a less powerful device from the same generation, for generalizability experiments. We refer to these devices as Orin, Xavier, and Nano, respectively.
+
++ #### Training Framework and DNN Workloads
+    The Nvidia Jetson Orin runs Ubuntu 20.04 LTS with L4T kernel version 5.10.65. It is configured with Nvidia JetPack version 5.0.1, CUDA v11.4, PyTorch 1.12, and torchvision v0.13.
+
+    Selected Workloads
+    We selected three popular computer vision DNN architectures and datasets that are compatible with the Orin's resources:
+
+    ResNet-18 (Image Classification):
+
+    Dataset: Validation subset of ImageNet (50,000 images, 6.7GB).
+    Description: A CNN featuring residual blocks and skip connections.
+    MobileNet v3 (Image Classification):
+
+    Dataset: Google Landmarks Dataset v2 (GLD-23k), consisting of 23,080 photos categorized into 203 classes.
+    Description: A lightweight vision model optimized for smartphone applications.
+    YOLO v8n (Object Detection):
+
+    Dataset: COCO minitrain subset of the MS COCO dataset (25,000 images, 3.9GB).
+    Description: The smallest model in the latest "You Only Look Once" series of real-time object detectors.
+    Additionally, we explore the generalizability of our methods using:
+
+    BERT with the SQuAD dataset for query-response tasks.
+    LSTM with the Wikitext dataset for next-word prediction tasks.
+    These workloads represent typical edge and federated learning tasks and cover a wide range of DNN architectures (CNN, LSTM, Transformer), dataset sizes (17.8MB–6.7GB), and computational requirements (3.2M–110M parameters, 225M–11.5T FLOPS).
+
+    Training Setup
+    We use PyTorch for training, leveraging its Dataloader module to fetch and preprocess data samples. The smallest unit of data for training is a minibatch, ensuring efficient handling and processing.
