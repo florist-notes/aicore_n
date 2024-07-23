@@ -80,13 +80,10 @@ Future Directions:
 + `Broader Applicability`: Extending the framework to non-DNN and hybrid workloads, potentially through modular adaptations of the profiling and prediction components.
 
 ## 8. Generalization Across Different Architectures
-Limitation:
 
-    The study focuses primarily on Nvidia Jetson devices, such as the Jetson Orin AGX. While these devices are popular in edge computing, the findings may not generalize well to other hardware architectures, such as those from AMD, Intel, or ARM-based processors not produced by Nvidia.
++ Limitation: The study focuses primarily on Nvidia Jetson devices, such as the Jetson Orin AGX. While these devices are popular in edge computing, the findings may not generalize well to other hardware architectures, such as those from AMD, Intel, or ARM-based processors not produced by Nvidia.
 
-Resolution:
-
-    To address this, future work could involve extending the methodology to include a broader range of devices and architectures. By profiling and validating on a diverse set of hardware, the model's generalizability can be tested and improved.
++ Resolution: To address this, future work could involve extending the methodology to include a broader range of devices and architectures. By profiling and validating on a diverse set of hardware, the model's generalizability can be tested and improved.
 
 
 # PowerTrain as a Reinforcement Learning Problem:
