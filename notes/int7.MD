@@ -74,3 +74,153 @@ Future Directions:
 + `Hybrid Optimization`: Combining PowerTrain with other optimization methods (e.g., evolutionary algorithms, advanced search techniques) to explore a broader configuration space.
 + `Cross-Device Generalization`: Enhancing the transferability of the models to different hardware platforms with minimal re-profiling.
 + `Broader Applicability`: Extending the framework to non-DNN and hybrid workloads, potentially through modular adaptations of the profiling and prediction components.
+
+
+# PowerTrain as a Reinforcement Learning Problem:
+Framing the PowerTrain optimization problem as a reinforcement learning (RL) problem involves defining the elements of an RL framework: states, actions, rewards, and the environment. Here's how this can be done:
+
+### Problem Overview:
+Objective: Minimize the training time per epoch while ensuring the power consumption stays within a user-specified budget.
+
+## + `State (s)`:
+
+The state should capture the current configuration of the system and the characteristics of the DNN workload. This can include:
+
+        + Current power mode settings (e.g., CPU frequency, GPU frequency)
+        + Characteristics of the DNN workload (e.g., number of layers, batch size)
+        + Current power consumption
+        + Training time per epoch in the current power mode
+        + Remaining power budget
+
+## + `Action (a)`:
+
+The actions represent changes to the power mode settings. For example:
+
+        + Adjusting CPU frequency
+        + Adjusting GPU frequency
+        + Changing other relevant power-related settings
+        + Each action would correspond to selecting a specific power mode configuration from the set of available configurations (PM).
+
+## + `Reward (r)`:
+
+The reward function should capture the trade-off between minimizing training time and staying within the power budget. A possible reward function could be:
+        
+        + A positive reward for reducing training time
+        + A penalty for exceeding the power budget
+        + An example reward function:
+
+            𝑟(𝑠, 𝑎) = − training time per epoch − 𝜆 × max (0, power consumption − power budget)
+
+            where,
+
+            λ is a penalty factor for exceeding the power budget.
+
+## + `Environment`:
+
+The environment represents the DNN training process on the Jetson device. It receives the current state and the selected action, executes the training under the new power mode configuration, and returns the new state and reward.
+The environment dynamics would be modeled based on the profiling data collected for different power modes and workloads.
+
+
+### RL Framework :
+Using these components, the optimization problem can be framed as a Markov Decision Process (MDP), where the goal is to learn a policy π(s) that selects actions to maximize the cumulative reward over time.
+
+### Algorithm Choice :
+A suitable RL algorithm for this problem could be:
+
+    + `Q-Learning or Deep Q-Network (DQN)`: To learn a Q-value function that estimates the expected reward for taking a specific action in a given state.
+    + `Policy Gradient Methods`: To directly learn the policy that maps states to actions, which could be useful if the state-action space is large.
+    + `Actor-Critic Methods`: Combining value-based and policy-based approaches to leverage the strengths of both.
+
+Implementation Steps
++ `State Representation`: Define a vector representation for the state, capturing the current power mode settings, workload characteristics, power consumption, and training time.
++ `Action Space`: Define a discrete set of actions corresponding to possible power mode configurations.
++ `Reward Function`: Implement the reward function to balance training time and power consumption penalties.
++ `Environment Simulation`: Create a simulation environment based on the profiling data to provide state transitions and rewards.
++ `Training`: Use the chosen RL algorithm to train the model, iteratively updating the policy based on the observed rewards.
+
+
+```python
+import numpy as np
+
+class PowerTrainEnv:
+    def __init__(self, profiling_data, power_budget):
+        self.profiling_data = profiling_data  # Profiling data for different power modes and workloads
+        self.power_budget = power_budget      # User-specified power budget
+        self.lambda_penalty = 10              # Penalty factor for exceeding power budget
+        self.state = self.initialize_state()
+        self.current_power_mode = None
+
+    def initialize_state(self):
+        # Initialize the state with default or random power mode and workload characteristics
+        initial_power_mode = np.random.choice(list(self.profiling_data.keys()))
+        self.current_power_mode = initial_power_mode
+        return self.profiling_data[initial_power_mode]
+
+    def step(self, action):
+        # Apply action to change power mode
+        new_power_mode = action
+        self.current_power_mode = new_power_mode
+        
+        # Retrieve new training time and power consumption from profiling data
+        new_state = self.profiling_data[new_power_mode]
+        training_time = new_state['training_time']
+        power_consumption = new_state['power_consumption']
+        
+        # Compute reward
+        reward = -training_time - self.lambda_penalty * max(0, power_consumption - self.power_budget)
+        
+        # Check if the episode is done (e.g., reaching a certain number of steps)
+        done = False
+        
+        return new_state, reward, done
+
+    def reset(self):
+        # Reset the environment to an initial state
+        self.state = self.initialize_state()
+        return self.state
+
+    def get_new_state(self, action):
+        # Update state based on action
+        return self.profiling_data[action]
+
+# Profiling data for different power modes and workloads (example data)
+profiling_data = {
+    'mode_1': {'training_time': 100, 'power_consumption': 20},
+    'mode_2': {'training_time': 150, 'power_consumption': 25},
+    'mode_3': {'training_time': 200, 'power_consumption': 15},
+    # Add more power modes as needed
+}
+
+# Initialize environment
+power_budget = 30
+env = PowerTrainEnv(profiling_data, power_budget)
+
+# Example RL agent (simplified)
+class RandomAgent:
+    def __init__(self, action_space):
+        self.action_space = action_space
+
+    def select_action(self, state):
+        return np.random.choice(self.action_space)
+
+    def learn(self, state, action, reward, new_state):
+        pass  # Placeholder for learning method
+
+# Action space (power modes)
+action_space = list(profiling_data.keys())
+
+# Initialize RL agent
+agent = RandomAgent(action_space)
+
+# Training loop
+num_episodes = 10
+for episode in range(num_episodes):
+    state = env.reset()
+    done = False
+    while not done:
+        action = agent.select_action(state)
+        new_state, reward, done = env.step(action)
+        agent.learn(state, action, reward, new_state)
+        state = new_state
+        print(f"Episode: {episode}, Action: {action}, Reward: {reward}, New State: {new_state}")
+```
