@@ -17,6 +17,10 @@ PowerTrain, while innovative and effective in optimizing power and time for DNN 
 Solutions:
 
 + `Adaptive Sampling`: Implement adaptive sampling techniques to intelligently select the most informative power modes, reducing the number of configurations that need profiling.
+  + Uncertainty Sampling: The model selects power modes where it has the highest uncertainty in its predictions. By focusing on areas of high uncertainty, the model can quickly learn and improve its predictions for those regions.
+  + Diversity Sampling: The model selects power modes that are diverse and cover different regions of the input space. This ensures that the training data is representative of the entire space of possible configurations.
+  + Error-based Sampling: The model selects power modes where the prediction errors are highest. By focusing on areas with high prediction errors, the model can learn to correct its mistakes and improve overall accuracy.
+  
 + `Incremental Learning`: Use incremental learning to update the model with new data as it becomes available, reducing the need for extensive re-profiling.
 
 ## 2. Model Generalization and Transferability
