@@ -1,4 +1,4 @@
-# PowerTrain 🌸LIMITATIONS:
+# PowerTrain 🌸 DISCUSSION:
 
 PowerTrain, while innovative and effective in optimizing power and time for DNN training workloads on edge devices, has few limitations. Here, we delve into these limitations in technical depth:
 
@@ -74,6 +74,15 @@ Future Directions:
 + `Hybrid Optimization`: Combining PowerTrain with other optimization methods (e.g., evolutionary algorithms, advanced search techniques) to explore a broader configuration space.
 + `Cross-Device Generalization`: Enhancing the transferability of the models to different hardware platforms with minimal re-profiling.
 + `Broader Applicability`: Extending the framework to non-DNN and hybrid workloads, potentially through modular adaptations of the profiling and prediction components.
+
+## 8. Generalization Across Different Architectures
+Limitation:
+
+    The study focuses primarily on Nvidia Jetson devices, such as the Jetson Orin AGX. While these devices are popular in edge computing, the findings may not generalize well to other hardware architectures, such as those from AMD, Intel, or ARM-based processors not produced by Nvidia.
+
+Resolution:
+
+    To address this, future work could involve extending the methodology to include a broader range of devices and architectures. By profiling and validating on a diverse set of hardware, the model's generalizability can be tested and improved.
 
 
 # PowerTrain as a Reinforcement Learning Problem:
@@ -224,3 +233,39 @@ for episode in range(num_episodes):
         state = new_state
         print(f"Episode: {episode}, Action: {action}, Reward: {reward}, New State: {new_state}")
 ```
+
+# PowerTrain as a Meta Learning Problem:
+
+Meta-learning, often referred to as "learning to learn," is an advanced machine learning paradigm where models are trained to quickly adapt to new tasks with minimal data. In the context of predicting power and performance characteristics of DNN workloads, meta-learning can be leveraged to create models that generalize well across different hardware configurations and workloads without requiring exhaustive profiling. Here’s a detailed explanation of how this can be beneficial:
+
+Meta-learning involves training a model on a variety of tasks such that it can adapt to new tasks efficiently. This typically involves a two-level learning process:
+
+    + Meta-level (Outer Loop): The model learns a general strategy across multiple tasks.
+    + Task-level (Inner Loop): The model fine-tunes itself for a specific task using a small amount of data.
+
+In the PowerTrain context, the tasks can be thought of as different combinations of DNN workloads and power mode configurations. Here’s how meta-learning can be applied:
+
+Step-by-Step Process
+
+### Meta-Training Phase:
+
++ `Task Sampling`: Sample a variety of DNN workloads and power mode configurations from the available data.
+Task-Specific Models: For each sampled task, train a task-specific model that predicts power and performance characteristics.
++ `Meta-Model Training`: Use the insights from task-specific models to train a meta-model. This meta-model captures common patterns across tasks and learns to initialize the task-specific models effectively.
+
+### Meta-Testing Phase (Adaptation):
+
++ `New Task (New DNN Workload/Configuration)`: When a new DNN workload or hardware configuration is encountered, use the meta-model to initialize a task-specific model.
++ `Fine-Tuning`: Fine-tune the initialized task-specific model using a small amount of profiling data (e.g., 50 power modes) for the new task.
+
+Benefits of Meta-Learning
+
++ `Reduced Profiling Overhead`: By leveraging knowledge from previous tasks, the amount of new data required for profiling is significantly reduced.
++ `Quick Adaptation`: The meta-model provides a good starting point, allowing the task-specific model to quickly converge with minimal fine-tuning.
++ `Generalization`: The meta-model learns general patterns across different workloads and configurations, improving its ability to generalize to unseen tasks.
+
+### Meta-Learning Algorithms:
+
++ `MAML (Model-Agnostic Meta-Learning)`: A popular meta-learning algorithm where the meta-model is trained to adapt to new tasks with a few gradient steps.
++ `Reptile`: An alternative to MAML that also focuses on few-shot learning but with simpler optimization.
++ `Prototypical Networks`: Useful for tasks where a distance metric can be defined, such as similarity between power and performance profiles.
