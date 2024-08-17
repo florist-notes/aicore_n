@@ -1,6 +1,6 @@
 # AI Resource Guide : by @[florist_notes](http://floristnotes.wiki/)
 
-# Introduction
+# Introduction 🌸
 Artificial Intelligence is about mimicking the human senses to its truest forms:
 ```
 💠 COMPUTER VISION < What we see
@@ -18,7 +18,7 @@ In addition:
 💠 MATHEMATICS < rule of nature that governs patterns and logic
 ```
 
-Intro blogs : [history of ai](https://en.wikipedia.org/wiki/History_of_artificial_intelligence), [intro to ai](https://vas3k.com/blog/machine_learning/), [adeshpande (cnn)](https://adeshpande3.github.io/), [colah](http://colah.github.io/posts/2015-08-Understanding-LSTMs/), [intro to nlp](https://towardsdatascience.com/a-gentle-introduction-to-natural-language-processing-e716ed3c0863), [intro to rl](https://lilianweng.github.io/posts/2018-02-19-rl-overview/), [ros cv](https://roboticscasual.com/ros-tutorial-how-to-use-opencv-in-a-robot-pick-and-place-task-for-computer-vision/), [robotics](https://en.wikipedia.org/wiki/Robotics), [a tour of ML algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/), [Machine Learning Algorithms & Models Explained with Python](https://medium.com/coders-camp/all-machine-learning-algorithms-models-explained-adcd95d5fb3c).
+Intro blogs : [history of ai](https://youtu.be/jz8hf5i_qDU?si=f-0LXNARScI9hChR), [intro to ai](https://vas3k.com/blog/machine_learning/), [adeshpande (cnn)](https://adeshpande3.github.io/), [colah](http://colah.github.io/posts/2015-08-Understanding-LSTMs/), [intro to nlp](https://towardsdatascience.com/a-gentle-introduction-to-natural-language-processing-e716ed3c0863), [intro to rl](https://lilianweng.github.io/posts/2018-02-19-rl-overview/), [ros cv](https://roboticscasual.com/ros-tutorial-how-to-use-opencv-in-a-robot-pick-and-place-task-for-computer-vision/), [robotics](https://en.wikipedia.org/wiki/Robotics), [a tour of ML algorithms](https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/), [Machine Learning Algorithms & Models Explained with Python](https://medium.com/coders-camp/all-machine-learning-algorithms-models-explained-adcd95d5fb3c), [awesome-ml-blogs](https://github.com/antoinebrl/awesome-ml-blogs).
 
 DATA: Everything in CS is 0 or 1. Life has been binary! Most common data formats: Image / Video / Audio / Text / etc (other formats).
 
@@ -28,7 +28,7 @@ DATA: Everything in CS is 0 or 1. Life has been binary! Most common data formats
 
 <center><img src="./img/data2.png" width=100%></center>
 
-Mathematics: Linear Algebra | Tool: [Python](https://www.python.org/) + [PyTorch](https://pytorch.org/)/ [TensorFlow](https://www.tensorflow.org/) | Environment: [Anaconda](https://www.anaconda.com/). Follow page 5 of [this](sk_k___ai___resourceguide.pdf) document I made for updated AI news.
+Mathematics: Linear Algebra | Tool: [Python](https://www.python.org/) + [PyTorch](https://pytorch.org/)/ [TensorFlow](https://www.tensorflow.org/) | Environment: [Anaconda](https://www.anaconda.com/). 
 
 ## AI & Robotics News:
 
@@ -74,7 +74,7 @@ YOUTUBE CHANNELS: [2 minutes paper](https://www.youtube.com/c/K%C3%A1rolyZsolnai
 
 </table>
 
-resources : [basic nn](https://youtu.be/bfmFfD2RIcg), [neural networks - 3b1b](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi), [how are memories stored in neural network?](https://youtu.be/piF6D6CQxUw), [loss function](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/), [LF 2](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/), [Optimizers](https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6) / adaptive learning rate ([Gradient Descent](https://youtu.be/sDv4f4s2SB8),  Adam, adagrad, adadelta, RMSProp etc), [Activation Function](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6), ML interview ques: [article 1](https://www.simplilearn.com/tutorials/machine-learning-tutorial/machine-learning-interview-questions), [article 2](https://www.mygreatlearning.com/blog/machine-learning-interview-questions/), [article 3](https://www.interviewbit.com/machine-learning-interview-questions/), [ML design interview](https://github.com/khangich/machine-learning-interview), [article 5](https://www.interviewbit.com/machine-learning-interview-questions/), 3b1b - [But what is a GPT? Visual intro to transformers](https://youtu.be/wjZofJX0v4M?si=WNiHvrLk349wLPke), [Attention in transformers, visually explained](https://youtu.be/eMlx5fFNoYc?si=4O7b32HAnP9wm6Fy).
+resources : [basic nn](https://youtu.be/bfmFfD2RIcg), [neural networks - 3b1b](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi), [how are memories stored in neural network?](https://youtu.be/piF6D6CQxUw), [loss function](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/), [LF 2](https://www.section.io/engineering-education/understanding-loss-functions-in-machine-learning/), [Optimizers](https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6) / adaptive learning rate ([Gradient Descent](https://youtu.be/sDv4f4s2SB8),  Adam, adagrad, adadelta, RMSProp etc), [Activation Function](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6), ML interview ques: [article 1](https://www.simplilearn.com/tutorials/machine-learning-tutorial/machine-learning-interview-questions), [article 2](https://www.mygreatlearning.com/blog/machine-learning-interview-questions/), [article 3](https://www.interviewbit.com/machine-learning-interview-questions/), [ML design interview](https://github.com/khangich/machine-learning-interview), [article 5](https://www.interviewbit.com/machine-learning-interview-questions/), 3b1b - [But what is a GPT? Visual intro to transformers](https://youtu.be/wjZofJX0v4M?si=WNiHvrLk349wLPke), [Attention in transformers, visually explained](https://youtu.be/eMlx5fFNoYc?si=4O7b32HAnP9wm6Fy), [What Do Neural Networks Really Learn?](https://youtu.be/jGCvY4gNnA8?si=8JsUZOiPyU_j8lX4), [The moment we stopped understanding AI [AlexNet]](https://youtu.be/UZDiGooFs54?si=PZydqbn32wkRIEjt), [The future of AI looks like THIS (& it can learn infinitely)](https://youtu.be/biz-Bgsw6eE?si=87KKA_WvkD4zYwDB), [Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ).
 
 
 #### Into AI Courses: [ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction), [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning), [Mathematics for ML](https://www.coursera.org/specializations/mathematics-machine-learning), [Machine Learning Engineering for Production (MLOps) Specialization](https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops), DeepLearningAI [courses](https://www.coursera.org/deeplearning-ai).
@@ -459,7 +459,7 @@ Good AI courses:
 
 </table>
 
-More : [Quantum Machine Learning MOOC - Quantum ML](https://www.youtube.com/watch?v=QtWCmO_KIlg&list=PLmRxgFnCIhaMgvot-Xuym_hn69lmzIokg), [Parallel Computing and Scientific Machine Learning](https://www.youtube.com/watch?v=3IoqyXmAAkU&list=PLCAl7tjCwWyGjdzOOnlbGnVNZk0kB8VSa), [Optimization](https://www.youtube.com/watch?v=9hToSoZXM9s&list=PL7y-1rk2cCsDOv91McLOnV4kExFfTB7dU), [18.409 Algorithmic Aspects of Machine Learning Spring 2015 MIT ](https://www.youtube.com/watch?v=nsHbkVMaUGk&list=PLB3sDpSRdrOvI1hYXNsa6Lety7K8FhPpx), [Advanced NLP - CMU](https://www.youtube.com/watch?v=rVht4eK3EZw&list=PL8PYTP1V4I8D0UkqW2fEhgLrnlDW9QK7z), [Convex Optimization : CMU](https://www.youtube.com/watch?v=Di9f47LAzHQ&list=PLRPU00LaonXQ27RBcq6jFJnyIbGw5azOI), [MIT Generative AI Summit](https://www.youtube.com/watch?v=i3O1S6VcwCw&list=PLtBk2p55R5TsQuxhjoAaStAir-0N0nCVG), [MIT - EfficientML.ai Lecture, Fall 2023, MIT 6.5940](https://www.youtube.com/playlist?list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB), [MIT 6.036 : Introduction to Machine Learning](https://www.youtube.com/playlist?list=PLxC_ffO4q_rW0bqQB80_vcQB09HOA3ClV), [MIT 6.S192: Deep Learning for Art, Aesthetics, and Creativity](https://www.youtube.com/playlist?list=PLCpMvp7ftsnIbNwRnQJbDNRqO6qiN3EyH), [Stanford CS25: V2 I Introduction to Transformers w/ Andrej Karpathy](https://youtu.be/XfpMkf4rD6E?si=_Ti-hM52WTiug3wd), [The Most Important Algorithm in Machine Learning](https://youtu.be/SmZmBKc7Lrs?si=_KoaWTNh7pIJkeA1).
+More : [Quantum Machine Learning MOOC - Quantum ML](https://www.youtube.com/watch?v=QtWCmO_KIlg&list=PLmRxgFnCIhaMgvot-Xuym_hn69lmzIokg), [Parallel Computing and Scientific Machine Learning](https://www.youtube.com/watch?v=3IoqyXmAAkU&list=PLCAl7tjCwWyGjdzOOnlbGnVNZk0kB8VSa), [Optimization](https://www.youtube.com/watch?v=9hToSoZXM9s&list=PL7y-1rk2cCsDOv91McLOnV4kExFfTB7dU), [18.409 Algorithmic Aspects of Machine Learning Spring 2015 MIT ](https://www.youtube.com/watch?v=nsHbkVMaUGk&list=PLB3sDpSRdrOvI1hYXNsa6Lety7K8FhPpx), [Advanced NLP - CMU](https://www.youtube.com/watch?v=rVht4eK3EZw&list=PL8PYTP1V4I8D0UkqW2fEhgLrnlDW9QK7z), [Convex Optimization : CMU](https://www.youtube.com/watch?v=Di9f47LAzHQ&list=PLRPU00LaonXQ27RBcq6jFJnyIbGw5azOI), [MIT Generative AI Summit](https://www.youtube.com/watch?v=i3O1S6VcwCw&list=PLtBk2p55R5TsQuxhjoAaStAir-0N0nCVG), [MIT - EfficientML.ai Lecture, Fall 2023, MIT 6.5940](https://www.youtube.com/playlist?list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB), [MIT 6.036 : Introduction to Machine Learning](https://www.youtube.com/playlist?list=PLxC_ffO4q_rW0bqQB80_vcQB09HOA3ClV), [MIT 6.S192: Deep Learning for Art, Aesthetics, and Creativity](https://www.youtube.com/playlist?list=PLCpMvp7ftsnIbNwRnQJbDNRqO6qiN3EyH), [Stanford CS25: V2 I Introduction to Transformers w/ Andrej Karpathy](https://youtu.be/XfpMkf4rD6E?si=_Ti-hM52WTiug3wd), [The Most Important Algorithm in Machine Learning](https://youtu.be/SmZmBKc7Lrs?si=_KoaWTNh7pIJkeA1), Stanford Playlist : [ [Stanford CS236: Deep Generative Models](https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8), [Stanford EE364A Convex Optimization](https://www.youtube.com/playlist?list=PLoROMvodv4rMJqxxviPa4AmDClvcbHi6h), [Stanford CS109 Introduction to Probability for Computer Scientists](https://www.youtube.com/playlist?list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg), [Stanford EE259: Principles of Sensing for Autonomy](https://www.youtube.com/playlist?list=PLoROMvodv4rOhE007XQu707Dy52qXiZGV), [Stanford CS25 - Transformers United](https://www.youtube.com/playlist?list=PLoROMvodv4rNiJRchCzutFw5ItR_Z27CM), [Stanford CS224W Machine Learning with Graphs](https://www.youtube.com/playlist?list=PLoROMvodv4rOP-ImU-O1rYRg2RFxomvFp), [Stanford AA289 - Robotics and Autonomous Systems Seminar](https://www.youtube.com/playlist?list=PLoROMvodv4rMeercb-kvGLUrOq4HR6BZD) ].
 
 
 ## Premier AI conferences:
@@ -471,6 +471,7 @@ Learning (ICML)
 (abbreviated as NeurIPS)
 + [ECCV](https://eccv2022.ecva.net/) : European Conference on Computer Vision
 (ECCV)
++ [ICRA](https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra) : IEEE International Conference on Robotics and Automation (ICRA)
 + [ICLR](https://iclr.cc/) : The International Conference on Learning
 Representations (ICLR)
 + [IROS](https://iros2022.org/) : IEEE/RSJ International Conference on
@@ -590,7 +591,7 @@ Research Challenges are posted on this amazing
 platform.
 
 
-Hackathons: [hackTUM](https://hack.tum.de/), [hackZurich](https://hackzurich.com/), [NASA Space app
+Hackathons: [HackZurich](https://hackzurich.com/), [HackTUM](https://hack.tum.de/), [Stanford Treehacks](https://www.treehacks.com/), [HackMIT](https://hackmit.org/),  [NASA Space app
 challenge](https://www.spaceappschallenge.org/), [pytorch
 summer hack](https://pytorchmpk.devpost.com/), [esa socis](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/SOCIS_The_ESA_Summer_of_Code_in_Space) etc.
 
@@ -723,7 +724,7 @@ AI Research Labs & Groups in Hamburg:
 ## Datasets : 
 
 PUBLIC datasets:
-- [google dataset search](https://datasetsearch.research.google.com/) | [kaggle dataset](https://www.kaggle.com/datasets) | [paperswithcode dataset](https://paperswithcode.com/datasets) | [openml-dataset](https://www.openml.org/search?type=data&sort=runs&status=active) | [nasa earth dataset](https://www.earthdata.nasa.gov/) (largest collection of geo-related
+- [Google dataset search](https://datasetsearch.research.google.com/) | [kaggle dataset](https://www.kaggle.com/datasets) | [paperswithcode dataset](https://paperswithcode.com/datasets) | [openml-dataset](https://www.openml.org/search?type=data&sort=runs&status=active) | [nasa earth dataset](https://www.earthdata.nasa.gov/) (largest collection of geo-related
 datasets about the earth, climate and water bodies.) | [AWS opendata](https://registry.opendata.aws/) |  [Azure opendata](https://docs.microsoft.com/en-us/azure/open-datasets/dataset-catalog) | [data.world](https://data.world/) | [huggingface](https://huggingface.co/datasets) | [UCI ML dataset](https://archive.ics.uci.edu/ml/datasets.php) | [datahub.io](https://datahub.io/search)
 - [github/awesome-public-dataset](https://github.com/awesomedata/awesome-public-datasets) | [govdata.de](https://www.govdata.de/) | [destatis.de](https://www.destatis.de/EN/Service/OpenData/_node.html) | [data.gov](https://data.gov/) | [visualdata.io](https://visualdata.io/discovery) (Computer Vision datasets) |  [CMU library dataset](https://guides.library.cmu.edu/machine-learning/datasets) , [TUHH](https://www.fdr.uni-hamburg.de/)
 x COMPUTER VISION datasets: [xView](http://xviewdataset.org/#dataset), [ImageNet](https://image-net.org/),
@@ -771,6 +772,10 @@ source code for applied ml.
  The developer-first MLOps
 platform Build better models faster with experiment
 tracking, dataset versioning, and model management
+
+ ### [firecrawl.dev](https://www.firecrawl.dev/) :
+
+ Turn websites into LLM-ready data. Power your AI apps with clean data crawled from any website.
  
  ### [AWS Sagemaker](https://aws.amazon.com/sagemaker/)
 
@@ -798,7 +803,9 @@ within a unified artificial intelligence platform. Google
 provides a lot of ML services like AutoML, diagflow,
 deep learning containers etc, [here](https://cloud.google.com/products/ai) is the list.
 
-### [Google Veo and Imagen 3](https://blog.google/technology/ai/google-generative-ai-veo-imagen-3/)
+### [Google Veo and Imagen 3](https://blog.google/technology/ai/google-generative-ai-veo-imagen-3/) :
+
+Generative AI from Google.
 
 
  ### [HuggingFace](https://huggingface.co/)
