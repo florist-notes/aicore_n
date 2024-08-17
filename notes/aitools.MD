@@ -1042,3 +1042,5 @@ designed for machine learning.
 output of any machine learning model.
 
 > [pandas-profiling](https://github.com/ydataai/pandas-profiling) : Create HTML profiling reports from pandas DataFrame objects.
+
+<img src="./img/ai_lib.png" width=100%>
