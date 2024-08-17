@@ -17,7 +17,7 @@ It takes 16.3 h to profile even 25% of power modes for Orin AGX for the ResNet m
 
 PowerTrain :
 
-<img src="./img/powertrain.png" width=100%> 
+<img src="./img/powertrain.png" width=50%> 
 
 ### Proposed Approach :
 
@@ -73,6 +73,7 @@ The authors make the following contributions:
 
     Selected Workloads - We selected three popular computer vision DNN architectures and datasets that are compatible with the Orin's resources:
 
+<<<<<<< HEAD
     ### ResNet-18 (Image Classification):
 
         + Dataset: Validation subset of ImageNet (50,000 images, 6.7GB).
@@ -88,11 +89,404 @@ The authors make the following contributions:
         + Dataset: COCO minitrain subset of the MS COCO dataset (25,000 images, 3.9GB).
         + Description: The smallest model in the latest "You Only Look Once" series of real-time object detectors.
 
+=======
+    + ResNet-18 (Image Classification):
+
+        + Dataset: Validation subset of ImageNet (50,000 images, 6.7GB).
+        + Description: A CNN featuring residual blocks and skip connections.
+    
+    + MobileNet v3 (Image Classification):
+
+        + Dataset: Google Landmarks Dataset v2 (GLD-23k), consisting of 23,080 photos categorized into 203 classes.
+        + Description: A lightweight vision model optimized for smartphone applications.
+    
+    + YOLO v8n (Object Detection):
+
+        + Dataset: COCO minitrain subset of the MS COCO dataset (25,000 images, 3.9GB).
+        + Description: The smallest model in the latest "You Only Look Once" series of real-time object detectors.
+    
+>>>>>>> refs/remotes/origin/main
     Additionally, we explore the generalizability of our methods using:
 
-    BERT with the SQuAD dataset for query-response tasks.
-    LSTM with the Wikitext dataset for next-word prediction tasks.
+    + BERT with the SQuAD dataset for query-response tasks.
+    + LSTM with the Wikitext dataset for next-word prediction tasks.
+    
     These workloads represent typical edge and federated learning tasks and cover a wide range of DNN architectures (CNN, LSTM, Transformer), dataset sizes (17.8MB–6.7GB), and computational requirements (3.2M–110M parameters, 225M–11.5T FLOPS).
 
-    Training Setup
-    We use PyTorch for training, leveraging its Dataloader module to fetch and preprocess data samples. The smallest unit of data for training is a minibatch, ensuring efficient handling and processing.
+#### Training Setup :
+We use PyTorch for training, leveraging its Dataloader module to fetch and preprocess data samples. The smallest unit of data for training is a minibatch. The num_workers flag in the Dataloader is used to set the number of workers for fetching and preprocessing data.
+
+num_workers = 0: A single process handles all data transfer and GPU compute operations, with no pipelining.
+num_workers ≥ 1: Multiple processes (n processes) handle data fetching and preprocessing, while a separate process performs GPU computation on each preprocessed minibatch sequentially.
+By default, we use a minibatch size of 16 samples during training and set num_workers = 4. We run an iteration of the Dataloader to prefetch all data into memory before starting the workload to avoid any disk fetch overheads during data collection.
+
+<img src="./img/ssml.png" width=100%> 
+
+### ML-driven Modeling and Prediction :
+
+
+Proposed Data-Driven Approaches
+To predict the power consumption and training time per minibatch for DNN training workloads, we propose two data-driven approaches based on machine learning (ML) models.
+
+Initial Exploration and Elimination of Simpler Methods
++ `Linear Regression`: This method was found to be inaccurate due to the inherently non-linear nature of DNN workload performance.
++ `Random Forest and Decision Trees`: These methods suffered from overfitting.
++ `Multi-Layer Perceptron (MLP)`: While MLP performed well with very few samples, our final solution based on Neural Networks (PT) outperformed it with more samples and the added benefit of transfer learning to new workloads.
+
+Key Consideration: Profiling Overhead
++ `Profiling Time`: The main overhead is the time required to profile a new DNN workload or new hardware. The actual training time for prediction models is minimal (around 15 minutes).
++ `Efficiency`: While profiling data collection can be integrated into the DNN workload's training activity, extensive data collection can diminish the benefits if it becomes a significant part of the training time.
+
+
+
+<img src="./img/nnarch.png" width=100%> 
+
+
+#### Neural Network (NN) Prediction Model per Workload
+
+NN Architecture
++ `Layers`: Our NN architecture consists of four dense layers with 256, 128, 64, and 1 neurons, respectively.
++ `Activation Functions`: ReLu for the first three dense layers and a linear activation function for the final layer.
++ `Input Features`: Configuration for a power mode, including CPU cores, CPU frequency, GPU frequency, and memory frequency.
++ `Normalization`: Input features are normalized between 0.0 and 1.0 using sklearn's StandardScaler.
++ `Optimizer`: Adam with a learning rate of 0.001.
++ `Loss Function`: Mean Squared Error (MSE).
++ `Dropout Layers`: Introduced after the first and second dense layers to avoid overfitting.
++ `Training`: By default, the NN is trained for 100 epochs, with model checkpointing to save the best weights based on the least validation loss.
+
+Training Data Approaches
+
+Full Profiling Data:
++ Uses the entire profiling data for a DNN workload (about 4.4k samples for Orin AGX) with a 90:10 training-to-test split.
++ Time-consuming (e.g., over 14 hours for ResNet), but can achieve better prediction accuracy.
+
+Sampled Data:
++ Uses a smaller number of uniformly sampled training data (10 to 100 samples) from the 4.4k, with a 90:10 split.
++ Takes significantly less time (10s of minutes), but may suffer from lower accuracy.
+
+Trade-Offs :
++ `Accuracy vs. Time`: The full profiling data approach provides higher accuracy but requires more time. The sampled data approach is quicker but may compromise on prediction accuracy.
++ `Profiling Overhead`: Balancing profiling time with prediction accuracy is crucial for practical deployment in edge devices.
+
+Hyperparameters (Table 4)
++ `Dense Layers`: 4 layers with 256, 128, 64, and 1 neurons.
++ `Activation Functions`: ReLu (first 3 layers), Linear (final layer).
++ `Optimizer`: Adam.
++ `Learning Rate`: 0.001.
++ `Loss Function`: Mean Squared Error (MSE).
++ `Dropout Layers`: After the first and second dense layers.
++ `Training Epochs`: 100 by default.
++ `Normalization`: StandardScaler from sklearn.
+
+By leveraging these approaches, our prediction models aim to optimize the power and training time trade-offs effectively for various DNN workloads on edge devices, ensuring robust performance with minimal overhead.
+
+### PowerTrain: Generalizable Transfer Learning Model
+
+#### Motivation : 
+The standard neural network (NN) approach requires retraining for each new DNN workload on the edge device, leading to significant data collection overheads for different power modes. To address this limitation, we propose PowerTrain, a transfer learning (TL) based approach to offer a lower-overhead and more generalizable solution.
+
+#### Transfer Learning Concept :
+Transfer learning is a deep learning technique where a model trained on one task is repurposed for a related but different task. This method leverages the knowledge gained from the initial task, allowing the model to perform well on a new task with less specialized data and reduced training time.
+
+#### PowerTrain Methodology :
++ Reference DNN Workload:
+
+    + Perform detailed profiling on a reference DNN workload to collect a comprehensive set of profiling data.
+    + Use this data to bootstrap a reference NN model for both time and power prediction.
+    + This process is done once offline, creating a reference model to transfer from.
+
++ New DNN Workload:
+
+    + Modify the reference NN by removing the last dense layer and adding a new layer.
+    + Perform limited profiling on the new DNN workload to collect time and power data.
+    + Fine-tune the reference NN using this new data through transfer learning.
+    + Generate new NN models for time and power prediction for the new workload.
+
+The key idea is to retain the representations learned in the internal layers of the neural network from the reference DNN workload and only change the final output layer based on the new workload's profiling behavior.
+
+#### Implementation Steps
++ Train Reference NN:
+
+    + Train the reference NN using a full corpus of 4k power modes for one of the three default DNN workloads.
+    + This serves as the base model for future transfer learning tasks.
+
++ Fine-Tune for New Workloads:
+
+    + Use a small number of power modes (10 to 100) for profiling the new workload.
+    + Perform transfer learning to adapt the reference NN to the new workload.
+    + Evaluate the trade-off between data collection overheads and the accuracy of the retrained models.
+
+#### Performance and Evaluation
+
++ `Data Collection`: The full profiling data for the reference model uses 4.4k power modes. Transfer learning requires significantly fewer power modes for new workloads.
++ `Training Time`: The actual retraining time remains under 10 minutes.
++ `Generalization`: PowerTrain is tested across various generalization scenarios:
+    + Same DNN Architecture or Dataset as the reference DNN workload.
+    + Unseen DNN Architecture and Dataset.
+    + Unseen Device from a Different Generation.
+    + Unseen Device from the Same Generation.
+    + Unseen Training Minibatch Sizes.
+
++ Results :
+  
+    + `Profiling Data Impact`: Increasing the number of power modes from 500 to 4368 for the reference model did not significantly affect the Mean Absolute Percentage Error (MAPE) for time or power predictions.
+    + `Data Collection Overheads vs. Accuracy`: Evaluations showed a balance between the number of power modes used for transfer learning and the resulting accuracy of the retrained models.
+    + `Generalizability`: PowerTrain demonstrated effective generalization across different DNN architectures, datasets, and hardware platforms, validating its robustness and efficiency.
+
+By employing transfer learning, PowerTrain reduces the profiling overheads while maintaining high prediction accuracy for power and training time, making it a versatile tool for various DNN workloads on edge devices.
+
+## Prediction Results :
+
+Evaluation of PowerTrain (PT) vs. Neural Network (NN) :
+
+We evaluate PowerTrain for time and power predictions and compare it with the NN baseline using both large and small sampling sizes. The primary metric used is the Mean Absolute Percentage Error (MAPE%) relative to the ground truth for time and power consumption in various power modes. We also assess the overheads for data collection and the generalizability of PowerTrain to new DNN workloads and devices.
+
+Training Setup:
+
++ The PowerTrain reference model and the NN large sampling model are both trained on 90% of profiling data from all 4386 power modes, with 40 minibatches of telemetry entries per power mode.
++ For smaller samples, we randomly select between 10–100 power modes from the 4386 total, with 40 minibatch entries each.
++ Power data is recorded every 1s, and each power mode has varying power samples depending on the duration to profile 40 minibatches. We use the maximum power sample length and replicate minibatch entries to ensure uniform training entries.
+
+Training Time:
+
++ Training the full NN for the reference DNN takes around 15 minutes on an RTX 3090 GPU, which can be done offline with the model weights saved.
++ Training the NN model with 10–100 samples takes a few seconds.
++ PowerTrain takes under 30 seconds for transfer learning.
+
+Choice of Base DNN Workload :
+
+The choice of the reference DNN workload influences the quality of transfer learning. We evaluated three candidate DNN workloads (ResNet, MobileNet, and YOLO) to determine the best reference model for transfer learning.
+
+    + ResNet as Reference:
+        + Time MAPE: 14.5% for MobileNet, 11.5% for YOLO
+        + Power MAPE: 5.6% for MobileNet, 4.9% for YOLO
+    + MobileNet as Reference:
+        + Time MAPE: 15.0% for ResNet, 11.8% for YOLO
+        + Power MAPE: 7.9% for ResNet, 4.9% for YOLO
+    + YOLO as Reference:
+        + Performed worse compared to ResNet and MobileNet
+  
+ResNet demonstrated the highest variation in observed power values across different power modes, making it the best candidate for generalizing to other DNNs. Thus, ResNet is used as the reference DNN in subsequent experiments.
+
+Time and Power Prediction Accuracy vs. Profiling Overheads :
+
+We compare the performance of the NN model trained with all profiling samples against PowerTrain trained on ResNet and transferred to other DNNs with different training sample sizes.
+
+`Time Predictions`:
+
+    + MobileNet:
+        + PT with 10 power modes: 26.7% MAPE
+        + NN with 10 power modes: 52.6% MAPE
+        + PT with 30 power modes: <20% MAPE
+        +NN with 30 power modes: 35% MAPE
+    + YOLO:
+        + PT with 30 power modes: <15% MAPE
+        + NN with 10 power modes: 24.7% MAPE
+  
+PT consistently shows lower MAPE and less variability compared to NN, even with fewer samples. Data collection time for 30 power modes is under 15 minutes, making the overhead relatively small compared to the multi-hour training time.
+
+`Power Predictions`:
+
+    + MobileNet:
+        + PT with 20 power modes: 8.5% MAPE
+        + NN with 20 power modes: 12% MAPE
+    + YOLO:
+        + PT with 10 power modes: 6.8% MAPE
+        + NN with 10 power modes: 21% MAPE
+
+PowerTrain outperforms NN with fewer profiling samples, achieving lower MAPEs and maintaining consistency. With 50 power modes, PT has a 5% lower MAPE than NN for MobileNet.
+
+`Comparison at 100 Power Modes`:
+
+    + MobileNet:
+        + PT: 11.9% MAPE (time), 4.3% MAPE (power)
+        + NN: 8.1% MAPE (time), 3.6% MAPE (power)
+    + YOLO:
+        + PT: 10.18% MAPE (time)
+        + NN: 9.7% MAPE (time)
+
+PowerTrain reaches close to the optimum accuracy with 100 power modes, demonstrating its efficiency in providing high accuracy with fewer samples.
+
+PowerTrain leverages transfer learning to provide accurate time and power predictions with significantly fewer profiling samples compared to traditional NN models. By using ResNet as the reference model, PowerTrain generalizes well to other DNN workloads and maintains lower overheads, making it a practical solution for edge device performance prediction.
+
+### Generalization of PowerTrain :
+
+A significant advantage of PowerTrain is its ability to generalize to heterogeneous DNN workloads with minimal profiling samples, achieving high accuracy. We evaluate this generalizability along three dimensions (Figure 5): (1) Different DNN architecture or dataset from the reference DNN workload, (2) Both DNN architecture and dataset being different, and (3) Different edge device and DNN workloads.
+
+Different DNN Architecture or Dataset from Reference :
+We use two reference NN models: one trained on ResNet with ImageNet (RR∗) and another on MobileNet with GLD (MM∗). PowerTrain attempts to transfer to new workloads where either the DNN architecture or dataset differs:
+
+    + RR∗ → RM: ResNet architecture with MobileNet’s GLD dataset
+    + RR∗ → MR: MobileNet architecture with ResNet’s ImageNet dataset
+    + MM∗ → MR: MobileNet with ResNet’s dataset
+    + MM∗ → RM: ResNet with MobileNet’s dataset
+
+Using 50 random power mode samples for transfer and validation on 100 power modes, the results show:
+
+    + Time MAPEs for RR∗ → RM and MM∗ → MR are comparable to the reference models, with minimal error increase (e.g., 11.3% to 12.8% for RR∗ → RM).
+    + Power MAPEs exhibit less than a 1% change, indicating strong generalization when either the DNN architecture or dataset overlaps with the reference.
+
+<img src="./img/r1.png" width=100%> 
+
+#### Unseen and Diverse DNN Workloads
+Expanding to DNN architectures significantly different from ResNet, such as BERT (transformer architecture) and LSTM (RNN-based architecture), we profile 50 random power mode samples for BERT and LSTM and validate on another 50 samples:
+
+    + LSTM: Time MAPE for PT is 12.5% vs. 12.3% for NN.
+    + BERT: Time MAPEs are 15.6% for PT vs. 15.1% for NN.
+    + PT outperforms NN on power predictions: LSTM (6.3% vs. 9.1%) and BERT (better by 3.5%).
+
+#### Unseen Device from a Different Generation
+Using PowerTrain to transfer from a ResNet workload trained on Orin AGX to Xavier AGX (previous Jetson generation):
+
+    + ResNet on Xavier: Time MAPE is 12%, power MAPE is 11% for PT, compared to NN’s 21% (time) and 18% (power).
+    + MobileNet on Xavier: Time MAPE is 14%, power MAPE is 9% for PT, significantly better than NN.
+
+<img src="./img/r2.png" width=100%> 
+
+#### Unseen Device from the Same Generation
+Transferring from Orin AGX to a less powerful Orin Nano (same generation):
+
+    + Using 50 random power modes for transfer and validating on 180 modes:
+        + ResNet on Nano: Time MAPE is 7.85%, power MAPE is 5.96%.
+        + MobileNet on Nano: Time MAPE is 8.98%, power MAPE is 4.72%.
+    + Hyperparameter tuning (changing loss metric from MSE to MAPE) was necessary to achieve these results, suggesting sufficient similarity within and across Jetson generations.
+
+#### Unseen Workload Training Minibatch Sizes
+Predicting training time and power consumption for different minibatch sizes (8, 16, 32) on ResNet and MobileNet:
+
++ ResNet:
+    + Transferring from ResNet/16 to ResNet/8 and ResNet/32 showed time MAPEs of 10.84% and 11.2%, and power MAPEs of 6.86% and 7.28%, respectively.
+  
++ MobileNet:
+    + Time MAPEs ranged from 7% to 9.4%, and power MAPEs between 5.5% and 5.7%, demonstrating robust performance across different minibatch sizes.
+
+<img src="./img/r3.png" width=100%> 
+
+PowerTrain demonstrates strong generalizability to various DNN workloads, edge devices, and training configurations with minimal profiling samples. This adaptability, combined with the ability to achieve higher accuracy and lower overheads, makes PowerTrain a robust and practical solution for diverse edge device performance prediction scenarios.
+
+
+<img src="./img/r4.png" width=64%><img src="./img/r5.png" width=36%> 
+
+
+## Optimizing DNN Workloads using Prediction Models :
+
+Problem Formulation
+To optimize the power mode configuration of DNN workloads, we define an optimization problem:
+
+Given a DNN workload m_tr, select a power mode pm from a set PM that minimizes training time per epoch t_tr while ensuring the power load P_tr is within a user-specified budget P_b.
+​
+ :
+min_pm ∈ PM, t_tr
+​
+ 
+subject to: 
+
+$$ P_{tr}  ≤  P_b $$
+​
+#### Workflow and Methodology :
+Using the prediction models, we solve the optimization problem following these steps:
+
++ `Training Reference Model`: Use ResNet trained on 4368 power modes.
++ `Transfer Learning`: Apply transfer learning to other target workloads using 50 random power mode samples.
++ `Scaling Predictions`: Scale time predictions from minibatch to epoch times.
++ `Observed Pareto Front`: Construct an observed Pareto front using profiling data for 4.4k power modes to minimize time and power.
++ `Predicted Pareto Front`: Use the prediction models to estimate training time and power for all possible power modes, constructing a predicted Pareto front.
++ `Optimization`: For a given power limit, use the predicted Pareto front to find the optimal power mode and report the training time.
+
+
+#### Baselines :
+To contrast against PowerTrain, we use:
+
++ MAXN: Default power mode setting on Jetson Orin AGX, offering best time performance but high power load.
++ Random Sampling Pareto (RND): Randomly profile 50 power modes and build a Pareto front.
++ NN Model: Custom trained for each DNN workload using 50 random power modes, predicting the Pareto front for optimization.
+
+
+#### Results :
+We solve the optimization problem for power limits from 17W to 50W in 1W increments, comparing the results against the optimal solution from the ground-truth Pareto. Metrics reported include:
+
++ Time Penalty %: Excess training time spent compared to the optimal power mode.
++ Normalized Area Under the Curve (AUC): Power in excess of the budget.
++ Percentage of Solutions Exceeding Power Limit (A/L).
++ Percentage of Solutions Exceeding Power Limit by >1W (A/L+1).
+
+
+#### Analysis :
++ PowerTrain vs NN: PowerTrain's observed Pareto closely follows the ground-truth Pareto, leading to better optimization results compared to NN, which is limited to a smaller region.
++ Instance Example (MobileNet at 30W):
+    + Ground-truth optimal: 186 s per epoch, 29.9W.
+    + NN prediction: 168.9 s, 29.7W (actual: 167.2 s, 33.5W).
+    + PT prediction: 179.1 s, 29.9W (actual: 183.9 s, 30.3W).
+
+#### Time Penalty Analysis :
++ Median Time Penalty:
+    + MobileNet: PT - 0.7%, NN - 5%.
+    + YOLO: PT - 0%, NN - 4%.
+    + LSTM and BERT: Similar median time penalties but tighter distribution for PT.
+    + MobileNet with ResNet data: PT has a lower median time penalty.
+    + ResNet with MobileNet data: PT does worse than NN.
+
+#### Power Budget Analysis :
++ `Normalized AUC`: PT has the lowest excess power AUC in 6 out of 7 DNN workloads.
++ `Power Budget Exceedance`:
+    + PT exceeds the budget within a 1W threshold in <20% of solutions for 6 out of 7 DNNs.
+    + For MobileNet, this is 25%.
+
+#### Baselines Comparison :
++ `MAXN`: Offers the best time but frequently exceeds power limits.
++ `Random Sampling`: Higher time penalties with no power violations, slower than optimal by 12–28%.
+
+
+PowerTrain's prediction models facilitate efficient optimization of DNN workloads, minimizing training time while adhering to power budgets. The results indicate that PowerTrain generally outperforms other approaches, including NN and simpler baselines, in terms of time penalty and power budget compliance.
+
+
+<img src="./img/r6.png" width=100%> 
+
+### Related Work :
+
+#### Energy, Power, and Performance Modeling on Edge Devices
+Early studies have explored various aspects of energy, power, and performance modeling on edge devices:
+
++ `Roofline Modeling`: Previous works utilized roofline modeling on older Jetson TK1 and TX1 devices to understand CPU and GPU micro-benchmarks for matrix multiplication .
++ `MIRAGE`: Utilized gradient tree boosting to predict runtime and power consumption for DNN inference on a Jetson Xavier AGX .
++ `Frequency and Core Impact Studies`: Investigations on Jetson Nano have examined the impact of frequencies and cores on latency, power, and energy for inferencing .
++ `Stream Processing Workloads`: Examined frequency effects on power consumption for stream processing workloads .
++ `Layer-wise Energy Measurement`: Methods developed for fine-grained layer-wise energy measurement for inference workloads on Jetson TX1 .
+
+These studies primarily focus on inference and micro-benchmarks rather than DNN training. Our previous work offered initial insights into DNN training on Jetson AGX, NX Xavier, and Nano, proposing a simple time and energy prediction model based on linear regression, which was only evaluated on about 10 power modes and had significant errors compared to our current work .
+
+#### Energy, Power, and Performance Modeling on GPU Servers
+Studies on GPU servers have explored similar themes:
+
++ `NeuralPower`: Used polynomial regression to predict power, runtime, and energy consumption of CNNs for inference on server-grade GPUs, requiring initial profiling for new hardware .
++ `CUDA Kernels`: Linear regression models predicted GPU power consumption based on hardware performance counters, which is not applicable to DNNs due to framework optimizations like kernel fusion .
++ `Paleo`: Developed an analytical model of training time for DNNs based on computational requirements, mapping them to software, hardware, and communication strategies on server-grade GPUs .
++ `Application Kernels`: Models for power, performance, and energy of application kernels on desktop or server-grade GPUs .
++ `Distributed Setup`: Regression models predicting training speed in a distributed setup with cloud GPUs .
+  
+These works focus on server-grade hardware and do not address fine-grained power modes or frequencies, limiting their applicability to our problem. Our goal is to model and predict power and time for DNN training on Jetson devices, modulated by power modes.
+
+####  Optimization Studies on Edge and Server Devices
+Optimization studies have examined trade-offs and strategies for both edge and server devices:
+
++ `Zeus`: Explored trade-offs between training time and energy to minimize training job cost by selecting the best minibatch size and GPU power limit .
++ `Optimal GPU Frequency`: Studies have identified optimal GPU frequencies to lower power while minimizing performance impact on server-grade GPUs .
++ `D3`: Optimized runtime accuracy trade-offs for DNN inference workloads in autonomous vehicle pipelines with dynamic deadlines .
++ `ALERT`: Selected DNN and power limit to meet accuracy, latency, and energy constraints for inference tasks on laptop and desktop CPUs and GPUs .
++ `AxONN`: Distributed DNN inference workload layers between performance-efficient GPU and power-efficient DLA on Jetson Xavier AGX to minimize time and stay within an energy budget .
++ `Pareto Optimal Scheduling`: Identified Pareto optimal scheduling for multiple deep learning applications in terms of response time and energy consumption on smartphones .
++ `Mephesto`: Modeled memory contention for kernel placement on heterogeneous SoCs to achieve desired energy performance trade-offs .
++ `Oppertune`: Addressed post-deployment optimization by tuning parameters using reinforcement learning, sampling hundreds of configurations .
+
+These studies often involve extensive sampling and focus on different aspects of optimization, whereas we model training time and power for DNN workloads on edge devices and solve an optimization problem using these models, addressing a gap in the existing literature.
+
+### Discussions and Conclusion
+We designed two modeling techniques to predict training time and power for DNN training workloads on Jetson edge devices. PowerTrain uses extensive offline data collection and training on a reference DNN workload to bootstrap the prediction model for a new DNN workload with minimal profiling (around 50 power modes) and retraining. PowerTrain's predictions generalize well across various DNNs, datasets, and devices. It identifies optimal power modes to minimize training time within a power budget, confirming its robustness and superiority over simple and NN baselines.
+
+#### Future work includes:
+
++ `Online Deployment`: Collecting sampling data for ML training while the DNN workload runs productively.
++ `Reinforcement Learning`: Exploring reinforcement learning-based methods to solve this problem.
++ `Concurrent Workloads`: Time and power prediction for concurrent training and inference workloads.
++ `Power-aware Minibatch Size Optimization`: Investigating power-aware minibatch size optimization for training workloads.
++ `Extension to GPU Servers and Non-DNN Workloads`: Applying our methods to GPU servers and non-DNN workloads.
