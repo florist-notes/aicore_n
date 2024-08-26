@@ -3,7 +3,53 @@
 PyTorch is a powerful, yet easy-to-use deep learning library for Python, mainly used for applications such as computer vision and natural language processing.
 
 While TensorFlow was developed by Google, PyTorch was developed by Facebook's AI Research Group, which has recently shifted management of the framework to the newly created PyTorch Foundation, which is under the supervision of the Linux Foundation.
+
 The flexibility of PyTorch allows easy integration of new data types and algorithms, and the framework is also efficient and scalable, since it was designed to minimize the number of computations required and to be compatible with a variety of hardware architectures.
+
+`Components of PyTorch` :
+
++ `Tensors`:
+
+    Tensors are the building blocks of PyTorch, similar to arrays in NumPy but with the added ability to run on GPUs (Graphics Processing Units).
+    A tensor is a multi-dimensional array, and PyTorch provides many operations to manipulate these tensors, such as adding, multiplying, reshaping, etc.
+
++ `Autograd (Automatic Differentiation)`:
+
+    PyTorch’s `autograd` feature automatically calculates gradients (derivatives) needed for backpropagation.
+    This is crucial for training neural networks as it allows the model to update its weights based on the loss function.
+    When you perform operations on tensors, PyTorch builds a computational graph, and autograd helps you backtrack through this graph to compute gradients.
+
++ `Neural Network Module (torch.nn)`:
+
+    The `torch.nn` module provides a wide range of pre-built layers, loss functions, and utilities to build neural networks.
+    It includes layers like convolutional layers for image processing, recurrent layers for sequence data, and linear layers for fully connected networks.
+
+ + `Optimizers (torch.optim)`:
+
+    Optimizers in PyTorch help in updating the model’s parameters based on the gradients computed by autograd.
+    Common optimizers include Stochastic Gradient Descent (SGD), Adam, and RMSprop, each with different strategies for adjusting the learning rate and momentum during training.
+
++ `DataLoader`:
+
+    The DataLoader is a utility that allows you to load and preprocess data in batches.
+    It handles tasks like shuffling data, applying transformations, and managing batch sizes, making it easier to feed data into a model during training or inference.
+
++ `PyTorch Hub`:
+
+    PyTorch Hub is a repository of pre-trained models that can be easily loaded and fine-tuned for specific tasks.
+    These models can save time and computational resources, especially when working with limited edge devices.
+
++ `TorchScript`:
+
+    TorchScript is a way to convert your PyTorch models into a format that can be run independently from Python.
+    This is particularly useful for deploying models to edge devices where Python may not be available.
+    TorchScript allows you to optimize models and make them more efficient for inference on resource-constrained devices.
+
++ `ONNX (Open Neural Network Exchange)`:
+
+    ONNX is an open format for representing machine learning models.
+    PyTorch models can be exported to ONNX format, which allows them to be used in different environments, including edge devices that may use frameworks like TensorFlow or Caffe2.
+    ONNX is important for interoperability and for running models on different hardware and platforms.
 
 [ [[web](https://pytorch.org/)], [[documentation](https://pytorch.org/docs/stable/index.html)], [[github](https://github.com/pytorch/pytorch)], [[tutorial](https://pytorch.org/tutorials/)], [[machinelearningmastery.](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/)], [[hub.docker](https://hub.docker.com/r/pytorch/pytorch/tags)], [[learnpytorch.io](https://www.learnpytorch.io/01_pytorch_workflow/)], [[paper](https://arxiv.org/abs/1912.01703)], [[pytorch-2.0](https://pytorch.org/get-started/pytorch-2.0/)] ]
 
