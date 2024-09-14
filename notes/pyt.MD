@@ -274,7 +274,27 @@ def forward(self, x):
    return(x)     
 ```
 
+### Efficient Data Loading with `DataLoader`:
++ Use `num_workers` in `DataLoader` to parallelize data loading and augment data on-the-fly.
++ `pin_memory=True` can speed up data transfer to GPU when using `DataLoader`.
++ `persistent_workers=True` helps to avoid re-initializing workers between epochs, reducing overhead.
 
+### Custom Autograd Functions:
++ Define custom gradients by subclassing `torch.autograd.Function`. This allows for highly efficient and flexible backpropagation, useful in scenarios like implementing novel layers or loss functions.
+
+### Mixed Precision Training:
++ Use `torch.cuda.amp` for mixed precision training, which can significantly reduce memory usage and speed up training, especially on GPUs with Tensor Cores (e.g., NVIDIA V100, A100).
+
+### Model Checkpointing:
++ Save and load model states with `torch.save()` and `torch.load()`, but be cautious to save the state_dict instead of the entire model object to avoid issues with architecture changes.
+Periodically save checkpoints during training, not just the final model, to recover from crashes.
+
+### Gradient Accumulation:
++ For large batch training that doesn't fit into GPU memory, accumulate gradients across multiple mini-batches using `loss.backward()` without stepping the optimizer after each batch. Instead, step the optimizer every few batches.
+
+### Efficient Memory Management:
++ Use `torch.no_grad()` to disable gradient computation for inference, reducing memory consumption and speeding up computations.
+Clear gradients manually with `optimizer.zero_grad()` before the next optimization step to avoid accumulating gradients.
 
 
 resources :  [Implementing ConvNext in PyTorch](https://towardsdatascience.com/implementing-convnext-in-pytorch-7e37a67abba6), [transformers tutorial](https://github.com/NielsRogge/Transformers-Tutorials), [python-docathon](https://pytorch.org/blog/announcing-docathon/), [pytorch-youtube](https://www.youtube.com/@PyTorch/videos), [incredible pytorch](https://github.com/ritchieng/the-incredible-pytorch), [awesome pytorch list](https://github.com/bharathgs/Awesome-pytorch-list), [pytorch deep dive tutorial](https://machinelearningmastery.com/pytorch-tutorial-develop-deep-learning-models/), [pytorch tutorials](https://pytorch.org/tutorials/), @github/[pytorch-tutorial](https://github.com/yunjey/pytorch-tutorial), [learnpytorch.io](https://www.learnpytorch.io/), [PyTorch for DL & ML](https://youtu.be/V_xro1bcAuA?si=kEmbxC1CxNsd2oqP), [The StatQuest Introduction to PyTorch](https://youtu.be/FHdlXe1bSe4?si=V_1fU23kGzMttG6P), [Learn PyTorch for deep learning in a day. Literally.](https://youtu.be/Z_ikDlimN6A?si=NAgcfskOQ0YQLheE), [Build an AI/ML Tennis Analysis system with YOLO, PyTorch, and Key Point Extraction](https://youtu.be/L23oIHZE14w?si=xXDJHrPNN1TBhz27), [Deep Learning with PyTorch](https://www.youtube.com/watch?v=kY14KfZQ1TI&list=PLCC34OHNcOtpcgR9LEYSdi9r7XIbpkpK1).

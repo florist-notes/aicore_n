@@ -1,0 +1,24 @@
+SOC family:tegra234  Machine:NVIDIA Orin Jetson-Small Developer Kit
+Online CPUs: 0-3
+cpu0: Online=1 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu1: Online=1 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu10: Online=0 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu11: Online=0 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu2: Online=1 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu3: Online=1 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu4: Online=0 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu5: Online=0 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu6: Online=0 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu7: Online=0 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu8: Online=0 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+cpu9: Online=0 Governor=schedutil MinFreq=729600 MaxFreq=729600 CurrentFreq=729600 IdleStates: WFI=0 c7=0 
+GPU MinFreq=114750000 MaxFreq=114750000 CurrentFreq=114750000
+EMC MinFreq=204000000 MaxFreq=665600000 CurrentFreq=665600000 FreqOverride=1
+DLA0_CORE MinFreq=0 MaxFreq=1536000000 CurrentFreq=1536000000
+DLA0_FALCON MinFreq=0 MaxFreq=832000000 CurrentFreq=832000000
+DLA1_CORE MinFreq=0 MaxFreq=1536000000 CurrentFreq=1536000000
+DLA1_FALCON MinFreq=0 MaxFreq=832000000 CurrentFreq=832000000
+PVA0_VPS0 MinFreq=0 MaxFreq=1152000000 CurrentFreq=1152000000
+PVA0_AXI MinFreq=0 MaxFreq=832000000 CurrentFreq=832000000
+FAN Dynamic Speed control=inactive hwmon3_pwm=255
+NV Power Mode: pm_new

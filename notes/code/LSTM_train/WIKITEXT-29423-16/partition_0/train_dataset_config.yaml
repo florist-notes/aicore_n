@@ -1,0 +1,10 @@
+dataset_details:
+  data_filename: train_partition_0.pth
+  dataset_id: WIKITEXT
+  dataset_tags:
+  - TEXTCORPUS
+  suitable_models:
+  - LSTM-B
+metadata:
+  label_distribution: 0
+  num_items: 36718
