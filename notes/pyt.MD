@@ -66,7 +66,7 @@ PyTorch 🔥 Tensors:
     x = torch.empty(2, 3) #2d matrix with empty values
     x = torch.empty(2, 2, 3) #3d matrix
 
-    y = torch.rand)(2, 2) #2d matrix with random values
+    y = torch.rand(2, 2) #2d matrix with random values
     z = torch.zeros(2, 3)
     z = torch.ones(2, 2) 
     z = torch.ones(2, 2, dtype=torch.int)  
@@ -79,10 +79,10 @@ PyTorch 🔥 Tensors:
 
     x1 = torch.rand(2, 2)
     x2 = torch.rand(2, 2)
-    x3 = x1 + x2 #element wise addition ( ' -, *, / ')
+    x3 = x1 + x2 #element wise addition ( ' -, *, / ' )
     x3 = torch.add(x1, x2) #same operation ( torch.sub(x1, x2), torch.mul(x1, x2), torch.div(x1, x2) )
 
-    x2.add_(x1) #inline addition , ' _ ' for inplace operations in pytorch
+    x2.add_(x1) #inline addition, ' _ ' for inplace operations in pytorch
 
     x2[1, 1].item() #value of the tensor with 1 item
 
@@ -140,7 +140,7 @@ Autograd (calculating gradients):
     v = torch.tensor([0.1, 1.0, 0.001], dtype=torch.float32)
     z.backward(v) #needs arguments in case of vector tensor
 
-    x.requires_grad_(False) #stop pytorh tracking history
+    x.requires_grad_(False) #stop pytorch tracking history
     x.detach() #creates new tensor that sheds the gradients
     with torch.no_grad(): #wrapping around will not track history
 
@@ -273,6 +273,8 @@ def forward(self, x):
    x = self.fc2(x)
    return(x)     
 ```
+
+## [ [YOLO TRAIN](./code/yolo_train/), [ResNet TRAIN](./code/resnet_train/), [BERT TRAIN](./code/BERT_train/), [LSTM TRAIN](./code/LSTM_train/), [MobileNet Train](./code/mobnet_train/) ]
 
 ### Efficient Data Loading with `DataLoader`:
 + Use `num_workers` in `DataLoader` to parallelize data loading and augment data on-the-fly.
