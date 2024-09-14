@@ -12,6 +12,8 @@ Key components of computer vision include:
 + `Tracking and Motion Analysis`: Monitoring the movement of objects or individuals over time, often crucial for applications like surveillance or human-computer interaction.
 + `3D Reconstruction`: Inferring the three-dimensional structure of objects or scenes from multiple 2D images or depth sensors.
 
+## [ [YOLO TRAIN](./code/yolo_train/), [ResNet TRAIN](./code/resnet_train/), [MobileNet Train](./code/mobnet_train/) ]
+
 
 My Computer Vision theory notes are at @github/[cv-theory](./cv.MD), SLAM notes are @/[visual-slam](./code/slam/README.MD) and OpenCV C++ notes are @github/[cpp-opencv](https://github.com/florist-notes/alg0rith.math/blob/main/competitive_prog/opencv.MD). Some important and popular computer vision tasks are:
 <table width=100%>
