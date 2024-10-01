@@ -465,28 +465,106 @@ More : [Quantum Machine Learning MOOC - Quantum ML](https://www.youtube.com/watc
 
 
 ## Premier AI conferences:
-+ [CVPR](https://cvpr2022.thecvf.com/) : IEEE / CVF Computer Vision and Pattern
-Recognition Conference (CVPR)
-+ [ICML](https://icml.cc/) : International Conference on Machine
-Learning (ICML)
-+ [NeurIPS](https://nips.cc/) : Neural Information Processing Systems
-(abbreviated as NeurIPS)
-+ [ECCV](https://eccv2022.ecva.net/) : European Conference on Computer Vision
-(ECCV)
-+ [ICRA](https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra) : IEEE International Conference on Robotics and Automation (ICRA)
-+ [ICLR](https://iclr.cc/) : The International Conference on Learning
-Representations (ICLR)
-+ [IROS](https://iros2022.org/) : IEEE/RSJ International Conference on
-Intelligent Robots and Systems (IROS)
-+ [RSS](https://roboticsconference.org/) : Robotics: Science and Systems (RSS)
-+ [NVIDIA GTC](https://www.nvidia.com/gtc/) : (GPU Technology Conference) is a
-global AI conference.
-+ [Google Cloud Applied ML Summit](https://cloudonair.withgoogle.com/events/summit-applied-ml-2022) : Google Cloud AI
-technologies
-+ [AAMAS](https://aamas2022-conference.auckland.ac.nz/) : ACM AAMAS (International Conference on
+
+<table style="width:100%" >
+<tr>
+<th>
+Conference
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+
+[CVPR](https://cvpr2022.thecvf.com/)
+</td>
+<td>IEEE / CVF Computer Vision and Pattern
+Recognition Conference (CVPR)</td>
+</tr>
+<tr>
+<td>
+
+[ICML](https://icml.cc/)
+</td>
+<td>International Conference on Machine
+Learning (ICML)</td>
+</tr>
+<tr>
+<td>
+
+[NeurIPS](https://nips.cc/)
+</td>
+<td>Neural Information Processing Systems
+(abbreviated as NeurIPS)</td>
+</tr>
+<tr>
+<td>
+
+[ECCV](https://eccv2022.ecva.net/)
+</td>
+<td>European Conference on Computer Vision
+(ECCV)</td>
+</tr>
+<tr>
+<td>
+
+[ICRA](https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra)
+</td>
+<td>IEEE International Conference on Robotics and Automation (ICRA)</td>
+</tr>
+<tr>
+<td>
+
+[ICLR](https://iclr.cc/)
+</td>
+<td>The International Conference on Learning
+Representations (ICLR)</td>
+</tr>
+<tr>
+<td>
+
+[IROS](https://iros2022.org/)
+</td>
+<td>IEEE/RSJ International Conference on
+Intelligent Robots and Systems (IROS)</td>
+</tr>
+<tr>
+<td>
+
+[RSS](https://roboticsconference.org/)
+</td>
+<td>Robotics: Science and Systems (RSS)</td>
+</tr>
+<tr>
+<td>
+
+[NVIDIA GTC](https://www.nvidia.com/gtc/)
+</td>
+<td>(GPU Technology Conference) is a
+global AI conference.</td>
+</tr>
+<tr>
+<td>
+
+[Google Cloud Applied ML Summit](https://cloudonair.withgoogle.com/events/summit-applied-ml-2022)
+</td>
+<td>Google Cloud AI technologies</td>
+</tr>
+<tr>
+<td>
+
+[AAMAS](https://aamas2022-conference.auckland.ac.nz/)
+</td>
+<td>ACM AAMAS (International Conference on
 Autonomous Agents and Multiagent Systems) is the
 largest and most influential conference in the area of
-agents and multiagent systems.
+agents and multiagent systems.</td>
+</tr>
+
+</table>
+
 
 [ [CVPR papers](#) ] : [2023 all day](https://openaccess.thecvf.com/CVPR2023?day=all), [2022 all day](https://openaccess.thecvf.com/CVPR2022?day=all), [2021 all day](https://openaccess.thecvf.com/CVPR2021?day=all) |  [NeurIPS papers](#), [neurips2023.vizhub](https://neurips2023.vizhub.ai/), [neurips2023.paperdigest](https://www.paperdigest.org/data/neurips-2023-full.html), [rss 2022 papers](https://roboticsconference.org/2022/program/papers/), [nips 2022 outstanding papers](https://nips.cc/virtual/2022/awards_detail), [2021 outstanding papers](https://nips.cc/virtual/2021/awards_detail).
 
@@ -495,105 +573,23 @@ publications : [arXiv](https://arxiv.org/), google scholar : [robotics](https://
 
 
 ### Premier AI challenges and competitions:
-+ [ICRA competitions](https://2024.ieee-icra.org/), [CVPR competitions](https://cvpr.thecvf.com/), [NeurIPS competitions](https://neurips.cc/), [IROS competitions](https://irmv.sjtu.edu.cn/iros2025/index.html).
-+ [NASA Space ROS Sim Summer Sprint Challenge](https://www.freelancer.com/contest/NASA-Space-ROS-Sim-Summer-Sprint-Challenge-2417552/timeline).
-+ [Autoware Challenge 2024](https://discourse.ros.org/t/announcing-autoware-challenge-2024/38653).
-+ [mlcontests](https://mlcontests.com/) : ml challenges and competitions list
-+ [kaggle competitions](https://www.kaggle.com/competitions) : mainly supervised ML/data
-science competitions, but also feature simulation
-competitions which can be good problems for RL. e.g -
-[Jane Street Market Prediction — $100,000](https://www.kaggle.com/c/jane-street-market-prediction) etc.
-+ [AICrowd](https://www.aicrowd.com/) : runs a combination of supervised ML
++ [ICRA competitions](https://2024.ieee-icra.org/), [CVPR competitions](https://cvpr.thecvf.com/), [NeurIPS competitions](https://neurips.cc/), [IROS competitions](https://irmv.sjtu.edu.cn/iros2025/index.html), [NASA Space ROS Sim Summer Sprint Challenge](https://www.freelancer.com/contest/NASA-Space-ROS-Sim-Summer-Sprint-Challenge-2417552/timeline), [Autoware Challenge 2024](https://discourse.ros.org/t/announcing-autoware-challenge-2024/38653).
++ [mlcontests](https://mlcontests.com/) : ml challenges and competitions list, [kaggle competitions](https://www.kaggle.com/competitions), [AICrowd](https://www.aicrowd.com/) : runs a combination of supervised ML
 competitions as well as RL competitions.
 + [AWS deepracer](https://aws.amazon.com/deepracer/) : AWS DeepRacer is a
 beginner-friendly 3D racing simulator aimed at helping
 developers get started with RL.
-+ [SC2 AI Arena](https://aiarena.net/) : Starcraft II AI arena for RL algorithms
-+ [Gocoder.one](https://www.gocoder.one/) : Coder One is an AI competition based
-on the classic console game, bomberman.
-+ [flatland](https://www.aicrowd.com/challenges/flatland-3) : Flatland is an annual competition featured
-as part of NeurIPS 2020. It is designed to tackle the
-problem of efficiently managing dense traffic on
-complex railway networks. The goal is to construct the
-best schedule that minimizes the delay in the
-requested arrival time of all trains.
-+ [MineRL](https://minerl.io/) : MineRL is concerned with the development
-of sample-efficient deep RL algorithms which can
-solve hierarchical, sparse reward environments using
-human demonstrations in Minecraft.
-+ [nethack](https://nethackchallenge.com/) : NetHack is another annual competition at
-NeurIPS 2021 held on AICrowd. Teams compete to
-build the best agents to play NetHack, an
-ASCII-rendered single-player dungeon crawl game.
-NetHack features procedurally-generated levels, with
-hundreds of complex scenarios, making it an
-extremely challenging environment for current
-state-of-the-art RL.
-+ [CompilerGym](https://github.com/facebookresearch/CompilerGym) : CompilerGym is actually a toolkit for
-applying reinforcement learning to compiler
++ [SC2 AI Arena](https://aiarena.net/) : Starcraft II AI arena for RL algorithms, [Gocoder.one](https://www.gocoder.one/) : Coder One is an AI competition based
+on the classic console game, bomberman, [flatland](https://www.aicrowd.com/challenges/flatland-3) : The goal is to construct the best schedule that minimizes the delay in the requested arrival time of all trains, [MineRL](https://minerl.io/) : MineRL is concerned with the development of sample-efficient deep RL algorithms which can solve hierarchical, sparse reward environments using human demonstrations in Minecraft, [nethack](https://nethackchallenge.com/), [CompilerGym](https://github.com/facebookresearch/CompilerGym) : CompilerGym is actually a toolkit for applying reinforcement learning to compiler
 optimizations, rather than a competition.
-+ [ods.ai](https://ods.ai/competitions) : ml competition platform
-+ [bitGrid](https://bitgrit.net/competition/) : Bitgrit is a data science competition
-platform. Bitgrit has hosted several AI competitions
-including one to predict foreign exchange rates and
-another to optimize the algorithm for a
-profile-matching mobile app.
-+ [numer.ai](https://numer.ai/) : Numer ai is, according to their website,
-“The hardest data science tournament on the planet”,
-it’s backed by Union Square Ventures, the co-founder
-We can observe AI
-competitions and
-different problem
-statements / challenges
-faced by different
-industries including
-construction and
-mobility to understand
-solution approaches
-across the globe.
-of Renaissance, and the co-founder of Coinbase. The
-main idea of the tournament is to build the world’s
-open hedge fund by modeling the stock market.
-+ [drivendata](https://www.drivendata.org/) : DrivenData brings cutting-edge practices
-in data science and crowd-sourcing to some of the
-world’s biggest social challenges and the
-organizations taking them on. e.g : [MagNet: Model the
-Geomagnetic Field](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/).
-+ [battlecode](https://battlecode.org/) : The MIT 6.147 (formerly 6.370)
++ [ods.ai](https://ods.ai/competitions) : ml competition platform,  [bitGrid](https://bitgrit.net/competition/) : Bitgrit is a data science competition
+platform, [numer.ai](https://numer.ai/), [drivendata](https://www.drivendata.org/), [battlecode](https://battlecode.org/) : The MIT 6.147 (formerly 6.370)
 Battlecode programming competition is a unique
 challenge that combines battle strategy, software
 engineering, and artificial intelligence.
 There are also lot of [conference competitions](https://github.com/skrish13/ml-contests-conf)
 happening every year.
-+ [xeek.ai](https://xeek.ai/challenges) : Xeek.ai challenges, unite the Data and
-Geoscience communities which include leading data
-scientists, developers, geoscientists, and machine
-learning specialists — around the shared goal of
-crowdsourcing innovative solutions that solve energy’s
-largest challenges.
-+ [dPhi](https://dphi.tech/challenges/#active) : DPhi is a community with a vision to build data
-culture and democratize Data Science learning.
-+ [dataCrunch](https://www.crunchdao.com/) : DataCrunch a team of 42-Paris students
-and a former finance teacher from ESSEC Paris which
-aims to disrupt the Hedge Fund industry by building
-the first hedge fund run and owned by a community of
-data scientists!
-+ [challenge data](https://challengedata.ens.fr/challenges/year/2021) : Challenge Data website of ENS
-(École Normale Supérieure) of Paris and Collège de
-France, organizes challenges of data sciences from
-data provided by public services, companies, and
-laboratories. It is supported by the CFM chair and the
-PRAIRIE Institute.
-+ [signate.jp](https://signate.jp/competitions) : SIGNATE is the only platform in Japan
-that empowers the AI/Data Analytics talents through
-Data Science competitions to solve business problems
-faced by businesses and governments.
-+ [grand-challenge](https://grand-challenge.org/challenges/) : Grand Challenge is a platform for
-the end-to-end development of Machine Learning
-solutions in Bio-Medical Imaging. Most Advanced
-Research Challenges are posted on this amazing
-platform.
-
++ [xeek.ai](https://xeek.ai/challenges), [dPhi](https://dphi.tech/challenges/#active), [dataCrunch](https://www.crunchdao.com/), [challenge data](https://challengedata.ens.fr/challenges/year/2021), [signate.jp](https://signate.jp/competitions), [grand-challenge](https://grand-challenge.org/challenges/).
 
 Hackathons: [HackZurich](https://hackzurich.com/), [HackTUM](https://hack.tum.de/), [Stanford Treehacks](https://www.treehacks.com/), [HackMIT](https://hackmit.org/),  [NASA Space app
 challenge](https://www.spaceappschallenge.org/), [pytorch
@@ -606,14 +602,9 @@ Summer Schools are focused
 training camps for different [AI methods](https://paperswithcode.com/methods) and this [list](https://github.com/sshkhr/awesome-mlss)
 has very popular and good AI summer schools. Some
 additional summer schools (mostly European):
-+ [Princeton Machine Learning Theory Summer School](https://mlschool.princeton.edu/)
-+ [LogML : London Geometry and ML](https://www.logml.ai/)
-+ [Nordic Probabilistic AI school](https://probabilistic.ai/)
-+ [Summer schools in Europe](https://www.summerschoolsineurope.eu/search/discipline;ArtInt)
++ [Princeton Machine Learning Theory Summer School](https://mlschool.princeton.edu/), [LogML : London Geometry and ML](https://www.logml.ai/), [Nordic Probabilistic AI school](https://probabilistic.ai/), [Summer schools in Europe](https://www.summerschoolsineurope.eu/search/discipline;ArtInt)
 + [IDESSAI 2022 - SECOND JOINT SUMMER SCHOOL
-OF INRIA AND DFKI](https://www.dfki.de/en/web/news/idessai-2022-zweite-gemeinsame-summer-school-von-inria-und-dfki)
-+ [The European AI Summit 2022](https://www.eventbrite.ie/e/the-european-ai-summit-2022-tickets-303391370757)
-+ [NORA.ai Summer School](https://www.nora.ai/)
+OF INRIA AND DFKI](https://www.dfki.de/en/web/news/idessai-2022-zweite-gemeinsame-summer-school-von-inria-und-dfki), [The European AI Summit 2022](https://www.eventbrite.ie/e/the-european-ai-summit-2022-tickets-303391370757), [NORA.ai Summer School](https://www.nora.ai/)
 
 
 additionally, [Google events](https://developers.google.com/events), [IEEE](https://cis.ieee.org/activities/professional-development/summer-schools) & [ACM Summer
@@ -627,18 +618,14 @@ programs and certifications:
 Autonomous Systems certificate](https://online.stanford.edu/programs/robotics-and-autonomous-systems-graduate-program).
 + [MIT Professional Certificate Program](https://professional.mit.edu/programs/certificate-programs/professional-certificate-program-machine-learning-artificial) in Machine Learning & Artificial Intelligence; [Designing and
 building AI products and services](https://mit-xpro-online-education.emeritus.org/designing-building-ai-products-services).
-+ [Udacity](https://www.udacity.com/) Nanodegree: > [School of Autonomous Systems](https://www.udacity.com/school-of-autonomous-systems) and > [School of Artificial Intelligence](https://www.udacity.com/school-of-ai)
-+ Harvard Extension School : data science [graduate
++ [Udacity](https://www.udacity.com/) Nanodegree: > [School of Autonomous Systems](https://www.udacity.com/school-of-autonomous-systems) and > [School of Artificial Intelligence](https://www.udacity.com/school-of-ai),  Harvard Extension School : data science [graduate
 certificate](https://extension.harvard.edu/academics/programs/data-science-graduate-certificate/#admissions-requirements).
-+ [NVIDIA training institute](https://www.nvidia.com/en-us/training/) : Some example courses are
-- [Building Real-Time Video AI Applications](https://courses.nvidia.com/courses/course-v1:DLI+S-IV-01+V1/), [Building
++ [NVIDIA training institute](https://www.nvidia.com/en-us/training/) : Some example courses are [Building Real-Time Video AI Applications](https://courses.nvidia.com/courses/course-v1:DLI+S-IV-01+V1/), [Building
 Video AI Applications at the Edge on Jetson Nano](https://courses.nvidia.com/courses/course-v1:DLI+S-IV-02+V2/) etc
 + AI resources from Google : Google Cloud ML & AI
 Engineer [path](https://cloud.google.com/training/machinelearning-ai), [Grow with Google](https://grow.google/intl/en_pk/guide-ai-machine-learning/), [Google AI
 Experiments](https://experiments.withgoogle.com/collection/ai), Google [AI Education](https://ai.google/education/), Google [Quantum AI](https://quantumai.google/), Google [Developer Experts](https://developers.google.com/community/experts) : AI
-+ TensorFlow Learn ML [resources](https://www.tensorflow.org/resources/learn-ml) & TensorFlow [courses](https://www.deeplearning.ai/courses/).
-+ Deepmind Learning [resources](https://www.deepmind.com/learning-resources).
-+ [Using Python for Research](https://www.edx.org/course/using-python-for-research) (beginner).
++ TensorFlow Learn ML [resources](https://www.tensorflow.org/resources/learn-ml) & TensorFlow [courses](https://www.deeplearning.ai/courses/), Deepmind Learning [resources](https://www.deepmind.com/learning-resources), [Using Python for Research](https://www.edx.org/course/using-python-for-research) (beginner).
 
 
 There exists very good AI blogs such as: [AppliedAI: AI
@@ -652,17 +639,13 @@ etc.
 
 
 Professional Certifications:
-+ [EITCA - AI](https://eitca.org/eitca-ai-artificial-intelligence-academy/) : European Artificial Intelligence
-Certificate (***)
-+ [Google Cloud Professional ML Engineer](https://cloud.google.com/certification/machine-learning-engineer)
-+ [Microsoft Azure AI Engineer Associate](https://docs.microsoft.com/en-us/certifications/azure-ai-engineer/)
-+ [tensorflow developer certificate](https://www.tensorflow.org/certificate)
++ [EITCA - AI](https://eitca.org/eitca-ai-artificial-intelligence-academy/) : European Artificial Intelligence Certificate (***), [Google Cloud Professional ML Engineer](https://cloud.google.com/certification/machine-learning-engineer), [Microsoft Azure AI Engineer Associate](https://docs.microsoft.com/en-us/certifications/azure-ai-engineer/), [tensorflow developer certificate](https://www.tensorflow.org/certificate)
 
 
 AI Product Manager: [AI Product manager
 specialization](https://www.coursera.org/specializations/ai-product-management-duke), [AI product manager nanodegree](https://www.udacity.com/course/ai-product-manager-nanodegree--nd088).
 
-Fellowships: [Government of AI Fellowship](https://www.governance.ai/post/winter-fellowship-2025), [Foresight Fellowship](https://foresight.org/foresight-fellowships/), [Pi School](https://picampus-school.com/).
+Fellowships: [Government of AI Fellowship](https://www.governance.ai/post/winter-fellowship-2025), [Foresight Fellowship](https://foresight.org/foresight-fellowships/), [Pi School](https://picampus-school.com/), [OpenLab](https://openlab.cern/).
 
 ## AI Research Labs & Groups - International:
 
