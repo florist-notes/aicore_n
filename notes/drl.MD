@@ -1,6 +1,8 @@
 # Deep Reinforcement Learning 🤖
 
-<img src="./img/rl2.png" width=48%> <img src="./img/drl.png" width=45%>
+<img src="./img/drlx.png" width=100%>
+
+<img src="./img/rl.gif" width=100%>
 
 I have some good notes on Deep Reinforcement Learning @[drlnotes](./deeprl.MD) and also made a video on Reinforcement Learning  - "A.I. learns to play Mario " ([video](https://youtu.be/0EGWbqH3Li0)) few years back.  My bachelors thesis was : "Actor-Critic and Q-value reinforcement learning with GANs for autonomous driving" [[ref](https://twitter.com/florist_notes/status/1640269204501700608)] where we compared performance of
 DRL algorithms - DQN, A2C, A3C, DDPG and PPO in [CARLA](https://carla.org/). I also [graduated](https://graduation.udacity.com/confirm/W4DQ2JCV) from Udacity's Deep Reinforcement Learning Nanodegree.

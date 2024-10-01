@@ -13,10 +13,10 @@
 
 ```
 
-
 ###  + AI resources [[list](./notes/airesource.MD)] 🎃
 ###  + AI tools and libraries [[list](notes/aitools.MD)] 🎃
 
+##  Edge AI & TinyML: [[notes](./notes/edge/edge.MD)] 🦙
 
 ## Deep Learning [[theory](./notes/dltheory.MD)] 
 
