@@ -1,0 +1,130 @@
+{
+    "hotspots": [
+        {
+            "name": "Kaziranga National Park",
+            "latitude": 26.5828,
+            "longitude": 93.1702,
+            "description": "A UNESCO World Heritage Site known for its population of the Indian one-horned rhinoceros."
+        },
+        {
+            "name": "Majuli Island",
+            "latitude": 26.8433,
+            "longitude": 93.7161,
+            "description": "The largest river island in the world, known for its vibrant culture, Satras, and lush landscapes."
+        },
+        {
+            "name": "Tea Gardens of Assam",
+            "latitude": 26.2519,
+            "longitude": 92.8812,
+            "description": "Famous for producing Assam tea, these gardens offer scenic views and a glimpse into tea production."
+        },
+        {
+            "name": "Kamakhya Temple",
+            "latitude": 26.1550,
+            "longitude": 91.5837,
+            "description": "A sacred Hindu temple dedicated to Goddess Kamakhya, located on Nilachal Hill in Guwahati."
+        },
+        {
+            "name": "Nameri National Park",
+            "latitude": 26.6518,
+            "longitude": 92.5420,
+            "description": "Known for its diverse flora and fauna, Nameri is a great destination for eco-tourism and trekking."
+        },
+        {
+            "name": "Sivasagar",
+            "latitude": 26.9896,
+            "longitude": 94.6345,
+            "description": "Historical town famous for its Ahom palaces, temples, and the Sivasagar Tank."
+        },
+        {
+            "name": "Umananda Island",
+            "latitude": 26.1426,
+            "longitude": 91.5337,
+            "description": "A small river island in the Brahmaputra River, home to the Umananda Temple and offering beautiful views."
+        },
+        {
+            "name": "Manas National Park",
+            "latitude": 26.3218,
+            "longitude": 90.4648,
+            "description": "A UNESCO World Heritage Site known for its biodiversity and the presence of the golden langur."
+        },
+        {
+            "name": "Guwahati Zoo",
+            "latitude": 26.1773,
+            "longitude": 91.6105,
+            "description": "One of the oldest zoos in India, featuring a variety of animal species and a beautiful park."
+        },
+        {
+            "name": "Diphu",
+            "latitude": 26.0307,
+            "longitude": 93.1005,
+            "description": "A picturesque town in Karbi Anglong district, known for its natural beauty and cultural diversity."
+        },
+        {
+            "name": "Hajo",
+            "latitude": 26.0666,
+            "longitude": 91.6008,
+            "description": "A historic town with religious significance for Hindus and Muslims, home to the Hayagriva Madhava Temple."
+        },
+        {
+            "name": "Bihu Festival Grounds",
+            "latitude": 26.0796,
+            "longitude": 91.5964,
+            "description": "Locations across Assam where the famous Bihu festival is celebrated with traditional dance and music."
+        },
+        {
+            "name": "Barpeta Satra",
+            "latitude": 26.3192,
+            "longitude": 91.0155,
+            "description": "A significant Vaishnavite monastery with rich cultural heritage and beautiful architecture."
+        },
+        {
+            "name": "Kaziranga Orchid Park",
+            "latitude": 26.6025,
+            "longitude": 93.1620,
+            "description": "A unique park showcasing various species of orchids and providing insights into local flora."
+        },
+        {
+            "name": "Chandubi Lake",
+            "latitude": 26.1741,
+            "longitude": 91.6851,
+            "description": "A serene lake surrounded by hills, perfect for picnics, boating, and enjoying nature."
+        },
+        {
+            "name": "Sualkuchi",
+            "latitude": 26.1842,
+            "longitude": 91.4943,
+            "description": "Known as the silk village, famous for its traditional Assamese silk weaving."
+        },
+        {
+            "name": "Tawang Hill",
+            "latitude": 27.5797,
+            "longitude": 91.8323,
+            "description": "Offers panoramic views and is a great spot for trekking and nature walks."
+        },
+        {
+            "name": "Jorhat",
+            "latitude": 26.7477,
+            "longitude": 94.2183,
+            "description": "Known for its tea estates and the historical site of the Jorhat Gymkhana Club."
+        },
+        {
+            "name": "Pobitora Wildlife Sanctuary",
+            "latitude": 26.2742,
+            "longitude": 92.2001,
+            "description": "A smaller sanctuary compared to Kaziranga, but famous for its high density of rhinoceros."
+        },
+        {
+            "name": "Silchar",
+            "latitude": 24.8138,
+            "longitude": 92.7854,
+            "description": "Known for its scenic beauty, Silchar is situated along the banks of the Barak River."
+        },
+        {
+            "name": "Dibru Saikhowa National Park",
+            "latitude": 27.4603,
+            "longitude": 95.5632,
+            "description": "A biodiversity hotspot famous for its unique ecosystems and the white-winged wood duck."
+        }
+    ]
+}

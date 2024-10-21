@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 93.9667,
+        "lat": 26.5167
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 21.68,
+        "feels_like": 22.15,
+        "temp_min": 21.68,
+        "temp_max": 21.68,
+        "pressure": 1013,
+        "humidity": 86,
+        "sea_level": 1013,
+        "grnd_level": 1001
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 0.73,
+        "deg": 198,
+        "gust": 0.74
+    },
+    "clouds": {
+        "all": 2
+    },
+    "dt": 1729350868,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1729295124,
+        "sunset": 1729336346
+    },
+    "timezone": 19800,
+    "id": 1271050,
+    "name": "Gol\u0101gh\u0101t",
+    "cod": 200
+}

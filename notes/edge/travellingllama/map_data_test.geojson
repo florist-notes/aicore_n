@@ -1,0 +1,1458 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "IR:zone": "NFR:TSK",
+                    "addr:street": "City Station Road",
+                    "internet_access": "no",
+                    "name": "Golaghat Railway Station",
+                    "name:as": "\u0997\u09cb\u09b2\u09be\u0998\u09be\u099f",
+                    "name:hi": "\u0917\u094b\u0932\u093e\u0918\u093e\u091f",
+                    "network": "IR",
+                    "operator": "NFR",
+                    "public_transport": "station",
+                    "railway": "station",
+                    "ref": "GLGT",
+                    "wikidata": "Q63356295"
+                },
+                "name": "Golaghat Railway Station"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9617671,
+                    26.5091053
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:district": "GOLAGHAT",
+                    "addr:full": "Abita Building, 1st Floor, Near Stataion Road",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "addr:street": "Hospital Road",
+                    "contact:mobile": "9435151875",
+                    "contact:phone": "003774280042;03774280265",
+                    "email": "bloodbank.golaghai@gmail.com",
+                    "emergency": "yes",
+                    "healthcare": "hospital",
+                    "healthcare:speciality": "general;gynaecology;ophthalmology;chiropractic;paediatrics;internal;dermatology;orthopaedics;psychiatry;otolaryngology;biology;dentist;osteopathy;radiology;urology;surgery;orthodontics;cardiology;physiotherapy;community;neurology;clinic",
+                    "name": "Kushal Konwar (KK) Civil Hospital & Blood Bank",
+                    "opening_hours": "24/7",
+                    "operator": "Government of Assam",
+                    "operator:type": "government",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "Kushal Konwar (KK) Civil Hospital & Blood Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9649969,
+                    26.5101566
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:district": "Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "addr:street": "Hospital Road",
+                    "amenity": "hospital",
+                    "emergency": "yes",
+                    "healthcare": "hospital",
+                    "healthcare:speciality": "gynaecology;general",
+                    "name": "HGM Nursing Home",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "HGM Nursing Home"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.965819,
+                    26.5106294
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Near Golaghat Stadium",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "clinic",
+                    "name": "G B M Nursing Home",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "G B M Nursing Home"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9705994,
+                    26.5141144
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:district": "Golaghat",
+                    "addr:full": "Jagat Goswami Road",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "addr:street": "Jagat Goswami Road",
+                    "amenity": "hospital",
+                    "emergency": "yes",
+                    "healthcare": "hospital",
+                    "healthcare:speciality": "general",
+                    "name": "Lifeline Hospital and Research Centre",
+                    "operator:type": "private",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "Lifeline Hospital and Research Centre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9748279,
+                    26.5159925
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:street": "Lakshminath Bezbaroa Road",
+                    "amenity": "events_venue",
+                    "internet_access": "no",
+                    "name": "General Field Pavillion"
+                },
+                "name": "General Field Pavillion"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9685717,
+                    26.513581
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "access": "yes",
+                    "amenity": "letter_box",
+                    "post:city": "Golaghat",
+                    "post:postcode": "785621"
+                },
+                "name": "Unnamed"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9715786,
+                    26.5125599
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "artwork_type": "statue",
+                    "material": "stone",
+                    "name": "Mahatma Gandhi",
+                    "name:as": "\u09ae\u09b9\u09be\u09a4\u09cd\u09ae\u09be \u0997\u09be\u09a8\u09cd\u09a7\u09c0",
+                    "name:hi": "\u092e\u0939\u093e\u0924\u094d\u092e\u093e \u0917\u093e\u0902\u0927\u0940",
+                    "tourism": "artwork"
+                },
+                "name": "Mahatma Gandhi"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9716449,
+                    26.5133253
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "access": "yes",
+                    "addr:city:en": "Golaghat",
+                    "amenity": "parking",
+                    "capacity": "30",
+                    "fee": "yes",
+                    "operator": "Golaghat Municipal Board",
+                    "operator:type": "public",
+                    "parking": "multi-storey",
+                    "payment:cash": "yes",
+                    "surface": "concrete"
+                },
+                "name": "Unnamed"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.96842,
+                    26.5103943
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "name": "Doss & Co.",
+                    "operator": "Private",
+                    "tourism": "attraction",
+                    "wikidata": "Q1708160",
+                    "wikipedia": "en:Golaghat"
+                },
+                "name": "Doss & Co."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9686138,
+                    26.5101743
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "college",
+                    "name": "D. R. College Ground"
+                },
+                "name": "D. R. College Ground"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9728825,
+                    26.5210105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "amenity": "school",
+                    "name": "VKV School Ground"
+                },
+                "name": "VKV School Ground"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9671632,
+                    26.5143435
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "historic": "memorial",
+                    "material": "concrete",
+                    "memorial": "plaque",
+                    "name": "Kushal Konwar Memorial Complex"
+                },
+                "name": "Kushal Konwar Memorial Complex"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9671954,
+                    26.513663
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "amenity": "school",
+                    "name": "KKBB School Ground"
+                },
+                "name": "KKBB School Ground"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9666992,
+                    26.5137782
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "name": "PWD Bungalow",
+                    "operator": "Public Works Department",
+                    "tourism": "apartment"
+                },
+                "name": "PWD Bungalow"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9718812,
+                    26.5115653
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "studio",
+                    "name": "Doordarshan (Television) Relay Centre",
+                    "studio": "television"
+                },
+                "name": "Doordarshan (Television) Relay Centre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9787531,
+                    26.5237719
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:street": "High Street",
+                    "amenity": "marketplace",
+                    "name": "Chowk Bazaar"
+                },
+                "name": "Chowk Bazaar"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9717981,
+                    26.5106988
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "conference_centre",
+                    "name": "District Library Auditorium"
+                },
+                "name": "District Library Auditorium"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9744856,
+                    26.5211292
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "college",
+                    "internet_access": "wired",
+                    "name": "Reliance College Jr. Ground"
+                },
+                "name": "Reliance College Jr. Ground"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9754002,
+                    26.5202868
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "bank",
+                    "brand": "Punjab National Bank",
+                    "brand:wikidata": "Q2743499",
+                    "brand:wikipedia": "en:Punjab National Bank",
+                    "name": "Punjab National Bank"
+                },
+                "name": "Punjab National Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9738363,
+                    26.510048
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "bank",
+                    "atm": "yes",
+                    "brand": "State Bank of India",
+                    "brand:wikidata": "Q1340361",
+                    "brand:wikipedia": "en:State Bank of India",
+                    "name": "State Bank of India"
+                },
+                "name": "State Bank of India"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9730531,
+                    26.5111257
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "bank",
+                    "brand": "Indian Bank",
+                    "brand:wikidata": "Q2003789",
+                    "brand:wikipedia": "en:Indian Bank",
+                    "name": "Indian Bank"
+                },
+                "name": "Indian Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9730799,
+                    26.5107681
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "bank",
+                    "atm": "yes",
+                    "brand": "Indian Overseas Bank",
+                    "brand:wikidata": "Q2003611",
+                    "brand:wikipedia": "en:Indian Overseas Bank",
+                    "drive_through": "no",
+                    "name": "Indian Overseas Bank"
+                },
+                "name": "Indian Overseas Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9737451,
+                    26.510144
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "bank",
+                    "atm": "yes",
+                    "brand": "IDBI Bank",
+                    "brand:wikidata": "Q3633485",
+                    "brand:wikipedia": "en:IDBI Bank",
+                    "name": "IDBI Bank"
+                },
+                "name": "IDBI Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9709663,
+                    26.5108917
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "post_office",
+                    "name": "India Post (H. P. O.)",
+                    "opening_hours": "Mo-Sa 09:00-17:30",
+                    "operator": "India Post",
+                    "wikidata": "Q3519720",
+                    "wikipedia": "en:India Post"
+                },
+                "name": "India Post (H. P. O.)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9715725,
+                    26.5123654
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:street": "High Street",
+                    "amenity": "conference_centre",
+                    "name": "Gunabhiram House"
+                },
+                "name": "Gunabhiram House"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9702555,
+                    26.5103865
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "social_centre",
+                    "brand": "Lions Clubs International",
+                    "brand:wikidata": "Q270029",
+                    "brand:wikipedia": "en:Lions Clubs International",
+                    "name": "Lions Clubs International"
+                },
+                "name": "Lions Clubs International"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9703414,
+                    26.5104873
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "bank",
+                    "atm": "yes",
+                    "brand": "ICICI Bank",
+                    "brand:wikidata": "Q1653258",
+                    "brand:wikipedia": "en:ICICI Bank",
+                    "name": "ICICI Bank",
+                    "operator": "ICICI"
+                },
+                "name": "ICICI Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.966947,
+                    26.5108149
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "bank",
+                    "brand": "Vijaya Bank",
+                    "brand:wikidata": "Q2003171",
+                    "brand:wikipedia": "en:Vijaya Bank",
+                    "name": "Vijaya Bank"
+                },
+                "name": "Vijaya Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9692993,
+                    26.5102593
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "bank",
+                    "brand": "Bank of Baroda",
+                    "brand:wikidata": "Q2003797",
+                    "brand:wikipedia": "en:Bank of Baroda",
+                    "name": "Bank of Baroda"
+                },
+                "name": "Bank of Baroda"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9693771,
+                    26.5102221
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785702",
+                    "amenity": "bank",
+                    "atm": "yes",
+                    "brand": "HDFC Bank",
+                    "brand:wikidata": "Q631047",
+                    "brand:wikipedia": "en:HDFC Bank",
+                    "name": "HDFC Bank"
+                },
+                "name": "HDFC Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9734165,
+                    26.507442
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "amenity": "bank",
+                    "atm": "yes",
+                    "brand": "Axis Bank",
+                    "brand:wikidata": "Q2003549",
+                    "brand:wikipedia": "en:Axis Bank",
+                    "name": "Axis Bank"
+                },
+                "name": "Axis Bank"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9735359,
+                    26.5070766
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785702",
+                    "amenity": "place_of_worship",
+                    "name": "Gurudwara Sahib",
+                    "religion": "sikh"
+                },
+                "name": "Gurudwara Sahib"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9727057,
+                    26.5039706
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785702",
+                    "amenity": "bank",
+                    "brand": "State Bank of India",
+                    "brand:wikidata": "Q1340361",
+                    "brand:wikipedia": "en:State Bank of India",
+                    "name": "State Bank of India"
+                },
+                "name": "State Bank of India"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9723758,
+                    26.5043318
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:street": "Mission Road",
+                    "amenity": "place_of_worship",
+                    "name": "Baptist church",
+                    "religion": "christian"
+                },
+                "name": "Baptist church"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9711326,
+                    26.5230863
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "place_of_worship",
+                    "name": "Vishnu Temple",
+                    "religion": "hindu"
+                },
+                "name": "Vishnu Temple"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9719037,
+                    26.5202496
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "amenity": "fuel",
+                    "brand": "Bharat Petroleum",
+                    "brand:wikidata": "Q854826",
+                    "brand:wikipedia": "en:Bharat Petroleum",
+                    "name": "Bharat Petroleum"
+                },
+                "name": "Bharat Petroleum"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9715926,
+                    26.5213548
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "bus": "yes",
+                    "highway": "bus_stop",
+                    "name": "Assam State Transport Corporation (A. S. T. C.) Worskhop",
+                    "network": "Assam State Transport Corporation",
+                    "public_transport": "platform",
+                    "wikidata": "Q1709117",
+                    "wikipedia": "en:Assam State Transport Corporation"
+                },
+                "name": "Assam State Transport Corporation (A. S. T. C.) Worskhop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9637217,
+                    26.5133255
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "school",
+                    "name": "Sacred Heart School (SHS)",
+                    "wikipedia": "en:Sacred Heart School, Golaghat"
+                },
+                "name": "Sacred Heart School (SHS)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9630162,
+                    26.5137407
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "place_of_worship",
+                    "name": "San\u0101tana Dharma Temple",
+                    "religion": "hindu"
+                },
+                "name": "San\u0101tana Dharma Temple"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9705506,
+                    26.5105917
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:street": "Bagchung Road",
+                    "amenity": "fire_station",
+                    "name": "Golaghat Fire Brigade",
+                    "operator": "Government of Assam"
+                },
+                "name": "Golaghat Fire Brigade"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9610084,
+                    26.498313
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785702",
+                    "amenity": "college",
+                    "name": "Hemo Prova Borbora (HPB) Girls College Ground",
+                    "website": "https://hpbgirlscollege.edu.in"
+                },
+                "name": "Hemo Prova Borbora (HPB) Girls College Ground"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9770924,
+                    26.5032344
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785702",
+                    "addr:street": "L. K. Baruah Road",
+                    "amenity": "place_of_worship",
+                    "name": "Jain Temple",
+                    "religion": "hindu"
+                },
+                "name": "Jain Temple"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9762275,
+                    26.5074713
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "college",
+                    "internet_access": "yes",
+                    "name": "Golaghat Engineering College (GEC)",
+                    "website": "https://www.gecassam.ac.in/home"
+                },
+                "name": "Golaghat Engineering College (GEC)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9593376,
+                    26.532292
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "college",
+                    "name": "Residential Girls Polytechnic College Ground"
+                },
+                "name": "Residential Girls Polytechnic College Ground"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9738267,
+                    26.5282958
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:city": "Golaghat",
+                    "addr:postcode": "785621",
+                    "amenity": "prison",
+                    "name": "Golaghat District Prison"
+                },
+                "name": "Golaghat District Prison"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9603353,
+                    26.5305611
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Dhekial, Near Dhekial Tiniali",
+                    "addr:postcode": "785622",
+                    "addr:state": "Assam",
+                    "addr:subdistrict": "Golaghat",
+                    "amenity": "clinic",
+                    "description": "Primary Health Centre",
+                    "healthcare": "centre",
+                    "name": "Charingia BPHC",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "Charingia BPHC"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.982926,
+                    26.608735
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Aka path, charingia gaon, Near Maidamoni charingia L.P. school",
+                    "addr:postcode": "785622",
+                    "addr:state": "Assam",
+                    "addr:subdistrict": "Golaghat",
+                    "amenity": "hospital",
+                    "description": "Community Health Centre",
+                    "healthcare": "centre",
+                    "name": "Charingia CHC",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "Charingia CHC"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9488146,
+                    26.6003726
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Borfollong Ali, Buralikson gaon, Near Kathalguri Block",
+                    "addr:postcode": "785622",
+                    "addr:state": "Assam",
+                    "addr:subdistrict": "Khumtai",
+                    "amenity": "clinic",
+                    "description": "Primary Health Centre",
+                    "healthcare": "centre",
+                    "name": "Buralikson MPHC",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "Buralikson MPHC"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.928498,
+                    26.601607
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Dhodar Ali, Gohaigaon, Near Kamarbondha railway station",
+                    "addr:postcode": "785625",
+                    "addr:state": "Assam",
+                    "addr:subdistrict": "Golaghat",
+                    "amenity": "clinic",
+                    "description": "Primary Health Centre",
+                    "healthcare": "centre",
+                    "name": "Kamarbondha Ali BPHC",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "Kamarbondha Ali BPHC"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    94.056696,
+                    26.531096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Chinatoli Betioni road, 2no sensowa, Near Jawahar Navodaya Vidyalaya",
+                    "addr:postcode": "785622",
+                    "addr:state": "Assam",
+                    "addr:subdistrict": "Golaghat",
+                    "amenity": "clinic",
+                    "description": "Dispensaries",
+                    "health_facility:type": "dispensary",
+                    "healthcare": "centre",
+                    "name": "Chinatoli State Dispensary",
+                    "source": "OpenGovernmentData"
+                },
+                "name": "Chinatoli State Dispensary"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9104067,
+                    26.564335
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Bhoga Gaon",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "clinic",
+                    "name": "Physical Care-Physiotherapy Clinic",
+                    "source": "Local Knowledge"
+                },
+                "name": "Physical Care-Physiotherapy Clinic"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.973082,
+                    26.510725
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Bhoga Gaon",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "clinic",
+                    "name": "Nizara Devi Eye Specialist Clinic",
+                    "source": "Local Knowledge"
+                },
+                "name": "Nizara Devi Eye Specialist Clinic"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9684896,
+                    26.5163478
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Bhoga Gaon",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "clinic",
+                    "name": "Kheria Clinic",
+                    "source": "Local Knowledge"
+                },
+                "name": "Kheria Clinic"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9708447,
+                    26.516694
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Golaghat",
+                    "addr:postcode": "785702",
+                    "addr:state": "Assam",
+                    "amenity": "hospital",
+                    "name": "K.K.Civil Hospital",
+                    "source": "Local Knowledge"
+                },
+                "name": "K.K.Civil Hospital"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9642533,
+                    26.5096254
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Hospital Road, Near Tokani Park, Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "dentist",
+                    "name": "Pathori Dental Clinic",
+                    "source": "Local Knowledge"
+                },
+                "name": "Pathori Dental Clinic"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9667547,
+                    26.5105382
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "SH 35, Golaghat",
+                    "addr:postcode": "785702",
+                    "addr:state": "Assam",
+                    "amenity": "doctors",
+                    "name": "Dr. Bina Hazarika",
+                    "source": "Local Knowledge"
+                },
+                "name": "Dr. Bina Hazarika"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9660603,
+                    26.5106562
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Magistrate Colony, Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "doctors",
+                    "name": "Dr. Manas Roy",
+                    "source": "Local Knowledge"
+                },
+                "name": "Dr. Manas Roy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9665306,
+                    26.5130358
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "doctors",
+                    "name": "Dr. Deepak Saikia",
+                    "source": "Local Knowledge"
+                },
+                "name": "Dr. Deepak Saikia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9738649,
+                    26.5075456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "As Sh 34, Magistrate Colony, Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "hospital",
+                    "name": "KKC Hospital",
+                    "source": "Local Knowledge"
+                },
+                "name": "KKC Hospital"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9673357,
+                    26.5121084
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Jagat Goswami Road, Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "clinic",
+                    "name": "Golaghat Nursing Home",
+                    "source": "Local Knowledge"
+                },
+                "name": "Golaghat Nursing Home"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9748688,
+                    26.516703
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "SH 35, Golaghat",
+                    "addr:postcode": "785702",
+                    "addr:state": "Assam",
+                    "amenity": "clinic",
+                    "name": "Dutta's Psychiatric Clinic",
+                    "source": "Local Knowledge"
+                },
+                "name": "Dutta's Psychiatric Clinic"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9669727,
+                    26.510796
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Stadium Road, Opposite Golaghat Stadium, Golaghat",
+                    "addr:postcode": "785621",
+                    "addr:state": "Assam",
+                    "amenity": "clinic",
+                    "name": "Northeast Diabetes Care & Research Centre",
+                    "source": "Local Knowledge"
+                },
+                "name": "Northeast Diabetes Care & Research Centre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9703815,
+                    26.5141552
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "addr:district": "Golaghat",
+                    "addr:full": "Kumarpatty Road, Golaghat",
+                    "addr:postcode": "785702",
+                    "addr:state": "Assam",
+                    "amenity": "doctors",
+                    "name": "Dr. S W Rohman",
+                    "source": "Local Knowledge"
+                },
+                "name": "Dr. S W Rohman"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9593755,
+                    26.5128758
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "amenity": "place_of_worship",
+                    "name": "Namghar",
+                    "religion": "hindu"
+                },
+                "name": "Namghar"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    93.9784378,
+                    26.5112997
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "amenity": "fuel",
+                    "source": "Esri world imagery (retreived 08/2024)"
+                },
+                "name": "Unnamed"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    94.0503797,
+                    26.5296204
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "tags": {
+                    "amenity": "fuel",
+                    "source": "Esri world imagery (retreived 08/2024)"
+                },
+                "name": "Unnamed"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    94.0479577,
+                    26.5288861
+                ]
+            }
+        }
+    ]
+}
