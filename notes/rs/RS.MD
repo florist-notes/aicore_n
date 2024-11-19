@@ -150,13 +150,6 @@ Measure natural microwave emissions from the Earth's surface.
 
 </tr>
 
-
-<tr>
-<th>Microwave Sensors</th>
-<td>Log out of current session d</td>
-<td>Logd</td>
-
-</tr>
 </table>
 
 <table style="width:100%" >
@@ -165,6 +158,8 @@ Measure natural microwave emissions from the Earth's surface.
 <th>Radiometers </th>
 <th>Spectroradiometers <br /></th>
 <th>Scatterometers <br /></th>
+<th>Imaging Spectrometers <br /></th>
+<th>Gravimeters <br /></th>
 </tr>
 
 <tr>
@@ -210,6 +205,38 @@ Active microwave sensors that measure the scattering of microwave energy. They a
     + Sea ice monitoring.
 
 </td>
+
+
+<td>
+These combine the features of cameras and spectrometers, capturing both spatial and spectral information simultaneously.
+
++ Examples:
+
+    + HyTES (Hyperspectral Thermal 
+    + Emission Spectrometer)
+
++ Applications:
+
+    + Mineral mapping.
+    + Identifying crop stress.
+
+</td>
+
+
+<td>
+Measure variations in the Earth's gravitational field to understand subsurface features.
+
++ Examples:
+
+    + GRACE (Gravity Recovery and Climate Experiment)
+
++ Applications:
+
+    + Groundwater studies.
+    + Ice mass loss in polar regions.
+
+</td>
+
 </tr>
 
 </table>
