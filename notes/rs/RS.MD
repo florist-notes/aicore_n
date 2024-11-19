@@ -4,6 +4,10 @@
 Remote sensing refers to the process of acquiring information about an object or phenomenon without making physical contact with it. This is typically achieved by detecting and analyzing reflected or emitted electromagnetic radiation from the Earth's surface and atmosphere. It plays a crucial role in various fields, including environmental monitoring, urban planning, agriculture, forestry, disaster management, and defense.
 </p>
 
+<img src="./img/rs.png" width=100%>
+
+[ [Synthetic Aperture Radar (SAR)](./SAR.MD), [Interferometric Synthetic Aperture Radar (InSAR)](./INSAR.MD), [Pixel Offset Tracking (POT)](./POT.MD) ]
+
 ## How Remote Sensing Works
 
 + `Energy Source or Illumination` : A source (usually the Sun or an artificial emitter) provides electromagnetic radiation. Passive sensors rely on natural energy, while active sensors generate their own signal (e.g., radar).
@@ -437,3 +441,33 @@ Cloud computing allows efficient processing of large datasets.
 | Change Detection        | Identify temporal changes              | Image differencing, post-classification comparison, time-series analysis |
 | Spectral Analysis       | Extract specific features using spectral bands | NDVI (Normalized Difference Vegetation Index), SAVI (Soil-Adjusted Vegetation Index) |
 | Machine Learning and AI | Automate feature extraction and improve accuracy | Deep learning (e.g., CNNs), Random Forest, XGBoost         |
+
+## Digital Elevation Models (DEMs) :
+
+<p style="text-align:justify;">
+
+A `Digital Elevation Model (DEM)` is a digital representation of the Earth's surface topography or terrain. It is a 3D depiction of the elevation data, often used in various fields such as geography, geology, hydrology, environmental science, urban planning, and remote sensing.
+</p>
+
+Types of DEMs:
+
++ `Digital Surface Model (DSM)`: Includes all surface features like buildings, vegetation, and other objects.
++ `Digital Terrain Model (DTM)`: Represents the bare ground surface without any objects, derived by removing vegetation and man-made structures from the DSM.
+
+Popular DEM Sources :
++ 1. Free/Open-Access DEMs : 
+    - SRTM (Shuttle Radar Topography Mission):
+    Provides global DEMs with a resolution of 30m (1 arc-second).
+    - ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer):
+    Global DEMs with 30m resolution.
+    - ALOS PALSAR:
+    Global DEMs with 12.5m resolution derived from radar.
+    - Copernicus DEM:
+    European dataset with resolutions of 30m and finer.
+
++ 2. Commercial DEMs :
+    - WorldDEM (Airbus):
+    Global elevation data with a 12m resolution.
+    - LiDAR-derived DEMs:
+    High-resolution (sub-meter), often used in urban or environmental applications.
+
