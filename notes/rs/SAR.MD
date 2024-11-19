@@ -110,3 +110,70 @@ L-band SAR for forestry and disaster monitoring.
 Raw Data Acquisition → Radiometric Calibration → Geometric Correction → SAR Image Formation → Speckle Reduction → (Optional: Polarimetric/InSAR/DInSAR Processing) 
 → Image Interpretation → Data Integration and Visualization
 ```
+
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th style="text-align: left; padding: 8px; background-color: #000;">Step</th>
+            <th style="text-align: left; padding: 8px; background-color: #000;">Description</th>
+            <th style="text-align: left; padding: 8px; background-color: #000;">Challenges</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 8px;">1. Raw Data Acquisition</td>
+            <td style="padding: 8px;">SAR systems collect raw electromagnetic signals in slant range geometry. These signals contain phase and amplitude information.</td>
+            <td style="padding: 8px;">High data volumes; noisy raw data requiring extensive processing.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">2. Radiometric Calibration</td>
+            <td style="padding: 8px;">Corrects system distortions and converts signal intensity into radar backscatter coefficients (σ⁰).</td>
+            <td style="padding: 8px;">Addressing antenna pattern and gain variations accurately.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">3. Geometric Correction</td>
+            <td style="padding: 8px;">Aligns SAR images to geographic coordinates via geocoding, orthorectification, and slant-to-ground range conversion.</td>
+            <td style="padding: 8px;">Terrain-induced distortions and precise DEM integration.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">4. SAR Image Formation</td>
+            <td style="padding: 8px;">Converts raw SAR signals into interpretable 2D images using range and azimuth compression techniques.</td>
+            <td style="padding: 8px;">Complexity of focusing algorithms like Range-Doppler or Chirp Scaling.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">5. Speckle Noise Reduction</td>
+            <td style="padding: 8px;">Reduces speckle noise using filters (e.g., Lee, Frost) or multi-look processing for smoother images.</td>
+            <td style="padding: 8px;">Balancing noise reduction and edge preservation.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">6. Polarimetric Processing (Optional)</td>
+            <td style="padding: 8px;">Analyzes polarized backscatter data for surface classification and scattering mechanism analysis.</td>
+            <td style="padding: 8px;">Handling high data dimensionality and decomposition complexities.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">7. Interferometric SAR (InSAR) Processing (Optional)</td>
+            <td style="padding: 8px;">Generates interferograms to measure elevation or displacement by computing phase differences between SAR images.</td>
+            <td style="padding: 8px;">Coregistration accuracy and phase unwrapping challenges.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">8. Differential InSAR (DInSAR) Processing (Optional)</td>
+            <td style="padding: 8px;">Detects temporal surface changes by subtracting static topography from interferograms.</td>
+            <td style="padding: 8px;">Minimizing noise due to atmospheric effects or decorrelation.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">9. Time-Series Analysis (Optional)</td>
+            <td style="padding: 8px;">Analyzes SAR data over time for dynamic changes, using techniques like PSI and SBAS.</td>
+            <td style="padding: 8px;">Consistency in identifying stable reflectors or minimizing baseline errors.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">10. Image Interpretation and Classification</td>
+            <td style="padding: 8px;">Extracts meaningful information using thresholding, machine learning, or texture analysis.</td>
+            <td style="padding: 8px;">Accurate feature extraction amidst noise and speckle artifacts.</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px;">11. Data Integration and Visualization</td>
+            <td style="padding: 8px;">Combines SAR data with other datasets for comprehensive analysis, using GIS tools.</td>
+            <td style="padding: 8px;">Harmonizing diverse datasets and ensuring spatial consistency.</td>
+        </tr>
+    </tbody>
+</table>
