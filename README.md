@@ -18,6 +18,8 @@
 
 ##  Edge AI & TinyML: [[notes](./notes/edge/edge.MD)] 🦙
 
+## Remote Sensing [[theory](./notes/rs/RS.MD)] 🛰️
+
 ## Deep Learning [[theory](./notes/dltheory.MD)] 
 
 
