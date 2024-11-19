@@ -2,6 +2,8 @@
 
 Interferometric Synthetic Aperture Radar (InSAR) is an advanced remote sensing technique that uses phase data from Synthetic Aperture Radar (SAR) to measure surface deformations and generate high-resolution Digital Elevation Models (DEMs). It exploits the phase difference between two or more SAR images taken from slightly different positions or times over the same area.
 
+<img src="./img/insar2.jpg" width=47%> <img src="./img/ins.jpg" width=51%>
+
 ## Key Principles of InSAR
 
 + SAR Phase Data:
