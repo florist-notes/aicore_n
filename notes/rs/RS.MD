@@ -426,3 +426,14 @@ Cloud computing allows efficient processing of large datasets.
 </tr>
 
 </table>
+
+## Data Processing Techniques :
+
+| **Technique**          | **Purpose**                             | **Steps/Methods**                                           |
+|-------------------------|-----------------------------------------|------------------------------------------------------------|
+| Preprocessing           | Prepare raw data for analysis          | Radiometric correction, atmospheric correction, geometric correction |
+| Image Enhancement       | Improve image quality for interpretation | Contrast stretching, histogram equalization, filtering (e.g., edge detection) |
+| Classification          | Categorize pixels into thematic classes | Supervised classification (e.g., SVM, Random Forest), unsupervised classification (e.g., K-means clustering) |
+| Change Detection        | Identify temporal changes              | Image differencing, post-classification comparison, time-series analysis |
+| Spectral Analysis       | Extract specific features using spectral bands | NDVI (Normalized Difference Vegetation Index), SAVI (Soil-Adjusted Vegetation Index) |
+| Machine Learning and AI | Automate feature extraction and improve accuracy | Deep learning (e.g., CNNs), Random Forest, XGBoost         |
