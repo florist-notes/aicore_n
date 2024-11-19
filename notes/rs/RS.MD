@@ -129,23 +129,25 @@ Measure natural microwave emissions from the Earth's surface.
     + Monitoring deforestation.
     + Ocean wind speed and wave height estimation.
 </td>
-<td>Logd</td>
+<td>c</td>
 
 </tr>
 
 <tr>
 <th>LiDAR (Light Detection and Ranging)</th>
-<td>LiDAR sensors emit laser pulses and measure the time taken for the reflected signals to return. This provides high-resolution 3D data.
+<td>
 
-    + Examples:
+LiDAR sensors emit laser pulses and measure the time taken for the reflected signals to return. This provides high-resolution 3D data.
++ Examples:
+    + ICESat (Ice, Cloud, and Land Elevation Satellite)
+    + Airborne LiDAR systems.
++ Applications:
 
-        + ICESat (Ice, Cloud, and Land Elevation Satellite)
-        + Airborne LiDAR systems.
-    + Applications:
-
-        + Terrain mapping and digital elevation models (DEMs).
-        + Forest canopy height measurement.
-        + Urban infrastructure mapping.</td>
+    + Terrain mapping and digital elevation models (DEMs).
+    + Forest canopy height measurement.
+    + Urban infrastructure mapping.
+    
+</td>
 <td>Logd</td>
 
 </tr>
@@ -237,6 +239,190 @@ Measure variations in the Earth's gravitational field to understand subsurface f
 
 </td>
 
+</tr>
+
+</table>
+
+| Sensor Type          | Wavelengths Used       | Applications                              | Key Features                              |
+|----------------------|-----------------------|------------------------------------------|------------------------------------------|
+| Optical              | Visible, NIR, SWIR    | Land cover, vegetation, water quality    | High spatial resolution                  |
+| Thermal Infrared     | 3-14 µm               | Heat islands, volcano monitoring         | Temperature data                         |
+| Microwave (Active)   | 1mm-1m                | Soil moisture, flood mapping             | All-weather capability                   |
+| Microwave (Passive)  | 1mm-1m                | Snowpack, sea ice monitoring             | Penetrates vegetation and clouds         |
+| LiDAR                | Visible, NIR          | Terrain mapping, canopy height           | 3D elevation data                        |
+| Hyperspectral        | Hundreds of bands     | Mineral, water, vegetation studies       | Detailed spectral analysis               |
+
+
+## Data Types in Remote Sensing :
+
+Remote sensing data can be classified into several types based on the nature of the data collected, the spatial resolution, and the application areas.
+
+<table style="width:100%" >
+
+<tr>
+<th>Spatial Data</th>
+<th>Spectral Data<br /></th>
+<th>Temporal Data <br /></th>
+<th>Radiometric Data <br /></th>
+</tr>
+
+<tr>
+<td>
+
+Spatial data refers to the geographic location and arrangement of features on the Earth's surface.
+
++ `Features`:
+Pixel-based data with associated coordinates.
+Represented in raster (gridded) or vector (point, line, polygon) formats.
+    + Examples: Land cover maps, vegetation indices (e.g., NDVI).
+</td>
+<td>
+
+Spectral data represents the reflectance or emission of electromagnetic energy across different wavelengths.
+
++ `Types`:
+    + Multispectral (data from a few discrete bands, e.g., Landsat).
+    + Hyperspectral (data from hundreds of contiguous bands, e.g., AVIRIS).
++ Applications: Mineral identification, vegetation analysis, water quality assessment.
+</td>
+<td>
+
+Temporal data involves time-series observations to analyze changes over time.
+
++ `Features`:
+    + Collected at regular intervals (daily, monthly, yearly).
+    + Used for dynamic studies.
++ Applications: Deforestation monitoring, urban expansion, disaster impact assessment.
+
+</td>
+<td>
+
+Radiometric data pertains to the intensity of electromagnetic radiation detected by the sensor.
+
++ `Features`:
+    + Quantitative measurements (e.g., reflectance values).
+    + Stored as Digital Numbers (DNs) or converted to physical units.
+
++ Applications: Surface temperature estimation, energy balance studies.
+
+</td>
+</tr>
+
+<tr>
+<th>Altitude/Elevation Data</th>
+<th>Polarimetric Data <br /></th>
+<th>LiDAR Data <br /></th>
+<th><br /></th>
+</tr>
+
+<tr>
+<td>
+
+Data representing the height or depth of a surface or object.
+
++ `Examples`: Digital Elevation Models (DEMs), bathymetric data.
++ Applications: Terrain mapping, watershed modeling, flood simulation.
+
+</td>
+<td>
+
+Data that includes information about the polarization of electromagnetic waves.
+
++ `Features`:
+Often from radar sensors (e.g., SAR).
++ Applications: Soil moisture estimation, vegetation structure analysis.
+</td>
+<td>
+
+Light Detection and Ranging (LiDAR) data provides highly accurate 3D point clouds.
+
++ `Features`: Captures elevation and object height.
++ Applications: Urban planning, forest canopy analysis, digital terrain models.
+
+</td>
+<td>
+
+</td>
+</tr>
+
+</table>
+
+## Popular Data Processing Tools :
+
+<table>
+<tr>
+<th> Geographic Information Systems (GIS) Software</th>
+<th> Remote Sensing Software <br /></th>
+<th> Programming Tools and Libraries <br /></th>
+</tr>
+
+<tr>
+<td>
+
+GIS tools process and analyze spatial and attribute data.
+
++ Popular Tools:
+    + ArcGIS: Comprehensive GIS suite for spatial analysis and map production.
+    + QGIS: Open-source alternative to ArcGIS with advanced geospatial capabilities.
+</td>
+<td>
+
+Specialized software for processing raster and spectral data.
+
++ Popular Tools:
+    + ERDAS IMAGINE: For remote sensing, photogrammetry, and spatial modeling.
+    + ENVI: Advanced image analysis and spectral processing.
+    + Orfeo Toolbox (OTB): Open-source library for remote sensing.
+</td>
+<td>
+
+Custom processing using programming languages is common for large datasets.
+
++ Python Libraries:
+    + Rasterio: For reading and writing raster data.
+    + GDAL: Geospatial data abstraction library.
+    + EarthPy: For Earth surface analysis.
+    + scikit-image: Image processing.
++ R Libraries:
+    + rgdal: Geospatial analysis.
+    + raster: Raster data handling.
+
+</td>
+</tr>
+
+<tr>
+<th>Satellite-Specific Tools</th>
+<th>LiDAR Processing Tools <br /></th>
+<th>Cloud Platforms <br /></th>
+</tr>
+
+<tr>
+<td>
+
+Designed for specific satellite data and processing.
+
++ Examples:
+    + SNAP: Sentinel Application Platform for processing Sentinel data.
+    + Google Earth Engine: Cloud-based processing for large-scale geospatial data.
+</td>
+<td>
+
+For analyzing point clouds and generating 3D models.
+
++ Examples:
+    + LASTools: For LiDAR data visualization and processing.
+    + CloudCompare: Open-source 3D point cloud processing software.
+</td>
+<td>
+
+Cloud computing allows efficient processing of large datasets.
+
++ Examples:
+    + AWS Earth on Cloud: Amazon's geospatial processing platform.
+    + Google Earth Engine: For big-data geospatial processing.
+    + Planet Platform: For PlanetScope satellite data.
+
+</td>
 </tr>
 
 </table>
