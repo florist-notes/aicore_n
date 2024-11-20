@@ -3,7 +3,7 @@
 <p style="text-align:justify;">
 Remote sensing refers to the process of acquiring information about an object or phenomenon without making physical contact with it. This is typically achieved by detecting and analyzing reflected or emitted electromagnetic radiation from the Earth's surface and atmosphere. It plays a crucial role in various fields, including environmental monitoring, urban planning, agriculture, forestry, disaster management, and defense.
 </p>
-
+<img src="./img/rss.webp" width=100%>
 <img src="./img/rs.png" width=100%>
 
 [ [Synthetic Aperture Radar (SAR)](./SAR.MD), [Interferometric Synthetic Aperture Radar (InSAR)](./INSAR.MD), [Pixel Offset Tracking (POT)](./POT.MD) ]
@@ -471,3 +471,6 @@ Popular DEM Sources :
     - LiDAR-derived DEMs:
     High-resolution (sub-meter), often used in urban or environmental applications.
 
+Resources:
+
+- [video] : [ [GIS and Remote Sensing (playlist)](https://www.youtube.com/watch?v=zDUofPwiUZQ&list=PLR4IfpMuzYx04UrN2vm7wBQa5ZMr65fS4), [RS (IITB)](https://www.youtube.com/watch?v=WbjPPgdmhuQ&list=PLOzRYVm0a65cD8A9tJpU-vOoz1LDQ-UjD), [RS (IITR)](https://www.youtube.com/playlist?list=PLLy_2iUCG87CDlroZBlwwBllYwz7KxVtA), [Intro to RS](https://youtu.be/u2_My_56hPQ?si=R6mRGLfLrDMruhHd), [RS with Py](https://youtu.be/gi4UdFsayoM?si=XZadPH2ZKajadYc1), [Google Earth Engine Py API](https://www.youtube.com/watch?v=xTGcIFSAsSo&list=PLyJZ14_CYRrC9IElaGRBFKOG7fpH61wVh), [Spatial Statistic with Py](https://youtu.be/B_LHPRVEOvs?si=CB915mPqWli7kKQL) ]
