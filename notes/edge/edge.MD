@@ -1,5 +1,8 @@
 # Edge AI 🦙
 
+
+<img src="./tml.png" width=100%>
+
 [ 🦙 @[tinyML](https://www.youtube.com/@MITHANLab/live) ]
 
 <p class="ex1" align="justify" style="padding: 15px 15px 15px 15px">
@@ -22,6 +25,8 @@ Quantization is a process of reducing the precision of numbers used in models, w
 
 `Quantization-aware training (QAT)`: In this method, quantization is considered during training itself, allowing the model to adapt to reduced precision and maintain better accuracy.
 + Example: Training a model with simulated quantized operations during backpropagation to ensure it performs well when deployed in a quantized form.
+
+[ [Which Quantization Method is Right for You? (GPTQ vs. GGUF vs. AWQ)](https://youtu.be/mNE_d-C82lI?si=z7fG7D0emFOPL8Ra), [Quantization vs Pruning vs Distillation: Optimizing NNs for Inference](https://youtu.be/UcwDgsMgTu4?si=HG7S2HIZSZeWA2aN), [Transformer Neural Networks Derived from Scratch](https://youtu.be/kWLed8o5M2Y?si=MePvovtqR2RZG9kG) ]
 
 
 ## Pruning for Efficient Model Deployment
@@ -51,4 +56,15 @@ Knowledge distillation is a technique where a smaller, less complex model (calle
 Example of Knowledge Distillation in TinyML:
 A large pre-trained model for image classification is too big to deploy on a microcontroller. By applying knowledge distillation, a smaller version of the model is created that achieves 95% of the teacher model's accuracy but is small enough to run efficiently on the microcontroller.
 
-Resources : [MIT HanLab projects](https://hanlab.mit.edu/projects/tinyml), [tinyml.org](https://www.tinyml.org/), [harvard@tinyML](https://pll.harvard.edu/course/fundamentals-tinyml), [Tiny Machine Learning: Progress and Futures](https://arxiv.org/abs/2403.19076), [Building a TinyML Application with TF Micro and SensiML](https://blog.tensorflow.org/2021/05/building-tinyml-application-with-tf-micro-and-sensiml.html), @github/[bitsandbytes](https://github.com/bitsandbytes-foundation/bitsandbytes), [tinyML EMEA](https://www.youtube.com/watch?v=NY4cCLw5C_o&list=PLeisuBi-nfBO6Lgt98eBjM52Byu1GrI9p).
+[ [Knowledge Distillation: A Good Teacher is Patient and Consistent](https://youtu.be/gZPUGje1PCI?si=Xz04x9SNj-yS7IXi), [How ChatGPT Cheaps Out Over Time](https://youtu.be/vyJy-0zBSQ0?si=h0p6bGSGFu3Mhm13) ]
+
+### Popular TinyML Frameworks and Libraries :
++ [LiteRT](https://ai.google.dev/edge/litert) / TensorFlow Lite for Microcontrollers (TFLite Micro): A version of TensorFlow Lite designed to run on microcontrollers with limited resources. TFLite Micro enables the deployment of machine learning models directly on tiny, low-power devices.
+
++ [Edge Impulse](https://edgeimpulse.com/): A development platform for building, training, and deploying TinyML models. It includes tools for collecting data from edge devices, training machine learning models, and optimizing them for deployment.
+
++ [CMSIS-NN](https://github.com/ARM-software/CMSIS-NN): A library of neural network kernels optimized for ARM Cortex-M microcontrollers. It allows TinyML models to leverage the processing power of ARM-based devices efficiently.
+
++ [uTensor](https://github.com/uTensor/uTensor): A lightweight machine learning framework for embedded systems, providing an optimized implementation of common machine learning operations for microcontrollers.
+
+Resources : [MIT HanLab projects](https://hanlab.mit.edu/projects/tinyml), [tinyml.org](https://www.tinyml.org/), [harvard@tinyML](https://pll.harvard.edu/course/fundamentals-tinyml), [Tiny Machine Learning: Progress and Futures](https://arxiv.org/abs/2403.19076), [Building a TinyML Application with TF Micro and SensiML](https://blog.tensorflow.org/2021/05/building-tinyml-application-with-tf-micro-and-sensiml.html), @github/[bitsandbytes](https://github.com/bitsandbytes-foundation/bitsandbytes), [tinyML EMEA](https://www.youtube.com/watch?v=NY4cCLw5C_o&list=PLeisuBi-nfBO6Lgt98eBjM52Byu1GrI9p), [ @github/[tinyml-projects-papers](https://github.com/gigwegbe/tinyml-papers-and-projects), [Seedstudio blog - TinyML](https://www.seeedstudio.com/blog/2021/06/14/everything-about-tinyml-basics-courses-projects-more/?srsltid=AfmBOoqOe6H6cuw3rRDSI_QC36Ps77GYg9pavzENaX2PNQq4XzlNBGZY), [openmv.io](https://openmv.io/), [Harvard TinyML](https://sites.google.com/g.harvard.edu/tinyml/finalprojects): [discuss](https://discuss.tinyml.seas.harvard.edu/c/projects/5) ].
