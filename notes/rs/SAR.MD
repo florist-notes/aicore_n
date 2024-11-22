@@ -63,45 +63,45 @@ SAR works on the principle of active remote sensing:
 
 ### SAR Satellites and Missions
 1. Active SAR Missions
-+ Sentinel-1 (ESA):
++ [Sentinel-1](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1) (ESA):
 C-band SAR for environmental monitoring and disaster response.
-+ RADARSAT-2 (Canada):
++ [RADARSAT-2](https://www.asc-csa.gc.ca/eng/satellites/radarsat2/) (Canada):
 Multi-mode imaging for agriculture, forestry, and defense.
-+ TerraSAR-X (Germany):
++ [TerraSAR-X](https://earth.esa.int/eogateway/missions/terrasar-x-and-tandem-x) (Germany):
 High-resolution X-band SAR for urban and infrastructure studies.
 
 2. Upcoming and Planned Missions
-+ NISAR (NASA-ISRO SAR Mission):
++ [NISAR](https://nisar.jpl.nasa.gov/) (NASA-ISRO SAR Mission):
 Dual-band (L and S-band) SAR for global Earth observation.
-+ BIOMASS (ESA):
++ [BIOMASS (ESA)](https://www.esa.int/Applications/Observing_the_Earth/FutureEO/Biomass):
 P-band SAR for forest biomass and carbon stock estimation.
 
 3. Historic Missions
 + ERS-1/2 (ESA):
 Pioneered SAR applications in Earth observation.
-+ ALOS PALSAR (Japan):
++ [ALOS PALSAR](https://asf.alaska.edu/datasets/daac/alos-palsar/) (Japan):
 L-band SAR for forestry and disaster monitoring.
 
 
 ## Tools for SAR Data Processing
 + Open-Source Tools:
 
-    + SNAP (Sentinel Application Platform):
+    + [SNAP](https://step.esa.int/main/download/snap-download/) (Sentinel Application Platform):
     Free software by ESA for Sentinel-1 SAR data processing.
-    + ISCE (InSAR Scientific Computing Environment):
+    + [ISCE](https://github.com/isce-framework/isce2) (InSAR Scientific Computing Environment):
     For SAR and InSAR workflows.
 
 + Commercial Software:
 
-    + SARscape (ENVI):
+    + [SARscape](https://www.nv5geospatialsoftware.com/Solutions/SAR-Solutions) (ENVI):
     Advanced SAR processing for interferometry  and polarimetry.
     + ERDAS IMAGINE:
     SAR data analysis and interpretation.
 + Python Libraries:
 
-    + PySAR:
+    + [PySAR](https://github.com/hfattahi/PySAR):
     For time-series InSAR analysis.
-    + GDAL and Rasterio:
+    + [GDAL](https://github.com/OSGeo/gdal) and [Rasterio](https://github.com/rasterio/rasterio):
     For SAR data manipulation.
 
 ## SAR Data Processing Workflow :
@@ -196,3 +196,4 @@ SAR data comprises several critical components that describe how the data is acq
 | **Ground Range and Slant Range** | Slant range is the direct distance between the radar and the target, while ground range is the projection of this distance onto the Earth's surface. Slant range data must often be converted to ground range for georeferencing and analysis. | Ground range conversion is essential for accurate geolocation in SAR imagery.                               |
 
 
+Resources : [ [NASA SAR SNAP ARSET](https://youtu.be/Xemo2ZpduHA?si=65w9grJ-ruOrpzXH), [NASA video](https://www.youtube.com/@NASAgovVideo/playlists), [InSAR Theory and Processing (2020)](https://www.youtube.com/playlist?list=PLzmugeDoplFNxsJFbIhwX3AWy7oFSnG8u), [ESA Training - SAR and Optical](https://www.youtube.com/playlist?list=PLvT7fd9OiI9V72wSidaHKhOraDiNQaW8C), [EarthScope Consortium Presentations](https://www.youtube.com/@EarthScope_presentations/playlists), [Surface Motion Estimation](https://www.youtube.com/@agricultureandgistv8051/videos), [Radar Systems Engineering](https://www.youtube.com/watch?v=q7yNQp_8Acg&list=PLNKgf4Cv_NZ1_fZt0bAJXAro6MlaTAEAU), [InSAR Processing and Theory with GMTSAR (day1)](https://youtu.be/BUFwYDpnMOk?si=bEmZmdCC-Ud6Rc53) : [day2](https://youtu.be/_zA15Wq_Qzk?si=Oc0a4uM8LVOA1JUm), [day3](https://youtu.be/ZdGgmK9hrkk?si=KCx2gaoi_a5nBTHJ), [PolSAR](https://www.youtube.com/playlist?list=PLoESGzpi1Bfjn69Dpcb9kD40oZbYtpZIF) ]
