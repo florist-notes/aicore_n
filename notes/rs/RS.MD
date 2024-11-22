@@ -366,27 +366,27 @@ Light Detection and Ranging (LiDAR) data provides highly accurate 3D point cloud
 GIS tools process and analyze spatial and attribute data.
 
 + Popular Tools:
-    + ArcGIS: Comprehensive GIS suite for spatial analysis and map production.
-    + QGIS: Open-source alternative to ArcGIS with advanced geospatial capabilities.
+    + [ArcGIS](https://www.arcgis.com/index.html): Comprehensive GIS suite for spatial analysis and map production.
+    + [QGIS](https://www.qgis.org/): Open-source alternative to ArcGIS with advanced geospatial capabilities.
 </td>
 <td>
 
 Specialized software for processing raster and spectral data.
 
 + Popular Tools:
-    + ERDAS IMAGINE: For remote sensing, photogrammetry, and spatial modeling.
-    + ENVI: Advanced image analysis and spectral processing.
-    + Orfeo Toolbox (OTB): Open-source library for remote sensing.
+    + [ERDAS IMAGINE](https://www.osmre.gov/programs/technical-innovation-and-professional-services/services/erdas): For remote sensing, photogrammetry, and spatial modeling.
+    + [ENVI](https://www.nv5geospatialsoftware.com/Products/ENVI): Advanced image analysis and spectral processing.
+    + [Orfeo Toolbox (OTB)](https://www.orfeo-toolbox.org/): Open-source library for remote sensing.
 </td>
 <td>
 
 Custom processing using programming languages is common for large datasets.
 
 + Python Libraries:
-    + Rasterio: For reading and writing raster data.
-    + GDAL: Geospatial data abstraction library.
-    + EarthPy: For Earth surface analysis.
-    + scikit-image: Image processing.
+    + [Rasterio](https://github.com/rasterio/rasterio): For reading and writing raster data.
+    + [GDAL](https://github.com/OSGeo/gdal): Geospatial data abstraction library.
+    + [EarthPy](https://www.earthdatascience.org/tools/earthpy/): For Earth surface analysis.
+    + [scikit-image](https://scikit-image.org/): Image processing.
 + R Libraries:
     + rgdal: Geospatial analysis.
     + raster: Raster data handling.
@@ -406,25 +406,25 @@ Custom processing using programming languages is common for large datasets.
 Designed for specific satellite data and processing.
 
 + Examples:
-    + SNAP: Sentinel Application Platform for processing Sentinel data.
-    + Google Earth Engine: Cloud-based processing for large-scale geospatial data.
+    + [SNAP](https://step.esa.int/main/download/snap-download/): Sentinel Application Platform for processing Sentinel data.
+    + [Google Earth Engine](https://earthengine.google.com/): Cloud-based processing for large-scale geospatial data.
 </td>
 <td>
 
 For analyzing point clouds and generating 3D models.
 
 + Examples:
-    + LASTools: For LiDAR data visualization and processing.
-    + CloudCompare: Open-source 3D point cloud processing software.
+    + [LASTools](https://github.com/LAStools/LAStools): For LiDAR data visualization and processing.
+    + [CloudCompare](https://www.danielgm.net/cc/): Open-source 3D point cloud processing software.
 </td>
 <td>
 
 Cloud computing allows efficient processing of large datasets.
 
 + Examples:
-    + AWS Earth on Cloud: Amazon's geospatial processing platform.
-    + Google Earth Engine: For big-data geospatial processing.
-    + Planet Platform: For PlanetScope satellite data.
+    + [AWS Earth on Cloud](https://aws.amazon.com/earth/): Amazon's geospatial processing platform.
+    + [Google Earth Engine](https://earthengine.google.com/): For big-data geospatial processing.
+    + [Planet Platform](https://www.planet.com/products/): For PlanetScope satellite data.
 
 </td>
 </tr>
@@ -447,8 +447,7 @@ Cloud computing allows efficient processing of large datasets.
 <img src="./img/dem.png" width=100%>
 
 <p style="text-align:justify;">
-
-A `Digital Elevation Model (DEM)` is a digital representation of the Earth's surface topography or terrain. It is a 3D depiction of the elevation data, often used in various fields such as geography, geology, hydrology, environmental science, urban planning, and remote sensing.
+A Digital Elevation Model (DEM) is a digital representation of the Earth's surface topography or terrain. It is a 3D depiction of the elevation data, often used in various fields such as geography, geology, hydrology, environmental science, urban planning, and remote sensing.
 </p>
 
 
@@ -501,7 +500,7 @@ Popular DEM Sources :
 ### Choose the Best Data Source
 Different data sources offer varying levels of accuracy. Select the most suitable one for your area of interest:
 
-+ (a) LiDAR (Light Detection and Ranging)
++ (a) `LiDAR (Light Detection and Ranging)`
     + Accuracy: High vertical accuracy (±10cm to ±1m) and resolutions of 1m or finer.
     + Coverage: Ideal for small to medium areas.
     + Applications: Urban planning, flood modeling, and forestry.
@@ -514,16 +513,16 @@ Different data sources offer varying levels of accuracy. Select the most suitabl
         Use `las2dem` to generate a raster DEM from the ground-classified points.
         Export the DEM in GeoTIFF format.
 
-+ (b) Satellite-based DEMs
++ (b) `Satellite-based DEMs`
     + TanDEM-X: High-resolution global DEM (~12m resolution, ~2m vertical accuracy).
     + SRTM: 30m resolution with ±16m vertical accuracy (global coverage).
     + ASTER GDEM: 30m resolution but less accurate than SRTM (±20m vertical accuracy).
     + Copernicus DEM: Global DEM with 30m and 10m resolution versions.
 
-+ (c) Photogrammetry
++ (c) `Photogrammetry`
     + Using high-resolution aerial or drone images with photogrammetry software (e.g., Pix4D, Agisoft Metashape) can produce DEMs with sub-meter accuracy.
 
-+ (d) Ground-based Surveys
++ (d) `Ground-based Surveys`
     + For the highest accuracy, traditional surveying techniques (e.g., total stations, GPS-based RTK systems) are unbeatable.
     + Applications: Small areas like construction sites or precision agriculture.
 
@@ -531,4 +530,4 @@ Different data sources offer varying levels of accuracy. Select the most suitabl
 
 Resources:
 
-- [video] : [ [GIS and Remote Sensing (playlist)](https://www.youtube.com/watch?v=zDUofPwiUZQ&list=PLR4IfpMuzYx04UrN2vm7wBQa5ZMr65fS4), [RS (IITB)](https://www.youtube.com/watch?v=WbjPPgdmhuQ&list=PLOzRYVm0a65cD8A9tJpU-vOoz1LDQ-UjD), [RS (IITR)](https://www.youtube.com/playlist?list=PLLy_2iUCG87CDlroZBlwwBllYwz7KxVtA), [Intro to RS](https://youtu.be/u2_My_56hPQ?si=R6mRGLfLrDMruhHd), [RS with Py](https://youtu.be/gi4UdFsayoM?si=XZadPH2ZKajadYc1), [Google Earth Engine Py API](https://www.youtube.com/watch?v=xTGcIFSAsSo&list=PLyJZ14_CYRrC9IElaGRBFKOG7fpH61wVh), [Spatial Statistic with Py](https://youtu.be/B_LHPRVEOvs?si=CB915mPqWli7kKQL), [Hyperspectral remote sensing and its applications](https://youtu.be/2LNXeUS25Vw?si=WRos1hZRKOnMw8p_) ]
+- [video] : [ [GIS and Remote Sensing (playlist)](https://www.youtube.com/watch?v=zDUofPwiUZQ&list=PLR4IfpMuzYx04UrN2vm7wBQa5ZMr65fS4), [RS (IITB)](https://www.youtube.com/watch?v=WbjPPgdmhuQ&list=PLOzRYVm0a65cD8A9tJpU-vOoz1LDQ-UjD), [RS (IITR)](https://www.youtube.com/playlist?list=PLLy_2iUCG87CDlroZBlwwBllYwz7KxVtA), [Intro to RS](https://youtu.be/u2_My_56hPQ?si=R6mRGLfLrDMruhHd), [RS with Py](https://youtu.be/gi4UdFsayoM?si=XZadPH2ZKajadYc1), [Google Earth Engine Py API](https://www.youtube.com/watch?v=xTGcIFSAsSo&list=PLyJZ14_CYRrC9IElaGRBFKOG7fpH61wVh), [Spatial Statistic with Py](https://youtu.be/B_LHPRVEOvs?si=CB915mPqWli7kKQL), [Hyperspectral remote sensing and its applications](https://youtu.be/2LNXeUS25Vw?si=WRos1hZRKOnMw8p_), [Advanced Machine Learning for Remote Sensing](https://www.youtube.com/playlist?list=PLzvRrSe1_bqjGthl2s_FG6AnNYjihUlMS), [Remote Sensing Image Analysis and Interpretation](https://www.youtube.com/playlist?list=PLzvRrSe1_bqicnGy4SQG5B7t7-BDi_H2e) ]
