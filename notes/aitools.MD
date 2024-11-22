@@ -2,6 +2,25 @@
 
 ### Here is a custom list of python libraries for Machine Learning ( (AI) ) :
 
+| **Python Library**                            | **Overview**                                                                                              | **Link**                                                      |
+|----------------------------------------------|----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| **Transformers (by Hugging Face)**           | A widely used library for training, fine-tuning, and using transformer-based models (like GPT, BERT, T5).   | [Transformers](https://github.com/huggingface/transformers)   |
+| **LangChain**                                | A framework for developing applications powered by LLMs, integrating with external data sources and APIs.   | [LangChain](https://github.com/hwchase17/langchain)           |
+| **GPT-Neo**                                  | Open-source implementation of GPT-3-like models by EleutherAI, designed for large-scale NLP tasks.         | [GPT-Neo](https://github.com/EleutherAI/gpt-neo)              |
+| **Megatron-LM**                              | A library for training large-scale transformer models efficiently, optimized for multi-GPU setups.         | [Megatron-LM](https://github.com/NVIDIA/Megatron-LM)          |
+| **DeepSpeed**                                | A deep learning optimization library for training massive models, including efficient LLM training.        | [DeepSpeed](https://github.com/microsoft/DeepSpeed)           |
+| **FairScale**                                | A PyTorch extension for large-scale training, including model parallelism, and optimized LLM training.      | [FairScale](https://github.com/facebookresearch/fairscale)    |
+| **OpenAI GPT-3**                             | OpenAI's official GPT-3 API client, offering an easy interface to integrate GPT-3 into Python applications.  | [OpenAI GPT-3](https://github.com/openai/openai-python)       |
+| **T5 (Text-to-Text Transfer Transformer)**   | A library for using Google's T5 model for various NLP tasks by treating them as text-to-text problems.      | [T5](https://github.com/google-research/text-to-text-transfer-transformer) |
+| **LlamaIndex (GPT Index)**                   | A framework to build applications with LLMs, enabling large language model retrieval and query handling.     | [LlamaIndex](https://github.com/jerryjliu/gpt_index)          |
+| **BLOOM**                                    | A collection of multilingual large-scale transformer models that are open-sourced for research purposes.    | [BLOOM](https://github.com/bigscience-workshop/bloom)         |
+| **DialoGPT**                                 | A chatbot-oriented version of GPT-2 fine-tuned for conversational AI and dialogue generation.              | [DialoGPT](https://github.com/microsoft/DialoGPT)             |
+| **Peft (Parameter Efficient Fine-Tuning)**    | A library designed to simplify parameter-efficient fine-tuning for LLMs like GPT, BERT, and others.         | [Peft](https://github.com/huggingface/peft)                   |
+| **Haystack**                                 | A framework for building production-ready NLP pipelines, integrating LLMs for question answering and more.  | [Haystack](https://github.com/deepset-ai/haystack)            |
+| **txtai**                                    | A semantic search library built on transformers, optimized for searching and generating text with LLMs.     | [txtai](https://github.com/neuml/txtai)                      |
+| **PaddlePaddle**                             | Deep learning framework by Baidu with an easy-to-use interface for large-scale language model training.     | [PaddlePaddle](https://github.com/PaddlePaddle/Paddle)        |
+
+
 LLM : [Cohere](https://cohere.com/), [Falcon 2](https://falconllm.tii.ae/), [Llama 3](https://llama.meta.com/), [GPT-4](https://openai.com/index/gpt-4/), [Gemini](https://deepmind.google/technologies/gemini/) - [vid](https://youtu.be/UIZAiXYceBI?si=RK1YhSsjS8GrlyHG), [Llama 2](https://ai.meta.com/llama/), [PaLM 2 (Bison-001)](https://blog.google/technology/ai/google-palm-2-ai-large-language-model/), [Falcon LLM](https://falconllm.tii.ae/), [GPT-4](https://openai.com/research/gpt-4), [Beluga 2](https://stability.ai/blog/stable-beluga-large-instruction-fine-tuned-models), [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [Llama](https://github.com/facebookresearch/llama), [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), [JARVIS](https://github.com/microsoft/JARVIS), [Mini-GPT4](https://github.com/Vision-CAIR/MiniGPT-4), [langchain](https://github.com/hwchase17/langchain), [LlamaIndex](https://github.com/jerryjliu/llama_index), [Alpaca Lora](https://github.com/tloen/alpaca-lora), [🌋 LLaVA](https://github.com/haotian-liu/LLaVA), [llm](https://github.com/rustformers/llm), [privateGPT](https://github.com/imartinez/privateGPT), [Claude](https://www.anthropic.com/index/introducing-claude), [haystack](https://github.com/deepset-ai/haystack), [dolly](https://github.com/databrickslabs/dolly), [bloom](https://huggingface.co/docs/transformers/model_doc/bloom), [opt](https://huggingface.co/facebook/opt-350m), [baby agi](https://github.com/yoheinakajima/babyagi), [agentGPT](https://github.com/reworkd/AgentGPT), [StarCoder](https://huggingface.co/blog/starcoder), @[awesome-LLM](https://github.com/Hannibal046/Awesome-LLM), [awesome-LLMOps](https://github.com/tensorchord/Awesome-LLMOps). [ [big LLM list](https://ai.v-gar.de/ml/transformer/timeline/index.html) ], [ToolLLM](https://arxiv.org/abs/2307.16789), [MetaGPT](https://github.com/geekan/MetaGPT), [Adobe Stardust](https://labs.adobe.com/projects/stardust/), [Stable Video AI Watched 600,000,000 Videos!](https://youtu.be/XwDaQKOxgFY?si=7fX4RNmcxigDpRGc), [Stable Video Diffusion](https://stability.ai/news/stable-video-diffusion-open-ai-video-model), [[LLM Visualization](https://bbycroft.net/llm)], [visualize matrices](https://bhosmer.github.io/mm/), [shutterstock ai image generator](https://www.shutterstock.com/ai-image-generator/).
 
 Here's HuggingFace's LLM benchmark [leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) - [models](https://huggingface.co/models), GLUE [benchmarks](https://gluebenchmark.com/leaderboard/), Building LLM applications for production : [article](https://huyenchip.com/2023/04/11/llm-engineering.html).
@@ -549,6 +568,31 @@ chatbot
 
 # ✤ data visualization: 
 
+| **Library**                                  | **Overview**                                                                                               | **Link**                                                       |
+|----------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Matplotlib**                               | A widely-used library for creating static, animated, and interactive plots in Python.                       | [Matplotlib](https://github.com/matplotlib/matplotlib)         |
+| **Seaborn**                                  | Built on top of Matplotlib, Seaborn simplifies creating informative and attractive statistical graphics.      | [Seaborn](https://github.com/mwaskom/seaborn)                  |
+| **Plotly**                                   | An interactive graphing library for creating web-based data visualizations with support for dashboards.     | [Plotly](https://github.com/plotly/plotly.py)                 |
+| **Bokeh**                                    | A Python interactive visualization library for creating real-time and live-streaming visualizations.         | [Bokeh](https://github.com/bokeh/bokeh)                       |
+| **Altair**                                   | A declarative statistical visualization library for Python, built on Vega and Vega-Lite.                    | [Altair](https://github.com/altair-viz/altair)                 |
+| **ggplot**                                   | A Python version of the popular R ggplot2 library, for creating complex plots with a simple syntax.          | [ggplot](https://github.com/yhat/ggpy)                         |
+| **Pyplot3D**                                 | A 3D plotting library built on Matplotlib for creating three-dimensional visualizations in Python.           | [Pyplot3D](https://github.com/berceanu/pyplot3d)              |
+| **T-SNE**                                    | A Python library for visualizing high-dimensional data in a low-dimensional space using t-SNE techniques.    | [T-SNE](https://github.com/krzjoa/tsne)                       |
+| **Visdom**                                   | A flexible tool for creating and organizing visualizations of models during training in real-time.          | [Visdom](https://github.com/facebookresearch/visdom)           |
+| **TensorBoard**                              | A tool for visualizing TensorFlow model training, including loss metrics, graphs, and embeddings.            | [TensorBoard](https://github.com/tensorflow/tensorboard)       |
+| **LIME (Local Interpretable Model-Agnostic Explanations)** | A tool for interpreting machine learning models by visualizing the impact of features on predictions.        | [LIME](https://github.com/marcotcr/lime)                       |
+| **SHAP (SHapley Additive exPlanations)**     | A library for interpreting the outputs of machine learning models using Shapley values and visualizations.   | [SHAP](https://github.com/slundberg/shap)                      |
+| **Yellowbrick**                              | A machine learning visualization library that provides visual analysis of model performance and diagnostics. | [Yellowbrick](https://github.com/DistrictDataLabs/yellowbrick) |
+| **Eli5**                                     | A library for explaining machine learning models and visualizing their decision-making process.             | [Eli5](https://github.com/TeamHG-Memex/eli5)                   |
+| **Plotly Dash**                              | A web framework for creating interactive, dashboard-style visualizations using Plotly charts.              | [Dash](https://github.com/plotly/dash)                         |
+| **Tidyverse**                                | A collection of R packages for data visualization, data manipulation, and statistical analysis, ported to Python. | [Tidyverse](https://github.com/tidyverse/tidyverse)            |
+| **Deep Visualization Toolbox**                | A real-time interactive visualization tool to visualize deep learning models and their activations.         | [Deep Visualization Toolbox](https://github.com/yosinski/deep-visualization-toolbox) |
+| **Neural Network Visualization (NNV)**        | A tool for visualizing neural networks and their layers, activations, and weights in a detailed way.        | [NNV](https://github.com/gsurma/nnv)                          |
+| **Plotly Express**                            | A simplified version of Plotly that allows users to create interactive plots with minimal code.             | [Plotly Express](https://github.com/plotly/plotly.py)          |
+| **PCA (Principal Component Analysis)**        | A Python library for performing PCA on datasets and visualizing the results in 2D or 3D.                    | [PCA](https://github.com/scikit-learn/scikit-learn)            |
+
+
+
 @github/[awesome-dataviz](https://github.com/javierluraschi/awesome-dataviz)
 
 This [list1](https://github.com/javierluraschi/awesome-dataviz), [list2](https://github.com/topics/data-visualization) has most of the data viz
@@ -880,167 +924,123 @@ causes multiple auth error), [opendrop](https://github.com/seemoo-lab/opendrop) 
 </tr>
 </table>
 
+## Computer Vision : 
+
+| Library Name | Description | Link |
+|--------------|-------------|------|
+| [detectron2](https://github.com/facebookresearch/detectron2) | Facebook's state-of-the-art vision algorithm platform for object detection and segmentation. | [Link](https://github.com/facebookresearch/detectron2) |
+| [yolov5](https://github.com/ultralytics/yolov5) | YOLOv5 - a fast, scalable, and easy-to-use object detection model for real-time applications. | [Link](https://github.com/ultralytics/yolov5) |
+| [kornia](https://github.com/kornia/kornia) | Differentiable computer vision library for PyTorch. Contains a set of routines for solving computer vision tasks. | [Link](https://github.com/kornia/kornia) |
+| [mmdetection](https://github.com/open-mmlab/mmdetection) | OpenMMLab's object detection toolbox and benchmark. | [Link](https://github.com/open-mmlab/mmdetection) |
+| [timm](https://github.com/rwightman/pytorch-image-models) | PyTorch Image Models library with a large collection of pre-trained models for various image classification tasks. | [Link](https://github.com/rwightman/pytorch-image-models) |
+| [opencv-python](https://github.com/opencv/opencv-python) | OpenCV Python bindings for computer vision tasks including image processing and video analysis. | [Link](https://github.com/opencv/opencv-python) |
+| [albumentations](https://github.com/albumentations-team/albumentations) | Fast and flexible image augmentation library for deep learning tasks. | [Link](https://github.com/albumentations-team/albumentations) |
+| [torchvision](https://github.com/pytorch/vision) | Vision-related utilities for PyTorch including datasets, transforms, and pretrained models. | [Link](https://github.com/pytorch/vision) |
+| [fastai](https://github.com/fastai/fastai) | High-level API built on PyTorch that simplifies training neural networks for computer vision tasks. | [Link](https://github.com/fastai/fastai) |
+| [simplecv](https://github.com/sightmachine/SimpleCV) | An easy-to-use framework for building computer vision applications using Python. | [Link](https://github.com/sightmachine/SimpleCV) |
+| [d2go](https://github.com/facebookresearch/d2go) | A streamlined version of Detectron2 optimized for mobile and edge devices. | [Link](https://github.com/facebookresearch/d2go) |
+| [imageai](https://github.com/OlafenwaMoses/ImageAI) | Python library for performing object detection, image prediction, and custom image analysis using deep learning. | [Link](https://github.com/OlafenwaMoses/ImageAI) |
+| [pytorch-lightning-bolts](https://github.com/PyTorchLightning/pytorch-lightning-bolts) | PyTorch Lightning library with popular, well-structured vision models and pre-trained weights. | [Link](https://github.com/PyTorchLightning/pytorch-lightning-bolts) |
+| [faster-rcnn](https://github.com/facebookresearch/Detectron) | A Faster R-CNN implementation for object detection and segmentation with pre-trained models. | [Link](https://github.com/facebookresearch/Detectron) |
+| [scikit-image](https://github.com/scikit-image/scikit-image) | Image processing library for Python that complements SciPy and NumPy. | [Link](https://github.com/scikit-image/scikit-image) |
+| [pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) | Image-to-image translation with deep learning using PyTorch. | [Link](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) |
+| [segmentation-models.pytorch](https://github.com/qubvel/segmentation_models.pytorch) | PyTorch library for semantic segmentation models with pre-trained backbones. | [Link](https://github.com/qubvel/segmentation_models.pytorch) |
+| [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) | Real-time multi-person human pose detection in images and videos. | [Link](https://github.com/CMU-Perceptual-Computing-Lab/openpose) |
+| [yolo-v4](https://github.com/AlexeyAB/darknet) | YOLOv4: Real-time object detection with the state-of-the-art performance. | [Link](https://github.com/AlexeyAB/darknet) |
+| [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) | A PyTorch implementation of CycleGAN for unpaired image-to-image translation. | [Link](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) |
+
+
+## Reinforcement Learning :
+
+| Library Name | Description | Link |
+|--------------|-------------|------|
+| [Stable Baselines3](https://github.com/DLR-RM/stable-baselines3) | A set of reliable, optimized, and easy-to-use reinforcement learning algorithms built on PyTorch. | [Link](https://github.com/DLR-RM/stable-baselines3) |
+| [Gym](https://github.com/openai/gym) | A toolkit for developing and comparing reinforcement learning algorithms. | [Link](https://github.com/openai/gym) |
+| [Ray RLlib](https://github.com/ray-project/ray) | A scalable reinforcement learning library built on top of Ray, supporting multi-agent environments and large-scale training. | [Link](https://github.com/ray-project/ray) |
+| [TF-Agents](https://github.com/tensorflow/agents) | TensorFlow-based library for reinforcement learning with an easy-to-use interface and many pre-built agents. | [Link](https://github.com/tensorflow/agents) |
+| [Acme](https://github.com/deepmind/acme) | A reinforcement learning framework developed by DeepMind for research purposes with modular design. | [Link](https://github.com/deepmind/acme) |
+| [OpenAI Baselines](https://github.com/openai/baselines) | A collection of high-quality implementations of reinforcement learning algorithms. | [Link](https://github.com/openai/baselines) |
+| [Horizon](https://github.com/facebookresearch/Horizon) | Facebook’s open-source end-to-end platform for applying reinforcement learning in production environments. | [Link](https://github.com/facebookresearch/Horizon) |
+| [PettingZoo](https://github.com/Farama-Foundation/PettingZoo) | A multi-agent reinforcement learning (MARL) environment library, built on top of Gym. | [Link](https://github.com/Farama-Foundation/PettingZoo) |
+| [DQN](https://github.com/keon/Deep-Q-Network) | A PyTorch implementation of the Deep Q-Network (DQN) algorithm, one of the most famous RL algorithms. | [Link](https://github.com/keon/Deep-Q-Network) |
+| [Mario-RL](https://github.com/amyxzhang/mario_rl) | Reinforcement learning applied to training AI agents to play Super Mario using deep Q-learning. | [Link](https://github.com/amyxzhang/mario_rl) |
+| [Spinning Up](https://github.com/openai/spinningup) | OpenAI’s educational resource for RL, providing foundational knowledge and simple RL code. | [Link](https://github.com/openai/spinningup) |
+| [Dopamine](https://github.com/google/dopamine) | A research framework for fast prototyping of reinforcement learning algorithms by Google. | [Link](https://github.com/google/dopamine) |
+| [RLLib](https://github.com/ray-project/ray) | RLlib is a scalable reinforcement learning library built on Ray, supporting both single-agent and multi-agent setups. | [Link](https://github.com/ray-project/ray) |
+| [deepmind-control](https://github.com/deepmind/dm_control) | A suite of control tasks designed to support RL research, developed by DeepMind. | [Link](https://github.com/deepmind/dm_control) |
+| [RoboSchool](https://github.com/openai/roboschool) | A collection of robot simulation environments for reinforcement learning research. | [Link](https://github.com/openai/roboschool) |
+| [Baselines-RL](https://github.com/keras-rl/keras-rl) | Keras-based RL library with implementations for popular algorithms like DQN, DDPG, A3C, etc. | [Link](https://github.com/keras-rl/keras-rl) |
+| [Lightweight RL](https://github.com/yaroslavvb/lightweight-rl) | A small and lightweight reinforcement learning library for easy experimentation and research. | [Link](https://github.com/yaroslavvb/lightweight-rl) |
+| [gym-retro](https://github.com/openai/gym-retro) | A library for reinforcement learning that allows training agents to play classic video games using OpenAI Gym environments. | [Link](https://github.com/openai/gym-retro) |
+| [iLQR](https://github.com/stanfordnmbl/iLQR) | A library implementing the iLQR algorithm for optimal control tasks in reinforcement learning. | [Link](https://github.com/stanfordnmbl/iLQR) |
+| [Shifu](https://github.com/uber/shifu) | Uber’s platform for deep reinforcement learning that offers distributed training and scalable architecture. | [Link](https://github.com/uber/shifu) |
+
+
 ## Extra libraries: 🌸 
+| Repository                                             | Description                                                                                           |
+|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| [manim](https://github.com/3b1b/manim)                  | An animation engine for creating mathematical animations.                                              |
+| [clearml](https://clear.ml/)                           | A platform for managing and automating machine learning experiments.                                  |
+| [3b1b videos](https://github.com/3b1b/videos)           | Code for the YouTube channel 3Blue1Brown, focused on explaining mathematical concepts.               |
+| [scientific visualization book](https://github.com/rougier/scientific-visualization-book) | A book on scientific visualization with Python.                                                      |
+| [bottles](https://github.com/bottlesdevs/Bottles)       | A platform for managing and running Windows applications on Linux using Wine.                         |
+| [dash](https://github.com/plotly/dash)                  | A framework for building analytical web applications in Python.                                       |
+| [ggpy](https://github.com/yhat/ggpy)                   | A Python interface to the R library ggplot2 for data visualization.                                    |
+| [Lenia](https://github.com/Chakazul/Lenia)              | A project for creating generative life simulations.                                                    |
+| [cartography](https://github.com/lyft/cartography)      | A tool for building knowledge graphs from cloud environments.                                         |
+| [Pywonderland](https://github.com/neozhaoliang/pywonderland) | A library for generating 2D and 3D visualization of dynamical systems.                                 |
+| [altair](https://github.com/altair-viz/altair)          | Declarative statistical visualization library for Python.                                             |
+| [yellowbrick](https://github.com/DistrictDataLabs/yellowbrick) | A suite of visual analysis and diagnostic tools for machine learning.                                  |
+| [shapely](https://github.com/shapely/shapely)           | A Python library for manipulation and analysis of planar geometric objects.                           |
+| [orange3](https://github.com/biolab/orange3)           | A data mining software suite with a focus on visual programming.                                       |
+| [science plots](https://github.com/garrettj403/SciencePlots) | A collection of scientific plotting styles for Matplotlib.                                             |
+| [flask_jsondash](https://github.com/christabor/flask_jsondash) | A Flask extension for creating interactive dashboards.                                                |
+| [BLOOM](https://bigscience.huggingface.co/blog/bloom)   | A large language model project, focusing on building the largest open-access model.                   |
+| [whisper](https://openai.com/blog/whisper)              | OpenAI's speech-to-text model for transcription and translation.                                        |
+| [github/whisper](https://github.com/openai/whisper)     | Open-source implementation of Whisper, OpenAI's automatic speech recognition system.                  |
+| [ray](https://github.com/ray-project/ray)               | A unified computing framework for building scalable machine learning applications.                    |
+| [elevenlabs](https://elevenlabs.io/speech-synthesis)    | AI-driven platform for realistic speech synthesis.                                                    |
+| [runwayml](https://runwayml.com/)                       | A creative toolkit for using machine learning models in artistic and design work.                      |
+| [caliban](https://github.com/google/caliban)            | A tool for launching and tracking numerical experiments in reproducible environments.                 |
+| [kornia](https://github.com/kornia/kornia)             | A differentiable computer vision library for PyTorch.                                                 |
+| [intel analytics-zoo](https://github.com/intel-analytics/analytics-zoo) | A big data AI platform for scaling AI workflows.                                                     |
+| [mljar-supervised](https://github.com/mljar/mljar-supervised) | An automated machine learning package for tabular data.                                               |
+| [deepdetect](https://github.com/jolibrain/deepdetect#main-features) | AI platform supporting deep learning and traditional machine learning algorithms.                     |
+| [dopamine](https://github.com/google/dopamine)         | A framework for deep reinforcement learning research.                                                  |
+| [deepmind lab](https://github.com/deepmind/lab)         | A 3D environment for deep reinforcement learning research.                                             |
+| [predictionio](https://github.com/apache/predictionio)  | A machine learning server for building predictive engines.                                            |
+| [detectron2](https://github.com/facebookresearch/detectron2) | Facebook's state-of-the-art platform for computer vision.                                              |
+| [tflearn](https://github.com/tflearn/tflearn)           | High-level API for TensorFlow, aimed at simplifying machine learning workflows.                        |
+| [faceswap](https://github.com/deepfakes/faceswap#deepfakesfaceswap) | Open-source library for creating deepfake images.                                                      |
+| [waveglow](https://github.com/NVIDIA/waveglow)          | NVIDIA's WaveGlow for audio and speech synthesis.                                                     |
+| [neural-enhance](https://github.com/alexjc/neural-enhance) | Super-resolution technique for improving image quality.                                               |
+| [real-time voice cloning](https://github.com/CorentinJ/Real-Time-Voice-Cloning) | Real-time voice cloning and manipulation tool.                                                         |
+| [fasttext](https://github.com/facebookresearch/fastText) | Facebook's library for word representation learning and text classification.                          |
+| [deOldify](https://github.com/jantic/DeOldify)          | A project for colorizing and restoring old photos and videos.                                          |
+| [NeuralTalk2](https://github.com/karpathy/neuraltalk2)  | A deep learning project for generating captions for images and videos.                                 |
+| [face-recognition](https://github.com/ageitgey/face_recognition) | Real-time face recognition using deep learning.                                                        |
+| [U GATIT](https://github.com/taki0112/UGATIT)           | Image-to-anime style transfer using a GAN-based model.                                                 |
+| [srez](https://github.com/david-gpu/srez)               | Image super-resolution with deep learning.                                                            |
+| [TecoGAN](https://github.com/thunil/TecoGAN)            | Super-resolution technique for video frames.                                                          |
+| [CMU open-pose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) | Real-time multi-person keypoint detection (body, face, hands, and feet).                               |
+| [spaCy](https://github.com/explosion/spaCy)             | Industrial-grade NLP library for Python.                                                              |
+| [server](https://github.com/triton-inference-server/server) | Optimized inference solution for cloud and edge deployment.                                           |
+| [background matting v2](https://github.com/PeterL1n/BackgroundMattingV2) | Real-time background removal.                                                                          |
+| [skyAR](https://github.com/jiupinjia/SkyAR)             | Sky replacement using CycleGAN-based techniques.                                                      |
+| [txtai](https://github.com/neuml/txtai)                | AI-powered semantic search applications.                                                              |
+| [ONNX](https://github.com/onnx/onnx)                   | An open ecosystem for AI model interoperability.                                                      |
+| [open-cog](https://github.com/opencog/opencog)          | AGI-focused repository integrating various AI algorithms.                                             |
+| [prophet](https://github.com/facebook/prophet)          | Facebook's tool for high-quality time series forecasting with multiple seasonalities.                  |
+| [Apache SystemDS](https://github.com/apache/systemds)   | A system for end-to-end data science with distributed machine learning.                               |
+| [AIF360](https://github.com/Trusted-AI/AIF360)          | Fairness metrics and algorithms to mitigate bias in datasets and models.                               |
+| [tpot](https://github.com/EpistasisLab/tpot)            | Automated machine learning library using genetic programming.                                         |
+| [feature-tool](https://github.com/alteryx/featuretools) | A tool for automatically creating features from temporal and relational data.                          |
+| [auto-sklearn](https://github.com/automl/auto-sklearn)  | An automated machine learning toolkit for scikit-learn.                                               |
+| [skorch](https://github.com/skorch-dev/skorch)          | A PyTorch wrapper for scikit-learn.                                                                   |
+| [streamlit](https://github.com/streamlit/streamlit)     | Framework for building interactive data apps in Python.                                               |
+| [optuna](https://github.com/optuna/optuna)             | An automatic hyperparameter optimization framework for machine learning.                              |
+| [shap](https://github.com/slundberg/shap)               | A game-theoretic approach to explaining machine learning models.                                       |
+| [pandas-profiling](https://github.com/ydataai/pandas-profiling) | Generates profiling reports for pandas DataFrames.                                                      |
 
-{
-
-[manim](https://github.com/3b1b/manim), [clearml](https://clear.ml/), [3b1b videos](https://github.com/3b1b/videos), [scientific visualization book](https://github.com/rougier/scientific-visualization-book), [bottles](https://github.com/bottlesdevs/Bottles),
-[dash](https://github.com/plotly/dash), [ggpy](https://github.com/yhat/ggpy), [Lenia](https://github.com/Chakazul/Lenia),
-[cartography](https://github.com/lyft/cartography), [Pywonderland](https://github.com/neozhaoliang/pywonderland),
-[altair](https://github.com/altair-viz/altair), [yellowbrick](https://github.com/DistrictDataLabs/yellowbrick),
-[shapely](https://github.com/shapely/shapely), [orange3](https://github.com/biolab/orange3),
-[science plots](https://github.com/garrettj403/SciencePlots), [flask_jsondash](https://github.com/christabor/flask_jsondash), [BLOOM](https://bigscience.huggingface.co/blog/bloom), [whisper](https://openai.com/blog/whisper/) [github/whisper](https://github.com/openai/whisper), [ray](https://github.com/ray-project/ray), [elevenlabs](https://elevenlabs.io/speech-synthesis), [runwayml](https://runwayml.com/)
-
-
-}
-
-> [caliban](https://github.com/google/caliban) : Google Caliban is a tool that helps
-researchers launch and track their numerical
-experiments in an isolated, reproducible computing
-environment.
-
-> [kornia](https://github.com/kornia/kornia) : Kornia is a differentiable computer vision
-library for PyTorch. It consists of a set of routines and differentiable modules to solve generic computer
-vision problems.
-
-> [intel analytics-zoo](https://github.com/intel-analytics/analytics-zoo) : Analytics Zoo is an open source
-Big Data AI platform, and includes the following
-features for scaling end-to-end AI to distributed Big
-Data:
-
-> [mljar-supervised](https://github.com/mljar/mljar-supervised) : The mljar-supervised is an
-Automated Machine Learning Python package that
-works with tabular data. It abstracts the common way
-to preprocess the data, construct the machine learning
-models, and perform hyper-parameters tuning to find
-the best model. Automatic Exploratory Data Analysis.
-
-> [deepdetect](https://github.com/jolibrain/deepdetect#main-features) : open source ai platform written in c++
-with readily available API, algorithms, models etc.
-supports state of the art algorithms - clustering with
-[t-SNE](https://github.com/DmitryUlyanov/Multicore-TSNE), similarity search with [annoy](https://github.com/spotify/annoy/), [FAISS](https://github.com/facebookresearch/faiss). . templates
-for the most useful neural architectures (e.g.
-Googlenet, Alexnet, ResNet, convnet, character-based
-convnet, mlp, logistic regression, SSD, DeepLab,
-PSPNet, U-Net, CRNN, ShuffleNet, SqueezeNet,
-MobileNet, RefineDet, VOVNet, ...)
-
-> RL FRAMEWORKS:
-+ [dopamine](https://github.com/google/dopamine) : Deep Reinforcement Learning
-Framework
-+ [deepmind lab](https://github.com/deepmind/lab) : 3d env for DRL
-  
-> [predictionio](https://github.com/apache/predictionio): Apache predictionio supports event
-collection, deployment of algorithms, evaluation,
-querying predictive results via REST APIs. It is based
-on scalable open source services like Hadoop, HBase
-(and other DBs), Elasticsearch, Spark and implements
-what is called a Lambda Architecture.
-
-> [detectron2](https://github.com/facebookresearch/detectron2): facebook's state of the art vision
-algorithm platform.
-
-> [tflearn](https://github.com/tflearn/tflearn) : high level API over tensorflow
-
-> [faceswap](https://github.com/deepfakes/faceswap#deepfakesfaceswap) : open source deep fake library & also
-image manipulation libraries - [pix2style2pix](https://github.com/eladrich/pixel2style2pixel), [avatarify](https://github.com/alievk/avatarify-python), [neural photo editor](https://github.com/ajbrock/Neural-Photo-Editor), [GANimation](https://github.com/albertpumarola/GANimation).
-
-> [waveglow](https://github.com/NVIDIA/waveglow): NVIDIA waveglow for audio & speech
-synthesis
-
-> [neural-enhance](https://github.com/alexjc/neural-enhance): neural enhance is super resolution
-for frames
-
-> [real-time voice cloning](https://github.com/CorentinJ/Real-Time-Voice-Cloning): audio deep fakes, also
-[mockingbird](https://github.com/babysor/MockingBird).
-
-> [fasttext](https://github.com/facebookresearch/fastText): facebook fasttext allows users to efficiently learn word representation and text classification.
-
-> [deOldify](https://github.com/jantic/DeOldify): colorize, restore, and give new life to old
-images and film footage also [microsoft's repo](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life).
-
-> [NeuralTalk2](https://github.com/karpathy/neuraltalk2) : is used to describe images and videos
-with sentences using Multimodal Recurrent Neural
-Network built on Python+numpy.
-
-> [face-recognition](https://github.com/ageitgey/face_recognition): real time face recognition. also [yolo-v5](https://github.com/ultralytics/yolov5).
-
-> [U GATIT](https://github.com/taki0112/UGATIT): image to anime.
-
-> [srez](https://github.com/david-gpu/srez) : Image super-resolution using deep learning
-can upscale a 16x16 input image by a 4X factor,
-resulting in a 64x64 image.
-
-> [TecoGAN](https://github.com/thunil/TecoGAN): video super resolution.
-
-> [CMU open-pose](https://github.com/CMU-Perceptual-Computing-Lab/openpose): first real-time multi-person system
-to jointly detect human body, hand, facial, and foot
-keypoints (in total 135 keypoints) on single images,
-also [pose-animator](https://github.com/yemount/pose-animator/).
-
-> [spaCy](https://github.com/explosion/spaCy) : industrial grade NLP in python.
-
-> [server](https://github.com/triton-inference-server/server): optimized cloud and edge inferencing
-solutions.
-
-> [back ground matting v2](https://github.com/PeterL1n/BackgroundMattingV2): real time background
-change
-
-> [skyAR](https://github.com/jiupinjia/SkyAR): sky replacement with [cycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
-
-> [txtai](https://github.com/neuml/txtai): AI powered semantic search applications.
-
-> [Open Neural Network Exchange](https://github.com/onnx/onnx) (ONNX) : is an open
-ecosystem that empowers AI developers to choose
-the right tools as their project evolves. They have a lot of [models](https://github.com/onnx/models) as well. also [onnxruntime](https://github.com/microsoft/onnxruntime).
-
-> [open-cog](https://github.com/opencog/opencog) : works towards AGI and integrates AI
-algorithms and systems into humanoid robotic
-systems. Most of the activity within this particular
-repo has focused on integrating natural language chat,
-common-sense reasoning, assorted learning
-algorithms, and motor control of humanoid robots.
-
-> [prophet](https://github.com/facebook/prophet): facebook's prophet is a tool for producing
-high quality forecasts for time series data that has
-multiple seasonality with linear or non-linear growth.
-
-> [Apache SystemDS](https://github.com/apache/systemds): SystemDS is an open source ML
-system for the end-to-end data science lifecycle from
-data integration, cleaning, and feature engineering,
-over efficient, local and distributed ML model training, to deployment and serving.
-
-> [AIF360](https://github.com/Trusted-AI/AIF360) : A comprehensive set of fairness metrics for
-datasets and machine learning models, explanations
-for these metrics, and algorithms to mitigate bias in
-datasets and models.
-
-> [tpot](https://github.com/EpistasisLab/tpot) : A Python Automated Machine Learning tool
-that optimizes machine learning pipelines using
-genetic programming or a data science assistant for
-pipeline generation.
-
-> [feature-tool](https://github.com/alteryx/featuretools) : Feature tools automatically create
-features from temporal and relational datasets.
-
-> [auto-sklearn](https://github.com/automl/auto-sklearn) : is an automated machine learning
-toolkit and a drop-in replacement for a scikit-learn
-estimator.
-
-> [skorch](https://github.com/skorch-dev/skorch) : A scikit-learn compatible neural network
-library that wraps PyTorch.
-
-> [streamlit](https://github.com/streamlit/streamlit) : The fastest way to build data apps in
-Python also this repo [awesome-ml](https://github.com/josephmisiti/awesome-machine-learning) covers a wide range of
-topics.
-
-> [optuna](https://github.com/optuna/optuna) : Optuna is an automatic hyperparameter
-optimization software framework, particularly
-designed for machine learning.
-
-> [shap](https://github.com/slundberg/shap) : A game theoretic approach to explain the
-output of any machine learning model.
-
-> [pandas-profiling](https://github.com/ydataai/pandas-profiling) : Create HTML profiling reports from pandas DataFrame objects.
 
 <img src="./img/ai_lib.png" width=100%>

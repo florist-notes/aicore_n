@@ -192,6 +192,24 @@ Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learnin
 
 ## STANFORD AI COURSES:
 
+| **AI Course**                                         | **Overview**                                                                                           | **Link**                                                      |
+|-------------------------------------------------------|-------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| **CS221: Artificial Intelligence: Principles and Techniques** | A foundational AI course covering search algorithms, machine learning, and decision-making techniques.  | [CS221](https://online.stanford.edu/courses/cs221-artificial-intelligence-principles-and-techniques) |
+| **CS229: Machine Learning**                           | One of the most popular courses at Stanford, providing a deep dive into machine learning algorithms and methods. | [CS229](https://online.stanford.edu/courses/cs229-machine-learning) |
+| **CS231N: Convolutional Neural Networks for Visual Recognition** | Focuses on deep learning and computer vision, particularly using CNNs for image recognition.             | [CS231N](http://cs231n.stanford.edu/)                         |
+| **CS234: Reinforcement Learning**                     | An advanced course on reinforcement learning, covering Markov decision processes, and deep Q-learning.   | [CS234](https://online.stanford.edu/courses/cs234-reinforcement-learning) |
+| **CS230: Deep Learning**                              | Covers the fundamentals and advanced topics of deep learning, including neural networks and frameworks.   | [CS230](https://online.stanford.edu/courses/cs230-deep-learning) |
+| **CS224N: Natural Language Processing with Deep Learning** | A course on natural language processing using deep learning, including methods like transformers and RNNs. | [CS224N](https://web.stanford.edu/class/cs224n/)              |
+| **CS229T: Topics in Machine Learning and Artificial Intelligence** | A course covering advanced topics in AI and ML, including Bayesian networks and decision theory.         | [CS229T](https://online.stanford.edu/courses/cs229t-topics-machine-learning-and-artificial-intelligence) |
+| **CS231A: Computer Vision: From 3D Reconstruction to Recognition** | This course focuses on computer vision and image processing, covering both theoretical and practical aspects. | [CS231A](https://online.stanford.edu/courses/cs231a-computer-vision-3d-reconstruction-recognition) |
+| **CS224U: Natural Language Understanding**            | A course focused on understanding and generating human language with AI techniques, including semantic analysis. | [CS224U](https://online.stanford.edu/courses/cs224u-natural-language-understanding) |
+| **CS194: Computer Vision for Artists**                | A creative approach to computer vision, focusing on algorithms for digital image processing and artistic applications. | [CS194](https://online.stanford.edu/courses/cs194-computer-vision-artists) |
+| **CS109: Introduction to Probability for Computer Scientists** | Covers foundational concepts in probability that are essential for AI and machine learning.               | [CS109](https://online.stanford.edu/courses/cs109-introduction-probability-computer-scientists) |
+| **CS275: Artificial Intelligence: Foundations and Practices** | An in-depth exploration of AI foundations, algorithms, and practical implementation strategies.            | [CS275](https://online.stanford.edu/courses/cs275-artificial-intelligence-foundations-and-practices) |
+| **CS194-26: Deep Learning for Computer Vision**       | Focuses on deep learning techniques used in computer vision, including image classification and object detection. | [CS194-26](https://online.stanford.edu/courses/cs194-26-deep-learning-computer-vision) |
+| **AI for Medicine Specialization**                    | A series of courses focused on applying AI and machine learning to medicine, including predictive modeling for healthcare. | [AI for Medicine](https://www.coursera.org/specializations/ai-for-medicine) |
+
+
 
 <table style="width:100%" >
 <tr>
@@ -466,6 +484,30 @@ More : [Quantum Machine Learning MOOC - Quantum ML](https://www.youtube.com/watc
 
 ## Premier AI conferences:
 
+| **AI Conference / Competition**                   | **Overview**                                                                                               | **Link**                                                       |
+|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **NeurIPS (Conference on Neural Information Processing Systems)** | One of the largest and most prestigious AI and machine learning conferences, covering deep learning, reinforcement learning, and more. | [NeurIPS](https://nips.cc/)                                    |
+| **ICML (International Conference on Machine Learning)** | A leading conference in machine learning, presenting cutting-edge research in AI and ML algorithms.        | [ICML](https://icml.cc/)                                       |
+| **CVPR (Conference on Computer Vision and Pattern Recognition)** | A top-tier conference focused on computer vision, image recognition, and machine learning applications.     | [CVPR](https://cvpr2024.thecvf.com/)                           |
+| **AAAI (Association for the Advancement of Artificial Intelligence)** | A prominent conference covering a wide range of AI topics including machine learning, robotics, and AI ethics. | [AAAI](https://aaai.org/)                                      |
+| **ICLR (International Conference on Learning Representations)** | A leading conference focusing on deep learning, neural networks, and representation learning.              | [ICLR](https://iclr.cc/)                                       |
+| **KDD (Knowledge Discovery and Data Mining)**   | A major conference on data science, data mining, and AI applications, focusing on data-driven AI techniques. | [KDD](https://kdd.org/)                                        |
+| **ECCV (European Conference on Computer Vision)** | One of the top conferences for computer vision research, presenting advances in machine vision and AI.      | [ECCV](https://eccv2024.ecva.net/)                            |
+| **ACL (Association for Computational Linguistics)** | The primary conference for research in natural language processing and computational linguistics.          | [ACL](https://aclweb.org/aclwiki/)                             |
+| **AISTATS (Artificial Intelligence and Statistics)** | A conference at the intersection of AI, machine learning, and statistics, focusing on theoretical advances.  | [AISTATS](https://www.aistats.org/)                             |
+| **ICRA (International Conference on Robotics and Automation)** | A top robotics conference, focusing on AI in robotics and autonomous systems.                              | [ICRA](https://www.icra2024.org/)                              |
+| **IJCAI (International Joint Conference on Artificial Intelligence)** | A prominent international conference on AI research, covering all aspects of artificial intelligence.        | [IJCAI](https://ijcai.org/)                                    |
+| **Robotics: Science and Systems (RSS)**         | A leading conference focused on AI, robotics, and autonomous systems research.                              | [RSS](https://www.roboticsproceedings.org/)                     |
+| **MLPerf (Machine Learning Performance Benchmarking)** | A global AI benchmarking competition focusing on performance comparisons for various machine learning models. | [MLPerf](https://mlperf.org/)                                  |
+| **The Turing Test Competition**                  | A competition designed to assess the ability of AI systems to exhibit human-like intelligence.             | [Turing Test Competition](https://www.cogsci.ucsd.edu/)        |
+| **AI XPrize**                                    | A global competition challenging teams to develop AI-based solutions that positively impact humanity.       | [AI XPrize](https://www.xprize.org/prizes/ai)                  |
+| **AI & Robotics Challenge by NASA**              | A competition by NASA challenging teams to create AI-driven robots capable of solving space exploration tasks. | [NASA AI & Robotics Challenge](https://www.nasa.gov/)         |
+| **Google AI Challenge**                          | A competition organized by Google focusing on solving real-world problems with AI and machine learning.     | [Google AI Challenge](https://ai.google/)                      |
+| **ImageNet Large Scale Visual Recognition Challenge** | A leading competition for AI and deep learning models focused on large-scale visual recognition tasks.       | [ImageNet Challenge](http://www.image-net.org/challenges)       |
+| **Hackathons (AI Focused)**                      | Numerous hackathons held globally, where AI enthusiasts solve real-world challenges in a short timeframe.   | [Devpost AI Hackathons](https://devpost.com/)                  |
+| **OpenAI Codex Challenge**                       | A competition hosted by OpenAI focusing on leveraging Codex models for various coding tasks and challenges.  | [OpenAI Codex Challenge](https://openai.com/)                  |
+
+
 <table style="width:100%" >
 <tr>
 <th>
@@ -598,6 +640,31 @@ summer hack](https://pytorchmpk.devpost.com/), [esa socis](https://www.esa.int/E
 
 # AI Summer Schools & Training: 
 
+| **AI Summer School / Training Program**               | **Overview**                                                                                               | **Link**                                                      |
+|------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| **Deep Learning Indaba**                            | A leading African AI summer school focused on deep learning and AI education in the African context.        | [Deep Learning Indaba](https://deeplearningindaba.com/)       |
+| **Stanford AI Summer School**                        | Stanford's summer program offering an introduction to AI, machine learning, and deep learning.              | [Stanford AI Summer School](https://ai.stanford.edu/education/summer-school) |
+| **Oxford Deep Learning Summer School**               | A world-class summer school that offers practical deep learning skills and research in AI.                   | [Oxford Deep Learning Summer School](https://www.cs.ox.ac.uk/ai-school/) |
+| **MIT AI Summer School**                             | MIT’s summer school offering training in machine learning, reinforcement learning, and neural networks.      | [MIT AI Summer School](https://www.csail.mit.edu/)            |
+| **European Summer School in Machine Learning (ESSML)**| A premier European program offering advanced training in machine learning and related AI fields.            | [ESSML](https://essml.org/)                                   |
+| **AI4ALL Summer Programs**                           | A nonprofit organization offering AI-focused summer programs aimed at increasing diversity in AI fields.     | [AI4ALL](https://ai-4-all.org/)                               |
+| **NeurIPS Summer School**                            | The summer school organized in conjunction with the NeurIPS conference, focusing on machine learning, AI, and data science. | [NeurIPS Summer School](https://nips.cc/)                     |
+| **Data Science Global Summer School (DSGSS)**         | A comprehensive summer program by the University of California, San Diego, covering AI and machine learning topics. | [DSGSS](https://datascience.ucsd.edu/)                        |
+| **UC Berkeley AI Summer School**                     | A summer school at UC Berkeley offering advanced topics in AI research, with a focus on applied machine learning. | [Berkeley AI Summer School](https://bair.berkeley.edu/summer-school/) |
+| **Carnegie Mellon AI Summer School**                 | CMU’s summer school focuses on foundational AI topics, including robotics, machine learning, and vision.     | [CMU AI Summer School](https://www.cs.cmu.edu/research/ai/)  |
+| **Google AI Residency Program**                      | A highly selective AI training program that offers mentorship and hands-on work on AI research.              | [Google AI Residency](https://ai.google/education/)           |
+| **Microsoft AI Residency Program**                   | An intensive AI residency program with mentorship from experts, focusing on AI research and innovation.      | [Microsoft AI Residency](https://www.microsoft.com/en-us/research/academic-program/ai-residency/) |
+| **Facebook AI Research Residency Program**           | Facebook's one-year research residency program, where participants work on challenging AI projects.         | [Facebook AI Research Residency](https://ai.facebook.com/)   |
+| **Applied AI Course by NYU**                         | A free online course by New York University offering deep learning and AI applied to real-world problems.    | [NYU Applied AI](https://www.nyu.edu/academics/)              |
+| **AI Summer Program by University of Toronto**       | A summer program at the University of Toronto that provides hands-on training in AI and machine learning.     | [UofT AI Summer Program](https://www.cs.toronto.edu/ai/)      |
+| **London AI Summer School**                          | A UK-based AI summer school offering courses in machine learning, computer vision, and deep learning.       | [London AI Summer School](https://www.londonai.org/)          |
+| **AI4Science Summer School**                         | Focuses on the intersection of AI and scientific research, including AI applications in biology and chemistry. | [AI4Science Summer School](https://ai4science.org/)           |
+| **Turing Institute Summer School**                   | Summer school organized by the Turing Institute, offering workshops and courses in AI and machine learning.   | [Turing Institute Summer School](https://www.turing.ac.uk/)   |
+| **Artificial Intelligence Summer Program by UCL**    | The University College London offers a summer program focused on AI research and development.                | [UCL AI Summer Program](https://www.ucl.ac.uk/)               |
+| **The AI Institute Summer School**                   | A summer school organized by the AI Institute, providing intensive courses on cutting-edge AI technologies.  | [AI Institute Summer School](https://aiinstitute.org/)        |
+| **AI for Good Summer School**                        | A summer program focused on using AI for social good, such as healthcare, climate change, and education.      | [AI for Good Summer School](https://aiforgood.org/)           |
+
+
 Summer Schools are focused
 training camps for different [AI methods](https://paperswithcode.com/methods) and this [list](https://github.com/sshkhr/awesome-mlss)
 has very popular and good AI summer schools. Some
@@ -648,6 +715,37 @@ specialization](https://www.coursera.org/specializations/ai-product-management-d
 Fellowships: [Government of AI Fellowship](https://www.governance.ai/post/winter-fellowship-2025), [Foresight Fellowship](https://foresight.org/foresight-fellowships/), [Pi School](https://picampus-school.com/), [OpenLab](https://openlab.cern/).
 
 ## AI Research Labs & Groups - International:
+
+| **AI Research Lab / Group**                 | **Overview**                                                                                          | **Link**                                                       |
+|--------------------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **OpenAI**                                 | An AI research lab dedicated to ensuring that artificial general intelligence (AGI) benefits humanity. | [OpenAI](https://openai.com/)                                  |
+| **DeepMind**                               | A subsidiary of Alphabet focused on solving intelligence and advancing science through AI research.    | [DeepMind](https://deepmind.com/)                               |
+| **Google Brain**                           | A team within Google focusing on deep learning and AI research, often developing breakthrough technologies. | [Google Brain](https://research.google.com/teams/brain/)       |
+| **Facebook AI Research (FAIR)**            | Facebook's AI research group working on fundamental AI research and advancing machine learning technologies. | [FAIR](https://ai.facebook.com/)                               |
+| **Microsoft Research AI**                  | A division within Microsoft Research dedicated to advancing AI through interdisciplinary research.     | [Microsoft Research AI](https://www.microsoft.com/en-us/research/group/artificial-intelligence/) |
+| **Stanford AI Lab (SAIL)**                 | A leading AI research group within Stanford University, working on various AI subfields and applications. | [Stanford AI Lab](http://ai.stanford.edu/)                    |
+| **MIT CSAIL**                              | The Computer Science and Artificial Intelligence Laboratory at MIT, one of the leading centers for AI research. | [MIT CSAIL](https://www.csail.mit.edu/)                        |
+| **Carnegie Mellon University (CMU) AI**    | A pioneering AI research group within CMU, known for work in robotics, machine learning, and AI theory.  | [CMU AI](https://www.cs.cmu.edu/ai)                            |
+| **Berkeley AI Research (BAIR)**            | A research group at UC Berkeley that explores a broad range of AI topics, including reinforcement learning, robotics, and vision. | [BAIR](https://bair.berkeley.edu/)                             |
+| **University of Toronto AI**               | The AI research group at the University of Toronto, famous for work in deep learning and neural networks. | [UofT AI](https://www.cs.toronto.edu/research/ai/)             |
+| **University of Oxford AI**                | Oxford's AI research focuses on machine learning, robotics, and AI ethics.                            | [Oxford AI](https://www.cs.ox.ac.uk/research/ai/)              |
+| **Huawei Cloud AI**                        | AI research and applications within Huawei's cloud computing platform, advancing NLP, computer vision, and more. | [Huawei Cloud AI](https://support.huaweicloud.com/intl/en-us/) |
+| **Amazon AI**                              | Amazon's research division focused on machine learning, deep learning, and AI innovations.             | [Amazon AI](https://aws.amazon.com/machine-learning/)          |
+| **Tencent AI Lab**                         | Tencent's AI research group exploring AI technologies for social media, gaming, and finance.           | [Tencent AI Lab](https://ai.tencent.com/ailab/en/)             |
+| **NVIDIA AI Research**                     | NVIDIA's AI research group, focused on accelerating AI and deep learning through hardware and software advancements. | [NVIDIA AI Research](https://research.nvidia.com/)            |
+| **Baidu AI Research**                      | Baidu's research division advancing AI across search, NLP, and autonomous driving.                    | [Baidu AI](https://research.baidu.com/)                        |
+| **AI2 (Allen Institute for AI)**           | A non-profit AI research organization focused on AI research in NLP, computer vision, and machine reasoning. | [AI2](https://allenai.org/)                                    |
+| **The Institute for AI and Automation (IAIA)** | A research group focused on AI applications in automation, robotics, and autonomous systems.           | [IAIA](https://www.aiia.org/)                                   |
+| **ETH Zurich AI**                          | AI research within ETH Zurich, one of Europe's leading technical universities, focusing on machine learning, robotics, and optimization. | [ETH Zurich AI](https://www.ethz.ch/en/research.html)          |
+| **AI Lab at University of Cambridge**      | A leading AI research group within the University of Cambridge focusing on machine learning, vision, and ethics. | [Cambridge AI Lab](https://www.cst.cam.ac.uk/research/ai)      |
+| **Research at IBM Watson**                 | IBM’s AI research group, particularly known for its work in natural language processing and healthcare. | [IBM Watson Research](https://www.ibm.com/watson)              |
+| **AI Research at Adobe**                   | Adobe’s AI research group focused on creative AI tools, vision, and natural language processing.       | [Adobe AI Research](https://www.adobe.com/technology/research.html) |
+| **Apple AI Research**                      | Apple’s AI division working on AI-driven innovation for its ecosystem, including Siri, vision, and health applications. | [Apple AI Research](https://www.apple.com/research/)           |
+| **Facebook Reality Labs AI**               | Facebook’s research division that combines AI with AR and VR technologies.                            | [Facebook Reality Labs](https://www.meta.com/research/)        |
+| **Turing Institute**                       | The UK’s National Institute for Data Science and AI, focused on research in AI ethics, machine learning, and statistics. | [Turing Institute](https://www.turing.ac.uk/)                  |
+| **AI Lab at UC San Diego**                 | The AI lab at UCSD working on AI in the domains of machine learning, robotics, and computer vision.    | [UCSD AI Lab](https://cse.ucsd.edu/research/ai/)               |
+| **Max Planck Institute for Intelligent Systems** | A leading institute for AI research in Europe, focusing on machine learning, robotics, and cognitive systems. | [Max Planck Institute for Intelligent Systems](https://www.is.mpg.de/) |
+
 
 These are premier AI research labs who give out
 cutting edge AI possibilities:
@@ -711,6 +809,30 @@ AI Research Labs & Groups in Hamburg:
 
 ## Datasets : 
 
+| **Dataset Source**                     | **Overview**                                                                                          | **Link**                                                       |
+|----------------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Kaggle Datasets**                    | A platform with thousands of datasets for various ML tasks such as image processing, text, etc.      | [Kaggle Datasets](https://www.kaggle.com/datasets)             |
+| **UCI Machine Learning Repository**    | One of the oldest sources for datasets used in classification, regression, clustering, and more.     | [UCI Repository](https://archive.ics.uci.edu/ml/index.php)     |
+| **Google Dataset Search**              | A search engine to find datasets across the web from various domains.                               | [Google Dataset Search](https://datasetsearch.research.google.com/) |
+| **AWS Public Datasets**                | A collection of public datasets for fields like genomics, astronomy, and machine learning.          | [AWS Public Datasets](https://registry.opendata.aws/)         |
+| **OpenML**                             | A platform to share datasets, experiments, and ML models, enabling collaboration.                   | [OpenML](https://www.openml.org/)                              |
+| **Microsoft Research Open Datasets**   | Datasets across a variety of fields such as computer vision, NLP, and more.                         | [Microsoft Research Datasets](https://www.microsoft.com/en-us/research/project/open-datasets/) |
+| **Data.gov**                           | US government datasets across domains like health, education, economics, and climate.              | [Data.gov](https://www.data.gov/)                              |
+| **TensorFlow Datasets**                | A collection of ready-to-use datasets for TensorFlow, covering CV, NLP, and other ML tasks.         | [TensorFlow Datasets](https://www.tensorflow.org/datasets)     |
+| **Fast.ai Datasets**                   | Curated datasets for deep learning and computer vision tasks.                                        | [Fast.ai Datasets](https://www.fast.ai/)                       |
+| **Census Data (U.S.)**                 | Datasets with demographic, economic, and social information from the US Census Bureau.              | [U.S. Census Data](https://www.census.gov/data.html)           |
+| **ImageNet**                           | A large-scale dataset for image classification and object detection tasks.                           | [ImageNet](http://www.image-net.org/)                           |
+| **COCO Dataset**                       | Large-scale dataset for object detection, segmentation, and image captioning.                        | [COCO Dataset](https://cocodataset.org/)                       |
+| **TMDb (The Movie Database)**          | Provides datasets related to movies and TV series metadata, reviews, and user ratings.              | [TMDb API](https://www.themoviedb.org/)                        |
+| **Stanford Large Scale Video Dataset** | Dataset for computer vision tasks like action recognition, video summarization, etc.                | [Stanford Video Dataset](http://vision.stanford.edu/)          |
+| **Yelp Dataset**                       | Contains business reviews, ratings, and user information, often used for sentiment analysis.        | [Yelp Dataset](https://www.yelp.com/dataset)                   |
+| **Papers with Code**                   | Platform to find datasets alongside machine learning papers and implementations.                    | [Papers with Code](https://paperswithcode.com/)                |
+| **The European Data Portal**           | Open datasets from European Union governments, covering a wide range of domains.                    | [European Data Portal](https://data.europa.eu/eu-dataportal)   |
+| **Zenodo**                             | A general-purpose open-access repository for scientific datasets.                                   | [Zenodo](https://zenodo.org/)                                  |
+| **KDD Cup Datasets**                   | Datasets used in KDD Cup competitions for tasks such as classification and clustering.               | [KDD Cup Datasets](https://www.kdd.org/kdd-cup)                |
+| **Government Open Data Platforms (Global)** | Open data from various countries including UK, EU, and Canada.                                      | [UK Data Service](https://ukdataservice.ac.uk/), [Open Data Canada](https://open.canada.ca/data/en/dataset), [European Data Portal](https://data.europa.eu/eu-dataportal) |
+
+
 PUBLIC datasets:
 - [Google dataset search](https://datasetsearch.research.google.com/) | [kaggle dataset](https://www.kaggle.com/datasets) | [paperswithcode dataset](https://paperswithcode.com/datasets) | [openml-dataset](https://www.openml.org/search?type=data&sort=runs&status=active) | [nasa earth dataset](https://www.earthdata.nasa.gov/) (largest collection of geo-related
 datasets about the earth, climate and water bodies.) | [AWS opendata](https://registry.opendata.aws/) |  [Azure opendata](https://docs.microsoft.com/en-us/azure/open-datasets/dataset-catalog) | [data.world](https://data.world/) | [huggingface](https://huggingface.co/datasets) | [UCI ML dataset](https://archive.ics.uci.edu/ml/datasets.php) | [datahub.io](https://datahub.io/search)
@@ -736,6 +858,41 @@ PRIVATE datasets |  [planet](https://www.planet.com/), [arcGIS](https://www.esri
 
 
 # ML Services:
+
+| **Service**                            | **Overview**                                                                                          | **Link**                                                       |
+|----------------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Papers with Code**                   | A platform that connects machine learning papers, datasets, and code implementations for ML tasks.    | [Papers with Code](https://paperswithcode.com/)                |
+| **Weights & Biases**                   | A platform for tracking machine learning experiments, visualizing metrics, and collaborating on models.| [Weights & Biases](https://www.wandb.com/)                     |
+| **AllThingsAI**                        | An AI resource hub offering research, articles, datasets, and tools for the AI community.            | [AllThingsAI](https://www.allthings.ai/)                       |
+| **Google AI Hub**                      | A platform for sharing machine learning code, models, and datasets built with TensorFlow and TFX.      | [Google AI Hub](https://aihub.cloud.google.com/)               |
+| **MLflow**                             | Open-source platform for managing the ML lifecycle, including experimentation, reproducibility, and deployment. | [MLflow](https://mlflow.org/)                                  |
+| **Comet**                              | A tool for tracking experiments, visualizing metrics, and collaborating with teams in machine learning projects. | [Comet](https://www.comet.ml/)                                 |
+| **Neptune.ai**                         | A platform for experiment tracking, model monitoring, and collaboration on AI projects.              | [Neptune.ai](https://neptune.ai/)                               |
+| **Hugging Face**                       | A platform and library for Natural Language Processing (NLP) models, datasets, and pre-trained models. | [Hugging Face](https://huggingface.co/)                         |
+| **TensorBoard**                        | TensorFlow's visualization tool for model training, metrics, and graphs.                             | [TensorBoard](https://www.tensorflow.org/tensorboard)           |
+| **Amazon SageMaker**                   | A managed service for building, training, and deploying machine learning models at scale.             | [Amazon SageMaker](https://aws.amazon.com/sagemaker/)           |
+| **Azure Machine Learning Studio**      | A cloud-based machine learning development environment for building, training, and deploying models. | [Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning/) |
+| **Google Cloud AI Platform**           | A managed service for training, deploying, and managing ML models on Google Cloud.                   | [Google Cloud AI](https://cloud.google.com/products/ai)        |
+| **IBM Watson Studio**                  | A platform for building and deploying AI and machine learning models with integrated tools.          | [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio)   |
+| **Run.ai**                             | A platform that optimizes and manages AI infrastructure, improving efficiency and collaboration in ML teams. | [Run.ai](https://www.run.ai/)                                   |
+| **DataRobot**                          | An enterprise AI platform for automating machine learning, including model training and deployment.   | [DataRobot](https://www.datarobot.com/)                         |
+| **Fritz AI**                           | A platform focused on building, training, and deploying AI models for mobile and edge devices.        | [Fritz AI](https://www.fritz.ai/)                               |
+| **Optuna**                             | An open-source hyperparameter optimization framework designed to automate the process of model tuning. | [Optuna](https://optuna.org/)                                   |
+| **Peltarion**                          | A platform for building and deploying AI models, with a focus on production and scaling AI applications. | [Peltarion](https://peltarion.com/)                             |
+| **ClearML**                            | A platform for experiment management, dataset versioning, and model deployment.                      | [ClearML](https://clear.ml/)                                    |
+| **KubeFlow**                           | A Kubernetes-native platform for managing end-to-end ML workflows, from data preparation to deployment. | [KubeFlow](https://www.kubeflow.org/)                           |
+| **Kaggle Kernels**                     | A platform that allows data scientists to write, run, and share Jupyter notebooks in an interactive environment. | [Kaggle Kernels](https://www.kaggle.com/kernels)               |
+| **Apache Mahout**                      | A machine learning library built on top of Hadoop, designed for scalable machine learning algorithms. | [Apache Mahout](https://mahout.apache.org/)                     |
+| **BigML**                              | A platform offering easy-to-use machine learning services for businesses to integrate ML models.      | [BigML](https://bigml.com/)                                     |
+| **RapidMiner**                         | A data science platform that provides tools for machine learning, data mining, and predictive analytics. | [RapidMiner](https://rapidminer.com/)                           |
+| **Dataiku**                            | A collaborative data science platform for building, deploying, and managing AI and ML applications.   | [Dataiku](https://www.dataiku.com/)                             |
+| **ML Kit**                             | A set of machine learning APIs from Google, designed for on-device processing for mobile applications. | [ML Kit](https://firebase.google.com/products/ml)               |
+| **Alteryx**                            | A platform for data blending, advanced analytics, and machine learning, helping teams work with data at scale. | [Alteryx](https://www.alteryx.com/)                             |
+| **Tibco Spotfire**                     | A data analytics and machine learning platform, focused on providing real-time data insights and visualizations. | [Tibco Spotfire](https://www.tibco.com/products/tibco-spotfire) |
+| **Datarobot AI Cloud**                 | A comprehensive enterprise AI platform that accelerates data science projects with automation.        | [Datarobot AI Cloud](https://www.datarobot.com/)                |
+| **Zeroth**                             | A platform for building and scaling AI-powered applications with a focus on data-centric AI workflows. | [Zeroth](https://www.zeroth.ai/)                                |
+| **MLflow**                             | Open-source platform to manage the ML lifecycle, including experimentation, reproducibility, and deployment. | [MLflow](https://mlflow.org/)                                   |
+
 
 ### [allthingsai](https://allthingsai.com/):
 
