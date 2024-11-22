@@ -203,11 +203,8 @@ Extra: [Sentdex Neural Network from Scratch](https://nnfs.io/), [Machine Learnin
 | **CS229T: Topics in Machine Learning and Artificial Intelligence** | A course covering advanced topics in AI and ML, including Bayesian networks and decision theory.         | [CS229T](https://online.stanford.edu/courses/cs229t-topics-machine-learning-and-artificial-intelligence) |
 | **CS231A: Computer Vision: From 3D Reconstruction to Recognition** | This course focuses on computer vision and image processing, covering both theoretical and practical aspects. | [CS231A](https://online.stanford.edu/courses/cs231a-computer-vision-3d-reconstruction-recognition) |
 | **CS224U: Natural Language Understanding**            | A course focused on understanding and generating human language with AI techniques, including semantic analysis. | [CS224U](https://online.stanford.edu/courses/cs224u-natural-language-understanding) |
-| **CS194: Computer Vision for Artists**                | A creative approach to computer vision, focusing on algorithms for digital image processing and artistic applications. | [CS194](https://online.stanford.edu/courses/cs194-computer-vision-artists) |
 | **CS109: Introduction to Probability for Computer Scientists** | Covers foundational concepts in probability that are essential for AI and machine learning.               | [CS109](https://online.stanford.edu/courses/cs109-introduction-probability-computer-scientists) |
-| **CS275: Artificial Intelligence: Foundations and Practices** | An in-depth exploration of AI foundations, algorithms, and practical implementation strategies.            | [CS275](https://online.stanford.edu/courses/cs275-artificial-intelligence-foundations-and-practices) |
 | **CS194-26: Deep Learning for Computer Vision**       | Focuses on deep learning techniques used in computer vision, including image classification and object detection. | [CS194-26](https://online.stanford.edu/courses/cs194-26-deep-learning-computer-vision) |
-| **AI for Medicine Specialization**                    | A series of courses focused on applying AI and machine learning to medicine, including predictive modeling for healthcare. | [AI for Medicine](https://www.coursera.org/specializations/ai-for-medicine) |
 
 
 
@@ -499,7 +496,6 @@ More : [Quantum Machine Learning MOOC - Quantum ML](https://www.youtube.com/watc
 | **IJCAI (International Joint Conference on Artificial Intelligence)** | A prominent international conference on AI research, covering all aspects of artificial intelligence.        | [IJCAI](https://ijcai.org/)                                    |
 | **Robotics: Science and Systems (RSS)**         | A leading conference focused on AI, robotics, and autonomous systems research.                              | [RSS](https://www.roboticsproceedings.org/)                     |
 | **MLPerf (Machine Learning Performance Benchmarking)** | A global AI benchmarking competition focusing on performance comparisons for various machine learning models. | [MLPerf](https://mlperf.org/)                                  |
-| **The Turing Test Competition**                  | A competition designed to assess the ability of AI systems to exhibit human-like intelligence.             | [Turing Test Competition](https://www.cogsci.ucsd.edu/)        |
 | **AI XPrize**                                    | A global competition challenging teams to develop AI-based solutions that positively impact humanity.       | [AI XPrize](https://www.xprize.org/prizes/ai)                  |
 | **AI & Robotics Challenge by NASA**              | A competition by NASA challenging teams to create AI-driven robots capable of solving space exploration tasks. | [NASA AI & Robotics Challenge](https://www.nasa.gov/)         |
 | **Google AI Challenge**                          | A competition organized by Google focusing on solving real-world problems with AI and machine learning.     | [Google AI Challenge](https://ai.google/)                      |
@@ -639,31 +635,6 @@ summer hack](https://pytorchmpk.devpost.com/), [esa socis](https://www.esa.int/E
 
 
 # AI Summer Schools & Training: 
-
-| **AI Summer School / Training Program**               | **Overview**                                                                                               | **Link**                                                      |
-|------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
-| **Deep Learning Indaba**                            | A leading African AI summer school focused on deep learning and AI education in the African context.        | [Deep Learning Indaba](https://deeplearningindaba.com/)       |
-| **Stanford AI Summer School**                        | Stanford's summer program offering an introduction to AI, machine learning, and deep learning.              | [Stanford AI Summer School](https://ai.stanford.edu/education/summer-school) |
-| **Oxford Deep Learning Summer School**               | A world-class summer school that offers practical deep learning skills and research in AI.                   | [Oxford Deep Learning Summer School](https://www.cs.ox.ac.uk/ai-school/) |
-| **MIT AI Summer School**                             | MIT’s summer school offering training in machine learning, reinforcement learning, and neural networks.      | [MIT AI Summer School](https://www.csail.mit.edu/)            |
-| **European Summer School in Machine Learning (ESSML)**| A premier European program offering advanced training in machine learning and related AI fields.            | [ESSML](https://essml.org/)                                   |
-| **AI4ALL Summer Programs**                           | A nonprofit organization offering AI-focused summer programs aimed at increasing diversity in AI fields.     | [AI4ALL](https://ai-4-all.org/)                               |
-| **NeurIPS Summer School**                            | The summer school organized in conjunction with the NeurIPS conference, focusing on machine learning, AI, and data science. | [NeurIPS Summer School](https://nips.cc/)                     |
-| **Data Science Global Summer School (DSGSS)**         | A comprehensive summer program by the University of California, San Diego, covering AI and machine learning topics. | [DSGSS](https://datascience.ucsd.edu/)                        |
-| **UC Berkeley AI Summer School**                     | A summer school at UC Berkeley offering advanced topics in AI research, with a focus on applied machine learning. | [Berkeley AI Summer School](https://bair.berkeley.edu/summer-school/) |
-| **Carnegie Mellon AI Summer School**                 | CMU’s summer school focuses on foundational AI topics, including robotics, machine learning, and vision.     | [CMU AI Summer School](https://www.cs.cmu.edu/research/ai/)  |
-| **Google AI Residency Program**                      | A highly selective AI training program that offers mentorship and hands-on work on AI research.              | [Google AI Residency](https://ai.google/education/)           |
-| **Microsoft AI Residency Program**                   | An intensive AI residency program with mentorship from experts, focusing on AI research and innovation.      | [Microsoft AI Residency](https://www.microsoft.com/en-us/research/academic-program/ai-residency/) |
-| **Facebook AI Research Residency Program**           | Facebook's one-year research residency program, where participants work on challenging AI projects.         | [Facebook AI Research Residency](https://ai.facebook.com/)   |
-| **Applied AI Course by NYU**                         | A free online course by New York University offering deep learning and AI applied to real-world problems.    | [NYU Applied AI](https://www.nyu.edu/academics/)              |
-| **AI Summer Program by University of Toronto**       | A summer program at the University of Toronto that provides hands-on training in AI and machine learning.     | [UofT AI Summer Program](https://www.cs.toronto.edu/ai/)      |
-| **London AI Summer School**                          | A UK-based AI summer school offering courses in machine learning, computer vision, and deep learning.       | [London AI Summer School](https://www.londonai.org/)          |
-| **AI4Science Summer School**                         | Focuses on the intersection of AI and scientific research, including AI applications in biology and chemistry. | [AI4Science Summer School](https://ai4science.org/)           |
-| **Turing Institute Summer School**                   | Summer school organized by the Turing Institute, offering workshops and courses in AI and machine learning.   | [Turing Institute Summer School](https://www.turing.ac.uk/)   |
-| **Artificial Intelligence Summer Program by UCL**    | The University College London offers a summer program focused on AI research and development.                | [UCL AI Summer Program](https://www.ucl.ac.uk/)               |
-| **The AI Institute Summer School**                   | A summer school organized by the AI Institute, providing intensive courses on cutting-edge AI technologies.  | [AI Institute Summer School](https://aiinstitute.org/)        |
-| **AI for Good Summer School**                        | A summer program focused on using AI for social good, such as healthcare, climate change, and education.      | [AI for Good Summer School](https://aiforgood.org/)           |
-
 
 Summer Schools are focused
 training camps for different [AI methods](https://paperswithcode.com/methods) and this [list](https://github.com/sshkhr/awesome-mlss)
