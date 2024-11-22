@@ -71,21 +71,27 @@ These sensors use visible and near-visible wavelengths to capture images of the 
 Capture data across a few spectral bands, typically 3 to 10.
     + Examples:
 
-        - Landsat TM (Thematic Mapper) and OLI (Operational Land Imager)
-        - Sentinel-2 MSI (Multispectral Instrument)
+        - [Landsat TM](https://landsat.gsfc.nasa.gov/thematic-mapper/) (Thematic Mapper) and [OLI](https://landsat.gsfc.nasa.gov/satellites/landsat-8/spacecraft-instruments/operational-land-imager/) (Operational Land Imager)
+        - [Sentinel-2 MSI](https://www.earthdata.nasa.gov/data/instruments/sentinel-2-msi) (Multispectral Instrument)
 + Hyperspectral Sensors:
 Capture data across hundreds of continuous spectral bands, enabling detailed material analysis.
     + Examples:
 
-        - Hyperion (onboard NASA's EO-1 satellite)
-        - AVIRIS (Airborne Visible/Infrared Imaging Spectrometer)
+        - [Hyperion](https://cmr.earthdata.nasa.gov/search/concepts/C1220567951-USGS_LTA.html) (onboard NASA's EO-1 satellite)
+        - [AVIRIS](https://aviris.jpl.nasa.gov/) (Airborne Visible/Infrared Imaging Spectrometer)
     + Applications:
 
         - Vegetation health monitoring (e.g., NDVI).
         - Water quality analysis.
         - Mineral exploration.
 <br /></td>
-<td>- <br /></td>
+<td>
+
+<img src="./img/sent2.png" width=100%>
+
+<img src="./img/aviris.png" width=100%>
+
+ <br /></td>
 </tr>
 
 <tr>
@@ -96,8 +102,8 @@ These sensors detect the Earth's emitted thermal radiation, which is related to 
 
 + Examples:
 
-    + MODIS (Moderate Resolution Imaging Spectroradiometer)
-    + ASTER (Advanced Spaceborne Thermal Emission and Reflection Radiometer)
+    + [MODIS](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/modis/) (Moderate Resolution Imaging Spectroradiometer)
+    + [ASTER](https://terra.nasa.gov/about/terra-instruments/aster) (Advanced Spaceborne Thermal Emission and Reflection Radiometer)
 
 + Applications:
 
@@ -105,7 +111,10 @@ These sensors detect the Earth's emitted thermal radiation, which is related to 
     + Volcano and forest fire monitoring.
     + Soil moisture estimation.
  <br /></td>
-<td>$ bc <br /></td>
+<td>
+
+<img src="./img/modis.png" width=100%>
+ <br /></td>
 </tr>
 
 <tr>
@@ -118,22 +127,25 @@ Operate in the microwave region (1mm to 1m wavelength) and are less affected by 
 Emit microwave signals and measure the return after interacting with the surface.
     + Examples:
 
-        + Synthetic Aperture Radar (SAR) on Sentinel-1
-        + RADARSAT
+        + Synthetic Aperture Radar (SAR) on [Sentinel-1](https://sentiwiki.copernicus.eu/web/s1-applications)
+        + [RADARSAT](https://earth.esa.int/eogateway/missions/radarsat)
 
 + Passive Microwave Sensors:
 Measure natural microwave emissions from the Earth's surface.
     + Examples:
 
-        + SMOS (Soil Moisture and Ocean Salinity)
-        + AMSR-E (Advanced Microwave Scanning Radiometer)
+        + [SMOS](https://earth.esa.int/eogateway/missions/smos) (Soil Moisture and Ocean Salinity)
+        + [AMSR-E](https://aqua.nasa.gov/amsr-e) (Advanced Microwave Scanning Radiometer)
     + Applications:
 
     + Soil moisture and snowpack measurement.
     + Monitoring deforestation.
     + Ocean wind speed and wave height estimation.
 </td>
-<td>c</td>
+<td>
+
+<img src="./img/radarsat.png" width=100%>
+</td>
 
 </tr>
 
@@ -143,7 +155,7 @@ Measure natural microwave emissions from the Earth's surface.
 
 LiDAR sensors emit laser pulses and measure the time taken for the reflected signals to return. This provides high-resolution 3D data.
 + Examples:
-    + ICESat (Ice, Cloud, and Land Elevation Satellite)
+    + [ICESat](https://icesat.gsfc.nasa.gov/) (Ice, Cloud, and Land Elevation Satellite)
     + Airborne LiDAR systems.
 + Applications:
 
@@ -152,7 +164,10 @@ LiDAR sensors emit laser pulses and measure the time taken for the reflected sig
     + Urban infrastructure mapping.
     
 </td>
-<td>Logd</td>
+<td>
+
+<img src="./img/icesat.png" width=100%>
+</td>
 
 </tr>
 
@@ -175,7 +190,7 @@ Measure the intensity of electromagnetic radiation across various wavelengths.
 
 + Examples:
 
-    + AVHRR (Advanced Very High-Resolution Radiometer)
+    + [AVHRR](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-advanced-very-high-resolution-radiometer-avhrr) (Advanced Very High-Resolution Radiometer)
     + MODIS
 + Applications:
 
@@ -189,8 +204,8 @@ Measure reflected or emitted energy across specific spectral ranges with high ac
 
 + Examples:
 
-    + MERIS (Medium Resolution Imaging Spectrometer)
-    + SeaWiFS (Sea-viewing Wide Field-of-view Sensor)
+    + [MERIS](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/meris/) (Medium Resolution Imaging Spectrometer)
+    + [SeaWiFS](https://earth.gsfc.nasa.gov/ocean/missions/seawifs-sea-viewing-wide-field-view-sensor) (Sea-viewing Wide Field-of-view Sensor)
 + Applications:
 
     + Monitoring chlorophyll concentration in oceans.
@@ -202,8 +217,8 @@ Active microwave sensors that measure the scattering of microwave energy. They a
 
 + Examples:
 
-    + QuikSCAT (Quick Scatterometer)
-    + ASCAT (Advanced Scatterometer)
+    + [QuikSCAT](https://podaac.jpl.nasa.gov/QuikSCAT) (Quick Scatterometer)
+    + [ASCAT](https://manati.star.nesdis.noaa.gov/datasets/ASCATData.php) (Advanced Scatterometer)
 
 + Applications:
 
@@ -218,8 +233,7 @@ These combine the features of cameras and spectrometers, capturing both spatial 
 
 + Examples:
 
-    + HyTES (Hyperspectral Thermal 
-    + Emission Spectrometer)
+    + [HyTES](https://hytes.jpl.nasa.gov/) (Hyperspectral Thermal Emission Spectrometer)
 
 + Applications:
 
@@ -234,7 +248,7 @@ Measure variations in the Earth's gravitational field to understand subsurface f
 
 + Examples:
 
-    + GRACE (Gravity Recovery and Climate Experiment)
+    + [GRACE](https://www.jpl.nasa.gov/missions/gravity-recovery-and-climate-experiment-grace/) (Gravity Recovery and Climate Experiment)
 
 + Applications:
 
