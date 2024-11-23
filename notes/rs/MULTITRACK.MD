@@ -2,7 +2,9 @@
 
 Multi-track fusion in 3D deformation processing refers to the combination of multiple data sources or sensor streams to enhance the accuracy and resolution of deformation analysis. These data sources could include:
 
-+ Lidar data
+<img src="./img/res2.jpg" width=100%>
+
++ LiDAR data
 + Stereo cameras
 + 3D scanners
 + Deformation sensors (strain gauges, accelerometers)
