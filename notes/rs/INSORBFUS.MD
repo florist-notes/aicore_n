@@ -321,3 +321,27 @@ $$
     + ESA’s SNAP toolbox integrates POD for Sentinel missions.
 + Orbit Propagation Tools:
     + Python libraries like Skyfield, pyorbital, or MATLAB’s Aerospace Toolbox.
+
+
+Resources : [[ Orbit Determination ](https://www.youtube.com/playlist?list=PLrsOIbUzxfODb4CYrWf7LvisrENjIxx73)]
+
++ [Multi-sensor InSAR time series fusion for long-term land subsidence monitoring](https://www.tandfonline.com/doi/full/10.1080/10095020.2023.2178337#d1e2003)
++ [Precise baseline determination for InSAR formation-flying satellites based on spaceborne BDS-3 and GPS observations](https://www.sciencedirect.com/science/article/abs/pii/S0273117724010068)
++ [Precise orbit determination and baseline consistency assessment for Swarm constellation](https://www.sciencedirect.com/science/article/abs/pii/S0273117722010778)
++ [Precise orbit determination for low Earth orbit satellites using GNSS: Observations, models, and methods](https://link.springer.com/article/10.1007/s42064-023-0195-z)
++ [Applied Research on InSAR and GPS Data Fusion in Deformation Monitoring](https://onlinelibrary.wiley.com/doi/10.1155/2021/3888975)
++ [Integration of GPS and InSAR Data for Resolving 3-Dimensional Crustal Deformation](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019EA001036)
++ [Interferometric synthetic aperture radar (InSAR) atmospheric correction: GPS, Moderate Resolution Imaging Spectroradiometer (MODIS), and InSAR integration](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2004JB003446)
++ [Extraction of Bridge Features from high-resolution InSAR Data and optical Images](https://ieeexplore.ieee.org/document/4234481)
++ [An Improved GNSS and InSAR Fusion Method for Monitoring the 3D Deformation of a Mining Area](https://ieeexplore.ieee.org/document/9622216?denied=)
++ [Fusion of SAR Interferometry and Polarimetry Methods for Landslide Reactivation Study, the Bureya River (Russia) Event Case Study](https://www.mdpi.com/2072-4292/13/24/5136)
++ [A DEM fusion method for ascending and descending orbit StereoSAR DEMs in complicated mountain areas considering SAR echo intensity](https://link.springer.com/article/10.1007/s11629-020-6269-y)
++ [InSAR Baseline Estimation for Gaofen-3 Real-Time DEM Generation](https://www.preprints.org/manuscript/201806.0447/v1)
++ [Baseline determination for distributed InSAR satellite system using inter-agency comparison and fusion](https://hkxb.buaa.edu.cn/EN/10.7527/S1000-6893.2017.21187)
++ [Improvement of InSAR DEM Accuracy Using Data and Sensor Fusion](https://www.isprs.org/proceedings/XXXII/part2/127_XXXII-part2.pdf)
++ [A Novel Multitemporal InSAR Model for Joint Estimation of Deformation Rates and Orbital Errors](https://www.semanticscholar.org/paper/A-Novel-Multitemporal-InSAR-Model-for-Joint-of-and-Zhang-Ding/306828d99e5e91cae6859eed1f670cd0d9cf85e3)
++ [Automatic Correction of Time-Varying Orbit Errors for Single-Baseline Single-Polarization InSAR Data Based on Block Adjustment Model](https://www.mdpi.com/2072-4292/16/19/3578)
++ [Fusion of Multi-Baseline and Multi-Orbit InSAR DEMs with Terrain Feature-Guided Filter](https://pdfs.semanticscholar.org/cb75/03b775b67c47ef684535d5d1e495b7650ab0.pdf)
++ [Fusion of GNSS and Satellite Radar Interferometry: Determination of 3D Fine-Scale Map of Present-Day Surface Displacements in Italy as Expressions of Geodynamic Processes](https://ouci.dntb.gov.ua/en/works/9Gx1ZDn7/)
++ [Towards a rigorous fusion of GNSS and InSAR observations for the purpose of water vapor retrieval](https://unglueit-files.s3.amazonaws.com/ebf/59270e4fd5c847a4a4e4021205db1864.pdf)
++ [Synergistic Fusion of Interferometric and Speckle-Tracking Methods for Deriving Surface Velocity From Interferometric SAR Data](https://asf.alaska.edu/wp-content/uploads/2019/03/liu_2007.pdf)
