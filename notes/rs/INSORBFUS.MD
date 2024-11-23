@@ -4,6 +4,8 @@
 Interferometric Synthetic Aperture Radar (InSAR) is a powerful remote sensing technique used to measure ground deformation and surface displacement with high precision. Central to its accuracy is the determination of orbital parameters and the fusion of data from multiple sources to enhance spatial and temporal resolution. Below is a detailed explanation of InSAR orbital determination and fusion.
 </p>
 
+<img src="./img/ascdsc.jpg" width=100%>
+
 ## InSAR Orbital Determination
 
 <p style="text-align:justify;">

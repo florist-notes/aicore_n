@@ -2,6 +2,8 @@
 
 Global Navigation Satellite System (GNSS) point-to-surface data fusion refers to the integration of GNSS point data with surface models or measurements to enhance the accuracy, reliability, and usability of positioning and mapping information. This fusion technique is widely used in various applications, including surveying, geodesy, autonomous navigation, and environmental monitoring.
 
+<img src="./img/ins.png" width=100%>
+
 ## Key Concepts
 + `GNSS Point Data`:
 
