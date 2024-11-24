@@ -81,6 +81,8 @@ GNSS point-to-surface data fusion is a sophisticated technique used to enhance s
 
 Resources :
 
++ [EarthScope Consortium Presentations - 2024 GNSS Data Processing and Analys](https://www.youtube.com/playlist?list=PLGQwSTwiUcKxXJUNl5YopPXozz_gowJ5j)
+
 + [A New Data Fusion Method for GNSS/INS Integration Based on Weighted Multiple Criteria](https://www.mdpi.com/2072-4292/16/17/3275)
 + [Inversion of Regional Groundwater Storage Changes Based on the Fusion of GNSS and GRACE Data: A Case Study of Shaanxi–Gansu–Ningxia](https://www.mdpi.com/2072-4292/15/2/520)
 + [InSAR and GNSS data fusion for improved urban heat island estimation using local climate zone classification](https://www.sciencedirect.com/science/article/pii/S1569843224002607)

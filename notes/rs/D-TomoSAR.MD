@@ -96,3 +96,20 @@ Differential Tomographic Synthetic Aperture Radar (D-TomoSAR) is a powerful tech
 + `Disaster Management`:
 
     + Providing pre- and post-event analysis for earthquakes, floods, or volcanic activities.
+
+Resources:
+
++ [Tomographic SAR](./EN-SET-191-08.pdf) | @github/[TomoSAR](https://github.com/DinhHoTongMinh/TomoSAR)
++ [Seasonal Deformation and Accelerated Motion of Infrastructure Monitoring Using a Generalized Differential SAR Tomography](https://ieeexplore.ieee.org/document/9014555)
++ [High-Resolution 3-D and 4-D SAR Imaging-The Case Study of Shenzhen](https://ieeexplore.ieee.org/document/10028456)
++ [TomoSAR 3D Reconstruction for Buildings Using Very Few Tracks of Observation: A Conditional Generative Adversarial Network Approach](https://www.mdpi.com/2072-4292/13/24/5055)
++ [Three-Dimensional Deformation Monitoring of Urban Infrastructure by Tomographic SAR Using Multitrack TerraSAR-X Data Stacks](https://ieeexplore.ieee.org/document/7548332)
++ [Extended D-TomoSAR Displacement Monitoring for Nanjing (China) City Built Structure Using High-Resolution TerraSAR/TanDEM-X and Cosmo SkyMed SAR Data](https://www.mdpi.com/2072-4292/11/22/2623)
++ [Elevation Extraction from Spaceborne SAR Tomography Using Multi-Baseline COSMO-SkyMed SAR Data](https://www.mdpi.com/2072-4292/14/16/4093)
++ [DEFORMATION MONITORING OF URBAN INFRASTRUCTURE BY TOMOGRAPHIC SAR USING MULTI-VIEW TERRASAR-X DATA STACKS](https://proceedings.esa.int/files/314.pdf)
++ [Very High Resolution Tomographic SAR Inversion for Urban Infrastructure Monitoring — A Sparse and Nonlinear Tour](https://mediatum.ub.tum.de/doc/1071713/1071713.pdf)
++ [A TomoSAR regularization-based method for height change detection in urban areas](https://www.sciencedirect.com/science/article/pii/S1569843224002061)
++ [TomoSense: A unique 3D dataset over temperate forest combining multi-frequency mono- and bi-static tomographic SAR with terrestrial, UAV and airborne lidar, and in-situ forest census](https://www.researchgate.net/publication/369977717_TomoSense_A_unique_3D_dataset_over_temperate_forest_combining_multi-frequency_mono-_and_bi-static_tomographic_SAR_with_terrestrial_UAV_and_airborne_lidar_and_in-situ_forest_census)
++ [Tomo-GENESIS: DLR's tomographic SAR processing system](https://ieeexplore.ieee.org/document/6550690)
++ [High-Resolution and Wide-Swath 3D Imaging for Urban Areas Based on Distributed Spaceborne SAR](https://www.mdpi.com/2072-4292/15/16/3938)
++ [Research on 4-D Imaging of Holographic SAR Differential Tomography](https://www.mdpi.com/2072-4292/15/13/3421)
