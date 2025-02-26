@@ -1,5 +1,9 @@
 # AI tools and Open Source libraries:
 
+<img src="./img/netron.png" width=100%>
+
+I used [[ netron.app ](https://netron.app/)] exclusively while working at IISc to visually understand onnx models.
+
 ### Here is a custom list of python libraries for Machine Learning ( (AI) ) :
 
 
